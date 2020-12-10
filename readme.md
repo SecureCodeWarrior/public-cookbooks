@@ -45,53 +45,53 @@ Protection against XML External Entities/Entity Expansion
 [Basic Protection Set Recipes Github](https://github.com/SecureCodeWarrior/cookbook-basic-protection-set)
 
 - Crypto: Cipher: Insecure Asymmetric Cryptographic Algorithm 
-    - _This cryptographic algorithm is not recommended _
+    - _This cryptographic algorithm is not recommended_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use strong symmetric cryptographic algorithm 
     - _Could lead to cryptographic weakness_
 - Crypto: KeyAgreement: Insecure Cryptographic Algorithm 
-    - _This cryptographic algorithm is insecure _
+    - _This cryptographic algorithm is insecure_
 - Crypto: KeyAgreement: Guide on Approved Cryptographic Algorithm
-    - _This cryptographic algorithm is not recommended _
+    - _This cryptographic algorithm is not recommended_
 - Crypto: KeyPair Generation: Insecure Cryptographic Algorithm 
-    - _This cryptographic algorithm is insecure _
+    - _This cryptographic algorithm is insecure_
 - Crypto: KeyPair Generation: Non Standard Cryptographic Algorithm 
-    - _This cryptographic algorithm is not recommended _
+    - _This cryptographic algorithm is not recommended_
 - Crypto: KeyPair Generation: Approved Standard Cryptographic Algorithm 
-    - _This cryptographic algorithm is not recommended _
+    - _This cryptographic algorithm is not recommended_
 - Crypto: Signature: Insecure Hashing Algorithm 
-    - _This hashing algorithm is not recommended for cryptographic use _
+    - _This hashing algorithm is not recommended for cryptographic use_
 - Crypto: Signature: Non Standard Hashing Algorithm 
-    - _This hashing algorithm is not recommended for cryptographic use _
+    - _This hashing algorithm is not recommended for cryptographic use_
 - Crypto: Signature: Approved Hashing Algorithm
-    - _This hashing algorithm is not recommended for cryptographic use _
+    - _This hashing algorithm is not recommended for cryptographic use_
 - Data Protection - Cryptography: Avoid brute forcing: Use sufficiently long key sizes: keyGenerator 
-    - _Could lead to brute forcing or other cryptographic weakness _
+    - _Could lead to brute forcing or other cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently long key sizes: keyGenerator bad value
-    - _Could lead to brute forcing or other cryptographic weakness _
+    - _Could lead to brute forcing or other cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate key pair generation algorithm: insecure 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate key pair generation algorithm: not recommended 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: DES family 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: Hmac family 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: Hmac family 1
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: Other algorithms 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: insecure SecretKeyFactory 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: not recommended SecretKeyFactory 
-    - _This cryptographic algorithm is not recommended _
+    - _This cryptographic algorithm is not recommended_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate secret key generation algorithm: other SecretKeyFactory 
-    - _Could lead to cryptographic weakness _
+    - _Could lead to cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently long key sizes: keyPairGenerator 
-    - _Could lead to brute forcing or other cryptographic weakness _
+    - _Could lead to brute forcing or other cryptographic weakness_
 - Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently long key sizes: keyPairGenerator bad value 
-    - _Could lead to brute forcing or other cryptographic weakness _
+    - _Could lead to brute forcing or other cryptographic weakness_
 - Data Protection - Secure Data Storage: Avoid data exposure: Use Cipher instead of NullCipher 
-    - _Could lead to data exposure _
+    - _Could lead to data exposure_
 - Data: Injection: Parameterize LDAP Filters: DirContext#search
     - _Could lead to LDAP Injection_
 - Portability Flaw: Avoid locale dependent comparisons: equals after case conversion
@@ -107,27 +107,27 @@ Protection against XML External Entities/Entity Expansion
 - Injection: Avoid XML Injection: setFeature with bad value
     - _Could lead to XML Injection_
 - Input Validation: Avoid XXE: Do not set DocumentBuilderFactory external-parameter-entities to true 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - Input Validation: Avoid XXE: Do not set DocumentBuilderFactory load-external-dtd to true 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - Input Validation: Avoid XXE: Do not set DocumentBuilderFactory setXIncludeAware to true 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - Input Validation: Avoid XXE: Do not set DocumentBuilderFactory setExpandEntityReferences to true 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - InputValidation: Avoid XXE: Do not set XMLInputFactory Property to true 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - XML External Entities: DocumentBuilderFactory setExpandEntityReferences: to false 
     - _Could lead to XXE_
 - XML External Entities: DocumentBuilderFactory setFeature: dissallow-doctype-decl 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - XML External Entities: DocumentBuilderFactory setFeature: external-parameter-entities should be set first 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - XML External Entities: DocumentBuilderFactory setFeature: load-external-dtd 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - XML External Entities: DocumentBuilderFactory setXIncludeAware 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - XML External Entities: DocumentBuilderFactory setFeature: dissallow-doctype-decl wrong boolean 
-    - _Could lead to XXE _
+    - _Could lead to XXE_
 - XML External Entities: XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES
     - _Could lead to XXE_
 - XML External Entities: XMLInputFactory.SUPPORT_DTD
