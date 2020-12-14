@@ -9,7 +9,7 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 
 [How to add a cookbook](howto.md)
 
-## Cookbooks (3)
+## Cookbooks (2)
 
 <details><summary><strong>Basic security set (49 recipes)</strong>
 
