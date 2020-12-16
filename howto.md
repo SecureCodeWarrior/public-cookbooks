@@ -23,7 +23,7 @@ If the listing in the index has a `download.zip` link
 
 ## From a Github repo directly
 
-Some of the Cookbooks will be in repositories which support direct use in Sensei. These will be listed in the index with a `use .git` link.
+Some of the cookbooks will be in repositories which support direct use in Sensei. These will be listed in the index with a `use .git` link or URL.
 
 1. Copy the URL linked to
    a. Right click and choose `Copy Link Address`
@@ -38,4 +38,10 @@ Some of the Cookbooks will be in repositories which support direct use in Sensei
 
 ![Cookbook configuration](images/cookbook-from-git-url.png)
 
+
+Some cookbooks may be stored in a folder, in which case the URL to add will be displayed in the page, rather than linked to e.g.
+
+`use .git : https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|.sensei`
+
+In this case, copy and paste the url and user this as the location when Adding a cookbook
 
