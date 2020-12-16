@@ -19,7 +19,7 @@ If the listing in the index has a `download.zip` link
 2. Open up Sensei and add a cookbook  
 ![Add a cookbook](images/add_cookbook.png)
 3. Add cookbook inside sensei using the local folder as the location and give it a recognizable ID
-![Cookbook configuration](images/cookbook_settings.png)
+![Cookbook configuration](images/cookbook-from-folder.png)
 
 ## From a Github repo directly
 
@@ -27,9 +27,15 @@ Some of the Cookbooks will be in repositories which support direct use in Sensei
 
 1. Copy the URL linked to
    a. Right click and choose `Copy Link Address`
-2. Open up Sensei and add a cookbook  
+
+![Copy Link Address in Browser](images/copy-link-address.png)
+
+2. Open up Sensei and add a cookbook
+
 ![Add a cookbook](images/add_cookbook.png)
+
 3. Add cookbook inside sensei using the copied URL as the location and give it a recognizable ID
-![Cookbook configuration](images/cookbook_settings.png)
+
+![Cookbook configuration](images/cookbook-from-git-url.png)
 
 
