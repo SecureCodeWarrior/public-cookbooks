@@ -16,6 +16,8 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 
 _Cookbook which can be used as a starting point for security_ | [download .zip](https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip) | [use .git](https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git)</summary>
 
+`use .git : https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git`
+
 This cookbook contains a set of low effort recipes that can be used to detect, fix and prevent common recurring critical and high severity vulnerabilities. Enabling this cookbook will set a security baseline. The expected outcome from this cookbook is not to fix issues that are currently present in the codebase. Because we expect that these flaws have been detected by existing security measures such as peer reviews, penetration tests, and SAST tools. The main purpose is that we prevent new instances of these issues from being introduced in the codebase. Because catching these typical flaws late during development or even in production would increase the cost and time of fixing the issues significantly. Overall, this cookbook gives you the opportunity to improve the state of security by preventing the reappearance from common flaws.
 
 #### org.yaml.snakeyaml
