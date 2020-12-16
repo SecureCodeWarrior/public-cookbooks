@@ -151,9 +151,9 @@ Protection against XML External Entities/Entity Expansion
 
 
 _All the recipes that are showcased in the [Sensei blog examples](https://github.com/SecureCodeWarrior/sensei-blog-examples)_ | [download .zip](https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/blog-examples/sensei-blog-examples.zip)
+</summary>
 
-`use .git : https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|.sensei`</summary>
-
+`use .git : https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|.sensei`
 
 #### Contents
 

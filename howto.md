@@ -39,7 +39,7 @@ Some of the cookbooks will be in repositories which support direct use in Sensei
 ![Cookbook configuration](images/cookbook-from-git-url.png)
 
 
-Some cookbooks may be stored in a folder, in which case the URL to add will be displayed in the page, rather than linked to e.g.
+Some cookbooks may be stored in a folder, in which case the URL to add will be displayed in the details of the listing, rather than linked to e.g.
 
 `use .git : https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|.sensei`
 
