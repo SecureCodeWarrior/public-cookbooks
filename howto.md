@@ -1,21 +1,28 @@
 # How to add a cookbook
 
-<!-- Once a first version is only I would use one of those to base these screenshots off of -->
+## Using zip link
 
-## Using zip
+If the listing in the index has a `download.zip` link
 
-1. Right click on the "Get as zip" link next to the wanted cookbook and copy the target link
+1. Right click on the "download.zip" link next to the wanted cookbook and copy the linked URL
 2. Open up Sensei and add a cookbook  
 ![Add a cookbook](images/add_cookbook.png)
-3. Add cookbook inside sensei using the zip link as the location and give it a recognizable ID
+3. Add cookbook inside sensei using the zip URL as the location and give it a recognizable ID
 ![Cookbook configuration](images/cookbook_settings.png)
 
+## From a zip locally
 
-# How to contribute cookbooks
+If the listing in the index has a `download.zip` link
 
-1. Fork this repository using GitHub
-2. Clone the forked repository
-3. Open the cookbook inside sensei
-    - Add as local cookbook
-    - As location use the path of the cookbook you want to contribute to
-4. Create a PR on this repository based on the fork
+1. Download the `.zip` using the "download.zip" link next to the wanted cookbook
+2. Unzip the downloaded `.zip` file and move to a local folder located on your local drive
+2. Open up Sensei and add a cookbook  
+![Add a cookbook](images/add_cookbook.png)
+3. Add cookbook inside sensei using the local folder as the location and give it a recognizable ID
+![Cookbook configuration](images/cookbook_settings.png)
+
+## From a Github repo directly
+
+Some of the Cookbooks will be in repositories which support direct use in Sensei. These will be listed in the index with a `use .git` link.
+
+
