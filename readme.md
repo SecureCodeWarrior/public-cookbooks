@@ -7,7 +7,8 @@ This repo contains a list of quality coding pattern cookbooks that you can use w
 [Sensei](https://www.securecodewarrior.com/sensei) is a free IntelliJ plugin from Secure Code Warrior
 that helps you create quality coding recipes with Quick Fix transformations to improve your code. [Read more about Sensei in the official documentation](https://sensei-docs-beta.securecodewarrior.com)
 
-[How to add a cookbook](howto.md)
+- [How to add a cookbook to your Sensei install](howto.md)
+- [How to contribute a Cookbook or a Recipe](howtocontribute.md)
 
 ## Cookbooks (2)
 
