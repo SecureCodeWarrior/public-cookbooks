@@ -25,4 +25,11 @@ If the listing in the index has a `download.zip` link
 
 Some of the Cookbooks will be in repositories which support direct use in Sensei. These will be listed in the index with a `use .git` link.
 
+1. Copy the URL linked to
+   a. Right click and choose `Copy Link Address`
+2. Open up Sensei and add a cookbook  
+![Add a cookbook](images/add_cookbook.png)
+3. Add cookbook inside sensei using the copied URL as the location and give it a recognizable ID
+![Cookbook configuration](images/cookbook_settings.png)
+
 
