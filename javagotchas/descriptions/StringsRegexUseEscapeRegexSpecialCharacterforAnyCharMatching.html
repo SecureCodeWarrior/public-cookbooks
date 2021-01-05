@@ -1,0 +1,66 @@
+<h1 id="splitusesaregexmatchesanycharacter">Split uses a Regex <code>.</code> matches any Character</h1>
+
+<ul>
+<li>Name: Strings : Regex Use : Escape Regex Special Character for Any Char Matching</li>
+
+<li>Short Description: Split uses a regex - escape the dot or you generate an empty array</li>
+</ul>
+
+<p>The String <code>split</code> method takes a Regular Expression as a parameter. Unfortunately sometimes we use Special Characters as String delimiters e.g. <code>"."</code></p>
+
+<p>When trying to <code>split</code> by <code>"."</code> we will not get the result we expect. Instead every character in the String will be used as a split point, resulting in an empty array. We need to use <code>"\\.|"</code> instead i.e. the <code>.</code> escaped in a <code>String</code>.</p>
+
+<h2 id="recipedetails">Recipe Details</h2>
+
+<pre><code>search:
+  methodcall:
+    args:
+      1:
+        value: "."
+    name: "split"
+    type: "java.lang.String"
+</code></pre>
+
+<pre><code>availableFixes:
+- name: "Escape the regex special character for any char"
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "\"\\\\.\""
+</code></pre>
+
+<h2 id="before">Before</h2>
+
+<pre><code>@Test
+void splitOnEverything(){
+
+    String[] parts;
+
+    parts = "123.456.789.012".split(".");
+
+    Assertions.assertEquals(0, parts.length);
+    // we actually wanted 4 so should have used "\\."
+}
+</code></pre>
+
+<h2 id="afterapplyingquickfixescapetheregexspecialcharacterforanychar">After applying Quickfix - Escape the regex special character for any char</h2>
+
+<pre><code>    @Test
+    void splitOnEverything(){
+
+        String[] parts;
+
+        parts = "123.456.789.012".split("\\.");
+
+        Assertions.assertEquals(0, parts.length);
+        // we actually wanted 4 so should have used "\\."
+    }
+</code></pre>
+
+<pre><code>
+</code></pre>
+
+<p>Note: the above test would fail after running the QuickFix because I would need to amend the assertion as well to:</p>
+
+<pre><code>Assertions.assertEquals(0, parts.length);
+</code></pre>
