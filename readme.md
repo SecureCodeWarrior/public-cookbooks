@@ -220,6 +220,25 @@ _All the recipes that are showcased in the [Sensei blog examples](https://github
 </details>
 
 
+<details><summary><strong>Java Gotchas</strong>
+
+Examples of simple Java mistakes that can be easily detected and fixed with Sensei.
+
+</summary>
+
+`use .git : https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|javagotchas`
+
+
+<details><summary><strong>Javagotchas (1 recipes)</strong></summary>
+
+[Javagotchas Recipes on Github](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/javagotchas)
+
+- Strings : Regex Use : Escape Regex Special Character for Any Char Matching
+    - _Split uses a regex - escape the dot or you generate an empty array_
+</details>
+
+</details>
+
 ## Extras
 
 - [Sensei](https://www.securecodewarrior.com/sensei)
