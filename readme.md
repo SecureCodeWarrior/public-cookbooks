@@ -10,7 +10,7 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 - [How to add a cookbook to your Sensei install](howto.md)
 - [How to contribute a Cookbook or a Recipe](howtocontribute.md)
 
-## Cookbooks (2)
+## Cookbooks
 
 <details><summary><strong>Basic security set (49 recipes)</strong>
 
