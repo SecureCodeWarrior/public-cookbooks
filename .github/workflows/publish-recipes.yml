@@ -57,7 +57,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: '*.zip'
-          releaseId: 'latest'
+          # Fixed value. Should be changed if we manually modify the release 'latest' by accident
+          releaseId: 'untagged-0b66d9810276973926f3'
 
   index:
     needs: cookbooks
