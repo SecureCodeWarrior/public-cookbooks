@@ -1,0 +1,45 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "c2b4f2d8-9e89-4d1f-90eb-916f8cc03aed",
+    "rulePackVersion": "0.1.0",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \"true\"\n    name:\n      matches: \"setJavaScriptEnabled|setAllowFileAccess|setGeolocationEnabled|setAllowContentAccess\"\n    type: \"android.webkit.WebSettings\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Change WebView setting to false\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
+        "ruleName": "Android WebView best practices: Disable settings",
+        "ruleID": "8a8f7dd7-d5a4-41ca-9e1f-27af8d041c9e",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "Enabling this WebView setting has security implications",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name: \"setJavaScriptEnabled\"\n          \"on\":\n            methodcall:\n              name: \"getSettings\"\n              \"on\":\n                instanceCreation: {}\n    type: \"android.webkit.WebView\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Fix the code by ...\"\n  actions:\n  - rewrite:\n      to: \"\"\n      target: \"self\"\n",
+        "ruleName": "Android WebView best practices: Disable JavaScript",
+        "ruleID": "17fed260-0137-4e26-8795-42e5b4eed9be",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "This text will be shown as a tooltip when code violates this recipe",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": false,
+        "ruleScope": []
+      }
+    }
+  ],
+  "generators": []
+}

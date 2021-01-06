@@ -1,0 +1,24 @@
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted for <code>WebView</code> and its configuration.
+<h2>Description</h2>
+Best practices for WebView settings are to turn off JavaScript to prevent XSS attacks, disallowing file access to prevent data leakages as well as turning off geolocation to avoid information leakage. Finally, it is recommended to deactivate protocol handlers when they are not used.
+
+Regardless where the URL originates from, a best practice is to double check that the URL does not target local resources. This can easily be achieved by checking the start of the string for <code>file:</code>. It is considered best practice to also check the URL to be loaded against a white list. 
+<b>Code example on preferred WebView settings to minimize the attack surface:</b>
+<pre>
+webView.getSettings().setJavaScriptEnabled(<b>false</b>);
+webView.getSettings().setAllowFileAccess(<b>false</b>);
+webView.getSettings().setGeolocationEnabled(<b>false</b>);
+webView.getSettings().setAllowContentAccess(<b>false</b>);
+webView.getSettings().setMixedContentMode(<b>WebSettings.MIXED_CONTENT_NEVER_ALLOW)</b>;
+
+if( !url.startsWith("file:"))
+&nbsp;&nbsp;&nbsp;webView.loadUrl(url);
+</pre>
+
+Additionally avoid using the following settings (Deprecated since API level 30) to prevent malicious scripts from accessing arbitrary local files or launching XSS attacks.
+<b>Bad code example</b>
+<pre>
+webView.getSettings().setAllowFileAccessFromFileURLs(true);
+webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+</pre>
