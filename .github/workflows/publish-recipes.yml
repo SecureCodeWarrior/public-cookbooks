@@ -8,7 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
+  cookbooks:
+    name: 'Publish Cookbooks'
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
@@ -49,3 +50,29 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           id: ${{ steps.create_release.outputs.id }}
+
+  index:
+    needs: cookbooks
+    name: 'Generate New Index'
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Installing Dependencies
+        run: sudo apt-get install jq
+      
+      - name: Generate new documentation
+        run: .github/workflows/generate-docs.sh 'v${{ github.run_id }}-${{ github.run_number }}'
+
+      - uses: EndBug/add-and-commit@v6
+        with:
+          add: 'docs'
+
+          author_name: 'DevOps Account'
+          author_email: devops@securecodewarrior.com
+          message: 'Updated cookbook index'
+          branch: 'master'
+
+          token: ${{ secrets.GITHUB_TOKEN }}
