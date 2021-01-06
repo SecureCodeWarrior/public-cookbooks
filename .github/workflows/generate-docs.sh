@@ -29,7 +29,7 @@ read_cookbook_details() {
 
 # Reads the README file until the Extras section
 read_readme_upper_body(){
-    cat ${ROOT_DIR}/readme.md | sed '/^# /,/## Extras/!d'
+    cat ${ROOT_DIR}/readme.md | sed '/^# /,/## Extras/!d;/## Extras/d'
 }
 
 # Reads the README lower body sections - starting from the Extras section
@@ -50,7 +50,8 @@ generate_index(){
 
         cat <<EOF
 <details>
-<summary><strong>${title}</strong> - ${num_recipes} recipe(s) - [download](${BASE_GH_URL}/LATEST_RELEAST/${cookbook}.zip)
+<summary><strong>${title}</strong> - ${num_recipes} recipe(s) -
+<a href="${BASE_GH_URL}/LATEST_RELEAST/${cookbook}.zip">download zip</a>
 
 ${summary}
 </summary>
