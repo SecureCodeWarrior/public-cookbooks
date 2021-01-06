@@ -46,12 +46,20 @@ generate_index(){
         title=$(read_cookbook_title ${cookbook})
         summary=$(read_cookbook_summary ${cookbook})
         details=$(read_cookbook_details ${cookbook})
-        num_recipes=$(calc_num_recipes ${cookbook})
+
+        if [ -f ${RECIPE_DIR}/${cookbook}/rules.sensei ]
+        then
+            num_recipes=$(calc_num_recipes ${cookbook})
+            download_html = "<a href='${BASE_GH_URL}/latest/${cookbook}.zip'>download .zip</a>"
+        else
+            num_recipes="external"
+            download_html=""          
+        fi
 
         cat <<EOF
 <details>
 <summary><strong>${title}</strong> - ${num_recipes} recipe(s) -
-<a href="${BASE_GH_URL}/latest/${cookbook}.zip">download .zip</a>
+${download_html}
 <p>${summary}</p>
 </summary>
 
