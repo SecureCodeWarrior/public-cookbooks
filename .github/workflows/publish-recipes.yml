@@ -57,7 +57,7 @@ jobs:
       - name: Fetching 'Latest' tag metadata
         id: fetch-latest-tag-metadata
         run: |
-          FOUND_RELEASE_ID=$(./github/workflows/fetch-lastest-tag.sh)
+          FOUND_RELEASE_ID=$(./github/workflows/fetch-latest-tag.sh)
           echo '::set-output name=release_id::${FOUND_RELEASE_ID}'
 
       - name: Pinning artifacts in tag 'Latest'
