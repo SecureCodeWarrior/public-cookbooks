@@ -1,0 +1,32 @@
+name: 'Publish Documentation'
+
+on:
+  pull_request:
+    branches: [ master ]
+    types: [ closed ]
+
+  workflow_dispatch:
+
+jobs:
+  publish:
+    #if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Installing Dependencies
+        run: sudo apt-get install jq
+      
+      - name: Generate new documentation
+        run: .github/workflows/generate-docs.sh
+
+      - uses: EndBug/add-and-commit@v6
+        with:
+          add: 'docs'
+
+          author_name: 'DevOps Account'
+          author_email: devops@securecodewarrior.com
+          message: 'Updated cookbook index'
+
+          token: ${{ secrets.GITHUB_TOKEN }}
