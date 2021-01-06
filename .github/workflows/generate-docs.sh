@@ -29,12 +29,13 @@ read_cookbook_details() {
 
 # Reads the README file until the Extras section
 read_readme_upper_body(){
-    cat ${ROOT_DIR}/readme.md | sed '/./,/## Extras/!d;/## Extras/d'
+    cat ${ROOT_DIR}/readme.md | sed '/^# /,/## Extras/!d'
 }
 
 # Reads the README lower body sections - starting from the Extras section
 read_readme_lower_body(){
-    cat ${ROOT_DIR}/readme.md | sed '/## Extras/,/END_OF_FILE/!d'
+    echo '## Extras'
+    cat ${ROOT_DIR}/readme.md | sed '/^# /,/## Extras/d'
 }
 
 # Generate the index file
