@@ -28,5 +28,6 @@ jobs:
           author_name: 'DevOps Account'
           author_email: devops@securecodewarrior.com
           message: 'Updated cookbook index'
+          branch: 'master'
 
           token: ${{ secrets.GITHUB_TOKEN }}
