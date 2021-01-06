@@ -1,5 +1,5 @@
 ## Secure Code Warrior Blog Examples
-Recipes used to support the [Secure Code Warrior Blog examples](https://github.com/SecureCodeWarrior/sensei-blog-examples)
+Recipes used to support the Secure Code Warrior Blog examples which provide Use-Case examples of Sensei. e.g. POJO, JUnit 5, Basic SQL Injection fixing, etc.
 
 <ul>
 <li>19 recipes</li>
