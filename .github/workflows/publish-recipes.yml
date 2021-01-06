@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Installing Dependencies
-        run: sudo apt-get install zip
+        run: sudo apt-get install zip jq
 
       - name: Generate zip files
         run: .github/workflows/package-recipes.sh
@@ -57,7 +57,7 @@ jobs:
       - name: Fetching 'Latest' tag metadata
         id: fetch-latest-tag-metadata
         run: |
-          FOUND_RELEASE_ID=$(./github/workflows/fetch-latest-tag.sh)
+          FOUND_RELEASE_ID=$(.github/workflows/fetch-latest-tag.sh)
           echo '::set-output name=release_id::${FOUND_RELEASE_ID}'
 
       - name: Pinning artifacts in tag 'Latest'
