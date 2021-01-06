@@ -22,34 +22,43 @@ jobs:
       - name: Generate zip files
         run: .github/workflows/package-recipes.sh
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "v${{ github.run_id }}-${{ github.run_number }}"
-          release_name: "v${{ github.run_id }}-${{ github.run_number }}"
-          body: |
-            This is an automated release containing the commited cookbooks and its recipes.
-          draft: true
-          prerelease: false
+      # Only rolling releases are enabled for now.
+      # Uncomment the block below to enable tagged-version releases.
 
-      - name: Upload the artifacts
-        id: upload_artifacts
-        uses: skx/github-action-publish-binaries@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: '*.zip'
-          releaseId: ${{ steps.create_release.outputs.id }}
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: "v${{ github.run_id }}-${{ github.run_number }}"
+      #     release_name: "v${{ github.run_id }}-${{ github.run_number }}"
+      #     body: |
+      #       This is an automated release containing the commited cookbooks and its recipes.
+      #     draft: true
+      #     prerelease: false
 
-      - name: Publish release
-        uses: StuYarrow/publish-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          id: ${{ steps.create_release.outputs.id }}
+      # - name: Upload the artifacts
+      #   id: upload_artifacts
+      #   uses: skx/github-action-publish-binaries@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     args: '*.zip'
+      #     releaseId: ${{ steps.create_release.outputs.id }}
+
+      # - name: Publish release
+      #   uses: StuYarrow/publish-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     id: ${{ steps.create_release.outputs.id }}
+
+      - name: Fetching 'Latest' tag metadata
+        id: fetch-latest-tag-metadata
+        run: |
+          FOUND_RELEASE_ID=$(./github/workflows/fetch-lastest-tag.sh)
+          echo '::set-output name=release_id::${FOUND_RELEASE_ID}'
 
       - name: Pinning artifacts in tag 'Latest'
         uses: skx/github-action-publish-binaries@master
@@ -58,7 +67,7 @@ jobs:
         with:
           args: '*.zip'
           # Fixed value. Should be changed if we manually modify the release 'latest' by accident
-          releaseId: 'untagged-0b66d9810276973926f3'
+          releaseId: '${{ steps.fetch-latest-tag-metadata.release_id }}'
 
   index:
     needs: cookbooks
