@@ -1,2 +1,4 @@
-
+*.zip
+*.jar
 .DS_Store
+
