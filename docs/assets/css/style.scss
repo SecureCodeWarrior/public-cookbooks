@@ -9,6 +9,9 @@
     }
 }
 
+section.page-header { padding: 10px; }
+section.page-header > a { display: none; }
+
 details {
     padding-left: 15px;
 }

@@ -51,9 +51,8 @@ generate_index(){
         cat <<EOF
 <details>
 <summary><strong>${title}</strong> - ${num_recipes} recipe(s) -
-<a href="${BASE_GH_URL}/latest/${cookbook}.zip">download zip</a>
-
-${summary}
+<a href="${BASE_GH_URL}/latest/${cookbook}.zip">download .zip</a>
+<p>${summary}</p>
 </summary>
 
 ${details}

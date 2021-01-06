@@ -300,7 +300,7 @@ Protection against XML External Entities/Entity Expansion
 
 <details>
 <summary><strong>Java Gotchas</strong> - 1 recipe(s) -
-<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/v465447425-15/javagotchas.zip">download zip</a>
+<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip">download zip</a>
 
 Examples of simple Java mistakes that can be easily detected and fixed with Sensei
 </summary>
@@ -311,7 +311,7 @@ e.g.
 </details>
 <details>
 <summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) -
-<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/v465447425-15/spring.zip">download zip</a>
+<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/spring.zip">download zip</a>
 
 A cookbook that simplifies Spring Boot development. It aims to automate common routines
 performed by developers, preventing them to repeat themselves or introduce known issues

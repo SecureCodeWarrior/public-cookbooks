@@ -3,6 +3,8 @@ A cookbook that simplifies Spring Boot development. It aims to automate common r
 performed by developers, preventing them to repeat themselves or introduce known issues.
 
 It covers the following modules:
-- Spring Beans
-- Spring MVC
-- Spring Data
+<ul>
+<li>Spring Beans</li>
+<li>Spring MVC</li>
+<li>Spring Data</li>
+</ul>
