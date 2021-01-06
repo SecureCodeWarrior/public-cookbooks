@@ -13,13 +13,37 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Installing Dependencies
+        run: sudo apt-get install zip
+
       - name: Generate zip files
-        uses: skx/github-action-build@master
-        builder: .github/package-recipes.sh
+        run: .github/workflows/package-recipes.sh
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v${GITHUB_RUN_ID}.${GITHUB_RUN_NUMBER}"
+          release_name: "v${GITHUB_RUN_ID}.${GITHUB_RUN_NUMBER}"
+          body: |
+            This is an automated release containing the commited cookbooks and its recipes.
+          draft: true
+          prerelease: false
 
       - name: Upload the artifacts
+        id: upload_artifacts
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: '*.zip'
+          releaseId: ${{ steps.create_release.outputs.id }}
+
+      - name: Publish release
+        uses: StuYarrow/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          id: ${{ steps.create_release.outputs.id }}
