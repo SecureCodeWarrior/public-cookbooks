@@ -12,6 +12,8 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 
 ## Cookbooks
 
+Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/recipes) folder.
+
 <details>
 <summary><strong>Basic security set</strong> - external recipe(s) -
 
