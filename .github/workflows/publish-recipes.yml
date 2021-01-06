@@ -1,4 +1,4 @@
-name: 'Publish Recipes'
+name: 'Publish Cookbooks'
 
 on:
   pull_request:
@@ -10,51 +10,72 @@ on:
 jobs:
   cookbooks:
     name: 'Publish Cookbooks'
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Installing Dependencies
-        run: sudo apt-get install zip
+        run: sudo apt-get install zip jq
 
       - name: Generate zip files
         run: .github/workflows/package-recipes.sh
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "v${{ github.run_id }}-${{ github.run_number }}"
-          release_name: "v${{ github.run_id }}-${{ github.run_number }}"
-          body: |
-            This is an automated release containing the commited cookbooks and its recipes.
-          draft: true
-          prerelease: false
+      # Only rolling releases are enabled for now.
+      # Uncomment the block below to enable tagged-version releases.
 
-      - name: Upload the artifacts
-        id: upload_artifacts
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: "v${{ github.run_id }}-${{ github.run_number }}"
+      #     release_name: "v${{ github.run_id }}-${{ github.run_number }}"
+      #     body: |
+      #       This is an automated release containing the commited cookbooks and its recipes.
+      #     draft: true
+      #     prerelease: false
+
+      # - name: Upload the artifacts
+      #   id: upload_artifacts
+      #   uses: skx/github-action-publish-binaries@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     args: '*.zip'
+      #     releaseId: ${{ steps.create_release.outputs.id }}
+
+      # - name: Publish release
+      #   uses: StuYarrow/publish-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     id: ${{ steps.create_release.outputs.id }}
+
+      - name: Retrieving and flushing Latest release
+        id: flush-latest-release
+        env:
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        run: |
+          FOUND_RELEASE_ID=$(.github/workflows/fetch-latest-tag.sh)
+          .github/workflows/clean-up-latest-release.sh ${FOUND_RELEASE_ID}
+          echo "::set-output name=release_id::${FOUND_RELEASE_ID}"
+
+      - name: Pinning artifacts in tag 'Latest'
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: '*.zip'
-          releaseId: ${{ steps.create_release.outputs.id }}
-
-      - name: Publish release
-        uses: StuYarrow/publish-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          id: ${{ steps.create_release.outputs.id }}
+          # Fixed value. Should be changed if we manually modify the release 'latest' by accident
+          releaseId: '${{ steps.flush-latest-release.outputs.release_id }}'
 
   index:
     needs: cookbooks
     name: 'Generate New Index'
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
