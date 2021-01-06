@@ -42,6 +42,7 @@ Protection against XML External Entities/Entity Expansion
 - javax.xml.transform.TransformerFactory
 - javax.xml.validation.SchemaFactory
 - javax.xml.xpath.XPathFactory
+</details>
 
 <details><summary><strong>Basic Protection Set Recipes List</strong></summary>
 
@@ -147,8 +148,6 @@ Protection against XML External Entities/Entity Expansion
     - _Could lead to Remote Code Execution_
 </details>
 
-</details>
-
 <details><summary><strong>Sensei Blog examples</strong>
 
 
@@ -172,6 +171,7 @@ _All the recipes that are showcased in the [Sensei blog examples](https://github
     - Detecting Forgotten Guice Dependency Injection Wiring
 - SQL Injection Fixes
     - Fix SQL Injection Vulnerability
+</details>
 
 <details><summary><strong>Blog Examples List (19 recipes)</strong></summary>
 
@@ -217,32 +217,9 @@ _All the recipes that are showcased in the [Sensei blog examples](https://github
     - _void methods have side-effects, return a new object or primitve instead_
 </details>
 
-</details>
-
-
-<details><summary><strong>Java Gotchas</strong>
-
-Examples of simple Java mistakes that can be easily detected and fixed with Sensei.
-
-</summary>
-
-`use .git : https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|javagotchas`
-
-
-<details><summary><strong>Javagotchas (1 recipes)</strong></summary>
-
-[Javagotchas Recipes on Github](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/javagotchas)
-
-- Strings : Regex Use : Escape Regex Special Character for Any Char Matching
-    - _Split uses a regex - escape the dot or you generate an empty array_
-</details>
-
-</details>
-
-## Extras
-
 <details>
-<summary><strong>Java Gotchas</strong> - 1 recipe(s) - [download](https://github.com/SecureCodeWarrior/public-cookbooks/releases/download//LATEST_RELEAST/javagotchas.zip)
+<summary><strong>Java Gotchas</strong> - 1 recipe(s) -
+<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/v465378474-14/javagotchas.zip">download zip</a>
 
 Examples of simple Java mistakes that can be easily detected and fixed with Sensei
 </summary>
@@ -252,7 +229,8 @@ e.g.
 - split "." does not split a string delimited by 'full stop' characters
 </details>
 <details>
-<summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) - [download](https://github.com/SecureCodeWarrior/public-cookbooks/releases/download//LATEST_RELEAST/spring.zip)
+<summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) -
+<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/v465378474-14/spring.zip">download zip</a>
 
 A cookbook that simplifies Spring Boot development. It aims to automate common routines
 performed by developers, preventing them to repeat themselves or introduce known issues
@@ -265,7 +243,6 @@ It covers the following modules:
 </details>
 
 ## Extras
-
 - [Sensei](https://www.securecodewarrior.com/sensei)
 - [Sensei in action (video)](https://www.youtube.com/watch?v=mjXGliXJ7M8)
 - [Sensei blog examples](https://github.com/SecureCodeWarrior/sensei-blog-examples)
