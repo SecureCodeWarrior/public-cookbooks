@@ -12,10 +12,11 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 
 ## Cookbooks
 
-<details><summary><strong>Basic security set (49 recipes)</strong>
-<i>Cookbook which can be used as a starting point for security</i> | 
-<a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</a> |
-<a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a>
+<details><summary><strong>Basic security set</strong>
+- 49 recipes
+- <a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</a>
+- <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a>
+<p>Cookbook which can be used as a starting point for security</p>
 </summary>
 
 <i>This cookbook contains a set of low effort recipes that can be used to detect, fix and prevent common recurring critical and high severity vulnerabilities. Enabling this cookbook will set a security baseline. The expected outcome from this cookbook is not to fix issues that are currently present in the codebase. Because we expect that these flaws have been detected by existing security measures such as peer reviews, penetration tests, and SAST tools. The main purpose is that we prevent new instances of these issues from being introduced in the codebase. Because catching these typical flaws late during development or even in production would increase the cost and time of fixing the issues significantly. Overall, this cookbook gives you the opportunity to improve the state of security by preventing the reappearance from common flaws.</i>
@@ -203,8 +204,10 @@ Protection against XML External Entities/Entity Expansion
 </dl>
 </details>
 
-<details><summary><strong>Blog Examples List (19 recipes)</strong>
-| See <a href="https://github.com/SecureCodeWarrior/sensei-blog-examples">Sensei Blog Examples Recipes</a> at GitHub</summary>
+<details><summary><strong>Blog Examples List</strong>
+- 19 recipes
+- See <a href="https://github.com/SecureCodeWarrior/sensei-blog-examples">Sensei Blog Examples Recipes</a> at GitHub
+</summary>
 
 <h4>Overview</h4>
 
@@ -300,27 +303,28 @@ Protection against XML External Entities/Entity Expansion
 
 <details>
 <summary><strong>Java Gotchas</strong> - 1 recipe(s) -
-<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip">download zip</a>
-
-Examples of simple Java mistakes that can be easily detected and fixed with Sensei
+<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip">download .zip</a>
+<p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
 </summary>
 
-e.g.
-
-- split "." does not split a string delimited by 'full stop' characters
+<h4>Overview</h4>
+<ul>
+<li>split "." does not split a string delimited by 'full stop' characters</li>
+</ul>
 </details>
 <details>
 <summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) -
-<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/spring.zip">download zip</a>
-
-A cookbook that simplifies Spring Boot development. It aims to automate common routines
-performed by developers, preventing them to repeat themselves or introduce known issues
+<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/spring.zip">download .zip</a>
+<p>A cookbook that simplifies Spring Boot development. It aims to automate common routines
+performed by developers, preventing them to repeat themselves or introduce known issues</p>
 </summary>
 
 It covers the following modules:
-- Spring Beans
-- Spring MVC
-- Spring Data
+<ul>
+<li>Spring Beans</li>
+<li>Spring MVC</li>
+<li>Spring Data</li>
+</ul>
 </details>
 
 ## Extras
