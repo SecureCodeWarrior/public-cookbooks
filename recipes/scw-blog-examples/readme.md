@@ -1,9 +1,12 @@
 ## Secure Code Warrior Blog Examples
 Recipes used to support the [Secure Code Warrior Blog examples](https://github.com/SecureCodeWarrior/sensei-blog-examples)
 
-- 19 recipes
-- See <a href="https://github.com/SecureCodeWarrior/sensei-blog-examples">Sensei Blog Examples Recipes</a> at GitHub
+<ul>
+<li>19 recipes</li>
+<li>See <a href="https://github.com/SecureCodeWarrior/sensei-blog-examples">Sensei Blog Examples Recipes</a> at GitHub</li>
+</ul>
 
+<!--
 #### Overview
 
 *   POJO
@@ -19,6 +22,33 @@ Recipes used to support the [Secure Code Warrior Blog examples](https://github.c
     *   Detecting Forgotten Guice Dependency Injection Wiring
 *   SQL Injection Fixes
     *   Fix SQL Injection Vulnerability
+-->
+<h4>Overview</h4>
+<ul>
+<li>POJO<ul>
+<li>Converting System.out.println to using a Logger</li>
+<li>Adding a Private Constructor to a Utility Class</li>
+<li>Basic Immutability</li>
+</ul>
+</li>
+<li>JUnit 5<ul>
+<li>Adding and Removing Annotations</li>
+<li>Adding Parameters to Annotations</li>
+<li>Creating Library Documentation Links to Tutorials and Examples</li>
+<li>Amending Visibility Modifiers of Methods and Classes</li>
+</ul>
+</li>
+<li>Guice<ul>
+<li>Detecting Forgotten Guice Dependency Injection Wiring</li>
+</ul>
+</li>
+<li>SQL Injection Fixes<ul>
+<li>Fix SQL Injection Vulnerability</li>
+</ul>
+</li>
+</ul>
+
+
 
 <details><summary>More Details</summary>
 <dl>

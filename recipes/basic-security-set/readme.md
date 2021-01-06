@@ -1,12 +1,16 @@
 ## Basic security set
 Cookbook which can be used as a starting point for security.
 
-- 49 recipes
-- <a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</a>
-- <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a>
+<ul>
+<li>49 recipes</li>
+<li> <a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</li>
+<li> <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a></li>
 
-_This cookbook contains a set of low effort recipes that can be used to detect, fix and prevent common recurring critical and high severity vulnerabilities. Enabling this cookbook will set a security baseline. The expected outcome from this cookbook is not to fix issues that are currently present in the codebase. Because we expect that these flaws have been detected by existing security measures such as peer reviews, penetration tests, and SAST tools. The main purpose is that we prevent new instances of these issues from being introduced in the codebase. Because catching these typical flaws late during development or even in production would increase the cost and time of fixing the issues significantly. Overall, this cookbook gives you the opportunity to improve the state of security by preventing the reappearance from common flaws._
+<p>
+<em>This cookbook contains a set of low effort recipes that can be used to detect, fix and prevent common recurring critical and high severity vulnerabilities. Enabling this cookbook will set a security baseline. The expected outcome from this cookbook is not to fix issues that are currently present in the codebase. Because we expect that these flaws have been detected by existing security measures such as peer reviews, penetration tests, and SAST tools. The main purpose is that we prevent new instances of these issues from being introduced in the codebase. Because catching these typical flaws late during development or even in production would increase the cost and time of fixing the issues significantly. Overall, this cookbook gives you the opportunity to improve the state of security by preventing the reappearance from common flaws.<em>
+</p>
 
+<!--
 #### org.yaml.snakeyaml
 
 Protection against code injection
@@ -29,6 +33,29 @@ Protection against XML External Entities/Entity Expansion
 *   javax.xml.transform.TransformerFactory
 *   javax.xml.validation.SchemaFactory
 *   javax.xml.xpath.XPathFactory
+-->
+
+<h4 id="org-yaml-snakeyaml">org.yaml.snakeyaml</h4>
+<p>Protection against code injection</p>
+<ul>
+<li>org.yaml.snakeyaml.Yaml</li>
+</ul>
+<h4 id="java-sql">java.sql</h4>
+<p>Protection against sql injection</p>
+<ul>
+<li>java.sql.Statement</li>
+<li>java.sql.Connection</li>
+</ul>
+<h4 id="java-xml">java.xml</h4>
+<p>Protection against XML External Entities/Entity Expansion</p>
+<ul>
+<li>javax.xml.parsers.DocumentBuilderFactory</li>
+<li>javax.xml.parsers.SAXParserFactory</li>
+<li>javax.xml.transform.TransformerFactory</li>
+<li>javax.xml.validation.SchemaFactory</li>
+<li>javax.xml.xpath.XPathFactory</li>
+</ul>
+
 
 <details><summary><strong>Basic Protection Set Recipes List</strong>
 | See <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set">Basic Protection Set Recipes</a> at GitHub
