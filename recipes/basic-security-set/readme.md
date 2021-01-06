@@ -3,8 +3,8 @@ Cookbook which can be used as a starting point for security.
 
 <ul>
 <li>49 recipes</li>
-<li> <a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</li>
-<li> <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a></li>
+<li><a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</li>
+<li><a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a></li>
 </ul>
 
 <p>
