@@ -25,8 +25,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: "v${GITHUB_RUN_ID}.${GITHUB_RUN_NUMBER}"
-          release_name: "v${GITHUB_RUN_ID}.${GITHUB_RUN_NUMBER}"
+          tag_name: "v${{ github.run_id }}-${{ github.run_number }}"
+          release_name: "v${{ github.run_id }}-${{ github.run_number }}"
           body: |
             This is an automated release containing the commited cookbooks and its recipes.
           draft: true
