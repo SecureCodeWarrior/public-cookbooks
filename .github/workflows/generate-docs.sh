@@ -51,7 +51,7 @@ generate_index(){
         cat <<EOF
 <details>
 <summary><strong>${title}</strong> - ${num_recipes} recipe(s) -
-<a href="${BASE_GH_URL}/${LATEST_RELEAST}/${cookbook}.zip">download zip</a>
+<a href="${BASE_GH_URL}/latest/${cookbook}.zip">download zip</a>
 
 ${summary}
 </summary>
@@ -68,7 +68,6 @@ RECIPE_DIR="${ROOT_DIR}/recipes"
 BASE_GH_URL="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download"
 DOC_FILE="${ROOT_DIR}/docs/readme.md"
 DOC_DIR=$(dirname ${DOC_FILE})
-LATEST_RELEAST=$1
 
 # Main
 mkdir -p ${DOC_DIR}
