@@ -52,7 +52,6 @@ jobs:
           id: ${{ steps.create_release.outputs.id }}
 
       - name: Pinning artifacts in tag 'Latest'
-        id: upload_artifacts
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
