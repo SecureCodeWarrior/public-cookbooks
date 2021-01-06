@@ -239,10 +239,7 @@ Examples of simple Java mistakes that can be easily detected and fixed with Sens
 
 </details>
 
-- [Sensei](https://www.securecodewarrior.com/sensei)
-- [Sensei in action (video)](https://www.youtube.com/watch?v=mjXGliXJ7M8)
-- [Sensei blog examples](https://github.com/SecureCodeWarrior/sensei-blog-examples)
-- [Secure Code Warrior](https://www.securecodewarrior.com)
+## Extras
 
 <details>
 <summary><strong>Java Gotchas</strong> - 1 recipe(s) - [download](https://github.com/SecureCodeWarrior/public-cookbooks/releases/download//LATEST_RELEAST/javagotchas.zip)
