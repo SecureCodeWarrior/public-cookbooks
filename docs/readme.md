@@ -12,41 +12,34 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 
 ## Cookbooks
 
-<details><summary><strong>Basic security set</strong>
-- 49 recipes
-- <a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</a>
-- <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a>
+<details>
+<summary><strong>Basic security set</strong> - external recipe(s) -
+
 <p>Cookbook which can be used as a starting point for security</p>
 </summary>
 
-<i>This cookbook contains a set of low effort recipes that can be used to detect, fix and prevent common recurring critical and high severity vulnerabilities. Enabling this cookbook will set a security baseline. The expected outcome from this cookbook is not to fix issues that are currently present in the codebase. Because we expect that these flaws have been detected by existing security measures such as peer reviews, penetration tests, and SAST tools. The main purpose is that we prevent new instances of these issues from being introduced in the codebase. Because catching these typical flaws late during development or even in production would increase the cost and time of fixing the issues significantly. Overall, this cookbook gives you the opportunity to improve the state of security by preventing the reappearance from common flaws.</i>
+- 49 recipes
+- <a href="https://sensei-cookbook-registry.nonprod.securecodewarrior.com/securecodewarrior/security/basic-protection-set.zip">download .zip</a>
+- <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set.git">use .git</a>
 
-<h4>org.yaml.snakeyaml</h4>
+_This cookbook contains a set of low effort recipes that can be used to detect, fix and prevent common recurring critical and high severity vulnerabilities. Enabling this cookbook will set a security baseline. The expected outcome from this cookbook is not to fix issues that are currently present in the codebase. Because we expect that these flaws have been detected by existing security measures such as peer reviews, penetration tests, and SAST tools. The main purpose is that we prevent new instances of these issues from being introduced in the codebase. Because catching these typical flaws late during development or even in production would increase the cost and time of fixing the issues significantly. Overall, this cookbook gives you the opportunity to improve the state of security by preventing the reappearance from common flaws._
+
 Protection against code injection
 
-<ul>
-<li>org.yaml.snakeyaml.Yaml</li>
-</ul>
+*   org.yaml.snakeyaml.Yaml
 
-<h4>java.sql</h4>
 Protection against sql injection
 
-<ul>
-<li>java.sql.Statement</li>
-<li>java.sql.Connection</li>
-</ul>
+*   java.sql.Statement
+*   java.sql.Connection
 
-<h4>java.xml</h4>
 Protection against XML External Entities/Entity Expansion
 
-<ul>
-<li>javax.xml.parsers.DocumentBuilderFactory</li>
-<li>javax.xml.parsers.SAXParserFactory</li>
-<li>javax.xml.transform.TransformerFactory</li>
-<li>javax.xml.validation.SchemaFactory</li>
-<li>javax.xml.xpath.XPathFactory</li>
-</ul>
-</details>
+*   javax.xml.parsers.DocumentBuilderFactory
+*   javax.xml.parsers.SAXParserFactory
+*   javax.xml.transform.TransformerFactory
+*   javax.xml.validation.SchemaFactory
+*   javax.xml.xpath.XPathFactory
 
 <details><summary><strong>Basic Protection Set Recipes List</strong>
 | See <a href="https://github.com/SecureCodeWarrior/cookbook-basic-protection-set">Basic Protection Set Recipes</a> at GitHub
@@ -202,44 +195,44 @@ Protection against XML External Entities/Entity Expansion
 <dd>Could lead to Remote Code Execution</dd>
 
 </dl>
-</details>
 
-<details><summary><strong>Blog Examples List</strong>
-- 19 recipes
-- See <a href="https://github.com/SecureCodeWarrior/sensei-blog-examples">Sensei Blog Examples Recipes</a> at GitHub
+</details>
+</details>
+<details>
+<summary><strong>Java Gotchas</strong> - 1 recipe(s) -
+
+<p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
 </summary>
 
 <h4>Overview</h4>
-
 <ul>
-<li>POJO
-    <ul>
-        <li>Converting System.out.println to using a Logger</li>
-        <li>Adding a Private Constructor to a Utility Class</li>
-        <li>Basic Immutability</li>
-    </ul>
-</li>
-<li>JUnit 5
-    <ul>
-        <li>Adding and Removing Annotations</li>
-        <li>Adding Parameters to Annotations</li>
-        <li>Creating Library Documentation Links to Tutorials and Examples</li>
-        <li>Amending Visibility Modifiers of Methods and Classes</li>
-    </ul>
-</li>
-<li>Guice
-    <ul>
-        <li>Detecting Forgotten Guice Dependency Injection Wiring</li>
-    </ul>
-</li>
-<li>SQL Injection Fixes
-    <ul>
-        <li>Fix SQL Injection Vulnerability</li>
-    </ul>
-</li>
+<li>split "." does not split a string delimited by 'full stop' characters</li>
 </ul>
+</details>
+<details>
+<summary><strong>Secure Code Warrior Blog Examples</strong> - external recipe(s) -
 
-<h4>Details</h4>
+<p>Recipes used to support the [Secure Code Warrior Blog examples](https://github.com/SecureCodeWarrior/sensei-blog-examples)</p>
+</summary>
+
+- 19 recipes
+- See <a href="https://github.com/SecureCodeWarrior/sensei-blog-examples">Sensei Blog Examples Recipes</a> at GitHub
+
+*   POJO
+    *   Converting System.out.println to using a Logger
+    *   Adding a Private Constructor to a Utility Class
+    *   Basic Immutability
+*   JUnit 5
+    *   Adding and Removing Annotations
+    *   Adding Parameters to Annotations
+    *   Creating Library Documentation Links to Tutorials and Examples
+    *   Amending Visibility Modifiers of Methods and Classes
+*   Guice
+    *   Detecting Forgotten Guice Dependency Injection Wiring
+*   SQL Injection Fixes
+    *   Fix SQL Injection Vulnerability
+
+<details><summary>More Details</summary>
 <dl>
 <dt>JUnit: Make @Disabled @Test from SKIPTHIS</dt>
 <dd>Stop naming methods SKIPTHIS, use @Disabled @Test instead</dd>
@@ -297,24 +290,12 @@ Protection against XML External Entities/Entity Expansion
 
 <dt>Immutable: avoid void methods</dt>
 <dd>void methods have side-effects, return a new object or primitve instead</dd>
-
 </dl>
 </details>
-
-<details>
-<summary><strong>Java Gotchas</strong> - 1 recipe(s) -
-<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip">download .zip</a>
-<p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
-</summary>
-
-<h4>Overview</h4>
-<ul>
-<li>split "." does not split a string delimited by 'full stop' characters</li>
-</ul>
 </details>
 <details>
 <summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) -
-<a href="https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/spring.zip">download .zip</a>
+
 <p>A cookbook that simplifies Spring Boot development. It aims to automate common routines
 performed by developers, preventing them to repeat themselves or introduce known issues</p>
 </summary>
