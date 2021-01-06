@@ -1,5 +1,4 @@
-# Java Gotchas
-
+## Java Gotchas
 Examples of simple Java mistakes that can be easily detected and fixed with Sensei.
 
 e.g.
