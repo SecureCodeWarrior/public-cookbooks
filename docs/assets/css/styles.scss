@@ -1,0 +1,24 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@media screen and (min-width: 64em){
+    .main-content{
+        max-width:84rem;
+    }
+}
+
+details {
+    padding-left: 15px;
+}
+
+details > summary {
+    margin-bottom: 10px;
+    margin-left: -15px;
+}
+
+details > summary > p {
+    margin: 0 0 0 15px;
+    font-style: italic;
+}
