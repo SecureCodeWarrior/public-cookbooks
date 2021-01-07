@@ -20,3 +20,5 @@ jobs:
 
       - name: Validate
         run: .github/workflows/pull-request-validation.sh ${{ github.event.number }}
+        env:
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
