@@ -15,6 +15,19 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/recipes) folder.
 
 <details>
+<summary><strong>Android Security rules</strong> - 2 recipe(s) -
+
+<p></p>
+</summary>
+
+Recipes created from security recommendations in the official Android documentation (https://developer.android.com/)
+
+<h4>Overview</h4>
+<ul>
+<li>WebView best practices</li>
+</ul>
+</details>
+<details>
 <summary><strong>Basic security set</strong> - external recipe(s) -
 
 <p>Cookbook which can be used as a starting point for security</p>
