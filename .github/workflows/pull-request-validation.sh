@@ -41,13 +41,13 @@ check_if_contains_rules_without_description() {
 }
 
 find_rules_places_in_the_wrong_folder() {
-  recipe_dir=${RECIPE_DIR/${ROOT_DIR}/}
+  recipe_dir=${RECIPE_DIR/${ROOT_DIR}/""}
 
   find ${ROOT_DIR} -name 'rules.sensei' | while read file; do
 
     if ! beginswith "${RECIPE_DIR}" $file; then
       message="Sensei Cookbook placed in the wrong folder:\n
-- **found file**: ${file/${ROOT_DIR}/}\n
+- **found file**: ${file/${ROOT_DIR}/""}\n
 - **expected place**: ${recipe_dir}
 "
       add_comment_to_pull_request "$message"
