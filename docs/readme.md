@@ -242,7 +242,7 @@ Protection against XML External Entities/Entity Expansion
 </details>
 </details>
 <details>
-<summary><strong>Java Gotchas</strong> - 1 recipe(s) -
+<summary><strong>Java Gotchas</strong> - 4 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip'>download .zip</a>
 <p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
 </summary>
@@ -250,6 +250,7 @@ Protection against XML External Entities/Entity Expansion
 <h4>Overview</h4>
 <ul>
 <li>split "." does not split a string delimited by 'full stop' characters</li>
+<li>Throwable.printStacktrace(...) methods can give an attacker valuable details about program operation.</li>
 </ul>
 </details>
 <details>
@@ -367,7 +368,7 @@ Protection against XML External Entities/Entity Expansion
 </details>
 </details>
 <details>
-<summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) -
+<summary><strong>Spring Boot Cookbook</strong> - 10 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/spring.zip'>download .zip</a>
 <p>A cookbook that simplifies Spring Boot development. It aims to automate common routines
 performed by developers, preventing them to repeat themselves or introduce known issues</p>
@@ -378,6 +379,7 @@ It covers the following modules:
 <li>Spring Beans</li>
 <li>Spring MVC</li>
 <li>Spring Data</li>
+<li>Spring Security</li>
 </ul>
 </details>
 
