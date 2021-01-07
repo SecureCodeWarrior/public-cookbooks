@@ -2,8 +2,9 @@
 cd $(dirname $0)
 set -e
 
-# Begins with
+# Utilities
 beginswith() { case $2 in "$1"*) true;; *) false;; esac; }
+json_escape() { echo '{}'| jq --arg st "${1}" '. + { str: $st } | .str'; }
 
 # Validate
 validate_cookbook_readme_html_format() {
@@ -41,13 +42,13 @@ check_if_contains_rules_without_description() {
 }
 
 find_rules_places_in_the_wrong_folder() {
-  recipe_dir=${RECIPE_DIR/${ROOT_DIR}/""}
+  recipe_dir=${RECIPE_DIR/${ROOT_DIR}/}
 
   find ${ROOT_DIR} -name 'rules.sensei' | while read file; do
 
     if ! beginswith "${RECIPE_DIR}" $file; then
-      message="Sensei Cookbook placed in the wrong folder:\n
-- **found file**: ${file/${ROOT_DIR}/""}\n
+      message="Sensei Cookbook placed in the wrong folder:
+- **found file**: ${file/${ROOT_DIR}/}
 - **expected place**: ${recipe_dir}
 "
       add_comment_to_pull_request "$message"
@@ -58,15 +59,23 @@ find_rules_places_in_the_wrong_folder() {
 }
 
 add_comment_to_pull_request() {
-  message=$@
+  message="
+### Pull Request Check Results
+$@
 
-  echo $message
+> This is an automated report generated based on the latest check results.
+> For further details, please check our [contributor guide](https://github.com/SecureCodeWarrior/public-cookbooks/wiki/How-to-contribute-cookbooks).
+"
+
+  echo $@
   echo 
   echo "Updating Pull Request..."
 
+  escaped_message=$(json_escape "$message")
+
   curl -s \
     -H "Authorization: token ${CUSTOM_GITHUB_TOKEN}" \
-    -X POST -d "{\"body\": \"### Pull Request Validation Result\n${message}\"}" \
+    -X POST -d "{\"body\": ${escaped_message} }" \
     "https://api.github.com/repos/SecureCodeWarrior/public-cookbooks/issues/${PULL_REQUEST_NUMBER}/comments"
 }
 
