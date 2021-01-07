@@ -34,6 +34,7 @@
         "ruleName": "Exception: Created but not thrown",
         "ruleID": "c170e11a-9432-41fb-a036-fbd7e0f61498",
         "disableRuleIDs": [],
+        "ruleDescriptionFile": "ExceptionCreatedbutnotthrown.html",
         "ruleShortDescription": "If we create an exception we want to throw it as well",
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
