@@ -1,8 +1,8 @@
 cookbooks:
-- all: [ "recipes/**/*" ]
+- all: [ 'recipes/**/*' ]
 
 docs:
-- any: [ "docs/**/*" ]
+- any: [ 'docs/**/*' ]
 
 ci-cd:
-- any: [ ".github/**/*" ]
+- any: [ '.github/**/*' ]
