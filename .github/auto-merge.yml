@@ -4,7 +4,7 @@ updateBranch: true
 mergeMethod: squash
 mergeCommitMessage: |
   {title} (#{number})
-  
+
   {body}
 
 maxRequestedChanges:
@@ -15,3 +15,4 @@ requiredBaseBranches:
 
 requiredLabels:
 - merge
+- cookbooks
