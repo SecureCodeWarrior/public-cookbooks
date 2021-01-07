@@ -61,11 +61,13 @@ add_comment_to_pull_request() {
   message=$@
 
   echo $message
+  echo 
+  echo "Updating Pull Request..."
 
   curl -s \
     -H "Authorization: token ${CUSTOM_GITHUB_TOKEN}" \
     -X POST -d "{\"body\": \"### Pull Request Validation Result\n${message}\"}" \
-    "https://api.github.com/repos/SecureCodeWarrior/public-cookbooks/issues/${PULL_REQUEST_NUMBER}/comments" > /dev/null
+    "https://api.github.com/repos/SecureCodeWarrior/public-cookbooks/issues/${PULL_REQUEST_NUMBER}/comments"
 }
 
 # Variables
