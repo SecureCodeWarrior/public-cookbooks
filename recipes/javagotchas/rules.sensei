@@ -56,6 +56,24 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: \"printStackTrace\"\n    type: \"java.lang.Throwable\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Throwable.printStacktrace - just print the message instead\"\n  actions:\n  - rewrite:\n      to: \"System.err.println({{{ qualifier }}}.getMessage())\"\n",
+        "ruleName": "Info Leakage: Throwable.printStacktrace leaks valuable program structure information",
+        "category": "infoexposure:debuginfo",
+        "cweCategory": 200,
+        "ruleID": "51a547ad-3204-4704-a4bf-29a13a4c2904",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "ThrowablePrintStacktraceLeaksInfo.html",
+        "ruleShortDescription": "Info Leakage - printing a stacktrace gives valuable information about software internals, including library/framework names and versions, to an attacker",
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
