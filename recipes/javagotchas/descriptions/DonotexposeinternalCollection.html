@@ -1,0 +1,75 @@
+<h2>Abstract</h2>
+Class methods should return immutable copies of private member variables of type <code>java.util.Collection</code> to prevent external changes to the state of the object. This is the encapsulation principle of OOP.
+
+<h2>Description</h2>
+Returning an instance's private field of type <code>java.util.Collection</code> allows external manipulation of the
+    internal state of an instance of the class because the collections are mutable. This can lead to unexpected program
+    behavior when external classes manipulate data in the collection, especially in multi-threaded situations.
+
+Class methods should return immutable copies of private member variables of type <code>java.util.Collection</code>
+
+<table>
+    <tr>
+        <th>Before</th>
+        <th>After</th>
+    </tr>
+    <tr>
+        <td><pre>public class ListExample {
+    private List&#x3C;String&#x3E; myList;
+
+    public List&#x3C;String&#x3E; getMyList() {
+        return myList;
+    }
+}
+</pre>
+        </td>
+        <td><b>After applying Quickfix - Return an unmodifiable copy of the Collection</b>
+
+<pre>public class ListExample {
+    private List&#x3C;String&#x3E; myList;
+
+    public List&#x3C;String&#x3E; getMyList() {
+    <b>return (List&#x3C;String&#x3E;)java.util.Collections.unmodifiableCollection(myList);</b>
+    }
+}
+</pre>
+<b>After applying Quickfix - return an unmodifiable List</b>
+
+<pre>public class ListExample {
+    private List&#x3C;String&#x3E; myList;
+
+    public List&#x3C;String&#x3E; getMyList() {
+    <b>return java.util.Collections.unmodifiableList(myList);</b>
+    }
+}
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td><pre>public class SetExample {
+    private Set&#x3C;String&#x3E; mySet;
+
+    public Set&#x3C;String&#x3E; getSet() {
+        return mySet;
+    }
+}
+</pre>
+        </td>
+        <td><b>After applying Quickfix - return an unmodifiable Set</b>
+<pre>public class SetExample {
+    private Set&#x3C;String&#x3E; mySet;
+
+    public Set&#x3C;String&#x3E; getSet() {
+    <b>return java.util.Collections.unmodifiableSet(mySet);</b>
+    }
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<h2>Resources</h2>
+<ul>
+    <li>Wikipedia definition of <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">Encapsulation (computer programming)</a></li>
+    <li>SEI CERT Oracle Coding Standard for Java <a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ05-J.+Do+not+return+references+to+private+mutable+class+members">OBJ05-J. Do not return references to private mutable class members</a></li>
+</ul>
