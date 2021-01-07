@@ -15,7 +15,7 @@ jobs:
       - name: Installing Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install zip jq pip3
+          sudo apt-get install zip jq python-pip3
           sudo pip3 install html5lib
 
       - name: Validate
