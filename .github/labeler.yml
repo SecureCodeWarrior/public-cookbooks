@@ -4,4 +4,5 @@ cookbooks:
 docs:
 - any: [ "docs/**/*" ]
 
-ci-cd: ".github/**/*"
+ci-cd:
+- ".github/**/*"
