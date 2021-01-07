@@ -40,6 +40,21 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  expression:\n    in:\n      condition: {}\n    value:\n      caseSensitive: false\n      matches: \".* \u0026 .*\"",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Replace bitwise AND operator to logical AND operator\"\n    actions:\n      - rewrite:\n          to: \"{{#sed}}s/\u0026/\u0026\u0026/g,{{{ . }}}{{/sed}}\"",
+        "ruleName": "Condition: use logical AND operator ",
+        "ruleID": "8027b247-1d93-4b78-87e8-04a02d608056",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "Use logical AND operator instead of bitwise AND operator ",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
