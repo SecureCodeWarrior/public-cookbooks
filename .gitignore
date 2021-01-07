@@ -1,4 +1,11 @@
+# Common non project artifacts
 *.zip
 *.jar
 .DS_Store
+
+# Common IDEs files
+.idea
+*.iml
+.classpath
+.project
 

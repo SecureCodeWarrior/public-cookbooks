@@ -1,0 +1,24 @@
+name: 'Pull Request Check'
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validation:
+    name: 'Validate Cookbook Documentation'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Installing Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install zip jq python3-pip
+          sudo pip3 install html5lib
+
+      - name: Validate
+        run: .github/workflows/pull-request-validation.sh ${{ github.event.number }}
+        env:
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}

@@ -1,0 +1,17 @@
+name: "Apply Labels"
+
+on: 
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/labeler@v3
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: .github/labeler.yml
+        sync-labels: true
