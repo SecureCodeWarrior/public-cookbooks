@@ -12,16 +12,92 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          followedBy:\n            methodcall:\n              name: \"setMixedContentMode\"\n          name: \"getSettings\"\n    type: \"android.webkit.WebView\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Set mixed content mode to MIXED_CONTENT_NEVER_ALLOW\"\n  actions:\n  - addMethodCall:\n      name: \"getSettings().setMixedContentMode\"\n      arguments:\n      - \"android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW\"\n      position: \"first-available-spot\"\n",
+        "ruleName": "Android WebView best practices: Set mixed content mode",
+        "ruleID": "7ba80c43-86e5-4b23-af0d-5bbd4ff0e1e9",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "WebView setting with security implications",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
+            "object": {
+              "property": "android.defaultConfig.minSdkVersion",
+              "propertyType": 1,
+              "desiredValue": "21",
+              "useRegex": false,
+              "intPropertyMatchingType": 2,
+              "duplicateStrategy": 0,
+              "trueIfNotFound": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          followedBy:\n            methodcall:\n              name: \"setAllowContentAccess\"\n          name: \"getSettings\"\n    type: \"android.webkit.WebView\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Disable content access\"\n  actions:\n  - addMethodCall:\n      name: \"getSettings().setAllowContentAccess\"\n      arguments:\n      - \"false\"\n      position: \"first-available-spot\"\n",
+        "ruleName": "Android WebView best practices: Disable Content Access",
+        "ruleID": "553ccc99-54bc-4d45-8a29-503c29e45b98",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "WebView setting with security implications",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          followedBy:\n            methodcall:\n              name: \"setGeolocationEnabled\"\n          name: \"getSettings\"\n    type: \"android.webkit.WebView\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Disable geolocation\"\n  actions:\n  - addMethodCall:\n      name: \"getSettings().setGeolocationEnabled\"\n      arguments:\n      - \"false\"\n      position: \"first-available-spot\"\n",
+        "ruleName": "Android WebView best practices: Disable Geolocation",
+        "ruleID": "0b797d44-6fb2-46bc-bb52-94538281ab08",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "WebView setting with privacy implications",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          followedBy:\n            methodcall:\n              name: \"setAllowFileAccess\"\n          name: \"getSettings\"\n    type: \"android.webkit.WebView\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Disable file access\"\n  actions:\n  - addMethodCall:\n      name: \"getSettings().setAllowFileAccess\"\n      arguments:\n      - \"false\"\n      position: \"first-available-spot\"\n",
+        "ruleName": "Android WebView best practices: Disable File Access",
+        "ruleID": "9813486e-031f-4861-93d4-60284e1fb253",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "WebView setting with security implications",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
         "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \"true\"\n    name:\n      matches: \"setJavaScriptEnabled|setAllowFileAccess|setGeolocationEnabled|setAllowContentAccess\"\n    type: \"android.webkit.WebSettings\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Change WebView setting to false\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
-        "ruleName": "Android WebView best practices: Disable settings",
-        "category": "improper_platform_usage:webview_settings",
+        "ruleName": "Android WebView best practices: Insecure settings",
         "ruleID": "8a8f7dd7-d5a4-41ca-9e1f-27af8d041c9e",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
         "ruleShortDescription": "Enabling this WebView setting has security implications",
-        "ruleErrorLevel": 0,
+        "ruleErrorLevel": 1,
         "ruleEnabled": true,
         "tags": "explicit;approve",
         "ruleScope": []
@@ -30,16 +106,32 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name:\n            matches: \"(setGeolocationEnabled|setAllowContentAccess)\"\n          \"on\":\n            methodcall:\n              name: \"getSettings\"\n              \"on\":\n                instanceCreation: {}\n    type: \"android.webkit.WebView\"\n",
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          followedBy:\n            methodcall:\n              name: \"setJavaScriptEnabled\"\n          name: \"getSettings\"\n    type: \"android.webkit.WebView\"\n",
         "mver": 6,
-        "yamlQuickFixCode": "availableFixes:\n- name: \"Fix the code by ...\"\n  actions:\n  - rewrite:\n      to: \"\"\n      target: \"self\"\n",
-        "ruleName": "Android WebView best practices: Disable settings",
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Disable JavaScript\"\n  actions:\n  - addMethodCall:\n      name: \"getSettings().setJavaScriptEnabled\"\n      arguments:\n      - \"false\"\n      position: \"first-available-spot\"\n",
+        "ruleName": "Android WebView best practices: Disable JavaScript",
         "ruleID": "17fed260-0137-4e26-8795-42e5b4eed9be",
         "disableRuleIDs": [],
-        "ruleShortDescription": "This text will be shown as a tooltip when code violates this recipe",
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "WebView setting with security implications",
         "ruleErrorLevel": 2,
-        "ruleEnabled": false,
-        "tags": "not-finished",
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        referenceTo:\n          anyOf:\n          - name: \"android.webkit.WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE\"\n          - name: \"android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW\"\n    name: \"setMixedContentMode\"\n    type: \"android.webkit.WebSettings\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use MIXED_CONTENT_NEVER_ALLOW\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW\"\n",
+        "ruleName": "Android WebView best practices: Insecure mixed content mode",
+        "ruleID": "c941279f-b1e6-4f7a-afb4-ad9d9c187e77",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
+        "ruleShortDescription": "Insecure content may be allowed to be loaded by a secure origin",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
         "ruleScope": []
       }
     },

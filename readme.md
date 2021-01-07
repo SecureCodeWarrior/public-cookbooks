@@ -1,5 +1,4 @@
 # Sensei Cookbook index
-
 This repo contains a list of quality coding pattern cookbooks that you can use with [Sensei](https://sensei-docs-beta.securecodewarrior.com).
 
 ## About
