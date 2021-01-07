@@ -19,4 +19,4 @@ jobs:
           sudo pip3 install html5lib
 
       - name: Validate
-        run: .github/workflows/pull-request-validation.sh
+        run: .github/workflows/pull-request-validation.sh ${{ github.event.number }}
