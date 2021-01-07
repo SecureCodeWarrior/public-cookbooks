@@ -207,7 +207,7 @@
         "disableRuleIDs": [],
         "ruleShortDescription": "Enabling this WebView setting has security implications",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
+        "ruleEnabled": false,
         "tags": "not-finished",
         "ruleScope": [
           {
@@ -223,7 +223,8 @@
             }
           }
         ]
-      },
+      }
+    },
       "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
       "model": {
         "expandNamespaces": false,
