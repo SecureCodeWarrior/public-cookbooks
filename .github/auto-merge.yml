@@ -1,0 +1,17 @@
+reportStatus: true
+updateBranch: true
+
+mergeMethod: squash
+mergeCommitMessage: |
+  {title} (#{number})
+  
+  {body}
+
+maxRequestedChanges:
+  COLLABORATOR: 0
+
+requiredBaseBranches:
+- master
+
+requiredLabels:
+- merge

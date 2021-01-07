@@ -1,0 +1,7 @@
+cookbooks:
+- all: [ "recipes/**/*" ]
+
+docs:
+- any: [ "docs/**/*" ]
+
+ci-cd: ".github/**/*"

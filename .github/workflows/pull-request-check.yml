@@ -1,0 +1,22 @@
+name: 'Pull Request Check'
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validation:
+    name: 'Validate Cookbook Documentation'
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Installing Dependencies
+        run: |
+          sudo apt-get install zip jq pip
+          sudo pip install html5lib
+
+      - name: Validate
+        run: .github/workflows/pull-request-validation.sh
