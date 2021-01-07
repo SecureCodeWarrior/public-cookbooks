@@ -1,0 +1,29 @@
+<h1>Do not expose internal array</h1>
+
+<p>Exposed internal arrays are still mutable. This violates the object encapsulation rule for the internal property.</p>
+
+<p><strong>before:</strong></p>
+
+<pre>
+class Dto {
+    protected String[] values;
+
+    public String[] getValues()
+    {
+        return values;
+    }
+}
+</pre>
+
+<p><strong>after:</strong></p>
+
+<pre>
+class Dto {
+    protected String[] values;
+
+    public String[] getValues()
+    {
+        return Arrays.copyOf(values, values.length);
+    }
+}
+</pre>
