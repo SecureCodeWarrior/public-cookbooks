@@ -7,4 +7,5 @@ It covers the following modules:
 <li>Spring Beans</li>
 <li>Spring MVC</li>
 <li>Spring Data</li>
+<li>Spring Security</li>
 </ul>
