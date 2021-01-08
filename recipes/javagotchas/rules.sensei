@@ -28,7 +28,7 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  instanceCreation:\n    not:\n        in:\n          throw: {}\n    type: \"java.lang.Throwable\"\n",
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      anyOf:\n      - in:\n          throw: {}\n      - in:\n          instanceCreation: {}\n      - in:\n          methodcall: {}\n    type: \"java.lang.Throwable\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Add a throw\"\n  actions:\n  - rewrite:\n      to: \"throw {{{ . }}}\"\n      target: \"self\"\n",
         "ruleName": "Exception: Created but not thrown",
