@@ -220,6 +220,23 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  argument:\n    referenceTo:\n      name:\n        matches: \"android.content.Context.MODE_WORLD_(READABLE|WRITEABLE)\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Change mode to Context.MODE_PRIVATE\"\n  actions:\n  - rewrite:\n      to: \"Context.MODE_PRIVATE\"\n      target: \"self\"\n",
+        "ruleName": "Android storage best practices: insecure operating mode",
+        "category": "improper_platform_usage:insecure_file_directory_permissions",
+        "ruleID": "d5713e07-d42e-4d8f-a2b2-e62a2d682505",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "Androidstoragebestpracticesinsecureoperatingmode.html",
+        "ruleShortDescription": "When using this value other applications will have access to your application\u0027s data",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
