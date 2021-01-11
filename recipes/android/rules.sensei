@@ -133,6 +133,64 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:usesCleartextTraffic",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change android:usesCleartextTraffic to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Manifest best practices: disable cleartext traffic",
+        "ruleID": "9059700d-74a1-4c5c-818f-5d27636cddc5",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "ManifestbestpracticesdisableusesCleartextTraffic.html",
+        "ruleShortDescription": "When android:usesCleartextTraffic\u003d\"true\" is set the application will allow clear text traffic which could lead to data leakage",
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
