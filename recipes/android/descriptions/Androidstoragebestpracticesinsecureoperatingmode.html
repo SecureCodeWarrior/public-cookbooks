@@ -1,0 +1,16 @@
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted that state that sensitive data should be stored in a private location, inaccessible from other applications.
+<h2>Description</h2>
+Developers must ensure that sensitive information is written to a private location which is inaccessible by other applications.
+One solution is to write data to the internal storage of the device instead of the external storage.<br/>
+The following code example shows how to create a file on the internal storage. A flag should be set to ensure that the file can only be accessed by the current application. To ensure good code quality it is recommended to use a meaningful constant for this flag instead of its raw value.
+
+<h4>Before:</h4>
+<pre>
+SharedPreferences sharedPreferences = getSharedPreferences("customer_data", Context.MODE_WORLD_WRITEABLE);
+</pre>
+
+<h4>After:</h4>
+<pre>
+SharedPreferences sharedPreferences = getSharedPreferences("customer_data", Context.MODE_PRIVATE);
+</pre>

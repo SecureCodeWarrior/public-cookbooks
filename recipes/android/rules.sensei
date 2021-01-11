@@ -222,6 +222,66 @@
       }
     },
     {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:allowBackup",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change android:allowBackup to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Android Manifest best practices: Disable Backups",
+        "category": "code_tampering:backups_enabled",
+        "ruleID": "5c354f81-611d-415d-9ae8-905bb9a7579d",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidManifestbestpracticesDisableBackups.html",
+        "ruleShortDescription": "Enabling backups could lead to potential data leakage",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "comment": "",
+        "ruleScope": []
+      }
+    },
+    {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
         "yamlCode": "search:\n  argument:\n    referenceTo:\n      name:\n        matches: \"android.content.Context.MODE_WORLD_(READABLE|WRITEABLE)\"\n",
