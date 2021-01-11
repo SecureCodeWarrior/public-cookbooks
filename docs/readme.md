@@ -61,6 +61,8 @@ It covers the following protections:
 <p>Examples of best practices that can be easily detected and fixed with Sensei</p>
 </summary>
 
+Recipes created from security recommendations in the official Android documentation (https://developer.android.com/)
+
 <h4>Overview</h4>
 <ul>
 <li>Not releasing DynamoDbClient</li>
