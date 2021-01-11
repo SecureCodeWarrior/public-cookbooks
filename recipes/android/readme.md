@@ -12,4 +12,10 @@ Recipes created from security recommendations in the official Android documentat
          <li>Never allow mixed content</li>
       </ul>
     </li>
+    <li>Manifest best practices
+      <ul>
+         <li>Disable backups</li>
+         <li>Disable cleartext traffic</li>
+      </ul>
+    </li>
 </ul>
