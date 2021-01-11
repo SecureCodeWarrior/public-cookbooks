@@ -16,7 +16,7 @@ Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/pu
 
 <details>
 <summary><strong>Android Security rules</strong> - 2 recipe(s) -
-
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/android.zip'>download .zip</a>
 <p></p>
 </summary>
 
@@ -243,7 +243,7 @@ Protection against XML External Entities/Entity Expansion
 </details>
 <details>
 <summary><strong>Java Gotchas</strong> - 1 recipe(s) -
-
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip'>download .zip</a>
 <p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
 </summary>
 
@@ -368,7 +368,7 @@ Protection against XML External Entities/Entity Expansion
 </details>
 <details>
 <summary><strong>Spring Boot Cookbook</strong> - 9 recipe(s) -
-
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/spring.zip'>download .zip</a>
 <p>A cookbook that simplifies Spring Boot development. It aims to automate common routines
 performed by developers, preventing them to repeat themselves or introduce known issues</p>
 </summary>
