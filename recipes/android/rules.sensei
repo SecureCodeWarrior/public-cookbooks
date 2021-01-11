@@ -183,6 +183,7 @@
           }
         ],
         "ruleName": "Manifest best practices: disable cleartext traffic",
+        "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
         "ruleID": "9059700d-74a1-4c5c-818f-5d27636cddc5",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "ManifestbestpracticesdisableusesCleartextTraffic.html",
