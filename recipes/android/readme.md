@@ -16,6 +16,7 @@ Recipes created from security recommendations in the official Android documentat
       <ul>
          <li>Disable backups</li>
          <li>Disable cleartext traffic</li>
+         <li>Disable explicit exported components</li>
       </ul>
     </li>
 </ul>
