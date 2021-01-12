@@ -1,0 +1,14 @@
+<h2>Description</h2>
+<p>When an android component has the attribute <code>android:exported="true"</code>, components of other applications will be able to call the exported component. This could allow an adversary to gain access to sensitive information, trick a user into thinking they're still using the malicious application, or even modify the internal state of the application.</p> 
+
+<p>When defining an intent-filter, android components are exported by default. When other applications shouldn't call your component, it's considered good practice to explicitly set the exported value to false. </p>
+
+<h4>Before:</h4>
+<pre>
+android:exported="true"
+</pre>
+
+<h4>After:</h4>
+<pre>
+android:exported="false"
+</pre>

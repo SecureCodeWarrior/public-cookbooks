@@ -297,6 +297,66 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": ".*",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change android:exported to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Manifest best practices: explicit exported components",
+        "category": "improper_platform_usage:incorrect_activity_configuration",
+        "cweCategory": 926,
+        "ruleID": "9c87e3b9-7b4a-412a-a8ab-11e7b708be50",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "Manifestbestpracticesdisableexportofandroidcomponents.html",
+        "ruleShortDescription": "When android:exported is set to true any application will be able to call this component.",
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
