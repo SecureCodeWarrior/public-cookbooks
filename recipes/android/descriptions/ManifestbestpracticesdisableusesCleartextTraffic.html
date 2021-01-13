@@ -1,9 +1,28 @@
-<h2>Abstract</h2>
+<h4>Abstract</h4>
 Out of best practices and Android coding guidelines, recommendations were abstracted which state that communication should be done over encrypted channels, such as HTTPS.
-<h2>Description</h2>
-Set the <code>android:usesCleartextTraffic</code> attribute in your manifest file to <code>false</code>.
-The default value for API level 27 or lower is <code>true</code> and API level 28 or higher is <code>false</code>.
-<h4>Correct code example:</h4>
-<pre>
-android:usesCleartextTraffic="false"
-</pre>
+<h4>Description</h4>
+<p>When <code>android:usesCleartextTraffic</code> is set to <code>true</code>, the application will allow outgoing requests over HTTP, resulting in a potential data leakage or a Man-In-The-Middle (MITM) attack.</p>
+<p>By setting the value to <code>false</code>, the application will refuse the app's requests to use cleartext traffic.</p>
+<p>The default value for API level 27 or lower is <code>true</code> and API level 28 or higher is <code>false</code>.
+</p>
+<table>
+  <tr>
+    <th>Before</th>
+    <th>After</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+   android:usesCleartextTraffic="<b>true</b>"</pre>
+    </td>
+    <td>
+      <pre>
+	android:usesCleartextTraffic="<b>false</b>"
+    </pre>
+    </td>
+  </tr> 
+</table>
+<h4>Resources</h4>
+<ul>
+  <li><a href="https://developer.android.com/guide/topics/manifest/application-element#usesCleartextTraffic">Android Documentation</a></li>
+</ul>
