@@ -79,6 +79,22 @@
         "comment": "Should be in an opinionated set about logging frameworks\n\nf.e.\n- java.util.logging.Logger\n- slf4j\n- log4j\n- logback\n- ... \n",
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"java.lang.String\"\n        value:\n          matches: \".\"\n    name: \"indexOf\"\n    type: \"java.lang.String\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use char instead of String\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"\u0027{{{value}}}\u0027\"\n",
+        "ruleName": "Inefficient use of String.indexOf",
+        "ruleID": "e6f4c431-4198-40bb-be47-f62ba3bd9577",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InefficientuseofString.indexOf.html",
+        "ruleShortDescription": "Inefficient use of String.indexOf",
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
