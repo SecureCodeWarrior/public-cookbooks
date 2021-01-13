@@ -28,16 +28,18 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  instanceCreation:\n    not:\n      anyOf:\n      - in:\n          throw: {}\n      - in:\n          instanceCreation: {}\n      - in:\n          methodcall: {}\n    type: \"java.lang.Throwable\"\n",
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      anyOf:\n      - in:\n          throw: {}\n      - in:\n          instanceCreation: {}\n      - in:\n          methodcall: {}\n      - in:\n          assignment: {}\n    type: \"java.lang.Throwable\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Add a throw\"\n  actions:\n  - rewrite:\n      to: \"throw {{{ . }}}\"\n      target: \"self\"\n",
         "ruleName": "Exception: Created but not thrown",
         "ruleID": "c170e11a-9432-41fb-a036-fbd7e0f61498",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "ExceptionCreatedbutnotthrown.html",
-        "ruleShortDescription": "If we create an exception we want to throw it as well",
+        "ruleShortDescription": "Exceptions should be thrown, not just created",
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
+        "comment": "This one could still be refined if the FlowAnalyzer is expanded:\n- Add throw keyword to findable expressions",
+        "tags": "approved",
         "ruleScope": []
       }
     },
@@ -54,6 +56,7 @@
         "ruleShortDescription": "Use logical AND operator instead of bitwise AND operator ",
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
+        "comment": "currently marks the following code incorrectly:\n\nif (\"a \u0026 s\".equals(args)) {\n}\n\n\nTODO: have a separate model to target \u0027binary expression\u0027 with a certain operator \u0027\u0026\u0027 in this case.",
         "ruleScope": []
       }
     },
