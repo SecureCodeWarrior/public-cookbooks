@@ -184,11 +184,12 @@
         ],
         "ruleName": "Manifest best practices: disable cleartext traffic",
         "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
+        "cweCategory": 319,
         "ruleID": "9059700d-74a1-4c5c-818f-5d27636cddc5",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "ManifestbestpracticesdisableusesCleartextTraffic.html",
         "ruleShortDescription": "When android:usesCleartextTraffic\u003d\"true\" is set the application will allow clear text traffic which could lead to data leakage",
-        "ruleErrorLevel": 3,
+        "ruleErrorLevel": 2,
         "ruleEnabled": true,
         "ruleScope": []
       }
@@ -328,6 +329,78 @@
         "ruleErrorLevel": 1,
         "ruleEnabled": true,
         "ruleScope": []
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 5,
+              "attribute": {
+                "optionalAttribute": true,
+                "disallowed": false,
+                "name": "android:usesCleartextTraffic",
+                "attributeNameType": 0,
+                "attributeType": 2,
+                "attributeValue": "",
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set android:usesCleartextTraffic to false",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:usesCleartextTraffic\u003d\"false\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Manifest best pracices: explicitly disable cleartext traffic",
+        "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
+        "cweCategory": 319,
+        "ruleID": "6fbdd2ea-dca3-44a3-a1b9-ecf50d1011e9",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "ManifestbestpracticesdisableusesCleartextTraffic.html",
+        "ruleShortDescription": "API level 27 or lower: When android:usesCleartextTraffic is not set, android will default to allowing cleartext traffic.",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
+            "object": {
+              "property": "android.defaultConfig.minSdkVersion",
+              "propertyType": 1,
+              "desiredValue": "27",
+              "useRegex": false,
+              "intPropertyMatchingType": 4,
+              "duplicateStrategy": 0,
+              "trueIfNotFound": false
+            }
+          }
+        ]
       }
     }
   ],
