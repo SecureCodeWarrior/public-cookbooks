@@ -77,6 +77,23 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        type: \"java.lang.String\"\n        value:\n          matches: \"this._id.\u003d\u003d.*\"\n    name: \"where\"\n    type: \"com.mongodb.client.model.Filters\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use eq() with ObjectId\"\n  actions:\n  - rewrite:\n      to: \"com.mongodb.client.model.Filters.eq(\\\"_id\\\", new ObjectId({{{ arguments.0.operands.1\\\n        \\ }}}))\"\n",
+        "ruleName": "MongoDB: _id NoSQL Injection",
+        "category": "injection:nosql",
+        "ruleID": "cefc4b61-488b-4b56-b6ec-6f50fb9c2638",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "MongoDB_idNoSQLInjection.html",
+        "ruleShortDescription": "Do not use string concatenation in where filters",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
