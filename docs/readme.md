@@ -242,7 +242,7 @@ Protection against XML External Entities/Entity Expansion
 </details>
 </details>
 <details>
-<summary><strong>Java Gotchas</strong> - 4 recipe(s) -
+<summary><strong>Java Gotchas</strong> - 5 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip'>download .zip</a>
 <p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
 </summary>
