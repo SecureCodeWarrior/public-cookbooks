@@ -181,8 +181,8 @@
                 "name": "android:usesCleartextTraffic",
                 "attributeNameType": 0,
                 "attributeType": 0,
-                "attributeValue": "true",
-                "attributeValueType": 0
+                "attributeValue": "true|^$",
+                "attributeValueType": 1
               }
             }
           ],
@@ -210,6 +210,7 @@
             ]
           }
         ],
+        "commonFixes": [],
         "ruleName": "Manifest best practices: disable cleartext traffic",
         "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
         "cweCategory": 319,
@@ -270,6 +271,7 @@
             ]
           }
         ],
+        "commonFixes": [],
         "ruleName": "Android Manifest best practices: Disable Backups",
         "category": "code_tampering:backups_enabled",
         "ruleID": "5c354f81-611d-415d-9ae8-905bb9a7579d",
@@ -347,6 +349,7 @@
             ]
           }
         ],
+        "commonFixes": [],
         "ruleName": "Manifest best practices: explicit exported components",
         "category": "improper_platform_usage:incorrect_activity_configuration",
         "cweCategory": 926,
@@ -373,11 +376,11 @@
             {
               "id": 5,
               "attribute": {
-                "optionalAttribute": true,
-                "disallowed": false,
+                "optionalAttribute": false,
+                "disallowed": true,
                 "name": "android:usesCleartextTraffic",
                 "attributeNameType": 0,
-                "attributeType": 2,
+                "attributeType": 1,
                 "attributeValue": "",
                 "attributeValueType": 2
               }
@@ -406,6 +409,7 @@
             ]
           }
         ],
+        "commonFixes": [],
         "ruleName": "Manifest best pracices: explicitly disable cleartext traffic",
         "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
         "cweCategory": 319,
