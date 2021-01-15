@@ -15,6 +15,7 @@ Recipes created from security recommendations in the official Android documentat
     <li>Manifest best practices
       <ul>
          <li>Disable backups</li>
+         <li>Explicitly disable backups</li>
          <li>Disable cleartext traffic</li>
          <li>Explicitly disable cleartext traffic</li>
          <li>Disable explicit exported components</li>
