@@ -16,28 +16,60 @@
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Change WebView setting to false\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
         "ruleName": "Android WebView best practices: Disable settings",
+        "category": "improper_platform_usage:webview_settings",
         "ruleID": "8a8f7dd7-d5a4-41ca-9e1f-27af8d041c9e",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "AndroidWebViewbestpractices.html",
         "ruleShortDescription": "Enabling this WebView setting has security implications",
-        "ruleErrorLevel": 2,
+        "ruleErrorLevel": 0,
         "ruleEnabled": true,
+        "tags": "explicit;approve",
         "ruleScope": []
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name: \"setJavaScriptEnabled\"\n          \"on\":\n            methodcall:\n              name: \"getSettings\"\n              \"on\":\n                instanceCreation: {}\n    type: \"android.webkit.WebView\"\n",
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name:\n            matches: \"(setGeolocationEnabled|setAllowContentAccess)\"\n          \"on\":\n            methodcall:\n              name: \"getSettings\"\n              \"on\":\n                instanceCreation: {}\n    type: \"android.webkit.WebView\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Fix the code by ...\"\n  actions:\n  - rewrite:\n      to: \"\"\n      target: \"self\"\n",
-        "ruleName": "Android WebView best practices: Disable JavaScript",
+        "ruleName": "Android WebView best practices: Disable settings",
         "ruleID": "17fed260-0137-4e26-8795-42e5b4eed9be",
         "disableRuleIDs": [],
         "ruleShortDescription": "This text will be shown as a tooltip when code violates this recipe",
         "ruleErrorLevel": 2,
         "ruleEnabled": false,
+        "tags": "not-finished",
         "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name:\n            matches: \"setAllowFileAccess\"\n          \"on\":\n            methodcall:\n              name: \"getSettings\"\n              \"on\":\n                instanceCreation: {}\n    type: \"android.webkit.WebView\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Fix the code by ...\"\n    actions:\n      - rewrite:\n          to: \"\"\n          target: \"self\"",
+        "ruleName": "Android WebView best practices: Disable setAllowFileAccess",
+        "ruleID": "a0bd8dcf-e751-43c5-907c-8a82123c123b",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "Enabling this WebView setting has security implications",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "tags": "not-finished",
+        "ruleScope": [
+          {
+            "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
+            "object": {
+              "property": "android.defaultConfig.minSdkVersion",
+              "propertyType": 1,
+              "desiredValue": "29",
+              "useRegex": false,
+              "intPropertyMatchingType": 3,
+              "duplicateStrategy": 0,
+              "trueIfNotFound": false
+            }
+          }
+        ]
       }
     }
   ],
