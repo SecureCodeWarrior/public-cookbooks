@@ -1,0 +1,31 @@
+Class methods should return immutable copies of private member variables of type <code>java.util.Collection</code> to prevent external changes to the state of the object. This is the encapsulation principle of OOP.
+
+Returning an instance's private field of type <code>java.util.List</code> allows external manipulation of the internal state of an instance of the class because the collections are mutable. This can lead to unexpected program behavior when external classes manipulate data in the collection, especially in multi-threaded situations.
+
+Class methods should return immutable copies of private member variables of type <code>java.util.List</code>
+
+<b>Before:</b>
+<pre>public class ListExample {
+    private List&#x3C;String&#x3E; myList;
+
+    public List&#x3C;String&#x3E; getMyList() {
+        <b>return myList;</b>
+    }
+}
+</pre>
+
+<b>After:</b>
+<pre>public class ListExample {
+    private List&#x3C;String&#x3E; myList;
+
+    public List&#x3C;String&#x3E; getMyList() {
+        <b>return java.util.Collections.unmodifiableList(myList);</b>
+    }
+}
+</pre>
+
+<h2>Resources</h2>
+<ul>
+    <li>Wikipedia definition of <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">Encapsulation (computer programming)</a></li>
+    <li>SEI CERT Oracle Coding Standard for Java <a href="https://wiki.sei.cmu.edu/confluence/display/java/OBJ05-J.+Do+not+return+references+to+private+mutable+class+members">OBJ05-J. Do not return references to private mutable class members</a></li>
+</ul>

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "e24b7e93-0226-4f9b-a9e4-3e4307a7fd38",
+    "rulePackVersion": "0.1.0",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  return:\n    in:\n      class:\n        member:\n          field:\n            modifier:\n              matches: \"(private|protected)\"\n            name: \"{{{returnValue.name}}}\"\n            type:\n              reference:\n                matches: \"java.util.Set.*\"\n              checkInheritance: true\n    value:\n      reference:\n        name: \"{{{returnValue.name}}}\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Return an unmodifiable Set\"\n  actions:\n  - rewrite:\n      to: \"return java.util.Collections.unmodifiableSet({{{ returnValue }}});\"\n",
+        "ruleName": "Collections: Do not expose internal Sets",
+        "ruleID": "71453156-ec12-4181-9aa0-a427e040dcc5",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "DonotexposeinternalCollection-set.html",
+        "ruleShortDescription": "Do not expose an internal Set as it is mutable. return a copy or immutable view",
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "tags": "approved;opinionated-oop",
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  return:\n    in:\n      class:\n        member:\n          field:\n            modifier:\n              matches: \"(private|protected)\"\n            name: \"{{{returnValue.name}}}\"\n            type:\n              reference:\n                matches: \"java.util.List.*\"\n              checkInheritance: true\n    value:\n      reference:\n        name: \"{{{returnValue.name}}}\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Return an unmodifiable List\"\n  actions:\n  - rewrite:\n      to: \"return java.util.Collections.unmodifiableList({{{ returnValue }}});\"\n",
+        "ruleName": "Collections: Do not expose internal Lists",
+        "ruleID": "56c4f5ba-8d9a-4ed8-87a5-4efef6aa16b1",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "DonotexposeinternalCollection-list.html",
+        "ruleShortDescription": "Do not expose an internal List as it is mutable. return a copy or immutable view",
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "tags": "approved;opinionated-oop",
+        "ruleScope": []
+      }
+    }
+  ],
+  "generators": []
+}

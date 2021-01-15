@@ -3,7 +3,7 @@
 
 - returning an instance's private field of type Collection allows external manipulation of the internal state because the collections are mutable. This can lead to unexpected program behavior when external classes manipulate data in the collection, especially in multi-threaded situations.</li>
 
-## Before (List Example)
+## Before (List DoNotExposeInternalCollection)
 
 ```
 public class ListExample {
@@ -39,7 +39,7 @@ public class ListExample {
 }
 ```
 
-## Before (Set Example)
+## Before (Set DoNotExposeInternalCollection)
 
 ```
 public class SetExample {
