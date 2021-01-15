@@ -15,7 +15,7 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/recipes) folder.
 
 <details>
-<summary><strong>Android Security rules</strong> - 2 recipe(s) -
+<summary><strong>Android Security rules</strong> - 3 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/android.zip'>download .zip</a>
 <p></p>
 </summary>
@@ -242,7 +242,18 @@ Protection against XML External Entities/Entity Expansion
 </details>
 </details>
 <details>
-<summary><strong>Java Gotchas</strong> - 5 recipe(s) -
+<summary><strong>Java OOP Best Practices</strong> - 2 recipe(s) -
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/java-oop-best-practices.zip'>download .zip</a>
+<p>Recipes that inform on OOP best practices</p>
+</summary>
+
+<h4>Overview</h4>
+<ul>
+<li>Don't expose internal Collections</li>
+</ul>
+</details>
+<details>
+<summary><strong>Java Gotchas</strong> - 4 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/javagotchas.zip'>download .zip</a>
 <p>Examples of simple Java mistakes that can be easily detected and fixed with Sensei</p>
 </summary>
