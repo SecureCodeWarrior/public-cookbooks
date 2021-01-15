@@ -1,0 +1,8 @@
+<h3>Abstract</h3>Enforce HSTS protection against vulnerabilities over HTTPS
+<h3>Description</h3>HSTS protects against vulnerabilities as it enforces connections over HTTPS
+
+<b>Before:</b>
+<pre>http.headers().httpStrictTransportSecurity()<b>.disable();</b></pre>
+<b>After:</b>
+<pre>http.headers().httpStrictTransportSecurity();</pre>
+<h3>Resources</h3>For more information access <a href="https://docs.spring.io/spring-security/site/docs/4.2.x/reference/html/headers.html#headers-hsts">Guide to Spring Security HSTS</a>
