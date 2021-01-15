@@ -9,21 +9,18 @@ Protect the cookie from scripts by setting the .httpOnly() flag to true.
 </tr>
 <tr>
 <td><pre><span style="font-size:8px;">
-protected void configure(HttpSecurity http) throws Exception {
     http
         .csrf()
-        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-}</span></pre></td>
+        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());</span></pre></td>
 <td><pre><span style="font-size:8px;">
-protected void configure(HttpSecurity http) throws Exception {
     CookieCsrfTokenRepository csrfTokenRepository = new CookieCsrfTokenRepository();
     csrfTokenRepository.setCookieHttpOnly(true);
     http
-        .csrf().csrfTokenRepository(csrfTokenRepository);
-}</span></pre></td>
+        .csrf().csrfTokenRepository(csrfTokenRepository);</span></pre></td>
 </tr>
 </table>
 <h2>Resources</h2>
+For more information
 <ul>
     <li><a href="https://docs.spring.io/spring-security/site/docs/5.0.x/reference/html/csrf.html">Guide to Spring Security CSRF</a></li>
 </ul>

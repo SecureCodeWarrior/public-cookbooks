@@ -1,0 +1,29 @@
+<h2>Abstract</h2>
+Spring adds HSTS by default.
+The includeSubdomains is necessary.
+<h2>Description</h2>
+Cookies can be manipulated from sub-domains, so omitting the includeSubDomains option permits a broad range of cookie-related attacks that HSTS would otherwise prevent by requiring a valid certificate for a subdomain. Ensuring the secure flag is set on all cookies will also prevent, some, but not all, of the same attacks.
+<table><tr>
+  <th>Before</th>
+  <th>After</th>
+</tr>
+  <tr>
+    <td><pre>
+    http
+        .headers()
+        .httpStrictTransportSecurity()
+        .includeSubdomains(false)
+        .maxAgeSeconds(31536000);</pre></td>
+    <td><pre>
+    http
+        .headers()
+        .httpStrictTransportSecurity()
+        .includeSubdomains(<b>true</b>)
+        .maxAgeSeconds(31536000);</pre></td>
+  </tr>
+</table>
+<h2>Resources</h2>
+For more information
+<ul>
+	<li><a href="https://docs.spring.io/spring-security/site/docs/4.2.x/reference/html/headers.html">HTPS with Spring Security</a></li>
+</ul>

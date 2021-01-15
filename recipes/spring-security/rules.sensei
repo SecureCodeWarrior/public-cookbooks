@@ -25,6 +25,23 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"false\"\n    name: \"includeSubDomains\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set includeSubDomains to true\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"true\"\n",
+        "ruleName": "Security Misconfiguration: HSTS - includeSubDomains",
+        "category": "misconfig:infoexp",
+        "ruleID": "eef53ef1-5079-4c5b-bf75-00be333f8032",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationHSTS-includeSubDomains.html",
+        "ruleShortDescription": "It\u0027s recommended to include subdomains",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []
