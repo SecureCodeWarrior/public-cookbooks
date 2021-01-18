@@ -28,6 +28,17 @@ Recipes created from security recommendations in the official Android documentat
 </ul>
 </details>
 <details>
+<summary><strong>Java Bad Practices</strong> - 1 recipe(s) -
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/bad-practices.zip'>download .zip</a>
+<p>Examples of Java bad practices</p>
+</summary>
+
+<h4>Overview</h4>
+<ul>
+<li>Use java.security.SecureRandom instead of java.util.Random</li>
+</ul>
+</details>
+<details>
 <summary><strong>Basic security set</strong> - external recipe(s) -
 
 <p>Cookbook which can be used as a starting point for security</p>
