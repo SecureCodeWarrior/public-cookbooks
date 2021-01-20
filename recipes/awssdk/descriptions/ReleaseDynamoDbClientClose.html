@@ -1,0 +1,27 @@
+<h2>Description</h2>
+By not releasing the <code>DynamoDbClient</code> you could run the risk of leaking resources. If an attacker exploits a memory leak, this could possible lead to Denial of Service.
+
+AWS recommends to shut down the client to release the resources and render it unusable.
+<table><tr>
+    <th>Before</th>
+    <th>After</th>
+</tr>
+    <tr>
+        <td><pre>
+    public void method() {
+        DynamoDbClient ddb = DynamoDbClient.create();
+        //.....
+    };
+</pre></td>
+        <td><pre>
+    public void method() {
+        DynamoDbClient ddb = DynamoDbClient.create();
+        //....
+        ddb.<b>close()</b>;
+    }</pre></td>
+    </tr>
+</table>
+<h2>Resources</h2>
+<ul>
+    <li><a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/creating-clients.html">AWS - Creating a client</a></li>
+</ul>
