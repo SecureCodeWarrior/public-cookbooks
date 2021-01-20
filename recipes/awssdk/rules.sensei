@@ -28,6 +28,23 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: false\n        type: \"java.lang.String\"\n    name: \"of\"\n    type: \"software.amazon.awssdk.regions.Region\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use the Region enum\"\n  actions:\n  - rewrite:\n      to: \"software.amazon.awssdk.regions.Region.{{#sed}}s/-/_/g,{{#upperCase}}{{{\\\n        \\ arguments.0.value }}}{{/upperCase}}{{/sed}}\"\n",
+        "ruleName": "Use the Region enum",
+        "ruleID": "236f3ba5-e0b2-4244-9727-4fff843b1b16",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "UsetheRegionenum.html",
+        "ruleShortDescription": "AWS recommends to use one of the constants in the Regions enum ",
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "tags": "approved",
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
         "yamlCode": "search:\n  methodcall:\n    not:\n      followedBy:\n        methodcall:\n          name: \"shutdown\"\n          type: \"com.amazonaws.services.dynamodbv2.AmazonDynamoDB\"\n    name: \"defaultClient\"\n    type: \"com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Call the shutdown method\"\n  actions:\n  - rewrite:\n      to: \"{{{ . }}}\"\n  - addMethodCall:\n      name: \"shutdown\"\n      position: \"end-of-life\"\n",
@@ -54,6 +71,22 @@
         "ruleDescriptionFile": "Avoidhardcodedsecrets.html",
         "ruleShortDescription": "Secrets should not be stored in code",
         "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: \"region\"\n    declaration:\n      type: \"software.amazon.awssdk.awscore.client.builder.AwsClientBuilder\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Consult the AWS documentation page concerning region selection\"\n  actions:\n  - goto:\n      type: \"URL\"\n      value: \"https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html\"\n- name: \"Allow AWS to detect the region automatically\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}\"\n",
+        "ruleName": "Automatic region detection by AWS",
+        "ruleID": "69f63105-7d38-49a4-91d8-b4e7a3c9720d",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AutomaticregiondetectionbyAWS.html",
+        "ruleShortDescription": "AWS can automatically detect the region from the environment",
+        "ruleErrorLevel": 3,
         "ruleEnabled": true,
         "ruleScope": []
       }
