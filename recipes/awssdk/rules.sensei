@@ -40,7 +40,7 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
-    },
+    }
   ],
   "generators": []
 }
