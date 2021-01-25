@@ -1,8 +1,8 @@
 <h2>Abstract</h2>
-When the httpOnly flag of a cookie was set to false, the cookie could potentially be vulnerable to scripts.
+Set the <code>setCookieHttpOnly()</code> flag to true to avoid cookies being accessible to scripts.
 <h2>Description</h2>
-A cookie can become vulnerable to Cross-Site Scripting (XSS) if the .httpOnly() flag was set to false. This means an attacker could access the cookie via JavaScript, steal it, and consequently impersonate another user.
-Protect the cookie from scripts by setting the .httpOnly() flag to true.
+Cookies that are accessible to client-side scripts could be subjected to Cross-site Scripting Attacks (XSS). An attacker could steal the session cookie, and impersonate another user.
+Protect the application from this vulnerability by explicitly setting the <code>setCookieHttpOnly()</code> flag to true.
 <table><tr>
 <th>Before</th>
 <th>After</th>
@@ -12,7 +12,7 @@ Protect the cookie from scripts by setting the .httpOnly() flag to true.
 protected void configure(HttpSecurity http) throws Exception {
     http
         .csrf()
-        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+        .csrfTokenRepository(CookieCsrfTokenRepository<b>.withHttpOnlyFalse()</b>);
 }</span></pre></td>
 <td><pre><span style="font-size:8px;">
 protected void configure(HttpSecurity http) throws Exception {
