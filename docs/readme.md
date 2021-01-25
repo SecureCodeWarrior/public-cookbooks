@@ -15,7 +15,7 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/recipes) folder.
 
 <details>
-<summary><strong>Android Security rules</strong> - 2 recipe(s) -
+<summary><strong>Android Security rules</strong> - 3 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/android.zip'>download .zip</a>
 <p></p>
 </summary>
@@ -25,6 +25,17 @@ Recipes created from security recommendations in the official Android documentat
 <h4>Overview</h4>
 <ul>
 <li>WebView best practices</li>
+</ul>
+</details>
+<details>
+<summary><strong>Java Bad Practices</strong> - 1 recipe(s) -
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/bad-practices.zip'>download .zip</a>
+<p>Examples of Java bad practices</p>
+</summary>
+
+<h4>Overview</h4>
+<ul>
+<li>Use java.security.SecureRandom instead of java.util.Random</li>
 </ul>
 </details>
 <details>
@@ -240,6 +251,17 @@ Protection against XML External Entities/Entity Expansion
 </dl>
 
 </details>
+</details>
+<details>
+<summary><strong>Java OOP Best Practices</strong> - 2 recipe(s) -
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/java-oop-best-practices.zip'>download .zip</a>
+<p>Recipes that inform on OOP best practices</p>
+</summary>
+
+<h4>Overview</h4>
+<ul>
+<li>Don't expose internal Collections</li>
+</ul>
 </details>
 <details>
 <summary><strong>Java Gotchas</strong> - 5 recipe(s) -

@@ -25,6 +25,40 @@
         "ruleEnabled": true,
         "ruleScope": []
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"false\"\n    name: \"includeSubDomains\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set includeSubDomains to true\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"true\"\n",
+        "ruleName": "Security Misconfiguration: HSTS - includeSubDomains",
+        "category": "misconfig:infoexp",
+        "ruleID": "eef53ef1-5079-4c5b-bf75-00be333f8032",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationHSTS-includeSubDomains.html",
+        "ruleShortDescription": "Include subdomains in the HSTS domain",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: \"disable\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\"\n    on:\n      methodcall:\n        name: \"httpStrictTransportSecurity\"\n        declaration:\n          type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer\"\n",
+        "mver": 6,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Enable HSTS\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}\"\n",
+        "ruleName": "Security Misconfiguration: Disable Security Features - HSTS",
+        "category": "misconfig:securityfeatures",
+        "ruleID": "9cadcb2c-8338-4606-8329-a48e70113d43",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationDisableSecurityFeatures-HSTS.html",
+        "ruleShortDescription": "Enforce HSTS protection against vulnerabilities over HTTP",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
     }
   ],
   "generators": []

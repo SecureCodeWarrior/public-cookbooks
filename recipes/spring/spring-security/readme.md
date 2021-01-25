@@ -4,6 +4,7 @@ performed by developers, preventing them to repeat themselves or introduce known
 
 It covers the following protections:
 <ul>
-<li>CSRF</li>
-<li>HSTS</li>
+<li>Protection against CSRF by setting HttpOnly flag to true</li>
+<li>Include subdomains in the HSTS domain</li>
+<li>Enforce HSTS protection against vulnerabilities over HTTP</li>
 </ul>
