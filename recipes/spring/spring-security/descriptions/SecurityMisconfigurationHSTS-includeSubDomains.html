@@ -1,6 +1,6 @@
-<h2>Abstract</h2>Spring adds HSTS by default.
-The includeSubdomains is necessary.
-<h2>Description</h2>Cookies can be manipulated from sub-domains, so omitting the includeSubDomains option permits a broad range of cookie-related attacks that HSTS would otherwise prevent by requiring a valid certificate for a subdomain. Ensuring the secure flag is set on all cookies will also prevent, some, but not all, of the same attacks.
+<h2>Abstract</h2>Setting <code>includeSubDomains()</code> to true makes sure that subdomains will also be treated as an HSTS domain. This is a default setting in Spring Security.
+<h2>Description</h2>Cookies can be manipulated from sub-domains, so omitting the <code>includeSubDomains()</code> option permits a broad range of cookie-related attacks that HSTS would otherwise prevent by requiring a valid certificate for a subdomain. Ensuring the secure flag is set on all cookies will also prevent, some, but not all, of the same attacks.
+By using the default setting, or explicitly setting <code>includeSubDomains()</code> to true, will instruct Spring Security to treat the subdomains as part of the HSTS domain.
 <b>Before:</b>
 <pre>http
         .headers()
@@ -14,4 +14,4 @@ The includeSubdomains is necessary.
         .httpStrictTransportSecurity()
         .includeSubdomains(<b>true</b>)
         .maxAgeSeconds(31536000);</pre>
-<h2>Resources</h2>For more information access <a href="https://docs.spring.io/spring-security/site/docs/4.2.x/reference/html/headers.html">HTPS with Spring Security</a>
+<h2>Resources</h2>For more information access <a href="https://docs.spring.io/spring-security/site/docs/4.2.x/reference/html/headers.html">Spring Security Guide: Security HTTP Response Headers</a>

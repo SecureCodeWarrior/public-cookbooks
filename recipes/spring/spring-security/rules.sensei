@@ -20,7 +20,7 @@
         "ruleID": "eef53ef1-5079-4c5b-bf75-00be333f8032",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "SecurityMisconfigurationHSTS-includeSubDomains.html",
-        "ruleShortDescription": "It\u0027s recommended to include subdomains",
+        "ruleShortDescription": "Include subdomains in the HSTS domain",
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
         "ruleScope": []
@@ -32,12 +32,12 @@
         "yamlCode": "search:\n  methodcall:\n    name: \"disable\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\"\n    on:\n      methodcall:\n        name: \"httpStrictTransportSecurity\"\n        declaration:\n          type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Enable HSTS\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}\"\n",
-        "ruleName": "*Security Misconfiguration: Disable Security Features - HSTS",
+        "ruleName": "Security Misconfiguration: Disable Security Features - HSTS",
         "category": "misconfig:securityfeatures",
         "ruleID": "9cadcb2c-8338-4606-8329-a48e70113d43",
         "disableRuleIDs": [],
         "ruleDescriptionFile": "SecurityMisconfigurationDisableSecurityFeatures-HSTS.html",
-        "ruleShortDescription": "Enforce HSTS protection against vulnerabilities over HTTPS",
+        "ruleShortDescription": "Enforce HSTS protection against vulnerabilities over HTTP",
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
         "ruleScope": []

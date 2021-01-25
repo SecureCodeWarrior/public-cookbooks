@@ -4,7 +4,8 @@ performed by developers, preventing them to repeat themselves or introduce known
 
 It covers the following protections:
 <ul>
-<li>HSTS</li>
+<li>Include subdomains in the HSTS domain</li>
+<li>Enforce HSTS protection against vulnerabilities over HTTP</li>
 </ul>
 
 

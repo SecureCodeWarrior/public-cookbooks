@@ -1,6 +1,6 @@
-<h3>Abstract</h3>Enforce HSTS protection against vulnerabilities over HTTPS
-<h3>Description</h3>HSTS protects against vulnerabilities as it enforces connections over HTTPS
-
+<h2>Abstract</h2>Enforce HSTS protection against vulnerabilities over HTTPS
+<h2>Description</h2>Disabling <code>httpStrictTransportSecurity()</code> makes the application vulnerable to man-in-the-middle attacks, where an attacker could enforce the use of HTTP, which could allow communication to be intercepted and read.
+By enabling <code>httpStrictTransportSecurity()</code>, the application will communicate over HTTPS.
 <b>Before:</b>
 <pre>http.headers().httpStrictTransportSecurity()<b>.disable();</b></pre>
 <b>After:</b>
