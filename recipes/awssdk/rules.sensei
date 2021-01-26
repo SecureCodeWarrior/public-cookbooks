@@ -14,7 +14,7 @@
       "model": {
         "yamlCode": "search:\n  methodcall:\n    args:\n      any:\n        containsUntrustedInput: false\n    name: \"create\"\n    type: \"software.amazon.awssdk.auth.credentials.AwsSessionCredentials\"\n\n",
         "mver": 6,
-        "yamlQuickFixCode": "availableFixes:\n- name: \"Retrieve the secrets from an environment variable\"\n  actions:\n  - rewrite:\n      to: \"AwsSessionCredentials.create(\\nSystem.getenv(\\\"AWS_ACCESS_KEY_ID\\\"),\\n\\\n        System.getenv(\\\"AWS_SECRET_ACCESS_KEY\\\"),\\nSystem.getenv(\\\"AWS_SESSION_TOKEN\\\"\\\n        ))\"\n      target: \"self\"\n- name: \"Make use of the AWS secretsmanager\"\n  actions:\n  - goto:\n      type: \"URL\"\n      value: \"https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-javav2-example_code-secretsmanager.html\"\n      target: \"self\"\n",
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Visit the AWS secretsmanager documentation\"\n  actions:\n  - goto:\n      type: \"URL\"\n      value: \"https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-javav2-example_code-secretsmanager.html\"\n      target: \"self\"\n- name: \"Retrieve the secrets from an environment variable\"\n  actions:\n    - rewrite:\n        to: \"AwsSessionCredentials.create(\\nSystem.getenv(\\\"AWS_ACCESS_KEY_ID\\\"),\\n\\\n        System.getenv(\\\"AWS_SECRET_ACCESS_KEY\\\"),\\nSystem.getenv(\\\"AWS_SESSION_TOKEN\\\"\\\n        ))\"\n        target: \"self\"",
         "ruleName": "Avoid hardcoded secrets",
         "category": "infoexposure:sensitiveinfo",
         "ruleID": "3b1f72ed-9739-4053-b1e2-1e5adf936f2d",
