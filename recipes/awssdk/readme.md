@@ -5,4 +5,5 @@ Examples of best practices that can be easily detected and fixed with Sensei.
 <ul>
 <li>Not releasing DynamoDbClient</li>
 <li>Not releasing AmazonDynamoDbClient</li>
+<li>Avoid hardcoding AWSSessionCredentials</li>
 </ul>
