@@ -1,5 +1,5 @@
 ## Secure Code Warrior Blog Examples
-Recipes used to support the Secure Code Warrior Blog examples which provide Use-Case examples of Sensei. e.g. POJO, JUnit 5, Basic SQL Injection fixing, etc.
+Recipes used to support the Secure Code Warrior Blog examples which provide Use-Case examples of Sensei. e.g. POJO, JUnit 5, Basic SQL Injection fixing, etc. Install: <a href='https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|.sensei'>use .git</a> (<a href='https://github.com/SecureCodeWarrior/public-cookbooks/wiki/How-to-add-a-cookbook#from-a-github-repo-directly'>How?</a>)
 
 <ul>
 <li>19 recipes</li>
