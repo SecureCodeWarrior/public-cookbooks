@@ -28,6 +28,21 @@ Recipes created from security recommendations in the official Android documentat
 </ul>
 </details>
 <details>
+<summary><strong>AWS SDK cookbook</strong> - 5 recipe(s) -
+<a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/awssdk.zip'>download .zip</a>
+<p>Examples of best practices that can be easily detected and fixed with Sensei</p>
+</summary>
+
+<h4>Overview</h4>
+<ul>
+<li>Not releasing DynamoDbClient</li>
+<li>Not releasing AmazonDynamoDbClient</li>
+<li>Avoid hardcoding AWSSessionCredentials</li>
+<li>Automatic region detection by AWS</li>
+<li>Use the Region enum</li>
+</ul>
+</details>
+<details>
 <summary><strong>Java Bad Practices</strong> - 1 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/bad-practices.zip'>download .zip</a>
 <p>Examples of Java bad practices</p>
@@ -278,7 +293,7 @@ Protection against XML External Entities/Entity Expansion
 <details>
 <summary><strong>Secure Code Warrior Blog Examples</strong> - external recipe(s) -
 
-<p>Recipes used to support the Secure Code Warrior Blog examples which provide Use-Case examples of Sensei. e.g. POJO, JUnit 5, Basic SQL Injection fixing, etc</p>
+<p>Recipes used to support the Secure Code Warrior Blog examples which provide Use-Case examples of Sensei. e.g. POJO, JUnit 5, Basic SQL Injection fixing, etc. Install: <a href='https://github.com/SecureCodeWarrior/sensei-blog-examples.git|master|.sensei'>use .git</a> (<a href='https://github.com/SecureCodeWarrior/public-cookbooks/wiki/How-to-add-a-cookbook#from-a-github-repo-directly'>How?</a>)</p>
 </summary>
 
 <ul>
