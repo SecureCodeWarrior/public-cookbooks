@@ -12,8 +12,8 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \"CookieCsrfTokenRepository.withHttpOnlyFalse()\"\n    name: \"csrfTokenRepository\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.CsrfConfigurer\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: CookieCsrfTokenRepository.withHttpOnlyFalse()\n    name: csrfTokenRepository\n    declaration:\n      type: org.springframework.security.config.annotation.web.configurers.CsrfConfigurer\n",
+        "mver": 7,
         "yamlQuickFixCode": "availableFixes:\n  - name: \"Set HttpOnly to true\"\n    actions:\n      - rewrite:\n          to: \"org.springframework.security.web.csrf.CookieCsrfTokenRepository cookieCsrfTokenRepository\\\n        \\ \u003d new org.springframework.security.web.csrf.CookieCsrfTokenRepository();\\n\\\n        cookieCsrfTokenRepository.setCookieHttpOnly(true);\\n{{{ expressionElement\\\n        \\ }}}(cookieCsrfTokenRepository)\"\n",
         "ruleName": "Security Misconfiguration: Disabled Security Settings: CookieCsrfTokenRepository#withHttpOnlyFalse",
         "category": "csrf:csrf",
@@ -29,8 +29,8 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"false\"\n    name: \"includeSubDomains\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: boolean\n        value: \u0027false\u0027\n    name: includeSubDomains\n    declaration:\n      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\n",
+        "mver": 7,
         "yamlQuickFixCode": "availableFixes:\n  - name: \"Set includeSubDomains to true\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"true\"\n",
         "ruleName": "Security Misconfiguration: HSTS - includeSubDomains",
         "category": "misconfig:infoexp",
@@ -46,8 +46,8 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    name: \"disable\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\"\n    on:\n      methodcall:\n        name: \"httpStrictTransportSecurity\"\n        declaration:\n          type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    name: disable\n    declaration:\n      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig\n    on:\n      methodcall:\n        name: httpStrictTransportSecurity\n        declaration:\n          type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer\n",
+        "mver": 7,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Enable HSTS\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}\"\n",
         "ruleName": "Security Misconfiguration: Disable Security Features - HSTS",
         "category": "misconfig:securityfeatures",
@@ -63,8 +63,8 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    not:\n      followedBy:\n        methodcall:\n          name: \"requiresSecure\"\n    in:\n      method:\n        in:\n          class:\n            super:\n              name: \"WebSecurityConfigurerAdapter\"\n        name: \"configure\"\n        parameters:\n          1:\n            type: \"HttpSecurity\"\n    type:\n      reference:\n        matches: \"org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer\u003c.*\u003e.ChannelRequestMatcherRegistry\"\n      checkInheritance: true",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    not:\n      followedBy:\n        methodcall:\n          name: requiresSecure\n    in:\n      method:\n        in:\n          class:\n            super:\n              name: WebSecurityConfigurerAdapter\n        name: configure\n        parameters:\n          1:\n            type: HttpSecurity\n    type:\n      reference:\n        matches: org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer\u003c.*\u003e.ChannelRequestMatcherRegistry\n      checkInheritance: true\n",
+        "mver": 7,
         "yamlQuickFixCode": "availableFixes:\n  - name: \"Append requiresSecure method call\"\n    actions:\n      - addMethodCall:\n          name: \"requiresSecure\"\n          position: \"first-available-spot\"\n          useMethodChaining: true",
         "ruleName": "Should use requiresSecure",
         "ruleID": "cea0f765-cde9-4165-bd8b-31559443e432",
@@ -72,6 +72,22 @@
         "ruleDescriptionFile": "SecurityMisconfigurationSensitivedataexposure-DonotacceptanythingovernonHTTPSconnections.html",
         "ruleShortDescription": "Use of HTTP instead of HTTPS is insecure",
         "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: none\n    declaration:\n      type: org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer\n    on:\n      methodcall:\n        name: sessionFixation\n        declaration:\n          type: org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer\n        on:\n          methodcall:\n            name: sessionManagement\n            declaration:\n              type: org.springframework.security.config.annotation.web.builders.HttpSecurity\n  \n",
+        "mver": 7,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use newSession() to create a new session without preserving attributes of\\\n    \\ the old session\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}.newSession()\"\n- name: \"Use migrateSession() to create a new session with the attributes of the old\\\n    \\ session\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}.migrateSession()\"\n",
+        "ruleName": "Protect against Session Fixation attacks",
+        "ruleID": "510cf404-1ccd-4d92-9251-844d229bc63f",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "ProtectagainstSessionFixationattacks.html",
+        "ruleShortDescription": "Spring Security\u0027s default protection against Session Fixation is disabled, which means an attacker could hijack a valid user session",
+        "ruleErrorLevel": 1,
         "ruleEnabled": true,
         "ruleScope": []
       }
