@@ -1,0 +1,7 @@
+
+
+An application is vulnerable to Session Fixation attacks when <code>.sessionFixation()</code> is set to <code>.none()</code>. Spring Security's default setting is <code>migrateSession()</code> which will -upon creation of a new HTTP session- invalidate the old one, and copy its attributes to the new session. 
+Another option is to use <code>newSession()</code> which will create a brand new session without any attributes from the old one, and invalidate the latter. 
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">httpSecurity.sessionManagement().sessionFixation().none();</font></td></tr><tr><td><font color="gray">After:</font></td><td>httpSecurity.sessionManagement().sessionFixation().newSession();</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://owasp.org/www-community/attacks/Session_fixation">Owasp - Session Fixation</a></li></ul>
