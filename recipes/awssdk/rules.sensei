@@ -4,7 +4,7 @@
     "description": "cookbook for internal use within our company",
     "company": "SCW",
     "appsecmail": "appsecteam@senseifinancial.com",
-    "rulepack_id": "7b24eacd-15c5-4b27-9e75-3ff13690c001",
+    "rulepack_id": "7b24eacd-15c5-4b27-9e75-3ff13690c008",
     "rulePackVersion": "0.1.0",
     "enabled": true
   },
