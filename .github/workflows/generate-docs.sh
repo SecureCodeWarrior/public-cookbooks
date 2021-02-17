@@ -38,25 +38,6 @@ read_readme_lower_body(){
     cat ${ROOT_DIR}/readme.md | sed '/^# /,/## Extras/d'
 }
 
-add_matomo_script() {
-  cat <<EOF
-<script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['requireCookieConsent']);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://securecodewarrior.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '7']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/securecodewarrior.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-EOF
-}
-
 # Generate the index file
 generate_index(){
     cd ${RECIPE_DIR}
@@ -102,8 +83,6 @@ cat <<EOF > $DOC_FILE
 $(read_readme_upper_body)
 
 $(generate_index)
-
-$(add_matomo_script)
 
 $(read_readme_lower_body)
 EOF
