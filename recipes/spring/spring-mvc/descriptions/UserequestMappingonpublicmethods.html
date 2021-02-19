@@ -1,0 +1,7 @@
+
+
+Non-public methods annotated with <code>@RequestMapping</code> can respond to requests. Remove the annotation to prevent unwanted access to sensitive methods, or set the method's modifier to public.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">@PostMapping
+    private void do(){ }</font></td></tr><tr><td><font color="gray">After:</font></td><td>private void do(){ }</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://www.baeldung.com/spring-requestmapping">Baeldung - Spring Request Mapping</a></li><li><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-requestmapping">Spring framework documentation - Request Mapping</a></li></ul>
