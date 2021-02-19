@@ -24,6 +24,54 @@
         "ruleScope": [],
         "ruleEnabled": true
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  annotation:\n    owner:\n      method:\n        not:\n          modifier: public\n        in:\n          typeDeclaration:\n            anyOf:\n            - annotation:\n                type: Controller\n            - annotation:\n                type: RestController\n    type:\n      reference:\n        matches: org.springframework.web.bind.annotation.*\n      checkInheritance: true\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Remove the annotation\"\n  actions:\n  - remove: {}\n",
+        "ruleName": "Use requestMapping on public methods",
+        "ruleID": "8c909b72-602c-41e4-af4c-eb8b86d04f64",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "UserequestMappingonpublicmethods.html",
+        "ruleShortDescription": "RequestMapping should not be used on non-public methods",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  annotation:\n    type: RequestMapping\n    parameters:\n    - name: method\n      value:\n        value:\n          contains: \u0027{\u0027\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Set annotation to DeleteMapping\"\n  actions:\n  - changeAnnotation:\n      removeParameter:\n      - withName: \"method\"\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.DeleteMapping\"\n- name: \"Set annotation to GetMapping\"\n  actions:\n  - changeAnnotation:\n      removeParameter:\n      - withName: \"method\"\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.GetMapping\"\n- name: \"Set annotation to PostMapping\"\n  actions:\n  - changeAnnotation:\n      removeParameter:\n      - withName: \"method\"\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.PostMapping\"\n- name: \"Set annotation to PatchMapping\"\n  actions:\n  - changeAnnotation:\n      removeParameter:\n      - withName: \"method\"\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.PatchMapping\"\n- name: \"Set annotation to PutMapping\"\n  actions:\n  - changeAnnotation:\n      removeParameter:\n      - withName: \"method\"\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.PutMapping\"\n- name: \"Set method parameter to HEAD\"\n  actions:\n  - changeAnnotation:\n      addParameter:\n      - name: \"method\"\n        value: \"org.springframework.web.bind.annotation.RequestMethod.HEAD\"\n      removeParameter:\n      - withName: \"method\"\n- name: \"Set method parameter to OPTIONS\"\n  actions:\n    - changeAnnotation:\n        addParameter:\n          - name: \"method\"\n            value: \"org.springframework.web.bind.annotation.RequestMethod.OPTIONS\"\n        removeParameter:\n          - withName: \"method\"\n- name: \"Set method parameter to TRACE\"\n  actions:\n    - changeAnnotation:\n        addParameter:\n          - name: \"method\"\n            value: \"org.springframework.web.bind.annotation.RequestMethod.TRACE\"\n        removeParameter:\n          - withName: \"method\"",
+        "ruleName": "Avoid mapping to multiple HTTP request methods",
+        "ruleID": "3c94440c-603a-469e-854f-71a57a54f888",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AvoidmappingtomultipleHTTPrequestmethods.html",
+        "ruleShortDescription": "Map to one HTTP request method for best practices",
+        "ruleErrorLevel": 0,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  annotation:\n    owner:\n      method: {\n        }\n    parameters:\n    - name: method\n      value:\n        referenceTo:\n          name:\n            caseSensitive: false\n            matches: org.springframework.web.bind.annotation.RequestMethod.(GET|POST|PATCH|PUT|DELETE)\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Use @DeleteMapping\"\n  actions:\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.DeleteMapping\"\n      removeParameter:\n      - withName: \"method\"\n- name: \"Use @GetMapping\"\n  actions:\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.GetMapping\"\n      removeParameter:\n      - withName: \"method\"\n- name: \"Use @PostMapping\"\n  actions:\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.PostMapping\"\n      removeParameter:\n      - withName: \"method\"\n- name: \"Use @PutMapping\"\n  actions:\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.PutMapping\"\n      removeParameter:\n      - withName: \"method\"\n- name: \"Use @PatchMapping\"\n  actions:\n  - changeAnnotation:\n      type: \"org.springframework.web.bind.annotation.PatchMapping\"\n      removeParameter:\n      - withName: \"method\"\n",
+        "ruleName": "Use composed requestmapping annotations",
+        "ruleID": "09cc6bb9-9041-4665-8d71-225f5b73b692",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "Usecomposedrequestmappingannotations.html",
+        "ruleShortDescription": "Improve readability by using Spring\u0027s composed annotations",
+        "ruleErrorLevel": 0,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
     }
   ],
   "generators": []
