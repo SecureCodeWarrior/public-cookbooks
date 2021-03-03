@@ -1,5 +1,4 @@
 # Sensei Cookbook index
-
 This repo contains a list of quality coding pattern cookbooks that you can use with [Sensei](https://sensei-docs-beta.securecodewarrior.com).
 
 ## About
@@ -15,16 +14,31 @@ that helps you create quality coding recipes with Quick Fix transformations to i
 Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/public-cookbooks/tree/master/recipes) folder.
 
 <details>
-<summary><strong>Android Security rules</strong> - 3 recipe(s) -
+<summary><strong>Android security rules</strong> - 13 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/android.zip'>download .zip</a>
-<p></p>
+<p>Recipes created from security recommendations in the official Android documentation (https://developer.android.com/)</p>
 </summary>
-
-Recipes created from security recommendations in the official Android documentation (https://developer.android.com/)
 
 <h4>Overview</h4>
 <ul>
-<li>WebView best practices</li>
+    <li>WebView best practices
+      <ul>
+         <li>Disable JavaScript</li>
+         <li>Disable file access</li>
+         <li>Disable content access</li>
+         <li>Disable geolocation</li>
+         <li>Never allow mixed content</li>
+      </ul>
+    </li>
+    <li>Manifest best practices
+      <ul>
+         <li>Disable backups</li>
+         <li>Explicitly disable backups</li>
+         <li>Disable cleartext traffic</li>
+         <li>Explicitly disable cleartext traffic</li>
+         <li>Disable explicit exported components</li>
+      </ul>
+    </li>
 </ul>
 </details>
 <details>
