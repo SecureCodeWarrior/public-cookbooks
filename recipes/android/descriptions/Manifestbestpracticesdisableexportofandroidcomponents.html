@@ -1,0 +1,32 @@
+<h2>Abstract</h2>
+<p>Out of Android best practices and secure coding guidelines, recommendations were abstracted that application components shouldn't be accesible to 3rd party applications unless required. </p>
+<h2>Description</h2>
+<p>When an android component has the attribute <code>android:exported="true"</code>, components of other applications will be able to call the exported component. This could allow an adversary to gain access to sensitive information, trick a user into thinking they're still using the malicious application, or even modify the internal state of the application.</p> 
+<p>When defining an intent-filter, android components are exported by default. When other applications shouldn't call your component, it's considered good practice to explicitly set the exported value to false. </p>
+<table>
+    <tr>
+      <th>Before</th>
+      <th>After</th>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+            &lt;application
+            &nbsp;&nbsp;&nbsp; android:exported="<b>true</b>" /&gt;
+        </pre>
+      </td>
+      <td>
+        <pre>
+            &lt;application
+            &nbsp;&nbsp;&nbsp; android:exported="<b>true</b>" /&gt;
+        </pre>
+      </td>
+    </tr>
+</table>
+<h2>Resources:</h2>
+<ul>
+    <li><a href="https://developer.android.com/guide/topics/manifest/service-element#exported">Android Documentation - Service</a></li>
+    <li><a href="https://developer.android.com/guide/topics/manifest/receiver-element#exported">Android Documentation - Receiver</a></li>
+    <li><a href="https://developer.android.com/guide/topics/manifest/provider-element#exported">Android Documentation - Provider</a></li>
+    <li><a href="https://developer.android.com/guide/topics/manifest/activity-element#exported">Android Documentation - Activity</a></li>
+</ul>
