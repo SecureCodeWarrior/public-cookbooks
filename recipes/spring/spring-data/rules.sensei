@@ -12,8 +12,8 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        trustedSources:\n        - methodcall:\n            name: \"format\"\n            type: \"java.lang.String\"\n        type: \"java.lang.String\"\n    name:\n      matches: \"createNativeQuery\"\n    type: \"javax.persistence.EntityManager\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        trustedSources:\n        - methodcall:\n            name: format\n            type: java.lang.String\n        type: java.lang.String\n    name:\n      matches: createNativeQuery\n    type: javax.persistence.EntityManager\n",
+        "mver": 7,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Use parameterized queries\"\n  actions:\n  - parameterize:\n      placeholderFormat: \"?\"\n      extractUntrustedInput:\n        methodsOnObject:\n          methods:\n          - methodName: \"setParameter\"\n            args:\n              1: \"{{{ index }}}\"\n              2: \"{{{.}}}\"\n          target:\n            returnValue:\n              useMethodChaining: true\n",
         "ruleName": "Injection - SQL Injection in JPA: EntityManager#createNativeQuery",
         "category": "injection:sql",
@@ -29,8 +29,8 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        trustedSources:\n        - methodcall:\n            name: \"format\"\n            type: \"java.lang.String\"\n        type: \"java.lang.String\"\n    name:\n      matches: \"createQuery\"\n    type: \"javax.persistence.EntityManager\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        trustedSources:\n        - methodcall:\n            name: format\n            type: java.lang.String\n        type: java.lang.String\n    name:\n      matches: createQuery\n    type: javax.persistence.EntityManager\n",
+        "mver": 7,
         "yamlQuickFixCode": "availableFixes:\n  - name: \"Use parameterized queries\"\n    actions:\n      - parameterize:\n          placeholderFormat: \":{{{name}}}\"\n          extractUntrustedInput:\n            methodsOnObject:\n              methods:\n                - methodName: \"setParameter\"\n                  args:\n                    \"1\": \"\\\"{{{ name }}}\\\"\"\n                    \"2\": \"{{{ . }}}\"\n              target:\n                returnValue:\n                  useMethodChaining: true",
         "ruleName": "Injection - SQL Injection in JPA: EntityManager#createQuery",
         "category": "injection:sql",
@@ -41,6 +41,41 @@
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
         "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        type: \"java.lang.String\"\n    name:\n      matches: \"queryForObject|query|queryForStream\"\n    type: \"org.springframework.jdbc.core.JdbcOperations\"\n\n",
+        "mver": 7,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Use parameterized queries\"\n    actions:\n      - parameterize:\n          placeholderFormat: \"?\"\n          extractUntrustedInput:\n            array:\n              type: \"java.lang.String[]\"\n              atArgumentPosition: 3",
+        "ruleName": "Injection - SQL Injection in Jdbc: #query/queryForStream/queryForObject",
+        "category": "injection:sql",
+        "ruleID": "668f46c2-53fe-4e56-a943-06dbd4d34d3b",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "Injection-SQLInjectioninJdbcOperationsqueryqueryForStreamqueryForObject.html",
+        "ruleShortDescription": "Avoid SQLi by using parameterized queries, instead of string concatenation with untrusted input",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n        type: \"java.lang.String\"\n    name:\n      matches: \"queryForList|queryForRowSet|queryForMap|queryForLong|queryForInt|update\"\n    type: \"org.springframework.jdbc.core.JdbcOperations\"\n\n",
+        "mver": 7,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Use parameterized queries\"\n    actions:\n      - parameterize:\n          placeholderFormat: \"?\"\n          extractUntrustedInput:\n            array:\n              type: \"java.lang.String[]\"\n              atArgumentPosition: 2\n",
+        "ruleName": "Injection - SQL Injection in Jdbc: #queryForList|queryForRowSet|queryForMap|queryForLong|queryForInt|update",
+        "category": "injection:sql",
+        "ruleID": "41b036ac-78b5-43fc-9006-27a5829aada5",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "Injection-SQLInjectioninJdbcOperationsqueryForListqueryForRowSetqueryForMapqueryForLongqueryForIntupdate.html",
+        "ruleShortDescription": "Avoid SQLi by using parameterized queries, instead of string concatenation with untrusted input",
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [],
+        "onlyMarkOnNewCode": true
       }
     }
   ],

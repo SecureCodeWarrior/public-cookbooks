@@ -1,0 +1,9 @@
+
+
+Dynamically creating queries by means of concatenating (untrusted) user input puts the application at risk of SQL injection. An attacker could insert malicious input to obtain or modify data.
+
+Use parameterized queries to prevent SQL injection.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">jdbcOperations.update("delete from users where username = '" + username + "'");
+</font></td></tr><tr><td><font color="gray">After:</font></td><td>jdbcOperations.update("delete from users where username = ?", username);</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP - SQLi Cheat Sheet</a></li></ul>
