@@ -74,8 +74,7 @@
         "ruleShortDescription": "Avoid SQLi by using parameterized queries, instead of string concatenation with untrusted input",
         "ruleErrorLevel": 2,
         "ruleEnabled": true,
-        "ruleScope": [],
-        "onlyMarkOnNewCode": true
+        "ruleScope": []
       }
     }
   ],
