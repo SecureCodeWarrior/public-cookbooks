@@ -18,4 +18,11 @@ It covers the following protections:
 <li>Spring Security recommends DelegatingPasswordEncoder for best practices (Bean - BCrypt)</li>
 <li>Spring Security recommends DelegatingPasswordEncoder for best practices (Bean)</li>
 <li>Avoid hardcoded secrets when using passwordencoders</li>
+<li>Security Misconfiguration: XSS protection: Disabled Header - block()</li>
+<li>Security Misconfiguration: XSS protection: Disabled Header - disable()</li>
+<li>Security Misconfiguration: XSS protection: Disabled Header - xssProtectionEnabled()</li>
+<li>Security Misconfiguration: XSS protection: Add CSP header - XXssConfig</li>
+<li>Security Misconfiguration: XSS protection: Add CSP header - xssProtection</li>
+<li>Security Misconfiguration: Disabled Headers</li>
+<li>Security Misconfiguration: Clickjacking protection: Disabled Header - frameOptions()</li>
 </ul>
