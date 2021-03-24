@@ -1,0 +1,49 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "e9a1167a-af35-400e-8cee-ec9670717b0a",
+    "rulePackVersion": "0.1.0",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"false\"\n    name:\n      matches: \"setHttpOnly\"\n    type: \"org.apache.shiro.web.servlet.SimpleCookie\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set HttpOnly to true\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"true\"\n",
+        "ruleName": "Session configuration: Cookies: Set HttpOnly flag to true ",
+        "category": "improper_session_handling:improper_flags_in_cookie_headers",
+        "ruleID": "30ebbaf5-1741-47dc-b31d-d2bf96df8fd1",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SessionconfigurationCookiesSetHttpOnlyflagtotrue.html",
+        "ruleShortDescription": "Prevent client-side scripts from accessing the cookie by setting the HttpOnly flag to true ",
+        "ruleErrorLevel": 2,
+        "comment": "",
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"false\"\n    name:\n      matches: \"setSecure\"\n    type: \"org.apache.shiro.web.servlet.SimpleCookie\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set Secure to true\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"true\"\n",
+        "ruleName": "Session configuration: Cookies: Set Secure flag to true ",
+        "category": "improper_session_handling:improper_flags_in_cookie_headers",
+        "ruleID": "75de83a8-ad1d-465c-b953-63f46bae516f",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SessionconfigurationCookiesSetSecureflagtotrue.html",
+        "ruleShortDescription": "Prevent a cookie being sent over unencrypted HTTP by setting the Secure flag to true ",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ],
+  "generators": []
+}
