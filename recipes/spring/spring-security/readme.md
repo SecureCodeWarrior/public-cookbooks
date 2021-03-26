@@ -25,4 +25,10 @@ It covers the following protections:
 <li>Security Misconfiguration: XSS protection: Add CSP header - xssProtection</li>
 <li>Security Misconfiguration: Disabled Headers</li>
 <li>Security Misconfiguration: Clickjacking protection: Disabled Header - frameOptions()</li>
+<li>Spring Security CSRF protection: do not disable default protection</li>
+<li>Security Misconfiguration: Content sniffing protection</li>
+<li>Session Configuration: Invalidate the HttpSession after logout</li>
+<li>Secure Transport: use RequiresSecure to enforce HTTPS</li>
+<li>Secure Transport: use RequiresSecure to enforce HTTPS on all paths</li>
+<li>Security Misconfiguration: Prevent session from being included in the URL</li>
 </ul>
