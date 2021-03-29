@@ -380,7 +380,7 @@
       "model": {
         "yamlCode": "search:\n  methodcall:\n    not:\n      followedBy:\n        methodcall:\n          name: \"disable\"\n    name: \"contentTypeOptions\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.HeadersConfigurer\"\n    \"on\":\n      methodcall:\n        name: \"headers\"\n",
         "mver": 8,
-        "yamlQuickFixCode": "availableFixes:\n- name: \"Set to disable\"\n  actions:\n  - rewrite:\n      to: \"{{{ . }}}.disable()\"\n",
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Disable contentTypeOptions\"\n  actions:\n  - rewrite:\n      to: \"{{{ . }}}.disable()\"\n",
         "ruleName": "Security Misconfiguration: Content sniffing protection",
         "category": "misconfig:infoexp",
         "ruleID": "00dc48c2-9709-4ad6-b50d-7e38b628c0f5",
