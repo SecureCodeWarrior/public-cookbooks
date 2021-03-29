@@ -1,6 +1,6 @@
 
 
-Prevent MIME type sniffing by disabling <code>contentTypeOptions()</code>. When the HTTP header X-Content-Type-Options is set 'nosniff', an attacker will not be able to derive the data's file format by inspecting the byte stream. 
+Prevent MIME type sniffing by disabling <code>contentTypeOptions()</code>. When the HTTP header X-Content-Type-Options is set to 'nosniff', an attacker will not be able to derive the data's file format by inspecting the byte stream. 
 
 <table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">http.headers().contentTypeOptions();</font></td></tr><tr><td><font color="gray">After:</font></td>http.headers().contentTypeOptions().disable();<td></td></tr></table>
 <h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#headers-content-type-options">Spring Security docs - Content Type Options</a></li></ul>
