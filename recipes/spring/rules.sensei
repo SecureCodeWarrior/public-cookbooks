@@ -12,153 +12,153 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  field:\n    anyOf:\n      - annotation:\n          type: \"org.springframework.beans.factory.annotation.Value\"\n      - annotation:\n          type: \"org.springframework.beans.factory.annotation.Autowired\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  field:\n    anyOf:\n    - annotation:\n        type: org.springframework.beans.factory.annotation.Value\n    - annotation:\n        type: org.springframework.beans.factory.annotation.Autowired\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes: []\n",
         "ruleName": "Field injection is not recommended",
         "ruleID": "96118a3e-cc05-4946-be03-48658503b831",
         "disableRuleIDs": [],
         "ruleShortDescription": "Field injection is not recommended. A class that takes a required dependency as a constructor argument can only be instantiated if that argument is provided (you should have a guard clause to make sure the argument is not null.) A constructor therefore enforces the dependency requirement whether or not you\u0027re using Spring, making it container-agnostic.",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
         "comment": "",
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    name: \"println\"\n    type: \"PrintStream\"\n    \"on\":\n      field:\n        in:\n          class:\n            name: \"java.lang.System\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    name: println\n    type: PrintStream\n    on:\n      field:\n        in:\n          typeDeclaration:\n            name: java.lang.System\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Use SLF4J logger\"\n  actions:\n  - addField:\n      field: \"private static final org.slf4j.Logger log \u003d org.slf4j.LoggerFactory.getLogger({{type}}.class);\"\n      target: \"parentClass\"\n  - rewrite:\n      to: \"log.info({{{arguments}}})\"\n",
         "ruleName": "Use a logger",
         "ruleID": "6e4d24d1-2ba5-42a4-9f86-26750321bbc1",
         "disableRuleIDs": [],
         "ruleShortDescription": "Printing messages directly to the standard output is considered a bad practice. It\u0027s recommended to use a logger instead. A logger can be turned on/off, it provides different levels of logging and can be controlled through a configuration file or environment variables. Some advanced logger provides allow you to configure log file rotation, purging and tune it for multi-threading purposes.",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  class:\n    not:\n      annotation:\n        type: \"org.springframework.stereotype.Repository\"\n    name:\n      matches: \"^.*Repository$\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  typeDeclaration:\n    not:\n      annotation:\n        type: org.springframework.stereotype.Repository\n    name:\n      matches: ^.*Repository$\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Add @Repository annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.stereotype.Repository\"\n",
         "ruleName": "Annotate with @Repository",
         "ruleID": "61dede45-61d6-451a-aa95-c9a039fc412e",
         "disableRuleIDs": [],
         "ruleShortDescription": "This class looks like the implementation of a Spring Repository.",
         "ruleErrorLevel": 0,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  method:\n    annotation:\n      type: \"org.springframework.data.jpa.repository.Query\"\n      parameters:\n      - value:\n          value:\n            matches: \"(UPDATE|DELETE|INSERT).*\"\n    without:\n      annotation:\n        type: \"org.springframework.data.jpa.repository.Modifying\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  method:\n    annotation:\n      type: org.springframework.data.jpa.repository.Query\n      parameters:\n      - value:\n          value:\n            matches: (UPDATE|DELETE|INSERT).*\n    without:\n      annotation:\n        type: org.springframework.data.jpa.repository.Modifying\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Annotate with @Modifying\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.data.jpa.repository.Modifying\"\n",
         "ruleName": "Missing annotation in update query ",
         "ruleID": "138e2d94-0969-4a2e-a085-c699a71539b7",
         "disableRuleIDs": [],
         "ruleShortDescription": "This query is performing a write operation in the database, therefore you should annotate it with @Modifying annation.",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  parameter:\n    not:\n      type: \"java.lang.Throwable\"\n    in:\n      method:\n        in:\n          class:\n            with:\n              anyOf:\n              - annotation:\n                  type: \"org.springframework.stereotype.Service\"\n              - annotation:\n                  type: \"org.springframework.stereotype.Component\"\n        modifier: \"public\"\n        constructor: false\n    without:\n      annotation:\n        type: \"javax.validation.Valid\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  parameter:\n    not:\n      type: java.lang.Throwable\n    in:\n      method:\n        in:\n          typeDeclaration:\n            with:\n              anyOf:\n              - annotation:\n                  type: org.springframework.stereotype.Service\n              - annotation:\n                  type: org.springframework.stereotype.Component\n        modifier: public\n        constructor: false\n    without:\n      annotation:\n        type: javax.validation.Valid\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Add @Valid annotation\"\n  actions:\n  - rewrite:\n      to: \"@javax.validation.Valid {{{annotations}}} {{{type}}} {{name}}\"\n",
         "ruleName": "Annotate with @Valid",
         "ruleID": "fce1030c-f40c-4f9d-8521-ae7e53dc47e2",
         "disableRuleIDs": [],
         "ruleShortDescription": "You can enforce validation against the arguments passed to this function.",
         "ruleErrorLevel": 0,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  class:\n    not:\n      annotation:\n        type: \"org.springframework.web.bind.annotation.RestController\"\n    member:\n      method:\n        anyOf:\n        - annotation:\n            type: \"org.springframework.web.bind.annotation.PostMapping\"\n        - annotation:\n            type: \"org.springframework.web.bind.annotation.GetMapping\"\n        - annotation:\n            type: \"org.springframework.web.bind.annotation.PutMapping\"\n        - annotation:\n            type: \"org.springframework.web.bind.annotation.DeleteMapping\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  typeDeclaration:\n    not:\n      annotation:\n        type: org.springframework.web.bind.annotation.RestController\n    member:\n      method:\n        anyOf:\n        - annotation:\n            type: org.springframework.web.bind.annotation.PostMapping\n        - annotation:\n            type: org.springframework.web.bind.annotation.GetMapping\n        - annotation:\n            type: org.springframework.web.bind.annotation.PutMapping\n        - annotation:\n            type: org.springframework.web.bind.annotation.DeleteMapping\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Understand why use @RestController\"\n  actions:\n  - goto:\n      type: \"URL\"\n      value: \"https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RestController.html\"\n      target: \"self\"\n- name: \"Add @RestController annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.RestController\"\n      target: \"parentClass\"\n",
         "ruleName": "Missing annotation in controller class",
         "ruleID": "caff1129-1565-41f3-8583-273ee66565fb",
         "disableRuleIDs": [],
         "ruleShortDescription": "Missing @RestController annotation.",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  parameter:\n    not:\n      annotation:\n        type:\n          reference:\n            matches: \"org\\\\.springframework\\\\.web\\\\.bind\\\\.annotation\\\\..*\"\n          checkInheritance: true\n    in:\n      method:\n        annotation:\n          type:\n            reference:\n              matches: \"org\\\\.springframework\\\\.web\\\\.bind\\\\.annotation\\\\..*\"\n            checkInheritance: false\n",
-        "mver": 6,
+        "yamlCode": "search:\n  parameter:\n    not:\n      annotation:\n        type:\n          reference:\n            matches: org\\.springframework\\.web\\.bind\\.annotation\\..*\n          checkInheritance: true\n    in:\n      method:\n        annotation:\n          type:\n            reference:\n              matches: org\\.springframework\\.web\\.bind\\.annotation\\..*\n            checkInheritance: false\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Annotate with @RequestBody\"\n  actions:\n  - rewrite:\n      to: \"@org.springframework.web.bind.annotation.RequestBody {{{annotations}}}\\\n        \\ {{{type}}} {{name}}\"\n- name: \"Annotate with @RequestParam\"\n  actions:\n  - rewrite:\n      to: \"@org.springframework.web.bind.annotation.RequestParam {{{annotations}}}\\\n        \\ {{{type}}} {{name}}\"\n- name: \"Annotate with @PathVariable\"\n  actions:\n  - rewrite:\n      to: \"@org.springframework.web.bind.annotation.PathVariable {{{annotations}}}\\\n        \\ {{{type}}} {{name}}\"\n",
         "ruleName": "Missing parameter annotation in request handler",
         "ruleID": "3f71743b-011d-43d1-970b-a2daceeba178",
         "disableRuleIDs": [],
         "ruleShortDescription": "The enclosing method is a request handler, but there\u0027s no annotation indicating how this argument should be treated",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  method:\n    not:\n      annotation:\n        type:\n          reference:\n            matches: \"org\\\\.springframework\\\\.web\\\\.bind\\\\.annotation..*\"\n          checkInheritance: true\n    in:\n      class:\n        annotation:\n          type: \"org.springframework.web.bind.annotation.RestController\"\n    modifier: \"public\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  method:\n    not:\n      annotation:\n        type:\n          reference:\n            matches: org\\.springframework\\.web\\.bind\\.annotation..*\n          checkInheritance: true\n    in:\n      typeDeclaration:\n        annotation:\n          type: org.springframework.web.bind.annotation.RestController\n    modifier: public\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Add @GetMapping annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.GetMapping\"\n- name: \"Add @PostMapping annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.PostMapping\"\n- name: \"Add @PutMapping annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.PutMapping\"\n- name: \"Add @DeleteMapping annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.DeleteMapping\"\n- name: \"Add @PatchMapping annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.PatchMapping\"\n",
         "ruleName": "Non-annotated controller public method",
         "ruleID": "90ebb983-bc3a-4bce-b0a4-448b084f84ca",
         "disableRuleIDs": [],
         "ruleShortDescription": "Public methods within a controller class should be treated as request handlers, therefore should be annotated as such. If you really believe this method should not be exposed as a Rest endpoint, please consider extrating it into an external Component class and call it from inside this controller.",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  class:\n    not:\n      annotation:\n        type: \"org.springframework.web.bind.annotation.RestController\"\n    name:\n      matches: \".*Controller$\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  typeDeclaration:\n    not:\n      annotation:\n        type: org.springframework.web.bind.annotation.RestController\n    name:\n      matches: .*Controller$\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"What is a Rest Controller?\"\n  actions:\n  - goto:\n      type: \"URL\"\n      value: \"https://www.baeldung.com/spring-controllers\"\n- name: \"Add @RestController annotation\"\n  actions:\n  - addAnnotation:\n      annotation: \"@org.springframework.web.bind.annotation.RestController\"\n",
         "ruleName": "Annotate with @RestController",
         "ruleID": "12a927c8-0497-41c8-b037-828ced4c876c",
         "disableRuleIDs": [],
         "ruleShortDescription": "This class looks like a Spring MVC Rest Controller",
         "ruleErrorLevel": 0,
-        "ruleEnabled": true,
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     },
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  methodcall:\n    name: \"setAuthentication\"\n    type: \"org.springframework.security.core.context.SecurityContext\"\n    \"on\":\n      methodcall:\n        name: \"getContext\"\n        type: \"org.springframework.security.core.context.SecurityContextHolder\"\n",
-        "mver": 6,
+        "yamlCode": "search:\n  methodcall:\n    name: setAuthentication\n    type: org.springframework.security.core.context.SecurityContext\n    on:\n      methodcall:\n        name: getContext\n        type: org.springframework.security.core.context.SecurityContextHolder\n",
+        "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"assign a new SecurityContext to the holder\"\n  actions:\n  - rewrite:\n      to: \"org.springframework.security.core.context.SecurityContext newContext \u003d\\\n        \\ org.springframework.security.core.context.SecurityContextHolder.createEmptyContext();\\n\\\n        newContext.setAuthentication({{{ arguments.0 }}});\\nSecurityContextHolder.setContext(newContext)\"\n",
         "ruleName": "Spring Security: race condition: SecurityContextHolder.getContext.setAuthentication",
         "ruleID": "9f00d504-8bfe-44db-8b2a-12733fb1d04d",
         "disableRuleIDs": [],
         "ruleShortDescription": "It is important to create a new SecurityContext instance to avoid race conditions across multiple threads.",
         "ruleErrorLevel": 2,
-        "ruleEnabled": true,
         "comment": "https://docs.spring.io/spring-security/site/docs/5.4.2/reference/html5/#servlet-authentication-securitycontextholder",
-        "ruleScope": []
+        "ruleScope": [],
+        "ruleEnabled": true
       }
     }
   ],
