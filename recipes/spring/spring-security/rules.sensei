@@ -432,7 +432,7 @@
       "model": {
         "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"true\"\n    name: \"enableSessionUrlRewriting\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer\"\n    \"on\":\n      methodcall:\n        name: \"sessionManagement\"\n",
         "mver": 8,
-        "yamlQuickFixCode": "availableFixes:\n- name: \"Set to false\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Set enableSessionUrlRewriting to false\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
         "ruleName": "Security Misconfiguration: Prevent session from being included in the URL",
         "category": "misconfig:infoexp",
         "ruleID": "1e40934b-e9d2-4a8f-a1b5-87a2feb49444",
