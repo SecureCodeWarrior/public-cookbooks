@@ -450,7 +450,7 @@
       "model": {
         "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"java.lang.String\"\n    followedBy:\n      methodcall:\n        name: \"requiresSecure\"\n    name: \"antMatchers\"\n    declaration:\n      type: \"org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry\"\n    \"on\":\n      methodcall:\n        name: \"requiresChannel\"\n",
         "mver": 8,
-        "yamlQuickFixCode": "availableFixes:\n- name: \"Fix the code by ...\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}\"\n",
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Apply requiresChannel to all paths\"\n  actions:\n  - rewrite:\n      to: \"{{{ qualifier }}}\"\n",
         "ruleName": "Secure Transport: use RequiresSecure to enforce HTTPS on all paths",
         "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
         "ruleID": "424fe4c6-d13a-495b-985e-b320c132355a",
