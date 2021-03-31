@@ -42,6 +42,40 @@
         "ruleScope": [],
         "ruleEnabled": true
       }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name: \"setSecure\"\n    type: \"org.springframework.boot.web.servlet.server.Session.Cookie\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set the Secure flag to true\"\n    actions:\n      - addMethodCall:\n          name: \"setSecure\"\n          arguments:\n            - \"true\"\n          position: \"first-available-spot\"\n",
+        "ruleName": "Session configuration: Cookies: Configure Secure flag",
+        "category": "improper_session_handling:improper_flags_in_cookie_headers",
+        "ruleID": "88411bb5-3cc5-4fb7-973e-2709792eaef8",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SessionconfigurationCookiesConfigureSecureflag.html",
+        "ruleShortDescription": "Prevent a cookie being sent over unencrypted HTTP by setting the Secure flag to true ",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      followedBy:\n        methodcall:\n          name: \"setHttpOnly\"\n    type: \"org.springframework.boot.web.servlet.server.Session.Cookie\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Set the HttpOnly flag to true\"\n  actions:\n  - addMethodCall:\n      name: \"setHttpOnly\"\n      arguments:\n      - \"true\"\n      position: \"first-available-spot\"\n      target: \"self\"\n",
+        "ruleName": "Session configuration: Cookies: Configure HttpOnly flag",
+        "category": "improper_session_handling:improper_flags_in_cookie_headers",
+        "ruleID": "5a2c1b52-be7d-4ae3-bdff-5ddd35f40b64",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SessionconfigurationCookiesConfigureHttpOnlyflag.html",
+        "ruleShortDescription": "Prevent client-side scripts from accessing the cookie by setting the HttpOnly flag to true",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
     }
   ],
   "generators": []
