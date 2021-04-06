@@ -12,6 +12,23 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      with:\n        followedBy:\n          methodcall:\n            name: \"setHttpOnly\"\n    type: \"javax.servlet.http.Cookie\"\nscopes:\n  library:\n    minVersion: \"3.0\"\n    name:\n      contains: \"javax.servlet-api\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Set the HttpOnly flag to true\"\n  actions:\n  - addMethodCall:\n      name: \"setHttpOnly\"\n      arguments:\n      - \"true\"\n      position: \"first-available-spot\"\n",
+        "ruleName": "Session configuration: Cookie: Configure HttpOnly flag",
+        "category": "improper_session_handling:improper_flags_in_cookie_headers",
+        "ruleID": "d9d42f72-8599-44c5-85dc-ae4b118e3a6a",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SessionconfigurationCookiesConfigureHttpOnlyflag.html",
+        "ruleShortDescription": "Prevent client-side scripts from accessing the cookie by setting the HttpOnly flag to true",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
         "yamlCode": "search:\n  instanceCreation:\n    type:\n      reference: java.util.Random\n      checkInheritance: false\n",
         "mver": 8,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Use SecureRandom instead\"\n  actions:\n  - rewrite:\n      to: \"new java.security.SecureRandom()\"\n  - modifyAssignedVariable:\n      type: \"java.security.SecureRandom\"\n",
@@ -80,10 +97,10 @@
     {
       "type": "947034909c9b08d0b583170e594b0eb327933231",
       "model": {
-        "yamlCode": "search:\n  instanceCreation:\n    not:\n      with:\n        followedBy:\n          methodcall:\n            name: \"setHttpOnly\"\n    anyOf:\n      - type: \"javax.servlet.http.Cookie\"\n      - type: \"java.net.HttpCookie\"\n",
+        "yamlCode": "search:\n  instanceCreation:\n    not:\n      with:\n        followedBy:\n          methodcall:\n            name: \"setHttpOnly\"\n    type: \"java.net.HttpCookie\"\n",
         "mver": 8,
-        "yamlQuickFixCode": "availableFixes:\n- name: \"Set the HttpOnly flag to true\"\n  actions:\n  - addMethodCall:\n      name: \"setHttpOnly\"\n      arguments:\n      - \"true\"\n      position: \"first-available-spot\"\n",
-        "ruleName": "Session configuration: Cookies: Configure HttpOnly flag",
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set the HttpOnly flag to true\"\n    actions:\n      - addMethodCall:\n          name: \"setHttpOnly\"\n          arguments:\n            - \"true\"\n          position: \"first-available-spot\"\n",
+        "ruleName": "Session configuration: HttpCookie: Configure HttpOnly flag",
         "category": "improper_session_handling:improper_flags_in_cookie_headers",
         "ruleID": "d34a476b-dede-44c7-8484-03ec48cc8661",
         "disableRuleIDs": [],
