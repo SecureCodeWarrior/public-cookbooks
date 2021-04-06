@@ -1,0 +1,6 @@
+
+
+Disallowing semicolons in the URL is more secure, as they are frequently used to perform exploits, such as Reflected File Download attacks. Spring Security by default sets <code>StrictHttpFirewall#setAllowSemicolon()</code> to false.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">firewall.setAllowSemicolon(true);</font></td></tr><tr><td><font color="gray">After:</font></td><td>firewall.setAllowSemicolon(false);</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/StrictHttpFirewall.html#setAllowSemicolon-boolean-">Spring docs API - StrictHttpFirewall#setAllowSemicolon</a></li></ul>

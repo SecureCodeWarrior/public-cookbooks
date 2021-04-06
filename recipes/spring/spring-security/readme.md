@@ -31,4 +31,14 @@ It covers the following protections:
 <li>Secure Transport: use RequiresSecure to enforce HTTPS</li>
 <li>Secure Transport: use RequiresSecure to enforce HTTPS on all paths</li>
 <li>Security Misconfiguration: Prevent session from being included in the URL</li>
+<li>Security Misconfiguration: StrictHttpFirewall instead of DefaultHttpFirewall (assignment)</li>
+<li>Security Misconfiguration: StrictHttpFirewall instead of DefaultHttpFirewall (instance)</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: HTTP method validation</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject (URL encoded) backslash</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject (URL encoded) null</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded double slash</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded percent</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded period</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded slash</li>
+<li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject semicolon</li>
 </ul>
