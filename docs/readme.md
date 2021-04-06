@@ -42,7 +42,7 @@ Cookbooks are indexed from the [recipes](https://github.com/SecureCodeWarrior/pu
 </ul>
 </details>
 <details>
-<summary><strong>Java Apache Cookbook</strong> - 2 recipe(s) -
+<summary><strong>Java Apache Cookbook</strong> - 3 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/apache.zip'>download .zip</a>
 <p>A cookbook that simplifies Java Apache development. It aims to automate common routines
 performed by developers, preventing them to repeat themselves or introduce known issues</p>
@@ -52,6 +52,7 @@ It covers the following protections:
 <ul>
 <li>Session configuration: Cookies: Set HttpOnly flag to true</li>
 <li>Session configuration: Cookies: Set Secure flag to true</li>
+<li>Session configuration: Cookies: Configure Secure flag</li>
 </ul>
 </details>
 <details>
@@ -70,7 +71,7 @@ It covers the following protections:
 </ul>
 </details>
 <details>
-<summary><strong>Java Bad Practices</strong> - 3 recipe(s) -
+<summary><strong>Java Bad Practices</strong> - 6 recipe(s) -
 <a href='https://github.com/SecureCodeWarrior/public-cookbooks/releases/download/latest/bad-practices.zip'>download .zip</a>
 <p>Examples of Java bad practices</p>
 </summary>
@@ -80,6 +81,8 @@ It covers the following protections:
 <li>Use java.security.SecureRandom instead of java.util.Random</li>
 <li>Session configuration: Cookies: Set HttpOnly flag to true</li>
 <li>Session configuration: Cookies: Set Secure flag to true</li>
+<li>Session configuration: Cookies: Configure HttpOnly flag</li>
+<li>Session configuration: Cookies: Configure Secure flag</li>
 </ul>
 </details>
 <details>
