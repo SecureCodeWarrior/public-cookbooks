@@ -6,4 +6,6 @@ It covers the following protections:
 <ul>
 <li>Session configuration: Cookies: Set HttpOnly flag to true</li>
 <li>Session configuration: Cookies: Set Secure flag to true</li>
+<li>Session configuration: Cookies: Configure HttpOnly flag</li>
+<li>Session configuration: Cookies: Configure Secure flag</li>
 </ul>
