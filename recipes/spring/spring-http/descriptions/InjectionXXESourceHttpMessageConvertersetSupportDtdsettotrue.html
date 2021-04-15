@@ -1,0 +1,6 @@
+
+
+Disabling the parsing of DTDs (Document Type Definition) is the most secure way to prevent XML External Entity injection (XXE), and some Denial of Service attacks.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">sourceHttpMessageConverter.setSupportDtd(true);</font></td></tr><tr><td><font color="gray">After:</font></td><td>sourceHttpMessageConverter.setSupportDtd(false);</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#xml-external-entity-prevention-cheat-sheet">OWASP Cheatsheet - XML External Entity Prevention</a></li></ul>

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "d5c08651-3c40-4557-892c-fc85d0ea94fe",
+    "rulePackVersion": "0.1.0",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"true\"\n    name: \"setProcessExternalEntities\"\n    type: \"org.springframework.oxm.jaxb.Jaxb2Marshaller\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set .setProcessExternalEntities() to false\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"false\"\n",
+        "ruleName": "Injection: XXE: Jaxb2Marshaller#setProcessExternalEntities set to true",
+        "category": "injection:xml",
+        "ruleID": "f4392503-eabf-4c0a-82f7-31c3593e79fa",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InjectionXXEJaxb2MarshallersetProcessExternalEntitiessettotrue.html",
+        "ruleShortDescription": "Prevent XXE by disabling the processing of external entities",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"true\"\n    name: \"setSupportDtd\"\n    type: \"org.springframework.oxm.jaxb.Jaxb2Marshaller\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set .setSupportDtd() to false\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"false\"\n",
+        "ruleName": "Injection: XXE: Jaxb2Marshaller#setSupportDtd set to true",
+        "category": "injection:xml",
+        "ruleID": "3b32434d-00de-47dd-bbb8-795953ad4ee9",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InjectionXXEJaxb2MarshallersetSupportDtdsettotrue.html",
+        "ruleShortDescription": "Prevent XXE by disabling DTDs",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ],
+  "generators": []
+}

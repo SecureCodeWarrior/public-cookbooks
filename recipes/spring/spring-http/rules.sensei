@@ -1,0 +1,82 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "270c6127-626d-4cfe-b5d5-607b1c50ef30",
+    "rulePackVersion": "0.1.0",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"true\"\n    name: \"setSupportDtd\"\n    type: \"org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: \"Set .setSupportDtd() to false\"\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
+        "ruleName": "Injection: XXE: Jaxb2RootElementHttpMessageConverter#setSupportDtd set to true",
+        "category": "injection:xxe",
+        "ruleID": "25d5aac3-a9dc-466f-b3ae-570b09c0a4cf",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InjectionXXEJaxb2RootElementHttpMessageConvertersetSupportDtdsettotrue.html",
+        "ruleShortDescription": "Prevent XXE by disabling DTDs",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"true\"\n    name: \"setProcessExternalEntities\"\n    type: \"org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set .setProcessExternalEntities() to false\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"false\"\n",
+        "ruleName": "Injection: XXE: Jaxb2RootElementHttpMessageConverter#setProcessExternalEntities set to true",
+        "category": "injection:xxe",
+        "ruleID": "573cf5db-2420-45e9-91cf-6045284744a7",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InjectionXXEJaxb2RootElementHttpMessageConvertersetProcessExternalEntitiessettotrue.html",
+        "ruleShortDescription": "Prevent XXE by disabling the processing of External Entities",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n        value: \"true\"\n    name: \"setSupportDtd\"\n    type: \"org.springframework.http.converter.xml.SourceHttpMessageConverter\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set .setSupportDtd() to false\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"false\"\n\n",
+        "ruleName": "Injection: XXE: SourceHttpMessageConverter#setSupportDtd set to true",
+        "category": "injection:xxe",
+        "ruleID": "09c11640-e0d4-48be-89cd-424a5c3ce399",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InjectionXXESourceHttpMessageConvertersetSupportDtdsettotrue.html",
+        "ruleShortDescription": "Prevent XXE by disabling DTDs",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        type: \"boolean\"\n    name: \"setProcessExternalEntities\"\n    type: \"org.springframework.http.converter.xml.SourceHttpMessageConverter\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: \"Set .setProcessExternalEntities() to false\"\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \"false\"\n\n",
+        "ruleName": "Injection: XXE: SourceHttpMessageConverter#setProcessExternalEntities set to true",
+        "category": "injection:xxe",
+        "ruleID": "a30e5f05-1d44-4315-aa5a-8426516ec21b",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "InjectionXXESourceHttpMessageConvertersetProcessExternalEntitiessettotrue.html",
+        "ruleShortDescription": "Prevent XXE by disabling the processing of External Entities",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ],
+  "generators": []
+}
