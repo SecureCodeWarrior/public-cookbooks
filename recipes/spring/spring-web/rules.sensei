@@ -1,0 +1,109 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "92edb6fa-173e-4c7f-b545-3115f13ea501",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        integerValue:\n          greaterThan: 1800\n        type:\n          checkInheritance: true\n    name: maxAge\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Set to 30 minutes\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: 1800\n",
+        "ruleName": "Security Misconfiguration: CORS: Avoid prolonged caching: CorsRegistry#maxAge",
+        "ruleID": "c9093727-7de5-4f91-b84c-ac8f0ea94eef",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSAvoidprolongedcaching.html",
+        "ruleShortDescription": "A value over 30 minutes is considered prolonged and likely to reduce security",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: \"allowedMethods\"\n    anyOf:\n    - args:\n        1:\n          value: \"*\"\n    - args:\n        1:\n          value:\n            caseSensitive: false\n            matches: \"PUT|DELETE\"\n    type: \"org.springframework.web.servlet.config.annotation.CorsRegistration\"\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Set to allow default simple HTTP methods\n  actions:\n  - rewrite:\n      to: |-\n        {{{ qualifier }}}\n        .allowedMethods()\n",
+        "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedMethods",
+        "ruleID": "36e0b131-9ae4-417b-9962-1ebfd877944d",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowedMethods.html",
+        "ruleShortDescription": "Allowing unsafe methods puts the application at risk",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \u0027*\u0027\n    name: allowedOrigins\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Specify the allowedOrigins\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \u0027\"https://...\"\u0027\n",
+        "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedOrigins",
+        "ruleID": "37f1a117-8238-49e8-8f85-8cdeae7bb431",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowedOrigins.html",
+        "ruleShortDescription": "Allowing all origins makes the application vulnerable to scripts from any domain",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \u0027*\u0027\n    name: allowedHeaders\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Specify the allowedHeaders\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \u0027\"\"\u0027\n",
+        "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedHeaders",
+        "ruleID": "91c601df-511c-4cb8-9209-0ff9b1b5f15a",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowedHeaders.html",
+        "ruleShortDescription": "Allowing all headers makes the application vulnerable",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \u0027*\u0027\n    name: exposedHeaders\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n  - name: Specify the exposedHeaders\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \u0027\"\"\u0027\n",
+        "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#exposedHeaders",
+        "ruleID": "8b8862b6-b03d-4d5b-8195-c0825136bedd",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryexposedHeaders.html",
+        "ruleShortDescription": "Exposing all headers makes the application vulnerable",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \"true\"\n    name: allowCredentials\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Set to disallow credentials\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \"false\"\n",
+        "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowCredentials",
+        "ruleID": "5c1bfd3c-0275-42dc-97ca-5e508a70aa75",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSAvoidbroadsettingsCorsRegistryallowCredentials.html",
+        "ruleShortDescription": "Allowing credentials makes the application more vulnerable",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ],
+  "generators": []
+}
