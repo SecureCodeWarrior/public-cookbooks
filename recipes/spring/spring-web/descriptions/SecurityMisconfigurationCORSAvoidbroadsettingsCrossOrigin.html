@@ -1,0 +1,6 @@
+
+
+Allowing CORS in your application exposes it to vulnerabilities. If enabling CORS cannot be avoided, make sure it's configured as strictly as possible.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">@CrossOrigin</font></td></tr><tr><td><font color="gray">After:</font></td><td>@CrossOrigin(origins = "origin1", methods = {RequestMethod.GET}, exposedHeaders = {"header1"}, allowedHeaders = {"header1"}, allowCredentials = "false", maxAge = 1800)</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://vulncat.fortify.com/en/detail?id=desc.dynamic.html.html5_cors_functionality_abuse#Universal"></a>Fortify Taxonomy - HTML5: CORS functionality abuse</li><li><a href="https://vulncat.fortify.com/en/detail?id=desc.dynamic.html.html5_cors_unsafe_method_allowed#Universal"></a>Fortify Taxonomy - HTML5: CORS Unsafe Methods Allowed</li</ul>
