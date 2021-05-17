@@ -57,7 +57,7 @@
           }
         ],
         "commonFixes": [],
-        "ruleName": "Android Manifest best practices: explicitly Disable Backups",
+        "ruleName": "Manifest best practices: explicitly Disable Backups",
         "category": "code_tampering:backups_enabled",
         "cweCategory": 530,
         "ruleID": "a44c0e04-ea4a-4081-8189-bafd821bcd3f",
@@ -334,7 +334,7 @@
           }
         ],
         "commonFixes": [],
-        "ruleName": "Android Manifest best practices: Disable Backups",
+        "ruleName": "Manifest best practices: Disable Backups",
         "category": "code_tampering:backups_enabled",
         "cweCategory": 530,
         "ruleID": "5c354f81-611d-415d-9ae8-905bb9a7579d",
@@ -353,7 +353,7 @@
         "yamlCode": "search:\n  argument:\n    referenceTo:\n      name:\n        matches: \"android.content.Context.MODE_WORLD_(READABLE|WRITEABLE)\"\n",
         "mver": 6,
         "yamlQuickFixCode": "availableFixes:\n- name: \"Change mode to Context.MODE_PRIVATE\"\n  actions:\n  - rewrite:\n      to: \"Context.MODE_PRIVATE\"\n      target: \"self\"\n",
-        "ruleName": "Android storage best practices: insecure operating mode",
+        "ruleName": "Storage best practices: insecure operating mode",
         "category": "improper_platform_usage:insecure_file_directory_permissions",
         "ruleID": "d5713e07-d42e-4d8f-a2b2-e62a2d682505",
         "disableRuleIDs": [],
@@ -496,6 +496,120 @@
             }
           }
         ]
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:filterTouchesWhenObscured",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "false",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "Button|ImageButton",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add android:filterTouchesWhenObscured\u003d\"true\"",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"true\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Layout best practices: enable filterTouchesWhenObscured",
+        "ruleID": "e3f28287-51ed-46a9-a732-788396153492",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "LayoutbestpracticesenablefilterTouchesWhenObscured.html",
+        "ruleShortDescription": "When setting filterTouchesWhenObscured to false allows adversaries to hijack users\u0027 taps.",
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": []
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:filterTouchesWhenObscured",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValue": "",
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "Button|ImageButton",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add android:filterTouchesWhenObscured\u003d\"true\"",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:filterTouchesWhenObscured\u003d\"true\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Layout best practices: explicitly enable filterTouchesWhenObscured",
+        "ruleID": "470d3f3b-0ab7-4968-bec7-924640df88ec",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "Not setting filterTouchesWhenObscured to true allows adversaries to hijack users\u0027 taps.",
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": []
       }
     }
   ],
