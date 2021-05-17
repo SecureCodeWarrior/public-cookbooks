@@ -61,7 +61,7 @@
       "model": {
         "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \u0027*\u0027\n    name: allowedHeaders\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
         "mver": 8,
-        "yamlQuickFixCode": "availableFixes:\n- name: Specify the allowedHeaders\n  actions:\n  - modifyArguments:\n      rewrite:\n        1: \u0027\"\"\u0027\n",
+        "yamlQuickFixCode": "availableFixes:\n- name: Specify the allowedHeaders\n  actions: []\n",
         "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedHeaders",
         "ruleID": "91c601df-511c-4cb8-9209-0ff9b1b5f15a",
         "disableRuleIDs": [],
@@ -77,7 +77,7 @@
       "model": {
         "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        value: \u0027*\u0027\n    name: exposedHeaders\n    type: org.springframework.web.servlet.config.annotation.CorsRegistration\n",
         "mver": 8,
-        "yamlQuickFixCode": "availableFixes:\n  - name: Specify the exposedHeaders\n    actions:\n      - modifyArguments:\n          rewrite:\n            1: \u0027\"\"\u0027\n",
+        "yamlQuickFixCode": "availableFixes:\n- name: Specify the exposedHeaders\n  actions: []\n",
         "ruleName": "Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#exposedHeaders",
         "ruleID": "8b8862b6-b03d-4d5b-8195-c0825136bedd",
         "disableRuleIDs": [],
