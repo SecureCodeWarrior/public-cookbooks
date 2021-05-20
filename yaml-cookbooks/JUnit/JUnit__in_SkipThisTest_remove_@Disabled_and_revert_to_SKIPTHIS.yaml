@@ -1,4 +1,5 @@
 id: 7827bdcb-1b37-4d52-9fbe-61dae52bf377
+version: 8
 metadata:
   name: 'JUnit: in SkipThisTest remove @Disabled and revert to SKIPTHIS'
   shortDescription: remove @Disabled and revert to SKIPTHIS for demo purposes in the

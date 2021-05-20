@@ -1,4 +1,5 @@
 id: 66d763c4-3c9d-4fac-a43c-0d39c07b3fbc
+version: 8
 metadata:
   name: 'Input Validation: Avoid XXE: Do not set DocumentBuilderFactory external-parameter-entities
     to true '

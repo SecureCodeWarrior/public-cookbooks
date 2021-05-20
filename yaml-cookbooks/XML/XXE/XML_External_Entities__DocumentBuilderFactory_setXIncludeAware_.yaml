@@ -1,4 +1,5 @@
 id: c651c938-5b27-47ce-b73b-10bfb28173cf
+version: 8
 metadata:
   name: 'XML External Entities: DocumentBuilderFactory setXIncludeAware '
   shortDescription: 'Could lead to XXE '

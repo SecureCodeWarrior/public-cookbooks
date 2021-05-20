@@ -1,4 +1,5 @@
 id: d80d7dcf-6c4d-42c2-a38b-1da6e441db2d
+version: 8
 metadata:
   name: 'Security Misconfiguration: Disabled Security Settings: CookieCsrfTokenRepository#withHttpOnlyFalse'
   shortDescription: Make sure to set HttpOnly to true to protect against CSRF or remove

@@ -1,4 +1,5 @@
 id: eef53ef1-5079-4c5b-bf75-00be333f8032
+version: 8
 metadata:
   name: 'Security Misconfiguration: HSTS - includeSubDomains'
   shortDescription: Include subdomains in the HSTS domain

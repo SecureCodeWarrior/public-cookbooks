@@ -1,4 +1,5 @@
 id: 345f6a51-012f-4613-aac2-c606fa67395a
+version: 8
 metadata:
   name: remember to add disabled description
   shortDescription: '@Disabled should really have a description explaining why'

@@ -1,4 +1,5 @@
 id: 9cadcb2c-8338-4606-8329-a48e70113d43
+version: 8
 metadata:
   name: 'Security Misconfiguration: Disable Security Features - HSTS'
   shortDescription: Enforce HSTS protection against vulnerabilities over HTTP

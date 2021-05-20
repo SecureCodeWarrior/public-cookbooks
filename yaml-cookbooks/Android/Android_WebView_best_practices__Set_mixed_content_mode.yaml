@@ -1,4 +1,5 @@
 id: 7ba80c43-86e5-4b23-af0d-5bbd4ff0e1e9
+version: 8
 metadata:
   name: 'Android WebView best practices: Set mixed content mode'
   shortDescription: WebView setting with security implications

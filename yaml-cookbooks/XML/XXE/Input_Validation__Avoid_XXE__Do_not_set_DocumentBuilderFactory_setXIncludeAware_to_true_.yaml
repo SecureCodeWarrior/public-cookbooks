@@ -1,4 +1,5 @@
 id: 04a27661-a427-4629-8094-f172be9f90e0
+version: 8
 metadata:
   name: 'Input Validation: Avoid XXE: Do not set DocumentBuilderFactory setXIncludeAware
     to true '

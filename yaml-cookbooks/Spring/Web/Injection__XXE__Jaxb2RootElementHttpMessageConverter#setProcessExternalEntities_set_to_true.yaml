@@ -1,4 +1,5 @@
 id: 573cf5db-2420-45e9-91cf-6045284744a7
+version: 8
 metadata:
   name: 'Injection: XXE: Jaxb2RootElementHttpMessageConverter#setProcessExternalEntities
     set to true'

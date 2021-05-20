@@ -1,4 +1,5 @@
 id: b03a3f9d-977c-4562-8abb-fa108d85e3cf
+version: 8
 metadata:
   name: 'Immutable: avoid setters that return values'
   shortDescription: Avoid setters methods that return values

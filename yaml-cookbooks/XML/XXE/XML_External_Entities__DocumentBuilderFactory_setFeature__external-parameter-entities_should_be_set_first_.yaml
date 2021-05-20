@@ -1,4 +1,5 @@
 id: 2465f091-c842-460c-8542-d97df4dc18b5
+version: 8
 metadata:
   name: 'XML External Entities: DocumentBuilderFactory setFeature: external-parameter-entities
     should be set first '

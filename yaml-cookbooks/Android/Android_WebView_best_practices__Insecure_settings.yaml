@@ -1,4 +1,5 @@
 id: 8a8f7dd7-d5a4-41ca-9e1f-27af8d041c9e
+version: 8
 metadata:
   name: 'Android WebView best practices: Insecure settings'
   shortDescription: Enabling this WebView setting has security implications

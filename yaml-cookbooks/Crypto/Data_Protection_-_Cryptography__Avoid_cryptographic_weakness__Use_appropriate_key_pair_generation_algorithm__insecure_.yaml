@@ -1,4 +1,5 @@
 id: c4ec414d-c74c-477f-be88-ce53e7553f11
+version: 8
 metadata:
   name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate
     key pair generation algorithm: insecure '

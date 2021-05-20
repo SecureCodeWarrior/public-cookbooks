@@ -1,4 +1,5 @@
 id: b1834002-1ae5-4f5c-99ed-bc4346ff892b
+version: 8
 metadata:
   name: 'Injection - SQL Injection in JPA: EntityManager#createQuery'
   shortDescription: Avoid SQLi by using parameterized queries, instead of string concatenation

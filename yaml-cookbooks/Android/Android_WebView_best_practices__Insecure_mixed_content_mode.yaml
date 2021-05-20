@@ -1,4 +1,5 @@
 id: c941279f-b1e6-4f7a-afb4-ad9d9c187e77
+version: 8
 metadata:
   name: 'Android WebView best practices: Insecure mixed content mode'
   shortDescription: Insecure content may be allowed to be loaded by a secure origin

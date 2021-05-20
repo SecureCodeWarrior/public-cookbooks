@@ -1,4 +1,5 @@
 id: 5aa6f70c-6b00-49ec-9984-c80d7cf95a01
+version: 8
 metadata:
   name: 'Data Protection - Cryptography: Avoid brute forcing: Use sufficiently long
     key sizes: keyGenerator '

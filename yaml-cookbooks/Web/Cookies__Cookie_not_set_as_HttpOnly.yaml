@@ -1,4 +1,5 @@
 id: 5bd6ed7e-ecc6-4d50-8252-2dd58f2760af
+version: 8
 metadata:
   name: 'Cookies: Cookie not set as HttpOnly'
   shortDescription: The HttpOnly flag has been set to false on this cookie.

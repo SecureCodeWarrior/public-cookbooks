@@ -1,4 +1,5 @@
 id: 1b329b3f-7f8a-4984-8936-5ef5accdf165
+version: 8
 metadata:
   name: 'Input Validation: Avoid JDBC Injection: Bind variables in prepared statements:
     queryForObject with arrays'

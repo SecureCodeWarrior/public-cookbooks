@@ -1,4 +1,5 @@
 id: 9766b12a-444d-4817-95ed-d414aec8be7d
+version: 8
 metadata:
   name: 'Logger: add logger'
   shortDescription: Add logger to class

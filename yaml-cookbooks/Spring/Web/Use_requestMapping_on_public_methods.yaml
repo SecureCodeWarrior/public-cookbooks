@@ -1,4 +1,5 @@
 id: 8c909b72-602c-41e4-af4c-eb8b86d04f64
+version: 8
 metadata:
   name: Use requestMapping on public methods
   shortDescription: RequestMapping should not be used on non-public methods

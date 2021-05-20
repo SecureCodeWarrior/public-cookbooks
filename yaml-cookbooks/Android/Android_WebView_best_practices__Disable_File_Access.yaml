@@ -1,4 +1,5 @@
 id: 9813486e-031f-4861-93d4-60284e1fb253
+version: 8
 metadata:
   name: 'Android WebView best practices: Disable File Access'
   shortDescription: WebView setting with security implications

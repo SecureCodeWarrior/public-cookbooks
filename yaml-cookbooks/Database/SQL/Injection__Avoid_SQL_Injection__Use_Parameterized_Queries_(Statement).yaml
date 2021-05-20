@@ -1,4 +1,5 @@
 id: c8201f35-3de0-4903-adb0-15a92ceb6218
+version: 8
 metadata:
   name: 'Injection: Avoid SQL Injection: Use Parameterized Queries (Statement)'
   shortDescription: Could lead to SQL Injection

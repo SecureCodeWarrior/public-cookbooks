@@ -1,4 +1,5 @@
 id: bcc9761e-1d47-4292-a4d0-2316e52b64d5
+version: 8
 metadata:
   name: 'Crypto: Signature: Approved Hashing Algorithm'
   shortDescription: 'This hashing algorithm is not recommended for cryptographic use '

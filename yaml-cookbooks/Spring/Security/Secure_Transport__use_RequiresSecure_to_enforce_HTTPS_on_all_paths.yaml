@@ -1,4 +1,5 @@
 id: 424fe4c6-d13a-495b-985e-b320c132355a
+version: 8
 metadata:
   name: 'Secure Transport: use RequiresSecure to enforce HTTPS on all paths'
   shortDescription: Enforce HTTPS on all requests, not just on a selected number

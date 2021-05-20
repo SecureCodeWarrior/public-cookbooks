@@ -1,4 +1,5 @@
 id: 942f3247-e465-428f-ad7a-184d1e71cf73
+version: 8
 metadata:
   name: 'XML External Entities: XMLInputFactory.SUPPORT_DTD'
   shortDescription: Could lead to XXE

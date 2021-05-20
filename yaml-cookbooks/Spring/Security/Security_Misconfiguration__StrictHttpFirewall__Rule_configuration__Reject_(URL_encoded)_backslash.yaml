@@ -1,4 +1,5 @@
 id: ef1d439a-75e5-42a0-990d-28ed51d24850
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
     (URL encoded) backslash'

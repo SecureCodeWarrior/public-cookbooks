@@ -1,4 +1,5 @@
 id: 71453156-ec12-4181-9aa0-a427e040dcc5
+version: 8
 metadata:
   name: 'Collections: Do not expose internal Sets'
   shortDescription: Do not expose an internal Set as it is mutable. Return a copy or immutable view.

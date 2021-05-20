@@ -1,4 +1,5 @@
 id: cea0f765-cde9-4165-bd8b-31559443e432
+version: 8
 metadata:
   name: Should use requiresSecure
   shortDescription: Use of HTTP instead of HTTPS is insecure

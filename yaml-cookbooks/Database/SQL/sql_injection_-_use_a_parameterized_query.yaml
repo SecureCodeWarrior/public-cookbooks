@@ -1,4 +1,5 @@
 id: 4b70352d-5a1f-4e76-858b-33843b510de8
+version: 8
 metadata:
   name: sql injection - use a parameterized query
   shortDescription: execute query with untrusted inputs is vulnerable to SQL Injection

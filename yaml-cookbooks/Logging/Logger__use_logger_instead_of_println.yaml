@@ -1,4 +1,5 @@
 id: 246aea6d-751f-40ed-bec7-c0ee464b4952
+version: 8
 metadata:
   name: 'Logger: use logger instead of println'
   shortDescription: use logger instead of println - remember stop using System.out.println

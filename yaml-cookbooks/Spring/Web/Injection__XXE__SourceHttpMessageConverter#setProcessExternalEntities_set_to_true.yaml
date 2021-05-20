@@ -1,4 +1,5 @@
 id: a30e5f05-1d44-4315-aa5a-8426516ec21b
+version: 8
 metadata:
   name: 'Injection: XXE: SourceHttpMessageConverter#setProcessExternalEntities set
     to true'

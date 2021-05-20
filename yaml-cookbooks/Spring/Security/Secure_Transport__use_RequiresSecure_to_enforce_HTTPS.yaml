@@ -1,4 +1,5 @@
 id: 33bd6a30-a0f7-42ef-9433-1c3137b053a2
+version: 8
 metadata:
   name: 'Secure Transport: use RequiresSecure to enforce HTTPS'
   shortDescription: Serve requests over HTTPS instead of unencrypted HTTP

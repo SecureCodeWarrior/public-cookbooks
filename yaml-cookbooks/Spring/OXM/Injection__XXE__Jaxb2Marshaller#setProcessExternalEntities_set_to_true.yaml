@@ -1,4 +1,5 @@
 id: f4392503-eabf-4c0a-82f7-31c3593e79fa
+version: 8
 metadata:
   name: 'Injection: XXE: Jaxb2Marshaller#setProcessExternalEntities set to true'
   shortDescription: Prevent XXE by disabling the processing of external entities

@@ -1,4 +1,5 @@
 id: d99f6136-78cc-457a-9e46-a84061e0eb48
+version: 8
 metadata:
   name: 'XML External Entities: DocumentBuilderFactory setFeature: load-external-dtd '
   shortDescription: 'Could lead to XXE '

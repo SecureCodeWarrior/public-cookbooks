@@ -1,4 +1,5 @@
 id: 510cf404-1ccd-4d92-9251-844d229bc63f
+version: 8
 metadata:
   name: Protect against Session Fixation attacks
   shortDescription: Spring Security's default protection against Session Fixation

@@ -1,4 +1,5 @@
 id: a1047884-4b6b-438d-999a-d3e503cce393
+version: 8
 metadata:
   name: 'Security Misconfiguration: XSS protection: Add CSP header - xssProtection'
   shortDescription: Add a CSP header for additional protection agains XSS and data

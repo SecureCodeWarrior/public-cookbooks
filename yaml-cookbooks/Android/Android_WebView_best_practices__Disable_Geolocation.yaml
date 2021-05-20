@@ -1,4 +1,5 @@
 id: 0b797d44-6fb2-46bc-bb52-94538281ab08
+version: 8
 metadata:
   name: 'Android WebView best practices: Disable Geolocation'
   shortDescription: WebView setting with privacy implications

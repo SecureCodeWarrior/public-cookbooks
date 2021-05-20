@@ -1,4 +1,5 @@
 id: 5a2c1b52-be7d-4ae3-bdff-5ddd35f40b64
+version: 8
 metadata:
   name: 'Session configuration: Cookies: Configure HttpOnly flag'
   shortDescription: Prevent client-side scripts from accessing the cookie by setting

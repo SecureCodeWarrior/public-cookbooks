@@ -1,4 +1,5 @@
 id: 2ce50a3c-c7c5-4734-8e25-8cf73610e511
+version: 8
 metadata:
   name: 'TLS: Weak Encryption: Insecure Version '
   shortDescription: Could lead to Data Exposure

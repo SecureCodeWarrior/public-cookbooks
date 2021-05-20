@@ -1,4 +1,5 @@
 id: 4ae20b60-60e8-46ca-8ece-bbf1c2a799ff
+version: 8
 metadata:
   name: 'Input Validation: Avoid Spring Expression Language Injection: Do not evaluate
     expressions controlled by user input'

@@ -1,4 +1,5 @@
 id: cb7e426e-37af-4988-9329-eb045fda1a4e
+version: 8
 metadata:
   name: 'JUnit: Junit 5 Test classes do not need to be public'
   shortDescription: Junit 5 Test classes do not need to be public

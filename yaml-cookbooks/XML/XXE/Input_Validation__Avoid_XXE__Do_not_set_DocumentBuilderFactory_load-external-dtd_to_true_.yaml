@@ -1,4 +1,5 @@
 id: fb2c0844-982a-4294-ac75-db4abad43329
+version: 8
 metadata:
   name: 'Input Validation: Avoid XXE: Do not set DocumentBuilderFactory load-external-dtd
     to true '

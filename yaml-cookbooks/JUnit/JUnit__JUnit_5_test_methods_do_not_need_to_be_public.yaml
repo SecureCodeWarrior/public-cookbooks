@@ -1,4 +1,5 @@
 id: 510f6589-d609-49a4-b6a9-c9fefcaeea14
+version: 8
 metadata:
   name: 'JUnit: JUnit 5 test methods do not need to be public'
   shortDescription: JUnit 5 test methods do not need public visibility

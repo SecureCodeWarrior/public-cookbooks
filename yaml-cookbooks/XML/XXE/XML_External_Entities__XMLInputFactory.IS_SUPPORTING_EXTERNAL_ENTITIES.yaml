@@ -1,4 +1,5 @@
 id: f98cb3fc-b03c-474a-af3e-1e36c39171ce
+version: 8
 metadata:
   name: 'XML External Entities: XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES'
   shortDescription: Could lead to XXE

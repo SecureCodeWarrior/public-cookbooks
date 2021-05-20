@@ -1,4 +1,5 @@
 id: b018e26d-e42f-4258-9270-6bd75c017208
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
     URL encoded slash'

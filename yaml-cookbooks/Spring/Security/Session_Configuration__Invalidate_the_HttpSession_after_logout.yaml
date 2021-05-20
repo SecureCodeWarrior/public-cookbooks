@@ -1,4 +1,5 @@
 id: 6676feb5-0924-479f-a7c8-1a6e330c565f
+version: 8
 metadata:
   name: 'Session Configuration: Invalidate the HttpSession after logout'
   shortDescription: Delete all sessions after logout

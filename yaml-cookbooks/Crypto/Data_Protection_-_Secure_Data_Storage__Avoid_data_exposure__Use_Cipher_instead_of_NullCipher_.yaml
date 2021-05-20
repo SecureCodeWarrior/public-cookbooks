@@ -1,4 +1,5 @@
 id: 6affb789-52ed-41bf-a689-2aa38579b14a
+version: 8
 metadata:
   name: 'Data Protection - Secure Data Storage: Avoid data exposure: Use Cipher instead
     of NullCipher '

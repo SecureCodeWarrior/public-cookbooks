@@ -1,4 +1,5 @@
 id: 3f71743b-011d-43d1-970b-a2daceeba178
+version: 8
 metadata:
   name: Missing parameter annotation in request handler
   shortDescription: The enclosing method is a request handler, but there's no annotation

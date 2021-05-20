@@ -1,4 +1,5 @@
 id: 668f46c2-53fe-4e56-a943-06dbd4d34d3b
+version: 8
 metadata:
   name: 'Injection - SQL Injection in Jdbc: #query/queryForStream/queryForObject'
   shortDescription: Avoid SQLi by using parameterized queries, instead of string concatenation

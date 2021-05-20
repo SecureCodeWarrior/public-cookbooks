@@ -1,4 +1,5 @@
 id: 3b32434d-00de-47dd-bbb8-795953ad4ee9
+version: 8
 metadata:
   name: 'Injection: XXE: Jaxb2Marshaller#setSupportDtd set to true'
   shortDescription: Prevent XXE by disabling DTDs

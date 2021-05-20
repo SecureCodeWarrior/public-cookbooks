@@ -1,4 +1,5 @@
 id: 25d5aac3-a9dc-466f-b3ae-570b09c0a4cf
+version: 8
 metadata:
   name: 'Injection: XXE: Jaxb2RootElementHttpMessageConverter#setSupportDtd set to
     true'

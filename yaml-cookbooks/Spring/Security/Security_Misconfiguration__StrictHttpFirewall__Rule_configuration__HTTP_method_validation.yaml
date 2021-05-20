@@ -1,4 +1,5 @@
 id: 0429142a-b5f3-487a-9ab8-825b7380015e
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: HTTP method
     validation'

@@ -1,4 +1,5 @@
 id: d4380ce7-7c41-465d-a505-5ec57c0cf14e
+version: 8
 metadata:
   name: Not releasing DynamoDbClient
   shortDescription: Call the close() method to release the DynamoDbClient

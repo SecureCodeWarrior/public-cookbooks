@@ -1,4 +1,5 @@
 id: 8dcc914f-bf2c-4d50-a9fd-3e7e117c5339
+version: 8
 metadata:
   name: 'Security Misconfiguration: Disabled Headers'
   shortDescription: Disabling Spring Security's default headers makes the application

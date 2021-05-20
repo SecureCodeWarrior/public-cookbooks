@@ -1,4 +1,5 @@
 id: 743bc14a-11cd-4ca3-a101-2af18663ba92
+version: 8
 metadata:
   name: Use SecureRandom instead of Random
   shortDescription: Using Random can lead to predictable randomness

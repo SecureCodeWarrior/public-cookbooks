@@ -1,4 +1,5 @@
 id: 841b5e1e-22cb-4cd5-830c-bf7f1342ec1d
+version: 8
 metadata:
   name: 'Crypto: KeyPair Generation: Approved Standard Cryptographic Algorithm '
   shortDescription: 'This cryptographic algorithm is not recommended '

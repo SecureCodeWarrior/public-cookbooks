@@ -1,4 +1,5 @@
 id: 96118a3e-cc05-4946-be03-48658503b831
+version: 8
 metadata:
   name: Field injection is not recommended
   shortDescription: Field injection is not recommended. A class that takes a required

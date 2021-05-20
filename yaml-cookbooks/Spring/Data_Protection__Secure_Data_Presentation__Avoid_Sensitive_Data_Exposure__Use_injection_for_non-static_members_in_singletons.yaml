@@ -1,4 +1,5 @@
 id: 31141c48-1326-4440-ac1f-71167977418a
+version: 8
 metadata:
   name: 'Data Protection: Secure Data Presentation: Avoid Sensitive Data Exposure:
     Use injection for non-static members in singletons'

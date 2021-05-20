@@ -1,4 +1,5 @@
 id: 9ed07fda-fb90-4e78-a015-70e1f684649c
+version: 8
 metadata:
   name: 'Session management: Avoid CSRF: Use narrow mapping for state-changing methods'
   shortDescription: Could lead to CSRF

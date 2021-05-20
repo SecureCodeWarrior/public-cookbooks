@@ -1,4 +1,5 @@
 id: 93e69bc8-ed26-47d8-9315-4c2e113b8be4
+version: 8
 metadata:
   name: 'Crypto: KeyAgreement: Insecure Cryptographic Algorithm '
   shortDescription: 'This cryptographic algorithm is insecure '

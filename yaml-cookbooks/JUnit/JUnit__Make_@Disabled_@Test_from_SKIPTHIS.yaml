@@ -1,4 +1,5 @@
 id: 828cddcb-9f35-4532-9f4d-ceb0b4aee171
+version: 8
 metadata:
   name: 'JUnit: Make @Disabled @Test from SKIPTHIS'
   shortDescription: Stop naming methods SKIPTHIS, use @Disabled @Test instead

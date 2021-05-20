@@ -1,4 +1,5 @@
 id: 2839c034-0b45-4763-8146-7d5b25fe92fa
+version: 8
 metadata:
   name: 'Crypto: KeyAgreement: Guide on Approved Cryptographic Algorithm'
   shortDescription: 'This cryptographic algorithm is not recommended '

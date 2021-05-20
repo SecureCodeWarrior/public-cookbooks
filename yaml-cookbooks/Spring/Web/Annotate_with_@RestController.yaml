@@ -1,4 +1,5 @@
 id: 12a927c8-0497-41c8-b037-828ced4c876c
+version: 8
 metadata:
   name: Annotate with @RestController
   shortDescription: This class looks like a Spring MVC Rest Controller

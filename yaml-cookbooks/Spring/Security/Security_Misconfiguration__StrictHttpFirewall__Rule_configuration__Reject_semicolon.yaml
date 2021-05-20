@@ -1,4 +1,5 @@
 id: 3162ab4b-639d-4b61-9a11-bdc7af383a89
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
     semicolon'

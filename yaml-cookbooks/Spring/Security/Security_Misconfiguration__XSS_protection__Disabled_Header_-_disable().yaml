@@ -1,4 +1,5 @@
 id: a044324f-bcda-4cde-92ee-ff19b90354bd
+version: 8
 metadata:
   name: 'Security Misconfiguration: XSS protection: Disabled Header - disable()'
   shortDescription: Do not disable Spring Security's built-in XSS protection

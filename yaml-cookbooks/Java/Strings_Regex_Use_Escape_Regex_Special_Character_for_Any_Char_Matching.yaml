@@ -1,4 +1,5 @@
 id: 1beed345-512b-4190-b7c3-0691d1da9e66
+version: 8
 metadata:
   name: 'Strings: Regex Use: Escape Regex Special Character for Any Char Matching'
   shortDescription: First argument uses a regex, when using a dot it might have unintended

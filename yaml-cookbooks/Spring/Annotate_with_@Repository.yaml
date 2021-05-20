@@ -1,4 +1,5 @@
 id: 61dede45-61d6-451a-aa95-c9a039fc412e
+version: 8
 metadata:
   name: Annotate with @Repository
   shortDescription: This class looks like the implementation of a Spring Repository.

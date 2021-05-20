@@ -1,4 +1,5 @@
 id: e9cd354c-edf0-457e-be5a-344ef9eef16f
+version: 8
 metadata:
   name: 'InputValidation: Avoid XXE: Do not set XMLInputFactory Property to true '
   shortDescription: 'Could lead to XXE '

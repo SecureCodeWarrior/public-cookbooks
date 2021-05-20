@@ -1,4 +1,5 @@
 id: 850cb607-579d-4dae-8d0e-3e683015d698
+version: 8
 metadata:
   name: 'Immutability: use a getter rather than public field'
   shortDescription: To encourage use of interfaces rather than direct field access,

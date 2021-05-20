@@ -1,4 +1,5 @@
 id: 2da4da97-fd72-4cf0-a39d-a72497c4947a
+version: 8
 metadata:
   name: 'Crypto: Signature: Insecure Hashing Algorithm '
   shortDescription: 'This hashing algorithm is not recommended for cryptographic use '

@@ -1,4 +1,5 @@
 id: 32326375-70f1-475c-94ee-ea57b58bf3f9
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
     URL encoded period'

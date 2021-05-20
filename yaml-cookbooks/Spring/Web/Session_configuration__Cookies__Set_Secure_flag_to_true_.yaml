@@ -1,4 +1,5 @@
 id: c0cc25c3-c0b2-4fb6-bd46-1168bf4b52b8
+version: 8
 metadata:
   name: 'Session configuration: Cookies: Set Secure flag to true '
   shortDescription: Prevent a cookie being sent over unencrypted HTTP by setting the

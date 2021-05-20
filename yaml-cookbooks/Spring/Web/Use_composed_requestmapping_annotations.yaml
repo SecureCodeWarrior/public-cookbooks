@@ -1,4 +1,5 @@
 id: 09cc6bb9-9041-4665-8d71-225f5b73b692
+version: 8
 metadata:
   name: Use composed requestmapping annotations
   shortDescription: Improve readability by using Spring's composed annotations

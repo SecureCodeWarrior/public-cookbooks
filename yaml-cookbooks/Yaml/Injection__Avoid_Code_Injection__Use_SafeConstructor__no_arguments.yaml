@@ -1,4 +1,5 @@
 id: dfdaa55a-c528-44de-8977-7ab8b2083a53
+version: 8
 metadata:
   name: 'Injection: Avoid Code Injection: Use SafeConstructor: no arguments'
   shortDescription: Could lead to Remote Code Execution

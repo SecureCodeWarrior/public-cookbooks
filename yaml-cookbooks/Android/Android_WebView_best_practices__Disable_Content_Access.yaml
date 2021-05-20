@@ -1,4 +1,5 @@
 id: 553ccc99-54bc-4d45-8a29-503c29e45b98
+version: 8
 metadata:
   name: 'Android WebView best practices: Disable Content Access'
   shortDescription: WebView setting with security implications

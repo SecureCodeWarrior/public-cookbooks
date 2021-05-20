@@ -1,4 +1,5 @@
 id: 4611c7d4-41c0-4ffd-bafa-31beaa2030c9
+version: 8
 metadata:
   name: 'Security Misconfiguration: XSS protection: Disabled Header - block()'
   shortDescription: Protection against XSS is better done by blocking the content

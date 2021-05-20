@@ -1,4 +1,5 @@
 id: 6e4d24d1-2ba5-42a4-9f86-26750321bbc1
+version: 8
 metadata:
   name: Use a logger
   shortDescription: Printing messages directly to the standard output is considered

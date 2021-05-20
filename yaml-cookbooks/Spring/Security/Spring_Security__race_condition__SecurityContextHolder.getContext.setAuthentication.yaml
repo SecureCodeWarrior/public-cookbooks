@@ -1,4 +1,5 @@
 id: 9f00d504-8bfe-44db-8b2a-12733fb1d04d
+version: 8
 metadata:
   name: 'Spring Security: race condition: SecurityContextHolder.getContext.setAuthentication'
   shortDescription: It is important to create a new SecurityContext instance to avoid

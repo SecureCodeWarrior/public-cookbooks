@@ -1,4 +1,5 @@
 id: 90ebb983-bc3a-4bce-b0a4-448b084f84ca
+version: 8
 metadata:
   name: Non-annotated controller public method
   shortDescription: Public methods within a controller class should be treated as

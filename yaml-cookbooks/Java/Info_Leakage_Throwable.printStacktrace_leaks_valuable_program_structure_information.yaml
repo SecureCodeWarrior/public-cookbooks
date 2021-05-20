@@ -1,4 +1,5 @@
 id: 51a547ad-3204-4704-a4bf-29a13a4c2904
+version: 8
 metadata:
   name: 'Info Leakage: Throwable.printStacktrace leaks valuable program structure
     information'

@@ -1,4 +1,5 @@
 id: c3bdc2f1-74b5-4990-a60f-04cf42e95555
+version: 8
 metadata:
   name: 'CSRF: Disabled in WebSecurityConfigurator'
   shortDescription: CSRF protection is disabled

@@ -1,4 +1,5 @@
 id: fce1030c-f40c-4f9d-8521-ae7e53dc47e2
+version: 8
 metadata:
   name: Annotate with @Valid
   shortDescription: You can enforce validation against the arguments passed to this

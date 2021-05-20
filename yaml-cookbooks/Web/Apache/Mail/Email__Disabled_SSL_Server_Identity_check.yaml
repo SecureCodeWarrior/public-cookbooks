@@ -1,4 +1,5 @@
 id: ee98c8e5-1b73-4543-b605-1a80d64c3534
+version: 8
 metadata:
   name: 'Email: Disabled SSL Server Identity check'
   shortDescription: When sending an email, the setSSLCheckServerIdentity has been

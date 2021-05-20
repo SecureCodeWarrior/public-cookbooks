@@ -1,4 +1,5 @@
 id: 84c34f9a-900c-451b-b2c2-815d9dc0a63d
+version: 8
 metadata:
   name: Specify RequestMapping method
   shortDescription: Non-specified RequestMapping method will map to any HTTP request

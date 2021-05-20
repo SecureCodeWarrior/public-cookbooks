@@ -1,4 +1,5 @@
 id: 675917a7-7dcb-40db-9a25-f3a2167a0457
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Avoid DefaultHttpFirewall
     (method return type)'

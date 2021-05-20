@@ -1,4 +1,5 @@
 id: 09c11640-e0d4-48be-89cd-424a5c3ce399
+version: 8
 metadata:
   name: 'Injection: XXE: SourceHttpMessageConverter#setSupportDtd set to true'
   shortDescription: Prevent XXE by disabling DTDs

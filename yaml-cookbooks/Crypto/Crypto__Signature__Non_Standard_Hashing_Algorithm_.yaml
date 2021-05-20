@@ -1,4 +1,5 @@
 id: 29bbaa7e-434d-4adc-b0d3-c0d2f2c2ab71
+version: 8
 metadata:
   name: 'Crypto: Signature: Non Standard Hashing Algorithm '
   shortDescription: 'This hashing algorithm is not recommended for cryptographic use '

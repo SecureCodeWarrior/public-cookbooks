@@ -1,4 +1,5 @@
 id: 6020c2a8-e781-4f9b-b3f3-e606019614f9
+version: 8
 metadata:
   name: Do not expose internal array
   shortDescription: Do not expose an internal array as it is mutable

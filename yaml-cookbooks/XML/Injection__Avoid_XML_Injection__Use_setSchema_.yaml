@@ -1,4 +1,5 @@
 id: 39715573-4f7e-4bfd-aae6-7d1e2c74140e
+version: 8
 metadata:
   name: 'Injection: Avoid XML Injection: Use setSchema '
   shortDescription: Could lead to XML Injection

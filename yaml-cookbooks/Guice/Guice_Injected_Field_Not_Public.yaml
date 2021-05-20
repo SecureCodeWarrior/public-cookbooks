@@ -1,4 +1,5 @@
 id: 3b474a4c-c3e2-4325-bc71-e6b1ba3e2543
+version: 8
 metadata:
   name: Guice Injected Field Not Public
   shortDescription: If the Injected field is not public then the code might not be

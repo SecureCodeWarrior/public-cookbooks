@@ -1,4 +1,5 @@
 id: 17fed260-0137-4e26-8795-42e5b4eed9be
+version: 8
 metadata:
   name: 'Android WebView best practices: Disable JavaScript'
   shortDescription: WebView setting with security implications

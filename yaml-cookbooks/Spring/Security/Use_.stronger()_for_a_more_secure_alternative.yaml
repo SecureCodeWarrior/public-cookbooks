@@ -1,4 +1,5 @@
 id: 32c66aed-8a77-41ac-bc1f-3b69e5408eea
+version: 8
 metadata:
   name: Use .stronger() for a more secure alternative
   shortDescription: Encryptors.stronger() is more secure than Encryptors.standard()

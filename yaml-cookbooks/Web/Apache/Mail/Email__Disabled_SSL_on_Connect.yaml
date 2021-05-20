@@ -1,4 +1,5 @@
 id: 0193a030-3298-4751-af48-7c4ccc7a5cdd
+version: 8
 metadata:
   name: 'Email: Disabled SSL on Connect'
   shortDescription: When sending an email, SSL has been disabled on connection

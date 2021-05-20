@@ -1,4 +1,5 @@
 id: 69f63105-7d38-49a4-91d8-b4e7a3c9720d
+version: 8
 metadata:
   name: Automatic region detection by AWS
   shortDescription: AWS can automatically detect the region from the environment

@@ -1,4 +1,5 @@
 id: b3af4a61-705b-40c1-bb85-8046d5b25030
+version: 8
 metadata:
   name: 'Crypto: KeyPair Generation: Insecure Cryptographic Algorithm'
   shortDescription: 'This cryptographic algorithm is insecure'

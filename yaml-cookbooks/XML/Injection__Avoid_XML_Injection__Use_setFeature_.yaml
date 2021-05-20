@@ -1,4 +1,5 @@
 id: 6e7d6e80-0688-41ae-b8c0-faf8906fe1a9
+version: 8
 metadata:
   name: 'Injection: Avoid XML Injection: Use setFeature '
   shortDescription: Could lead to XML Injection

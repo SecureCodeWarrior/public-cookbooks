@@ -1,4 +1,5 @@
 id: 3899479b-9419-4437-9d8a-0fb706d9e906
+version: 8
 metadata:
   name: 'Input Validation: Avoid JDBC Injection: Bind variables in prepared statements:
     queryForList with elementtype'

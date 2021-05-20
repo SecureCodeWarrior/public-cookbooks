@@ -1,4 +1,5 @@
 id: b2134335-6647-4f45-898d-6a522c0b2f27
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
     (URL encoded) null'

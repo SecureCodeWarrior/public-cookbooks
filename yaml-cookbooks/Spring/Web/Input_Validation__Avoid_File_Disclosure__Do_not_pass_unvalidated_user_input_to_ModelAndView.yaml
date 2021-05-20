@@ -1,4 +1,5 @@
 id: 6443b255-0bdf-4a1d-8279-76cc2952590a
+version: 8
 metadata:
   name: 'Input Validation: Avoid File Disclosure: Do not pass unvalidated user input
     to ModelAndView'

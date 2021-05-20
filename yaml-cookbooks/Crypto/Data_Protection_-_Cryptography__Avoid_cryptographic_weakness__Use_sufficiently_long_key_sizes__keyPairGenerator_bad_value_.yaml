@@ -1,4 +1,5 @@
 id: 06cd7abc-3400-46cb-b5ba-415b05c0ebcf
+version: 8
 metadata:
   name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently
     long key sizes: keyPairGenerator bad value '

@@ -1,4 +1,5 @@
 id: 669692d8-e798-4df2-91b0-3463c947f83e
+version: 8
 metadata:
   name: 'Security Misconfiguration: StrictHttpFirewall: Avoid DefaultHttpFirewall
     (instance creation)'

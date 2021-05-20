@@ -1,4 +1,5 @@
 id: c170e11a-9432-41fb-a036-fbd7e0f61498
+version: 8
 metadata:
   name: 'Exception: Created but not thrown'
   shortDescription: Exceptions should be thrown, not just created

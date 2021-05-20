@@ -1,4 +1,5 @@
 id: 236f3ba5-e0b2-4244-9727-4fff843b1b16
+version: 8
 metadata:
   name: Use the Region enum
   shortDescription: 'AWS recommends to use one of the constants in the Regions enum '
