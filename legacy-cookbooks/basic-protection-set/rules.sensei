@@ -1,0 +1,207 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "fcd36335-ac86-4bef-8d30-062d8aae0364",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 3,
+                  "value": {
+                    "name": "false",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "http-only",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "cookie-config",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set http-only to true",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "true",
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Cookies: Disabled HTTPOnly",
+        "category": "misconfig:securityfeatures",
+        "ruleID": "f1e5344f-fab0-42bb-ac0e-1c15a6f82ebe",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "The http-only flag has been disabled in web.xml",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 3,
+                  "value": {
+                    "name": "false",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "secure",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "cookie-config",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set secure to true",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "true",
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Cookies: Disabled secure",
+        "category": "misconfig:securityfeatures",
+        "ruleID": "b91a2e80-085c-4a97-849f-c0d3cf0bb02e",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "The secure flag has been disabled in web.xml",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 6,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "name",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "hibernate.connection.url",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 8,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "value",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": ".*useSSL\u003dfalse.*?",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "property",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "ruleName": "Missing transport-level security: No SSL for database connection ",
+        "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
+        "ruleID": "654e8722-5a94-48fb-b92b-d2b78768eeaa",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "This text will be shown as a tooltip when code violates this recipe",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ],
+  "generators": []
+}

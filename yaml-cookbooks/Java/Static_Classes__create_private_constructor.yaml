@@ -1,0 +1,30 @@
+id: f74ddd3f-af07-40b7-9822-fcc3e94e6c49
+metadata:
+  name: 'Static Classes: create private constructor'
+  shortDescription: create a private constructor for static classes
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    with:
+      anyOf:
+      - child:
+          method:
+            allOf:
+            - modifier: public
+            - modifier: static
+      - child:
+          field:
+            allOf:
+            - modifier: static
+            - modifier: public
+    without:
+      child:
+        method:
+          constructor: true
+availableFixes:
+- name: add private constructor
+  actions:
+  - addMethod:
+      method: private {{{ name }}}(){}

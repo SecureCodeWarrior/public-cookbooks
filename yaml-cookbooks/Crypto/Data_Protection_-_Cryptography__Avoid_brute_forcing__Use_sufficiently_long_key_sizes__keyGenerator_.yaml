@@ -1,0 +1,30 @@
+id: 5aa6f70c-6b00-49ec-9984-c80d7cf95a01
+metadata:
+  name: 'Data Protection - Cryptography: Avoid brute forcing: Use sufficiently long
+    key sizes: keyGenerator '
+  shortDescription: 'Could lead to brute forcing or other cryptographic weakness '
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: AES
+    not:
+      followedBy:
+        methodcall:
+          name: init
+    name: getInstance
+    declaration:
+      type: javax.crypto.KeyGenerator
+availableFixes:
+- name: Initialize key size to 128
+  actions:
+  - addMethodCall:
+      name: init
+      arguments:
+      - 128
+      position: first-available-spot

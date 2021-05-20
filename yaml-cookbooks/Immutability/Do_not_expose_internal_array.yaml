@@ -1,0 +1,36 @@
+id: 6020c2a8-e781-4f9b-b3f3-e606019614f9
+metadata:
+  name: Do not expose internal array
+  shortDescription: Do not expose an internal array as it is mutable
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: Donotexposeinternalarray.html
+search:
+  reference:
+    allOf:
+    - in:
+        return:
+          type: '{{{ type }}}'
+          value:
+            reference:
+              name: '{{{ name }}}'
+    - in:
+        typeDeclaration:
+          member:
+            field:
+              allOf:
+              - type: java.lang.Object[]
+              - type: '{{{ type }}}'
+              modifier:
+                not:
+                  anyOf:
+                  - is: final
+                  - is: public
+              name: '{{{ name }}}'
+availableFixes:
+- name: Return a copy of the array
+  actions:
+  - rewrite:
+      to: java.util.Arrays.copyOf({{{ . }}}, {{{ . }}}.length)
+      target: self

@@ -1,0 +1,15 @@
+<h2>Description</h2>
+Dynamically creating queries by means of concatenating (untrusted) user input puts the application at risk of SQL injection. An attacker could insert malicious input to obtain or modify data.
+
+Use parameterized queries to prevent SQL injection.
+
+<b>Before</b>
+<pre>entityManager.createNativeQuery("Select * from Books where author = " + author)
+.getResultList();</pre>
+<b>After</b>
+<pre>entityManager.createNativeQuery("Select * from Books where author = <b>?</b>")
+<b>.setParameter(1, author)</b>
+.getResultList();</pre>
+
+<h2>Resources</h2>
+<a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">Owasp cheat sheet on SQLi</a>

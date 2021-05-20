@@ -1,0 +1,25 @@
+id: 553ccc99-54bc-4d45-8a29-503c29e45b98
+metadata:
+  name: 'Android WebView best practices: Disable Content Access'
+  shortDescription: WebView setting with security implications
+  level: error
+  enabled: true
+  descriptionFile: AndroidWebViewbestpractices.html
+search:
+  instanceCreation:
+    not:
+      followedBy:
+        methodcall:
+          followedBy:
+            methodcall:
+              name: setAllowContentAccess
+          name: getSettings
+    type: android.webkit.WebView
+availableFixes:
+- name: Disable content access
+  actions:
+  - addMethodCall:
+      name: getSettings().setAllowContentAccess
+      arguments:
+      - "false"
+      position: first-available-spot

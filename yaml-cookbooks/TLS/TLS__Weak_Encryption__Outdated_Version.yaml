@@ -1,0 +1,23 @@
+id: 2af17116-12df-4804-9ddd-8affcfc3c071
+metadata:
+  name: 'TLS: Weak Encryption: Outdated Version'
+  shortDescription: Could lead to Data Exposure
+  level: warning
+  newCodeOnly: false
+  scwCategory: itlp
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: TLSv1.1
+    name: getInstance
+    declaration:
+      type: javax.net.ssl.SSLContext
+availableFixes:
+- name: 'Set protocol version to TLSv1.2 '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("TLSv1.2")'

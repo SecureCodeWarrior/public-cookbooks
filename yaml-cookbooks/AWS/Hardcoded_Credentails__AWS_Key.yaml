@@ -1,0 +1,14 @@
+id: da6f9770-2d98-41b7-b965-993e764a1588
+metadata:
+  name: 'Hardcoded Credentails: AWS Key'
+  shortDescription: 'This string literal appears to contain AWS credentials. Such
+    credentials should not be hardcoded. '
+  level: warning
+  scwCategory: insecure_data_storage
+  enabled: false
+  comment: 'More formats possible: https://awsteele.com/blog/2020/09/26/aws-access-key-format.html'
+search:
+  literal:
+    value:
+      contains: AKIA_
+availableFixes: []

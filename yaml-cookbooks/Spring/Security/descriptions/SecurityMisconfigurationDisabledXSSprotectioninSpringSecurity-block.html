@@ -1,0 +1,6 @@
+
+
+Spring Security by default filters out content to prevent XSS attacks. By not setting the mode to 'block', it will attempt to still render the content by fixing it. Therefore, it is recommended to block the content entirely.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">http.headers().xssProtection().block(false);</font></td></tr><tr><td><font color="gray">After:</font></td><td>http.headers().xssProtection().block(true);</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-headers-xss-protection">Spring security API docs - X-XSS-Protection</a></li><li><a href="https://www.baeldung.com/spring-prevent-xss">Baeldung - Prevent Cross-Site Scripting</a></li></ul>

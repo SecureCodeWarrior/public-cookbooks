@@ -1,0 +1,39 @@
+id: b1834002-1ae5-4f5c-99ed-bc4346ff892b
+metadata:
+  name: 'Injection - SQL Injection in JPA: EntityManager#createQuery'
+  shortDescription: Avoid SQLi by using parameterized queries, instead of string concatenation
+    with untrusted input
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: Injection-SQLInjectioninJPAEntityManagercreateQuery.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        trustedSources:
+        - methodcall:
+            name: format
+            declaration:
+              type: java.lang.String
+        type: java.lang.String
+    name:
+      matches: createQuery
+    declaration:
+      type: javax.persistence.EntityManager
+availableFixes:
+- name: Use parameterized queries
+  actions:
+  - parameterize:
+      placeholderFormat: :{{{name}}}
+      extractUntrustedInput:
+        methodsOnObject:
+          methods:
+          - methodName: setParameter
+            args:
+              "1": '"{{{ name }}}"'
+              "2": '{{{ . }}}'
+          target:
+            returnValue:
+              useMethodChaining: true

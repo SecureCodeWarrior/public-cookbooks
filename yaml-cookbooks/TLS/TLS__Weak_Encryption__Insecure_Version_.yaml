@@ -1,0 +1,23 @@
+id: 2ce50a3c-c7c5-4734-8e25-8cf73610e511
+metadata:
+  name: 'TLS: Weak Encryption: Insecure Version '
+  shortDescription: Could lead to Data Exposure
+  level: error
+  newCodeOnly: false
+  scwCategory: itlp
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: (SSL.*|TLSv1)
+    name: getInstance
+    declaration:
+      type: javax.net.ssl.SSLContext
+availableFixes:
+- name: 'Set protocol version to TLSv1.2 '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("TLSv1.2")'

@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that a safe constructor should be used for instance creation of a <code>org.yaml.snakeyaml.Yaml</code> object.
+<h2>Description</h2>
+When creating object of the type <code>org.yaml.snakeyaml.Yaml</code> it is advised to use safe constructors. 
+<br/>
+The following cosntructor is available to ensure secure parsing of yaml.
+<h4>Class information:</h4>
+<pre>
+package org.yaml.snakeyaml.constructor<b>SafeConstructor</b>;
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+Yaml yaml = new Yaml(new SafeConstructor());
+</pre>
+<h2>Sensei quick fix</h2>
+<p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

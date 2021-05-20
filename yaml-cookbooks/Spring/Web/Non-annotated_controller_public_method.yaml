@@ -1,0 +1,44 @@
+id: 90ebb983-bc3a-4bce-b0a4-448b084f84ca
+metadata:
+  name: Non-annotated controller public method
+  shortDescription: Public methods within a controller class should be treated as
+    request handlers, therefore should be annotated as such. If you really believe
+    this method should not be exposed as a Rest endpoint, please consider extrating
+    it into an external Component class and call it from inside this controller.
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  method:
+    not:
+      annotation:
+        type:
+          reference:
+            matches: org\.springframework\.web\.bind\.annotation..*
+          checkInheritance: true
+    in:
+      typeDeclaration:
+        annotation:
+          type: org.springframework.web.bind.annotation.RestController
+    modifier: public
+availableFixes:
+- name: Add @GetMapping annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.GetMapping'
+- name: Add @PostMapping annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.PostMapping'
+- name: Add @PutMapping annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.PutMapping'
+- name: Add @DeleteMapping annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.DeleteMapping'
+- name: Add @PatchMapping annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.PatchMapping'

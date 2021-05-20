@@ -1,0 +1,22 @@
+id: b3af4a61-705b-40c1-bb85-8046d5b25030
+metadata:
+  name: 'Crypto: KeyPair Generation: Insecure Cryptographic Algorithm'
+  shortDescription: 'This cryptographic algorithm is insecure'
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: DiffieHellman
+    name: getInstance
+    declaration:
+      type: java.security.KeyPairGenerator
+availableFixes:
+- name: 'Use RSA '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("RSA")'

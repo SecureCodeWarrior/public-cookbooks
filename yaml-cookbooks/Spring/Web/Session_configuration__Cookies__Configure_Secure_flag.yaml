@@ -1,0 +1,24 @@
+id: bf43cb0e-25f4-42cd-940c-46e4076709cb
+metadata:
+  name: 'Session configuration: Cookies: Configure Secure flag'
+  shortDescription: Prevent a cookie being sent over unencrypted HTTP by setting the
+    Secure flag to true
+  level: error
+  scwCategory: improper_session_handling
+  enabled: true
+  descriptionFile: SessionconfigurationCookiesConfigureSecureflag.html
+search:
+  instanceCreation:
+    not:
+      followedBy:
+        methodcall:
+          name: setUseSecureCookie
+    type: org.springframework.session.web.http.DefaultCookieSerializer
+availableFixes:
+- name: Set Secure flag to true
+  actions:
+  - addMethodCall:
+      name: setUseSecureCookie
+      arguments:
+      - "true"
+      position: first-available-spot

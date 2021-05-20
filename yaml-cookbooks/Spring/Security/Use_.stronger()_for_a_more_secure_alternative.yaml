@@ -1,0 +1,17 @@
+id: 32c66aed-8a77-41ac-bc1f-3b69e5408eea
+metadata:
+  name: Use .stronger() for a more secure alternative
+  shortDescription: Encryptors.stronger() is more secure than Encryptors.standard()
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: Usestrongerforamoresecurealternative.html
+search:
+  methodcall:
+    name: standard
+    type: org.springframework.security.crypto.encrypt.Encryptors
+availableFixes:
+- name: Replace with .stronger()
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}.stronger{{{ argumentList }}}'

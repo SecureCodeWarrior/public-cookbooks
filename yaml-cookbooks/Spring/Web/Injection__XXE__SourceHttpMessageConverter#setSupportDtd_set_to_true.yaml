@@ -1,0 +1,22 @@
+id: 09c11640-e0d4-48be-89cd-424a5c3ce399
+metadata:
+  name: 'Injection: XXE: SourceHttpMessageConverter#setSupportDtd set to true'
+  shortDescription: Prevent XXE by disabling DTDs
+  level: error
+  scwCategory: injection
+  enabled: true
+  descriptionFile: InjectionXXESourceHttpMessageConvertersetSupportDtdsettotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setSupportDtd
+    type: org.springframework.http.converter.xml.SourceHttpMessageConverter
+availableFixes:
+- name: Set .setSupportDtd() to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

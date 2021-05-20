@@ -1,0 +1,23 @@
+id: 29bbaa7e-434d-4adc-b0d3-c0d2f2c2ab71
+metadata:
+  name: 'Crypto: Signature: Non Standard Hashing Algorithm '
+  shortDescription: 'This hashing algorithm is not recommended for cryptographic use '
+  level: warning
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: SHA512withDSA|SHA512withDES|SHA512withECDSA
+    name: getInstance
+    declaration:
+      type: java.security.Signature
+availableFixes:
+- name: 'Use SHA512withRSA '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("SHA512withRSA")'

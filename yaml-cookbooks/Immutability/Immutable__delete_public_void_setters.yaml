@@ -1,0 +1,21 @@
+id: db13e8ee-dadc-4e71-9dbf-8fb5e1d3ce32
+metadata:
+  name: 'Immutable: delete public void setters'
+  shortDescription: void setters can be replaced with use of constructor or static
+    factory methods
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  method:
+    with:
+      modifier: public
+      returnType: void
+    name:
+      matches: set.*
+availableFixes:
+- name: Delete The public void method
+  actions:
+  - rewrite:
+      to: ""
+      target: self

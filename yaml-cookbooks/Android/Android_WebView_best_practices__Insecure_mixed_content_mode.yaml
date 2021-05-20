@@ -1,0 +1,25 @@
+id: c941279f-b1e6-4f7a-afb4-ad9d9c187e77
+metadata:
+  name: 'Android WebView best practices: Insecure mixed content mode'
+  shortDescription: Insecure content may be allowed to be loaded by a secure origin
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: AndroidWebViewbestpractices.html
+search:
+  methodcall:
+    args:
+      1:
+        referenceTo:
+          anyOf:
+          - name: android.webkit.WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
+          - name: android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+    name: setMixedContentMode
+    declaration:
+      type: android.webkit.WebSettings
+availableFixes:
+- name: Use MIXED_CONTENT_NEVER_ALLOW
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW

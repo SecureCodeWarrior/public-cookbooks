@@ -1,0 +1,39 @@
+id: 3f71743b-011d-43d1-970b-a2daceeba178
+metadata:
+  name: Missing parameter annotation in request handler
+  shortDescription: The enclosing method is a request handler, but there's no annotation
+    indicating how this argument should be treated
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  parameter:
+    not:
+      annotation:
+        type:
+          reference:
+            matches: org\.springframework\.web\.bind\.annotation\..*
+          checkInheritance: true
+    in:
+      method:
+        annotation:
+          type:
+            reference:
+              matches: org\.springframework\.web\.bind\.annotation\..*
+            checkInheritance: false
+availableFixes:
+- name: Annotate with @RequestBody
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.RequestBody {{{annotations}}}
+        {{{type}}} {{name}}'
+- name: Annotate with @RequestParam
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.RequestParam {{{annotations}}}
+        {{{type}}} {{name}}'
+- name: Annotate with @PathVariable
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PathVariable {{{annotations}}}
+        {{{type}}} {{name}}'

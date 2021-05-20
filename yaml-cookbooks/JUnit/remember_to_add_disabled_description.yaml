@@ -1,0 +1,19 @@
+id: 345f6a51-012f-4613-aac2-c606fa67395a
+metadata:
+  name: remember to add disabled description
+  shortDescription: '@Disabled should really have a description explaining why'
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  annotation:
+    type: org.junit.jupiter.api.Disabled
+    without:
+      parameters:
+      - {}
+availableFixes:
+- name: Add a todo comment parameter
+  actions:
+  - rewrite:
+      to: '{{{ . }}}("TODO: add a description here")'
+      target: self

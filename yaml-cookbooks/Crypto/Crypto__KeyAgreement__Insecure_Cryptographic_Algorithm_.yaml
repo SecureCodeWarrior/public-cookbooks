@@ -1,0 +1,23 @@
+id: 93e69bc8-ed26-47d8-9315-4c2e113b8be4
+metadata:
+  name: 'Crypto: KeyAgreement: Insecure Cryptographic Algorithm '
+  shortDescription: 'This cryptographic algorithm is insecure '
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: DiffieHellman|ECMQV
+    name: getInstance
+    declaration:
+      type: javax.crypto.KeyAgreement
+availableFixes:
+- name: Use ECDH
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("ECDH")'

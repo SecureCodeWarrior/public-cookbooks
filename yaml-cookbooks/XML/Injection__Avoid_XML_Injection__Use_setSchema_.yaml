@@ -1,0 +1,25 @@
+id: 39715573-4f7e-4bfd-aae6-7d1e2c74140e
+metadata:
+  name: 'Injection: Avoid XML Injection: Use setSchema '
+  shortDescription: Could lead to XML Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          name: setSchema
+    name: newInstance
+    declaration:
+      type: javax.xml.parsers.SAXParserFactory
+availableFixes:
+- name: Add a schema
+  actions:
+  - addMethodCall:
+      name: setSchema
+      arguments:
+      - schema
+      position: first-available-spot

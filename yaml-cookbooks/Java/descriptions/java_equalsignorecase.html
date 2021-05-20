@@ -1,0 +1,22 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that <code>equalsIgnoreCase</code> should be used to compare String case-insensitive.
+<h2>Description</h2>
+When comparing Strings it is not advised to convert them to all upper or all lower case Strings before comparing. Instead it is recommended to use <code>equalsIgnoreCase</code>.
+<br/>
+The following method is available
+<h4>Class information:</h4>
+<pre>
+package java.lang.<b>String</b>;
+public boolean equalsIgnoreCase(String);
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+boolean correct = solution.equalsIgnoreCase(answer);
+</pre>
+<h2>Sensei quick fix</h2>
+<p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+id: 5626d058-01e1-4dd6-82e0-369c12fa0e51
+metadata:
+  name: 'Session configuration: Cookies: Set HttpOnly flag to true'
+  shortDescription: 'Prevent client-side scripts from accessing the cookie by setting
+    the HttpOnly flag to true '
+  level: error
+  scwCategory: improper_session_handling
+  enabled: true
+  descriptionFile: SessionconfigurationCookiesSetHttpOnlyflagtotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name:
+      matches: setUseHttpOnlyCookie
+    type: org.springframework.session.web.http.DefaultCookieSerializer
+availableFixes:
+- name: Set HttpOnly to true
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "true"

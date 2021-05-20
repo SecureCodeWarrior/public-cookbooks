@@ -1,0 +1,29 @@
+id: 6e4d24d1-2ba5-42a4-9f86-26750321bbc1
+metadata:
+  name: Use a logger
+  shortDescription: Printing messages directly to the standard output is considered
+    a bad practice. It's recommended to use a logger instead. A logger can be turned
+    on/off, it provides different levels of logging and can be controlled through
+    a configuration file or environment variables. Some advanced logger provides allow
+    you to configure log file rotation, purging and tune it for multi-threading purposes.
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  methodcall:
+    name: println
+    declaration:
+      type: PrintStream
+    "on":
+      field:
+        in:
+          typeDeclaration:
+            name: java.lang.System
+availableFixes:
+- name: Use SLF4J logger
+  actions:
+  - addField:
+      field: private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger({{type}}.class);
+      target: parentClass
+  - rewrite:
+      to: log.info({{{arguments}}})

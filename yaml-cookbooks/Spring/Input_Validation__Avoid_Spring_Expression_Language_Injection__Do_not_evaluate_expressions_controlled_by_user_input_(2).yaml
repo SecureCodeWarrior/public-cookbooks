@@ -1,0 +1,20 @@
+id: 5e7a854a-186e-4f68-aa62-7a73cfd4b7bc
+metadata:
+  name: 'Input Validation: Avoid Spring Expression Language Injection: Do not evaluate
+    expressions controlled by user input (2)'
+  shortDescription: Could lead to Spring Expression Language Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: false
+  descriptionFile: InputValidationAvoidSpringExpressionLanguageInjectionDonotevaluateexpressionscontrolledbyuserinput.html
+search:
+  methodcall:
+    args:
+      2:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name: createValueExpression
+    declaration:
+      type: javax.el.ExpressionFactory
+availableFixes: []

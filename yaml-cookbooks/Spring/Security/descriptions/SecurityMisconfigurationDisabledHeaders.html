@@ -1,0 +1,6 @@
+
+
+Spring Security provides a default set of HTTP response headers, based on best practices. New headers can easily be added, and the default headers can be modified, and disabled. However, in the latter case it is possible the application is being put at risk of vulnerabilities. 
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">http.headers().disable();</font></td></tr><tr><td><font color="gray">After:</font></td><td>http.headers();</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#headers-default">Spring security docs - Default Headers</a></li></ul>

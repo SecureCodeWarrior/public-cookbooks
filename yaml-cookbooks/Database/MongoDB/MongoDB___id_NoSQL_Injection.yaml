@@ -1,0 +1,25 @@
+id: cefc4b61-488b-4b56-b6ec-6f50fb9c2638
+metadata:
+  name: 'MongoDB: _id NoSQL Injection'
+  shortDescription: Do not use string concatenation in where filters
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: MongoDB_idNoSQLInjection.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+        value:
+          matches: this._id.==.*
+    name: where
+    declaration:
+      type: com.mongodb.client.model.Filters
+availableFixes:
+- name: Use eq() with ObjectId
+  actions:
+  - rewrite:
+      to: com.mongodb.client.model.Filters.eq("_id", new ObjectId({{{ arguments.0.operands.1
+        }}}))

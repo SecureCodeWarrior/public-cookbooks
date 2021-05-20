@@ -1,0 +1,22 @@
+id: f4392503-eabf-4c0a-82f7-31c3593e79fa
+metadata:
+  name: 'Injection: XXE: Jaxb2Marshaller#setProcessExternalEntities set to true'
+  shortDescription: Prevent XXE by disabling the processing of external entities
+  level: error
+  scwCategory: injection
+  enabled: true
+  descriptionFile: InjectionXXEJaxb2MarshallersetProcessExternalEntitiessettotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setProcessExternalEntities
+    type: org.springframework.oxm.jaxb.Jaxb2Marshaller
+availableFixes:
+- name: Set .setProcessExternalEntities() to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

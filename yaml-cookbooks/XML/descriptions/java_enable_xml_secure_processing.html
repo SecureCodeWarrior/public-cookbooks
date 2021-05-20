@@ -1,0 +1,52 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that all XML processors should be configured to enable the secure processing features. This feature should be enabled explicitly where applicable.
+<h2>Description</h2>
+An instance of a factory should have the secure processing feature enabled before
+creating a new instance of the desired XML processor.
+<br/>
+This can be achieved by using one of the following methods.
+<pre>
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+</pre>
+<pre>
+factory.setSchema(Schema);
+</pre>
+Where <b>factory</b> is an instance of:
+<ul>
+    <li>DocumentBuilderFactory</li>
+    <li>TransformerFactory</li>
+    <li>SAXParserFactory</li>
+    <li>SchemaFactory</li>
+    <li>XPathFactory</li>
+</ul>
+<h4>Correct code example:</h4>
+<pre>
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.XMLConstants;
+...
+DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+documentBuilderFactory.setNamespaceAware(true);
+documentBuilderFactory.setValidating(false);
+<b>documentBuilderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);</b>
+DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - XML Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/xml/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - External Entity Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/xxe/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Security Misconfiguration - Disabled Security Features. <a href="https://{{microtraininghost}}/#/simple-flow/web/misconfig/securityfeatures/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

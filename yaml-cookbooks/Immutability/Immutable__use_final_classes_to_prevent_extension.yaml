@@ -1,0 +1,18 @@
+id: f9f53bb4-d447-4c45-a748-6e1b5d64f3a6
+metadata:
+  name: 'Immutable: use final classes to prevent extension'
+  shortDescription: Make the classes final to prevent people extending as mutable
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    allOf:
+    - modifier: public
+    without:
+      modifier: final
+availableFixes:
+- name: make this final
+  actions:
+  - changeModifiers:
+      final: true

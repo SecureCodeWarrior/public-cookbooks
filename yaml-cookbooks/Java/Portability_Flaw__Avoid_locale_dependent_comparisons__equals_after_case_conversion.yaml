@@ -1,0 +1,22 @@
+id: b67f273d-c6c0-4e8c-a1ff-69b6a7e9cc67
+metadata:
+  name: 'Portability Flaw: Avoid locale dependent comparisons: equals after case conversion'
+  shortDescription: Could behave differently based on the systems locale
+  level: error
+  newCodeOnly: false
+  scwCategory: ""
+  enabled: true
+  comment: ""
+search:
+  methodcall:
+    name: equals
+    "on":
+      methodcall:
+        anyOf:
+        - name: toUpperCase
+        - name: toLowerCase
+availableFixes:
+- name: Use equalsIgnoreCase
+  actions:
+  - rewrite:
+      to: '{{{ qualifier.qualifier }}}.equalsIgnoreCase({{{ arguments.0 }}})'

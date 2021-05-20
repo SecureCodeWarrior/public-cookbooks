@@ -1,0 +1,20 @@
+id: cb7e426e-37af-4988-9329-eb045fda1a4e
+metadata:
+  name: 'JUnit: Junit 5 Test classes do not need to be public'
+  shortDescription: Junit 5 Test classes do not need to be public
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    modifier: public
+    anyOf:
+    - child:
+        method:
+          annotation:
+            type: Test
+availableFixes:
+- name: Remove public visibility from JUnit 5 Test class
+  actions:
+  - changeModifiers:
+      visibility: ""

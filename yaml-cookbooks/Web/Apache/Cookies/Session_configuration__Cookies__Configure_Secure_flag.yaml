@@ -1,0 +1,25 @@
+id: 2dbe8479-b2c7-4a18-86ef-a26cc1aa395e
+metadata:
+  name: 'Session configuration: Cookies: Configure Secure flag'
+  shortDescription: 'Prevent a cookie being sent over unencrypted HTTP by setting
+    the Secure flag to true '
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: SessionconfigurationCookiesConfigureSecureflag.html
+search:
+  instanceCreation:
+    not:
+      with:
+        followedBy:
+          methodcall:
+            name: setSecure
+    type: org.apache.shiro.web.servlet.SimpleCookie
+availableFixes:
+- name: Set the Secure flag to true
+  actions:
+  - addMethodCall:
+      name: setSecure
+      arguments:
+      - "true"
+      position: first-available-spot

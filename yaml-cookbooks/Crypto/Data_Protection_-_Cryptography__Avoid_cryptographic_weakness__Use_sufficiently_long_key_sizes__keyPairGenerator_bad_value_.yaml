@@ -1,0 +1,24 @@
+id: 06cd7abc-3400-46cb-b5ba-415b05c0ebcf
+metadata:
+  name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently
+    long key sizes: keyPairGenerator bad value '
+  shortDescription: 'Could lead to brute forcing or other cryptographic weakness '
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: int
+        value:
+          matches: ([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1][0-9][0-9][0-9]|20[0-3][0-9]|204[0-7])
+    name: initialize
+    declaration:
+      type: java.security.KeyPairGenerator
+availableFixes:
+- name: Initialize key size to 2048 bits
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(2048)'

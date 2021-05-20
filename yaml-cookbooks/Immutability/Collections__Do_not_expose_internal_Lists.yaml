@@ -1,0 +1,29 @@
+id: 56c4f5ba-8d9a-4ed8-87a5-4efef6aa16b1
+metadata:
+  name: 'Collections: Do not expose internal Lists'
+  shortDescription: Do not expose an internal List as it is mutable. Return a copy or immutable view.
+  level: marked_information
+  scwCategory: ""
+  enabled: true
+  descriptionFile: DonotexposeinternalCollection-list.html
+search:
+  return:
+    in:
+      typeDeclaration:
+        member:
+          field:
+            modifier:
+              matches: (private|protected)
+            name: '{{{returnValue.name}}}'
+            type:
+              reference:
+                matches: java.util.List.*
+              checkInheritance: true
+    value:
+      reference:
+        name: '{{{returnValue.name}}}'
+availableFixes:
+- name: Return an unmodifiable List
+  actions:
+  - rewrite:
+      to: return java.util.Collections.unmodifiableList({{{ returnValue }}});

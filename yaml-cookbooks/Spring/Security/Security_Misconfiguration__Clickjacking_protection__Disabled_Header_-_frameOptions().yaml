@@ -1,0 +1,23 @@
+id: 6ff71a63-4229-4f6d-9218-a682172e076b
+metadata:
+  name: 'Security Misconfiguration: Clickjacking protection: Disabled Header - frameOptions()'
+  shortDescription: Disabling Spring Security default headers makes the application
+    vulnerable to clickjackin
+  level: warning
+  scwCategory: misconfig
+  enabled: true
+  descriptionFile: SecurityMisconfigurationDisabledclickjackingprotectioninSpringSecurity-frameOptions.html
+search:
+  methodcall:
+    in:
+      typeDeclaration:
+        super:
+          name: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+    name: disable
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig
+availableFixes:
+- name: Enable default headers
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}'

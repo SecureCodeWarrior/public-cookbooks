@@ -1,0 +1,22 @@
+id: 0a47a3c8-9d00-4c36-b304-006ab2b826dd
+metadata:
+  name: Encryptors requires the use of a random 8-byte salt
+  shortDescription: The salt should be random, 8-bytes and in hex-encoded String
+  level: error
+  scwCategory: crypto
+  enabled: true
+  descriptionFile: Usearandom8bytesalt.html
+search:
+  methodcall:
+    args:
+      2:
+        containsUntrustedInput: false
+        type: java.lang.String
+    name: stronger
+    type: org.springframework.security.crypto.encrypt.Encryptors
+availableFixes:
+- name: Generate a hex-encoded, random 8-byte salt
+  actions:
+  - modifyArguments:
+      rewrite:
+        2: org.springframework.security.crypto.keygen.KeyGenerators.string().generateKey()

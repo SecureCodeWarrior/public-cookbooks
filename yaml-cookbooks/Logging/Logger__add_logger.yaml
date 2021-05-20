@@ -1,0 +1,20 @@
+id: 9766b12a-444d-4817-95ed-d414aec8be7d
+metadata:
+  name: 'Logger: add logger'
+  shortDescription: Add logger to class
+  level: info
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    without:
+      child:
+        field:
+          name: logger
+availableFixes:
+- name: Add Logger
+  actions:
+  - addField:
+      field: java.util.logging.Logger logger = Logger.getLogger({{{ containingClass.name
+        }}}.class.getName())
+      target: self

@@ -1,0 +1,30 @@
+id: 942f3247-e465-428f-ad7a-184d1e71cf73
+metadata:
+  name: 'XML External Entities: XMLInputFactory.SUPPORT_DTD'
+  shortDescription: Could lead to XXE
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          args:
+            1:
+              referenceTo:
+                name: javax.xml.stream.XMLInputFactory.SUPPORT_DTD
+          name: setProperty
+    name: newFactory
+    declaration:
+      type: javax.xml.stream.XMLInputFactory
+availableFixes:
+- name: Set Support for DTD to false
+  actions:
+  - addMethodCall:
+      name: setProperty
+      arguments:
+      - javax.xml.stream.XMLInputFactory.SUPPORT_DTD
+      - "false"
+      position: first-available-spot

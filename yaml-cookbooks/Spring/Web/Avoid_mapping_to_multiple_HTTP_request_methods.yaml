@@ -1,0 +1,76 @@
+id: 3c94440c-603a-469e-854f-71a57a54f888
+metadata:
+  name: Avoid mapping to multiple HTTP request methods
+  shortDescription: Map to one HTTP request method for best practices
+  level: info
+  scwCategory: ""
+  enabled: true
+  descriptionFile: AvoidmappingtomultipleHTTPrequestmethods.html
+search:
+  annotation:
+    type: RequestMapping
+    parameters:
+    - name: method
+      value:
+        value:
+          contains: '{'
+availableFixes:
+- name: Set annotation to DeleteMapping
+  actions:
+  - changeAnnotation:
+      removeParameter:
+      - withName: method
+  - changeAnnotation:
+      type: org.springframework.web.bind.annotation.DeleteMapping
+- name: Set annotation to GetMapping
+  actions:
+  - changeAnnotation:
+      removeParameter:
+      - withName: method
+  - changeAnnotation:
+      type: org.springframework.web.bind.annotation.GetMapping
+- name: Set annotation to PostMapping
+  actions:
+  - changeAnnotation:
+      removeParameter:
+      - withName: method
+  - changeAnnotation:
+      type: org.springframework.web.bind.annotation.PostMapping
+- name: Set annotation to PatchMapping
+  actions:
+  - changeAnnotation:
+      removeParameter:
+      - withName: method
+  - changeAnnotation:
+      type: org.springframework.web.bind.annotation.PatchMapping
+- name: Set annotation to PutMapping
+  actions:
+  - changeAnnotation:
+      removeParameter:
+      - withName: method
+  - changeAnnotation:
+      type: org.springframework.web.bind.annotation.PutMapping
+- name: Set method parameter to HEAD
+  actions:
+  - changeAnnotation:
+      addParameter:
+      - name: method
+        value: org.springframework.web.bind.annotation.RequestMethod.HEAD
+      removeParameter:
+      - withName: method
+- name: Set method parameter to OPTIONS
+  actions:
+  - changeAnnotation:
+      addParameter:
+      - name: method
+        value: org.springframework.web.bind.annotation.RequestMethod.OPTIONS
+      removeParameter:
+      - withName: method
+- name: Set method parameter to TRACE
+  actions:
+  - changeAnnotation:
+      addParameter:
+      - name: method
+        value: org.springframework.web.bind.annotation.RequestMethod.TRACE
+      removeParameter:
+      - withName: method

@@ -1,0 +1,27 @@
+id: d4380ce7-7c41-465d-a505-5ec57c0cf14e
+metadata:
+  name: Not releasing DynamoDbClient
+  shortDescription: Call the close() method to release the DynamoDbClient
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: ReleaseDynamoDbClientClose.html
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          name: close
+          declaration:
+            type: software.amazon.awssdk.services.dynamodb.DynamoDbClient
+    name: create
+    declaration:
+      type: software.amazon.awssdk.services.dynamodb.DynamoDbClient
+availableFixes:
+- name: Call the close method
+  actions:
+  - rewrite:
+      to: '{{{ . }}}'
+  - addMethodCall:
+      name: close
+      position: end-of-life

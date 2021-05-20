@@ -1,0 +1,23 @@
+id: 2839c034-0b45-4763-8146-7d5b25fe92fa
+metadata:
+  name: 'Crypto: KeyAgreement: Guide on Approved Cryptographic Algorithm'
+  shortDescription: 'This cryptographic algorithm is not recommended '
+  level: marked_information
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: ^((?!(DiffieHellman|EC$|RSA|ECMQV|ECDH$)).)*
+    name: getInstance
+    declaration:
+      type: javax.crypto.KeyAgreement
+availableFixes:
+- name: Use ECDH
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("ECDH")'

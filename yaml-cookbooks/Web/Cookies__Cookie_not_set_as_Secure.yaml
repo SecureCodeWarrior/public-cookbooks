@@ -1,0 +1,20 @@
+id: e1bd5866-a863-4d02-b045-5fc393cb27eb
+metadata:
+  name: 'Cookies: Cookie not set as Secure'
+  shortDescription: The Secure flag has been disabled on this cookie.
+  level: warning
+  scwCategory: misconfig
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name: setSecure
+    type: javax.servlet.http.Cookie
+availableFixes:
+- name: Fix code by setting the cookie as secure
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(true)'

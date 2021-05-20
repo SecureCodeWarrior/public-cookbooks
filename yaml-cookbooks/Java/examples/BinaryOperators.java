@@ -1,0 +1,50 @@
+public class BinaryOperators
+{
+    public boolean performLogicalANDOperation(boolean a, boolean b) {
+        return a && b;
+    }
+
+    public boolean performBitwiseANDOperation(boolean a, boolean b) {
+        return a & b;
+    }
+
+    public String performLogicalStringANDOperation() {
+        return "a && b";
+    }
+
+    public String performBitwiseStringANDOperation() {
+        return "a & b";
+    }
+
+    public Boolean performWrappedLogicalANDOperation (Boolean a, Boolean b) {
+        return a && b;
+    }
+
+    public Boolean performWrappedBitwiseANDOperation (Boolean a, Boolean b) {
+        return a & b;
+    }
+
+    public boolean performLogicalOROperation(boolean a, boolean b) {
+        return a || b;
+    }
+
+    public boolean performBitwiseOROperation(boolean a, boolean b) {
+        return a | b;
+    }
+
+    public String performLogicalStringOROperation() {
+        return "a || b";
+    }
+
+    public String performBitwiseStringOROperation() {
+        return "a | b";
+    }
+
+    public Boolean performWrappedLogicalOROperation (Boolean a, Boolean b) {
+        return a || b;
+    }
+
+    public Boolean performWrappedBitwiseOROperation (Boolean a, Boolean b) {
+        return a | b;
+    }
+}

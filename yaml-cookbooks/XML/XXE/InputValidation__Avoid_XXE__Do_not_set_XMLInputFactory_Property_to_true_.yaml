@@ -1,0 +1,27 @@
+id: e9cd354c-edf0-457e-be5a-344ef9eef16f
+metadata:
+  name: 'InputValidation: Avoid XXE: Do not set XMLInputFactory Property to true '
+  shortDescription: 'Could lead to XXE '
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        referenceTo:
+          anyOf:
+          - name: javax.xml.stream.XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES
+          - name: javax.xml.stream.XMLInputFactory.SUPPORT_DTD
+      2:
+        type: boolean
+        value: "true"
+    name: setProperty
+    declaration:
+      type: javax.xml.stream.XMLInputFactory
+availableFixes:
+- name: Set property to false
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}({{{ arguments.0 }}}, false)'

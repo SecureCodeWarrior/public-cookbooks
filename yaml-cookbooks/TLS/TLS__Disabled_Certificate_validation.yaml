@@ -1,0 +1,19 @@
+id: 219e91f6-774b-455e-88ef-9a76dd0faca3
+metadata:
+  name: 'TLS: Disabled Certificate validation'
+  shortDescription: The verify method has been overridden, and always returns true
+  level: warning
+  scwCategory: insufficient_transport_layer_protection
+  enabled: true
+search:
+  method:
+    annotation:
+      type: Override
+    name: verify
+    returnType: boolean
+    child:
+      return:
+        value:
+          literal:
+            value: "true"
+availableFixes: []

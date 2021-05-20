@@ -1,0 +1,22 @@
+id: 8027b247-1d93-4b78-87e8-04a02d608056
+metadata:
+  name: 'Condition: Use of logical operators'
+  shortDescription: Use logical operator instead of bitwise operator
+  level: error
+  scwCategory: ""
+  cweCategory: 480
+  enabled: true
+  comment: |-
+    CWE-480: Use of Incorrect Operator
+    https://cwe.mitre.org/data/definitions/480.html
+  descriptionFile: ConditionuselogicalANDoperator.html
+search:
+  binaryExpression:
+    anyOf:
+    - operator: '&'
+    - operator: '|'
+availableFixes:
+- name: Replace bitwise AND operator to logical AND operator
+  actions:
+  - rewrite:
+      to: '{{{ leftOperand }}} {{{ operator }}}{{{ operator }}} {{{ rightOperand }}}'

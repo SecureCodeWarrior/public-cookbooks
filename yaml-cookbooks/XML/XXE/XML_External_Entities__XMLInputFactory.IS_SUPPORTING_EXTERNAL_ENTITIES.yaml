@@ -1,0 +1,30 @@
+id: f98cb3fc-b03c-474a-af3e-1e36c39171ce
+metadata:
+  name: 'XML External Entities: XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES'
+  shortDescription: Could lead to XXE
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          args:
+            1:
+              referenceTo:
+                name: javax.xml.stream.XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES
+          name: setProperty
+    name: newFactory
+    declaration:
+      type: javax.xml.stream.XMLInputFactory
+availableFixes:
+- name: Set Support for External Entities to false
+  actions:
+  - addMethodCall:
+      name: setProperty
+      arguments:
+      - javax.xml.stream.XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES
+      - "false"
+      position: first-available-spot

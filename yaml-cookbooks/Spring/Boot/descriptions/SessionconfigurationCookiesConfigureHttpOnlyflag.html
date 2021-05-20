@@ -1,0 +1,7 @@
+
+
+Session cookies are frequently the target of Cross-Site Scripting (XSS) attacks. The default setting of the HttpOnly flag is false, which is insecure. By setting the <code>setHttpOnly()</code> to true, the cookie cannot be accessed by client-side scripts.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">Cookie cookie = new Cookie();</font></td></tr><tr><td><font color="gray">After:</font></td><td>Cookie cookie = new Cookie();
+        cookie.setHttpOnly(true);</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#httponly-attribute">OWASP - Session Management Cheat Sheet - HttpOnly</a></li></ul>

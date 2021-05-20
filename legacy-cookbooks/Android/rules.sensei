@@ -1,0 +1,445 @@
+{
+  "header": {
+    "name": "Custom cookbook",
+    "description": "cookbook for internal use within our company",
+    "company": "SCW",
+    "appsecmail": "appsecteam@senseifinancial.com",
+    "rulepack_id": "c2b4f2d8-9e89-4d1f-90eb-916f8cc03aed",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:allowBackup",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValue": "",
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Insert attribute android:allowBackup",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:allowBackup\u003d\"false\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest best practices: explicitly Disable Backups",
+        "category": "code_tampering:backups_enabled",
+        "cweCategory": 530,
+        "ruleID": "a44c0e04-ea4a-4081-8189-bafd821bcd3f",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidManifestbestpracticesDisableBackups.html",
+        "ruleShortDescription": "The default value of allowBackup is true, this could lead to undesired manipulation.",
+        "ruleErrorLevel": 2,
+        "comment": "",
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:usesCleartextTraffic",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true|^$",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change android:usesCleartextTraffic to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest best practices: disable cleartext traffic",
+        "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
+        "cweCategory": 319,
+        "ruleID": "9059700d-74a1-4c5c-818f-5d27636cddc5",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "ManifestbestpracticesdisableusesCleartextTraffic.html",
+        "ruleShortDescription": "When android:usesCleartextTraffic\u003d\"true\" is set the application will allow clear text traffic which could lead to data leakage",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:allowBackup",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true|^$",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change android:allowBackup to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest best practices: Disable Backups",
+        "category": "code_tampering:backups_enabled",
+        "cweCategory": 530,
+        "ruleID": "5c354f81-611d-415d-9ae8-905bb9a7579d",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "AndroidManifestbestpracticesDisableBackups.html",
+        "ruleShortDescription": "Enabling backups could lead to undesired manipulation.",
+        "ruleErrorLevel": 2,
+        "comment": "",
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": ".*",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change android:exported to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest best practices: explicit exported components",
+        "category": "improper_platform_usage:incorrect_activity_configuration",
+        "cweCategory": 926,
+        "ruleID": "9c87e3b9-7b4a-412a-a8ab-11e7b708be50",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "Manifestbestpracticesdisableexportofandroidcomponents.html",
+        "ruleShortDescription": "When android:exported is set to true any application will be able to call this component.",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 5,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:usesCleartextTraffic",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValue": "",
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Insert attribute android:usesCleartextTraffic",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:usesCleartextTraffic\u003d\"false\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest best pracices: explicitly disable cleartext traffic",
+        "category": "insufficient_transport_layer_protection:communication_over_cleartext_protocol_http",
+        "cweCategory": 319,
+        "ruleID": "6fbdd2ea-dca3-44a3-a1b9-ecf50d1011e9",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "ManifestbestpracticesdisableusesCleartextTraffic.html",
+        "ruleShortDescription": "API level 27 or lower: When android:usesCleartextTraffic is not set, android will default to allowing cleartext traffic.",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
+            "object": {
+              "property": "android.defaultConfig.minSdkVersion",
+              "propertyType": 1,
+              "desiredValue": "27",
+              "useRegex": false,
+              "intPropertyMatchingType": 4,
+              "duplicateStrategy": 0,
+              "trueIfNotFound": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:filterTouchesWhenObscured",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "false",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "Button|ImageButton",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add android:filterTouchesWhenObscured\u003d\"true\"",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"true\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Layout best practices: enable filterTouchesWhenObscured",
+        "ruleID": "e3f28287-51ed-46a9-a732-788396153492",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "LayoutbestpracticesenablefilterTouchesWhenObscured.html",
+        "ruleShortDescription": "When setting filterTouchesWhenObscured to false allows adversaries to hijack users\u0027 taps.",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:filterTouchesWhenObscured",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValue": "",
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "Button|ImageButton",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add android:filterTouchesWhenObscured\u003d\"true\"",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:filterTouchesWhenObscured\u003d\"true\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "ruleName": "Layout best practices: explicitly enable filterTouchesWhenObscured",
+        "ruleID": "470d3f3b-0ab7-4968-bec7-924640df88ec",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "Not setting filterTouchesWhenObscured to true allows adversaries to hijack users\u0027 taps.",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ],
+  "generators": []
+}

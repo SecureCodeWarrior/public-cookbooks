@@ -1,0 +1,30 @@
+id: c170e11a-9432-41fb-a036-fbd7e0f61498
+metadata:
+  name: 'Exception: Created but not thrown'
+  shortDescription: Exceptions should be thrown, not just created
+  level: error
+  scwCategory: ""
+  enabled: true
+  comment: |-
+    This one could still be refined if the FlowAnalyzer is expanded:
+    - Add throw keyword to findable expressions
+  descriptionFile: ExceptionCreatedbutnotthrown.html
+search:
+  instanceCreation:
+    not:
+      anyOf:
+      - in:
+          throw: {}
+      - in:
+          instanceCreation: {}
+      - in:
+          methodcall: {}
+      - in:
+          assignment: {}
+    type: java.lang.Throwable
+availableFixes:
+- name: Add a throw
+  actions:
+  - rewrite:
+      to: throw {{{ . }}}
+      target: self

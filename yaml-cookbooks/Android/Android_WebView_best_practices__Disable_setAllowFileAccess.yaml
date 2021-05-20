@@ -1,0 +1,26 @@
+id: a0bd8dcf-e751-43c5-907c-8a82123c123b
+metadata:
+  name: 'Android WebView best practices: Disable setAllowFileAccess'
+  shortDescription: Enabling this WebView setting has security implications
+  level: error
+  scwCategory: ""
+  enabled: false
+search:
+  instanceCreation:
+    not:
+      followedBy:
+        methodcall:
+          name:
+            matches: setAllowFileAccess
+          "on":
+            methodcall:
+              name: getSettings
+              "on":
+                instanceCreation: {}
+    type: android.webkit.WebView
+availableFixes:
+- name: Fix the code by ...
+  actions:
+  - rewrite:
+      to: ""
+      target: self

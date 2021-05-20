@@ -1,0 +1,23 @@
+id: 6108048d-5e7b-43f1-85b2-62a4e82964b2
+metadata:
+  name: 'Input Validation: Avoid XXE: Do not set DocumentBuilderFactory setExpandEntityReferences
+    to true '
+  shortDescription: 'Could lead to XXE '
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setExpandEntityReferences
+    declaration:
+      type: javax.xml.parsers.DocumentBuilderFactory
+availableFixes:
+- name: setExpandEntityReferences to false
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(false)'

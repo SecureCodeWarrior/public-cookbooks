@@ -1,0 +1,54 @@
+id: 84c34f9a-900c-451b-b2c2-815d9dc0a63d
+metadata:
+  name: Specify RequestMapping method
+  shortDescription: Non-specified RequestMapping method will map to any HTTP request
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: SpecifyRequestMappingmethod.html
+search:
+  annotation:
+    not:
+      parameters:
+      - name: method
+    in:
+      method: {}
+    type: org.springframework.web.bind.annotation.RequestMapping
+availableFixes:
+- name: Set to GetMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.GetMapping({{{ elementValuePairs
+        }}})'
+- name: Set to PutMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PutMapping({{{ elementValuePairs
+        }}})'
+- name: Set to PostMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PostMapping({{{ elementValuePairs
+        }}})'
+- name: Set to DeleteMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.DeleteMapping({{{ elementValuePairs
+        }}})'
+- name: Set to PatchMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PatchMapping({{{ elementValuePairs
+        }}})'
+- name: Set to HEAD by adding method parameter
+  actions:
+  - rewrite:
+      to: '@RequestMapping(method = org.springframework.web.bind.annotation.RequestMethod.HEAD)'
+- name: Set to OPTIONS by adding method parameter
+  actions:
+  - rewrite:
+      to: '@RequestMapping(method = org.springframework.web.bind.annotation.RequestMethod.OPTIONS)'
+- name: Set to TRACE by adding method parameter
+  actions:
+  - rewrite:
+      to: '@RequestMapping(method = org.springframework.web.bind.annotation.RequestMethod.TRACE)'

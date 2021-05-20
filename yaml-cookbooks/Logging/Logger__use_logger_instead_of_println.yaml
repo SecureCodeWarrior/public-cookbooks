@@ -1,0 +1,25 @@
+id: 246aea6d-751f-40ed-bec7-c0ee464b4952
+metadata:
+  name: 'Logger: use logger instead of println'
+  shortDescription: use logger instead of println - remember stop using System.out.println
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  methodcall:
+    name: println
+    "on":
+      field:
+        in:
+          typeDeclaration:
+            name: System
+        name: out
+availableFixes:
+- name: use Logger
+  actions:
+  - rewrite:
+      to: logger.log(java.util.logging.Level.INFO, {{{ arguments.0 }}})
+  - addField:
+      field: java.util.logging.Logger logger = Logger.getLogger({{{ containingClass.name
+        }}}.class.getName())
+      target: parentClass

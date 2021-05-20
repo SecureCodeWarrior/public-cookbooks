@@ -1,0 +1,22 @@
+id: f46cb637-58e9-4a25-a23d-c9ccfaa7ac51
+metadata:
+  name: 'Cross Site Request Forgery: Disabled CSRF protection'
+  shortDescription: Disabling Spring Security's CSRF protection makes the application
+    vulnerable
+  level: error
+  scwCategory: csrf
+  enabled: true
+  descriptionFile: SpringSecurityCSRFprotectiondonotdisabledefaultprotection.html
+search:
+  methodcall:
+    name: disable
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer
+    "on":
+      methodcall:
+        name: csrf
+availableFixes:
+- name: Enable CSRF protection
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}'

@@ -1,0 +1,27 @@
+id: 3b216ef8-f165-4c0d-9b76-1ff68a7973a0
+metadata:
+  name: 'Data: Injection: Parameterize LDAP Filters: DirContext#search'
+  shortDescription: Could lead to LDAP Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  comment: ""
+search:
+  methodcall:
+    args:
+      2:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name: search
+    declaration:
+      type: javax.naming.directory.DirContext
+availableFixes:
+- name: parameterize
+  actions:
+  - parameterize:
+      placeholderFormat: '{{{{ index }}}}'
+      extractUntrustedInput:
+        array:
+          type: java.lang.Object[]
+          atArgumentPosition: 3

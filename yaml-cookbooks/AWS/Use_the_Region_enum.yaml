@@ -1,0 +1,23 @@
+id: 236f3ba5-e0b2-4244-9727-4fff843b1b16
+metadata:
+  name: Use the Region enum
+  shortDescription: 'AWS recommends to use one of the constants in the Regions enum '
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: UsetheRegionenum.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: false
+        type: java.lang.String
+    name: of
+    declaration:
+      type: software.amazon.awssdk.regions.Region
+availableFixes:
+- name: Use the Region enum
+  actions:
+  - rewrite:
+      to: software.amazon.awssdk.regions.Region.{{#sed}}s/-/_/g,{{#upperCase}}{{{
+        arguments.0.value }}}{{/upperCase}}{{/sed}}

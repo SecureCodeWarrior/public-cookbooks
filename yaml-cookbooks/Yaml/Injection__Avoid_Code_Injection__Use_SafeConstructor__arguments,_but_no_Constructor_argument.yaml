@@ -1,0 +1,25 @@
+id: 08bc5edb-87c4-4cdb-8d7a-018f04e2ca71
+metadata:
+  name: 'Injection: Avoid Code Injection: Use SafeConstructor: arguments, but no Constructor
+    argument'
+  shortDescription: Could lead to Remote Code Execution
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  overridingRecipeId: java_snakeyaml
+search:
+  instanceCreation:
+    argCount:
+      greaterThan: 0
+    type: org.yaml.snakeyaml.Yaml
+    without:
+      args:
+        1:
+          type: org.yaml.snakeyaml.constructor.BaseConstructor
+availableFixes:
+- name: Add SafeConstructor
+  actions:
+  - modifyArguments:
+      insert:
+        1: new org.yaml.snakeyaml.constructor.SafeConstructor()

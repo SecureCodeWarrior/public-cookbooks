@@ -1,0 +1,23 @@
+id: b2134335-6647-4f45-898d-6a522c0b2f27
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
+    (URL encoded) null'
+  shortDescription: Rejecting the use of a (URL encoded) null is more secure
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: SecurityMisconfigurationStrictHttpFirewallRuleconfigurationRejectencodednull.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setAllowNull
+    type: org.springframework.security.web.firewall.StrictHttpFirewall
+availableFixes:
+- name: Set .setAllowNull() to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

@@ -1,0 +1,29 @@
+id: 16074db1-d254-4ac5-b012-c585e425712b
+metadata:
+  name: 'XML External Entities: DocumentBuilderFactory setExpandEntityReferences:
+    to false '
+  shortDescription: Could lead to XXE
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          name: setExpandEntityReferences
+    name: newInstance
+    declaration:
+      type:
+        reference:
+          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
+        checkInheritance: false
+availableFixes:
+- name: Set ExpandEntityReferences feature to false
+  actions:
+  - addMethodCall:
+      name: setExpandEntityReferences
+      arguments:
+      - "false"
+      position: first-available-spot

@@ -1,0 +1,23 @@
+id: 3b474a4c-c3e2-4325-bc71-e6b1ba3e2543
+metadata:
+  name: Guice Injected Field Not Public
+  shortDescription: If the Injected field is not public then the code might not be
+    wired up.
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  field:
+    with:
+      annotation:
+        type: com.google.inject.Inject
+      in:
+        typeDeclaration:
+          without:
+            modifier: public
+availableFixes:
+- name: Change class to public. Remember to also request injection on this class
+  actions:
+  - changeModifiers:
+      visibility: public
+      target: parentClass

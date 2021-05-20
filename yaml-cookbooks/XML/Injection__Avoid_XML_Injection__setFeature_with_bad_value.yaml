@@ -1,0 +1,23 @@
+id: 33bf0f09-64b1-414b-ac9c-c9f8a13459cd
+metadata:
+  name: 'Injection: Avoid XML Injection: setFeature with bad value'
+  shortDescription: Could lead to XML Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        referenceTo:
+          name: javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING
+      2:
+        type: boolean
+        value: "false"
+    name: setFeature
+availableFixes:
+- name: Set FEATURE_SECURE_PROCESSING true
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}({{{ arguments.0 }}}, true)'

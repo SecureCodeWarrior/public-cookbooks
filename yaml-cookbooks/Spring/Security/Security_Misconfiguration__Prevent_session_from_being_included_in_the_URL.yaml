@@ -1,0 +1,27 @@
+id: 1e40934b-e9d2-4a8f-a1b5-87a2feb49444
+metadata:
+  name: 'Security Misconfiguration: Prevent session from being included in the URL'
+  shortDescription: Do not use URL Parameters for session tracking
+  level: warning
+  scwCategory: misconfig
+  enabled: true
+  comment: ""
+  descriptionFile: SecurityMisconfigurationPreventHTTPsessionfrombeingincludedintheURL.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: enableSessionUrlRewriting
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer
+    "on":
+      methodcall:
+        name: sessionManagement
+availableFixes:
+- name: Set enableSessionUrlRewriting to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

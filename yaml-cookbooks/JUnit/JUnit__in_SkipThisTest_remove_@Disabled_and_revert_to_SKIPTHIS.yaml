@@ -1,0 +1,30 @@
+id: 7827bdcb-1b37-4d52-9fbe-61dae52bf377
+metadata:
+  name: 'JUnit: in SkipThisTest remove @Disabled and revert to SKIPTHIS'
+  shortDescription: remove @Disabled and revert to SKIPTHIS for demo purposes in the
+    project
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  method:
+    annotation:
+      type: Disabled
+    in:
+      typeDeclaration:
+        name: SkipThisTest
+availableFixes:
+- name: Remove Disabled and rename to SKIPTHIS...
+  actions:
+  - rewrite:
+      to: '{{{ returnTypeElement }}} SKIPTHIS{{{ nameIdentifier }}}{{{ parameterList
+        }}}{{{ body }}}'
+      target: self
+- name: Remove Disabled, keep other annotations, and rename to SKIPTHIS...
+  actions:
+  - rewrite:
+      to: |-
+        {{#sed}}s/(@Disabled\n.*@Test)//,{{{ modifierList }}}{{/sed}}
+
+        {{{ returnTypeElement }}} SKIPTHIS{{{ nameIdentifier }}}{{{ parameterList }}}{{{ body }}}
+      target: self

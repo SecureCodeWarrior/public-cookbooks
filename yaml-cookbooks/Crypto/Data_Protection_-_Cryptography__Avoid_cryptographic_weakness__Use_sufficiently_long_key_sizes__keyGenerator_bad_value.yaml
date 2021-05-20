@@ -1,0 +1,24 @@
+id: e6c2c7af-f31a-42fd-b6c0-31ae7aef7017
+metadata:
+  name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently
+    long key sizes: keyGenerator bad value'
+  shortDescription: 'Could lead to brute forcing or other cryptographic weakness '
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: int
+        value:
+          matches: ([1-9]|[1-9][0-9]|1[0-1][0-9]|12[0-7])
+    name: init
+    declaration:
+      type: javax.crypto.KeyGenerator
+availableFixes:
+- name: 'Initialize key size to 128 '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(128)'

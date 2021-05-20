@@ -1,0 +1,25 @@
+id: d80d7dcf-6c4d-42c2-a38b-1da6e441db2d
+metadata:
+  name: 'Security Misconfiguration: Disabled Security Settings: CookieCsrfTokenRepository#withHttpOnlyFalse'
+  shortDescription: Make sure to set HttpOnly to true to protect against CSRF or remove
+    it
+  level: error
+  scwCategory: csrf
+  enabled: true
+  descriptionFile: SecurityMisconfigurationDisabledSecuritySettingsCookieCsrfTokenRepositorywithHttpOnlyFalse.html
+search:
+  methodcall:
+    args:
+      1:
+        value: CookieCsrfTokenRepository.withHttpOnlyFalse()
+    name: csrfTokenRepository
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.CsrfConfigurer
+availableFixes:
+- name: Set HttpOnly to true
+  actions:
+  - rewrite:
+      to: |-
+        org.springframework.security.web.csrf.CookieCsrfTokenRepository cookieCsrfTokenRepository = new org.springframework.security.web.csrf.CookieCsrfTokenRepository();
+        cookieCsrfTokenRepository.setCookieHttpOnly(true);
+        {{{ expressionElement }}}(cookieCsrfTokenRepository)

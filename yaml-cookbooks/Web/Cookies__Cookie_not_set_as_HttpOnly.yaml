@@ -1,0 +1,20 @@
+id: 5bd6ed7e-ecc6-4d50-8252-2dd58f2760af
+metadata:
+  name: 'Cookies: Cookie not set as HttpOnly'
+  shortDescription: The HttpOnly flag has been set to false on this cookie.
+  level: warning
+  scwCategory: misconfig
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name: setHttpOnly
+    type: javax.servlet.http.Cookie
+availableFixes:
+- name: Fix the code by setting as httpOnly
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(true)'

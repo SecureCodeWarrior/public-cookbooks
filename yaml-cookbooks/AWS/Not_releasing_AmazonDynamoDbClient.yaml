@@ -1,0 +1,27 @@
+id: ad6e5082-fbfd-41bf-bfa8-60fbbabeb62d
+metadata:
+  name: Not releasing AmazonDynamoDbClient
+  shortDescription: Call the shutdown() method to release the AmazonDynamoDbClient
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: ReleaseAmazonDynamoDbClientShutdown.html
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          name: shutdown
+          declaration:
+            type: com.amazonaws.services.dynamodbv2.AmazonDynamoDB
+    name: defaultClient
+    declaration:
+      type: com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder
+availableFixes:
+- name: Call the shutdown method
+  actions:
+  - rewrite:
+      to: '{{{ . }}}'
+  - addMethodCall:
+      name: shutdown
+      position: end-of-life

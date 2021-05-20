@@ -1,0 +1,23 @@
+id: 51a547ad-3204-4704-a4bf-29a13a4c2904
+metadata:
+  name: 'Info Leakage: Throwable.printStacktrace leaks valuable program structure
+    information'
+  shortDescription: printing a stacktrace gives valuable information about software
+    internals, including library/framework names and versions, to an attacker
+  level: warning
+  scwCategory: ""
+  cweCategory: 200
+  enabled: true
+  comment: "Should be in an opinionated set about logging frameworks\n\nf.e.\n- java.util.logging.Logger\n\
+    - slf4j\n- log4j\n- logback\n- ... \n"
+  descriptionFile: ThrowablePrintStacktraceLeaksInfo.html
+search:
+  methodcall:
+    name: printStackTrace
+    declaration:
+      type: java.lang.Throwable
+availableFixes:
+- name: Print the message of the exception instead
+  actions:
+  - rewrite:
+      to: System.err.println({{{ qualifier }}}.getMessage())

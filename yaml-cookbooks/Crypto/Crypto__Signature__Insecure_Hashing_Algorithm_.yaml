@@ -1,0 +1,23 @@
+id: 2da4da97-fd72-4cf0-a39d-a72497c4947a
+metadata:
+  name: 'Crypto: Signature: Insecure Hashing Algorithm '
+  shortDescription: 'This hashing algorithm is not recommended for cryptographic use '
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: (MD.*)|(NONE.*)|(SHA[^5][^1][^2].*)
+    name: getInstance
+    declaration:
+      type: java.security.Signature
+availableFixes:
+- name: 'Use SHA512withRSA '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("SHA512withRSA")'

@@ -1,0 +1,19 @@
+id: 395403ba-c7f2-4c03-bab5-a535260b3036
+metadata:
+  name: 'Immutable: avoid void methods'
+  shortDescription: void methods have side-effects, return a new oject or primitve
+    instead
+  level: warning
+  scwCategory: ""
+  enabled: true
+  excludeTestDirs: true
+search:
+  method:
+    not:
+      modifier: private
+    returnType: void
+availableFixes:
+- name: Make this return an Object
+  actions:
+  - changeType:
+      type: Object

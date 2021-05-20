@@ -1,0 +1,27 @@
+id: 09cc6bb9-9041-4665-8d71-225f5b73b692
+metadata:
+  name: Use composed requestmapping annotations
+  shortDescription: Improve readability by using Spring's composed annotations
+  level: info
+  scwCategory: ""
+  enabled: true
+  descriptionFile: Usecomposedrequestmappingannotations.html
+search:
+  annotation:
+    owner:
+      method: {}
+    parameters:
+    - name: method
+      value:
+        referenceTo:
+          name:
+            caseSensitive: false
+            matches: org.springframework.web.bind.annotation.RequestMethod.(GET|POST|PATCH|PUT|DELETE)
+availableFixes:
+- name: Use a composed annotation
+  actions:
+  - changeAnnotation:
+      type: org.springframework.web.bind.annotation.{{#upperCaseFirst}}{{#lowerCase}}{{{
+        markedElement.elementValuePairs.method.value.name }}}{{/lowerCase}}{{/upperCaseFirst}}Mapping
+      removeParameter:
+      - withName: method

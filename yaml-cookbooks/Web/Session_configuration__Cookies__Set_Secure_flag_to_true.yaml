@@ -1,0 +1,26 @@
+id: 3f48910b-0043-46b2-9721-822fbd7ccd02
+metadata:
+  name: 'Session configuration: Cookies: Set Secure flag to true'
+  shortDescription: Prevent a cookie being sent over unencrypted HTTP by setting the
+    Secure flag to true
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: SessionconfigurationCookiesSetSecureflagtotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name:
+      matches: setSecure
+    anyOf:
+    - type: javax.servlet.http.Cookie
+    - type: java.net.HttpCookie
+availableFixes:
+- name: Set Secure to true
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "true"

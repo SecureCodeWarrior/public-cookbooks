@@ -1,0 +1,29 @@
+<h2>Abstract</h2>
+Set the <code>setCookieHttpOnly()</code> flag to true to avoid cookies being accessible to scripts.
+<h2>Description</h2>
+Cookies that are accessible to client-side scripts could be subjected to Cross-site Scripting Attacks (XSS). An attacker could steal the session cookie, and impersonate another user.
+Protect the application from this vulnerability by explicitly setting the <code>setCookieHttpOnly()</code> flag to true.
+<table><tr>
+<th>Before</th>
+<th>After</th>
+</tr>
+<tr>
+<td><pre><span style="font-size:8px;">
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        .csrf()
+        .csrfTokenRepository(CookieCsrfTokenRepository<b>.withHttpOnlyFalse()</b>);
+}</span></pre></td>
+<td><pre><span style="font-size:8px;">
+protected void configure(HttpSecurity http) throws Exception {
+    CookieCsrfTokenRepository csrfTokenRepository = new CookieCsrfTokenRepository();
+    csrfTokenRepository.setCookieHttpOnly(true);
+    http
+        .csrf().csrfTokenRepository(csrfTokenRepository);
+}</span></pre></td>
+</tr>
+</table>
+<h2>Resources</h2>
+<ul>
+    <li><a href="https://docs.spring.io/spring-security/site/docs/5.0.x/reference/html/csrf.html">Guide to Spring Security CSRF</a></li>
+</ul>

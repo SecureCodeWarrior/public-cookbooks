@@ -1,0 +1,25 @@
+id: d34a476b-dede-44c7-8484-03ec48cc8661
+metadata:
+  name: 'Session configuration: HttpCookie: Configure HttpOnly flag'
+  shortDescription: Prevent client-side scripts from accessing the cookie by setting
+    the HttpOnly flag to true
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: SessionconfigurationCookiesConfigureHttpOnlyflag.html
+search:
+  instanceCreation:
+    not:
+      with:
+        followedBy:
+          methodcall:
+            name: setHttpOnly
+    type: java.net.HttpCookie
+availableFixes:
+- name: Set the HttpOnly flag to true
+  actions:
+  - addMethodCall:
+      name: setHttpOnly
+      arguments:
+      - "true"
+      position: first-available-spot

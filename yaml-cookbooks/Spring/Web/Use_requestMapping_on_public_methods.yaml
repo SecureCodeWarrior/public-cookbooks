@@ -1,0 +1,29 @@
+id: 8c909b72-602c-41e4-af4c-eb8b86d04f64
+metadata:
+  name: Use requestMapping on public methods
+  shortDescription: RequestMapping should not be used on non-public methods
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: UserequestMappingonpublicmethods.html
+search:
+  annotation:
+    owner:
+      method:
+        not:
+          modifier: public
+        in:
+          typeDeclaration:
+            anyOf:
+            - annotation:
+                type: Controller
+            - annotation:
+                type: RestController
+    type:
+      reference:
+        matches: org.springframework.web.bind.annotation.*
+      checkInheritance: true
+availableFixes:
+- name: Remove the annotation
+  actions:
+  - remove: {}

@@ -1,0 +1,108 @@
+id: c8201f35-3de0-4903-adb0-15a92ceb6218
+metadata:
+  name: 'Injection: Avoid SQL Injection: Use Parameterized Queries (Statement)'
+  shortDescription: Could lead to SQL Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  comment: ""
+  overridingRecipeId: ""
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name:
+      matches: execute.*
+    declaration:
+      type: java.sql.Statement
+availableFixes:
+- name: Use parameterized queries
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        methodsOnObject:
+          methods:
+          - type: java.lang.String
+            methodName: setString
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.lang.Integer
+            methodName: setInt
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: int
+            methodName: setInt
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: double
+            methodName: setDouble
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.lang.Double
+            methodName: setDouble
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: float
+            methodName: setFloat
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.lang.Float
+            methodName: setFloat
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: boolean
+            methodName: setBoolean
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.lang.Boolean
+            methodName: setBoolean
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.lang.Short
+            methodName: setShort
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: short
+            methodName: setShort
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.sql.Time
+            methodName: setTime
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.sql.TimeStamp
+            methodName: setTimeStamp
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          - type: java.net.URL
+            methodName: setURL
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          target:
+            subject:
+              insertBefore: true
+  - changeTypeOfCallObject:
+      rewriteLastAssignment: '{{{ qualifier }}}.prepareStatement({{{ markedElement.arguments.0}}}{{#arguments}},
+        {{{.}}}{{/arguments}})'
+      type: PreparedStatement
+  - modifyArguments:
+      remove:
+      - 1

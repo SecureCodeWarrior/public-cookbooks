@@ -1,0 +1,28 @@
+id: 668f46c2-53fe-4e56-a943-06dbd4d34d3b
+metadata:
+  name: 'Injection - SQL Injection in Jdbc: #query/queryForStream/queryForObject'
+  shortDescription: Avoid SQLi by using parameterized queries, instead of string concatenation
+    with untrusted input
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: Injection-SQLInjectioninJdbcOperationsqueryqueryForStreamqueryForObject.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name:
+      matches: queryForObject|query|queryForStream
+    declaration:
+      type: org.springframework.jdbc.core.JdbcOperations
+availableFixes:
+- name: Use parameterized queries
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        array:
+          type: java.lang.String[]
+          atArgumentPosition: 3

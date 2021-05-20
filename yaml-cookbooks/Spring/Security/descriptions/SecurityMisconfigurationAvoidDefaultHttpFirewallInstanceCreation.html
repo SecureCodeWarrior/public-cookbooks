@@ -1,0 +1,10 @@
+
+
+Spring Security recommends the use of <code>StrictHttpFirewall</code> as it rejects malicious URLs instead of trying to sanitize them.
+
+<table><tr><td><font color="gray">Before:</font></td><td><pre><font color="#AA0000">public void httpFirewall() {
+    DefaultHttpFirewall firewall = new DefaultHttpFirewall();
+}</font></pre></td></tr><tr><td><font color="gray">After:</font></td><td><pre>public void httpFirewall() {
+    StrictHttpFirewall firewall = new StrictHttpFirewall();
+}</pre></td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/DefaultHttpFirewall.html">Spring docs API - DefaultHttpFirewall</a></li></ul>

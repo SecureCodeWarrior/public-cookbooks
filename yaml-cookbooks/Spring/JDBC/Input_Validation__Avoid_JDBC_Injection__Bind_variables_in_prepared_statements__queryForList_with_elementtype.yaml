@@ -1,0 +1,30 @@
+id: 3899479b-9419-4437-9d8a-0fb706d9e906
+metadata:
+  name: 'Input Validation: Avoid JDBC Injection: Bind variables in prepared statements:
+    queryForList with elementtype'
+  shortDescription: Could lead to JDBC Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  descriptionFile: InputValidationAvoidJDBCInjectionBindvariablesinpreparedstatements.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+      2:
+        type: java.lang.Class
+    name: queryForList
+    declaration:
+      type: org.springframework.jdbc.core.JdbcTemplate
+availableFixes:
+- name: Use parameterized queries
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        array:
+          type: java.lang.String[]
+          atArgumentPosition: 3

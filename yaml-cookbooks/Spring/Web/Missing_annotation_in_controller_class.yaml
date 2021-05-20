@@ -1,0 +1,35 @@
+id: caff1129-1565-41f3-8583-273ee66565fb
+metadata:
+  name: Missing annotation in controller class
+  shortDescription: Missing @RestController annotation.
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    not:
+      annotation:
+        type: org.springframework.web.bind.annotation.RestController
+    member:
+      method:
+        anyOf:
+        - annotation:
+            type: org.springframework.web.bind.annotation.PostMapping
+        - annotation:
+            type: org.springframework.web.bind.annotation.GetMapping
+        - annotation:
+            type: org.springframework.web.bind.annotation.PutMapping
+        - annotation:
+            type: org.springframework.web.bind.annotation.DeleteMapping
+availableFixes:
+- name: Understand why use @RestController
+  actions:
+  - goto:
+      type: URL
+      value: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RestController.html
+      target: self
+- name: Add @RestController annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.RestController'
+      target: parentClass

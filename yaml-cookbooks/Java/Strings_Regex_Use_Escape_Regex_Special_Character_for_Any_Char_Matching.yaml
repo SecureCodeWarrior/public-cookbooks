@@ -1,0 +1,24 @@
+id: 1beed345-512b-4190-b7c3-0691d1da9e66
+metadata:
+  name: 'Strings: Regex Use: Escape Regex Special Character for Any Char Matching'
+  shortDescription: First argument uses a regex, when using a dot it might have unintended
+    behaviour
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: StringsRegexUseEscapeRegexSpecialCharacterforAnyCharMatching.html
+search:
+  methodcall:
+    args:
+      1:
+        value: .
+    name:
+      matches: (split|replaceAll|replaceFirst)
+    declaration:
+      type: java.lang.String
+availableFixes:
+- name: Escape the regex special character for any char
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: '"\\."'

@@ -1,0 +1,32 @@
+id: 76030f66-ede5-4af6-a491-6a2c98f74702
+metadata:
+  name: 'XML External Entities: DocumentBuilderFactory setFeature: dissallow-doctype-decl '
+  shortDescription: 'Could lead to XXE '
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          args:
+            1:
+              value: http://apache.org/xml/features/disallow-doctype-decl
+          name: setFeature
+    name: newInstance
+    declaration:
+      type:
+        reference:
+          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
+        checkInheritance: false
+availableFixes:
+- name: 'Set dissallow-doctype-decl feature to true '
+  actions:
+  - addMethodCall:
+      name: setFeature
+      arguments:
+      - '"http://apache.org/xml/features/disallow-doctype-decl"'
+      - "true"
+      position: first-available-spot

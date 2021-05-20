@@ -1,0 +1,6 @@
+
+
+Ensure the cookie is only sent over HTTPS by setting the <code>setSecure()</code> flag to true. Otherwise, if a cookie is sent over an unencrypted HTTP connection, the session ID could be disclosed via a Man-in-the-Middle attack.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">cookie.setSecure(false);</font></td></tr><tr><td><font color="gray">After:</font></td><td>cookie.setSecure(true);</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#secure-attribute">OWASP - Session Management Cheat Sheet - Secure</a></li></ul>

@@ -1,0 +1,7 @@
+When trying to <code>split</code> by <code>&quot;.&quot;</code> we will not get the result we expect. Instead every character in the String will be used as a split point, resulting in an empty array. We need to use <code>&quot;\\.&quot;</code> instead i.e. the <code>.</code> escaped in a <code>String</code>.
+
+<b>Before:</b>
+<pre>String[] parts = &quot;123.456.789.012&quot;.<b>split(&quot;.&quot;)</b>;</pre>
+
+<b>After:</b>
+<pre>String[] parts = &quot;123.456.789.012&quot;.<b>split(&quot;\\.&quot;)</b>;</pre>

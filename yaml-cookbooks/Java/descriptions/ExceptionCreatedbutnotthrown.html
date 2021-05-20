@@ -1,0 +1,18 @@
+<b>before:</b>
+<pre>
+try {
+    String bob = null;
+    bob.trim();
+} catch (NullPointerException e) {
+    new RuntimeException(&quot;Found nullpointer&quot;, e);
+}
+</pre>
+<b>after:</b>
+<pre>
+try {
+    String bob = null;
+    bob.trim();
+} catch (NullPointerException e) {
+    throw new RuntimeException(&quot;Found nullpointer&quot;, e);
+}
+</pre>

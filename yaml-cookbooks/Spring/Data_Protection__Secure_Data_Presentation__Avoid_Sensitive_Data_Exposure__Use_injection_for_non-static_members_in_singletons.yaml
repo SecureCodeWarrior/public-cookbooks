@@ -1,0 +1,46 @@
+id: 31141c48-1326-4440-ac1f-71167977418a
+metadata:
+  name: 'Data Protection: Secure Data Presentation: Avoid Sensitive Data Exposure:
+    Use injection for non-static members in singletons'
+  shortDescription: Could lead to Sensitive Data Exposure
+  level: error
+  newCodeOnly: false
+  scwCategory: infoexposure
+  enabled: true
+  descriptionFile: DataProtectionSecureDataPresentationAvoidSensitiveDataExposureUseinjectionfornon-staticmembersinsingletons.html
+search:
+  field:
+    in:
+      typeDeclaration:
+        with:
+          annotation:
+            type:
+              reference:
+                matches: org.springframework.stereotype.(Controller|Service|Repository)
+              checkInheritance: false
+    without:
+      anyOf:
+      - modifier: static
+      - annotation:
+          anyOf:
+          - type: org.springframework.beans.factory.annotation.Autowired
+          - type: org.springframework.beans.factory.annotation.Value
+          - type: javax.inject.Inject
+          - type: javax.annotation.Resource
+availableFixes:
+- name: Add @Autowired annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.beans.factory.annotation.Autowired'
+- name: Add @Value annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.beans.factory.annotation.Value("string value")'
+- name: Add @Inject annotation
+  actions:
+  - addAnnotation:
+      annotation: '@javax.inject.Inject'
+- name: Add @Resource annotation
+  actions:
+  - addAnnotation:
+      annotation: '@javax.annotation.Resource'

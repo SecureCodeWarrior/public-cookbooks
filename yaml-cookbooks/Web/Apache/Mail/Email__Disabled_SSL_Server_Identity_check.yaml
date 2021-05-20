@@ -1,0 +1,21 @@
+id: ee98c8e5-1b73-4543-b605-1a80d64c3534
+metadata:
+  name: 'Email: Disabled SSL Server Identity check'
+  shortDescription: When sending an email, the setSSLCheckServerIdentity has been
+    set to false
+  level: error
+  scwCategory: misconfig
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name: setSSLCheckServerIdentity
+    type: org.apache.commons.mail.Email
+availableFixes:
+- name: Fix the code by enabling setSSLCheckServerIdentity
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(true)'

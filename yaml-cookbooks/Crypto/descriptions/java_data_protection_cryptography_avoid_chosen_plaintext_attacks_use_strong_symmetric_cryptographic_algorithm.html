@@ -1,0 +1,37 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to use AES with GCM mode and no padding for symmetric algorithms.
+<h2>Description</h2>
+Symmetric encryption should be used for bulk encryption, i.e. to store sensitive data securely or to encrypt communication after a secure channel has been established. 
+The recommended algorithm for local storage is AES, used in GCM mode with no padding.
+<h4>Correct code example:</h4>
+<pre>
+public static byte[] encryptForLocalStorage(byte[] plainText, byte[] IV, Key key) throws Exception {
+    Cipher c = Cipher.getInstance(<b>"AES/GCM/NoPadding"</b>);
+    GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH * 8, IV);
+    c.init(Cipher.ENCRYPT_MODE, key, gcmSpec);
+    return c.doFinal(plainText);
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Use Of Insecure/Deprecated Algorithms. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_insecuredeprecated_alogirthms/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

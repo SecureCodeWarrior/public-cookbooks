@@ -1,0 +1,22 @@
+id: c5ca7221-3084-44c9-83c7-1614a45b7c40
+metadata:
+  name: 'Crypto: KeyPair Generation: Non Standard Cryptographic Algorithm'
+  shortDescription: 'This cryptographic algorithm is not recommended'
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: DSA
+    name: getInstance
+    declaration:
+      type: java.security.KeyPairGenerator
+availableFixes:
+- name: 'Use RSA '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("RSA")'

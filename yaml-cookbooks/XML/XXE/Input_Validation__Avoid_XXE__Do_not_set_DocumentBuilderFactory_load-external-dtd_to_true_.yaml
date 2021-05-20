@@ -1,0 +1,26 @@
+id: fb2c0844-982a-4294-ac75-db4abad43329
+metadata:
+  name: 'Input Validation: Avoid XXE: Do not set DocumentBuilderFactory load-external-dtd
+    to true '
+  shortDescription: 'Could lead to XXE '
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: http://apache.org/xml/features/nonvalidating/load-external-dtd
+      2:
+        type: boolean
+        value: "true"
+    name: setFeature
+    declaration:
+      type: javax.xml.parsers.DocumentBuilderFactory
+availableFixes:
+- name: 'Set load-external-dtd false '
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}({{{ arguments.0 }}}, false)'

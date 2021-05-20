@@ -1,0 +1,23 @@
+id: 8a8f7dd7-d5a4-41ca-9e1f-27af8d041c9e
+metadata:
+  name: 'Android WebView best practices: Insecure settings'
+  shortDescription: Enabling this WebView setting has security implications
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: AndroidWebViewbestpractices.html
+search:
+  methodcall:
+    args:
+      1:
+        value: "true"
+    name:
+      matches: setJavaScriptEnabled|setAllowFileAccess|setGeolocationEnabled|setAllowContentAccess
+    declaration:
+      type: android.webkit.WebSettings
+availableFixes:
+- name: Change WebView setting to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

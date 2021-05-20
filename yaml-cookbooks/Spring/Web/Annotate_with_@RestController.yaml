@@ -1,0 +1,24 @@
+id: 12a927c8-0497-41c8-b037-828ced4c876c
+metadata:
+  name: Annotate with @RestController
+  shortDescription: This class looks like a Spring MVC Rest Controller
+  level: info
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    not:
+      annotation:
+        type: org.springframework.web.bind.annotation.RestController
+    name:
+      matches: .*Controller$
+availableFixes:
+- name: What is a Rest Controller?
+  actions:
+  - goto:
+      type: URL
+      value: https://www.baeldung.com/spring-controllers
+- name: Add @RestController annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.web.bind.annotation.RestController'

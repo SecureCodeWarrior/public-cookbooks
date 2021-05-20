@@ -1,0 +1,37 @@
+id: 4b70352d-5a1f-4e76-858b-33843b510de8
+metadata:
+  name: sql injection - use a parameterized query
+  shortDescription: execute query with untrusted inputs is vulnerable to SQL Injection
+  level: error
+  scwCategory: ""
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name: executeQuery
+    type: java.sql.Statement
+availableFixes:
+- name: convert to a prepared statement
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        methodsOnObject:
+          methods:
+          - methodName: setString
+            args:
+              "1": '{{{ index }}}'
+              "2": '{{{ . }}}'
+          target:
+            subject:
+              insertBefore: true
+  - changeTypeOfCallObject:
+      rewriteLastAssignment: '{{{ qualifier }}}.prepareStatement({{{ markedElement.arguments.0}}}{{#arguments}},
+        {{{.}}}{{/arguments}})'
+      type: java.sql.PreparedStatement
+  - modifyArguments:
+      remove:
+      - 1

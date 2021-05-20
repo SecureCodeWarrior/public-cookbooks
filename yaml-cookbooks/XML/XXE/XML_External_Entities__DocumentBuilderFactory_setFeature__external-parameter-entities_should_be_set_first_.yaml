@@ -1,0 +1,33 @@
+id: 2465f091-c842-460c-8542-d97df4dc18b5
+metadata:
+  name: 'XML External Entities: DocumentBuilderFactory setFeature: external-parameter-entities
+    should be set first '
+  shortDescription: 'Could lead to XXE '
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          args:
+            1:
+              value: http://xml.org/sax/features/external-parameter-entities
+          name: setFeature
+    name: newInstance
+    declaration:
+      type:
+        reference:
+          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
+        checkInheritance: false
+availableFixes:
+- name: Set external-parameter-entities feature to false
+  actions:
+  - addMethodCall:
+      name: setFeature
+      arguments:
+      - '"http://xml.org/sax/features/external-parameter-entities"'
+      - "false"
+      position: first-available-spot

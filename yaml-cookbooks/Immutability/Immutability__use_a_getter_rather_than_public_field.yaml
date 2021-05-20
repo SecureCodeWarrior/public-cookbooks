@@ -1,0 +1,31 @@
+id: 850cb607-579d-4dae-8d0e-3e683015d698
+metadata:
+  name: 'Immutability: use a getter rather than public field'
+  shortDescription: To encourage use of interfaces rather than direct field access,
+    add a getter.
+  level: warning
+  scwCategory: ""
+  enabled: true
+search:
+  field:
+    not:
+      in:
+        typeDeclaration:
+          with:
+            child:
+              method:
+                name:
+                  caseSensitive: false
+                  is: get{{{markedElement.name}}}
+    modifier: public
+availableFixes:
+- name: add a getter and make private
+  actions:
+  - addMethod:
+      method: |-
+        public final {{{markedElement.typeElement}}} get{{#upperCaseFirst}}{{{markedElement.name}}}{{/upperCaseFirst}}(){
+           return {{{markedElement.name}}};
+        }
+      target: parentClass
+  - changeModifiers:
+      visibility: private
