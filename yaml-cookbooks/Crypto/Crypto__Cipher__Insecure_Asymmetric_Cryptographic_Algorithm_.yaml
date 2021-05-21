@@ -2,7 +2,7 @@ id: a836d69c-f784-4394-8565-091e97061cc8
 version: 8
 metadata:
   name: 'Crypto: Cipher: Insecure Asymmetric Cryptographic Algorithm'
-  shortDescription: 'This cryptographic algorithm is not recommended'
+  shortDescription: This cryptographic algorithm is not recommended
   level: error
   newCodeOnly: false
   scwCategory: broken_cryptography

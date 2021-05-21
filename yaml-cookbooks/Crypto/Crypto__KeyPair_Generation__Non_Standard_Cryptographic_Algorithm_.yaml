@@ -2,7 +2,7 @@ id: c5ca7221-3084-44c9-83c7-1614a45b7c40
 version: 8
 metadata:
   name: 'Crypto: KeyPair Generation: Non Standard Cryptographic Algorithm'
-  shortDescription: 'This cryptographic algorithm is not recommended'
+  shortDescription: This cryptographic algorithm is not recommended
   level: error
   newCodeOnly: false
   scwCategory: broken_cryptography
