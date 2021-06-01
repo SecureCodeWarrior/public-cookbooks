@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to avoid running OS commands from the program.
+<h2>Description</h2>
+It is not recommended to use the java <code>Runtime.exec(String)</code> method. The overloaded method <code>Runtime.exec(String[])</code> is secure as long as no user input is used in the first String in the array. However, it is best practice to avoid running OS commands from the program altogether. Use API calls whenever possible.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - OS Command Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/oscmd/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

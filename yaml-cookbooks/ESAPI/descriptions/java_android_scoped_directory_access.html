@@ -1,0 +1,52 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that 
+Scoped Directory Access should be used where possible.
+<h2>Description</h2>
+Apps usually just need access to specific directories in external storage, such as the Pictures directory.
+Requesting <code>READ_EXTERNAL_STORAGE</code> or <code>WRITE_EXTERNAL_STORAGE</code> in your manifest allows access to all public directories on external storage, 
+which might be more access than what your app needs. Since API level 24 (Android 7.0, Nougat) Android  provides a simplified API to access common external storage directories. 
+It is recommended to use this where possible.
+<h3>Case 1: Accessing an External Storage Directory</h3> 
+Requesting Access in an activity can be done using the following code example:
+<h4>Correct code example:</h4>
+<pre>
+StorageManager sm = (StorageManager)getSystemService(Context.STORAGE_SERVICE);
+StorageVolume volume = sm.getPrimaryStorageVolume();
+Intent intent = volume.<b>createAccessIntent(Environment.DIRECTORY_PICTURES)</b>;
+startActivityForResult(intent, request_code);
+</pre>
+Add this code using the Secure Code Warrior Generators.
+<h3>Case 2: Accessing a Directory on Removable Media</h3> 
+When accessing storage on removable media one has to use a broadcast receiver to listen for intents of the type 
+<code>android.intent.action.MEDIA_MOUNTED</code>. This type of <code>BroadCastReceiver</code>, often called MediaMountedReceivers,
+can be declared as followed:
+<h4>Correct code example:</h4>
+<pre>
+&lt;receiver
+&nbsp;&nbsp;&nbsp;android:name="<b>.MediaMountedReceiver</b>"
+&nbsp;&nbsp;&nbsp;android:enabled="true"
+&nbsp;&nbsp;&nbsp;android:exported="true"&gt;
+&nbsp;&nbsp;&nbsp;&lt;intent-filter&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action android:name="<b>android.intent.action.MEDIA_MOUNTED</b>" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data android:scheme="file" /&gt;
+&nbsp;&nbsp;&nbsp;&lt;/intent-filter&gt;
+&lt;/receiver&gt;
+</pre>
+MediaMountedReceivers should have code to request access to scoped directories when receiveing intents. 
+In the example below we request access to the Pictures directory on the removable storage device.
+<pre>
+StorageVolume volume = (StorageVolume)
+&nbsp;intent.getParcelableExtra(StorageVolume.EXTRA_STORAGE_VOLUME);
+volume.<b>createAccessIntent(Environment.DIRECTORY_PICTURES)</b>;
+myActivity.startActivityForResult(intent, request_code);
+</pre>
+If the required directory is on removable media, like an SD-card, it is recommended to use a <code>BroadCastReceiver</code> to request access.
+For more elaborate information and code examples see Additional information section of this page.
+<a href="https://developer.android.com/training/articles/scoped-directory-access.html">(Android)Using Scoped Directory Access</a>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

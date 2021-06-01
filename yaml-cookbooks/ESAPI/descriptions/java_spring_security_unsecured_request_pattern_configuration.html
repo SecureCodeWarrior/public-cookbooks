@@ -1,0 +1,37 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to use <code>access="permitAll"</code> to configure authorization so that all requests are allowed on a particular path.
+<h2>Description</h2>
+Spring Security provides several mechanisms to configure a request pattern as unsecured or allowing all access. Depending on each of these mechanisms, this can either mean not running the security filter chain on that path at all, or running the filter chain and allowing access.
+<br/>
+<code>security="none"</code> will completely disable the Security filter chain for that request path, so when the request is handled in the application, Spring Security features will not be available.
+<br/>
+This is not a problem for serving static resources, where no actual processing takes place. However, if the request is handled programmatically in some way, then security functionalities such as requires-channel, accessing the current user or calling secured methods will not be available.
+<br/>
+For the same reason, there is no point specifying additional attributes on an <http> element that has already been configured with <code>security=”none”</code> because that request path is unsecured and the attributes will simply be ignored.
+<br/>
+Instead it is recommended to use <code>access="permitAll"</code>, this will configure the authorization so that all requests are allowed on that particular path without disabling the security filters, these still run, so any Spring Security related functionality will still be available.</b>
+<h4>Correct code example:</h4>
+<pre>
+&lt;intercept-url pattern="/login*" <b>access="permitAll"</b>&gt;
+</pre>
+Or via Java configuration:
+<pre>
+http.authorizeRequests().antMatchers("/login*").<b>permitAll</b>();
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Authentication - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/auth/generic/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to set session timeout to the minimal value possible.
+<h2>Description</h2>
+Session timeout define action window time for a user thus this window represents, in the same time, the delay in which an attacker can try to steal and use a existing user session.
+For this, it is best practice to :
+<ol>
+  <li>Set session timeout to the minimal value possible depending on the context of the application.</li>
+  <li>Avoid "infinite" (value 0) session timeout .</li>
+</ol>
+A recommended value is around 10 minutes.
+<h4>Correct code example:</h4>
+<pre>
+&lt;session-config&gt;
+&nbsp;&nbsp;&nbsp;&lt;session-timeout&gt;<b>10</b>&lt;/session-timeout&gt;
+&lt;/session-config&gt;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Session Handling - Insufficient Session Expiration. <a href="https://{{microtraininghost}}/#/simple-flow/web/session/sessionexp/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+id: 9c2e6701-f153-4176-b92b-7f1457c564aa
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008b: Math.random'
+  shortDescription: This is an OWASP ESAPI Banned method.
+  level: error
+  enabled: true
+search:
+  methodcall:
+    name: random
+    declaration:
+      type: java.lang.Math
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: |-
+        org.owasp.esapi.Randomizer randomizer = org.owasp.esapi.reference.DefaultRandomizer.getInstance();
+        float random = randomizer.getRandomReal(0,1);

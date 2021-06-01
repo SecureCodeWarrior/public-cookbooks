@@ -1,0 +1,34 @@
+<html>
+<body>
+<h2>Info</h2>
+<h3>Content Provider Types</h3>
+Based on tags and attributes used in Content Providers, four types can be specified: private,
+public, partner and in-house.
+<ol>
+    <li><b>Private Content Provider: Content Provider cannot be used by other applications.</b>
+<pre>
+&lt;provider android:exported="<b>false</b>" ... &gt;
+</pre>
+    </li>
+    <li><b>Public content Provider: Content Provider can be used by any other applications.</b>
+<pre>
+&lt;provider android:exported="<b>true</b>" ... &gt;
+</pre>
+    </li>
+    <li><b>Partner Content Provider: Content Provider can be used by partner applications.</b><br/>
+        Same as Public Content Provider, however, verify the certificate of requesting app in
+        code.<br/>
+    <li><b>In-House Content Provider: Content provider can be used by in-house
+        applications.</b><br/>
+        Verify the In-House signature permission in code.
+<pre>
+&lt;provider android:exported="<b>true</b>"
+&nbsp;&nbsp;&nbsp;<b>android:permission</b>="com.senseissecurity.provider.MY_PERMISSION" /&gt;
+</pre>
+    </li>
+</ol>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

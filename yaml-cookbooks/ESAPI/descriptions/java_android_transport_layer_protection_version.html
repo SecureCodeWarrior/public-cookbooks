@@ -1,0 +1,64 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted for use of TLS/SSL.
+<h2>Description</h2>
+When using Transport Layer Security, it is encouraged to support TLS protocol
+version 1.2. Implementations must not negotiate TLS version 1.1 except when no higher version is
+available. Protocols SSLv2, SSLv3 and TLSv1.0 are prohibited because they are no longer deemed secure.
+<br/>
+The following methods are available to ensure the right protocol version is used.
+<h4>Class information:</h4>
+<pre>
+package javax.net.ssl.<b>SSLContext</b>;
+&nbsp;&nbsp;&nbsp;public static SSLContext <b>getInstance(String);</b>
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+// Support TLSv1.2.
+public static SSLContext <b>getInstance("TLSv1.2");</b>
+</pre>
+
+<!--
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the
+appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Virtual Machine Parameters:</h2>
+Another good way to enforce only using transport_layer_security version 1.2 is to use the Virtual Machine command line parameter -Dhttps.protcols="TLSv1.2". Or if it is also necessary to support version 1.1 you can make a list: -Dhttps.protocls="TLSv1.2,TLSv1.1". Our rule enforces run configurations to use these paremeters.
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<b>Security implications related to transport_layer_security version protocols:</b>
+<ul>
+    <li>(WWW) <a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP transport_layer_security Cheat Sheet</a></li>
+</ul>
+<br>
+<b>What can go wrong when not implementing this the correct way:</b>
+<ul>
+    <li>(OpenSSL) <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">POODLE Attack</a> </li>
+</ul>
+<br>
+
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Weak Cipher Suites. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/weak_cipher_suites/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

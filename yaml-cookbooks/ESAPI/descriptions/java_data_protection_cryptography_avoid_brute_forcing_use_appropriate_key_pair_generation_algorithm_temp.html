@@ -1,0 +1,41 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to use EC to generate key pairs.
+<h2>Description</h2>
+Asymmetric encryption requires a pair of keys, a private and a public key. This enables authenticity on top of confidentiality in the encryption algorithm. Authenticity is a requirement for some secure communication channels. That means that asymmetric cryptography is typically used in a scheme for signatures or a key agreement and not for bulk encryption of data. <br>
+It is recommended to use EC over RSA for key pair generation. The <code>ECGenParameterSpec</code> class should be used when configuring the <code>KeyPairGenerator</code> class.
+<h4>Correct code example:</h4>
+<pre>
+SecureRandom secureRandom = new SecureRandom();
+KeyPairGenerator keyPairGenerator;
+keyPairGenerator = KeyPairGenerator.getInstance(<b>"EC"</b>);
+keyPairGenerator.initialize(new <b>ECGenParameterSpec("brainpoolP224t1")</b>, secureRandom);
+KeyPair keyPair = keyPairGenerator.generateKeyPair();
+</pre>
+
+<!-- Source: maxdeb
+https://github.com/mmadou/SenseiFinancialMobile/issues/82
+https://github.com/mmadou/SenseiFinancialMobile/issues/67 -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Insecure Storage Of Encryption Keys. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/insecure_storage_of_encryption_keys/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Broken Cryptography - Use Of Insecure/Deprecated Algorithms. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_insecuredeprecated_alogirthms/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

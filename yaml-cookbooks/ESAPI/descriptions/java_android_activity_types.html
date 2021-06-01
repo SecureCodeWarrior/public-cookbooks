@@ -1,0 +1,45 @@
+<html>
+<body>
+<h2>Info</h2>
+<h3>Activity Types</h3>
+Based on tags and attributes used in activities, four types can be specified: private, public, partner and in-house.
+<ol>
+    <li><b>Private activity: Only accepts intents from the same app.</b><br/>
+<pre>
+&lt;activity android:exported="<b>false</b>" ... /&gt;
+</pre>
+        The <code>android:launchMode</code> and <code>android:taskAffinity</code> should not be set for the private Activity. (<a href="https://www.jssec.org/dl/android_securecoding_en.pdf">Read why: Page 53</a>)
+    </li>
+    <li><b>Public activity: accepts implicit and explicit intents from other apps and the OS.</b><br/>
+        <i><u>Security implications for public activities</u>: This means that malware will also be able to send intents.
+        It is recommended to use partner or in-house activities over public activities.</i>
+        However for the OS to launch the app at least the main activity needs to be a public activity (usually called <code>MainActivity</code>).
+<pre>
+&lt;activity android:exported="<b>true</b>" ... /&gt;
+...
+&lt;<b>intent-filter</b>&gt;
+&nbsp;&nbsp;&nbsp;&lt;action android:name="com.examples.ACTION"/&gt;
+&nbsp;&nbsp;&nbsp;&lt;category android:name="android.intent.category.XXX"/&gt;
+&lt;/intent-filter&gt;
+</pre>
+
+    </li>
+    <li><b>Partner activity: only accepts explicit intents from a defined app white-list.</b>
+<pre>
+&lt;activity android:exported="<b>true</b>" ... /&gt;
+</pre>
+        The white-list with approved apps needs to be defined in the Activity itself (Sensei help is available there)
+        <br>
+    </li>
+    <li><b>In-house activity: Only accepts explicit intents from apps with the right permission.</b>
+<pre>
+&lt;activity android:exported="<b>true</b>"
+&nbsp;&nbsp;&nbsp;android:<b>permission</b>="com.senseissecurity.activity.PERMISSION" .../&gt;
+</pre>
+    </li>
+</ol>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

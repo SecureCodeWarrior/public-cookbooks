@@ -1,0 +1,53 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that for any XML parsing, External Entities should be avoided as much as possible. Explicit care should be taken when they are really needed.
+<h2>Description</h2>
+The following methods are available to help make your parsers more secure and not allow External Entities.
+<h4>Class information:</h4>
+<pre>
+package javax.xml.parsers.<b>DocumentBuilderFactory</b>
+&nbsp;&nbsp;&nbsp;public void <b>setXIncludeAware(boolean)</b>
+&nbsp;&nbsp;&nbsp;public void <b>setExpandEntityReferences(boolean)</b>
+&nbsp;&nbsp;&nbsp;public void <b>setFeature(String, boolean)</b>
+</pre>
+Apply these functions as follows.
+<h4>Correct code example:</h4>
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setXIncludeAware(false);
+dbf.setExpandEntityReferences(false);
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl",true);
+dbf.setFeature("http://xml.org/sax/features/external-parameter-entities",false);
+dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false);
+</pre>
+When External Entities are needed you should write your own customized EntityResolver.
+<h4>Correct code example:</h4>
+<pre>
+db.setEntityResolver(new EntityResolver() {
+&nbsp;&nbsp;&nbsp;@Override
+&nbsp;&nbsp;&nbsp;public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String entityLocation = "/home/somepath";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (systemId.equals(entityLocation)){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new InputSource(entityLocation);/*allowed path*/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new InputSource();/*Disalow by returning blank*/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+});
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - External Entity Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/xxe/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

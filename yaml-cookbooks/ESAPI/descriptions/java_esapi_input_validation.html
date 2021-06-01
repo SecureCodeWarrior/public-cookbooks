@@ -1,0 +1,36 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that user input should always be sanitized and validated properly.
+<h2>Description</h2>
+User input should always be sanitized and validated properly before use. It is recommended to use a REGEX to validate user input. 
+<br/>
+The OWASP ESAPI validator can be used to achieve this.
+<h4>Class information:</h4>
+<pre>
+package org.owasp.esapi.<b>Validator</b>;
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+import org.owasp.esapi.ESAPI;
+...
+if (!ESAPI.validator().isValidInput("Email", userBean.getEmail(), "Email", 70, false)) { 
+&nbsp;&nbsp;&nbsp;//handle invalid input
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/generic/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Cross-Site Scripting (XSS) - Stored Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/stored/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

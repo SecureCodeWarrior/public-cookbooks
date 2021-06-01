@@ -1,0 +1,57 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that no sensitive information should be placed on the <code>ClipBoard</code>.
+<h2>Description</h2>
+<code>ClipBoard</code> data is public and accessible to all running apps without any permission requirements or user interaction. Never put sensitive input on the <code>ClipBoard</code>.  The guidelines recommend that no <code>ClipData</code> can be instantiated containing sensitive information.
+<!--
+<b>Bad code example:</b><br/>
+<pre>
+import android.content.<b>ClipData</b>;
+import android.content.<b>ClipboardManager</b>;
+...
+ClipData forbiddenClip = ClipData.newPlainText("MY_APP", "password is myPassword123");
+clipboard.setPrimaryClip(forbiddenClip);
+</pre>-->
+<h4>Correct code example:</h4>
+<pre>
+import android.content.<b>ClipData</b>;
+import android.content.<b>ClipboardManager</b>;
+...
+ClipData clip = ClipData.newPlainText("MY_APP", <b>"this can not be sensitive info"</b>);
+clipboard.setPrimaryClip(clip);
+</pre>
+<!--
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/reference/android/content/ClipboardManager.html">(Android)ClipBoardManager</a> </li>
+<li>(WWW) <a href="https://developer.android.com/reference/android/content/ClipData.html">(Android) ClipData</a> </li>
+</ul>
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+Security implications for not following this guideline
+<ul>
+    <li>(PDF) <a href="http://www.cis.syr.edu/~wedu/Research/paper/clipboard_attack_dimva2014.pdf">Attacks on Android Clipboard - Xiao Zhang and Wenliang Du</a></li>
+</ul>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Unintended Data Leakage - Copy/Paste Buffer Caching (Pasteboard). <a href="https://{{microtraininghost}}/#/simple-flow/mobile/unintended_data_leakage/copypaste_buffer_caching_pasteboard/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

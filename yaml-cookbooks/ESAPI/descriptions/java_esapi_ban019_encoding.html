@@ -1,0 +1,62 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Java best practices and coding guidelines, recommendations where abstracted that recommend the usage of OWASP Enterprise Security API (ESAPI). 
+Only authorized routines from that library should be used for for for encoding text.<br/>
+<h2>Description</h2>
+It is not recommended to use the standard java implementation for encoding text as there is
+an OWASP ESAPI alternative.
+Concrete this means that the <code>java.net.URLEncoder</code> class is banned.
+More specific, one should use an implementation of the <code>Encoder</code> interface, it provides an alternative with the same methods as the original 
+Class but guarantees cryptographic security. An implementing class of this interface is the <code>DefaultEncoder</code>.
+<h4>Correct code example:</h4>
+<pre>
+import org.owasp.esapi.reference.<b>DefaultEncoder</b>;
+...
+String encoded = DefaultEncoder.getInstance().encodeForURL(string);
+</pre>
+<!--
+<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer</h2>
+
+Please see the standard OWASP ESAPI documentation for more information:<br/>
+<ul>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/Encoder.html" >OWASP ESAPI Javadoc: Encoder Interface</a>.</li>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/reference/DefaultEncoder.html" >OWASP ESAPI Javadoc: DefaultEncoder</a>.</li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<ul>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/ESAPI_Secure_Coding_Guideline">OWASP ESAPI Secure Coding Guideline</a></li>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project">OWASP Encoder Project</a></li>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">OWASP XXS (Cross Site Scripting) Prevention Cheat Sheet</a></li>
+</ul>
+
+
+<br>
+In case of questions on the usage of the OWASP ESAPI, please contact: {{{ appsecmail }}}<br>
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Use Of Encoding. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_encoding/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to use <b>EDCH</b> for <code>KeyAgreements</code>.
+<h2>Description</h2>
+It is not recommended to use cryptographic algorithms and modes with known problems. For <code>KeyAgreements</code> <b>ECDH</b> is recommended.
+<h4>Correct code example:</h4>
+<pre>
+KeyAgreement.getInstance("<b>ECDH</b>");
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

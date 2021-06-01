@@ -1,0 +1,16 @@
+id: 8bac4d0c-ad5d-4fbc-a8c4-ce833a9ef859
+version: 8
+metadata:
+  name: 'Transport Layer Security: ESAPI: BAN010: ServletResponse.setContentTypeCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: setContentType
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

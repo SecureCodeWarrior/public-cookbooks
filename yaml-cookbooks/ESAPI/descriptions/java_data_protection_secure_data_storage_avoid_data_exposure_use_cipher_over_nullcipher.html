@@ -1,0 +1,61 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that <code>NullCipher</code> should never be used.
+<h2>Description</h2>
+The <code>NullCipher</code> class is a class that provides an "identity cipher" &mdash; one that does not tranform the plaintext. 
+As a consequence, the ciphertext is identical to the plaintext. This is highly insecure and should never be used. Use <code>Cipher</code> with recommended algorithm, mode and padding instead. Symmetric encryption should be used for bulk encryption, i.e. to store sensitive data securely or to encrypt communication after a secure channel has been established. <br>
+The recommended algorithm for local storage is AES, used in GCM mode with no padding.
+<h4>Correct code example:</h4>
+<pre>
+public static byte[] encryptForLocalStorage(byte[] plainText, byte[] IV, Key key) throws Exception {
+    Cipher c = <b>Cipher</b>.getInstance(<b>"AES/GCM/NoPadding"</b>);
+    GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH * 8, IV);
+    c.init(Cipher.ENCRYPT_MODE, key, gcmSpec);
+    return c.doFinal(plainText);
+}
+</pre>
+<!--
+<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="http://docs.oracle.com/javase/7/docs/api/javax/crypto/NullCipher.html">(Orcale)NullCipher</a> </li>
+    <li>(WWW) <a href="https://docs.oracle.com/javase/7/docs/api/java/security/KeyPairGenerator.html">(Orcale)Cipher</a> </li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<b>Security implications related to cryptography:</b>
+<ul>
+    <li>(WWW) <a href="https://www.owasp.org/index.php/Guide_to_Cryptography">OWASP Guide to Cryptography.</a></li>
+</ul>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Use Of Insecure/Deprecated Algorithms. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_insecuredeprecated_alogirthms/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

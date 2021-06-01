@@ -1,0 +1,17 @@
+id: 37930b48-aeab-426f-a88f-57fa44a9e0f1
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN019b: URLDecoder.decode'
+  shortDescription: This is an OWASP ESAPI Banned method.
+  level: error
+  enabled: true
+search:
+  methodcall:
+    name: decode
+    declaration:
+      type: java.net.URLDecoder
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultEncoder.getInstance().decodeFromURL({{{arguments.0}}})

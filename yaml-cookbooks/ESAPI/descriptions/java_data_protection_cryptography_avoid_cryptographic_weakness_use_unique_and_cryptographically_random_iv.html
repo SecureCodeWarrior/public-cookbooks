@@ -1,0 +1,57 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that the IV should be unique, unpredictable and cryptographically random.
+<h2>Description</h2>
+Many cryptographic algorithms, such as the recommended AES/GCM/NoPadding require an initialization vector (IV). The security of the encryption scheme relies on the randomness and uniqueness of the IV. This means it is important not to reuse an IV and key combination. To meet this requirement it is recommended to generate a new IV each time, rather than a new key. 
+<br>
+A fixed IV can be used when only one piece of data is encrypted. For example when the user credentials are stored. When multiple records or messages are encrypted a unique IV should be generated for each.<br>
+The IV is needed for decryption of the data, so it needs to be stored. It does not have to be secret and can be stored in plaintext with the encrypted data. For example in a database it is recommended to store the IV in an additional data field.
+
+<h3>IV Generation</h3>
+The IV should be 12 bytes long and generated using cryptographically random data. It is recommended to use the <code>SecureRandom</code> class for this.
+<h4>Correct code example:</h4>
+<pre>
+public static byte[] generateIV(){
+    SecureRandom sr = new <b>SecureRandom()</b>;
+    byte iv[] = new byte[<b>12</b>];
+    sr.nextBytes(iv);
+    return iv;
+}
+</pre>
+
+<!--
+Sources (maxdeb)
+https://github.com/mmadou/SenseiFinancialMobile/issues/62
+    https://stackoverflow.com/questions/23864440/aes-gcm-implementation-with-authentication-tag-in-java
+    https://medium.com/@ericfu/securely-storing-secrets-in-an-android-application-501f030ae5a3
+https://github.com/mmadou/SenseiFinancialMobile/issues/82
+    https://developer.android.com/reference/javax/net/ssl/SSLSocket.html
+    http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf
+    https://developer.android.com/reference/android/security/keystore/KeyProperties.html#BLOCK_MODE_GCM
+https://github.com/mmadou/SenseiFinancialMobile/issues/61
+    https://github.com/dineshshetty/Android-InsecureBankv2
+    https://stackoverflow.com/questions/31036780/android-cryptography-api-not-generating-safe-iv-for-aes  -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Use Of Insecure/Deprecated Algorithms. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_insecuredeprecated_alogirthms/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insecure Cryptography - Insecure Randomness. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/insecurerandomness/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insecure Cryptography - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

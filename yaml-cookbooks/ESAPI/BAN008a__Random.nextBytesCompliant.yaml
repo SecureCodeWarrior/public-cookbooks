@@ -1,0 +1,16 @@
+id: 72cb59a7-fe97-4c69-88f4-898cd94873b7
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextBytesCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: getRandomBytes
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

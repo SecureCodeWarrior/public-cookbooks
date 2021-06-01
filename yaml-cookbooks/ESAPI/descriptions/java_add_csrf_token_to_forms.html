@@ -1,0 +1,30 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that every form should have a unique CSRF token.
+<h2>Description</h2>
+It is recommended to always add a hidden input-tag to the form-tag containing a unique CSRF token.
+<h4>Correct code example of the input-tag that needs to be added to every form-tag:</h4>
+<pre>
+&lt;form method=&quot;POST&quot; action=&quot;/transfer&quot;&gt;
+&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;csrftoken&quot; value=&quot;{{csrftoken}}&quot;/&gt;
+&lt;/form&gt
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Cross Site Request Forgery - Cross Site Request Forgery. <a href="https://{{microtraininghost}}/#/simple-flow/web/csrf/csrf/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Session Handling - Cross Site Request Forgery. <a href="https://{{microtraininghost}}/#/simple-flow/web/session/csrf/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Session Handling - Exposed Session Tokens. <a href="https://{{microtraininghost}}/#/simple-flow/web/session/exposedtokens/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+id: 23672967-4dc3-4e94-831a-9e710e5e9e43
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN018e: TimestampCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: getTimeStamp|getRelativeTimeStamp
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encryptor)
+        checkInheritance: false
+availableFixes: []

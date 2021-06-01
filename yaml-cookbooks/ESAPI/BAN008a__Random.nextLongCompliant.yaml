@@ -1,0 +1,16 @@
+id: 80270324-70d1-4481-96ec-bc1dee3104e5
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextLongCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: getRandomLong
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

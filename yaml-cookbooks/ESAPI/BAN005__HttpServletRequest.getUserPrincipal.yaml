@@ -1,0 +1,17 @@
+id: a5fd7689-64b8-4c4d-a46c-dd0eaf16aac0
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN005: HttpServletRequest.getUserPrincipal'
+  shortDescription: This is an OWASP ESAPI Banned method.
+  level: error
+  enabled: true
+search:
+  methodcall:
+    name: getUserPrincipal
+    declaration:
+      type: javax.servlet.http.HttpServletRequest
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.FileBasedAuthenticator.getInstance().getCurrentUser()

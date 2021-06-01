@@ -1,0 +1,33 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that developers should not use set a maximum SDK version.
+<h2>Description</h2>
+It is recommended not to use the attribute <code>android:maxSdkVersion</code> in the manifest.
+First, there is no need to set the attribute as means of blocking deployment of your application onto new versions of the Android platform as they are released. By design, new versions of the platform are fully backward-compatible. Your application should work properly on new versions, provided it uses only standard APIs and follows development best practices. Second, note that in some cases, declaring the attribute can <b>result in your application being removed from users' devices after a system update</b> to a higher API Level. Most devices on which your application is likely to be installed will receive periodic system updates over the air, so you should consider their effect on your application before setting this attribute.
+<h4>Bad code example:</h4>
+<pre>
+&lt;uses-sdk android:<b>maxSdkVersion</b>="25" /&gt;
+</pre>
+<!--
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html">(Android)&lt;uses-sdk&gt;</a> </li>
+</ul>
+
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

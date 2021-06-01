@@ -1,0 +1,16 @@
+id: 79748e93-7bfd-4b4b-8c2f-f59a2805dc80
+version: 8
+metadata:
+  name: 'Sensitive Information: ESAPI: BAN017a: ServletContext.log(String)Compliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: log
+    declaration:
+      type:
+        reference:
+          matches: (org.apache.log4j)\.(Category)
+        checkInheritance: false
+availableFixes: []

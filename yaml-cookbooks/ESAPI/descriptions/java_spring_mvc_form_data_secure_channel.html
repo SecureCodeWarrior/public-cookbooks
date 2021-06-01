@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to allow the application to decide the channel to be used to send the form data.
+<h2>Description</h2>
+It is recommended to let the application sever decide the channel to be used to send form data. Through it's secure channel configurations it will make sure data is not exposed to an attacker sniffing the network. Forcing a form to submit over HTTP protocol (plain text) will leave confidential information vulnerable.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Sensitive Information. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/sensitiveinfo/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to configure channels to be secure.
+<h2>Description</h2>
+Spring-Security provides its own mechanisms to enforce secure channel usage. It is recommended to configure channels to make sure these mechanisms are used.
+<h4>Correct code example:</h4>
+<pre>
+public class WebSecConf extends <b>WebSecurityConfigurerAdapter</b> {
+&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;@Override
+&nbsp;&nbsp;&nbsp;protected void <b>configure(HttpSecurity http)</b> throws Exception {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http.<b>requiresChannel</b>().<b>anyRequest</b>().<b>requiresSecure</b>();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;...
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Sensitive Information. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/sensitiveinfo/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Weak Algorithm or Protocol Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/weakalgorithm/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/generic/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

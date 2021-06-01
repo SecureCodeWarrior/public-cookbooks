@@ -1,0 +1,34 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to always use the latest version of dependencies. In particular, make sure the <code>commons-lang3</code> library often used for output escaping is up to date.
+
+<h2>Description</h2>
+When using older version of dependencies, it is likely these contain known vulnerabilities that have been resolved in newer versions. It is always recommended to use the latest version in your dependencies. In maven this can be done by specifying the version in de <code>pom.xml</code> file. It is recommended to use the <code>latest</code> keyword rather than specifying the version manually.
+
+<h4>Correct code example:</h4>
+<pre>
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+        &lt;artifactId&gt;commons-lang3&lt;/code&gt;
+        &lt;version&gt;<b>latest</b>&lt;/version&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Vulnerable Components - Using Known Vulnerable Components. <a href="https://{{microtraininghost}}/#/simple-flow/web/vulncomponents/known/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

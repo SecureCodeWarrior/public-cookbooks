@@ -1,0 +1,30 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that Denial of Service (DoS) prevention should be taken. There should always be a maximum waiting time.
+<h2>Description</h2>
+Endless loops or infinite waiting should be avoided by always setting a maximum waiting time.
+<br>
+A maximum timeout duration static constant <code><b>SCWConstants.MAXTIMEOUTDURATION</b></code> can be used to achieve this goal.
+Use such a constant by taking the minimum of the user provided value and the <code>MAXTIMEOUTDURATION</code>.
+<h4>Correct code example:</h4>
+<pre>
+long maxtime = Math.<b>min(user_provided, SCWConstants.MAXTIMEOUTDURATION)</b>;
+Thread.sleep(maxtime);
+</pre>
+There should also be taken care around <code>Thread.join()</code> and infinite loops.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Denial of Service - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/dos/other/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

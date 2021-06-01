@@ -1,0 +1,17 @@
+id: 0fffd32c-e077-4b57-b38e-732d97ed3cf8
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018d: Encrypt or SealCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: (un)?seal
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encryptor)
+        checkInheritance: false
+availableFixes: []

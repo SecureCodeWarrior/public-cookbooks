@@ -1,0 +1,41 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines it is recommended to check check and request permissions at runtime.<br/>
+<h2>Description</h2>
+In the following example, a function <code>executeRestrictedCode()</code> requires the permission <code>SEND_SMS</code>.
+Calling the function <code>checkAndRequestPermission()</code> will check for the permission and subsequently
+execute the <code>executeRestrictedCode()</code> when the permission is already set. In case the permission
+is not granted yet, the request for the permission will be executed and the <code>executeRestrictedCode()</code>
+function will be executed through a callback only when the user accepts the <code>SEND_SMS</code> permission.
+<h4>Sample code on runtime permission checking and requesting:</h4>
+<pre>
+private static final int UNIQUE_REQUEST_CODE = 123; // Set a unique request code (8bit!)
+private static final String PERMISSION = Manifest.permission.SEND_SMS; // Set the permission to check/request/get granted
+
+public void checkAndRequestPermission() {
+&nbsp;&nbsp;&nbsp;if (ContextCompat.checkSelfPermission(thisContext, PERMISSION) == PackageManager.PERMISSION_GRANTED) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;executeRestrictedCode(); // The permission was already granted, execute the function
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;else{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// The permission was not yet granted, request the permission
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ActivityCompat.requestPermissions</b>(thisActivity, new String[]{PERMISSION}, UNIQUE_REQUEST_CODE); 
+&nbsp;&nbsp;&nbsp;}
+}
+
+@Override 
+public void <b>onRequestPermissionsResult</b>(int requestCode, String[] permissions, int[] grantResults) {
+&nbsp;&nbsp;&nbsp;if (requestCode == UNIQUE_REQUEST_CODE) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (permissions.length == 1 && permissions[0].equals(PERMISSION) &&
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;executeRestrictedCode();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+}
+</pre>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

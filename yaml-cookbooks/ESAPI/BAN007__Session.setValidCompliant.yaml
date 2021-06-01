@@ -1,0 +1,14 @@
+id: 4be5f5be-1355-452a-a8af-f54091c0d8f3
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN007: Session.setValidCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: logout()
+    declaration:
+      type: org.owasp.esapi.Authenticator
+availableFixes: []

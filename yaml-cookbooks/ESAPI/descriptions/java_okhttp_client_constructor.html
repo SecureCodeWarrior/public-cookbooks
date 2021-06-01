@@ -1,0 +1,80 @@
+<html>
+<body>
+<h2>Info</h2>
+Consider using a secure http client.
+<ol>
+    <li><b>Modern SSL connections only.</b>
+        The connection will only make use of a state-of-the art SSL connection.
+<pre>
+OkHttpClient secure_client = new OkHttpClient.Builder()
+&nbsp;&nbsp;&nbsp;.connectionSpecs(Collections.singletonList(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new ConnectionSpec.Builder(<b>ConnectionSpec.MODERN_TLS</b>).build()))
+&nbsp;&nbsp;&nbsp;.build();        
+</pre>
+    </li>
+    <li><b>Certificate Pinning</b><br/>
+<pre>
+OkHttpClient pinned_client = new OkHttpClient.Builder()
+&nbsp;&nbsp;&nbsp;.certificatePinner(new <b>CertificatePinner</b>.Builder()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add("*.senseifinancial.com", "sha256/hashcertifSubjectPublicKeyInfobase64encoded=").build())
+&nbsp;&nbsp;&nbsp;.build();        
+</pre>
+        <b>Warning: Certificate Pinning makes your App more secure but understand its limitations!</b>
+        The goal of certificate pinning is to limit the number of servers the App can connect to. However, pinning certificates limits your server team's abilities to update their TLS certificates. By pinning certificates, you take on additional operational complexity and limit your ability to migrate between certificate authorities. Do not use certificate pinning without the blessing of your server's TLS administrator!<br>
+         <a href="https://square.github.io/okhttp/3.x/okhttp/okhttp3/CertificatePinner.html">More information about the <code>CertificatePinner</code>.</a>
+        <br/>
+    </li>
+    <li><b>Certificate Pinning with you want to use your own certificate authority.</b>
+        Can be used when you want to specify everything in the trusted network.
+        This can be done by creating a Key Store that contains your certificate.
+        Use this keystore to initialize a TrustManager to create an SSL Context to communicate to your server.
+    </li>
+</ol>
+<!--
+Swiftly transform to the appropriate one with <b>Sensei Security&reg; Quick Fix: Hit {{{
+    qfshortcut }}}</b>.
+
+<h2>Additional security information</h2>
+<b>Security implications related to Certificate and PublicKey pinning:</b>
+<br/>
+To read more about certificate pinning, see:
+<ul>
+    <li>(WWW) <a href="https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning?What_Is_Pinning#What_Is_Pinning.3F">What is pinning?</a> </li>
+    <li>(WWW) <a href="https://github.com/square/okhttp/wiki/HTTPS">OkHttp3 on HTTPS</a></li>
+    <li>(WWW) <a href="https://square.github.io/okhttp/3.x/okhttp/okhttp3/OkHttpClient.Builder.html#sslSocketFactory-javax.net.ssl.SSLSocketFactory-javax.net.ssl.X509TrustManager-">OkHttp3 on sslSocketFactory</a> </li>
+</ul>
+<b>What can go wrong when not implementing this the correct way:</b>
+<ul>
+    <li>(WWW)<a href="http://www.cs.auckland.ac.nz/~pgut001/pubs/pkitutorial.pdf">Public Key Pinning (Auckland)</a></li>
+    <li>(WWW)<a href="https://blog.cryptographyengineering.com/2012/02/28/how-to-fix-internet/">Certificates (CryptographyEngineer)</a></li>
+</ul>
+<br>
+
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Improper Certificate Pinning Configuration. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/improper_ssl_pinning_configuration/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Communication Over Cleartext Protocol. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/communication_over_cleartext_protocol_http/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Trusting Self-Signed Or Untrusted Certificates. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/trusting_self_signed_or_untrusted_certificates/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Weak Certificate Validation. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/weak_certificate_validation/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Weak Algorithm or Protocol Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/weakalgorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

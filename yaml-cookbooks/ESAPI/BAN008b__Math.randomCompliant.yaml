@@ -1,0 +1,16 @@
+id: f621b0b4-8897-4e75-8d52-505d6cefa087
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008b: Math.randomCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: getRandomReal
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

@@ -1,0 +1,48 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that the error-page tag in web.xml for example, has to catch certain Exceptions and error-codes
+<h2>Description</h2>
+The error-page tag in the webapp should define at least the following error-codes: <b>403</b>, <b>404</b> and <b>500</b>.
+The error-page tag in the webapp should define at least the following exception-types: <code><b>javax.servlet.ServletException</b></code> and <code><b>java.io.IOException</b></code>.
+<h4>Correct code example:</h4>
+<pre>
+&lt;error-page&gt;
+&nbsp;&nbsp;&nbsp;&lt;error-code&gt;<b>403</b>&lt;/error-code&gt;
+&nbsp;&nbsp;&nbsp;&lt;location&gt;/ErrorHandler&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+&nbsp;&nbsp;&nbsp;&lt;error-code&gt;<b>404</b>&lt;/error-code&gt;
+&nbsp;&nbsp;&nbsp;&lt;location&gt;/ErrorHandler&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+&nbsp;&nbsp;&nbsp;&lt;error-code&gt;<b>500</b>&lt;/error-code&gt;
+&nbsp;&nbsp;&nbsp;&lt;location&gt;/ErrorHandler&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+&nbsp;&nbsp;&nbsp;&lt;exception-type&gt;<b>java.io.IOException</b>&lt;/exception-type&gt;
+&nbsp;&nbsp;&nbsp;&lt;location&gt;/ErrorHandler&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+&nbsp;&nbsp;&nbsp;&lt;exception-type&gt;<b>javax.servlet.ServletException</b>&lt;/exception-type&gt;
+&nbsp;&nbsp;&nbsp;&lt;location&gt;/ErrorHandler&lt;/location&gt;
+&lt;/error-page&gt;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Security Misconfiguration - Information Exposure. <a href="https://{{microtraininghost}}/#/simple-flow/web/misconfig/infoexp/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Information Exposure - Error Details. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/errordetails/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Information Exposure - Security Misconfiguration. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/misconfig/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Information Exposure - Sensitive Data Exposure. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/sensitiveinfo/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

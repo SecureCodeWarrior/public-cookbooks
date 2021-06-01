@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to not use <code>th:utext</code>.
+<h2>Description</h2>
+Using the Thymeleaf XML attribute <code>th:utext</code> allows for displaying unescaped text. Not escaping user input leaves the application vulnerable to XSS attacks. It is recommended to use <code>th:text</code> instead to automatically escape the text before displaying.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Cross-Site Scripting (XSS) - Reflected Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/reflected/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

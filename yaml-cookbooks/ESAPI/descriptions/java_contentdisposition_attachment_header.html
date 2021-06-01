@@ -1,0 +1,30 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to set the Header Content-Disposition to include "attachement".
+<br/>
+<h2>Description</h2>
+It is recommended to add the "Content-Disposition: Attachment" header to the response of static files, as this will secure the website against Flash or PDF-based cross-site content-hijacking attacks. 
+It is recommended that this practice be performed for all files that users need to download in all modules that deal with file downloads.
+<br/>
+<br/>
+<b>Correct code example:</b><br/>
+<pre>
+response.setHeader("<b>Content-Disposition</b>","<b>attachment</b>; filename=\"" + file + "\""); </b>
+</pre>
+<br/>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Cross-Site Scripting (XSS) - Stored Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/stored/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

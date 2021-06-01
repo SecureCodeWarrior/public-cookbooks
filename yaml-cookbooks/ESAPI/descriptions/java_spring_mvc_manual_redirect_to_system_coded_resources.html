@@ -1,0 +1,32 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to only manually redirect when framework provided options are insufficient. When manual redirects are necessary, only redirect to system-coded resources.
+<h2>Description</h2>
+Spring Security already comes with a default redirect behavior on successful authentication. It is often recommended to get out of its way instead of manually redirecting.
+<br/>
+When special behaviour is needed look for existing implementations. For example, use a <code>SavedRequestAwareAuthenticationSuccessHandler</code> instead of manually implementing an <code>AuthenticationSuccessHandler</code> to redirect to the last request after login.
+<h3>Manual redirects</h3>
+If manual redirects are needed, only redirect to system-coded resources. 
+For example, redirecting to non-validated URL parameter could allow an attacker to force an action on the user after successful login. Therefore it is not recommended to redirect to URL-parameters. Use system-coded resources instead.
+<h4>Correct code example:</h4>
+<pre>
+return "redirect:" + <b>AppConstants.URL_LOGIN</b>;
+</pre>
+If you need to dynamically redirect the user to a specific page, use a session-stored attribute to keep track of their navigation history and eventually perform the redirection using this system-coded resource.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Unvalidated Redirects and Forwards - Unvalidated Redirects and Forwards. <a href="https://{{microtraininghost}}/#/simple-flow/web/uraf/generic/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Cross Site Request Forgery - Cross Site Request Forgery. <a href="https://{{microtraininghost}}/#/simple-flow/web/csrf/csrf/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

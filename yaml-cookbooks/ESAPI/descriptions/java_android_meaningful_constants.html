@@ -1,0 +1,15 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted that state that meaningful constants should be used.
+<h2>Description</h2>
+To ensure good code quality it is recommended to use a meaningful constants instead of raw values. This makes to code more readable and makes it easier to identify possible coding errors or bugs.
+<h4>Correct code example:</h4>
+<pre>
+FileOutputStream fos = c.openFileOutput(file.getPath(), <b>android.content.Context.MODE_PRIVATE</b>);
+</pre>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

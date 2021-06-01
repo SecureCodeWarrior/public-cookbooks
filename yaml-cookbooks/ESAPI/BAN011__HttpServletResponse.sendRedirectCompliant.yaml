@@ -1,0 +1,16 @@
+id: 6ec6740c-5cd1-4a9b-aa14-fcfe39acb280
+version: 8
+metadata:
+  name: 'Injection: ESAPI: BAN011: HttpServletResponse.sendRedirectCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: sendRedirect
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

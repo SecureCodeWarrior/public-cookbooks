@@ -1,0 +1,16 @@
+id: 08147357-2391-4ed1-ac57-4ddda845eb49
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextIntCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    name: getRandomInteger
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

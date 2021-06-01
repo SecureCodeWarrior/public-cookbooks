@@ -1,0 +1,57 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, guidance can be given for the usage of SMS.<br/>
+<h2>Description</h2>
+It is discouraged to use SMS for any sensitive data. SMS is neither encrypted nor strongly authenticated on either the network or the device.
+<h4>Example of SMS permissions:</h4>
+<pre>
+&lt;uses-permission android:name="android.permission.SEND_SMS"/&gt;
+&lt;uses-permission android:name="android.permission.RECEIVE_SMS"/&gt;
+</pre>
+<h4>Example of SMS messaging:</h4>
+<pre>
+String message = "user:"+user+";Password:"+password;
+Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + phoneNumber));   
+intent.putExtra("sms_body", message);
+startActivity(intent);
+</pre>
+<!--
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+
+Android Secure Coding Guidelines on usage of special permissions:
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/guide/topics/permissions/requesting.html#special_permissions"> Android Special Permissions</a></li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+
+<h4>Promiscuous Privileges are one of the sever ways to hang yourself with Android:</h4>
+<ul>
+    <li>(Slides) <a href="http://www.slideshare.net/edicus07/hp-fortify-mobile-application-security-customer-deck-final">Hp Fortify Mobile Application Security</a> </li>
+</ul>
+<br>
+
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Communication Over Cleartext Protocol. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/communication_over_cleartext_protocol_http/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Broken Cryptography - Use Of Encoding. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_encoding/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

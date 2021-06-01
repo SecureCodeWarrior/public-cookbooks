@@ -1,0 +1,48 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that certain libraries cannot be used because they are unsafe from a security perspective.
+<h2>Description</h2>
+It is recommended to avoid using any method that are associated with executing dynamically loaded code at runtime. This often allows for injection vulnerabilities.
+<br/>
+The following classes and methods are recommended to avoid:<br/>
+<pre>
+package javax.script.<b>Compilable</b>;
+&nbsp;&nbsp;&nbsp;CompiledScript compile(Reader script);
+&nbsp;&nbsp;&nbsp;CompiledScript compile(String script);
+</pre>
+<pre>
+package java.lang.<b>Runtime</b>;
+&nbsp;&nbsp;&nbsp;void load(String filename);
+&nbsp;&nbsp;&nbsp;void loadLibrary(String libname);
+&nbsp;&nbsp;&nbsp;Process exec(...); //any overloaded
+</pre>
+<pre>
+package java.lang.<b>System</b>;
+&nbsp;&nbsp;&nbsp;static void loadLibrary(String libname);
+</pre>
+<pre>
+package java.beans.<b>XMLDecoder</b>;
+</pre>
+<pre>
+package java.net.<b>URLClassLoader</b>;
+</pre>
+<pre>
+package javax.script.<b>ScriptEngineManager</b>;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - Code Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/code/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - OS Command Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/oscmd/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

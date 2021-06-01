@@ -1,0 +1,68 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that when defining custom permissions
+the developer should check if these are not already defined by different applications.
+<h2>Description</h2>
+When defining custom permissions "the first one wins". In other words, the first application that defines a <code>&lt;permission&gt;</code> for a given 
+<code>android:name</code> gets to determine what the description is and what the protection level is. In order to securely define custom permissions
+one should always check if these are not already defined by different (possibly malicious) applications. 
+<br>
+For an example on how to do this see <a href="https://github.com/commonsguy/cwac-security/blob/master/security/src/main/java/com/commonsware/cwac/security/PermissionUtils.java">CWAC Security GitHub</a></b>
+Or you can <b>use the <a href="https://github.com/commonsguy/cwac-security">CWAS SDK</a></b>:
+<pre>
+PermissionUtils.<b>checkCustomPermissions()</b>;
+</pre>
+Another option is to set the minimum API level to 21 (Adroid 5.0 Lollipop) in the android manifest, since this vulnerability has been fixed as of Android 5.0 (Lollipop).
+<h4>Code Example:</h4>
+<pre>
+&lt;manifest&gt;
+&nbsp;&nbsp;&nbsp;&lt;uses-sdk <b>android:minSdkVersion="21"</b> /&gt;
+&nbsp;&nbsp;&nbsp;&lt;...
+&lt;/manifest&gt; 
+</pre>
+As of 2017, 77.7% of the Android devices are running API level 21 or above, using this fix will make your app unavailable to the remaining share of android devices.
+<!--
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/guide/topics/manifest/permission-element.html">(Android)&lt;permission&gt;</a> </li>
+    <li>(WWW) <a href="https://developer.android.com/guide/topics/permissions/defining.html">(Android)Defining Permissions</a> </li>
+<li>(WWW) <a href="https://developer.android.com/training/permissions/declaring.html">(Android)Declaring Permissions</a> </li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+When your application (called App A) defines custom permissions for security sensitive services.
+<br/>
+On android another, possibly malicious, application (called App B) can also define the same permission and declare use of this permission, albeit with different descriptive information (e.g., android:description) and, at times, a different protection level.
+<br/>
+This does not cause any trouble as long as App A is installed before App B. However, when App B is installed first,
+<ul>
+	<li> The user is <b>not</b> informed about App B's request for the permission.</li>
+	<li> ... but App B gets it anyway and can acces the secure component.</li>
+</ul>
+
+This is the case for any protectionLevel defined in App A and allows App B to downgrade the protectionLevel. Even if App A defines a signature protection and the signatures do not match. Any App C that tries to use this permission will get a user prompt but the description and protectionLevel shown to the user are those defined by App B, not App A.
+<br/>
+This type of attacks are no longer possible from Android 5.0 and up. On Android Lollipop and higher, if a user tries to install an app that defines the same &lt;permission&gt; element as does some other already-installed app, and the two apps are not signed by the same signing key, the second app's installation fails with an INSTALL_FAILED_DUPLICATE_PERMISSION error.
+<br>
+<br>
+Source:
+<ul>
+    <li>(WWW) <a href="https://github.com/commonsguy/cwac-security/blob/master/PERMS.md">GitHub: cwac-security, custom permissions problem.</a></li>
+</ul>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

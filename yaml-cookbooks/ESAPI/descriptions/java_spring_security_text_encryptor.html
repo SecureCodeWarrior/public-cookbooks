@@ -1,0 +1,33 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to use a text encryptor that performs encryption.
+ <h2>Description</h2>
+It is recommended to not use the noOpText text encryptor, but instead use an encryptor that actually performs encryption.
+<h4>Class information:</h4>
+<pre>
+package org.springframework.security.crypto.encrypt.<b>Encryptors</b>
+    static TextEncryptor delux(CharSequence password, CharSequence salt)
+    static TextEncryptor queryableText(CharSequence password, CharSequence salt)
+    static TextEncryptor text(CharSequence password, CharSequence salt)
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+import org.springframework.security.crypto.encrypt.<b>Encryptors</b>;
+encryptors.<b>text(password, salt)</b>;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

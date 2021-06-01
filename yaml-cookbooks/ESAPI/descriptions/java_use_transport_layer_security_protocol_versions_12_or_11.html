@@ -1,0 +1,52 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that implementations must support Transport Layer Security (TLS) version 1.2.
+<h2>Description</h2>
+When using Transport Layer Security, it is required to support TLS protocol
+version 1.2. Implementations must not negotiate TLS version 1.1 except when no higher version is
+available. Protocols SSLv2, SSLv3 and TLSv1.0 are prohibited because they are no longer deemed secure.
+<br/>
+The following methods are available to ensure the right protocol version is used.
+<h4>Class information:</h4>
+<pre>
+package javax.net.ssl.<b>SSLContext</b>;
+&nbsp;&nbsp;&nbsp;public static SSLContext <b>getInstance(String);</b>
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+SSLContext.getInstance(<b>"TLSv1.2"</b>);
+</pre>
+<h3>Virtual Machine Parameters:</h3>
+Another good way to enforce only using TLS version 1.2 is to use the Virtual Machine command line parameter 
+<pre>
+-Dhttps.protcols="TLSv1.2"
+</pre>
+Or if it is also necessary to support version 1.1 you can make a list: 
+<pre>
+-Dhttps.protocls="TLSv1.2,TLSv1.1"
+</pre>
+It is recommended to set run configurations to use these paremeters.     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Communication Over Cleartext Protocol. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/communication_over_cleartext_protocol_http/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Credentials. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/itlp/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Sensitive Information. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/sensitiveinfo/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Weak Algorithm or Protocol Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/weakalgorithm/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>
