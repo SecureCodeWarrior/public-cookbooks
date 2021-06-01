@@ -40,11 +40,23 @@ public class BinaryOperators
         return "a | b";
     }
 
-    public Boolean performWrappedLogicalOROperation (Boolean a, Boolean b) {
+    public Boolean performWrappedLogicalOROperation(Boolean a, Boolean b) {
         return a || b;
     }
 
-    public Boolean performWrappedBitwiseOROperation (Boolean a, Boolean b) {
+    public Boolean performWrappedBitwiseOROperation(Boolean a, Boolean b) {
         return a | b;
+    }
+
+    public void test() {
+        if(performWrappedBitwiseOROperation(true, false)){
+            System.out.println("In if");
+        } else {
+            System.out.println("In else");
+        }
+
+        if(true|false){
+            System.out.println();
+        }
     }
 }
