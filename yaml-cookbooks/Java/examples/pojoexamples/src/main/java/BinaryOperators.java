@@ -49,13 +49,13 @@ public class BinaryOperators
     }
 
     public void test() {
-        if(performWrappedBitwiseOROperation(true, false)){
+        if (performWrappedBitwiseOROperation(true, false)){
             System.out.println("In if");
         } else {
             System.out.println("In else");
         }
 
-        if(true|false){
+        if (true|false) {
             System.out.println();
         }
     }

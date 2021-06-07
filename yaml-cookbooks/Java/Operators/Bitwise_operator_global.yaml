@@ -8,7 +8,7 @@ metadata:
   cweCategory: 480
   enabled: true
   comment: This recipe highlights any use of the bitwise operator.
-  descriptionFile: Java/descriptions/BitwiseOperatorInConditional.html
+  descriptionFile: Operators/descriptions/BitwiseOperatorInConditional.html
   overridingRecipeId: scw:java:use_logical_operator_conditional
 search:
   binaryExpression:

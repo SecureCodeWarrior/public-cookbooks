@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <p id="abstract">Logging any issues is considered a best practice. Making a logger available in every class reduces the threshold to use logging.</p>
+    <br>
+    <p id="impact_and_desired_state">Printing messages directly to the standard output is considered a bad practice. It's recommended to use a logger instead. Logger can be turned on/off, they provide different levels of logging and can be controlled through a configuration file or environment variables. Advanced loggers enable configuration of log file rotation, log purging and tuning for multi-threading purposes. Centralised logging with multiple error levels enables you to have a clear overview of any issues in the application.</p>
+    <br>
+    <b>Before</b>
+<pre>public class Example {
+    public void testLoggingRecipe() {
+        System.out.println("Printing logs");
+    }
+}
+</pre>
+    <br>
+    <b>After introducing Logger class</b>
+<pre><b>import java.util.logging.Level;
+import java.util.logging.Logger;</b>
+
+public class Example {
+
+  <b>Logger logger = Logger.getLogger(Example.class.getName());</b>
+
+    public void testLoggingRecipe() {
+        <b>logger.log(Level.INFO,</b> "Printing logs");
+    }
+}</pre>
+    <br>
+    <b>After introducing SLF4J logger</b>
+    <pre>public class Example {
+
+    <b>private static final org.slf4j.Logger log =
+        org.slf4j.LoggerFactory.getLogger(Example.class);</b>
+
+    public void testLoggingRecipe() {
+        <b>logger.log(Level.INFO,</b> "Printing logs");
+    }
+}</pre>
+  </body>
+</html>

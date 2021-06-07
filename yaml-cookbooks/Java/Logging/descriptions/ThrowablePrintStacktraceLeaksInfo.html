@@ -1,0 +1,25 @@
+<html lang="en">
+  <body>
+    <p id="abstract"><code>Throwable.printStacktrace</code> leaks valuable program structure information</p>
+    <br>
+    <p id="impact_and_desired_state">Printing a stack trace gives valuable information about software internals, including library/framework names and versions, to an attacker. The method <code>printStaceTrace</code> of <code>java.lang.Throwable</code> will result in valuable program information being printed on standard error.</p>
+    <br>
+    <b>Before</b>
+<pre>public void doSomething() {
+    try {
+        bar();
+    } catch(Exception ex) {
+        ex.printStackTrace();
+    }
+}</pre>
+    <br>
+    <b>After</b>
+<pre>public void doSomething() {
+    try {
+        bar();
+    } catch(Exception ex) {
+        System.err.println(ex.getMessage());
+    }
+}</pre>
+  </body>
+</html>

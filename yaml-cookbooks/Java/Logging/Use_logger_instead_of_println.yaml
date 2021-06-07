@@ -1,15 +1,13 @@
-id: 6e4d24d1-2ba5-42a4-9f86-26750321bbc1
+id: scw:logging:replaceprintln
 version: 8
 metadata:
   name: Use a logger
   shortDescription: Printing messages directly to the standard output is considered
-    a bad practice. It's recommended to use a logger instead. A logger can be turned
-    on/off, it provides different levels of logging and can be controlled through
-    a configuration file or environment variables. Some advanced logger provides allow
-    you to configure log file rotation, purging and tune it for multi-threading purposes.
+    a bad practice. Use a logger instead.
   level: error
-  scwCategory: ""
+  scwCategory: insufficient_logging:generic
   enabled: true
+  descriptionFile: Logging/descriptions/ReplacePrintWithLogger.html
 search:
   methodcall:
     name: println
@@ -28,3 +26,11 @@ availableFixes:
       target: parentClass
   - rewrite:
       to: log.info({{{arguments}}})
+- name: Use Logger class
+  actions:
+  - addField:
+      field: java.util.logging.Logger logger = Logger.getLogger({{{ containingClass.name
+        }}}.class.getName())
+      target: parentClass
+  - rewrite:
+      to: logger.log(java.util.logging.Level.INFO, {{{ arguments }}})

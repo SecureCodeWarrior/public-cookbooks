@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <p id="abstract">Logging any issues is considered a best practice. Making a logger available in every class reduces the threshold to use logging.</p>
+    <br>
+    <p id="impact_and_desired_state">Logging errors, warnings and other debugging information ensures that the information does not get lost. Centralised logging with multiple error levels enables you to have a clear overview of any issues in the application.</p>
+    <br>
+    <b>Before</b>
+<pre>public class Logging {
+    ...
+}
+}</pre>
+    <br>
+    <b>After</b>
+<pre>import java.util.logging.Logger;
+
+public class Logging {
+
+    Logger logger = Logger.getLogger(Logging.class.getName());
+
+    ...
+}
+}</pre>
+  </body>
+</html>

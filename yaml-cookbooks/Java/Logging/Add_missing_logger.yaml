@@ -1,11 +1,12 @@
-id: 9766b12a-444d-4817-95ed-d414aec8be7d
+id: scw:addmissinglogger
 version: 8
 metadata:
-  name: 'Logger: add logger'
+  name: 'Logger: add missing logger'
   shortDescription: Add logger to class
   level: info
-  scwCategory: ""
+  scwCategory: insufficient_logging:generic
   enabled: true
+  descriptionFile: Logging/descriptions/AddLogger.html
 search:
   typeDeclaration:
     without:
@@ -13,7 +14,7 @@ search:
         field:
           name: logger
 availableFixes:
-- name: Add Logger
+- name: Add Logger class referrerence
   actions:
   - addField:
       field: java.util.logging.Logger logger = Logger.getLogger({{{ containingClass.name
