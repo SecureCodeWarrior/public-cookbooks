@@ -1,0 +1,40 @@
+id: scw:xml:explicitly_disable_backups
+version: 8
+metadata:
+  name: "Manifest best practices: explicitly disable cleartext traffic"
+  shortDescription: "API level 27 or lower: When android:usesCleartextTraffic is not set, Android will default to allowing cleartext traffic."
+  level: error
+  scwCategory: insufficient_transport_layer_protection:communication_over_cleartext_protocol_http
+  cweCategory: 319
+  descriptionFile: descriptions/ManifestbestpracticesdisableusesCleartextTraffic.html
+  enabled: true
+ # "ruleScope": [
+ #   {
+ #     "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
+ #     "object": {
+ #       "property": "android.defaultConfig.minSdkVersion",
+ #       "propertyType": 1,
+ #       "desiredValue": "27",
+ #       "useRegex": false,
+ #       "intPropertyMatchingType": 4,
+ #       "duplicateStrategy": 0,
+ #       "trueIfNotFound": false
+ #     }
+ #   }
+ # ]
+
+search:
+  element:
+    name: "application"
+    label: element
+  attribute:
+    label: attribute
+    name: "android:usesCleartextTraffic"
+    exists: false
+
+availableFixes:
+  - name: 'add android:usesCleartextTraffic="false"'
+    actions:
+      add:
+        target: element
+        value: 'android:usesCleartextTraffic="false"'

@@ -1,9 +1,10 @@
 id: scw:xml:explicitly_disable_backups
 version: 8
 metadata:
-  name: Example XML Recipe
-  shortDescription:
+  name: "Layout best practices: enable filterTouchesWhenObscured"
+  shortDescription: "When setting filterTouchesWhenObscured to false allows adversaries to hijack users' taps."
   level: warning
+  descriptionFile: descriptions/LayoutbestpracticesenablefilterTouchesWhenObscured.html
   enabled: true
 
 search:
@@ -14,7 +15,7 @@ search:
     label: attribute
     name: "android:filterTouchesWhenObscured"
     value: "false"
-    mark: true #how
+    mark: true
 
 availableFixes:
   - name: "Set android:filterTouchesWhenObscured='true'"
@@ -22,12 +23,3 @@ availableFixes:
       set:
         target: attribute
         to: "true"
-
-
-#another way to do dis
-availableFixes2:
-  - name: "Set android:filterTouchesWhenObscured='true'"
-    actions:
-      replace:
-        target: attribute
-        to: 'android:filterTouchesWhenObscured="true"'

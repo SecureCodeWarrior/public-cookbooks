@@ -1,8 +1,8 @@
 id: scw:xml:explicitly_disable_backups
 version: 8
 metadata:
-  name: Example XML Recipe
-  shortDescription:
+  name: "Layout best practices: explicitly enable filterTouchesWhenObscured"
+  shortDescription: "Not setting filterTouchesWhenObscured to true allows adversaries to hijack users' taps."
   level: warning
   enabled: true
 
@@ -10,14 +10,14 @@ search:
   element:
     name: ".*Button|ImageButton*."
     label: element
-    mark: true (opening/closing, name, all) #choose to mark things HOW?
+    mark: opening
   attribute:
     label: attribute
     name: "android:filterTouchesWhenObscured"
-    exists: false #when not present HOW?
+    exists: false
 
 availableFixes:
-  - name: 'add android:filterTouchesWhenObscured="true"'
+  - name: 'Add android:filterTouchesWhenObscured="true"'
     actions:
       add:
         target: element
