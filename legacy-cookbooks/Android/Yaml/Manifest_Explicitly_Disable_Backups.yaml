@@ -1,0 +1,26 @@
+id: scw:android:recipe
+version: 8
+metadata:
+  name: "Manifest best practices: explicitly Disable Backups"
+  shortDescription: "The default value of allowBackup is true, this could lead to undesired manipulation."
+  level: error
+  scwCategory: code_tampering:backups_enabled
+  cweCategory: 530
+  descriptionFile: descriptions/AndroidManifestbestpracticesDisableBackups.html
+  enabled: true
+search:
+  errorMarkLocation: 1 # Opening tag only
+  errorMarkNode: 1
+  element:
+    name: application
+    label: applicationElement
+    attributes: # SearchCollection? Not keyword possible?
+      - name: android:allowBackup
+availableFixes:
+  - name: Insert attribute android:allowBackup
+    actions:
+      - add:
+          target: applicationElement
+          attribute:
+            name: android:allowBackup
+            value: "false"

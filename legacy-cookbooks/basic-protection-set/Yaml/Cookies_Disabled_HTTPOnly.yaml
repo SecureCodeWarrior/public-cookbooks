@@ -1,0 +1,26 @@
+id: scw:xml:disabled-httponly
+version: 8
+metadata:
+  name: "Cookies: Disabled HTTPOnly"
+  shortDescription: "The http-only flag has been disabled in web.xml"
+  level: warning
+  scwCategory: misconfig:securityfeatures
+  enabled: true
+  comment: "To be tagged with framework that has <http-only>."
+search:
+  errorMarkLocation: 0 # Whole element
+  errorMarkNode: httponlytag
+  element:
+    name: "cookie-config"
+    children:
+      - name: "http-only"
+        label: httponlytag
+        children:
+          - content: "false"
+            label: tagvalue
+availableFixes:
+  - name: "Set http-only to true"
+    actions:
+      - set:
+        target: tagvalue
+        to: "true"

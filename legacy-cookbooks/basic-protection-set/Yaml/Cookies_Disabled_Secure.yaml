@@ -1,0 +1,25 @@
+id: scw:xml:disabled_secure
+version: 8
+metadata:
+  name: "Cookies: Disabled secure"
+  shortDescription: "The secure flag has been disabled in web.xml"
+  level: warning
+  scwCategory: misconfig:securityfeatures
+  enabled: true
+search:
+  errorMarkLocation: 0 # Whole element
+  errorMarkNode: securetag
+  element:
+    name: cookie-config
+    children:
+      - name: secure
+        label: securetag
+        children:
+          - content: "false"
+            label: tagvalue
+availableFixes:
+  - name: "Set secure to true"
+    actions:
+      - set:
+        target: tagvalue
+        to: "true"

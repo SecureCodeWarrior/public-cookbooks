@@ -1,0 +1,19 @@
+id: scw:xml:missing_SSL
+version: 8
+metadata:
+  name: "Missing transport-level security: No SSL for database connection"
+  shortDescription: ""
+  level: error
+  scwCategory: insufficient_transport_layer_protection:communication_over_cleartext_protocol_http
+  enabled: true
+search:
+  errorMarkLocation: 0 # Whole tag, other options: opening tag only, both open and closing name
+  errorMarkNode: 1 # Root, so this should be able to be removed?
+  element:
+    name: property
+    attributes:
+      - name: name
+        value: "hibernate.connection.url"
+      - name: value
+        value:
+          matches: ".*useSSL=false.*?"
