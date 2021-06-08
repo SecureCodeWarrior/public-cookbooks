@@ -8,13 +8,12 @@ metadata:
   enabled: true
   comment: "To be tagged with framework that has <http-only>."
 search:
-  errorMarkLocation: 0 # Whole element
-  errorMarkNode: httponlytag
   element:
     name: "cookie-config"
     children:
       - name: "http-only"
         label: httponlytag
+        mark: all
         children:
           - content: "false"
             label: tagvalue

@@ -1,0 +1,25 @@
+id: scw:xml:disable-backups
+version: 8
+metadata:
+  name: "Manifest best practices: Disable Backups"
+  shortDescription: Enabling backups could lead to undesired manipulation.
+  level: error
+  scwCategory: code_tampering:backups_enabled
+  cweCategory: 530
+  ruleDescriptionFile: "descriptions/AndroidManifestbestpracticesDisableBackups.html"
+  enabled: true
+search:
+  element:
+    name: application
+    attributes:
+      - name: android:allowBackup
+        label: allowBackupLabel
+        mark: opening
+        value:
+          matches: "true|^$"
+availableFixes:
+  - name: Change android:allowBackup to false
+    actions:
+      - set:
+        target: allowBackupLabel
+        to: "false"

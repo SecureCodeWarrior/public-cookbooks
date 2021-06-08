@@ -9,13 +9,13 @@ metadata:
   descriptionFile: descriptions/AndroidManifestbestpracticesDisableBackups.html
   enabled: true
 search:
-  errorMarkLocation: 1 # Opening tag only
-  errorMarkNode: 1
   element:
     name: application
     label: applicationElement
-    attributes: # SearchCollection? Not keyword possible?
+    mark: opening
+    attributes:
       - name: android:allowBackup
+        exists: false
 availableFixes:
   - name: Insert attribute android:allowBackup
     actions:

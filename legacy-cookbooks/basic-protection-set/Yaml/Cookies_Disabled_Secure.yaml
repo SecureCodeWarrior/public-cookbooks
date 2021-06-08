@@ -7,13 +7,12 @@ metadata:
   scwCategory: misconfig:securityfeatures
   enabled: true
 search:
-  errorMarkLocation: 0 # Whole element
-  errorMarkNode: securetag
   element:
     name: cookie-config
     children:
       - name: secure
         label: securetag
+        mark: all
         children:
           - content: "false"
             label: tagvalue
