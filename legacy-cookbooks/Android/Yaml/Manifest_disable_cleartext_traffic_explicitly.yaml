@@ -1,0 +1,23 @@
+id: scw:xml:explicitly_disable_backups
+version: 8
+metadata:
+  name: Example XML Recipe
+  shortDescription:
+  level: warning
+  enabled: true
+
+search:
+  element:
+    name: "application"
+    label: element
+  attribute:
+    label: attribute
+    name: "android:usesCleartextTraffic"
+    exists: false #when not present HOW?
+
+availableFixes:
+  - name: 'add android:usesCleartextTraffic="false"'
+    actions:
+      add:
+        target: element
+        value: 'android:usesCleartextTraffic="false"'

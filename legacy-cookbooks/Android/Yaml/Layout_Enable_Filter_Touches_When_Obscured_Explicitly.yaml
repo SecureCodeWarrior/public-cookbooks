@@ -1,0 +1,24 @@
+id: scw:xml:explicitly_disable_backups
+version: 8
+metadata:
+  name: Example XML Recipe
+  shortDescription:
+  level: warning
+  enabled: true
+
+search:
+  element:
+    name: ".*Button|ImageButton*."
+    label: element
+    mark: true (opening/closing, name, all) #choose to mark things HOW?
+  attribute:
+    label: attribute
+    name: "android:filterTouchesWhenObscured"
+    exists: false #when not present HOW?
+
+availableFixes:
+  - name: 'add android:filterTouchesWhenObscured="true"'
+    actions:
+      add:
+        target: element
+        value: 'android:filterTouchesWhenObscured="true"'

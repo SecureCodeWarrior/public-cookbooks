@@ -1,0 +1,33 @@
+id: scw:xml:explicitly_disable_backups
+version: 8
+metadata:
+  name: Example XML Recipe
+  shortDescription:
+  level: warning
+  enabled: true
+
+search:
+  element:
+    name: ".*Button|ImageButton*."
+    label: element
+  attribute:
+    label: attribute
+    name: "android:filterTouchesWhenObscured"
+    value: "false"
+    mark: true #how
+
+availableFixes:
+  - name: "Set android:filterTouchesWhenObscured='true'"
+    actions:
+      set:
+        target: attribute
+        to: "true"
+
+
+#another way to do dis
+availableFixes2:
+  - name: "Set android:filterTouchesWhenObscured='true'"
+    actions:
+      replace:
+        target: attribute
+        to: 'android:filterTouchesWhenObscured="true"'
