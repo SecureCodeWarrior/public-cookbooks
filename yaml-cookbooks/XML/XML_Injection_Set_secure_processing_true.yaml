@@ -1,11 +1,11 @@
-id: 33bf0f09-64b1-414b-ac9c-c9f8a13459cd
+id: scw:xml:secure-processing-true
 version: 8
 metadata:
-  name: 'Injection: Avoid XML Injection: setFeature with bad value'
+  name: 'XML Injection: Set secure processing feature to true'
   shortDescription: Could lead to XML Injection
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
   enabled: true
 search:
   methodcall:

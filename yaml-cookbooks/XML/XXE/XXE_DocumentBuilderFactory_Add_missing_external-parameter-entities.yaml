@@ -2,7 +2,7 @@ id: scw:xxe:documentbuilderfactory-missing-external-parameter-entities
 version: 8
 metadata:
   name: 'XXE: DocumentBuilderFactory: Add missing feature external-parameter-entities'
-  shortDescription: 'Could lead to XXE'
+  shortDescription: Could lead to XXE
   level: error
   newCodeOnly: false
   scwCategory: injection:xml

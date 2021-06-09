@@ -2,7 +2,7 @@ id: scw:xxe:documentbuilderfactory-missing-xincludeaware
 version: 8
 metadata:
   name: 'XXE: DocumentBuilderFactory: Add missing feature setXIncludeAware'
-  shortDescription: 'Could lead to XXE'
+  shortDescription: Could lead to XXE
   level: error
   newCodeOnly: false
   scwCategory: injection:xml
@@ -19,7 +19,7 @@ search:
     declaration:
       type: javax.xml.parsers.DocumentBuilderFactory
 availableFixes:
-- name: 'Set XIncludeAware feature to false'
+- name: Set XIncludeAware feature to false
   actions:
   - addMethodCall:
       name: setXIncludeAware

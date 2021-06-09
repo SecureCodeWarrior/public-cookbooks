@@ -1,11 +1,11 @@
-id: 6e7d6e80-0688-41ae-b8c0-faf8906fe1a9
+id: scw:xml:missing-secure-processing
 version: 8
 metadata:
-  name: 'Injection: Avoid XML Injection: Use setFeature '
+  name: 'XML Injection: Set missing secure processing feature'
   shortDescription: Could lead to XML Injection
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
   enabled: true
 search:
   methodcall:
@@ -21,8 +21,13 @@ search:
     declaration:
       type:
         reference:
-          matches: javax\.xml\.(parsers|transform|validation|xpath)\.(DocumentBuilderFactory|TransformerFactory|SAXParserFactory|SchemaFactory|XPathFactory)
-        checkInheritance: false
+          anyOf:
+          - is: javax.xml.xpath.XPathFactory
+          - is: javax.xml.validation.SchemaFactory
+          - is: javax.xml.transform.TransformerFactory
+          - is: javax.xml.parsers.SAXParserFactory
+          - is: javax.xml.parsers.DocumentBuilderFactory
+        checkInheritance: true
 availableFixes:
 - name: Set FEATURE_SECURE_PROCESSING true
   actions:

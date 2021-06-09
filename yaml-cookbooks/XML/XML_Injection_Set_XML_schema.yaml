@@ -1,11 +1,11 @@
-id: 39715573-4f7e-4bfd-aae6-7d1e2c74140e
+id: scw:xml:xml-schema
 version: 8
 metadata:
-  name: 'Injection: Avoid XML Injection: Use setSchema '
+  name: 'XML Injection: Use XML schema'
   shortDescription: Could lead to XML Injection
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
   enabled: true
 search:
   methodcall:
@@ -15,7 +15,12 @@ search:
           name: setSchema
     name: newInstance
     declaration:
-      type: javax.xml.parsers.SAXParserFactory
+      type:
+        reference:
+          anyOf:
+          - is: javax.xml.parsers.SAXParserFactory
+          - is: javax.xml.parsers.DocumentBuilderFactory
+        checkInheritance: true
 availableFixes:
 - name: Add a schema
   actions:
