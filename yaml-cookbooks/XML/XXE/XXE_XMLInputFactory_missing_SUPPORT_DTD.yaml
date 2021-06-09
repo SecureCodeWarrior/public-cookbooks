@@ -1,12 +1,14 @@
-id: f98cb3fc-b03c-474a-af3e-1e36c39171ce
+id: scw:xxe:xmlinputfactory-missing-dtd
 version: 8
 metadata:
-  name: 'XML External Entities: XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES'
+  name: 'XXE: XMLInputFactory: Add SUPPORT_DTD feature'
   shortDescription: Could lead to XXE
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     not:
@@ -15,17 +17,17 @@ search:
           args:
             1:
               referenceTo:
-                name: javax.xml.stream.XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES
+                name: javax.xml.stream.XMLInputFactory.SUPPORT_DTD
           name: setProperty
     name: newFactory
     declaration:
       type: javax.xml.stream.XMLInputFactory
 availableFixes:
-- name: Set Support for External Entities to false
+- name: Set Support for DTD to false
   actions:
   - addMethodCall:
       name: setProperty
       arguments:
-      - javax.xml.stream.XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES
+      - javax.xml.stream.XMLInputFactory.SUPPORT_DTD
       - "false"
       position: first-available-spot

@@ -1,12 +1,14 @@
-id: 76030f66-ede5-4af6-a491-6a2c98f74702
+id: scw:xxe:documentbuilderfactory-missing-dissallow-doctype-decl
 version: 8
 metadata:
-  name: 'XML External Entities: DocumentBuilderFactory setFeature: dissallow-doctype-decl '
-  shortDescription: 'Could lead to XXE '
+  name: 'XXE: DocumentBuilderFactory: Add missing feature dissallow-doctype-decl'
+  shortDescription: 'Could lead to XXE'
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     not:
@@ -18,10 +20,7 @@ search:
           name: setFeature
     name: newInstance
     declaration:
-      type:
-        reference:
-          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
-        checkInheritance: false
+      type: javax.xml.parsers.DocumentBuilderFactory
 availableFixes:
 - name: 'Set dissallow-doctype-decl feature to true '
   actions:

@@ -1,12 +1,14 @@
-id: d99f6136-78cc-457a-9e46-a84061e0eb48
+id: scw:xxe:documentbuilderfactory-missing-dtd
 version: 8
 metadata:
-  name: 'XML External Entities: DocumentBuilderFactory setFeature: load-external-dtd '
-  shortDescription: 'Could lead to XXE '
+  name: 'XXE: DocumentBuilderFactory: Add missing feature load-external-dtd'
+  shortDescription: 'Could lead to XXE'
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     not:
@@ -18,12 +20,9 @@ search:
           name: setFeature
     name: newInstance
     declaration:
-      type:
-        reference:
-          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
-        checkInheritance: false
+      type: javax.xml.parsers.DocumentBuilderFactory
 availableFixes:
-- name: 'Set load-external-dtd feature to false '
+- name: 'Set load-external-dtd feature to false'
   actions:
   - addMethodCall:
       name: setFeature

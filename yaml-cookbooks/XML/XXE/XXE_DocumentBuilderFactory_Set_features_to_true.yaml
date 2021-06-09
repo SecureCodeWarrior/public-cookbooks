@@ -1,13 +1,14 @@
-id: 3000673a-f652-490b-a80f-19158c515c00
+id: scw:xxe:documentbuilderfactory-features-true
 version: 8
 metadata:
-  name: 'XML External Entities: DocumentBuilderFactory setFeature: dissallow-doctype-decl
-    wrong boolean '
-  shortDescription: 'Could lead to XXE '
+  name: 'XXE: DocumentBuilderFactory: Set features to true'
+  shortDescription: Could lead to XXE
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     args:
@@ -21,7 +22,7 @@ search:
     declaration:
       type: javax.xml.parsers.DocumentBuilderFactory
 availableFixes:
-- name: 'Set feature true '
+- name: Set features to true
   actions:
   - rewrite:
       to: '{{{ expressionElement }}}({{{ arguments.0 }}}, true)'

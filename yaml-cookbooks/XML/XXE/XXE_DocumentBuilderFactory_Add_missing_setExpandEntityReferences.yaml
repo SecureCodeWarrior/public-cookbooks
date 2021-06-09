@@ -1,13 +1,14 @@
-id: 16074db1-d254-4ac5-b012-c585e425712b
+id: scw:xxe:documentbuilderfactory-missing-setexpandentityreferences
 version: 8
 metadata:
-  name: 'XML External Entities: DocumentBuilderFactory setExpandEntityReferences:
-    to false '
+  name: 'XXE: DocumentBuilderFactory: Add missing feature setExpandEntityReferences'
   shortDescription: Could lead to XXE
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     not:
@@ -16,10 +17,7 @@ search:
           name: setExpandEntityReferences
     name: newInstance
     declaration:
-      type:
-        reference:
-          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
-        checkInheritance: false
+      type: javax.xml.parsers.DocumentBuilderFactory
 availableFixes:
 - name: Set ExpandEntityReferences feature to false
   actions:

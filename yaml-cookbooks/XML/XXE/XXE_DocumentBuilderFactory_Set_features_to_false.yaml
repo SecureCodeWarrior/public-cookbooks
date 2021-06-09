@@ -1,0 +1,31 @@
+id: scw:xxe:documentbuilderfactory-features-false
+version: 8
+metadata:
+  name: 'XXE: DocumentBuilderFactory: Set features to false'
+  shortDescription: Could lead to XXE
+  level: error
+  newCodeOnly: false
+  scwCategory: injection:xml
+  cweCategory: 611
+  enabled: true
+  descriptionFile: descriptions/XXE.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          anyOf:
+          - is: http://apache.org/xml/features/nonvalidating/load-external-dtd
+          - is: http://xml.org/sax/features/external-parameter-entities
+      2:
+        type: boolean
+        value: "true"
+    name: setFeature
+    declaration:
+      type: javax.xml.parsers.DocumentBuilderFactory
+availableFixes:
+- name: Set features to false
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}({{{ arguments.0 }}}, false)'

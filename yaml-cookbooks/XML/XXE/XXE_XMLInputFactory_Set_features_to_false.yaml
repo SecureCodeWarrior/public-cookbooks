@@ -1,12 +1,14 @@
-id: e9cd354c-edf0-457e-be5a-344ef9eef16f
+id: scw:xxe:xmlinputfactory-false
 version: 8
 metadata:
-  name: 'InputValidation: Avoid XXE: Do not set XMLInputFactory Property to true '
-  shortDescription: 'Could lead to XXE '
+  name: 'XXE: XMLInputFactory: Set features to false'
+  shortDescription: Could lead to XXE
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     args:

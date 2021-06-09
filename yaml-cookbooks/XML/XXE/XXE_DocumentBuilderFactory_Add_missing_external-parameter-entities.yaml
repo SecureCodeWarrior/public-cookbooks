@@ -1,13 +1,14 @@
-id: 2465f091-c842-460c-8542-d97df4dc18b5
+id: scw:xxe:documentbuilderfactory-missing-external-parameter-entities
 version: 8
 metadata:
-  name: 'XML External Entities: DocumentBuilderFactory setFeature: external-parameter-entities
-    should be set first '
-  shortDescription: 'Could lead to XXE '
+  name: 'XXE: DocumentBuilderFactory: Add missing feature external-parameter-entities'
+  shortDescription: 'Could lead to XXE'
   level: error
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:xml
+  cweCategory: 611
   enabled: true
+  descriptionFile: descriptions/XXE.html
 search:
   methodcall:
     not:
@@ -19,10 +20,7 @@ search:
           name: setFeature
     name: newInstance
     declaration:
-      type:
-        reference:
-          matches: javax\.xml\.(parsers|transform|validation|xpath)\.DocumentBuilderFactory
-        checkInheritance: false
+      type: javax.xml.parsers.DocumentBuilderFactory
 availableFixes:
 - name: Set external-parameter-entities feature to false
   actions:

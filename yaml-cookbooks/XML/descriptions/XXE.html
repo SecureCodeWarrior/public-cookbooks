@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p id="abstract">When the XML processor is not configured correctly to handle references and entities, it may be susceptible to so-called XML external entities (XXE) attacks.</p>
+    <br>
+    <p id="impact_and_desired_state">In order to prevent XXE vulnerabilities, the XML processor needs to be configured correctly. As stated on the OWASP XXE Cheat Sheet: "The safest way to prevent XXE is always to disable DTDs (External Entities) completely. Depending on the parser, the method should be similar to the following: <code>factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);</code>. If it is not possible to disable DTDs completely, then external entities and external document type declarations must be disabled in the way that's specific to each parser." For specific instructions per parser we refer to the OWASP XXE Cheat Sheet as well.</p>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://www.baeldung.com/java-xml">Baeldung on XML in Java</a></li>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html">OWASP XXE Prevention Cheat Sheet</a></li>
+      <li><a href="https://cwe.mitre.org/data/definitions/611.html">CWE 611: Improper Restriction of XML External Entity Reference</a></li>
+      <li><a href="https://portswigger.net/web-security/xxe">PortSwigger Web Security Academy: XXE injection</a></li>
+    </ul>
+  </body>
+</html>
