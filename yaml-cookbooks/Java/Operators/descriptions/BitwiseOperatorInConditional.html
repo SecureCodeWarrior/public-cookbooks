@@ -5,12 +5,12 @@
     <p id="impact_and_desired_state">Using the incorrect operator can lead to a <code>NullPointerException</code>, unintended behaviour in for example short circuit evaluation, and even bypassing checking or branching logic.</p>
     <br>
     <b>Before</b>
-<pre>if (object != null <b>&amp;</b> object.myBoolMethod()) {
+<pre>if (object != null <b>&</b> object.myBoolMethod()) {
   // if object is null, object.myBoolMethod() is still evaluated, causing a NullPointerException
 }</pre>
     <br>
     <b>After</b>
-<pre>if (object != null <b>&amp;&amp;</b> object.myBoolMethod()) {
+<pre>if (object != null <b>&&</b> object.myBoolMethod()) {
   // if object is null, object.myBoolMethod() is not evaluated due to short circuit evaluation
 }</pre>
     <br>

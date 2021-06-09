@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe that the use string concatenation in where filters should be avoided. Use parameterized queries</p>
+    <br>
+    <p id="impact_and_desired_state"><p>When using concatenation with the where operator, adversaries can bypass restrictions and manipulate or access sensitive data.</p>
+    <br>
+    <b>Before:</b>
+<pre>Object result = collection.find(where("this._id == '" + userInput + "'")).first();</pre>
+    <br>
+    <b>After:</b>
+<pre>Object challenge = collection.find(Filters.eq("_id", new ObjectId(userInput))).first();</pre>
+  </body>
+</html>

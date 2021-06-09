@@ -1,4 +1,4 @@
-id: e6f4c431-4198-40bb-be47-f62ba3bd9577
+id: scw:java:string-indexof
 version: 8
 metadata:
   name: Inefficient use of String.indexOf
@@ -6,7 +6,7 @@ metadata:
   level: warning
   scwCategory: ""
   enabled: true
-  descriptionFile: InefficientuseofString.indexOf.html
+  descriptionFile: descriptions/InefficientuseofString.indexOf.html
 search:
   methodcall:
     args:

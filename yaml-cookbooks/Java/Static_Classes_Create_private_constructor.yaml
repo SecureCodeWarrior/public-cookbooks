@@ -1,8 +1,8 @@
-id: f74ddd3f-af07-40b7-9822-fcc3e94e6c49
+id: scw:java:static-private-constructor
 version: 8
 metadata:
   name: 'Static Classes: create private constructor'
-  shortDescription: create a private constructor for static classes
+  shortDescription: Create a private constructor for static classes
   level: error
   scwCategory: ""
   enabled: true
@@ -25,7 +25,7 @@ search:
         method:
           constructor: true
 availableFixes:
-- name: add private constructor
+- name: Add private constructor
   actions:
   - addMethod:
       method: private {{{ name }}}(){}

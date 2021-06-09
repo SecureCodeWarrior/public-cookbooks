@@ -1,4 +1,4 @@
-id: 395403ba-c7f2-4c03-bab5-a535260b3036
+id: scw:immutable:void-methods
 version: 8
 metadata:
   name: 'Immutable: avoid void methods'

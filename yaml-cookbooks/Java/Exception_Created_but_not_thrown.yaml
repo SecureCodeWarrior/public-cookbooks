@@ -6,10 +6,8 @@ metadata:
   level: error
   scwCategory: ""
   enabled: true
-  comment: |-
-    This one could still be refined if the FlowAnalyzer is expanded:
-    - Add throw keyword to findable expressions
-  descriptionFile: ExceptionCreatedbutnotthrown.html
+  descriptionFile: descriptions/ExceptionCreatedbutnotthrown.html
+  comment: "This recipe only addresses the case of an instance creation that is not thrown, assigned or used in any other way. The other ways are detected and marked by IntelliJ itself."
 search:
   instanceCreation:
     not:

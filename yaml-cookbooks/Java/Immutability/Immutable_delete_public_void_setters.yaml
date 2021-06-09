@@ -1,4 +1,4 @@
-id: db13e8ee-dadc-4e71-9dbf-8fb5e1d3ce32
+id: scw:immutable:public-void-setters
 version: 8
 metadata:
   name: 'Immutable: delete public void setters'

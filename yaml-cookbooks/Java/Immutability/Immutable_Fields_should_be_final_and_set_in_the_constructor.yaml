@@ -1,4 +1,4 @@
-id: ee691ac1-5f83-4bdb-955e-2563775a3571
+id: scw:immutable:final-fields
 version: 8
 metadata:
   name: 'Immutable: Fields should be final and set in the constructor'

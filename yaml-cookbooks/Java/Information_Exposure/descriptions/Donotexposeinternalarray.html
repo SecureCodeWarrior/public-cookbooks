@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <p id="abstract">Exposed internal arrays are still mutable. This violates the object encapsulation rule for the internal property.</p>
+    <br>
+    <p id="impact_and_desired_state">Exposing arrays that are internal to the application enables users to modify their contents, possibly leading to an unintended internal state which in turn can lead to undesired behaviour. To prevent exposing internal data structures, a copy of the object should be returned instead so that any modifications to the returned object do not impact the internal state of the called class.</p>
+    <br>
+    <b>Before</b>
+<pre>class Dto {
+    protected String[] values;
+
+    public String[] getValues()
+    {
+        return <b>values;</b>
+    }
+}</pre>
+    <br>
+    <b>After</b>
+<pre>class Dto {
+    protected String[] values;
+
+    public String[] getValues()
+    {
+        return <b>Arrays.copyOf(values, values.length)</b>;
+    }
+}</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://cwe.mitre.org/data/definitions/200.html">Mitre CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</a></li>
+    </ul>
+  </body>
+</html>

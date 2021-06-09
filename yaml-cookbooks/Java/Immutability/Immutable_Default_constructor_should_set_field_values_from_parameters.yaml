@@ -1,4 +1,4 @@
-id: aa8ad912-52ab-44c9-8e3d-b2842333f3ca
+id: scw:immutable:constructor-parameters
 version: 8
 metadata:
   name: 'Immutable: default constructor should set field values from parameters'

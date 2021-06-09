@@ -1,7 +1,13 @@
-When trying to <code>split</code> by <code>&quot;.&quot;</code> we will not get the result we expect. Instead every character in the String will be used as a split point, resulting in an empty array. We need to use <code>&quot;\\.&quot;</code> instead i.e. the <code>.</code> escaped in a <code>String</code>.
-
-<b>Before:</b>
-<pre>String[] parts = &quot;123.456.789.012&quot;.<b>split(&quot;.&quot;)</b>;</pre>
-
-<b>After:</b>
-<pre>String[] parts = &quot;123.456.789.012&quot;.<b>split(&quot;\\.&quot;)</b>;</pre>
+<html>
+  <body>
+    <p id="abstract">String's <code>split</code> method takes a regular expression as argument. The character '.' has a special meaning in regexes.</p>
+    <br>
+    <p id="impact_and_desired_state">When trying to <code>split</code> by <code>"."</code> we will not get the result we expect. Instead every character in the String will be used as a split point, resulting in an empty array. We need to use <code>"\\."</code> instead i.e. the <code>.</code> escaped in a <code>String</code>.</p>
+    <br>
+    <b>Before:</b>
+<pre>String[] parts = "123.456.789.012".<b>split(".")</b>;</pre>
+    <br>
+    <b>After:</b>
+<pre>String[] parts = "123.456.789.012".<b>split("\\.")</b>;</pre>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+id: scw:java:equalsignorecase
+version: 8
+metadata:
+  name: 'Portability Flaw: Avoid locale dependent comparisons: equals after case conversion'
+  shortDescription: This comparison is sensitive to the system's locale. Ignore the
+    case or add a locale.
+  level: error
+  newCodeOnly: false
+  scwCategory: ""
+  enabled: true
+  comment: ""
+search:
+  methodcall:
+    name: equals
+    type: java.lang.String
+    "on":
+      methodcall:
+        anyOf:
+        - name:
+            matches: (toUpperCase|toLowerCase)
+          type: java.lang.String
+          without:
+            args:
+              any: {}
+availableFixes:
+- name: Use equalsIgnoreCase
+  actions:
+  - rewrite:
+      to: '{{{ qualifier.qualifier }}}.equalsIgnoreCase({{{ arguments.0 }}})'
+- name: Add ROOT locale
+  actions:
+  - rewrite:
+      to: '{{{ qualifier.qualifier }}}.{{{ qualifier.methodName }}}(Locale.ROOT).{{{
+        methodName }}}({{{ arguments.0 }}})'

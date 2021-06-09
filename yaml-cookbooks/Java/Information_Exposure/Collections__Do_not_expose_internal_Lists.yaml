@@ -1,4 +1,4 @@
-id: 56c4f5ba-8d9a-4ed8-87a5-4efef6aa16b1
+id: scw:java:internal-list
 version: 8
 metadata:
   name: 'Collections: Do not expose internal Lists'
@@ -6,8 +6,9 @@ metadata:
     or immutable view.
   level: marked_information
   scwCategory: ""
+  cweCategory: 200
   enabled: true
-  descriptionFile: DonotexposeinternalCollection-list.html
+  descriptionFile: descriptions/DonotexposeinternalCollection-list.html
 search:
   return:
     in:

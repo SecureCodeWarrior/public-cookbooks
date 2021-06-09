@@ -1,4 +1,4 @@
-id: b03a3f9d-977c-4562-8abb-fa108d85e3cf
+id: scw:immutable:setter-returns
 version: 8
 metadata:
   name: 'Immutable: avoid setters that return values'
@@ -15,6 +15,3 @@ search:
         checkInheritance: true
     name:
       matches: set.*
-availableFixes:
-- name: Fix the code by manual refactoring
-  actions: []
