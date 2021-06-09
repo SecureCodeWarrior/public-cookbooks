@@ -1,21 +1,19 @@
 <html>
-<body>
-<h2>Abstract</h2>
-Secure coding practices prescribe that a safe constructor should be used for instance creation of a <code>org.yaml.snakeyaml.Yaml</code> object.
-<h2>Description</h2>
-When creating object of the type <code>org.yaml.snakeyaml.Yaml</code> it is advised to use safe constructors. 
-<br/>
-The following cosntructor is available to ensure secure parsing of yaml.
-<h4>Class information:</h4>
-<pre>
-package org.yaml.snakeyaml.constructor<b>SafeConstructor</b>;
-</pre>
-<h4>Correct code example:</h4>
-<pre>
-Yaml yaml = new Yaml(new SafeConstructor());
-</pre>
-<h2>Sensei quick fix</h2>
-<p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+  <body>
+  <p id="abstract">Secure coding practices prescribe that a safe constructor should be used for instance creation of a <code>org.yaml.snakeyaml.Yaml</code> object.</p>
+  <br>
+  <p id="impact_and_desired_state">When creating object of the type <code>org.yaml.snakeyaml.Yaml</code> it is advised to use safe constructors. By default the <code>Yaml</code> class will use the <code>Constructor</code> class, which extends the <code>SafeConstructor</code> class. However, if a custom constructor is created and used, it should extend from either <code>SafeConstructor</code> or <code>Constructor</code>. Extending the abstract <code>BaseConstructor</code> directly results in an unsafe constructor, which potentially makes the Yaml processor vulnerable to injection attacks and remote code execution.</p>
+  <br>
+  <b>Before</b>
+<pre>Yaml yaml = new Yaml(new BaseConstructor(){});</pre>
+  <b>After</b>
+<pre>import org.yaml.snakeyaml.constructor.SafeConstructor;
 
-</body>
+Yaml yaml = new Yaml(new SafeConstructor());</pre>
+  <br>
+  <b>References</b>
+  <ul>
+    <li><a href="https://bitbucket.org/asomov/snakeyaml">The official SnakeYaml source code on BitBucket</a></li>
+  </ul>
+  </body>
 </html>

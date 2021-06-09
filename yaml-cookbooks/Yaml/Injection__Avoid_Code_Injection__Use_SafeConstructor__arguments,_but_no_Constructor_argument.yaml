@@ -8,16 +8,21 @@ metadata:
   newCodeOnly: false
   scwCategory: injection
   enabled: true
+  comment: 'The only way to initialize Yaml insecurely is to provide an unsafe constructor.'
   overridingRecipeId: java_snakeyaml
 search:
   instanceCreation:
+    with:
+      args:
+        1:
+          type: org.yaml.snakeyaml.constructor.BaseConstructor
     argCount:
       greaterThan: 0
     type: org.yaml.snakeyaml.Yaml
     without:
       args:
         1:
-          type: org.yaml.snakeyaml.constructor.BaseConstructor
+          type: org.yaml.snakeyaml.constructor.SafeConstructor
 availableFixes:
 - name: Add SafeConstructor
   actions:

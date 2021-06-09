@@ -7,7 +7,8 @@ metadata:
   level: error
   newCodeOnly: false
   scwCategory: injection
-  enabled: true
+  enabled: false
+  comment: Constructor is subtype of SafeConstructor. Recipe invalid since 1.28.
   overridingRecipeId: java_snakeyaml
 search:
   instanceCreation:
