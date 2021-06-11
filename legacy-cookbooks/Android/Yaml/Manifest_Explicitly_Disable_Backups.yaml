@@ -10,17 +10,15 @@ metadata:
   enabled: true
 search:
   element:
-    name: application
-    label: applicationElement
-    mark: opening
-    attributes:
-      - name: android:allowBackup
-        exists: false
+    tagName: application
+    without:
+      attribute:
+        name: android:allowBackup
+highlight: openingTag
 availableFixes:
   - name: Insert attribute android:allowBackup
     actions:
       - add:
-          target: applicationElement
           attribute:
             name: android:allowBackup
             value: "false"

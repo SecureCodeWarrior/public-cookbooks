@@ -16,7 +16,9 @@ search:
         label: clearTextAttribute
         value:
           matches: "true|^$"
-        mark: opening
+highlight:
+  label: clearTextAttribute
+  part: openingTag
 availableFixes:
   - name: Change android:usesCleartextTraffic to false
     actions:

@@ -5,20 +5,17 @@ metadata:
   shortDescription: "Not setting filterTouchesWhenObscured to true allows adversaries to hijack users' taps."
   level: warning
   enabled: true
-
 search:
   element:
     name: ".*Button|ImageButton*."
-    label: element
-    mark: opening
-  attribute:
-    label: attribute
-    name: "android:filterTouchesWhenObscured"
-    exists: false
-
+  without:
+    attribute:
+      name: "android:filterTouchesWhenObscured"
+highlight: openingTag
 availableFixes:
   - name: 'Add android:filterTouchesWhenObscured="true"'
     actions:
       add:
-        target: element
-        value: 'android:filterTouchesWhenObscured="true"'
+        attribute:
+          name: android:filterTouchesWhenObscured
+          value: "true"

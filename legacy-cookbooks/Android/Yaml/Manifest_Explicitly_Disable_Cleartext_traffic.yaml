@@ -1,4 +1,4 @@
-id: scw:xml:explicitly_disable_backups
+id: scw:android:explicitly_disable_backups
 version: 8
 metadata:
   name: "Manifest best practices: explicitly disable cleartext traffic"
@@ -8,33 +8,21 @@ metadata:
   cweCategory: 319
   descriptionFile: descriptions/ManifestbestpracticesdisableusesCleartextTraffic.html
   enabled: true
- # "ruleScope": [
- #   {
- #     "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
- #     "object": {
- #       "property": "android.defaultConfig.minSdkVersion",
- #       "propertyType": 1,
- #       "desiredValue": "27",
- #       "useRegex": false,
- #       "intPropertyMatchingType": 4,
- #       "duplicateStrategy": 0,
- #       "trueIfNotFound": false
- #     }
- #   }
- # ]
-
+scopes:
+  androidBuild:
+    minVersion: # IntegerModel
+      lessThanOrEquals: 27
 search:
   element:
-    name: "application"
-    label: element
-  attribute:
-    label: attribute
-    name: "android:usesCleartextTraffic"
-    exists: false
-
+    tagName: application
+    without:
+      attribute:
+        name: "android:usesCleartextTraffic"
+highlight: openingTag
 availableFixes:
-  - name: 'add android:usesCleartextTraffic="false"'
+  - name: 'Insert attribute android:usesCleartextTraffic'
     actions:
       add:
-        target: element
-        value: 'android:usesCleartextTraffic="false"'
+        attribute:
+          name: android:usesCleartextTraffic
+          value: "false"

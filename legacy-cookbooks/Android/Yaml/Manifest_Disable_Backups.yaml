@@ -14,9 +14,11 @@ search:
     attributes:
       - name: android:allowBackup
         label: allowBackupLabel
-        mark: opening
         value:
           matches: "true|^$"
+highlight:
+  label: allowBackupLabel
+  part: openingTag
 availableFixes:
   - name: Change android:allowBackup to false
     actions:

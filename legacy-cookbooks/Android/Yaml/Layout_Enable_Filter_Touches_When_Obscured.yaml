@@ -1,4 +1,4 @@
-id: scw:xml:explicitly_disable_backups
+id: scw:android:explicitly_disable_backups
 version: 8
 metadata:
   name: "Layout best practices: enable filterTouchesWhenObscured"
@@ -6,17 +6,15 @@ metadata:
   level: warning
   descriptionFile: descriptions/LayoutbestpracticesenablefilterTouchesWhenObscured.html
   enabled: true
-
 search:
   element:
     name: ".*Button|ImageButton*."
-    label: element
   attribute:
     label: attribute
-    name: "android:filterTouchesWhenObscured"
+    name: android:filterTouchesWhenObscured
     value: "false"
-    mark: true
-
+highlight:
+  label: attribute
 availableFixes:
   - name: "Set android:filterTouchesWhenObscured='true'"
     actions:
