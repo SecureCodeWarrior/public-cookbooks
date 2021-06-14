@@ -9,19 +9,14 @@ metadata:
   ruleDescriptionFile: "descriptions/ManifestbestpracticesdisableusesCleartextTraffic.html"
   enabled: true
 search:
-  element:
-    name: application
-    attributes:
-      - name: android:usesCleartextTraffic
-        label: clearTextAttribute
-        value:
-          matches: "true|^$"
-highlight:
-  label: clearTextAttribute
-  part: openingTag
+  attribute:
+    name: android:usesCleartextTraffic
+    value:
+      matches: "true|^$"
+    in:
+      element:
+        tagName: application
 availableFixes:
   - name: Change android:usesCleartextTraffic to false
     actions:
-      - set:
-        target: clearTextAttribute
-        to: "false"
+      - set: "false"

@@ -9,16 +9,13 @@ metadata:
   ruleDescriptionFile: "descriptions/AndroidManifestbestpracticesDisableBackups.html"
   enabled: true
 search:
-  element:
-    name: application
-    attributes:
-      - name: android:allowBackup
-        label: allowBackupLabel
-        value:
-          matches: "true|^$"
-highlight:
-  label: allowBackupLabel
-  part: openingTag
+  attribute:
+    name: android:allowBackup
+    value:
+      matches: "true|^$"
+    in:
+      element:
+        tagName: application
 availableFixes:
   - name: Change android:allowBackup to false
     actions:

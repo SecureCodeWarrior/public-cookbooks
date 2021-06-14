@@ -7,17 +7,14 @@ metadata:
   descriptionFile: descriptions/LayoutbestpracticesenablefilterTouchesWhenObscured.html
   enabled: true
 search:
-  element:
-    name: ".*Button|ImageButton*."
   attribute:
-    label: attribute
     name: android:filterTouchesWhenObscured
     value: "false"
-highlight:
-  label: attribute
+    in:
+      element:
+        tagName:
+          matches: "Button|ImageButton"
 availableFixes:
   - name: "Set android:filterTouchesWhenObscured='true'"
     actions:
-      set:
-        target: attribute
-        to: "true"
+      set: "true"

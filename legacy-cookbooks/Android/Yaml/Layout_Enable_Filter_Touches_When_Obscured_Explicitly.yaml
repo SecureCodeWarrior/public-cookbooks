@@ -7,10 +7,11 @@ metadata:
   enabled: true
 search:
   element:
-    name: ".*Button|ImageButton*."
-  without:
-    attribute:
-      name: "android:filterTouchesWhenObscured"
+    tagName:
+      matches: "Button|ImageButton"
+    without:
+      attribute:
+        name: "android:filterTouchesWhenObscured"
 highlight: openingTag
 availableFixes:
   - name: 'Add android:filterTouchesWhenObscured="true"'

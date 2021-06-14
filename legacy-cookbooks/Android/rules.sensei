@@ -9,7 +9,7 @@
   },
   "rules": [
     {
-      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      type: f44c1b5b95c8157536e2ccdcaab231fdb753d59d,
       "model": {
         "expandNamespaces": false,
         "errorMarkLocation": 1,

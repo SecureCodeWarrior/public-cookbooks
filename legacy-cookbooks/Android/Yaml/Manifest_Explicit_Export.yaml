@@ -9,15 +9,10 @@ metadata:
   ruleDescriptionFile: "descriptions/Manifestbestpracticesdisableexportofandroidcomponents.html"
   enabled: true
 search:
-  element:
-    attributes:
-      - name: android:exported
-        label: exportedAttribute
-        value: "true"
-highlight: openingTag
+  attribute:
+    name: android:exported
+    value: "true"
 availableFixes:
   - name: Change android:exported to false
     actions:
-      - set:
-        target: exportedAttribute
-        to: "false"
+      - set: "false"
