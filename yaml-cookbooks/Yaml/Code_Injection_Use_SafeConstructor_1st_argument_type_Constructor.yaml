@@ -1,4 +1,4 @@
-id: 03e20405-12e7-46d1-a326-4be334277a50
+id: scw:snakeyaml:safeconstructor-constructor-arg
 version: 8
 metadata:
   name: 'Injection: Avoid Code Injection: Use SafeConstructor: 1st argument of type
@@ -9,7 +9,6 @@ metadata:
   scwCategory: injection
   enabled: false
   comment: Constructor is subtype of SafeConstructor. Recipe invalid since 1.28.
-  overridingRecipeId: java_snakeyaml
 search:
   instanceCreation:
     args:

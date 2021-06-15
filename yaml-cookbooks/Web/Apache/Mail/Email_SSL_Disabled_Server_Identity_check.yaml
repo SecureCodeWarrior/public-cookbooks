@@ -1,4 +1,4 @@
-id: ee98c8e5-1b73-4543-b605-1a80d64c3534
+id: scw:apache:email:ssl-check-disabled
 version: 8
 metadata:
   name: 'Email: Disabled SSL Server Identity check'
@@ -16,7 +16,7 @@ search:
     name: setSSLCheckServerIdentity
     type: org.apache.commons.mail.Email
 availableFixes:
-- name: Fix the code by enabling setSSLCheckServerIdentity
+- name: Set setSSLCheckServerIdentity to true
   actions:
   - rewrite:
       to: '{{{ expressionElement }}}(true)'

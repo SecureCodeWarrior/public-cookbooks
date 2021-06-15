@@ -1,9 +1,9 @@
-id: 5ca35f6a-e096-4de0-b1cd-2976b1695049
+id: scw:web:x509-validation-disabled
 version: 8
 metadata:
   name: 'X509: Disabled validation in TrustManager'
   shortDescription: 'A TrustManager has overridden the getAcceptedIssuers method,
-    and only returns null. '
+    and only returns null.'
   level: warning
   scwCategory: insufficient_transport_layer_protection
   enabled: true

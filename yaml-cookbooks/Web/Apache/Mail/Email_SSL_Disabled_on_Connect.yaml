@@ -1,4 +1,4 @@
-id: 0193a030-3298-4751-af48-7c4ccc7a5cdd
+id: scw:apache:email:ssl-on-connect-disabled
 version: 8
 metadata:
   name: 'Email: Disabled SSL on Connect'

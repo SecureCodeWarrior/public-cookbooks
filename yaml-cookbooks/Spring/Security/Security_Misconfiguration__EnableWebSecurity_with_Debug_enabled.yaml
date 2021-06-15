@@ -5,8 +5,9 @@ metadata:
   shortDescription: The debug parameter on EnableWebSecurity should not be hardcoded
     to true
   level: warning
-  scwCategory: misconfig
+  scwCategory: misconfig:debug
   enabled: true
+  comment: "Spring annotation: https://howtodoinjava.com/spring5/security/security-java-config-enablewebsecurity-example/"
 search:
   annotationParameter:
     name: debug

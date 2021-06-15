@@ -1,13 +1,13 @@
-id: 07dcb90d-039f-4546-8e25-aaeb59862ed3
+id: scw:web:cookie-missing-secure
 version: 8
 metadata:
   name: 'Session configuration: Cookies: Configure Secure flag'
   shortDescription: Prevent a cookie being sent over unencrypted HTTP by setting the
     Secure flag to true
   level: error
-  scwCategory: ""
+  scwCategory: improper_session_handling:improper_flags_in_cookie_headers
   enabled: true
-  descriptionFile: SessionconfigurationCookiesConfigureSecureflag.html
+  descriptionFile: descriptions/CookieFlags.html
 search:
   instanceCreation:
     not:

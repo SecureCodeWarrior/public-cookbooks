@@ -1,19 +1,20 @@
-id: 2ce50a3c-c7c5-4734-8e25-8cf73610e511
+id: scw:web:tls-outdated
 version: 8
 metadata:
-  name: 'TLS: Weak Encryption: Insecure Version '
+  name: 'TLS: Weak Encryption: Outdated Version'
   shortDescription: Could lead to Data Exposure
-  level: error
+  level: warning
   newCodeOnly: false
   scwCategory: itlp
   enabled: true
+  descriptionFile: descriptions/TLS_version.html
 search:
   methodcall:
     args:
       1:
         type: java.lang.String
         value:
-          matches: (SSL.*|TLSv1)
+          matches: TLSv1.1
     name: getInstance
     declaration:
       type: javax.net.ssl.SSLContext

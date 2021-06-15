@@ -1,20 +1,19 @@
-id: 2dbe8479-b2c7-4a18-86ef-a26cc1aa395e
+id: scw:web:apache:simplecookie-missing-secure
 version: 8
 metadata:
   name: 'Session configuration: Cookies: Configure Secure flag'
-  shortDescription: 'Prevent a cookie being sent over unencrypted HTTP by setting
-    the Secure flag to true '
+  shortDescription: Prevent a cookie being sent over unencrypted HTTP by setting
+    the Secure flag to true
   level: error
-  scwCategory: ""
+  scwCategory: improper_session_handling:improper_flags_in_cookie_headers
   enabled: true
-  descriptionFile: SessionconfigurationCookiesConfigureSecureflag.html
+  descriptionFile: descriptions/CookieFlags_SimpleCookie.html
 search:
   instanceCreation:
     not:
-      with:
-        followedBy:
-          methodcall:
-            name: setSecure
+      followedBy:
+        methodcall:
+          name: setSecure
     type: org.apache.shiro.web.servlet.SimpleCookie
 availableFixes:
 - name: Set the Secure flag to true

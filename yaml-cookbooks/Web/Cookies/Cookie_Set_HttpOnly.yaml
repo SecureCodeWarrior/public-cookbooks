@@ -1,23 +1,23 @@
-id: 30ebbaf5-1741-47dc-b31d-d2bf96df8fd1
+id: scw:web:cookie-set-http-only
 version: 8
 metadata:
   name: 'Session configuration: Cookies: Set HttpOnly flag to true'
   shortDescription: Prevent client-side scripts from accessing the cookie by setting
     the HttpOnly flag to true
   level: error
-  scwCategory: ""
+  scwCategory: improper_session_handling:improper_flags_in_cookie_headers
   enabled: true
-  descriptionFile: SessionconfigurationCookiesSetHttpOnlyflagtotrue.html
+  descriptionFile: descriptions/CookieFlags.html
 search:
   methodcall:
     args:
       1:
         type: boolean
         value: "false"
-    name:
-      matches: setHttpOnly
-    declaration:
-      type: org.apache.shiro.web.servlet.SimpleCookie
+    name: setHttpOnly
+    anyOf:
+    - type: javax.servlet.http.Cookie
+    - type: java.net.HttpCookie
 availableFixes:
 - name: Set HttpOnly to true
   actions:

@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <p>Secure coding practices prescribe that implementations must support Transport Layer Security (TLS) version 1.2.</p>
+    <br>
+    <p>When using Transport Layer Security, it is required to support TLS protocol version 1.2. Implementations must not negotiate TLS version 1.1 except when no higher version is available. Protocols SSLv2, SSLv3 and TLSv1.0 are prohibited because they are no longer deemed secure. Using older versions of TLS/SSL puts the data being transferred at risk for interception and offline decryption attempts.</p>
+    <br>
+    <p>To enforce the use of specific protocols, the JVM can be instructed to do so using the following command-line parameter:</p>
+    <pre>-Dhttps.protocols="TLSv1.2,TLSv1.1"</pre>
+    <p>Note that only TLSv1.2 is recommended, TLSv1.1 is listed above to provide an example of the list syntax. In the source code itself, the <code>javax.net.ssl.SSLContext#getInstance</code> method can be used to select the correct protocol.
+    <br>
+    <b>References</b>
+    <ul>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: Transport Layer Protection</a></li>
+    </ul>
+  </body>
+</html>

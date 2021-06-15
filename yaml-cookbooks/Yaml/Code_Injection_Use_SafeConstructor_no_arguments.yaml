@@ -1,4 +1,4 @@
-id: dfdaa55a-c528-44de-8977-7ab8b2083a53
+id: scw:snakeyaml:safeconstructor-no-args
 version: 8
 metadata:
   name: 'Injection: Avoid Code Injection: Use SafeConstructor: no arguments'
@@ -8,7 +8,6 @@ metadata:
   scwCategory: injection
   enabled: false
   comment: Default is subclass of safeConstructor. Recipe invalid since 1.28.
-  overridingRecipeId: java_snakeyaml
 search:
   instanceCreation:
     argCount: 0

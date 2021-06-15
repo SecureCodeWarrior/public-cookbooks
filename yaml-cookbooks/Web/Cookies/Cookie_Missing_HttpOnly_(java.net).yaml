@@ -1,13 +1,13 @@
-id: d9d42f72-8599-44c5-85dc-ae4b118e3a6a
+id: scw:web:java-net:cookie-missing-http-only
 version: 8
 metadata:
-  name: 'Session configuration: Cookie: Configure HttpOnly flag'
+  name: 'Session configuration: HttpCookie: Configure HttpOnly flag'
   shortDescription: Prevent client-side scripts from accessing the cookie by setting
     the HttpOnly flag to true
   level: error
-  scwCategory: ""
+  scwCategory: improper_session_handling:improper_flags_in_cookie_headers
   enabled: true
-  descriptionFile: SessionconfigurationCookiesConfigureHttpOnlyflag.html
+  descriptionFile: descriptions/CookieFlags.html
 search:
   instanceCreation:
     not:
@@ -15,12 +15,7 @@ search:
         followedBy:
           methodcall:
             name: setHttpOnly
-    type: javax.servlet.http.Cookie
-scopes:
-  library:
-    minVersion: 3.0
-    name:
-      contains: javax.servlet-api
+    type: java.net.HttpCookie
 availableFixes:
 - name: Set the HttpOnly flag to true
   actions:

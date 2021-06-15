@@ -1,4 +1,4 @@
-id: 219e91f6-774b-455e-88ef-9a76dd0faca3
+id: scw:web:cert-validation-disabled
 version: 8
 metadata:
   name: 'TLS: Disabled Certificate validation'
