@@ -1,4 +1,4 @@
-id: 7c262a8c-d2ad-41e2-b4ea-50f37129d85b
+id: scw:junit:public-classes
 version: 8
 metadata:
   name: Test Classes in JUnit 5 do not need to be public
@@ -14,7 +14,7 @@ search:
           type: org.junit.jupiter.api.Test
     modifier: public
 availableFixes:
-- name: remove public visibility from JUnit 5  Test class
+- name: Remove public visibility from JUnit 5 Test class
   actions:
   - changeModifiers:
       visibility: ""

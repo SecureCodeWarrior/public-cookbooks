@@ -1,8 +1,8 @@
-id: 345f6a51-012f-4613-aac2-c606fa67395a
+id: scw:junit:disabled-description
 version: 8
 metadata:
-  name: remember to add disabled description
-  shortDescription: '@Disabled should really have a description explaining why'
+  name: JUnit @Disabled Description
+  shortDescription: 'Add a description to indicate why the test has been disabled'
   level: warning
   scwCategory: ""
   enabled: true
@@ -16,5 +16,5 @@ availableFixes:
 - name: Add a todo comment parameter
   actions:
   - rewrite:
-      to: '{{{ . }}}("TODO: add a description here")'
+      to: '{{{ . }}}("TODO: Add a reason for disabling the test")'
       target: self
