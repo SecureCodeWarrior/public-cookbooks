@@ -1,16 +1,21 @@
-<h2>Description</h2>
-When deploying your application to multiple regions, and when running AWS Lambda or Amazon EC2, it might be easier to allow AWS to automatically determine the region for you. 
-
-However, keep in mind that if a region is not explicitly set, and AWS is unable to determine it, the client creation will fail.
-
-<b>Before</b>
-<pre>Region newRegion = Region.US_EAST_1;
-     Ec2Client ec2 = Ec2Client.builder()
-                .region(newRegion)
-                .build();</pre>
-<b>After</b>
-<pre>Region newRegion = Region.US_EAST_1;
-        Ec2Client ec2 = Ec2Client.create();</pre>
-
-<h2>Resources</h2>
-<a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html">Region Selection</a>
+<html>
+  <body>
+    <p>When deploying your application to multiple regions, and when running AWS Lambda or Amazon EC2, it might be easier to allow AWS to automatically determine the region for you.</p>
+    <br>
+    <p>However, keep in mind that if a region is not explicitly set, and AWS is unable to determine it, the client creation will fail.</p>
+    <br>
+    <b>Before</b>
+<pre><b>Region newRegion = Region.US_EAST_1;</b>
+Ec2Client ec2 = Ec2Client<b>.builder()
+    .region(newRegion)
+    .build()</b>;</pre>
+    <br>
+    <b>After</b>
+<pre>Ec2Client ec2 = Ec2Client.<b>create()</b>;</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html">Region Selection</a></li>
+    </ul>
+  </body>
+</html>

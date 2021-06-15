@@ -1,19 +1,24 @@
-By not releasing the <code>AmazonDynamoDbClient</code> you could run the risk of leaking resources. If an attacker exploits a memory leak, this could possible lead to Denial of Service.
-AWS recommends to shut down the client to release the resources and render it unusable.
-
-<b>Before</b>
+<html>
+  <body>
+    <p>By not releasing the <code>AmazonDynamoDbClient</code> you could run the risk of leaking resources. If an attacker exploits a memory leak, this could possible lead to Denial of Service. AWS recommends to shut down the client to release the resources and render it unusable.</p>
+    <br>
+    <b>Before</b>
 <pre>public void method() {
     AmazonDynamoDbClient ddb = AmazonDynamoDbClient.defaultClient();
-    //.....
+    // ...
 };</pre>
-<b>After</b>
+    <br>
+    <b>After</b>
 <pre>public void method() {
     AmazonDynamoDbClient ddb = AmazonDynamoDbClient.create();
-    //....
+    // ...
     ddb.<b>shutdown()</b>;
 }</pre>
-<h2>Resources</h2>
-<ul>
-    <li><a href="https://docs.amazonaws.cn/en_us/sdk-for-java/v1/developer-guide/creating-clients.html">AWS - Creating a client</a></li>
-    <li><a href="https://owasp.org/www-community/vulnerabilities/Unreleased_Resource">OWASP Unreleased Resource Vulnerability Reference</a></li>
-</ul>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://docs.amazonaws.cn/en_us/sdk-for-java/v1/developer-guide/creating-clients.html">AWS - Creating a client</a></li>
+      <li><a href="https://owasp.org/www-community/vulnerabilities/Unreleased_Resource">OWASP Unreleased Resource Vulnerability Reference</a></li>
+    </ul>
+  </body>
+</html>

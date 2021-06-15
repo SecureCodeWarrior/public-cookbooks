@@ -1,7 +1,7 @@
-id: da6f9770-2d98-41b7-b965-993e764a1588
+id: scw:aws:credentials-akia
 version: 8
 metadata:
-  name: 'Hardcoded Credentails: AWS Key'
+  name: 'Hardcoded Credentials: AWS Key'
   shortDescription: 'This string literal appears to contain AWS credentials. Such
     credentials should not be hardcoded. '
   level: warning

@@ -1,4 +1,4 @@
-id: d4380ce7-7c41-465d-a505-5ec57c0cf14e
+id: scw:aws:dynamodbclient-close
 version: 8
 metadata:
   name: Not releasing DynamoDbClient

@@ -1,4 +1,4 @@
-id: ad6e5082-fbfd-41bf-bfa8-60fbbabeb62d
+id: scw:aws:amazondynamodbclient-shutdown
 version: 8
 metadata:
   name: Not releasing AmazonDynamoDbClient

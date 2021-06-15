@@ -1,4 +1,4 @@
-id: 236f3ba5-e0b2-4244-9727-4fff843b1b16
+id: scw:aws:region-enum
 version: 8
 metadata:
   name: Use the Region enum

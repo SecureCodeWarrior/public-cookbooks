@@ -1,6 +1,16 @@
-
-
-It is recommended to only use <code>Region#of</code> if the region is not defined in the enum <code>software.amazon.awssdk.regions.Region</code>. Using the enum will give compile time errors if the region is not available.
-
-<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">Region newRegion = Region.of("us-east-1");</font></td></tr><tr><td><font color="gray">After:</font></td><td>Region newRegion = Region.US_EAST_1;</td></tr></table>
-<h3>Resources</h3><ul><li><a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html">AWS Region Selection - AWS SDK for Java</a></li></ul>
+<html>
+  <body>
+    <p>It is recommended to only use <code>Region#of</code> if the region is not defined in the enum <code>software.amazon.awssdk.regions.Region</code>. Using the enum will generate compile-time errors if the region is not available.</p>
+    <br>
+    <b>Before</b>
+<pre>Region newRegion = Region.<b>of("us-east-1")</b>;</pre>
+    <br>
+    <b>After</b>
+<pre>Region newRegion = Region.<b>US_EAST_1</b>;</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html">AWS Region Selection - AWS SDK for Java</a></li>
+    </ul>
+  </body>
+</html>
