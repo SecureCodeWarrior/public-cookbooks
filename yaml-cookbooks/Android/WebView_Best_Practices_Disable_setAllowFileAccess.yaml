@@ -1,4 +1,4 @@
-id: a0bd8dcf-e751-43c5-907c-8a82123c123b
+id: scw:android:disable-file-access
 version: 8
 metadata:
   name: 'Android WebView best practices: Disable setAllowFileAccess'
@@ -6,6 +6,7 @@ metadata:
   level: error
   scwCategory: ""
   enabled: false
+  comment: "Quickfix to be implemented"
 search:
   instanceCreation:
     not:

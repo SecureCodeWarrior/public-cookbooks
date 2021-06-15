@@ -1,7 +1,7 @@
-id: 7ba80c43-86e5-4b23-af0d-5bbd4ff0e1e9
+id: scw:android:disable-javascript
 version: 8
 metadata:
-  name: 'Android WebView best practices: Set mixed content mode'
+  name: 'Android WebView best practices: Disable JavaScript'
   shortDescription: WebView setting with security implications
   level: error
   scwCategory: ""
@@ -14,14 +14,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setMixedContentMode
+              name: setJavaScriptEnabled
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Set mixed content mode to MIXED_CONTENT_NEVER_ALLOW
+- name: Disable JavaScript
   actions:
   - addMethodCall:
-      name: getSettings().setMixedContentMode
+      name: getSettings().setJavaScriptEnabled
       arguments:
-      - android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW
+      - "false"
       position: first-available-spot

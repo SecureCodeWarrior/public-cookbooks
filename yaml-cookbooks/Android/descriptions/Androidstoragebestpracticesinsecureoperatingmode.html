@@ -1,30 +1,22 @@
-<h2>Abstract</h2>
-<p>Out of Android best practices and secure coding guidelines, recommendations were abstracted that state that sensitive data should be stored in a private location, inaccessible from other applications</p>
-<h2>Description</h2>
-<p>Developers must ensure that sensitive information is written to a private location which is inaccessible by other applications.
-One solution is to write data to the internal storage of the device instead of the external storage.<br/>
-The following code example shows how to create a file on the internal storage. A flag should be set to ensure that the file can only be accessed by the current application. To ensure good code quality it is recommended to use a meaningful constant for this flag instead of its raw value.</p>
-<table>
-    <tr>
-      <th>Before</th>
-      <th>After</th>
-    </tr>
-    <tr>
-      <td>
-        <pre>
-            SharedPreferences sharedPreferences =
-                    getSharedPreferences("customer_data", Context.MODE_WORLD_WRITEABLE);
-        </pre>
-      </td>
-      <td>
-        <pre>
-            SharedPreferences sharedPreferences =
-                    getSharedPreferences("customer_data", Context.MODE_PRIVATE);
-        </pre>
-      </td>
-    </tr> 
-  </table>
-  <h2>Resources</h2>
-  <ul>
-    <li><a href="https://developer.android.com/reference/android/content/Context#MODE_WORLD_READABLE">Android Documentation</a></li>
-  </ul>
+<html>
+  <body>
+    <p>The Android best practices and secure coding guidelines make recommendations stating sensitive data should be stored in a private location, inaccessible from other applications</p>
+    <br>
+    <p>Developers must ensure that sensitive information is written to a private location which is inaccessible by other applications. One solution is to write data to the internal storage of the device instead of the external storage.</p>
+    <br>
+    <p>The following code example shows how to create a file on the internal storage. A flag should be set to ensure that the file can only be accessed by the current application. To ensure good code quality it is recommended to use a meaningful constant for this flag instead of its raw value.</p>
+    <br>
+    <b>Before</b>
+<pre>SharedPreferences sharedPreferences =
+    getSharedPreferences("customer_data", Context.MODE_WORLD_WRITEABLE);</pre>
+    <br>
+    <b>After</b>
+<pre>SharedPreferences sharedPreferences =
+    getSharedPreferences("customer_data", Context.MODE_PRIVATE);</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://developer.android.com/reference/android/content/Context#MODE_WORLD_READABLE">Android Documentation: MODE_WORLD_READABLE</a></li>
+    </ul>
+</body>
+</html>

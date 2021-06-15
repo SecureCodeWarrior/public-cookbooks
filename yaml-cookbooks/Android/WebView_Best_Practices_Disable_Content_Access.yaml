@@ -1,10 +1,9 @@
-id: 17fed260-0137-4e26-8795-42e5b4eed9be
+id: scw:android:disable-content-access
 version: 8
 metadata:
-  name: 'Android WebView best practices: Disable JavaScript'
+  name: 'Android WebView best practices: Disable Content Access'
   shortDescription: WebView setting with security implications
   level: error
-  scwCategory: ""
   enabled: true
   descriptionFile: AndroidWebViewbestpractices.html
 search:
@@ -14,14 +13,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setJavaScriptEnabled
+              name: setAllowContentAccess
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Disable JavaScript
+- name: Disable content access
   actions:
   - addMethodCall:
-      name: getSettings().setJavaScriptEnabled
+      name: getSettings().setAllowContentAccess
       arguments:
       - "false"
       position: first-available-spot

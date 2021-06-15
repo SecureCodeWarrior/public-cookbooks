@@ -1,8 +1,8 @@
-id: 0b797d44-6fb2-46bc-bb52-94538281ab08
+id: scw:android:missing-mixed-content-mode
 version: 8
 metadata:
-  name: 'Android WebView best practices: Disable Geolocation'
-  shortDescription: WebView setting with privacy implications
+  name: 'Android WebView best practices: Set mixed content mode'
+  shortDescription: WebView setting with security implications
   level: error
   scwCategory: ""
   enabled: true
@@ -14,14 +14,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setGeolocationEnabled
+              name: setMixedContentMode
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Disable geolocation
+- name: Set mixed content mode to MIXED_CONTENT_NEVER_ALLOW
   actions:
   - addMethodCall:
-      name: getSettings().setGeolocationEnabled
+      name: getSettings().setMixedContentMode
       arguments:
-      - "false"
+      - android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW
       position: first-available-spot

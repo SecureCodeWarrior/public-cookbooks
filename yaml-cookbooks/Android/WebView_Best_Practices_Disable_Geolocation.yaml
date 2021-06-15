@@ -1,8 +1,8 @@
-id: 9813486e-031f-4861-93d4-60284e1fb253
+id: scw:android:disable-geolocation
 version: 8
 metadata:
-  name: 'Android WebView best practices: Disable File Access'
-  shortDescription: WebView setting with security implications
+  name: 'Android WebView best practices: Disable Geolocation'
+  shortDescription: WebView setting with privacy implications
   level: error
   scwCategory: ""
   enabled: true
@@ -14,14 +14,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setAllowFileAccess
+              name: setGeolocationEnabled
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Disable file access
+- name: Disable geolocation
   actions:
   - addMethodCall:
-      name: getSettings().setAllowFileAccess
+      name: getSettings().setGeolocationEnabled
       arguments:
       - "false"
       position: first-available-spot

@@ -1,9 +1,10 @@
-id: 553ccc99-54bc-4d45-8a29-503c29e45b98
+id: scw:android:disable-file-access
 version: 8
 metadata:
-  name: 'Android WebView best practices: Disable Content Access'
+  name: 'Android WebView best practices: Disable File Access'
   shortDescription: WebView setting with security implications
   level: error
+  scwCategory: ""
   enabled: true
   descriptionFile: AndroidWebViewbestpractices.html
 search:
@@ -13,14 +14,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setAllowContentAccess
+              name: setAllowFileAccess
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Disable content access
+- name: Disable file access
   actions:
   - addMethodCall:
-      name: getSettings().setAllowContentAccess
+      name: getSettings().setAllowFileAccess
       arguments:
       - "false"
       position: first-available-spot
