@@ -1,4 +1,4 @@
-id: 4b70352d-5a1f-4e76-858b-33843b510de8
+id: scw:sqli:prepared-statement
 version: 8
 metadata:
   name: sql injection - use a parameterized query
@@ -6,6 +6,7 @@ metadata:
   level: error
   scwCategory: ""
   enabled: true
+  comment: "Copy of other recipe?"
 search:
   methodcall:
     args:

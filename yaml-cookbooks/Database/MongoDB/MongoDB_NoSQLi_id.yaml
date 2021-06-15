@@ -1,4 +1,4 @@
-id: cefc4b61-488b-4b56-b6ec-6f50fb9c2638
+id: scw:db:mongo:id-injection
 version: 8
 metadata:
   name: 'MongoDB: _id NoSQL Injection'

@@ -1,4 +1,4 @@
-id: 3b474a4c-c3e2-4325-bc71-e6b1ba3e2543
+id: scw:guice:public-injected-fields
 version: 8
 metadata:
   name: Guice Injected Field Not Public

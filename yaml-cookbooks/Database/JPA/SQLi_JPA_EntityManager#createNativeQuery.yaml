@@ -1,4 +1,4 @@
-id: 6e367e8f-c966-4f78-92db-53780dae8a76
+id: scw:db:jpa:createnativequery
 version: 8
 metadata:
   name: 'Injection - SQL Injection in JPA: EntityManager#createNativeQuery'
