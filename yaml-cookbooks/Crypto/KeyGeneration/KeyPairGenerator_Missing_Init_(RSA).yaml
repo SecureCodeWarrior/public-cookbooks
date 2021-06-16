@@ -1,0 +1,31 @@
+id: scw:crypto:keypairgen-missing-init
+version: 8
+metadata:
+  name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently
+    long key sizes: keyPairGenerator'
+  shortDescription: Could lead to brute forcing or other cryptographic weakness
+  level: error
+  newCodeOnly: false
+  enabled: true
+  descriptionFile: descriptions/Key_sizes.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: RSA
+    not:
+      followedBy:
+        methodcall:
+          name: initialize
+    name: getInstance
+    declaration:
+      type: java.security.KeyPairGenerator
+availableFixes:
+- name: Initialize key size to 2048 bits
+  actions:
+  - addMethodCall:
+      name: initialize
+      arguments:
+      - 2048
+      position: first-available-spot

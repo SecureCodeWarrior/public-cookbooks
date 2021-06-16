@@ -1,0 +1,25 @@
+id: scw:crypto:signature-non-standard-algos
+version: 8
+metadata:
+  name: 'Crypto: Signature: Non Standard Hashing Algorithm'
+  shortDescription: This hashing algorithm is not recommended for cryptographic use
+  level: warning
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+  descriptionFile: descriptions/Insecure_signature_algorithm.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: SHA512withDSA|SHA512withDES|SHA512withECDSA
+    name: getInstance
+    declaration:
+      type: java.security.Signature
+availableFixes:
+- name: Use SHA512withRSA
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("SHA512withRSA")'

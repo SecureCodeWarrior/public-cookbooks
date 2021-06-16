@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe to use <b>RSA</b> with the correct mode and padding for asymmetric algorithms in the <code>Cipher</code> class.</p>
+    <br>
+    <p id="impact_and_desired_state">It is not recommended to use cryptographic algorithms and modes with known problems. For asymmetric encryption, <b>RSA</b> is the recommended algorithm. It should be used with Electronic CodeBook Mode and correctly configured OAEP padding.</p>
+    <br>
+    <b>Before</b>
+<pre>Cipher cipher = Cipher.getInstance("<b>RSA/ECB/PKCS1Padding</b>");</pre>
+    <b>After</b>
+<pre>Cipher cipher = Cipher.getInstance("<b>RSA/ECB/OAEPWithSHA-256AndMGF1Padding</b>");</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html">Oracle Java 11 SE Docs - Cipher Class</a></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+id: scw:crypto:keygen-des
+version: 8
+metadata:
+  name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use appropriate
+    secret key generation algorithm: DES family'
+  shortDescription: Could lead to brute forcing or other cryptographic weakness
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+  descriptionFile: descriptions/Insecure_key_generation_algorithm.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: DES|DESede|RC2|Blowfish
+    name: getInstance
+    declaration:
+      type: javax.crypto.KeyGenerator
+availableFixes:
+- name: Use AES
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("AES")'

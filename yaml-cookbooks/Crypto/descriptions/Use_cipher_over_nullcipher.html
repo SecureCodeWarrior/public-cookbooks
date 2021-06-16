@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <p id="abstract">Out of best practices and android coding guidelines, recommendations were abstracted which state that <code>NullCipher</code> should never be used.</p>
+    <br>
+    <p id="impact_and_desired_state">The <code>NullCipher</code> class is a class that provides an "identity cipher" &mdash; one that does not tranform the plaintext.
+      As a consequence, the ciphertext is identical to the plaintext. This is highly insecure and should never be used. Use <code>Cipher</code> with recommended algorithm, mode and padding instead. Symmetric encryption should be used for bulk encryption, i.e. to store sensitive data securely or to encrypt communication after a secure channel has been established. The recommended algorithm for local storage is AES, used in GCM mode with no padding.</p>
+    <br>
+    <b>Correct code example</b>
+<pre>public static byte[] encryptForLocalStorage(byte[] plainText, byte[] IV, Key key) throws Exception {
+    Cipher c = <b>Cipher</b>.getInstance(<b>"AES/GCM/NoPadding"</b>);
+    GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH * 8, IV);
+    c.init(Cipher.ENCRYPT_MODE, key, gcmSpec);
+    return c.doFinal(plainText);
+}</pre>
+    <br>
+    <b>References</b>
+    <ul>
+      <li><a href="http://docs.oracle.com/javase/7/docs/api/javax/crypto/NullCipher.html">Oracle JavaDoc: NullCipher</a></li>
+      <li><a href="https://docs.oracle.com/javase/7/docs/api/java/security/KeyPairGenerator.html">Oracle JavaDoc: Cipher</a></li>
+      <li><a href="https://www.owasp.org/index.php/Guide_to_Cryptography">OWASP Guide to Cryptography</a></li>
+    </ul>
+  </body>
+</html>

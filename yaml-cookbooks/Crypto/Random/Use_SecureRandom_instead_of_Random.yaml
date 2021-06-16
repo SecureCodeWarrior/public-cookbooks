@@ -1,0 +1,21 @@
+id: scw:crypto:secure-random
+version: 8
+metadata:
+  name: Use SecureRandom instead of Random
+  shortDescription: Using Random can lead to predictable randomness
+  level: error
+  scwCategory: crypto
+  enabled: true
+  descriptionFile: descriptions/UseSecureRandominsteadofRandom.html
+search:
+  instanceCreation:
+    type:
+      reference: java.util.Random
+      checkInheritance: false
+availableFixes:
+- name: Use SecureRandom instead
+  actions:
+  - rewrite:
+      to: new java.security.SecureRandom()
+  - modifyAssignedVariable:
+      type: java.security.SecureRandom

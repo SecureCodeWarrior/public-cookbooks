@@ -1,0 +1,25 @@
+id: scw:crypto:keyagreement-not-recommended
+version: 8
+metadata:
+  name: 'Crypto: KeyAgreement: Guide on Approved Cryptographic Algorithm'
+  shortDescription: This cryptographic algorithm is not recommended
+  level: marked_information
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+  descriptionFile: descriptions/Insecure_key_agreement_algorithm.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: ^((?!(DiffieHellman|EC$|RSA|ECMQV|ECDH$)).)*
+    name: getInstance
+    declaration:
+      type: javax.crypto.KeyAgreement
+availableFixes:
+- name: Use ECDH
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("ECDH")'

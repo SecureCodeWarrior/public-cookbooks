@@ -1,0 +1,21 @@
+id: scw:crypto:nullcipher
+version: 8
+metadata:
+  name: 'Data Protection - Secure Data Storage: Avoid data exposure: Use Cipher instead
+    of NullCipher'
+  shortDescription: Could lead to data exposure
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+  descriptionFile: descriptions/Use_Cipher_over_NullCipher.html
+search:
+  instanceCreation:
+    type: javax.crypto.NullCipher
+availableFixes:
+- name: Use Cipher with the recommended parameters
+  actions:
+  - rewrite:
+      to: Cipher.getInstance("AES/GCM/NoPadding")
+  - modifyAssignedVariable:
+      type: javax.crypto.Cipher

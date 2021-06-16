@@ -1,0 +1,10 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe to use AES for secret key generation.</p>
+    <br>
+    <p id="impact_and_desired_state">Symmetric encryption is faster and can handle more data than asymmetric encryption. It is used to store sensitive data securely or to encrypt communication after a secure channel has been established. It does not provide authenticity on top of confidentiality like asymmetric encryption does. For symmetric encryption, AES is the recommended algorithm. That means that secret keys should be generate using the AES algorithm.</p>
+    <br>
+    <b>Correct code example</b>
+<pre>KeyGenerator.getInstance("<b>AES</b>");</pre>
+  </body>
+</html>

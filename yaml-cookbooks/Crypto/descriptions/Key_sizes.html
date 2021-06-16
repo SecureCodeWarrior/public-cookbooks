@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe to use sufficiently large cryptographic keys.</p>
+    <br>
+    <p id="impact_and_desired_state">It is not recommended to use short keys as this is less secure. The recommended key size depends on the algorithm. In general, it is advised to use the maximum size the API allows by default.</p>
+    <br>
+    <b>Correct code example secret key size</b>
+<pre>keyGenerator.init(<b>128</b>);</pre>
+    <b>Correct code example keypair size</b>
+<pre>keypairGenerator.initialize(<b>2048</b>);</pre>
+  </body>
+</html>

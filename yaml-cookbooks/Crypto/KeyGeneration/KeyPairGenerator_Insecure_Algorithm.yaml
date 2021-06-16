@@ -1,0 +1,24 @@
+id: scw:crypto:keypairgen-insecure-algos
+version: 8
+metadata:
+  name: 'Crypto: KeyPair Generation: Insecure Cryptographic Algorithm'
+  shortDescription: This cryptographic algorithm is insecure
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+  descriptionFile: descriptions/Insecure_key_pair_generation_algorithm.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: DiffieHellman
+    name: getInstance
+    declaration:
+      type: java.security.KeyPairGenerator
+availableFixes:
+- name: Use RSA
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("RSA")'

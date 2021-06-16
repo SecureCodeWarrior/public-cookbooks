@@ -1,0 +1,10 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe to use <b>EDCH</b> for <code>KeyAgreements</code>.</p>
+    <br>
+    <p id="impact_and_desired_state">It is not recommended to use cryptographic algorithms and modes with known problems. For <code>KeyAgreements</code> <b>ECDH</b> is recommended.</p>
+    <br>
+    <b>Correct code example</b>
+<pre>KeyAgreement.getInstance("<b>ECDH</b>");</pre>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe to use AES with GCM mode and no padding for symmetric algorithms.</p>
+    <br>
+    <p id="impact_and_desired_state">Symmetric encryption should be used for bulk encryption, i.e. to store sensitive data securely or to encrypt communication after a secure channel has been established. The recommended algorithm for local storage is AES, used in GCM mode with no padding.</p>
+    <br>
+    <b>Correct code example</b>
+<pre>public static byte[] encryptForLocalStorage(byte[] plainText, byte[] IV, Key key) throws Exception {
+    Cipher c = Cipher.getInstance(<b>"AES/GCM/NoPadding"</b>);
+    GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH * 8, IV);
+    c.init(Cipher.ENCRYPT_MODE, key, gcmSpec);
+    return c.doFinal(plainText);
+}</pre>
+  </body>
+</html>

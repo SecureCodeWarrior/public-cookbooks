@@ -1,0 +1,24 @@
+id: scw:crypto:keypairgen-not-recommended-algos
+version: 8
+metadata:
+  name: 'Crypto: KeyPair Generation: Approved Standard Cryptographic Algorithm'
+  shortDescription: This cryptographic algorithm is not recommended
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography
+  enabled: true
+  descriptionFile: descriptions/Insecure_key_pair_generation_algorithm.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value: '^((?!(DiffieHellman|EC|RSA$|DSA)).)*'
+    name: getInstance
+    declaration:
+      type: java.security.KeyPairGenerator
+availableFixes:
+- name: Use RSA
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}("RSA")'

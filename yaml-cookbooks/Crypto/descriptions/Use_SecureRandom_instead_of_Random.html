@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <p id="abstract">Secure coding practices prescribe that the use of <code>java.util.Random</code> should be avoided. <code>java.security.SecureRandom</code> should be used instead.</p>
+    <br>
+    <p id="impact_and_desired_state">Using <code>Random</code> can lead to predictable randomness, which is undesirable in the case of:</p>
+    <ul>
+      <li>Generated secrets</li>
+      <li>CSRF Tokens</li>
+      <li>Login and password reset tokens</li>
+    </ul>
+    <br>
+    <b>Before</b>
+<pre>Random rnd = new Random();</pre>
+    <br>
+    <b>After</b>
+<pre>SecureRandom rnd = new SecureRandom();</pre>
+  </body>
+</html>

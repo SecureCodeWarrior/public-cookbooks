@@ -1,0 +1,25 @@
+id: scw:crypto:keygen-short-key
+version: 8
+metadata:
+  name: 'Data Protection - Cryptography: Avoid cryptographic weakness: Use sufficiently
+    long key sizes: keyGenerator bad value'
+  shortDescription: Could lead to brute forcing or other cryptographic weakness
+  level: error
+  newCodeOnly: false
+  scwCategory: broken_cryptography:use_of_short_encryption_keys
+  enabled: true
+  descriptionFile: descriptions/Key_sizes.html
+search:
+  methodcall:
+    args:
+      1:
+        integerValue:
+          lessThan: 128
+    name: init
+    declaration:
+      type: javax.crypto.KeyGenerator
+availableFixes:
+- name: Initialize key size to 128
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}(128)'
