@@ -1,0 +1,21 @@
+id: scw:spring:field-injection
+version: 8
+metadata:
+  name: Field injection is not recommended
+  shortDescription: Field injection is not recommended. A class that takes a required
+    dependency as a constructor argument can only be instantiated if that argument
+    is provided (you should have a guard clause to make sure the argument is not null.)
+    A constructor therefore enforces the dependency requirement whether or not you're
+    using Spring, making it container-agnostic.
+  level: error
+  scwCategory: ""
+  enabled: true
+  comment: ""
+search:
+  field:
+    anyOf:
+    - annotation:
+        type: org.springframework.beans.factory.annotation.Value
+    - annotation:
+        type: org.springframework.beans.factory.annotation.Autowired
+availableFixes: []

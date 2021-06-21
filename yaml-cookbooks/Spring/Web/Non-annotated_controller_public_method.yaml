@@ -1,10 +1,10 @@
-id: 90ebb983-bc3a-4bce-b0a4-448b084f84ca
+id: scw:spring:web:controller-public-method
 version: 8
 metadata:
   name: Non-annotated controller public method
   shortDescription: Public methods within a controller class should be treated as
     request handlers, therefore should be annotated as such. If you really believe
-    this method should not be exposed as a Rest endpoint, please consider extrating
+    this method should not be exposed as a Rest endpoint, please consider extracting
     it into an external Component class and call it from inside this controller.
   level: error
   scwCategory: ""

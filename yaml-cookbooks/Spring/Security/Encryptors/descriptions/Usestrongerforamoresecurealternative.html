@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <p id="abstract">The <code>Encryptor.standard()</code> is not an authenticated mode of encryption. It does not guarantee the authenticity of the data. <code>Encryptors.stronger()</code> provides a much more secure alternative.</p>
+    <br>
+    <b>Before</b>
+<pre>Encryptors.standard(password, salt);</pre>
+    <b>After</b>
+<pre>Encryptors.stronger(password, salt);</pre>
+    <br>
+    <b>References</b>
+    <ul>
+      <li><a href="https://docs.spring.io/spring-security/site/docs/4.2.20.RELEASE/apidocs/org/springframework/security/crypto/encrypt/Encryptors.html">Spring security API docs</a></li>
+      <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#spring-security-crypto-encryption">Spring security crypto</a></li>
+    </ul>
+  </body>
+</html>

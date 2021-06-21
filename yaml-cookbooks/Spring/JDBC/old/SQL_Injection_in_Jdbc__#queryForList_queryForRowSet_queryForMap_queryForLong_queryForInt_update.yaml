@@ -1,0 +1,29 @@
+id: scw:spring:jdbc:queryForList|queryForRowSet|queryForMap|queryForLong|queryForInt|update
+version: 8
+metadata:
+  name: 'Injection - SQL Injection in Jdbc: #queryForList|queryForRowSet|queryForMap|queryForLong|queryForInt|update'
+  shortDescription: Avoid SQLi by using parameterized queries, instead of string concatenation
+    with untrusted input
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: Injection-SQLInjectioninJdbcOperationsqueryForListqueryForRowSetqueryForMapqueryForLongqueryForIntupdate.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name:
+      matches: queryForList|queryForRowSet|queryForMap|queryForLong|queryForInt|update
+    declaration:
+      type: org.springframework.jdbc.core.JdbcOperations
+availableFixes:
+- name: Use parameterized queries
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        array:
+          type: java.lang.String[]
+          atArgumentPosition: 2

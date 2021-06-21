@@ -1,0 +1,26 @@
+id: scw:spring:security:stricthttpfirewall-slash
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
+    URL encoded slash'
+  shortDescription: Rejecting the use of a URL encoded slash is more secure
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/RejectURLEncodedRejectURLencodedSlash.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setAllowUrlEncodedSlash
+    anyOf:
+    - type: org.springframework.security.web.firewall.DefaultHttpFirewall
+    - type: org.springframework.security.web.firewall.StrictHttpFirewall
+availableFixes:
+- name: Set setAllowUrlEncodedSlash to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

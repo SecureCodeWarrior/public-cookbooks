@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <p id="abstract">When the XML processor is not configured correctly to handle references and entities, it may be susceptible to so-called XML external entities (XXE) attacks.</p>
+    <br>
+    <p id="impact_and_desired_state">The setting <code>.setProcessExternalEntities(true)</code> allows the processing of XML entities. This flag will also set <code>.setSupportDtd()</code> to true. Safeguard the application from XML External Entity injection attacks (XXE) with the setting <code>.setProcessExternalEntities(false)</code>, which will prevent the resolving of external entities.</p>
+    <br>
+    <b>Before</b>
+<pre>sourceHttpMessageConverter.setProcessExternalEntities(<b>true</b>);</pre>
+    <br>
+    <b>After</b>
+<pre>sourceHttpMessageConverter.setProcessExternalEntities(<b>false</b>);</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#xml-external-entity-prevention-cheat-sheet">OWASP Cheatsheet - XML External Entity Prevention</a></li>
+    </ul>
+  </body>
+</html>

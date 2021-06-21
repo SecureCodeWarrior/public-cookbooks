@@ -1,4 +1,4 @@
-id: 84c34f9a-900c-451b-b2c2-815d9dc0a63d
+id: scw:spring:web:requestmapping-http-method
 version: 8
 metadata:
   name: Specify RequestMapping method
@@ -6,7 +6,7 @@ metadata:
   level: error
   scwCategory: ""
   enabled: true
-  descriptionFile: SpecifyRequestMappingmethod.html
+  descriptionFile: descriptions/SpecifyRequestMappingmethod.html
 search:
   annotation:
     not:

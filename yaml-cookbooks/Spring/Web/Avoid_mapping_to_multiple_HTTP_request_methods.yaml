@@ -1,4 +1,4 @@
-id: 3c94440c-603a-469e-854f-71a57a54f888
+id: scw:spring:web:multiple-http-mappings
 version: 8
 metadata:
   name: Avoid mapping to multiple HTTP request methods

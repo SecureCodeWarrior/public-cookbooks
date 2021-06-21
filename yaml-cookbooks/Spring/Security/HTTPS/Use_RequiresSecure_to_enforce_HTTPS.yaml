@@ -1,0 +1,19 @@
+id: scw:spring:security:RequiresInsecure
+version: 8
+metadata:
+  name: 'Secure Transport: use RequiresSecure to enforce HTTPS'
+  shortDescription: Serve requests over HTTPS instead of unencrypted HTTP
+  level: error
+  scwCategory: insufficient_transport_layer_protection
+  enabled: true
+  descriptionFile: descriptions/SecureTransportuseRequiresSecuretoenforceHTTPS.html
+search:
+  methodcall:
+    name: requiresInsecure
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer.RequiresChannelUrl
+availableFixes:
+- name: Set to requiresSecure()
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}.requiresSecure()'

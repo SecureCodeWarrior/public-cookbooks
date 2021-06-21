@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <p id="abstract">Cookies should be configured securely using the http-only and secure settings.</p>
+    <br>
+    <p id="impact_and_desired_state">Session cookies are frequently the target of Cross-Site Scripting (XSS) attacks. By setting the <code>setUseHttpOnlyCookie()</code> flag to true (which is also the default setting), the cookie cannot be accessed by client-side scripts.</p>
+    <br>
+    <b>Before</b>
+<pre>cookie.setUseHttpOnlyCookie(false);</pre>
+    <br>
+    <b>After</b>
+<pre>cookie.setUseHttpOnlyCookie(true);</pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#httponly-attribute">OWASP - Session Management Cheat Sheet - HttpOnly</a></li>
+    </ul>
+  </body>
+</html>

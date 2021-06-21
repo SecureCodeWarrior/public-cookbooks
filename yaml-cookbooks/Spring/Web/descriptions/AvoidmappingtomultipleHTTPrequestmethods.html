@@ -1,6 +1,15 @@
-
-
-It's considered best practices to map one HTTP method per method. This improves readability and could make refactoring easier.
-
-<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">@RequestMapping(path = "/doSomething", method = { RequestMapping.GET, RequestMapping.POST })</font></td></tr><tr><td><font color="gray">After:</font></td><td>@GetMapping(path = "/doSomething")</td></tr></table>
-<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-requestmapping">Spring framework documentation - Request Mapping</a></li></ul>
+<html>
+  <body>
+    <p id="abstract">It's considered best practices to map one HTTP method per method. This improves readability and could make refactoring easier.</p>
+    <br>
+    <b>Before</b>
+<pre>@RequestMapping(path = "/doSomething", method = { RequestMapping.GET, RequestMapping.POST })</pre>
+    <b>After</b>
+<pre>@GetMapping(path = "/doSomething")</pre>
+    <br>
+    <b>References</b>
+    <ul>
+      <li><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-requestmapping">Spring framework documentation - Request Mapping</a></li>
+    </ul>
+  </body>
+</html>

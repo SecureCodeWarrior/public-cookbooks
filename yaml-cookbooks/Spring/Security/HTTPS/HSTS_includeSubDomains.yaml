@@ -1,0 +1,24 @@
+id: scw:spring:security:hsts-includeSubDomains
+version: 8
+metadata:
+  name: 'Security Misconfiguration: HSTS - includeSubDomains'
+  shortDescription: Include subdomains in the HSTS domain
+  level: error
+  scwCategory: misconfig
+  enabled: true
+  descriptionFile: descriptions/SecurityMisconfigurationHSTS-includeSubDomains.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name: includeSubDomains
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.HstsConfig
+availableFixes:
+- name: Set includeSubDomains to true
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "true"

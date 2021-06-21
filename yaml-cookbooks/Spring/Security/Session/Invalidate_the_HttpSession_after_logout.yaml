@@ -1,0 +1,25 @@
+id: scw:spring:security:session:invalidate
+version: 8
+metadata:
+  name: 'Session Configuration: Invalidate the HttpSession after logout'
+  shortDescription: Delete all sessions after logout
+  level: warning
+  scwCategory: session
+  enabled: true
+  comment: ""
+  descriptionFile: descriptions/SessionConfigurationInvalidatetheHttpSessionafterlogout.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name: invalidateHttpSession
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.LogoutConfigurer
+availableFixes:
+- name: Set invalidateHttpSession to true
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "true"

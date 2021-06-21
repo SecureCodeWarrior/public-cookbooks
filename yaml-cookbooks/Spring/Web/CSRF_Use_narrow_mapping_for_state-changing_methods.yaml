@@ -1,0 +1,49 @@
+id: scw:spring:web:csrf:state-changing-methods-mapping
+version: 8
+metadata:
+  name: 'Session management: Avoid CSRF: Use narrow mapping for state-changing methods'
+  shortDescription: Could lead to CSRF
+  level: error
+  newCodeOnly: false
+  scwCategory: session
+  enabled: true
+  descriptionFile: descriptions/SessionmanagementAvoidCSRFUsenarrowmappingforstate-changingmethods.html
+search:
+  annotation:
+    in:
+      typeDeclaration:
+        with:
+          annotation:
+            type: org.springframework.stereotype.Controller
+    type: org.springframework.web.bind.annotation.RequestMapping
+availableFixes:
+- name: Use @GetMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.GetMapping({{{ elementValuePairs
+        }}})'
+- name: Use @PostMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PostMapping({{{ elementValuePairs
+        }}})'
+- name: Use @PutMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PutMapping({{{ elementValuePairs
+        }}})'
+- name: Use @DeleteMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.DeleteMapping({{{ elementValuePairs
+        }}})'
+- name: Use @PatchMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.PatchMapping({{{ elementValuePairs
+        }}})'
+- name: Use @GetMapping
+  actions:
+  - rewrite:
+      to: '@org.springframework.web.bind.annotation.GetMapping({{{ elementValuePairs
+        }}})'

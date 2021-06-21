@@ -1,0 +1,23 @@
+<html>
+<body>
+<p id="abstract">Use <code>requiresSecure()</code> to enforce HTTPS connection</p>
+<br>
+<p id="impact_and_desired_state">Sensitive data should be encrypted at all times, including in transit and at rest. HTTPS links are a synonym of web page authenticity, hence its lack increases vulnerability.</p>
+<br>
+<b>Before</b>
+<pre>@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http.requiresChannel().anyRequest();
+}</pre>
+<b>After</b>
+<pre>@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http.requiresChannel().anyRequest()<b>.requiresSecure()</b>;
+}</pre>
+<br>
+<b>References</b>
+<ul>
+    <li><a href="https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/reference/html/howto-security.html">Spring Boot Reference Guide</a></li>
+</ul>
+</body>
+</html>

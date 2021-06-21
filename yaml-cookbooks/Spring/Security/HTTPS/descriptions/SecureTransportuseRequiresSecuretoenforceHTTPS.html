@@ -1,0 +1,16 @@
+<html>
+<body>
+<p id="abstract">For security reasons it is recommended to serve requests over HTTPS, instead of unencrypted HTTP.</p>
+<br>
+<b>Before</b>
+<pre>http.requiresChannel().anyRequest().requiresInsecure();</pre>
+<b>After</b>
+<pre>http.requiresChannel().anyRequest().requiresSecure();</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-http-redirect">Spring Security docs - Redirect to HTTPS</a></li>
+  <li><a href="https://www.baeldung.com/spring-channel-security-https">Baeldung - Spring Channel Security HTTPS</a></li>
+</ul>
+</body>
+</html>

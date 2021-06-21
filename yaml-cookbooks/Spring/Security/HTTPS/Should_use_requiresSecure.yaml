@@ -1,0 +1,36 @@
+id: scw:spring:security:RequiresSecure-missing
+version: 8
+metadata:
+  name: Should use requiresSecure
+  shortDescription: Use of HTTP instead of HTTPS is insecure
+  level: error
+  scwCategory: insufficient_transport_layer_protection
+  enabled: true
+  descriptionFile: descriptions/DonotacceptanythingovernonHTTPSconnections.html
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          name: requiresSecure
+    in:
+      method:
+        in:
+          typeDeclaration:
+            super:
+              name: WebSecurityConfigurerAdapter
+        name: configure
+        parameters:
+          1:
+            type: HttpSecurity
+    type:
+      reference:
+        matches: org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer<.*>.ChannelRequestMatcherRegistry
+      checkInheritance: true
+availableFixes:
+- name: Append requiresSecure method call
+  actions:
+  - addMethodCall:
+      name: requiresSecure
+      position: first-available-spot
+      useMethodChaining: true

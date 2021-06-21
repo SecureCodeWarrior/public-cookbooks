@@ -1,0 +1,25 @@
+id: scw:spring:xml:xxe-Jaxb2RootElementHttpMessageConverter-setProcessExternalEntities
+version: 8
+metadata:
+  name: 'Injection: XXE: Jaxb2RootElementHttpMessageConverter#setProcessExternalEntities
+    set to true'
+  shortDescription: Prevent XXE by disabling the processing of External Entities
+  level: error
+  scwCategory: injection:xml
+  cweCategory: 611
+  enabled: true
+  descriptionFile: descriptions/InjectionXXEJaxb2RootElementHttpMessageConvertersetProcessExternalEntitiessettotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setProcessExternalEntities
+    type: org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter
+availableFixes:
+- name: Set setProcessExternalEntities to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">Disallowing a URL encoded period ("%2E") in the URL is more secure, as they are frequently used to bypass security constraints. It could f.e. facilitate Directory Traversal Attacks. Spring Security by default sets <code>StrictHttpFirewall#setAllowUrlEncodedPeriod</code> to false.</p>
+<br>
+<b>Before</b>
+<pre>firewall.setAllowUrlEncodedPeriod(<b>true</b>);</pre>
+<b>After</b>
+<pre>firewall.setAllowUrlEncodedPeriod(<b>false</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/StrictHttpFirewall.html#setAllowUrlEncodedPeriod-boolean--">Spring docs API - StrictHttpFirewall#setAllowUrlEncodedPeriod</a></li>
+</ul>
+</body>
+</html>

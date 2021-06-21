@@ -1,0 +1,25 @@
+id: scw:spring:security:stricthttpfirewall-percent
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
+    URL encoded percent'
+  shortDescription: Rejecting the use of a URL encoded percent in the URL is more
+    secure
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/RejectURLEncodedPercent.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setAllowUrlEncodedPercent
+    type: org.springframework.security.web.firewall.StrictHttpFirewall
+availableFixes:
+- name: Set setAllowUrlEncodedPercent to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

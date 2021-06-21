@@ -1,4 +1,4 @@
-id: 3f71743b-011d-43d1-970b-a2daceeba178
+id: scw:spring:web:request-handler-param-annotation
 version: 8
 metadata:
   name: Missing parameter annotation in request handler

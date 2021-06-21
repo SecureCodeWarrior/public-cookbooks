@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <p id="abstract">Cookies should be configured securely using the http-only and secure settings.</p>
+    <br>
+    <p id="impact_and_desired_state">Using <code>setSecure(true)</code> ensures the cookie is only sent over HTTPS. Otherwise, when using the default setting, the cookie will be sent over an unencrypted HTTP connection. This enables attackers to sniff the contents of the cookie, possibly leading to disclosure of the session ID's via a Man-in-the-Middle attack.</p>
+    <br>
+    <p>Using <code>setHttpOnly(true)</code>, can only be accessed through the HTTP protocol, protecting it from client-side scripts. Cookies are frequently the target of Cross-Site Scripting (XSS) attacks. Setting these flags will mitigate many  XSS attack vectors.</p>
+    <br>
+    <b>Before</b>
+<pre>Cookie cookie = new Cookie("name", "value");</pre>
+    <br>
+    <b>After</b>
+<pre>Cookie cookie = new Cookie("name", "value");
+<b>cookie.setSecure(true);
+cookie.setHttpOnly(true);</b></pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#secure-attribute">OWASP - Session Management Cheat Sheet - Secure</a></li>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#httponly-attribute">OWASP - Session Management Cheat Sheet - HttpOnly</a></li>
+    </ul>
+  </body>
+</html>

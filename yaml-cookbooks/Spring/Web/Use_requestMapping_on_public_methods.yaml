@@ -1,4 +1,4 @@
-id: 8c909b72-602c-41e4-af4c-eb8b86d04f64
+id: scw:spring:web:requestmapping-public-methods
 version: 8
 metadata:
   name: Use requestMapping on public methods
@@ -6,7 +6,7 @@ metadata:
   level: warning
   scwCategory: ""
   enabled: true
-  descriptionFile: UserequestMappingonpublicmethods.html
+  descriptionFile: descriptions/UserequestMappingonpublicmethods.html
 search:
   annotation:
     owner:

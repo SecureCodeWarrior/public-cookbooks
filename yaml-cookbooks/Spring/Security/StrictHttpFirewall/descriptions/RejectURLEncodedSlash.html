@@ -1,0 +1,16 @@
+<html>
+<body>
+<p id="abstract">Disallowing a URL encoded slash ("%2F") in the URL is more secure, as they are frequently used to bypass security constraints. Spring Security by default sets <code>setAllowUrlEncodedSlash</code> to false.</p>
+<br>
+<b>Before</b>
+<pre>firewall.setAllowUrlEncodedSlash(<b>true</b>);</pre>
+<b>After</b>
+<pre>firewall.setAllowUrlEncodedSlash(<b>false</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/DefaultHttpFirewall.html#setAllowUrlEncodedSlash-boolean-">Spring docs API - DefaultHttpFirewall#setAllowUrlEncodedSlash</a></li>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/StrictHttpFirewall.html#setAllowUrlEncodedSlash-boolean-">Spring docs API - StrictHttpFirewall#setAllowUrlEncodedSlash</a></li>
+</ul>
+</body>
+</html>

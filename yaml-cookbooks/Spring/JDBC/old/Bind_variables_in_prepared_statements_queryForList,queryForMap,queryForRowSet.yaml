@@ -1,0 +1,31 @@
+id: scw:spring:jdbc:queryForList-queryForMap-queryForRowSet
+version: 8
+metadata:
+  name: 'Input Validation: Avoid JDBC Injection: Bind variables in prepared statements:
+    queryForList,queryForMap,queryForRowSet'
+  shortDescription: Could lead to JDBC Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  descriptionFile: InputValidationAvoidJDBCInjectionBindvariablesinpreparedstatements.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    argCount: 1
+    name:
+      matches: queryForList|queryForMap|queryForRowSet
+    declaration:
+      type: org.springframework.jdbc.core.JdbcOperations
+availableFixes:
+- name: Use parameterized queries
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        array:
+          type: java.lang.String[]
+          atArgumentPosition: 2

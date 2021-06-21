@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">Disallowing a backslash or a URL encoded backslash ("%5C") in the URL is more secure, as they are frequently used in exploits. Spring Security by default sets <code>StrictHttpFirewall#setAllowBackSlash</code> to false.</p>
+<br>
+<b>Before</b>
+<pre>firewall.setAllowBackSlash(<b>true</b>);</pre>
+<b>After</b>
+<pre>firewall.setAllowBackSlash(<b>false</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/StrictHttpFirewall.html#setAllowBackSlash-boolean-">Spring docs API - StrictHttpFirewall#setAllowBackSlash</a></li>
+</ul>
+</body>
+</html>

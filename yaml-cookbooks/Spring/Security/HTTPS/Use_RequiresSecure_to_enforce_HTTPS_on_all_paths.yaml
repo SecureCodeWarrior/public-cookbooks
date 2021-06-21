@@ -1,0 +1,28 @@
+id: scw:spring:security:RequiresSecure-allpaths
+version: 8
+metadata:
+  name: 'Secure Transport: use RequiresSecure to enforce HTTPS on all paths'
+  shortDescription: Enforce HTTPS on all requests, not just on a selected number
+  level: warning
+  scwCategory: insufficient_transport_layer_protection
+  enabled: true
+  descriptionFile: descriptions/SecureTransportuseRequiresSecureonallpaths.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+    followedBy:
+      methodcall:
+        name: requiresSecure
+    name: antMatchers
+    declaration:
+      type: org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry
+    "on":
+      methodcall:
+        name: requiresChannel
+availableFixes:
+- name: Apply requiresChannel to all paths
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}'

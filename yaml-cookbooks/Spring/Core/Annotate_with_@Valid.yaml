@@ -1,0 +1,33 @@
+id: scw:spring:valid-args
+version: 8
+metadata:
+  name: Annotate with @Valid
+  shortDescription: You can enforce validation against the arguments passed to this
+    function
+  level: info
+  scwCategory: ""
+  enabled: true
+search:
+  parameter:
+    not:
+      type: java.lang.Throwable
+    in:
+      method:
+        in:
+          typeDeclaration:
+            with:
+              anyOf:
+              - annotation:
+                  type: org.springframework.stereotype.Service
+              - annotation:
+                  type: org.springframework.stereotype.Component
+        modifier: public
+        constructor: false
+    without:
+      annotation:
+        type: javax.validation.Valid
+availableFixes:
+- name: Add @Valid annotation
+  actions:
+  - rewrite:
+      to: '@javax.validation.Valid {{{annotations}}} {{{type}}} {{name}}'

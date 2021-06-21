@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <p id="abstract">Spring Security by default provides protection against Cross-Site Request Forgery (CSRF) attacks. Disabling it would put the application at risk.</p>
+    <br>
+    <b>Before</b>
+<pre>http.csrf().disable();</pre>
+    <b>After</b>
+<pre>http.csrf();</pre>
+    <br>
+    <b>References</b>
+    <ul>
+      <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-csrf-using">Spring Security docs - CSRF protection</a></li>
+      <li><a href="https://www.baeldung.com/spring-security-csrf">Baeldung - Spring Security CSRF</a></li>
+    </ul>
+  </body>
+</html>

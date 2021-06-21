@@ -1,0 +1,41 @@
+id: scw:spring:jdbc:jdbcoperations-other
+version: 8
+metadata:
+  name: 'Input Validation: Avoid JDBC Injection: Bind variables in
+    prepared statements'
+  shortDescription: Could lead to SQL Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  comment: Any method in JdbcOperations starting with a string is vulnerable to SQLi.
+    The are prepared statements, but should still not contain any untrusted input.
+  descriptionFile: ""
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    declaration:
+      type: org.springframework.jdbc.core.JdbcOperations
+    without:
+      anyOf:
+      - args:
+          any:
+            type:
+              reference:
+                matches: ^.*StatementSetter$
+              checkInheritance: true
+      - args:
+          2:
+            type:
+              reference:
+                contains: StatementCallback
+              checkInheritance: true
+      - args:
+          3:
+            type: int[]
+availableFixes:
+- name: Use parameterized queries
+  actions: []

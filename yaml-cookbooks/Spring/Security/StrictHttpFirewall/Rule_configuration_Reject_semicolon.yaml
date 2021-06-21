@@ -1,0 +1,24 @@
+id: scw:spring:security:stricthttpfirewall-semicolon
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
+    semicolon'
+  shortDescription: Rejecting semicolons is more secure
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/RejectSemicolons.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setAllowSemicolon
+    type: org.springframework.security.web.firewall.StrictHttpFirewall
+availableFixes:
+- name: Set setAllowSemicolon to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

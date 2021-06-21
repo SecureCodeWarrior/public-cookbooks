@@ -1,4 +1,4 @@
-id: 09cc6bb9-9041-4665-8d71-225f5b73b692
+id: scw:spring:web:requestmapping-composed
 version: 8
 metadata:
   name: Use composed requestmapping annotations
@@ -6,7 +6,7 @@ metadata:
   level: info
   scwCategory: ""
   enabled: true
-  descriptionFile: Usecomposedrequestmappingannotations.html
+  descriptionFile: descriptions/Usecomposedrequestmappingannotations.html
 search:
   annotation:
     owner:

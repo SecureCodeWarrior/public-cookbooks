@@ -1,0 +1,36 @@
+id: scw:spring:security:session:fixation
+version: 8
+metadata:
+  name: Protect against Session Fixation attacks
+  shortDescription: Spring Security's default protection against Session Fixation
+    is disabled, which means an attacker could hijack a valid user session
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/ProtectagainstSessionFixationattacks.html
+search:
+  methodcall:
+    name: none
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer.SessionFixationConfigurer
+    "on":
+      methodcall:
+        name: sessionFixation
+        declaration:
+          type: org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer
+        "on":
+          methodcall:
+            name: sessionManagement
+            declaration:
+              type: org.springframework.security.config.annotation.web.builders.HttpSecurity
+availableFixes:
+- name: Use newSession() to create a new session without preserving attributes of
+    the old session
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}.newSession()'
+- name: Use migrateSession() to create a new session with the attributes of the old
+    session
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}.migrateSession()'

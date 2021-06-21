@@ -1,0 +1,24 @@
+id: scw:spring:xml:xxe-SourceHttpMessageConverter-setSupportDtd
+version: 8
+metadata:
+  name: 'Injection: XXE: SourceHttpMessageConverter#setSupportDtd set to true'
+  shortDescription: Prevent XXE by disabling DTDs
+  level: error
+  scwCategory: injection:xml
+  cweCategory: 611
+  enabled: true
+  descriptionFile: descriptions/InjectionXXESourceHttpMessageConvertersetSupportDtdsettotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setSupportDtd
+    type: org.springframework.http.converter.xml.SourceHttpMessageConverter
+availableFixes:
+- name: Set .setSupportDtd() to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

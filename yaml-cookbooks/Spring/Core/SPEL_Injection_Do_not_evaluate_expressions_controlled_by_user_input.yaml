@@ -1,0 +1,21 @@
+id: scw:spring:el-expressionparser
+version: 8
+metadata:
+  name: 'Input Validation: Avoid Spring Expression Language Injection: Do not evaluate
+    expressions controlled by user input (ExpressionParser)'
+  shortDescription: Could lead to Spring Expression Language Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  descriptionFile: descriptions/SPEL_Injection_User_controlled_input_evaluation.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    name: parseExpression
+    declaration:
+      type: org.springframework.expression.ExpressionParser
+availableFixes: []

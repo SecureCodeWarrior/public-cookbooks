@@ -1,0 +1,24 @@
+id: scw:spring:security:stricthttpfirewall-any-http-method
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: HTTP method
+    validation'
+  shortDescription: Not allowing just any HTTP method is more secure
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/HTTPmethodvalidation.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "true"
+    name: setUnsafeAllowAnyHttpMethod
+    type: org.springframework.security.web.firewall.StrictHttpFirewall
+availableFixes:
+- name: Set setUnsafeAllowAnyHttpMethod to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

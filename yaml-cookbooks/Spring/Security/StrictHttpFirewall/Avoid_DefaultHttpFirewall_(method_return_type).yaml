@@ -1,0 +1,22 @@
+id: scw:spring:security:stricthttpfirewall-returntype
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Avoid DefaultHttpFirewall
+    (method return type)'
+  shortDescription: Using DefaultHttpFirewall may lead to security flaws
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/AvoidDefaultHttpFirewallReturnType.html
+search:
+  method:
+    returnType: org.springframework.security.web.firewall.DefaultHttpFirewall
+availableFixes:
+- name: Use interface HttpFirewall
+  actions:
+  - changeType:
+      type: org.springframework.security.web.firewall.HttpFirewall
+- name: Use return type StrictHttpFirewall
+  actions:
+  - changeType:
+      type: org.springframework.security.web.firewall.StrictHttpFirewall

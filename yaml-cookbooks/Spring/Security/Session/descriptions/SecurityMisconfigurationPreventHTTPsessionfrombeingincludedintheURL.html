@@ -1,0 +1,16 @@
+<html>
+<body>
+<p id="abstract"><code>enableSessionUrlRewriting(true)</code> allows HTTP sessions to be included in the URL. This could bring about information leakage and facilitate session fixation attacks. Spring Security can prevent this by setting <code>enableSessionUrlRewriting(false)</code>, which is also the default setting.</p>
+<br>
+<b>Before</b>
+<pre>http.sessionManagement().enableSessionUrlRewriting(<b>true</b>);</pre>
+<b>After</b>
+<pre>http.sessionManagement().enableSessionUrlRewriting(<b>false</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#session-management-implementation">OWASP Cheatsheet - Session Management</a></li>
+  <li><a href="https://www.baeldung.com/spring-security-session#no-url-params">Baeldung - Prevent using URL parameters for session tracking</a></li>
+</ul>
+</body>
+</html>

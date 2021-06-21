@@ -1,6 +1,0 @@
-
-
-One of the security headers that Spring Security provides by default is the X-XSS-Protection header. It will prevent browsers from rendering when an XSS attempt is recognised. Keep in mind that this will not eliminate the possibility of XSS attacks completely.
-
-<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">http.headers().xssProtection().disable();</font></td></tr><tr><td><font color="gray">After:</font></td><td>http.headers().xssProtection();</td></tr></table>
-<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-headers-xss-protection">Spring security API docs - X-XSS-Protection</a></li><li><a href="https://www.baeldung.com/spring-prevent-xss">Baeldung - Prevent Cross-Site Scripting</a></li></ul>

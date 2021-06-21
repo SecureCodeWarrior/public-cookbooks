@@ -1,6 +1,0 @@
-
-
-The setting <code>.setProcessExternalEntities(true)</code> allows the processing of XML entities. This flag will also set <code>.setSupportDtd()</code> to true. Safeguard the application from XML External Entity injection attacks (XXE) with the setting <code>.setProcessExternalEntities(false)</code>, which will prevent the resolving of external entities.
-
-<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">sourceHttpMessageConverter.setProcessExternalEntities(true);</font></td></tr><tr><td><font color="gray">After:</font></td><td>sourceHttpMessageConverter.setProcessExternalEntities(false);</td></tr></table>
-<h3>Resources</h3><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#xml-external-entity-prevention-cheat-sheet">OWASP Cheatsheet - XML External Entity Prevention</a></li></ul>

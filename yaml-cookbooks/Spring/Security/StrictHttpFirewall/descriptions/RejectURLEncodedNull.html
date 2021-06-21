@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">Disallowing a null ("0") or a URL encoded null ("%00") in the URL is more secure, as they are frequently used in exploits. Spring Security by default sets <code>StrictHttpFirewall#setAllowNull</code> to false.</p>
+<br>
+<b>Before</b>
+<pre>firewall.setAllowNull(<b>true</b>);</pre>
+<b>After</b>
+<pre>firewall.setAllowNull(<b>false</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/firewall/StrictHttpFirewall.html#setAllowNull-boolean-">Spring docs API - StrictHttpFirewall#setAllowNull</a></li>
+</ul>
+</body>
+</html>

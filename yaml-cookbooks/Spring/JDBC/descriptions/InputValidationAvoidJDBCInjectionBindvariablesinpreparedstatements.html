@@ -5,31 +5,14 @@ Secure coding practices prescribe that variables should be bound in prepared sta
 <h2>Description</h2>
 Input values in SQL queries can not be simply concatenated. Instead parameterized queries should be used.
 <h4>Class information:</h4>
-<pre>
-package org.springframework.jdbc.core.<b>JdbcTemplate</b>
-&nbsp;&nbsp;&nbsp;<b>query</b>
-&nbsp;&nbsp;&nbsp;<b>queryForMap</b>
-&nbsp;&nbsp;&nbsp;<b>queryForObject</b>
-&nbsp;&nbsp;&nbsp;<b>queryForRowset</b>
-</pre>
+<pre>package org.springframework.jdbc.core.<b>JdbcTemplate</b>
+    <b>query</b>
+    <b>queryForMap</b>
+    <b>queryForObject</b>
+    <b>queryForRowset</b></pre>
 Use these functions as follows.
 <h4>Correct code example:</h4>
-<pre>
-JdbcTemplate jdbc = new JdbcTemplate();
-int count = jdbc.queryForObject("select count(*) from Users where name = ?", Integer.class, paramName);
-</pre>
-        <h2>Violating this guideline can cause</h2>
-        
-        
-        <h4>Web vulnerabilities</h4>
-            <ul>
-            
-                <li>SQL Injection</li>
-            </ul>
-        
-    
-        <h2>Sensei quick fix</h2>
-        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
-
+<pre>JdbcTemplate jdbc = new JdbcTemplate();
+int count = jdbc.queryForObject("select count(*) from Users where name = ?", Integer.class, paramName);</pre>
 </body>
 </html>

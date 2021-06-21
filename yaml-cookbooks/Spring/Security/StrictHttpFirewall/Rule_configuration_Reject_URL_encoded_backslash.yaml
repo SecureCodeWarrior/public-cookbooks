@@ -1,0 +1,23 @@
+id: scw:spring:security:stricthttpfirewall-backslash
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject
+    (URL encoded) backslash'
+  shortDescription: Rejecting the use of a (URL encoded) backslash is more secure
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/RejectURLEncodedBackslash.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+    name: setAllowBackSlash
+    type: org.springframework.security.web.firewall.StrictHttpFirewall
+availableFixes:
+- name: Set setAllowBackSlash to false
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "false"

@@ -1,6 +1,0 @@
-
-
-<code>xssProtection()</code> will prevent the browser from rendering content when a Cross-Site Scripting attack is being detected. However, this will not work for browsers which do not use the X-XSS protection header. Adding a Content-Security-Policy header will provide additional protection against XSS attacks and data injections. 
-
-<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">http.headers().xssProtection()</font></td></tr><tr><td><font color="gray">After:</font></td><td>http.headers().xssProtection().and().contentSecurityPolicy("script-src 'self'");</td></tr></table>
-<h3>Resources</h3><ul><li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#headers">Spring security API docs - Security HTTP response headers</a></li><li><a href="https://www.baeldung.com/spring-prevent-xss">Baeldung - Prevent Cross-Site Scripting</a></li></ul>

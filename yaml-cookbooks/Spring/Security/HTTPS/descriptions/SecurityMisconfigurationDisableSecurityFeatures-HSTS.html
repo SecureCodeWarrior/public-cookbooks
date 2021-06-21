@@ -1,0 +1,17 @@
+<html>
+<body>
+<p id="abstract">Enforce HSTS protection against vulnerabilities over HTTPS</p>
+<br>
+<p id="impact_and_desired_state">Disabling <code>httpStrictTransportSecurity()</code> makes the application vulnerable to man-in-the-middle attacks, where an attacker could enforce the use of HTTP, which could allow communication to be intercepted and read. By enabling <code>httpStrictTransportSecurity()</code>, the application will communicate over HTTPS.</p>
+<br>
+<b>Before</b>
+<pre>http.headers().httpStrictTransportSecurity()<b>.disable();</b></pre>
+<b>After</b>
+<pre>http.headers().httpStrictTransportSecurity();</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/4.2.x/reference/html/headers.html#headers-hsts">Guide to Spring Security HSTS</a></li>
+</ul>
+</body>
+</html>

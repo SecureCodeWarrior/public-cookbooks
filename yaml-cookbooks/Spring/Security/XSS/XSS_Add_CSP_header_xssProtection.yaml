@@ -1,0 +1,36 @@
+id: scw:spring:xss:xssProtection
+version: 8
+metadata:
+  name: 'Security Misconfiguration: XSS protection: Add CSP header - xssProtection'
+  shortDescription: Add a CSP header for additional protection agains XSS and data
+    injection
+  level: info
+  scwCategory: xss
+  enabled: true
+  descriptionFile: descriptions/SpringSecurityHeadersaddCSPheader.html
+search:
+  methodcall:
+    in:
+      typeDeclaration:
+        super:
+          name: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+    name:
+      matches: xssProtection
+    anyOf:
+    - not:
+        followedBy:
+          methodcall: {}
+    - followedBy:
+        methodcall:
+          not:
+            followedBy:
+              methodcall:
+                name: contentSecurityPolicy
+          name: and
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer
+availableFixes:
+- name: Add a CSP header
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}().and().contentSecurityPolicy("script-src ''self''")'

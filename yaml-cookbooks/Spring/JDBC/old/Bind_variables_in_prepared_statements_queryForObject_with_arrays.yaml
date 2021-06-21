@@ -1,0 +1,33 @@
+id: scw:spring:jdbc:queryForObject-arrays
+version: 8
+metadata:
+  name: 'Input Validation: Avoid JDBC Injection: Bind variables in prepared statements:
+    queryForObject with arrays'
+  shortDescription: Could lead to JDBC Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection
+  enabled: true
+  descriptionFile: InputValidationAvoidJDBCInjectionBindvariablesinpreparedstatements.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+      2:
+        type: java.lang.Object[]
+      3:
+        type: java.lang.Integer
+    name: queryForObject
+    declaration:
+      type: org.springframework.jdbc.core.JdbcOperations
+availableFixes:
+- name: Parameterize all variables in query
+  actions:
+  - parameterize:
+      placeholderFormat: '?'
+      extractUntrustedInput:
+        array:
+          type: java.lang.Object[]
+          atArgumentPosition: 2

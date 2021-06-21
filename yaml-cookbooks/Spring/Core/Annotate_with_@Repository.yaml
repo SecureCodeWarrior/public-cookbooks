@@ -1,0 +1,20 @@
+id: scw:spring:repository
+version: 8
+metadata:
+  name: Annotate with @Repository
+  shortDescription: This class looks like the implementation of a Spring Repository
+  level: info
+  scwCategory: ""
+  enabled: true
+search:
+  typeDeclaration:
+    not:
+      annotation:
+        type: org.springframework.stereotype.Repository
+    name:
+      matches: ^.*Repository$
+availableFixes:
+- name: Add @Repository annotation
+  actions:
+  - addAnnotation:
+      annotation: '@org.springframework.stereotype.Repository'

@@ -1,0 +1,20 @@
+id: scw:spring:security:stricthttpfirewall-instance
+version: 8
+metadata:
+  name: 'Security Misconfiguration: StrictHttpFirewall: Avoid DefaultHttpFirewall
+    (instance creation)'
+  shortDescription: Using DefaultHttpFirewall may lead to security flaws
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/AvoidDefaultHttpFirewallInstanceCreation.html
+search:
+  instanceCreation:
+    type: org.springframework.security.web.firewall.DefaultHttpFirewall
+availableFixes:
+- name: Use StrictHttpFirewall
+  actions:
+  - rewrite:
+      to: new org.springframework.security.web.firewall.StrictHttpFirewall()
+  - modifyAssignedVariable:
+      type: org.springframework.security.web.firewall.StrictHttpFirewall

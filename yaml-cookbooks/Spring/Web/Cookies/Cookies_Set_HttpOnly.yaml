@@ -1,0 +1,24 @@
+id: scw:spring:web:cookie-set-httponly
+version: 8
+metadata:
+  name: 'Session configuration: Cookies: Set HttpOnly flag to true'
+  shortDescription: 'Prevent client-side scripts from accessing the cookie by setting
+    the HttpOnly flag to true '
+  level: error
+  scwCategory: improper_session_handling
+  enabled: true
+  descriptionFile: descriptions/SessionconfigurationCookiesSetHttpOnlyflagtotrue.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    name: setUseHttpOnlyCookie
+    type: org.springframework.session.web.http.DefaultCookieSerializer
+availableFixes:
+- name: Set HttpOnly to true
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "true"

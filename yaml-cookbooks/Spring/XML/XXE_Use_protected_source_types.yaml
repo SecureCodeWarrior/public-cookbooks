@@ -1,0 +1,25 @@
+id: scw:spring:xml:xxe-protected-sources
+version: 8
+metadata:
+  name: 'Input Validation: Avoid XXE: Use automatically protected source types'
+  shortDescription: Could lead to XXE
+  level: error
+  newCodeOnly: false
+  scwCategory: injection:xml
+  cweCategory: 611
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type:
+          reference:
+            matches: javax.xml.transform.dom.DOMSource|javax.xml.transform.stax.StAXSource
+          checkInheritance: false
+    name: unmarshal
+    declaration:
+      type:
+        reference:
+          matches: org.springframework.oxm.Unmarshaller|org.springframework.oxm.jaxb.Jaxb2Marshaller
+        checkInheritance: false
+availableFixes: []

@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">For security reasons it's recommended to invalidate all sessions after logout. </p>
+<br>
+<b>Before</b>
+<pre>http.logout().invalidateHttpSession(<b>false</b>);</pre>
+<b>After</b>
+<pre>http.logout().invalidateHttpSession(<b>true</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#logout-java-configuration">Spring Security docs - Logout configuration</a></li>
+</ul>
+</body>
+</html>

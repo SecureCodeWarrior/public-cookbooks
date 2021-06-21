@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p id="abstract">Spring Security provides the <code>KeyGenerators.string().generateKey()</code> to generate a salt that is a random hex-encoded string that is at least 8 bytes in length. The importance of having a strong salt is to prevent dictionary attacks against the key.</p>
+    <br>
+    <b>Before</b>
+<pre>Encryptors.stronger(password, "salt");</pre>
+    <b>After</b>
+<pre>Encryptors.stronger(password, KeyGenerators.string().generateKey());</pre>
+    <br>
+    <b>References</b>
+    <ul>
+      <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html5/#spring-security-crypto-encryption">Spring security crypto</a></li>
+    </ul>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-id: 12a927c8-0497-41c8-b037-828ced4c876c
+id: scw:spring:web:restcontroller-annotation
 version: 8
 metadata:
   name: Annotate with @RestController

@@ -1,0 +1,29 @@
+id: scw:spring:xss:XXssConfig-disable
+version: 8
+metadata:
+  name: 'Security Misconfiguration: XSS protection: Disabled Header - disable()'
+  shortDescription: Do not disable Spring Security's built-in XSS protection
+  level: warning
+  scwCategory: xss
+  enabled: true
+  descriptionFile: descriptions/SecurityMisconfigurationDisabledXSSprotectioninSpringSecurity.html
+search:
+  methodcall:
+    name: disable
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.XXssConfig
+    "on":
+      methodcall:
+        declaration:
+          name: xssProtection
+          type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer
+        "on":
+          methodcall:
+            declaration:
+              name: headers
+              type: org.springframework.security.config.annotation.web.builders.HttpSecurity
+availableFixes:
+- name: Enable XssProtection
+  actions:
+  - rewrite:
+      to: '{{{ qualifier }}}'

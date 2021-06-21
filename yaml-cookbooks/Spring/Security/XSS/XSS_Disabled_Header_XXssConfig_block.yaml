@@ -1,0 +1,29 @@
+id: scw:spring:xss:XXssConfig-block
+version: 8
+metadata:
+  name: 'Security Misconfiguration: XSS protection: Disabled Header - block()'
+  shortDescription: Protection against XSS is better done by blocking the content
+    instead of filtering it
+  level: warning
+  scwCategory: xss
+  enabled: true
+  descriptionFile: descriptions/SecurityMisconfigurationDisabledXSSprotectioninSpringSecurity-block.html
+search:
+  methodcall:
+    args:
+      1:
+        type: boolean
+        value: "false"
+    in:
+      typeDeclaration:
+        super:
+          name: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+    name: block
+    declaration:
+      type: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.XXssConfig
+availableFixes:
+- name: Enable XssProtection
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: "true"

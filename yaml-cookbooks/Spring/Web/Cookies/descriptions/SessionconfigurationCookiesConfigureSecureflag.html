@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <p id="abstract">Cookies should be configured securely using the http-only and secure settings.</p>
+    <br>
+    <p id="impact_and_desired_state">Ensure the cookie is only sent over HTTPS by setting the <code>setUseSecureCookie()</code> flag to true. Otherwise, when using the default setting, the cookie will be sent over an unencrypted HTTP connection and the session ID could be disclosed via a Man-in-the-Middle attack.</p>
+    <br>
+    <b>Before</b>
+<pre>DefaultCookieSerializer defaultCookieSerializer = new DefaultCookieSerializer();</pre>
+    <br>
+    <b>After</b>
+<pre>DefaultCookieSerializer defaultCookieSerializer = new DefaultCookieSerializer();
+    <b>defaultCookieSerializer.setUseSecureCookie(true);</b></pre>
+    <br>
+    <b>Resources</b>
+    <ul>
+      <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#secure-attribute">OWASP - Session Management Cheat Sheet - Secure</a></li>
+    </ul>
+  </body>
+</html>
+
+
