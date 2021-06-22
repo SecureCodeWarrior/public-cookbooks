@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">Spring sets the caching of a pre-flight request by default to 1800 seconds (30 minutes). Any value over 30 minutes is prolonged, and could increase security risks.</p>
+<br>
+<b>Before</b>
+<pre>registry.maxAge(3600);</pre>
+<b>After</b>
+<pre>registry.maxAge(1800);</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://vulncat.fortify.com/en/detail?id=desc.dynamic.html.html5_cors_prolonged_caching_of_preflight_response#Universal">Fortify Taxonomy - HTML5: CORS Prolonged Caching of Preflight Response</a></li>
+</ul>
+</body>
+</html>

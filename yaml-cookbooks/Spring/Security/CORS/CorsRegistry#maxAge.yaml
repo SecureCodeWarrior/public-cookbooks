@@ -1,0 +1,25 @@
+id: scw:spring:security:cors:CorsRegistry#maxAge
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#maxAge'
+  shortDescription: A value over 30 minutes is considered prolonged and likely to
+    reduce security
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/Avoidprolongedcaching.html
+search:
+  methodcall:
+    args:
+      1:
+        integerValue:
+          greaterThan: 1800
+        type:
+          checkInheritance: true
+    name: maxAge
+    type: org.springframework.web.servlet.config.annotation.CorsRegistration
+availableFixes:
+- name: Set to 30 minutes
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: 1800

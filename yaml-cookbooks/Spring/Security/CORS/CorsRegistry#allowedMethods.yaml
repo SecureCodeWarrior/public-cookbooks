@@ -1,0 +1,28 @@
+id: scw:spring:security:cors:CorsRegistry#allowedMethods
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedMethods'
+  shortDescription: Allowing unsafe methods puts the application at risk
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/AvoidbroadsettingsCorsRegistryallowedMethods.html
+search:
+  methodcall:
+    name: allowedMethods
+    anyOf:
+    - args:
+        1:
+          value: '*'
+    - args:
+        1:
+          value:
+            caseSensitive: false
+            matches: PUT|DELETE
+    type: org.springframework.web.servlet.config.annotation.CorsRegistration
+availableFixes:
+- name: Set to allow default simple HTTP methods
+  actions:
+  - rewrite:
+      to: |-
+        {{{ qualifier }}}
+        .allowedMethods()

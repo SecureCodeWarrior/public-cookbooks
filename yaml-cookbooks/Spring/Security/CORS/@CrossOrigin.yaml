@@ -1,0 +1,28 @@
+id: aee0bb21-bb6f-47c3-8c52-87fcc21085d8
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin'
+  shortDescription: Avoid enabling CORS, or configure it as strictly as possible
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin.html
+search:
+  annotation:
+    type: org.springframework.web.bind.annotation.CrossOrigin
+    without:
+      anyOf:
+      - parameters:
+        - name: method
+      - parameters:
+        - name: origins
+      - parameters:
+        - name: exposedHeaders
+      - parameters:
+        - name: allowedHeaders
+      - parameters:
+        - name: allowCredentials
+      - parameters:
+        - name: maxAge
+availableFixes:
+- name: Configure @CrossOrigin as strictly as possible
+  actions: []

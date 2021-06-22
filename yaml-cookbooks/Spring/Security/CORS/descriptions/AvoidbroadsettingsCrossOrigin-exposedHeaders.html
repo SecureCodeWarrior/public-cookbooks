@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">Be cautious when using a wildcard ("*") while configuring <code>@CrossOrigin</code>. Allowing CORS, in particular with overly permissive settings, can make the application vulnerable to attacks.</p>
+<br>
+<b>Before</b>
+<pre>@CrossOrigin(exposedHeaders = "*")</pre>
+<b>After</b>
+<pre>@CrossOrigin(exposedHeaders = "header1")</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://vulncat.fortify.com/en/detail?id=desc.dynamic.html.html5_cors_functionality_abuse#Universal">Fortify Taxonomy - HTML5: CORS functionality abuse</a></li>
+</ul>
+</body>
+</html>

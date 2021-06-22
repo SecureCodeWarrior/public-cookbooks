@@ -1,0 +1,19 @@
+id: scw:spring:security:cors:CrossOrigin-origins
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin - origins'
+  shortDescription: Allowing all origins makes the application vulnerable to scripts
+    from any domain
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/AvoidbroadsettingsCrossOrigin-origins.html
+search:
+  annotationParameter:
+    owner:
+      type: org.springframework.web.bind.annotation.CrossOrigin
+    name: origins
+    value:
+      value: '*'
+availableFixes:
+- name: Specify the origins
+  actions: []

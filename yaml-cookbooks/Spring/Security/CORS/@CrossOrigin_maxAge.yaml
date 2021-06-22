@@ -1,0 +1,22 @@
+id: scw:spring:security:cors:CrossOrigin-maxAge
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin - maxAge'
+  shortDescription: A value over 30 minutes is considered prolonged and likely to
+    reduce security
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/AvoidbroadsettingsCrossOrigin-maxAge.html
+search:
+  annotationParameter:
+    owner:
+      type: org.springframework.web.bind.annotation.CrossOrigin
+    name: maxAge
+    value:
+      integerValue:
+        greaterThan: 1800
+availableFixes:
+- name: Set to 30 minutes
+  actions:
+  - rewrite:
+      to: maxAge = 1800

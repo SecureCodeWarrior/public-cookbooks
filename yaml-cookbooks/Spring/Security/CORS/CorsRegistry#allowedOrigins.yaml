@@ -1,0 +1,22 @@
+id: scw:spring:security:cors:CorsRegistry#allowedOrigins'
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedOrigins'
+  shortDescription: Allowing all origins makes the application vulnerable to scripts
+    from any domain
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/AvoidbroadsettingsCorsRegistryallowedOrigins.html
+search:
+  methodcall:
+    args:
+      1:
+        value: '*'
+    name: allowedOrigins
+    type: org.springframework.web.servlet.config.annotation.CorsRegistration
+availableFixes:
+- name: Specify the allowedOrigins
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: '"https://..."'

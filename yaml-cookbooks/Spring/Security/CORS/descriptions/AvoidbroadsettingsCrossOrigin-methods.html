@@ -1,0 +1,15 @@
+<html>
+<body>
+<p id="abstract">By using the wildcard "*", or by configuring <code>@CrossOrigin</code> to use unsafe methods, such as PUT or DELETE, the application could become the target of code injection and/or other attacks. Spring by default only allows GET, HEAD, and POST methods.</p>
+<br>
+<b>Before</b>
+<pre>@CrossOrigin(methods = "*")</pre>
+<b>After</b>
+<pre>@CrossOrigin(methods = {RequestMethod.GET, RequestMethod.POST})</pre>
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://vulncat.fortify.com/en/detail?id=desc.dynamic.html.html5_cors_unsafe_method_allowed#Universal">Fortify Taxonomy - HTML5: CORS Unsafe Methods Allowed</a></li>
+</ul>
+</body>
+</html>

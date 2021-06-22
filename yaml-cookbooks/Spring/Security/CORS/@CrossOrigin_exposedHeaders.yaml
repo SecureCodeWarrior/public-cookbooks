@@ -1,0 +1,20 @@
+id: 0036434e-8e1e-4947-9cdc-e875917f1aba
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin - exposedHeaders'
+  shortDescription: Exposing all headers makes the application vulnerable
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin-exposedHeaders.html
+search:
+  annotationParameter:
+    owner:
+      type: org.springframework.web.bind.annotation.CrossOrigin
+    name: exposedHeaders
+    value:
+      anyOf:
+      - value: '*'
+      - value: '{"*"}'
+availableFixes:
+- name: Specify the exposedHeaders
+  actions: []

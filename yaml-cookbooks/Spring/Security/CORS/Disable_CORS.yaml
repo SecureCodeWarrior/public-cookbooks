@@ -1,0 +1,22 @@
+id: scw:spring:security:disable-cors
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: disable'
+  shortDescription: Enabling CORS makes the application much more vulnerable
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/DisableCORS.html
+search:
+  methodcall:
+    not:
+      followedBy:
+        methodcall:
+          name: disable
+    name: cors
+    type: org.springframework.security.config.annotation.web.builders.HttpSecurity
+availableFixes:
+- name: Disable CORS configuration
+  actions:
+  - rewrite:
+      to: '{{{ . }}}.disable()'

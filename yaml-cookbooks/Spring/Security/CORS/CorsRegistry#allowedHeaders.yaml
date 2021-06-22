@@ -1,0 +1,18 @@
+id: scw:spring:security:cors:CorsRegistry#allowedHeaders
+version: 8
+metadata:
+  name: 'Security Misconfiguration: CORS: Avoid broad settings: CorsRegistry#allowedHeaders'
+  shortDescription: Allowing all headers makes the application vulnerable
+  level: warning
+  enabled: true
+  descriptionFile: descriptions/AvoidbroadsettingsCorsRegistryallowedHeaders.html
+search:
+  methodcall:
+    args:
+      1:
+        value: '*'
+    name: allowedHeaders
+    type: org.springframework.web.servlet.config.annotation.CorsRegistration
+availableFixes:
+- name: Specify the allowedHeaders
+  actions: []
