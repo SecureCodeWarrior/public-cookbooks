@@ -5,7 +5,6 @@
     "company": "SCW",
     "appsecmail": "appsecteam@senseifinancial.com",
     "rulepack_id": "7b24eacd-15c5-4b27-9e75-3ff13690c009",
-    "rulePackVersion": "0.1.0",
     "enabled": true
   },
   "rules": [
@@ -617,6 +616,22 @@
         "disableRuleIDs": [],
         "ruleDescriptionFile": "SecurityMisconfigurationAvoidDefaultHttpFirewallInstanceCreation.html",
         "ruleShortDescription": "Using DefaultHttpFirewall may lead to security flaws",
+        "ruleErrorLevel": 1,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    not:\n      followedBy:\n        methodcall:\n          name: disable\n    name: cors\n    type: org.springframework.security.config.annotation.web.builders.HttpSecurity\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Disable CORS configuration\n  actions:\n  - rewrite:\n      to: \u0027{{{ . }}}.disable()\u0027\n",
+        "ruleName": "Security Misconfiguration: CORS: disable",
+        "ruleID": "e00e7ac8-fbaf-47a6-aef8-53312ba06776",
+        "disableRuleIDs": [],
+        "ruleDescriptionFile": "SecurityMisconfigurationCORSdisable.html",
+        "ruleShortDescription": "Enabling CORS makes the application much more vulnerable",
         "ruleErrorLevel": 1,
         "ruleScope": [],
         "ruleEnabled": true

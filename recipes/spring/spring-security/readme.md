@@ -41,4 +41,5 @@ It covers the following protections:
 <li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded period</li>
 <li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded slash</li>
 <li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject semicolon</li>
+<li>Security Misconfiguration: CORS: disable</li>
 </ul>
