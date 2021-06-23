@@ -8,4 +8,5 @@ metadata:
   level: info
   enabled: true
 search:
+  methodcall: {}
 availableFixes: []
