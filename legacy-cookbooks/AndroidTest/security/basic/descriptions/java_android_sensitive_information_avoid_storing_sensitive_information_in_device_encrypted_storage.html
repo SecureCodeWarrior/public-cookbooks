@@ -1,0 +1,54 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and Android coding guidelines, recommendations were abstracted which state that storing sensitive information in device encrypted storage is unsafe.
+<h2>Description</h2>
+<i>Device Encrypted storage</i> should not be used to store sensitive information. It's a less secure storage location than the <i>Credential Encrypted Storage</i>. This latter location is only available after the user has unlocked their device. The <i>Credential Encrypted Storage</i> is the default storage location, so no extra configuration is needed.
+<h4>Correct code example:</h4>
+<pre>
+String filename = "myfile";
+String string = "output";
+FileOutputStream outputStream;
+try {
+&nbsp;&nbsp;&nbsp;outputStream = contextObject.openFileOutput(filename, Context.MODE_PRIVATE);
+&nbsp;&nbsp;&nbsp;outputStream.write(string.getBytes());
+} catch (Exception e) {
+&nbsp;&nbsp;&nbsp;e//handle Exception
+} finally {
+&nbsp;&nbsp;&nbsp;outputStream.close();
+}
+</pre>
+<!--
+
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/training/articles/direct-boot.html">Android: Supporting Direct Boot</a></li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+A device running Android 7.0 (Nougat) will start in a secure, <i>Direct Boot</i> mode until the device is unlocked. In this mode, only the <i>Device Encrypted storage</i> is available. Once the device is unlocked, the <i>Credential Encrypted Storage</i> becomes available as well.
+
+The <i>Device Encrypted Storage</i> can be used to store information such as schedules and user notifications. As mentioned before, sensitive information should not be stored in this location.
+
+
+<h3>Source:</h3>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/training/articles/direct-boot.html">Android: Supporting Direct Boot</a></li>
+</ul>
+<br>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

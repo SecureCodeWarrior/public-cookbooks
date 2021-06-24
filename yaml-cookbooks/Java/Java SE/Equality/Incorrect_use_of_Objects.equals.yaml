@@ -1,0 +1,23 @@
+id: scw:java:equality-object-primitive
+version: 8
+metadata:
+  name: Incorrect use of Objects.equals
+  shortDescription: Comparing an object and a primitive will always return false
+  level: error
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type:
+          checkInheritance: true
+          isPrimitive: false
+      2:
+        type:
+          reference:
+            not: '{{{ arguments.0.type }}}'
+          checkInheritance: true
+          isPrimitive: true
+    name: equals
+    type: Objects
+availableFixes: []

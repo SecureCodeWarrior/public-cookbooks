@@ -1,0 +1,86 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Java best practices and coding guidelines, recommendations where abstracted that recommend the usage of OWASP Enterprise Security API (ESAPI). 
+Only authorized routines from that library should be used for for cryptography.
+<h2>Description</h2>
+It is recommended not to use the standard java implementation for encoding text as there is
+an OWASP ESAPI alternative.<br/>
+Concretely, the following classes are banned:
+<ul>
+    <li><code>Cipher</code></li>
+	<li><code>KeyGenerator</code></li>
+	<li><code>KeyPairGenerator</code></li>
+	<li><code>KeyAgreement</code></li>
+	<li><code>KeyFactory</code></li>
+	<li><code>SecretKeyFactory</code></li>
+	<li><code>MessageDigest</code></li>
+	<li><code>Signature</code></li>
+	<li><code>Timestamp</code></li>
+</ul>
+More specific, one should use an implementation of the <code>Encryptor</code> interface, it provides an alternative with the same methods as the original 
+Class but guarantees cryptographic security. An implementing class of this interface is the <code>JavaEncryptor</code>.
+<h4>Correct code example:</h4>
+<pre>
+import org.owasp.esapi.reference.<b>JavaEncryptor</b>;
+...
+PlainText pt = JavaEncryptor.getInstance().decrypt(ciphertext);;
+</pre>
+<!--
+<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer</h2>
+
+Please see the standard OWASP ESAPI documentation for more information:<br/>
+<ul>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/Encryptor.html" >OWASP ESAPI Javadoc: Encryptor Interface</a>.</li>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/reference/crypto/JavaEncryptor.html" >OWASP ESAPI Javadoc: JavaEncryptor</a>.</li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<ul>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/ESAPI_Secure_Coding_Guideline">OWASP ESAPI Secure Coding Guideline</a></li>
+ <li>(WWW) <a href="https://www.google.be/search?q=OWASP+cryptography&oq=OWASP+cryptography&aqs=chrome..69i57j0l5.2250j0j4&sourceid=chrome&ie=UTF-8">OWASP Guide to Cryptography</a></li>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/Cryptographic_Storage_Cheat_Sheet">OWASP Cryptographic Storage Cheat Sheet</a></li>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/Category:Cryptographic_Vulnerability">OWASP Cryptographic Vulnerabilities</a></li>
+</ul>
+
+<br>
+In case of questions on the usage of the OWASP ESAPI, please contact: {{{ appsecmail }}}<br>
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Insecure Storage Of Encryption Keys. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/insecure_storage_of_encryption_keys/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Broken Cryptography - Use Of Encoding. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_encoding/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Broken Cryptography - Use Of Hardcoded Keys. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_hardcoded_keys/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Broken Cryptography - Use Of Insecure/Deprecated Algorithms. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_insecuredeprecated_alogirthms/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Broken Cryptography - Use Of Short Encryption Keys. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_short_encryption_keys/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Weak Algorithm Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/algorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insecure Cryptography - Insufficiently Protected Credentials. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/credentialexp/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insecure Cryptography - Exposed Key. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/exposedkey/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insecure Cryptography - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+id: scw:java:public-static-final
+version: 8
+metadata:
+  name: 'Code quality: public static fields should be final'
+  shortDescription: public static fields should be final
+  level: warning
+  enabled: true
+  comment: Does the IDE suggest this?
+search:
+  field:
+    allOf:
+    - modifier: public
+    - modifier: static
+    without:
+      modifier: final
+availableFixes:
+- name: Make final
+  actions:
+  - rewrite:
+      to: public static final {{{ type }}} {{{ name }}} = {{{ assignedExpression }}};

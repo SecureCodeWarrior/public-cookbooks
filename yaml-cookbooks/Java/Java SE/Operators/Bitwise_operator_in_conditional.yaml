@@ -1,0 +1,25 @@
+id: scw:java:use_logical_operator_conditional
+version: 8
+metadata:
+  name: 'Operators: Bitwise: Use logical operator (Conditional)'
+  shortDescription: Use logical operator instead of bitwise operator
+  level: warning
+  scwCategory: blog:generic
+  cweCategory: 480
+  enabled: true
+  comment: |-
+    This recipe looks for bitwise operators used in conditionals, however Sensei is currently not capable of following indirections in the conditional.
+    Bitwise operators located inside of methods cannot be found using this recipe.
+  descriptionFile: Java/descriptions/BitwiseOperatorInConditional.html
+search:
+  binaryExpression:
+    in:
+      condition: {}
+    anyOf:
+    - operator: '&'
+    - operator: '|'
+availableFixes:
+- name: Replace bitwise operator with logical operator
+  actions:
+  - rewrite:
+      to: '{{{ leftOperand }}} {{{ operator }}}{{{ operator }}} {{{ rightOperand }}}'

@@ -1,0 +1,42 @@
+<html>
+<body>
+<p id="abstract">Secure coding practices prescribe that for any XML parsing, External Entities should be avoided as much as possible. Explicit care should be taken when they are really needed.</p>
+<br>
+<p id="impact_and_desired_state">The following methods are available to help make your parsers more secure and not allow External Entities.</p>
+<br>
+<b>Class information:</b>
+<pre>package javax.xml.parsers.<b>DocumentBuilderFactory</b>
+    public void <b>setXIncludeAware(boolean)</b>
+    public void <b>setExpandEntityReferences(boolean)</b>
+    public void <b>setFeature(String, boolean)</b></pre>
+<br>
+<p>Which are used as follows:</p>
+<pre>DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setXIncludeAware(false);
+dbf.setExpandEntityReferences(false);
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl",true);
+dbf.setFeature("http://xml.org/sax/features/external-parameter-entities",false);
+dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false);</pre>
+<br>
+<p>When External Entities are needed you should write your own customized EntityResolver.</p>
+<pre>db.setEntityResolver(new EntityResolver() {
+    @Override
+    public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
+        String entityLocation = "/home/somepath";
+        if (systemId.equals(entityLocation)){
+            return new InputSource(entityLocation);/*allowed path*/
+        }else{
+            return new InputSource();/*Disallow by returning blank*/
+        }
+    }
+});</pre>
+<br>
+<b>Resources</b>
+<ul>
+  <li><a href="https://www.baeldung.com/java-xml">Baeldung on XML in Java</a></li>
+  <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html">OWASP XXE Prevention Cheat Sheet</a></li>
+  <li><a href="https://cwe.mitre.org/data/definitions/611.html">CWE 611: Improper Restriction of XML External Entity Reference</a></li>
+  <li><a href="https://portswigger.net/web-security/xxe">PortSwigger Web Security Academy: XXE injection</a></li>
+</ul>
+</body>
+</html>

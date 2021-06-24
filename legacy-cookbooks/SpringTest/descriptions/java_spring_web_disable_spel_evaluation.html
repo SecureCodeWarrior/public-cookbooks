@@ -1,0 +1,32 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to disable Spring JSP Expression Support.
+<h2>Description</h2>
+<!-- source: https://www.owasp.org/index.php/Expression_Language_Injection -->
+A specific pattern exists in certain versions of the Spring Framework, where Spring JSP tags will double resolve EL. In versions prior to 3.0.6, it is not possible to disable this functionality, and the pattern must be avoided. In order to do this it is recommended to disable Spring JSP Expression Support.<br/>
+<!-- source: https://docs.spring.io/spring/docs/3.2.18.RELEASE/javadoc-api/org/springframework/web/util/ExpressionEvaluationUtils.html#isSpringJspExpressionSupportActive(javax.servlet.jsp.PageContext) -->
+As of Spring 3.2, Spring's expression support can not be enabled anymore and it is deprecated and will be removed in the next iteration of the framework.<br/>
+This solution disables Spring's evaluation mechanism which means <code>ExpressionEvaluationUtils.evaluate()</code> calls won't work anymore. An alternative is presented here:
+<h4>Correct code example:</h4>
+<pre>
+ELContext elContext = pageContext.getELContext();
+JspApplicationContext jac = JspFactory.getDefaultFactory().getJspApplicationContext(pageContext.getServletContext());
+ValueExpression val = jac.getExpressionFactory().createValueExpression(elContext, exp, resultClass);
+return val.getValue(elContext);
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/generic/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

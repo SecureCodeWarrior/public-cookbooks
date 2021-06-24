@@ -1,0 +1,24 @@
+id: scw:guice:public-injected-fields
+version: 8
+metadata:
+  name: Guice Injected Field Not Public
+  shortDescription: If the Injected field is not public then the code might not be
+    wired up.
+  level: warning
+  scwCategory: ""
+  enabled: true
+  comment: Do we need to look back at the typeDeclaration itself to check the modifier?
+search:
+  field:
+    annotation:
+      type: com.google.inject.Inject
+    in:
+      typeDeclaration:
+        without:
+          modifier: public
+availableFixes:
+- name: Change class to public. Remember to also request injection on this class
+  actions:
+  - changeModifiers:
+      visibility: public
+      target: parentClass

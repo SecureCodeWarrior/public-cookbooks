@@ -1,0 +1,64 @@
+<html>
+<body>
+<h2>Info</h2>
+<h3>Service Types</h3>
+Based on tags and attributes used in services, four types can be specified: private, public, partner and in-house.
+<ol>
+    <li><b>Private Service: Can only receive intents from the App itself.</b>
+<pre>
+&lt;service android:exported="<b>false</b>" ... /&gt;
+</pre>
+    </li>
+    <li><b>Partner Service: Can only receive explicit intents from a white-list of partner apps.</b><br>
+        Does not define an intent filter and does not use the attribute <code>android:permission</code>.
+<pre>
+&lt;service android:exported="<b>true</b>" ... /&gt;
+</pre>
+    </li>
+    <li><b>In-House Service: Can only receive explicit intents from apps that have the right permission.</b><br>
+        Does not define an intent filter.
+<pre>
+&lt;service android:exported="<b>true</b>"
+&nbsp;&nbsp;&nbsp;android:<b>permission</b>="com.senseisecurity.service.inhouseservice.SERVICE_PERMISSION" /&gt;
+</pre>
+    </li>
+    <li><b>Public Service.</b><br>
+ <i><u>Security implications for public services</u>: Public services as may give unauthorized applications access to private information. Public
+        services have the <code>android:exported</code> attribute set to true and define an intent filter, this means that they can be used
+        by any applications, so they can also be used by malware. Instead developers should use In-house services, so that the
+        apps require permission and the user has control over what app can potentially access his data. Or developers can use
+        partner services so that they can whitelist apps to use their service.
+    </li>
+</ol>
+<!--
+
+Swiftly transform Services to the appropriate one with <b>Sensei Security&reg; Quick Fix: Hit {{{
+    qfshortcut }}}</b>.
+Or use the code generators provided by <b>Sensei Security&reg; Generator: Hit {{{ generatorsshortcut
+    }}}</b> to start from scratch.<br/>
+
+<h2>Additional information</h2>
+
+If an application can bind to your service it might gain unauthorized access to data. The adversary could also
+perform unauthorized tasks. Links:<br>
+<ul>
+
+    <li>(PDF) <a href="https://www.jssec.org/dl/android_securecoding_en.pdf"> Android Application Secure
+        Design/Secure Coding Guidebook: Extensive description of private, public, partner and in-house Services</a>
+    </li>
+    <li>(PDF) <a href="https://pdfs.semanticscholar.org/9f9e/fe226f4090c855843bcca6aee3e0400f5069.pdf">Burns -
+        Developing Secure Android Applications v1.0</a></li>
+    <li>(Extra Documentation) <a href="https://cwe.mitre.org/data/definitions/926.html">Examples of vulnerable
+        Apps</a>
+    </li>
+</ul>
+
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

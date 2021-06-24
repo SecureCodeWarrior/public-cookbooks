@@ -1,0 +1,27 @@
+id: scw:android:disable-geolocation
+version: 8
+metadata:
+  name: 'Android WebView best practices: Disable Geolocation'
+  shortDescription: WebView setting with privacy implications
+  level: error
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/AndroidWebViewbestpractices.html
+search:
+  instanceCreation:
+    not:
+      followedBy:
+        methodcall:
+          followedBy:
+            methodcall:
+              name: setGeolocationEnabled
+          name: getSettings
+    type: android.webkit.WebView
+availableFixes:
+- name: Disable geolocation
+  actions:
+  - addMethodCall:
+      name: getSettings().setGeolocationEnabled
+      arguments:
+      - "false"
+      position: first-available-spot

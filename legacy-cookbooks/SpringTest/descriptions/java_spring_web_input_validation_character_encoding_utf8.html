@@ -1,0 +1,42 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to set the character encoding explicitely.
+<h2>Description</h2>
+<!-- https://www.owasp.org/index.php/OWASP_Secure_Coding_Practices_Checklist Number 4 -->
+Secure coding practices prescribed to specify proper character sets, such as <b>UTF-8</b>, as part of the input validation routines. This is because special (dangerous) characters might be encoded in different ways. For example the characters <code>%c0%ae%c0%ae/</code>, which means <code>../</code> (dot-dot-slash) can still be used for directory traversal if the input validation checks for dots and slashes but not these special characters. 
+<h4>Correct code example:</h4>
+<pre>
+&lt;filter&gt;
+&nbsp;&nbsp;&nbsp;&lt;filter-name>encodingFilter&lt;/filter-name&gt;
+&nbsp;&nbsp;&nbsp;&lt;filter-class>org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+&nbsp;&nbsp;&nbsp;&lt;init-param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param-name&gt;encoding&lt;/param-name&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param-value&gt;<b>UTF-8</b>&lt;/param-value&gt;
+&nbsp;&nbsp;&nbsp;&lt;/init-param&gt;
+&nbsp;&nbsp;&nbsp;&lt;init-param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param-name>forceEncoding&lt;/param-name&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param-value>true&lt;/param-value&gt;
+&nbsp;&nbsp;&nbsp;&lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+&nbsp;&nbsp;&nbsp;&lt;filter-name>encodingFilter&lt;/filter-name&gt;<
+&nbsp;&nbsp;&nbsp;&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - Path Traversal. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/pathtraversal/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/generic/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

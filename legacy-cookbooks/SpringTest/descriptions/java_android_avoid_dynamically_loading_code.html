@@ -1,0 +1,53 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and Android coding guidelines, recommendations were abstracted which state that dynamically loading code is unsafe. Similarly, dynamic installation of APK files should be prevented.
+<h2>Description</h2>
+Prevent writing code which can dynamically execute code from other sources. Dynamically loading APK files is also discouraged. This functionality will usually fail since this is a settings option that is disabled by default for security reasons.
+
+<!--Either remove the offending code or use a third-party library such as Grab-n-Run which offers secure dynamic loading of code. A secure code example which uses Grab-n-Run is given below.
+<h4>Correct code example:</h4>
+<pre>
+String jarContainerPath = "some.apk";
+try {
+&nbsp;&nbsp;&nbsp;Map&lt;String, URL&gt; packageNamesToCertMap = new HashMap&lt;String, URL&gt;();
+&nbsp;&nbsp;&nbsp;packageNamesToCertMap.put("com.example", new URL("certificate.pem"));
+&nbsp;&nbsp;&nbsp;<b>SecureLoaderFactory</b> mSecureLoaderFactory = new SecureLoaderFactory(this);
+&nbsp;&nbsp;&nbsp;SecureDexClassLoader mSecureDexClassLoader = mSecureLoaderFactory.<b>createDexClassLoader</b>(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jarContainerPath,null,getClass().getClassLoader(), packageNamesToCertMap);
+&nbsp;&nbsp;&nbsp;Class&lt;?&gt; loadedClass = mSecureDexClassLoader.loadClass("com.example.MyClass");
+} catch (...) {
+&nbsp;&nbsp;&nbsp;...
+}
+</pre>
+-->
+<!--
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://github.com/lukeFalsina/Grab-n-Run">(GitHub) Grab'n Run: Secure and Practical Dynamic Code Loading for Android Applications</a></li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+Dynamically loading code from unknown sources is not recommended. This can lead to remote code injection. Also note that dynamically loading code from a known location but over an unsafe connection can result in attacks (i.e., the downloaded code can be tampered with).
+
+<h3>Source:</h3>
+<ul>
+    <li>(WWW) <a href="http://tech.co/android-security-2014-07">Tech.Co - Dynamically Loading Code Securely with Android</a></li>
+</ul>
+<br>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

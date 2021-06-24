@@ -1,0 +1,35 @@
+id: c170e11a-9432-41fb-a036-fbd7e0f61498
+version: 8
+metadata:
+  name: 'Exception: Created but not thrown'
+  shortDescription: Exceptions should be thrown, not just created
+  level: error
+  scwCategory: ""
+  enabled: true
+  comment: This recipe only addresses the case of an instance creation that is not
+    thrown, assigned or used in any other way. The other ways are detected and marked
+    by IntelliJ itself? Also, do we need target self in the QF?
+  descriptionFile: descriptions/ExceptionCreatedbutnotthrown.html
+search:
+  instanceCreation:
+    not:
+      anyOf:
+      - in:
+          assignment: {}
+      - in:
+          throw: {}
+      - in:
+          argument: {}
+      - in:
+          return: {}
+      - in:
+          methodcall: {}
+      - in:
+          expression: {}
+    type: java.lang.Throwable
+availableFixes:
+- name: Add a throw
+  actions:
+  - rewrite:
+      to: throw {{{ . }}}
+      target: self

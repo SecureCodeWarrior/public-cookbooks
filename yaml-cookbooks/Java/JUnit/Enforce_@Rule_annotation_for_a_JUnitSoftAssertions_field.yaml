@@ -1,0 +1,20 @@
+id: scw:java:junit:JUnitSoftAssertions-rule
+version: 8
+metadata:
+  name: 'Test framework: Enforce @Rule annotation for a JUnitSoftAssertions field'
+  shortDescription: A JUnitSoftAssertionsField always need to have the @Rule annotation
+  level: error
+  enabled: true
+search:
+  field:
+    type: org.assertj.core.api.JUnitSoftAssertions
+    without:
+      annotation:
+        type: org.junit.Rule
+availableFixes:
+- name: Add @Rule
+  actions:
+  - rewrite:
+      to: |-
+        @org.junit.Rule
+        {{{ . }}}

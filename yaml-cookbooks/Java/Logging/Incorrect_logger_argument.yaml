@@ -1,0 +1,23 @@
+id: scw:logging:incorrect-class-name
+version: 8
+metadata:
+  name: Incorrect logger argument
+  shortDescription: The logger is using the wrong class name
+  level: error
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        not:
+          with:
+            type: java.lang.String
+            value: '{{{ containingClass.name }}}'
+    name: getLogger
+    type: java.util.logging.Logger
+availableFixes:
+- name: Rewrite to current class name
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: '{{{ containingClass.name }}}.class.getName()'

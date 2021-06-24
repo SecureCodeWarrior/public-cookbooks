@@ -1,0 +1,49 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that queries need to be parameterized. Concatenation of parameters is not recommended.
+<h2>Description</h2>
+A parameterized query needs to be build first. Next, the parameter variables should be added. The following functions can be used to achieve this securely. These functions can be used to execute queries against the database.
+<h4>Class information:</h4>
+<pre>
+package java.sql.<b>Connection</b>
+    PreparedStatement prepareStatement(String sql);
+</pre>
+<pre>
+package java.sql.<b>PreparedStatement</b>
+    void setString(int parameterIndex, String x);
+    void setBigDecimal(int parameterIndex, BigDecimal x);
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+import java.sql.*;
+...
+<b>PreparedStatement prepStatement</b>;
+Connection connection;
+...
+String query="SELECT * from db <b>where name= ?</b>";
+prepStatement=connection.prepareStatement(query);
+prepStatement.<b>setString( 1, name)</b>;
+resultSet=prepStatement.executeQuery();
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Client Side Injection - SQL Injection. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/client_side_injection/sql_injection/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - SQL Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/sql/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

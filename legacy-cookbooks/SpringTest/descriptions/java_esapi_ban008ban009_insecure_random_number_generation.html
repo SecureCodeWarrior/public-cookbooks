@@ -1,0 +1,68 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Java best practices and coding guidelines, recommendations where abstracted that recommend the usage of OWASP Enterprise Security API (ESAPI).
+Only authorized routines from that library can be used for random number generation.
+As such, developers can not use standard java implementations to generate random numbers.
+<h2>Description</h2>
+It is not recommended to use the standard java implementation for random number generation as there is
+an OWASP ESAPI alternative.
+Specifically banned methods are:
+<ul>
+    <li>BAN008a: <code>Math.Random.nextInt</code>, <code>nextFloat</code>, <code>nextLong</code>, <code>nextDouble</code>, <code>nextBoolean</code>, <code>nextBytes</code>: insecure Random number generation</li>
+    <li>BAN008b: <code>Math.random</code>: uses the <code>Math.Random</code> class methods</li>
+	<li>BAN009:  <code>File.createTempFile</code>: generates random file names insecurely</li>
+</ul>
+As an alternative it is recommended to use an implementation of the <code>Randomizer</code> interface, it provides methods for generating several data types as well as filenames and GUID. An Implementing class of this interface is the <code>DefaultRandomizer</code>.
+<h4>Correct code example:</h4>
+<pre>
+import org.owasp.esapi.reference.<b>DefaultRandomizer</b>;
+...
+float random = randomizer.getRandomReal(0,1);
+</pre>
+<!--
+<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer</h2>
+
+Please see the standard OWASP ESAPI documentation for more information:<br/>
+<ul>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/Randomizer.html" >OWASP ESAPI Javadoc: Randomizer</a>.</li>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/reference/DefaultRandomizer.html" >OWASP ESAPI Javadoc: DefaultRandomizer</a>.</li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<ul>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/ESAPI_Secure_Coding_Guideline">OWASP ESAPI Secure Coding Guideline</a></li>
+<li>(WWW) <a href="https://www.owasp.org/index.php/Insecure_Randomness">OWASP Insecure Randomness</a></li>
+<li>(WWW) <a href="https://www.owasp.org/index.php/Cryptographic_Storage_Cheat_Sheet#Rule_-_Use_strong_random_numbers">OWASP Crypto cheat sheet: Use strong random numbers</a></li>
+<li>(WWW) <a href="http://www.ietf.org/rfc/rfc1750.txt">RFC 1750: Randomness Recommendations for Security</a></li>
+<li>(WWW) <a href="http://resources.infosecinstitute.com/random-number-generation-java/">Random Number Generation in Java</a></li>
+</ul>
+
+<br>
+In case of questions on the usage of the OWASP ESAPI, please contact: {{{ appsecmail }}}<br>
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Cryptography - Insecure Randomness. <a href="https://{{microtraininghost}}/#/simple-flow/web/crypto/insecurerandomness/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

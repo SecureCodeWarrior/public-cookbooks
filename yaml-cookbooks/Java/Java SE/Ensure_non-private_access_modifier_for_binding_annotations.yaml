@@ -1,0 +1,18 @@
+id: scw:java:inject-public
+version: 8
+metadata:
+  name: Ensure non-private access modifier for binding annotations
+  shortDescription: Ensure non-private access modifier for binding annotations
+  level: warning
+  enabled: true
+search:
+  method:
+    annotation:
+      type: javax.inject.Inject
+    without:
+      modifier: public
+availableFixes:
+- name: Change to public
+  actions:
+  - changeModifiers:
+      visibility: public

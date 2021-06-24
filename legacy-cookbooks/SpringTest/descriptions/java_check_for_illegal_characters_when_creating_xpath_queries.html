@@ -1,0 +1,42 @@
+<html>
+<body>
+<h2>Abstract</h2>
+<!-- 1. Company specific description of what should be used in words -->
+Secure coding practices prescribe to check user input against illegal characters before creating XPATH queries.
+
+<br/>
+<!-- 2. Company specific code example of what should be used. The code example should be directly applicable -->
+<h2>Description</h2>
+
+Input used into an XPATH expression must not contain any of the following characters:
+<br/><br/>
+<code>&nbsp;&nbsp;&nbsp;( ) = ' [ ] : , * / WHITESPACE</code>
+<br/><br/>
+When user input is used to create XPATH queries, the input must always be checked against these characters. For example, one can check if the input contains any of these characters by using a regex.
+<br/>
+<br/>
+<b>Correct code example:</b><br/>
+<pre>
+if (expression.<b>matches(".*(\\(|\\)|=|'|\\[|\\]|:|,|\\*|\\/| |\\t|\\n|\\r).*")</b>){
+&nbsp;&nbsp;&nbsp;//handle invalid input
+}
+javax.xml.xpath.XPathExpression expr = xpath.compile(expression);
+</pre>
+<br/>
+
+Using string concatenation without input validation/sanitization to construct an XPath Query can lead to an XPath Injection vulnerability.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - XPath Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/xpath/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that <code>android.media.ExifInterface</code> should not be used.
+<h2>Description</h2>
+<code>android.media.ExifInterface</code> can lead to Denial of service attacks or code injection. Use <code>android.<b>support</b>.media.ExifInterface</code> instead.
+<h4>Correct code example:</h4>
+<pre>
+import android.<b>support</b>.media.ExifInterface;
+</pre>
+In order to add this package to your dependencies add the folowing line of code to your gradle file:
+<pre>
+compile "com.android.support:exifinterface:25.1.0"
+</pre>
+<!--
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/reference/android/media/ExifInterface.html">(Android)android.media.ExifInterface</a> </li>
+    <li>(WWW) <a href="https://android-developers.googleblog.com/2016/12/introducing-the-exifinterface-support-library.html">(Android Developers Blog)Introducing the ExifInterface Support Library</a> </li>
+<li>(WWW) <a href="https://developer.android.com/reference/android/support/media/ExifInterface.html?utm_campaign=android_launch_exifsupportlibrary_122116&utm_source=anddev&utm_medium=blog">(Android)android.support.media.ExifInterface</a> </li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+Security implications for not following this guideline
+<ul>
+    <li>(WWW) <a href="https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2016-3862">CVE-2016-3862.</a></li>
+</ul>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Client Side Injection - JavaScript Injection. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/client_side_injection/javascript_injection/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

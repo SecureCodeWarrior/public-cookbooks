@@ -1,0 +1,59 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Java best practices and coding guidelines, recommendations where abstracted that recommend the usage of OWASP Enterprise Security API (ESAPI).
+Running OS commands from the program should be avoided as much as possible as this is insecure.
+As such, in line with the ESAPI list of banned methods, it is discouraged to use any methods from the <code>java.lang.Runtime</code> class.<br/>
+<h2>Description</h2>
+It is discouraged to use the standard java implementation for running OS commands as they are insecure. 
+It is best practice to avoid running OS commands from the program altogether.<br/>
+<!--
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer</h2>
+
+Please see the standard OWASP ESAPI documentation for more information:<br/>
+<ul>
+    <li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0/org/owasp/esapi/Executor.html" >OWASP ESAPI Javadoc: Executor Interface</a>.</li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<b>Security implications related to not following this guideline:</b>
+<ul>
+	    <li>(WWW) <a href="https://www.owasp.org/index.php/ESAPI_Secure_Coding_Guideline">OWASP ESAPI Secure Coding Guideline</a></li>
+    <li>(WWW) <a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP Top 10: A1: Injection</a> </li>
+	<li>(WWW) <a href="https://www.owasp.org/index.php/Command_Injection">OWASP Command Injection</a> </li>
+	<li>(WWW) <a href="https://www.owasp.org/index.php/Command_injection_in_Java">OWASP Command Injection in Java</a>
+	<li>(WWW) <a href="https://www.owasp.org/index.php/Denial_of_Service">OWASP Denial of Service</a> </li>
+	<li>(WWW) <a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">OWASP Input Validation Cheat Sheet</a> </li>
+	<li>(WWW) <a href="hhttps://www.owasp.org/index.php/Unvalidated_Input">OWASP Unvalidated Input</a> </li>
+</ul>
+</ul>
+</ul>
+<br>
+
+
+In case of questions on the usage of the OWASP ESAPI, please contact: {{{ appsecmail }}}<br>
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - OS Command Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/oscmd/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

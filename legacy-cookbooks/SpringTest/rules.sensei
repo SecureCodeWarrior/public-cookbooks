@@ -1,0 +1,4363 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Java rules",
+    "description": "Secure Code Warrior default Java rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2016 Sensei Security CVBA. All rights reserved.",
+    "rulepack_id": "333333333-987654321",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 4,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "children": [],
+                      "value": [
+                        {
+                          "id": 6,
+                          "value": {
+                            "name": "CONFIDENTIAL",
+                            "nameType": 0,
+                            "trim": false,
+                            "negate": true
+                          }
+                        }
+                      ],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "transport-guarantee",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "user-data-constraint",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "security-constraint",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change transport guarantee to CONFIDENTIAL.",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "CONFIDENTIAL",
+                  "nodeId": 6
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Wrong Value",
+        "ruleID": "d0b6ac5a-847a-4b00-b282-cfdf380f8b78",
+        "codingPolicy": "java_spring_web_confidential_transport_guarantee",
+        "ruleDescriptionFile": "java_spring_web_confidential_transport_guarantee.html",
+        "ruleShortDescription": "This security constraint is not secure.",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*(s|S)pring.*",
+              "negate": false
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 4,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "children": [],
+                      "value": [
+                        {
+                          "id": 6,
+                          "value": {
+                            "name": "/|\\*|/\\*",
+                            "nameType": 1,
+                            "trim": false,
+                            "negate": true
+                          }
+                        }
+                      ],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "url-pattern",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "web-resource-collection",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 7,
+                  "children": [
+                    {
+                      "id": 8,
+                      "children": [],
+                      "value": [],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "transport-guarantee",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "user-data-constraint",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "security-constraint",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change url-pattern to include entire website.",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "/*",
+                  "nodeId": 6
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Wrong Resource",
+        "ruleID": "cad2c8b1-5e63-4ec2-b60d-218644e8d2c6",
+        "codingPolicy": "java_spring_web_confidential_transport_guarantee",
+        "ruleDescriptionFile": "java_spring_web_confidential_transport_guarantee.html",
+        "ruleShortDescription": "The resource for this security constraint is too narrow.",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "children": [],
+                      "value": [
+                        {
+                          "id": 6,
+                          "value": {
+                            "name": ".*",
+                            "nameType": 1,
+                            "trim": false,
+                            "negate": false
+                          }
+                        }
+                      ],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": true,
+                        "allowExtraAttributes": false,
+                        "tagName": {
+                          "name": "transport-guarantee",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": true,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "user-data-constraint",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "security-constraint",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add security constraint for transport-guarantee CONFIDENTIAL",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\n\u003csecurity-constraint\u003e\n\t\t\u003cweb-resource-collection\u003e\n\t\t\t\u003cweb-resource-name\u003eEntire Website\u003c/web-resource-name\u003e\n\t\t\t\u003curl-pattern\u003e/*\u003c/url-pattern\u003e\n\t\t\u003c/web-resource-collection\u003e\n\t\t\u003cuser-data-constraint\u003e\n\t\t\t\u003ctransport-guarantee\u003eCONFIDENTIAL\u003c/transport-guarantee\u003e\n\t\t\u003c/user-data-constraint\u003e\n\t\u003c/security-constraint\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Absent transport-guarantee",
+        "ruleID": "744588f4-8a16-4007-bc32-d054aec0b018",
+        "codingPolicy": "java_spring_web_confidential_transport_guarantee",
+        "ruleDescriptionFile": "java_spring_web_confidential_transport_guarantee.html",
+        "ruleShortDescription": "It is recommended to use SSL to protect data during transmission.",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "org.springframework.jdbc.core",
+            "className": "JdbcTemplate",
+            "methodName": "query",
+            "argumentTypes": [
+              "java.lang.String",
+              ".*"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": 1,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}}, {{{ arguments.1 }}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Use parameterized query",
+        "commonFixes": [],
+        "ruleName": "Data: Injection: Parameterized SQL Queries: JdbcTemplate#query",
+        "ruleID": "c9f0ccab-dddc-44f0-8b01-428214ebbc3a",
+        "ruleShortDescription": "Do not use string concatenation for sql queries",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "org.springframework.jdbc.core",
+            "className": "JdbcTemplate",
+            "methodName": "queryForObject",
+            "argumentTypes": [
+              "java.lang.Object",
+              ".*"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": 2,
+            "useVarArgs": true,
+            "bindingType": "java.lang.Object",
+            "fixUseVarArgs": true,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{ arguments.1 }}}, {{{bindings}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Use parameterized query",
+        "commonFixes": [],
+        "ruleName": "Data: Injection: Parameterized SQL Queries: JdbcTemplate#queryForObject",
+        "ruleID": "cc654b0e-06b0-4c9e-85fe-480f1de2308c",
+        "ruleShortDescription": "Do not use string concatenation for sql queries",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "java\\.lang",
+        "className": "String",
+        "methodName": "isEmpty",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: Input Validation: Check Empty",
+        "ruleID": "08d3ccc4-fd9d-48ea-8b91-be8a8cb91311",
+        "codingPolicy": "java_spring_mvc_input_validation_check_empty",
+        "ruleDescriptionFile": "java_spring_mvc_input_validation_check_empty.html",
+        "ruleShortDescription": "Do not check Strings using isEmpty",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org\\.springframework\\.web\\.servlet\\.mvc\\.support",
+        "className": "RedirectAttributes",
+        "methodName": "addAttribute",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": ".*",
+            "content": ".*[Ss]ession.*",
+            "deepReplacement": false,
+            "variableName": ""
+          },
+          {
+            "type": "",
+            "content": "",
+            "deepReplacement": false,
+            "variableName": ""
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Delete",
+            "quickfixCode": ""
+          },
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Comment out",
+            "quickfixCode": "/* {{{ . }}} */"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Session Management: Framework Handled Session Token: RedirectAttributes#addAttribute",
+        "ruleID": "502b07d8-3905-4077-8530-26269fb02003",
+        "codingPolicy": "java_spring_mvc_framework_handled_session_token",
+        "ruleDescriptionFile": "java_spring_mvc_framework_handled_session_token.html",
+        "ruleShortDescription": "Do not send session ID through URL parameter",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Configure session timeout",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003csession-config\u003e\n\t\t\u003csession-timeout\u003e10\u003c/session-timeout\u003e\n\t\u003c/session-config\u003e",
+                  "insertAsFirst": true,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: Absent session-config",
+        "ruleID": "79432f7b-266e-4217-8c1d-cfb17d3aa831",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "No session timeout configured",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 4,
+                      "value": {
+                        "name": "-[0-9]*|0|[5-9][0-9]|[0-9][0-9][0-9][0-9].*",
+                        "nameType": 1,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "session-timeout",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Use shorter session timeout",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "10",
+                  "nodeId": 4
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: session-timeout too long",
+        "ruleID": "a72cb38c-9875-4a2e-966c-47aa1bc18596",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "Configured session timeout is too long",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": true,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "session-timeout",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Configure session timeout",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\t\u003csession-timeout\u003e10\u003c/session-timeout\u003e\n",
+                  "insertAsFirst": true,
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: Absent session-timeout",
+        "ruleID": "41ca4a42-ceef-46c0-92a4-fedd4ce4d4be",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "No session timeout configured",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 0,
+        "standardTypeSettings": [
+          {
+            "convertInsecureFirst": false,
+            "insecurePackageName": "org.hibernate",
+            "insecureClassName": "SharedSessionContract",
+            "insecureMethodName": "createQuery",
+            "queryStringInsecureArgumentPosition": 0,
+            "prepPackageName": "org.hibernate",
+            "prepClassName": "SharedSessionContract",
+            "prepMethodName": "createQuery",
+            "queryStringPrepArgumentPosition": 0,
+            "namedParameters": true,
+            "namedParameterFormat": ":{{{variable}}}",
+            "positionalParameters": false,
+            "bindings": [
+              {
+                "type": "java.lang.String",
+                "method": "setParameter",
+                "boundIndexPosition": 1,
+                "boundVariablePosition": 0,
+                "otherArguments": []
+              }
+            ]
+          }
+        ],
+        "queryMethods": [],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Use parameterized query",
+        "commonFixes": [],
+        "ruleName": "Data: Injection: Parameterized SQL Queries: SharedSessionContract#createQuery",
+        "ruleID": "1a166d93-92b1-4abc-80f5-64828fb4ca80",
+        "ruleShortDescription": "Do not use string concatenation for sql queries",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org\\.springframework\\.web\\.util",
+        "className": "WebUtils",
+        "methodName": "getCookie",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": "javax.servlet.http.HttpServletRequest",
+            "content": "",
+            "deepReplacement": false,
+            "variableName": ""
+          },
+          {
+            "type": "java.lang.String",
+            "content": ".*([cC][sS][rR][fF]).*",
+            "contentReplacement": "",
+            "deepReplacement": false,
+            "variableName": ""
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "java.lang.String",
+            "quickfixDescription": "Send CSRF token as a request parameter",
+            "quickfixCode": "{{{ arguments.0 }}}.getParameter({{{ arguments.1 }}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Session Management: WebUtils#getCookie1",
+        "ruleID": "3820da15-ca93-4207-b0a4-c537c1feb5de",
+        "codingPolicy": "java_spring_web_send_csrf_token",
+        "ruleDescriptionFile": "java_spring_web_send_csrf_token.html",
+        "ruleShortDescription": "Cookies are not a safe repository for CSRF tokens",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "org.springframework.jdbc.core",
+            "className": "JdbcTemplate",
+            "methodName": "update",
+            "argumentTypes": [
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": -1,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": true,
+            "collectionType": "java.util.HashMap\u003cString,java.lang.Object\u003e",
+            "existingCollectionArgumentPosition": -1,
+            "collectionAddMethod": "{{{collection}}}.put(\"{{{parameter}}}\", {{{value}}});",
+            "namedParameterFormat": ":{{{variable}}}",
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Use parameterized query",
+        "commonFixes": [],
+        "ruleName": "Data: Injection: Parameterized SQL Queries: JdbcTemplate#update ",
+        "ruleID": "a6682c5a-0b82-45bd-a444-98df7ffbaad8",
+        "ruleShortDescription": "Do not use string concatenation for sql queries",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "org.springframework.jdbc.core",
+            "className": "JdbcTemplate",
+            "methodName": "queryFor(List|Map)",
+            "argumentTypes": [
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": 1,
+            "useVarArgs": true,
+            "fixUseVarArgs": true,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Use parameterized query",
+        "commonFixes": [],
+        "ruleName": "Data: Injection: Parameterized SQL Queries: JdbcTemplate#queryFor(List|Map)",
+        "ruleID": "b6b60f29-81d4-42a4-ad1a-157e0b137ba3",
+        "ruleShortDescription": "Do not use string concatenation for sql queries",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "org\\.springframework\\.security\\.web\\.authentication",
+        "className": "SimpleUrlAuthenticationSuccessHandler",
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Comment out",
+            "quickfixCode": "/* {{{ . }}} */"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Security Misconfiguration: Redirect to System Coded Resources: SimpleUrlAuthenticationSuccessHandler",
+        "ruleID": "11377dd3-5939-4e7f-8f97-de3cb04a3161",
+        "codingPolicy": "java_spring_mvc_manual_redirect_to_system_coded_resources",
+        "ruleDescriptionFile": "java_spring_mvc_manual_redirect_to_system_coded_resources.html",
+        "ruleShortDescription": "Do not use authentication success handler",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org\\.springframework\\.security\\.config\\.annotation\\.web\\.configurers",
+        "className": "AbstractAuthenticationFilterConfigurer",
+        "methodName": "successHandler",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer",
+            "quickfixDescription": "Remove",
+            "quickfixCode": "{{{ qualifier }}}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Security Misconfiguration: Redirect to System Coded Resources: AbstractAuthenticationFilterConfigurer#successHandler",
+        "ruleID": "860c2d03-b436-4237-b496-6400d21548a4",
+        "codingPolicy": "java_spring_mvc_manual_redirect_to_system_coded_resources",
+        "ruleDescriptionFile": "java_spring_mvc_manual_redirect_to_system_coded_resources.html",
+        "ruleShortDescription": "Do not use authentication success handler",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "th:utext",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": ".*",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": ".*",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change to th:text",
+            "fixes": [
+              {
+                "ft": "b6771e403d486d6ae486051dd8c042a47d1221d1",
+                "t": {
+                  "newName": "th:text",
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Escaping: th:utext",
+        "ruleID": "4ae29fbe-76df-447b-a89a-6255525832ef",
+        "codingPolicy": "java_spring_mvc_escape_user_input_utext",
+        "ruleDescriptionFile": "java_spring_mvc_escape_user_input_utext.html",
+        "ruleShortDescription": "Do not use th:utext",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "th:text",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": ".*",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": ".*",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Escaping: th:utextCompliant",
+        "ruleID": "38acd4b8-92b8-4d59-a3a6-047d145da243",
+        "codingPolicy": "java_spring_mvc_escape_user_input_utext",
+        "ruleDescriptionFile": "java_spring_mvc_escape_user_input_utext.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "a3742f66078a9515f414944cba6683c3086f9c84",
+      "model": {
+        "overriddenCall": {
+          "qualifier": {
+            "qualifierClass": "org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter"
+          },
+          "methodName": {
+            "methodName": "configure",
+            "methodNameType": 0
+          },
+          "checkArguments": true,
+          "arguments": [
+            {
+              "value": "",
+              "valueType": 0,
+              "negateValueMatch": false,
+              "typeCanBeNull": false,
+              "type": "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+              "typeType": 0
+            }
+          ]
+        },
+        "requiredCall": {
+          "qualifier": {
+            "qualifierClass": "org.springframework.security.config.annotation.web.builders.HttpSecurity"
+          },
+          "methodName": {
+            "methodName": "requiresChannel",
+            "methodNameType": 0
+          },
+          "checkArguments": false,
+          "arguments": []
+        },
+        "quickfixes": [
+          {
+            "quickfixDescription": "Configure secure channel",
+            "quickfixCode": "{{{parameters.0}}}.requiresChannel().anyRequest().requiresSecure();"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: CSRF: CSRF Protection: requiresChannel",
+        "ruleID": "b6cf985a-d75b-4136-9ec8-4717ac2680f7",
+        "codingPolicy": "java_spring_security_framework_handled_secure_channel",
+        "ruleDescriptionFile": "java_spring_security_framework_handled_secure_channel.html",
+        "ruleShortDescription": "No security requirements set for the channel",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org\\.springframework\\.security\\.config\\.annotation\\.web\\.configurers",
+        "className": "ChannelSecurityConfigurer.RequiresChannelUrl",
+        "methodName": "requiresInsecure",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer.ChannelRequestMatcherRegistry  ",
+            "quickfixDescription": "Set requirement to secure",
+            "quickfixCode": "{{{ qualifier }}}.requiresSecure();"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: CSRF: CSRF Protection: requiresInsecure",
+        "ruleID": "48d86053-7d7b-4853-b820-92b7dfa78078",
+        "codingPolicy": "java_spring_security_framework_handled_secure_channel",
+        "ruleDescriptionFile": "java_spring_security_framework_handled_secure_channel.html",
+        "ruleShortDescription": "Never set security requirements to insecure!",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "javax.persistence",
+            "className": "EntityManager",
+            "methodName": "createQuery",
+            "argumentTypes": [
+              "java.lang.String",
+              "java.lang.Class\u003cT\u003e"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": -1,
+            "useVarArgs": false,
+            "bindingType": "Object",
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "collectionType": "java.util.HashMap",
+            "existingCollectionArgumentPosition": -1,
+            "collectionAddMethod": "{{{collection}}}.setParameter(\"{{{parameter}}}\", {{{value}}});",
+            "namedParameterFormat": ":{{{variable}}}",
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{variables.1}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "",
+        "commonFixes": [],
+        "ruleName": "Data: Injection: Parameterized SQL Queries: EntityManager#createQuery",
+        "ruleID": "b8f24024-ff42-4fea-8a80-6f7b022bd248",
+        "ruleShortDescription": "This text will be shown as a tooltip when this rule has been violated",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "action",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "http.*",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "form.form",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Allow the application server to decide the secure channel to be used",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"${submitURL}\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Secure Channel for Form Data",
+        "ruleID": "9191dc9f-8dcd-491b-9521-18a65eace345",
+        "codingPolicy": "java_spring_mvc_form_data_secure_channel",
+        "ruleDescriptionFile": "java_spring_mvc_form_data_secure_channel.html",
+        "ruleShortDescription": "Do not submit forms over HTTP",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org\\.springframework\\.web\\.util",
+        "className": "WebUtils",
+        "methodName": "getCookie",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": "javax.servlet.http.HttpServletRequest",
+            "content": "",
+            "deepReplacement": false,
+            "variableName": ""
+          },
+          {
+            "type": "java.lang.String",
+            "content": ".*",
+            "contentReplacement": "",
+            "deepReplacement": false,
+            "variableName": ".*([cC][sS][rR][fF]).*"
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "java.lang.String",
+            "quickfixDescription": "Send CSRF token as a request parameter",
+            "quickfixCode": "{{{ arguments.0 }}}.getParameter({{{ arguments.1 }}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: CSRF: Send CSRF Token: WebUtils#getCookie2",
+        "ruleID": "a4bf81a9-c134-4ad6-be76-f536327fcb0e",
+        "codingPolicy": "java_spring_web_send_csrf_token",
+        "ruleDescriptionFile": "java_spring_web_send_csrf_token.html",
+        "ruleShortDescription": "Cookies are not a safe repository for CSRF tokens",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "dee5ad1e57f51fcc27b7fa549f42117b64c4a86e",
+      "model": {
+        "mver": 1,
+        "fromElement": "param|paramValues|initParam",
+        "fromElementCompareMethod": 1,
+        "fieldName": "",
+        "fieldNameCompareMethod": 2,
+        "commonFixes": [],
+        "ruleName": "MVC: Injection/XSS: Avoid Displaying URL Parameters in JSP",
+        "ruleID": "dd121f11-8b1a-43e3-9f29-97002b97f051",
+        "codingPolicy": "java_spring_mvc_url_parameters_in_jsp",
+        "ruleDescriptionFile": "java_spring_mvc_url_parameters_in_jsp.html",
+        "ruleShortDescription": "Do not evaluate URL parameters",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "url",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": ".*",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "c:import",
+              "nameType": 1
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Use jsp:include",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "\u003cjsp:include page\u003d\"some/local/file.jsp\" /\u003e",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: RFI: Local Libraries: c:import tag",
+        "ruleID": "145dae12-eabe-4f24-bafa-f52db69f9d38",
+        "codingPolicy": "java_spring_mvc_local_libraries",
+        "ruleDescriptionFile": "java_spring_mvc_local_libraries.html",
+        "ruleShortDescription": "Do not use c:import",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "javax\\.servlet",
+        "className": "ServletRequest",
+        "methodName": "getParameter",
+        "checkArguments": false,
+        "arguments": [
+          {
+            "type": "java.lang.String",
+            "content": ".*([cC][sS][rR][fF]).*",
+            "contentReplacement": "",
+            "deepReplacement": true,
+            "variableName": ""
+          }
+        ],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: CSRF: Send CSRF Token: WebUtils#getCookie1Compliant",
+        "ruleID": "fc849e4d-2efb-4b0c-91b4-97962459fa63",
+        "codingPolicy": "java_spring_web_send_csrf_token",
+        "ruleDescriptionFile": "java_spring_web_send_csrf_token.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "javax\\.servlet",
+        "className": "ServletRequest",
+        "methodName": "getParameter",
+        "checkArguments": false,
+        "arguments": [
+          {
+            "type": "java.lang.String",
+            "content": ".*",
+            "contentReplacement": "",
+            "deepReplacement": true,
+            "variableName": ".*([cC][sS][rR][fF]).*"
+          }
+        ],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: CSRF: Send CSRF Token: WebUtils#getCookie2Compliant",
+        "ruleID": "f61329f3-9a59-42b2-8b72-5b1db4e9dbf9",
+        "codingPolicy": "java_spring_web_send_csrf_token",
+        "ruleDescriptionFile": "java_spring_web_send_csrf_token.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "page",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": ".*",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "jsp:include",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: RFI: Local Libraries: c:import tagCompliant",
+        "ruleID": "e66c973f-c1b1-4adb-a161-1c46e12dd734",
+        "codingPolicy": "java_spring_mvc_local_libraries",
+        "ruleDescriptionFile": "java_spring_mvc_local_libraries.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 4,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "children": [],
+                      "value": [],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "transport-guarantee",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "user-data-constraint",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "security-constraint",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Absent transport-guaranteeCompliant",
+        "ruleID": "9dd64acb-fb7e-4500-8e72-f5069cb0916b",
+        "codingPolicy": "java_spring_web_confidential_transport_guarantee",
+        "ruleDescriptionFile": "java_spring_web_confidential_transport_guarantee.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 6,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "children": [],
+                      "value": [
+                        {
+                          "id": 5,
+                          "value": {
+                            "name": "CONFIDENTIAL",
+                            "nameType": 0,
+                            "trim": false,
+                            "negate": false
+                          }
+                        }
+                      ],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "transport-guarantee",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "user-data-constraint",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 6,
+                  "children": [
+                    {
+                      "id": 7,
+                      "children": [],
+                      "value": [
+                        {
+                          "id": 8,
+                          "value": {
+                            "name": "/|\\*|/\\*",
+                            "nameType": 1,
+                            "trim": false,
+                            "negate": false
+                          }
+                        }
+                      ],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "url-pattern",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "web-resource-collection",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "security-constraint",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Wrong ResourceCompliant",
+        "ruleID": "8b95823f-c0f0-4d90-b40a-caeb2c9eef9f",
+        "codingPolicy": "java_spring_web_confidential_transport_guarantee",
+        "ruleDescriptionFile": "java_spring_web_confidential_transport_guarantee.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 4,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [
+                    {
+                      "id": 4,
+                      "children": [],
+                      "value": [
+                        {
+                          "id": 5,
+                          "value": {
+                            "name": "CONFIDENTIAL",
+                            "nameType": 0,
+                            "trim": false,
+                            "negate": false
+                          }
+                        }
+                      ],
+                      "attributes": [],
+                      "tag": {
+                        "disallowed": false,
+                        "allowExtraAttributes": true,
+                        "tagName": {
+                          "name": "transport-guarantee",
+                          "nameType": 0
+                        }
+                      }
+                    }
+                  ],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "user-data-constraint",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "security-constraint",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: TLS: Wrong ValueCompliant",
+        "ruleID": "11e4b8d5-6b7f-4e9e-af58-8ab2df963df4",
+        "codingPolicy": "java_spring_web_confidential_transport_guarantee",
+        "ruleDescriptionFile": "java_spring_web_confidential_transport_guarantee.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: Absent session-configCompliant",
+        "ruleID": "0a3c06f5-ef01-4b1a-9a2e-511d3cc242d6",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 4,
+                      "value": {
+                        "name": "[1-9]|[1-5][0-9]",
+                        "nameType": 1,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "session-timeout",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: session-timeout too longCompliant",
+        "ruleID": "4842289a-0217-4b41-a044-04093518481b",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 1,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [],
+                  "value": [],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "session-timeout",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: Absent session-timeoutCompliant",
+        "ruleID": "7d89d7f0-f0ed-4bcf-8f15-818c68794b1b",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org\\.springframework\\.validation",
+        "className": "ValidationUtils",
+        "methodName": "rejectIfEmptyOrWhitespace",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "MVC: Input Validation: Check EmptyCompliant",
+        "ruleID": "587cca01-2170-49f4-80d3-e20d0599e84b",
+        "codingPolicy": "java_spring_mvc_input_validation_check_empty",
+        "ruleDescriptionFile": "java_spring_mvc_input_validation_check_empty.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "hash",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "sha-256",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "security:password-encoder",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Use hashing algorithm sha-256",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"sha-256\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Password Encoder Configuration",
+        "ruleID": "f0b19da3-5f04-4d84-8896-326ffe879850",
+        "codingPolicy": "java_spring_security_password_encoder_configuration",
+        "ruleDescriptionFile": "java_spring_security_password_encoder_configuration.html",
+        "ruleShortDescription": "This hashing algorithm is not recommended.",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "context-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set defaultHtmlEscape to true",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003ccontext-param\u003e\n        \u003cparam-name\u003edefaultHtmlEscape\u003c/param-name\u003e\n        \u003cparam-value\u003etrue\u003c/param-value\u003e\n    \u003c/context-param\u003e",
+                  "insertAsFirst": true,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Output Escaping: Escape HTML from JSP not set",
+        "ruleID": "416bbaec-dd91-4288-a0e1-ef6a2b15de68",
+        "codingPolicy": "java_spring_security_escape_html_from_jsp_pages",
+        "ruleDescriptionFile": "java_spring_security_escape_html_from_jsp_pages.html",
+        "ruleShortDescription": "Default escaping not set to true",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 5,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 6,
+                      "value": {
+                        "name": "defaultHtmlEscape",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 5,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 7,
+                      "value": {
+                        "name": "true",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": true
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "context-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set defaultHtmlEscape to true",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "true",
+                  "nodeId": 7
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Output Escaping: Escape HTML from JSP set to false",
+        "ruleID": "5eb3a19e-46c1-4e68-8414-732334d4624e",
+        "codingPolicy": "java_spring_security_escape_html_from_jsp_pages",
+        "ruleDescriptionFile": "java_spring_security_escape_html_from_jsp_pages.html",
+        "ruleShortDescription": "Default escaping not set to true",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "context-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set defaultHtmlEscape to true",
+            "fixes": []
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Output Escaping: Escape HTML from JSP not setCompliant",
+        "ruleID": "ba1a3f96-a14e-4a18-816c-35ad7437907e",
+        "codingPolicy": "java_spring_security_escape_html_from_jsp_pages",
+        "ruleDescriptionFile": "java_spring_security_escape_html_from_jsp_pages.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 5,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 6,
+                      "value": {
+                        "name": "defaultHtmlEscape",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 5,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 7,
+                      "value": {
+                        "name": "false",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": true
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "context-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set defaultHtmlEscape to true",
+            "fixes": []
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Output Escaping: Escape HTML from JSP set to falseCompliant",
+        "ruleID": "eb62b045-7c88-43e2-80d8-55939e59149b",
+        "codingPolicy": "java_spring_security_escape_html_from_jsp_pages",
+        "ruleDescriptionFile": "java_spring_security_escape_html_from_jsp_pages.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [],
+              "attributes": [
+                {
+                  "id": 3,
+                  "attribute": {
+                    "optionalAttribute": false,
+                    "disallowed": false,
+                    "name": "disabled",
+                    "attributeNameType": 0,
+                    "attributeType": 0,
+                    "attributeValue": "true",
+                    "attributeValueType": 0
+                  }
+                }
+              ],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "csrf",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "http",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Leave CSRF protection enabled",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: CSRF: CSRF Protection disabled: xml",
+        "ruleID": "c8056cf1-686e-4aad-a85d-842c363399be",
+        "codingPolicy": "java_spring_security_framework_handled_csrf_protection",
+        "ruleDescriptionFile": "java_spring_security_framework_handled_csrf_protection.html",
+        "ruleShortDescription": "Are you sure you want to disable CSRF protection?",
+        "ruleErrorLevel": 0,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org.springframework.security.config.annotation.web.configurers",
+        "className": "AbstractHttpConfigurer",
+        "methodName": "disable",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "java.lang.String",
+            "quickfixDescription": "Leave enabled",
+            "quickfixCode": "{{{ children.0.children.0 }}}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: CSRF: CSRF Protection disabled: java",
+        "ruleID": "1268ff7c-0bc6-4209-97aa-40ae138f72d9",
+        "codingPolicy": "java_spring_security_framework_handled_csrf_protection",
+        "ruleDescriptionFile": "java_spring_security_framework_handled_csrf_protection.html",
+        "ruleShortDescription": "Are you sure you want to disable CSRF protection?",
+        "ruleErrorLevel": 0,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "class",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": ".*CookieCsrfTokenRepository",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "b:bean",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: CSRF: CookieCsrfTokenRepository",
+        "ruleID": "a6272e30-8db2-4c68-903a-f3cd12dcb9c4",
+        "codingPolicy": "java_spring_security_send_csrf_token",
+        "ruleDescriptionFile": "java_spring_security_send_csrf_token.html",
+        "ruleShortDescription": "Cookies are not a safe repository for CSRF tokens",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "javax\\.servlet",
+        "className": "ServletRequest",
+        "methodName": "getParameter",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": "java.lang.String",
+            "content": "redirect",
+            "deepReplacement": false,
+            "variableName": ".*"
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Delete",
+            "quickfixCode": " "
+          },
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Comment out",
+            "quickfixCode": "/* {{{ . }}} */"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Security Misconfiguration: Redirect to System Coded Resources",
+        "ruleID": "409bddaa-ce4c-4629-ab1a-3e9b42011b70",
+        "codingPolicy": "java_spring_mvc_manual_redirect_to_system_coded_resources",
+        "ruleDescriptionFile": "java_spring_mvc_manual_redirect_to_system_coded_resources.html",
+        "ruleShortDescription": "Always redirect to a system-coded resource.",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "security",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "none",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "http",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Configure to allow all requests without disabling the security filters.",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "access\u003d\"permitAll\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "2e827f571fca80c994d0d5783641a24c3a63f4ea",
+                "t": {
+                  "newName": "intercept-url",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Authorization: Unsecured Request Pattern",
+        "ruleID": "d0159fbb-a614-4ea9-93ca-177cd351dc0b",
+        "codingPolicy": "java_spring_security_unsecured_request_pattern_configuration",
+        "ruleDescriptionFile": "java_spring_security_unsecured_request_pattern_configuration.html",
+        "ruleShortDescription": "This pattern has all security functionalities disabled",
+        "ruleErrorLevel": 1,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 4,
+                  "value": {
+                    "name": "springJspExpressionSupport",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "param-name",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 3,
+              "children": [],
+              "value": [
+                {
+                  "id": 5,
+                  "value": {
+                    "name": "true",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "param-value",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "context-param",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Disable Jsp Expression Support (default behaviour)",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Injection: Expression Language Injection: Disable SpEL Evaluation",
+        "ruleID": "799ba9c9-63ca-419b-9e18-4f4894d91fd1",
+        "codingPolicy": "java_spring_web_disable_spel_evaluation",
+        "ruleDescriptionFile": "java_spring_web_disable_spel_evaluation.html",
+        "ruleShortDescription": "Enabling Jsp Expression Support might leave your application vulnerable to injection",
+        "ruleErrorLevel": 1,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "99e0659c6d3a462a078d599d158bc4652760bb4f",
+      "model": {
+        "packageName": "org.springframework.oxm",
+        "className": "Unmarshaller",
+        "methodName": "unmarshal",
+        "wrongArgs": [
+          {
+            "type": "javax.xml.transform.stax.StAXSource|javax.xml.transform.dom.DOMSource",
+            "content": ".*",
+            "contentType": 0
+          }
+        ],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "OXM: Framework Handled XML Parsing: Unmarshaller#unmarshal(StAXSource|DOMSource)",
+        "ruleID": "ccecced9-e7cb-4fda-beb9-4734024bfac2",
+        "codingPolicy": "java_spring_oxm_framework_handled_xml_parsing",
+        "ruleDescriptionFile": "java_spring_oxm_framework_handled_xml_parsing.html",
+        "ruleShortDescription": "This source implementation requires manual XML parsing.",
+        "ruleErrorLevel": 1,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 7,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 3,
+                  "value": {
+                    "name": "org.springframework.web.filter.CharacterEncodingFilter",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "filter-class",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 4,
+              "children": [
+                {
+                  "id": 5,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 6,
+                      "value": {
+                        "name": "encoding",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 7,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 8,
+                      "value": {
+                        "name": "UTF-8",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": true
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "init-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "filter",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set character encoding to UTF-8",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "UTF-8",
+                  "nodeId": 8
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Encoding: Character Encoding: not UTF-8",
+        "ruleID": "4277b2c1-6966-49ea-b46c-fb44bc370221",
+        "codingPolicy": "java_spring_web_input_validation_character_encoding_utf8",
+        "ruleDescriptionFile": "java_spring_web_input_validation_character_encoding_utf8.html",
+        "ruleShortDescription": "Character encoding should be set to UTF-8",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 12,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 3,
+                  "value": {
+                    "name": "org.springframework.web.filter.CharacterEncodingFilter",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "filter-class",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 4,
+              "children": [
+                {
+                  "id": 5,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 6,
+                      "value": {
+                        "name": "encoding",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 7,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 8,
+                      "value": {
+                        "name": "UTF-8",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "init-param",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 10,
+              "children": [
+                {
+                  "id": 11,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 13,
+                      "value": {
+                        "name": "forceEncoding",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 12,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 14,
+                      "value": {
+                        "name": "false",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "init-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "filter",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Enforce character encoding",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "true",
+                  "nodeId": 14
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Encoding: Character Encoding: not enabled",
+        "ruleID": "1bfff064-11d9-4ca2-9499-e7a59d3cb0f7",
+        "codingPolicy": "java_spring_web_input_validation_character_encoding_utf8",
+        "ruleDescriptionFile": "java_spring_web_input_validation_character_encoding_utf8.html",
+        "ruleShortDescription": "Character encoding should be enforced",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 4,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "org.springframework.web.filter.CharacterEncodingFilter",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "filter-class",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Enforce character encoding for UTF-8",
+            "fixes": []
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Encoding: Character Encoding: not specifiedCompliant",
+        "ruleID": "a082f551-6490-4c61-aee8-13cab82de24a",
+        "codingPolicy": "java_spring_web_input_validation_character_encoding_utf8",
+        "ruleDescriptionFile": "java_spring_web_input_validation_character_encoding_utf8.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "org.springframework.web.filter.CharacterEncodingFilter",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "filter-class",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Enforce character encoding for UTF-8",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cfilter\u003e\n        \u003cfilter-name\u003eencodingFilter\u003c/filter-name\u003e\n        \u003cfilter-class\u003eorg.springframework.web.filter.CharacterEncodingFilter\u003c/filter-class\u003e\n        \u003cinit-param\u003e\n            \u003cparam-name\u003eencoding\u003c/param-name\u003e\n            \u003cparam-value\u003eUTF-8\u003c/param-value\u003e\n        \u003c/init-param\u003e\n        \u003cinit-param\u003e\n            \u003cparam-name\u003eforceEncoding\u003c/param-name\u003e\n            \u003cparam-value\u003etrue\u003c/param-value\u003e\n        \u003c/init-param\u003e\n    \u003c/filter\u003e\n    \u003cfilter-mapping\u003e\n        \u003cfilter-name\u003eencodingFilter\u003c/filter-name\u003e\n        \u003curl-pattern\u003e/*\u003c/url-pattern\u003e\n    \u003c/filter-mapping\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Encoding: Character Encoding: not specified",
+        "ruleID": "263fe26f-f6c8-479a-bbd7-698a71cf5d52",
+        "codingPolicy": "java_spring_web_input_validation_character_encoding_utf8",
+        "ruleDescriptionFile": "java_spring_web_input_validation_character_encoding_utf8.html",
+        "ruleShortDescription": "Character encoding should be set",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 7,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 3,
+                  "value": {
+                    "name": "org.springframework.web.filter.CharacterEncodingFilter",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "filter-class",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 4,
+              "children": [
+                {
+                  "id": 5,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 6,
+                      "value": {
+                        "name": "encoding",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 7,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 8,
+                      "value": {
+                        "name": "UTF-8",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "init-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "filter",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set character encoding to UTF-8",
+            "fixes": []
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Encoding: Character Encoding: not UTF-8Compliant",
+        "ruleID": "c72a916c-6a9e-499f-8662-c35cb8f74540",
+        "codingPolicy": "java_spring_web_input_validation_character_encoding_utf8",
+        "ruleDescriptionFile": "java_spring_web_input_validation_character_encoding_utf8.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 12,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [],
+              "value": [
+                {
+                  "id": 3,
+                  "value": {
+                    "name": "org.springframework.web.filter.CharacterEncodingFilter",
+                    "nameType": 0,
+                    "trim": false,
+                    "negate": false
+                  }
+                }
+              ],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "filter-class",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 4,
+              "children": [
+                {
+                  "id": 5,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 6,
+                      "value": {
+                        "name": "encoding",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 7,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 8,
+                      "value": {
+                        "name": "UTF-8",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "init-param",
+                  "nameType": 0
+                }
+              }
+            },
+            {
+              "id": 10,
+              "children": [
+                {
+                  "id": 11,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 13,
+                      "value": {
+                        "name": "forceEncoding",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-name",
+                      "nameType": 0
+                    }
+                  }
+                },
+                {
+                  "id": 12,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 14,
+                      "value": {
+                        "name": "true",
+                        "nameType": 0,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": true,
+                    "tagName": {
+                      "name": "param-value",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "init-param",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "filter",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Enforce character encoding",
+            "fixes": []
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "MVC: Output Encoding: Character Encoding: not enabledCompliant",
+        "ruleID": "7c8add23-0479-451f-b82f-12bfce4266ef",
+        "codingPolicy": "java_spring_web_input_validation_character_encoding_utf8",
+        "ruleDescriptionFile": "java_spring_web_input_validation_character_encoding_utf8.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "javax.crypto",
+        "className": "KeyGenerator|SecretKeyFactory",
+        "methodName": ".*",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "org.springframework.security.crypto.keygen.BytesKeyGenerator",
+            "quickfixDescription": "Generate secret key for symmetric encryption using Spring Security ",
+            "quickfixCode": "org.springframework.security.crypto.keygen.KeyGenerators.secureRandom(16)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: KeyGenerator",
+        "ruleID": "1d52bca2-b038-4846-ad73-981d0194bc3f",
+        "codingPolicy": "java_spring_security_framework_provided_cryptography",
+        "ruleDescriptionFile": "java_spring_security_framework_provided_cryptography.html",
+        "ruleShortDescription": "Do not use this class for cryptography when Spring framework is available",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "javax.crypto",
+        "className": "Cipher",
+        "methodName": "getInstance",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": ".*",
+            "content": ".*(AES|DES).*",
+            "contentReplacement": "",
+            "deepReplacement": false,
+            "variableName": ""
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Use Symmetric encryption provided by the Spring framework",
+            "quickfixCode": "String salt \u003d org.springframework.security.crypto.keygen.KeyGenerators.string().generateKey();\n        org.springframework.security.crypto.encrypt.Encryptors.standard(password, salt);"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Cipher symmetric",
+        "ruleID": "6e4d9782-4cf7-4376-9e15-c984acbe37fe",
+        "codingPolicy": "java_spring_security_framework_provided_cryptography",
+        "ruleDescriptionFile": "java_spring_security_framework_provided_cryptography.html",
+        "ruleShortDescription": "Do not use this class for cryptography when Spring framework is available",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org.springframework.security.crypto.keygen",
+        "className": "KeyGenerators",
+        "methodName": "secureRandom",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: KeyGeneratorCompliant",
+        "ruleID": "5dc2921a-aa5c-4337-adfc-4c51405f484c",
+        "codingPolicy": "java_spring_security_framework_provided_cryptography",
+        "ruleDescriptionFile": "java_spring_security_framework_provided_cryptography.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org.springframework.security.crypto.encrypt",
+        "className": "Encryptors",
+        "methodName": "standard|stronger",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Cipher symmetricCompliant",
+        "ruleID": "ba1a5899-4048-4ae5-a990-add1be3023a6",
+        "codingPolicy": "java_spring_security_framework_provided_cryptography",
+        "ruleDescriptionFile": "java_spring_security_framework_provided_cryptography.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org.springframework.security.crypto.encrypt",
+        "className": "Encryptors",
+        "methodName": "delux|text",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Text Encryptor: noOpTextCompliant",
+        "ruleID": "90638df6-bbdc-4a55-a635-5f8c6b78d709",
+        "codingPolicy": "java_spring_security_text_encryptor",
+        "ruleDescriptionFile": "java_spring_security_text_encryptor.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org.springframework.security.crypto.encrypt",
+        "className": "Encryptors",
+        "methodName": "noOpText",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "\u003chtml\u003eCreate a text encryptor that uses \u003cb\u003estandard\u003c/b\u003e password-based encryption\u003c/html\u003e",
+            "quickfixCode": "String salt \u003d org.springframework.security.crypto.keygen.KeyGenerators.string().generateKey();\n        org.springframework.security.crypto.encrypt.Encryptors.text(password, salt);"
+          },
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "\u003chtml\u003eCreate a text encryptor that uses \u003cb\u003estronger\u003c/b\u003e password-based encryption (Spring 4.1 and later)\u003c/html\u003e",
+            "quickfixCode": "String salt \u003d org.springframework.security.crypto.keygen.KeyGenerators.string().generateKey();\n        org.springframework.security.crypto.encrypt.Encryptors.delux(password, salt);"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Text Encryptor: noOpText",
+        "ruleID": "80a0fc02-0d7a-4a43-9088-e6bf31538c18",
+        "codingPolicy": "java_spring_security_text_encryptor",
+        "ruleDescriptionFile": "java_spring_security_text_encryptor.html",
+        "ruleShortDescription": "This creates a text encryptor that performs no encryption",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "org.springframework.security.crypto.(password|scrypt)",
+        "className": "Pbkdf2PasswordEncoder|SCryptPasswordEncoder|StandardPasswordEncoder",
+        "quickfixes": [
+          {
+            "returnType": "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder",
+            "quickfixDescription": "Use BCryptPasswordEncoder",
+            "quickfixCode": "new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder()"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Pbkdf2PasswordEncoder|SCryptPasswordEncoder|StandardPasswordEncoder",
+        "ruleID": "4b494593-6abf-42e8-9873-02759e568275",
+        "codingPolicy": "java_spring_security_bcryptpasswordencoder_implementation",
+        "ruleDescriptionFile": "java_spring_security_bcryptpasswordencoder_implementation.html",
+        "ruleShortDescription": "This PasswordEncoder implementation is not recommended",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "org.springframework.security.crypto.bcrypt",
+        "className": "BCryptPasswordEncoder",
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: Pbkdf2PasswordEncoder|SCryptPasswordEncoder|StandardPasswordEncoderCompliant",
+        "ruleID": "fd788c25-86b9-4526-9fc3-fa7761a58f66",
+        "codingPolicy": "java_spring_security_bcryptpasswordencoder_implementation",
+        "ruleDescriptionFile": "java_spring_security_bcryptpasswordencoder_implementation.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "org.springframework.security.crypto.password",
+        "className": "NoOpPasswordEncoder",
+        "methodName": "getInstance",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder",
+            "quickfixDescription": "Change to BCryptPasswordEncoder",
+            "quickfixCode": "new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder()"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: NoOpPasswordEncoder",
+        "ruleID": "95245501-b3a7-49fb-8610-359d9fca931e",
+        "codingPolicy": "java_spring_security_bcryptpasswordencoder_implementation",
+        "ruleDescriptionFile": "java_spring_security_bcryptpasswordencoder_implementation.html",
+        "ruleShortDescription": "This password encoder does nothing, can only be used for testing",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "org.springframework.security.crypto.bcrypt",
+        "className": "BCryptPasswordEncoder",
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: NoOpPasswordEncoderCompliant",
+        "ruleID": "1d3c057c-c99d-41e0-9f38-51b379f0cd85",
+        "codingPolicy": "java_spring_security_bcryptpasswordencoder_implementation",
+        "ruleDescriptionFile": "java_spring_security_bcryptpasswordencoder_implementation.html",
+        "ruleShortDescription": "Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "java.security",
+        "className": "MessageDigest",
+        "methodName": "getInstance",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Use BCryptPasswordEncoder from the Spring Framework",
+            "quickfixCode": "org.springframework.security.crypto.password.PasswordEncoder encoder \u003d new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder();\n        String hashed \u003d encoder.encode(\"myPassword\");"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Crypto: MessageDigest",
+        "ruleID": "2d400a45-989c-4255-96c9-f63fed45c954",
+        "codingPolicy": "java_spring_security_framework_provided_cryptography",
+        "ruleDescriptionFile": "java_spring_security_framework_provided_cryptography.html",
+        "ruleShortDescription": "Do not use this class for hashing when Spring framework is available",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 3,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 3,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 4,
+                      "value": {
+                        "name": "[2-5][0-9]",
+                        "nameType": 1,
+                        "trim": false,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "session-timeout",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "session-config",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Use shorter session timeout",
+            "fixes": [
+              {
+                "ft": "18a05a1ed488fe20ab151b27ad3075eb84adb65d",
+                "t": {
+                  "newvalue": "10",
+                  "nodeId": 4
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Security: Session Management: session-timeout long",
+        "ruleID": "9e516d6b-ff9d-4316-b5ea-4aa55cf0eacc",
+        "codingPolicy": "java_spring_security_session_timeout_value",
+        "ruleDescriptionFile": "java_spring_security_session_timeout_value.html",
+        "ruleShortDescription": "Configured session timeout is rather long",
+        "ruleErrorLevel": 1,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*[sS][pP][rR][iI][nN][gG].*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    }
+  ]
+}

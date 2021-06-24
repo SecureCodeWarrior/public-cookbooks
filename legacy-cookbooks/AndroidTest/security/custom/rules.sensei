@@ -1,0 +1,176 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Java rules",
+    "description": "Secure Code Warrior default Java rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2016 Sensei Security CVBA. All rights reserved.",
+    "rulepack_id": "11156711-987654321",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name:\n      matches: getMacAddress|getAddress|getHardwareAddress\n    declaration:\n      type:\n        reference:\n          matches: (android\\.bluetooth|android\\.net\\.wifi|java\\.net)\\.(BluetoothAdapter|WifiInfo|NetworkInterface)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Uniquely identify a specific app instance\n  actions:\n  - rewrite:\n      to: String iid \u003d com.google.firebase.iid.FirebaseInstanceId.getInstance().getId()\n",
+        "ruleName": "Information Exposure: Avoid using hardware identifiers",
+        "ruleID": "8de06f5f-5a68-4d76-b7cd-9699b81d6e86",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_best_practices_on_unique_identifiers",
+        "ruleDescriptionFile": "java_android_best_practices_on_unique_identifiers.html",
+        "ruleShortDescription": "Using hardware identifiers is not recommended",
+        "ruleErrorLevel": 1,
+        "comment": "There are multiple steps involved in fixing this issue;\n\n Step 1:\n\n buildscript {\n   repositories {\n       google()\n  }\n   dependencies {\n       classpath \u0027com.google.gms:google-services:4.0.1\u0027\n   }\n }\n\n Step 2:\n\n dependencies {\n     implementation \u0027com.google.firebase:firebase-core:16.0.1\u0027\n\n  }\n\n Step 3:\n  Create google-services.json from the firebase console and add it to the project as mentioned\n  in https://firebase.google.com/docs/android/setup\n\n  Step 4:\n  Add the below entry in app gradle file\n  apply plugin: \u0027com.google.gms.google-services\u0027",
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: getId\n    declaration:\n      type:\n        reference:\n          matches: (com.google.firebase.iid)\\.(FirebaseInstanceId)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes: []\n",
+        "ruleName": "Information Exposure: Avoid using hardware identifiers Compliant",
+        "ruleID": "dedbb6d0-2cd0-4384-90ab-10f69c34f4a1",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_best_practices_on_unique_identifiers",
+        "ruleDescriptionFile": "java_android_best_practices_on_unique_identifiers.html",
+        "ruleShortDescription": "Using hardware identifiers is not recommended - Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: delete\n    declaration:\n      type:\n        reference:\n          matches: (java.io)\\.(File)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Overwrite with random data first\n  actions:\n  - rewrite:\n      to: |2\n                java.io.FileOutputStream out \u003d null;\n                try {\n                    out \u003d this.getApplicationContext().openFileOutput({{{children.0.children.0.children.0}}}.getPath(), android.content.Context.MODE_PRIVATE);\n                    java.security.SecureRandom random \u003d new java.security.SecureRandom();\n                    long size \u003d {{{children.0.children.0.children.0}}}.getTotalSpace();\n                    while (size \u003e 0){\n                        int numberOfBytes \u003d 0;\n                        //check size left to overwrite\n                        if (size \u003c\u003d Integer.MAX_VALUE){\n                            numberOfBytes \u003d (int) size;\n                        }\n                        else{\n                            numberOfBytes \u003d Integer.MAX_VALUE;\n                        }\n                        byte randomBytes[] \u003d new byte[numberOfBytes];\n                        random.nextBytes(randomBytes);\n                        out.write(randomBytes);\n                        size -\u003d numberOfBytes;\n                    }\n                } catch (java.io.IOException e) {\n                    //Handle exception here\n                } finally {\n                    try {\n                        out.flush();\n                        out.close();\n                    }\n                    catch(Exception e){\n                        //Handle exception here\n                    }\n                }\n                //safe to delete now\n                {{{ . }}}\n",
+        "ruleName": "Insecure Data Storage: Securely delete files",
+        "ruleID": "f879becf-98cb-43da-a4f8-382505cce13b",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_securely_delete_files",
+        "ruleDescriptionFile": "java_android_securely_delete_files.html",
+        "ruleShortDescription": "This method only removes metadata, sensitive data can still be recovered",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": "senseiandroidsdk",
+              "negate": true
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    args:\n      1:\n        containsUntrustedInput: true\n    name:\n      matches: compileStatement\n    declaration:\n      type:\n        reference:\n          matches: (android.database.sqlite)\\.(SQLiteDatabase)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes: []\n",
+        "ruleName": "SQL Injection: SQLiteQueryBuilder compileStatment",
+        "ruleID": "72c608dd-afd6-4bbe-b958-196175a10f35",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleDescriptionFile": "java_android_secure_database_queries.html",
+        "ruleShortDescription": "This method is vulnerable to SQL injection. Consider writing the query instead of relying on builders.",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: makeText\n    declaration:\n      type: android.widget.Toast\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Use the FlagSecureHelper library to create a secure toast\n  actions:\n  - rewrite:\n      to: com.commonsware.cwac.security.flagsecure.FlagSecureHelper.makeSecureToast({{{arguments.0}}},\n        {{{arguments.1}}}, {{{arguments.2}}})\n",
+        "ruleName": "Data Protection - Secure Data Display: Avoid Data Exposure: Use FlagSecureHelper to create toasts",
+        "ruleID": "a3457d2a-b63f-4eae-b4fb-76585e12c186",
+        "overridingruleID": "",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure",
+        "ruleDescriptionFile": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure.html",
+        "ruleShortDescription": "Could lead to Data Exposure",
+        "ruleErrorLevel": 2,
+        "comment": "Custom because a thrid party library is recommended.",
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: makeSecureToast\n    declaration:\n      type:\n        reference:\n          matches: (com.commonsware.cwac.security.flagsecure)\\.(FlagSecureHelper)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes: []\n",
+        "ruleName": "Data Protection - Secure Data Display: Avoid Data Exposure: Use FlagSecureHelper to create toasts Compliant",
+        "ruleID": "a3457d2a-b63f-4eae-b4fb-76585e12c187",
+        "overridingruleID": "",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure",
+        "ruleDescriptionFile": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure.html",
+        "ruleShortDescription": "Could lead to Data Exposure - Compliant",
+        "ruleErrorLevel": 4,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*commonsware.cwac.security.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    }
+  ]
+}

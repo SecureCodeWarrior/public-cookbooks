@@ -1,0 +1,31 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to print error messages instead of stack traces.
+<h2>Description</h2>
+It is recommended not to print stack traces as this will leak information about the code
+to malicious users. Instead use proper error-handling and display less descriptive error messages to the user.
+
+<h4>Correct code example</4>
+<pre>
+try {
+    ...
+} catch (Exception e){
+    <b>System.err.println("Something went wrong with ...");</b>
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Information Exposure - Error Details. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/errordetails/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

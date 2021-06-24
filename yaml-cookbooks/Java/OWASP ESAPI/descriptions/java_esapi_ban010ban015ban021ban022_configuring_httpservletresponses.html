@@ -1,0 +1,80 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Java best practices and coding guidelines, recommendations where abstracted that recommend the usage of OWASP Enterprise Security API (ESAPI). 
+Only authorized routines from that library should be used for configuring <code>HttpServletResponses</code>.
+As such, developers should not use standard java implementations to set headers, add cookies, forward, redirect, etc.
+<h2>Description</h2>
+It is not recommended to use the standard java implementation for configuring Servlet Responses as there is
+an OWASP ESAPI alternative.<br/>
+Specifically, the banned methods are:
+<ul>
+    <li>BAN010: <code>ServletResponse.setContentType</code></li>
+	<li>BAN011: <code>ServletResponse.sendRedirect</code></li>
+	<li>BAN012: <code>RequestDispatcher.forward</code></li>
+	<li>BAN013: <code>ServletResponse.addHeader</code></li>
+	<li>BAN014: <code>ServletResponse.addCookie</code></li>
+	<li>BAN015: <code>ServletResponse.isSecure</code></li>
+	<li>BAN021: <code>ServletResponse.encodeURL</code></li>
+	<li>BAN022: <code>ServletResponse.encodeRedirectURL</code></li>
+</ul>
+It is advised to use an implementation of the <code>HTTPUtilities</code> interface instead,
+it provides method alternatives for some of the above banned methods and more. An Implementing class of this interface is the <code>DefaultHTTPUtilities</code>.
+For some of the banned methods no alternatives are provided and their use is not recommended.
+<h4>Correct code example:</h4>
+<pre>
+import org.owasp.esapi.reference.<b>DefaultHTTPUtilities</b>;
+...
+DefaultHTTPUtilities.getInstance().setContentType(r);
+</pre>
+<!--
+<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer</h2>
+
+Please see the standard OWASP ESAPI documentation for more information:<br/>
+<ul>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/HTTPUtilities.html" >OWASP ESAPI Javadoc: HTTPUtilities</a>.</li>
+<li>(WWW) <a href="https://static.javadoc.io/org.owasp.esapi/esapi/2.1.0.1/org/owasp/esapi/reference/DefaultHTTPUtilities.html" >OWASP ESAPI Javadoc: DefaultHTTPUtilities</a>.</li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<ul>
+ <li>(WWW) <a href="https://www.owasp.org/index.php/ESAPI_Secure_Coding_Guideline">OWASP ESAPI Secure Coding Guideline</a></li>
+</ul>
+
+
+<br>
+In case of questions on the usage of the OWASP ESAPI, please contact: {{{ appsecmail }}}<br>
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Improper Session Handling - Improper Flags In Cookie Headers. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/improper_session_handling/improper_flags_in_cookie_headers/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Unvalidated Redirects and Forwards - Unvalidated Redirects and Forwards. <a href="https://{{microtraininghost}}/#/simple-flow/web/uraf/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Vulnerable Components - Using Known Vulnerable Components. <a href="https://{{microtraininghost}}/#/simple-flow/web/vulncomponents/known/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Session Handling - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/session/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

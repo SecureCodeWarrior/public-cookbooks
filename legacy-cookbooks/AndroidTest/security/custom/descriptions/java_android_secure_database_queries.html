@@ -1,0 +1,48 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted which state that queries need to be parametrized. Concatenation of parameters is highly discouraged.<br/>
+<h2>Description</h2>
+A parametrized query needs to be built first. Next, the parameter variables should be added.
+The following functions are available and are in line with Android best practices.
+These functions can be used to execute queries against the database.<br/>
+It is highly discouraged to use the method buildQuery as it does not lend itself to be used correctly. It is highly encouraged to use true parameterized queries instead of the <code>appendWhereEscapeString()</code> method.<br/>
+<h4>Class information:</h4>
+<pre>
+package android.database.sqlite.<b>SQLiteDatabase</b>;
+&nbsp;&nbsp;&nbsp;public SQLiteStatement compileStatement(String sql);
+</pre>
+<pre>
+package android.database.sqlite.<b>SQLiteProgram</b>;
+&nbsp;&nbsp;&nbsp;public void bindString(int index, String value);
+</pre>
+<pre>
+package android.database.sqlite.<b>SQLiteStatement</b>;
+&nbsp;&nbsp;&nbsp;public void execute();
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+import android.database.sqlite.*;
+...
+SQLiteDatabase  sampleDB;
+String sqlQuery = "INSERT INTO db (id, name) VALUES <b>(?,?)</b>";
+SQLiteStatement sqlStmt = sampleDB.compileStatement(sqlQuery);
+sqlStmt.<b>bindString</b>(1, id);
+sqlStmt.<b>bindString</b>(2, name);
+sqlStmt.execute();
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Client Side Injection - SQL Injection. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/client_side_injection/sql_injection/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

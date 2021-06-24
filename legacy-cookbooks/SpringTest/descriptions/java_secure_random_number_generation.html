@@ -1,0 +1,58 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, recommendations were abstracted which state that the SecureRandom class should be used instead of the Random class.
+<h2>Description</h2>
+The Random class does not return cryptographically secure tokens. Using the SecureRandom class secure tokens can be generated.
+<h4>Correct code example:</h4>
+The <code>next</code> method should receive an integer between 0 and 32.
+<pre>
+SecureRandom generator = new SecureRandom();
+int numBits = 32; 
+int token = generator.next(numBits);
+</pre>
+<!--
+<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/reference/java/security/SecureRandom.html">(Android)java.security: SecureRandom</a> </li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<b>Security implications related to Predictable Random Numbers:</b><br/>
+
+<br/>
+Extract of the of the java.util.Random JavaDoc:
+<br/><br/>
+&nbsp;&nbsp;&nbsp; "Instances of java.util.Random are not cryptographically secure. Consider instead using SecureRandom to get a cryptographically secure pseudo-random number generator for use by security-sensitive applications."
+<br/><br/>
+
+The reason for the insecurity of java.util.Random is that its pseudo-random generator is linear congruential generator (LGC). An attacker can determine the seed used by only observing two subsequently generated numbers. It is thus highly insecure to use these generated numbers for security purposes.
+
+<br/>
+The java.security.SecureRandom class uses a PRNG based on SHA-1 and should be used to generate cryptographically secure random numbers.
+
+<ul>
+    <li>(PDF) <a href="https://static.aminer.org/pdf/PDF/000/211/835/secret_linear_congruential_generators_are_not_cryptographically_secure.pdf">How to Predict Congruential Generators (Hugo Krawczyk)</a></li>
+	
+	<li>(WWW) <a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (James Roper)</a></li>
+	
+	<li>(WWW) <a href="http://stackoverflow.com/questions/27622625/securerandom-with-nativeprng-vs-sha1prng"> SecureRandom implementation details </a></li>
+   
+</ul>
+
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

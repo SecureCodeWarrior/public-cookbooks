@@ -1,0 +1,41 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and Android coding guidelines, recommendations were abstracted which state that <code>SQLCipher</code> should be preferred over SQLite databases .
+<h2>Description</h2>
+<code>SQLCipher</code> offers a fully-encrypted database. It is very easy to implement in your application as <code>SQLCipher</code> offers their own implemenation of the SQLite methods. A downside of <code>SQLCipher</code> is a slight performance decrease, as well as the need to securely store the encryption key. Thus, <code>SQLCipher</code> can be used if the key can be supplied by the user of the application (e.g., a pin or password), or if the key can be securely sent over the network to the application. Never store the encryption key in the application itself!
+<!--
+<br/>
+Using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix calls to SQLite and transform them into their SQLCipher equivalent.<br/><br/>
+
+In case this guideline does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+<li>(WWW) <a href="https://www.zetetic.net/sqlcipher/">SQLCipher</a></li>
+<li>(WWW) <a href="https://discuss.zetetic.net/t/sqlcipher-how-to-protect-the-key/522/2">SQLCipher: How to protect the key</a></li>
+</ul>
+
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Insecure Data Storage - Storage In SQLite Databases. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insecure_data_storage/storage_in_sqlite_databases/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to employ password lockout mechanisms.
+<h2>Description</h2>
+It is recommended to use password lockout mechanisms that lock out an account if more than a preset number of unsuccessful login attempts are made. This is to prevent brute-force password guessing attacks on web applications.
+<br/>
+To block accounts, the solution must use a reliable persistent storage.
+<h4>Correct code example:</h4>
+<pre>
+Long attempts = 0l;
+try {
+&nbsp;&nbsp;&nbsp;Query query = session.createQuery("select count(fla.id) from FailedLoginAttempt fla where
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fla.failedAt >= :checkFrom and fla.username = :username");
+&nbsp;&nbsp;&nbsp;query.setParameter("checkFrom", checkFrom.getTime());
+&nbsp;&nbsp;&nbsp;query.setParameter("username", username);
+&nbsp;&nbsp;&nbsp;attempts = (Long)query.uniqueResult();
+}
+catch (Exception e) {
+&nbsp;&nbsp;&nbsp;tx.rollback();
+}
+finally {
+&nbsp;&nbsp;&nbsp;if (tx.isActive()) tx.commit();
+}
+if (attempts >= Integer.parseInt(maxAttempts)) {
+&nbsp;&nbsp;&nbsp;throw new AccountLockedException();
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Authentication - Password Enumeration. <a href="https://{{microtraininghost}}/#/simple-flow/web/auth/passenum/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

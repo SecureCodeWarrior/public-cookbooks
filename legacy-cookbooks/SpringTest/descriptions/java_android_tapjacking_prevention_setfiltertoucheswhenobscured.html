@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Android best practices and secure coding guidelines recommend to always set the <code>filterTouchesWhenObscured</code> flag for Views to true.
+<h2>Description</h2>
+Failing to filter touches when obscured allows for an attacker to attempt tapjacking. To prevent this, all View elements should explicitely set <code>filterTouchesWhenObscured</code> to true. This can be done in Java code by using the method <code>setFilterTouchesWhenObscured</code> or by setting the attribute <code>android:filterTouchesWhenObscured</code> to true in the XML layout file .
+<h4>Code example to prevent tapjacking in a layout XML file:</h4>
+<pre>
+&lt;Button 
+&nbsp;&nbsp;&nbsp<b>android:filterTouchesWhenObscured="true"</b> /> 
+</pre> 
+<h4>Code example to prevent tapjacking in Java:</h4>
+<pre>
+Button safeButton = (Button)findViewById(...); 
+<b>safeButton.setFilterTouchesWhenObscured(true)</b>; 
+</pre>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

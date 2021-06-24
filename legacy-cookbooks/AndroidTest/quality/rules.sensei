@@ -1,0 +1,41 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Java rules",
+    "description": "Secure Code Warrior default Java rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2016 Sensei Security CVBA. All rights reserved.",
+    "rulepack_id": "124565439-987654321",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.webkit)\\.(WebView)\n    name: loadUrl\n",
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Check URL to White List",
+        "ruleID": "2cb80a86-13da-4f4c-ac79-e5c323b3f3d1",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleDescriptionFile": "java_android_webview_best_practices.html",
+        "ruleShortDescription": "Consider using a WhiteList to check URLs passed to this method",
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "generators": []
+}

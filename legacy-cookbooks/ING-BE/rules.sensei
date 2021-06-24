@@ -1,0 +1,70 @@
+{
+  "header": {
+    "name": "ING BE ruleset",
+    "description": "Sensei ruleset which can be used with the ING BE codebase",
+    "company": "ING",
+    "appsecmail": "david.follen@ing.com",
+    "rulepack_id": "ef45e8c1-e027-482d-9df0-99b0575226f2",
+    "enabled": true
+  },
+  "rules": [
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": true,
+        "errorMarkLocation": 0,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "maxOccurs",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "unbounded",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "",
+              "nameType": 2
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Limit max occurrences",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"100\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Weak XML Schema: Unbounded Occurrences: limit maxOccurs",
+        "ruleID": "3d033c8e-9e4f-4b0e-8de9-f7bf547c62f2",
+        "disableRuleIDs": [],
+        "ruleShortDescription": "Parsing without a limit is dangerous",
+        "ruleErrorLevel": 2,
+        "ruleScope": [],
+        "ruleEnabled": true
+      }
+    }
+  ]
+}

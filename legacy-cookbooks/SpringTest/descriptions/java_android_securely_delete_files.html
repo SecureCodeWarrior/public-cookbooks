@@ -1,0 +1,64 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and android coding guidelines, a policy was abstracted that states that sensitive files should be overwritten with random data before they are deleted.<br/>
+<h2>Description</h2>
+Files removed with the delete() function are easily recovered. In order to securely delete files, overwrite the file with random data first.<br/>
+<h4>Correct code example: (Attention!: see the QuickFix and Code Generator for the full sample)</h4>
+<pre>
+java.io.FileOutputStream out = this.getApplicationContext().openFileOutput(file.getPath(), android.content.Context.MODE_PRIVATE);
+java.security.SecureRandom random = new java.security.SecureRandom();
+long size = file.getTotalSpace();
+while (size > 0) {
+&nbsp;&nbsp;&nbsp;int numberOfBytes = 0;
+&nbsp;&nbsp;&nbsp;byte randomBytes[] = new byte[numberOfBytes];
+&nbsp;&nbsp;&nbsp;random.nextBytes(randomBytes);
+&nbsp;&nbsp;&nbsp;out.write(randomBytes);
+&nbsp;&nbsp;&nbsp;size -= numberOfBytes;
+}
+//noinspection SecureDeletedeleteonlyremovesmetadata
+file.delete();
+</pre>
+<!--
+ 3. Links targeting the developer 
+
+<h2>Secure Android SDK</h2>
+Instead of manually overwriting files when deleting them, developers are recommended to use the <a href="https://github.com/mmadou/SenseiAndroidSDK">Sensei Android SDK</a> that will do this and many other security sensitive operations automatically.<br/><br/>
+
+<b>Code example:</b><br/>
+<pre>
+&nbsp;&nbsp;&nbsp;secureFileRemover().fromContext(activityContext).<b>deleteFile</b>(file);
+</pre>
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/reference/java/security/SecureRandom.html">(Android)java.security: SecureRandom</a> </li>
+<li>(WWW) <a href="https://developer.android.com/reference/java/io/File.html#delete()">(Android)java.io.File: delete</a> </li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+<b>Security implications related to Insecure Deleting of files:</b><br/>
+
+<br/>
+When deleting a file the conventional way with methods like file.delete() or Context.deleteFile the only job that the kernel does is removing info about the file from the auxiliary filesystem structures. The storage sectors that contain the actual data remain untouched. This is called data remanence.<br/>
+<br/>
+In order to make this data impossible to recover it should be overwritten. Do not use zeros or other low entropy data, the filesystem may optimize such sparse files and leave some sectors with original data, use strongly random data instead. SecureRandom is able to generate cryptographically strong random numbers that are suitable for this purpose.<br/>
+<br/>
+It is generally accepted that overwriting once is secure in all practical applications but more advanced algorithms exist such as the Gutmann method for particularly paranoid developers.<br/>
+<ul>
+    <li>(PDF) <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf">National Institute of Standards and Technology: Guidelines for Media Sanitization</a></li>
+<li>(WWW) <a href="https://fas.org/irp/nsa/rainbow/tg025-2.htm">A Guide to Understanding Data Remanence</a></li>
+<li>(WWW) <a href="https://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html">Secure Deletion of Data from Magnetic and Solid-State Memory - Peter Gutmann</a></li>
+   
+</ul>
+
+In case of feedback on this pugin, please contact Sensei Security: productfeedback@senseisecurity.com<br>
+
+
+-->     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<body>
+<p>Out of best practices and Android coding guidelines, recommendations were abstracted which state that for UI elements which might contain sensitive information, the <code>FLAG_SECURE</code> flag must be set.</p>
+<br>
+<p>Add the <code>FLAG_SECURE</code> setting to all your activities which handle sensitive information. This will prevent leaks via screenshots or recording software.
+  If you have other UI elements such as a Dialog or a Toast, you can use the <code>FlagSecureHelper</code> library to create a secure version of this element.</p>
+<b>Correct code example:</b>
+<pre>getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);</pre>
+<b>Correct code example (Secure Toasts):</b>
+<pre>allprojects {
+    repositories {
+        maven {
+            url "https://s3.amazonaws.com/repo.commonsware.com"
+        }
+    }
+}
+
+implementation "com.commonsware.cwac:security:0.8.+"
+
+
+FlagSecureHelper
+    .makeSecureToast(ACTIVITY_OBJECT, "MESSAGE", Toast.LENGTH_LONG)
+    .show();</pre>
+<b>Correct code example (Secure Dialogs):</b>
+<pre>Dialog dlg = ... // Create your dialog
+dlg = FlagSecureHelper.markDialogAsSecure(dlg);</pre>
+</body>
+</html>

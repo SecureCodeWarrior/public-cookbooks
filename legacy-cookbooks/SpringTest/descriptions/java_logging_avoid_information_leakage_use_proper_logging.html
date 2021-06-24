@@ -1,0 +1,36 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe for logging and error handling.
+<h2>Description</h2>
+It is recommended not to print stack traces or log events to stdout/stderr as this will leak information about the code to malicious users. Instead events can be logged with a logger that references the relevant class.
+<br>
+Avoid string concatenation, but use placeholders in your log Strings instead.
+<h4>Correct code example</h4>
+<pre>class ValueSetter{
+    private Logger LOGGER = LoggerFactory.getLogger(<b>ValueSetter.class</b>);
+    public void setValue(int newValue){
+        try {
+           ...
+        } catch (Exception e){
+            LOGGER.<b>error("Failed to set value to {}.",  newValue)</b>;
+        }
+        LOGGER.<b>info("Set value to {}.",  newValue)</b>;
+    }
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Information Exposure - Debug Information. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/debuginfo/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

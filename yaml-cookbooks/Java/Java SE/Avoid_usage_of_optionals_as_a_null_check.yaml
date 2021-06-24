@@ -1,0 +1,25 @@
+id: scw:java:optional-null-check
+version: 8
+metadata:
+  name: 'Code Quality: Avoid usage of optionals as a null check'
+  shortDescription: Avoid usage of optionals as a null check
+  level: warning
+  enabled: true
+  comment: Opinionated
+search:
+  methodcall:
+    followedBy:
+      methodcall:
+        name: isPresent
+    name: ofNullable
+    declaration:
+      type: java.util.Optional
+availableFixes:
+- name: Replace with null check
+  actions:
+  - rewrite:
+      to: '{{{ arguments.0 }}}'
+      target: self
+  - rewrite:
+      to: '{{{ qualifier }}} == null'
+      target: followByElement

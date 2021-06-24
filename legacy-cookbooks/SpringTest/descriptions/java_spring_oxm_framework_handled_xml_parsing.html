@@ -1,0 +1,29 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to pass source implementations that do not require manual parsing to the unmarshaller, i.e. either <code>SAXSource</code> or <code>StreamSource</code>.
+<h2>Description</h2>
+There are four possible source implementations passed to the unmarshaller: <code>DOMSource</code>, <code>StAXSource</code>, <code>SAXSource</code> and <code>StreamSource</code>. 
+<br/>
+For a <code><b>DOMSource</b></code>, the XML has already been parsed by user code and that code is responsible for protecting against XXE.
+<br/>
+For a <code><b>StAXSource</b></code>, the XMLStreamReader has already been created by user code and that code is responsible for protecting against XXE.
+<br/>
+For <code><b>SAXSource</b></code> and <code><b>StreamSource</b></code> instances, Spring has disabled external entity processing by default, protecting it from XXE.<br/><br/>
+
+It is recommended to use source implementations where external entity processing is handled by the framework, i.e. <code><b>SAXSource</b></code> or <code><b>StreamSource</b></code>.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - External Entity Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/xxe/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

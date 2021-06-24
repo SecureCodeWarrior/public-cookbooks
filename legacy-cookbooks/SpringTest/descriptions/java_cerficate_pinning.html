@@ -1,0 +1,103 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that a key store with trusted certificates should be used in order to make a
+trust manager before opening an SSLContext<br/>
+<h2>Description</h2>
+<br/>
+There are two ways to fill a KeyStore with certificates. It is recommended to choose one<br/>
+<br/>
+The first way is to use the default Certificate Authorities (CAs) supplied with Java. This can be coded manually by using the code generator.<br/><br/>
+<b>Correct code example:</b><br/>
+<pre>
+java.security.KeyStore keyStore = null;
+javax.net.ssl.TrustManagerFactory tmf = null;
+javax.net.ssl.SSLContext sslContext = null;
+try {
+    keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+    keyStore.load(new java.io.FileInputStream(System.getProperty("java.home") + "/lib/security/cacerts".replace('/', java.io.File.separatorChar)), "changeit".toCharArray());
+    String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+    tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+    tmf.init(keyStore);
+    sslContext = SSLContext.getInstance("TLSv1.2");
+    sslContext.init(null, tmf.getTrustManagers(), null);
+} catch (java.security.KeyStoreException | java.security.KeyManagementException | java.security.cert.CertificateException | java.security.NoSuchAlgorithmException | java.io.IOException e) {
+    //handle Exception here: Trustmanager not succesfully created
+}
+</pre>
+<br/>
+The second way is by reading your own trusted CA's. Again, the the Sensei Security code generator can be used to provide a secure code example.<br/>
+<br/>
+<b>Correct code example:</b><br/>
+<pre>
+java.security.cert.CertificateFactory cf = null;
+java.security.cert.Certificate ca = null;
+
+//Read from file
+java.io.File file = new java.io.File("path/to/certificate.crt"); //Replace this with the certificate of your server
+java.io.FileInputStream fis = null;
+java.io.BufferedInputStream bis = null;
+// Create a KeyStore containing trusted CAs
+String keyStoreType = java.security.KeyStore.getDefaultType();
+java.security.KeyStore keyStore = null;
+javax.net.ssl.TrustManagerFactory tmf = null;
+javax.net.ssl.SSLContext sslContext = null;
+try {
+    cf = java.security.cert.CertificateFactory.getInstance("X.509");
+    fis = new java.io.FileInputStream(file);
+    bis = new java.io.BufferedInputStream(fis);
+    ca = cf.generateCertificate(bis);
+    keyStore = java.security.KeyStore.getInstance(keyStoreType);
+    keyStore.load(null, null);
+    keyStore.setCertificateEntry("ca", ca);
+    String tmfAlgorithm = javax.net.ssl.TrustManagerFactory.getDefaultAlgorithm();
+    tmf = javax.net.ssl.TrustManagerFactory.getInstance(tmfAlgorithm);
+    tmf.init(keyStore);
+    sslContext = javax.net.ssl.SSLContext.getInstance("TLSv1.2");
+    sslContext.init(null, tmf.getTrustManagers(), null);
+} catch (java.security.KeyStoreException | java.security.KeyManagementException | java.security.cert.CertificateException | java.security.NoSuchAlgorithmException | java.io.IOException e) {
+    //Handle Exception here: Trustmanager not succesfully created
+} finally {
+    try {
+        if (fis != null) fis.close();
+        if (bis != null) bis.close();
+    } catch (java.io.IOException ex) {
+        //Handle IO Exception here
+    }
+}
+</pre>
+
+<!-- 
+
+Pinning is the process of associating a host with their expected X509 certificate or public key. Once a certificate or public key is known or
+seen for a host, the certificate or public key is associated or 'pinned' to the host.<br/>
+
+A host or service's certificate or public key can be added to an application at development time, or it can be added upon
+first encountering the certificate or public key. The former - adding at development time - is preferred since preloading
+the certificate or public key out of band usually means the attacker cannot taint the pin. <br/>
+
+Pinning should be used anytime there is a need to be certain of the remote host's identity or when operating in a hostile
+environment. Since one or both are almost always true, pinning is recommended. -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Improper Certificate Pinning Configuration. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/improper_ssl_pinning_configuration/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Trusting Self-Signed Or Untrusted Certificates. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/trusting_self_signed_or_untrusted_certificates/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Weak Certificate Validation. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/insufficient_transport_layer_protection/weak_certificate_validation/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/generic/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

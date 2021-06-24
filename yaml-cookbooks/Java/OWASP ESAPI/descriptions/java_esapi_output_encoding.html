@@ -1,0 +1,44 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that all data going into webpages needs to be encoded properly.
+<h2>Description</h2>
+Find the context in which the data will be used and choose an appropriate encoder. It is recommended to use well-known encoders and avoid trying to remove illegal characters yourself.
+<br/>
+For example the OWASP ESAPI Encoder can be used to achieve this.
+<h4>Class information:</h4>
+<pre>
+package org.owasp.esapi.<b>Encoder</b>;
+&nbsp;&nbsp;&nbsp;String encodeForCSS(String input);
+&nbsp;&nbsp;&nbsp;String encodeForHTML(String input);
+&nbsp;&nbsp;&nbsp;String encodeForHTMLAttribute(String input)
+&nbsp;&nbsp;&nbsp;String encodeForJavaScript(String input);
+</pre>
+The encoder object has to be retrieved from the following class.
+<h4>Class information:</h4>
+<pre>
+package org.owasp.esapi.<b>ESAPI</b>;
+&nbsp;&nbsp;&nbsp;public static Encoder encoder();
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+stringBuilder.append("&lt;body&gt; We cannot log you in ");
+stringBuilder.append(<b>ESAPI.encoder().encodeForHTML(username)</b>);
+stringBuilder.append("&lt;/body&gt;");
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Cross-Site Scripting (XSS) - Reflected Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/reflected/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Cross-Site Scripting (XSS) - Stored Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/stored/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

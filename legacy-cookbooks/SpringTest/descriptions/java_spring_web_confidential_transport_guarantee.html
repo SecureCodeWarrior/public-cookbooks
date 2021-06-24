@@ -1,0 +1,42 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to set the &lt;transport-guarantee&gt; security constraint for all URLs to CONFIDENTIAL.
+<h2>Description</h2>
+SSL ensures that third parties can not access data in transit including sensitive and private data.
+In addition, SSL ensures the data can not be changed during transmission.
+Adding a security constraint to the web.xml file achieves this. The <code>&lt;transport-guarantee&gt</code> value should be set to <code><b>CONFIDENTIAL</b></code>.
+It is recommended to do this for the entire website. To do this, set the <code>&lt;url-pattern&gt;</code> to include every url, with the <code><b>/*</b></code> wildcard.
+<h4>Correct code example:</h4>
+<pre>
+&lt;web-app&gt;
+&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&lt;security-constraint&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;web-resource-collection&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;web-resource-name>Entire Website&lt;/web-resource-name&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;url-pattern&gt;<b>/*</b>&lt;/url-pattern&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/web-resource-collection&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;user-data-constraint&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;transport-guarantee><b>CONFIDENTIAL</b>&lt;/transport-guarantee&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/user-data-constraint&gt;
+&nbsp;&nbsp;&nbsp;&lt;/security-constraint&gt;
+&nbsp;&nbsp;&nbsp;...
+&lt;/web-app&gt;
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Insufficient Transport Layer Protection - Weak Algorithm or Protocol Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/weakalgorithm/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Credentials. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/itlp/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Sensitive Information. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/sensitiveinfo/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

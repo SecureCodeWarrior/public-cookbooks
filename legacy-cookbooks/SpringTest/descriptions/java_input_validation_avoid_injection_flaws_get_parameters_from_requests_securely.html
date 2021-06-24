@@ -1,0 +1,40 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to avoid using the method <code>getParameter()</code> to retrieve parameters from requests.
+<h2>Description</h2>
+Retrieving information from the request should happen through secured API's.
+A class <code>GetParameterHelper</code> was introduced which implements a couple dozen API's to retrieve information from the request.
+The following functions are available to retrieve information from requests securely.
+Additional approved API's can be found in the class <code>GetParameterHelper</code> itself.
+<h4>Class information:</h4>
+<pre>
+import com.senseisecurelibs.<b>GetParameterHelper</b>;
+    public static double getParameterAsDoubleSecured(HttpServletRequest request, String key);
+    public static int getParameterAsIntegerSecured(HttpServletRequest request, String key);
+    public static boolean getParameterAsBooleanSecured(HttpServletRequest request, String key);
+    public static String getParameterAsStringSecured(HttpServletRequest request, String key);
+</pre>
+<h4>Correct code example:</h4>
+<pre>
+double data= GetParameterHelper.<b>getParameterAsDoubleSecured</b>(request, "balance");
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Injection Flaws - Code Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/code/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - SQL Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/sql/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Information Exposure - Error Details. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/errordetails/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Information Exposure - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/infoexposure/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

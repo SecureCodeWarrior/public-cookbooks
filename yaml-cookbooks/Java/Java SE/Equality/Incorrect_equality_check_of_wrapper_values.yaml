@@ -1,0 +1,35 @@
+id: scw:java:equality-wrappers
+version: 8
+metadata:
+  name: Incorrect equality check of wrapper values
+  shortDescription: Avoid using quality operators when comparing wrapper values.
+  level: error
+  enabled: true
+search:
+  comparison:
+    anyOf:
+    - operator: ==
+    - operator: '!='
+    first:
+      expression:
+        type:
+          reference:
+            anyOf:
+            - is: java.lang.Short
+            - is: java.lang.Integer
+            - is: java.lang.Long
+          checkInheritance: true
+    second:
+      expression:
+        type:
+          reference:
+            anyOf:
+            - is: java.lang.Short
+            - is: java.lang.Integer
+            - is: java.lang.Long
+          checkInheritance: true
+availableFixes:
+- name: Replace with equals call
+  actions:
+  - rewrite:
+      to: '{{#sed}} s/\=+//, {{{ operator }}}{{/sed}}{{{ leftOperand }}}.equals({{{rightOperand}}})'

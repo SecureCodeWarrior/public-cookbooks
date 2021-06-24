@@ -1,0 +1,54 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to create Sessions as secure and narrow as possible.
+<h2>Description</h2>
+The domain name used in the cookie should be as narrow as possible. The path of the cookie cannot be set to the root path as that is too broad. The cookie itself should be sent using TLS/SSL. And to prevent XSS vulnerabilities from taking advantages of other sloppy security settings, the HTTP-only-flag should be set so JavaScript can't access the cookie.
+<h4>Class information:</h4>
+<pre>
+package javax.servlet.http.<b>Cookie</b>;
+&nbsp;&nbsp;&nbsp;void setDomain(java.lang.String pattern);&nbsp;&nbsp;// Specifies the domain within which this cookie should be presented.
+&nbsp;&nbsp;&nbsp;void setPath(java.lang.String uri);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Specifies a path for the cookie to which the client should return the cookie.
+&nbsp;&nbsp;&nbsp;void setSecure(boolean flag);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Indicates to the browser whether the cookie should only be sent using a secure protocol, such as HTTPS or SSL.
+&nbsp;&nbsp;&nbsp;void setHttpOnly(boolean isHttpOnly);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Marks or unmarks this Cookie as HttpOnly.
+&nbsp;&nbsp;&nbsp;void setMaxAge(int expirationtime);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Marks this Cookie as persistent.
+</pre>
+Applying these functions correctly results in the following:
+<h4>Correct code example:</h4>
+<pre>
+import org.owasp.esapi.reference.DefaultHTTPUtilities;
+...
+public void SomeFunction(String SessionID, HttpServletResponse response) throws Exception{
+&nbsp;&nbsp;&nbsp;&nbsp;Cookie cookie = new Cookie("session", SessionID);
+
+&nbsp;&nbsp;&nbsp;&nbsp;cookie.setDomain("<b>www</b>.foo.com");&nbsp;&nbsp;&nbsp;&nbsp;// Cookie domains should be as narrow as possible.
+&nbsp;&nbsp;&nbsp;&nbsp;cookie.setPath("<b>/subdirectory/</b>");&nbsp;&nbsp;&nbsp;// The path should not be set to the root path. This is too broad.
+&nbsp;&nbsp;&nbsp;&nbsp;cookie.setSecure(<b>true</b>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Cookies should be sent using transport_layer_security/SSL.
+&nbsp;&nbsp;&nbsp;&nbsp;cookie.setHttpOnly(<b>true</b>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Set http only flag so javascript can't access cookies (e.g. xss).
+
+&nbsp;&nbsp;&nbsp;&nbsp;DefaultHTTPUtilities.getInstance().<b>addCookie</b>(cookie);
+}
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Improper Session Handling - Improper Flags In Cookie Headers. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/improper_session_handling/improper_flags_in_cookie_headers/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Session Handling - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/session/generic/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Weak Algorithm or Protocol Use. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/weakalgorithm/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Cross-Site Scripting (XSS) - Reflected Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/reflected/java/undefined?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

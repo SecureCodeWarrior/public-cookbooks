@@ -1,0 +1,36 @@
+<html>
+<body>
+<p id="abstract">Secure coding practices prescribe that all XML processors should be configured to enable the secure processing features. This feature should be enabled explicitly where applicable.</p>
+<br>
+<p id="impact_and_desired_state">An instance of a factory should have the secure processing feature enabled before creating a new instance of the desired XML processor. This can be achieved by using one of the following methods:</p>
+<br>
+<pre>factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);</pre>
+<pre>factory.setSchema(Schema);</pre>
+<p>Where <b>factory</b> is an instance of:</p>
+<ul>
+    <li>DocumentBuilderFactory</li>
+    <li>TransformerFactory</li>
+    <li>SAXParserFactory</li>
+    <li>SchemaFactory</li>
+    <li>XPathFactory</li>
+</ul>
+<b>Correct code example:</b>
+<pre>import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.XMLConstants;
+...
+    DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+    documentBuilderFactory.setNamespaceAware(true);
+    documentBuilderFactory.setValidating(false);
+    <b>documentBuilderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);</b>
+    DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();</pre>
+<br>
+<b>Resources</b>
+<ul>
+  <li><a href="https://www.baeldung.com/java-xml">Baeldung on XML in Java</a></li>
+  <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html">OWASP XXE Prevention Cheat Sheet</a></li>
+  <li><a href="https://cwe.mitre.org/data/definitions/611.html">CWE 611: Improper Restriction of XML External Entity Reference</a></li>
+  <li><a href="https://portswigger.net/web-security/xxe">PortSwigger Web Security Academy: XXE injection</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+id: scw:java:logging:slf4j-log-injection
+version: 8
+metadata:
+  name: 'Logging: enforce usage of placeholders in the messages'
+  shortDescription: Do not concatinate untrusted data in the message string, instead
+    use placeholders ( '{}' )
+  level: error
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+    anyOf:
+    - name: trace
+    - name: debug
+    - name: info
+    - name: warn
+    - name: error
+    declaration:
+      type: org.slf4j.Logger
+availableFixes:
+- name: use placeholders
+  actions:
+    - parameterize:
+        placeholderFormat: '{}'
+        extractUntrustedInput:
+          array:
+            type: java.lang.String[]
+            atArgumentPosition: 2

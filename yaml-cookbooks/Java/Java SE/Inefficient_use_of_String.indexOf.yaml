@@ -1,0 +1,26 @@
+id: scw:java:string-indexof
+version: 8
+metadata:
+  name: Inefficient use of String.indexOf
+  shortDescription: Inefficient use of String.indexOf
+  level: warning
+  scwCategory: ""
+  enabled: true
+  descriptionFile: descriptions/InefficientuseofString.indexOf.html
+search:
+  methodcall:
+    args:
+      1:
+        type: java.lang.String
+        value:
+          matches: .
+    name:
+      matches: indexOf|lastIndexOf
+    declaration:
+      type: java.lang.String
+availableFixes:
+- name: Use char instead of String
+  actions:
+  - modifyArguments:
+      rewrite:
+        1: '''{{{value}}}'''

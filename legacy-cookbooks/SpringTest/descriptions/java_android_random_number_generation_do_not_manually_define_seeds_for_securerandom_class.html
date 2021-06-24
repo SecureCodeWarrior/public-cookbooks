@@ -1,0 +1,45 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of best practices and Android coding guidelines, recommendations were abstracted which state that you should not manually define seeds when generating random numbers. 
+<h2>Description</h2>
+Use the <code>SecureRandom</code> class and let the default implementation generate its own seed. 
+<h4>Correct code example:</h4>
+<pre>
+SecureRandom random = new SecureRandom();
+byte bytes[] = new byte[20];
+random.nextBytes(bytes);
+</pre>
+<!--
+
+In case this guideline does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the appropriate suppress to suppress the highlighting on this issue.<br/>
+<br/>
+
+ 3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/reference/java/security/SecureRandom.html">Android: SecureRandom</a></li>
+</ul>
+
+<br>
+<br>
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Broken Cryptography - Use Of Insecure/Deprecated Algorithms. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/broken_cryptography/use_of_insecuredeprecated_alogirthms/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

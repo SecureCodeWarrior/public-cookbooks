@@ -1,0 +1,22 @@
+id: scw:android:sqli-compliant
+version: 8
+metadata:
+  name: 'SQL Injection: SQLiteQueryBuilder compileStatement Compliant'
+  shortDescription: 'SQL Injection: SQLiteQueryBuilder compileStatement - Compliant'
+  level: compliant
+  enabled: true
+  comment: ""
+  descriptionFile: descriptions/java_android_secure_database_queries.html
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: false
+    name:
+      matches: compileStatement
+    declaration:
+      type:
+        reference:
+          matches: (android.database.sqlite)\.(SQLiteDatabase)
+        checkInheritance: false
+availableFixes: []

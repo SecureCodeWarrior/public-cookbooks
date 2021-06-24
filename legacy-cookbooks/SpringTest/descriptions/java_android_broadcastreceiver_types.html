@@ -1,0 +1,44 @@
+<html>
+<body>
+<h2>Info</h2>
+<h3>Broadcast Receiver Types</h3>
+Based on tags and attributes used in activities, three types can be specified: private, in-house and
+public.
+<ol>
+    <li><b>Private Broadcast Receiver: Only receives broadcasts from the same application.</b><br>
+
+<pre>
+&lt;receiver android:exported="<b>false</b>" .../&gt;
+</pre>
+    </li>
+    <li><b>In-House Broadcast Receiver: Receives all broadcasts that pass through the intent filter.</b><br> These are broadcasts that are meant for this receiver and the sending app has permission.
+<pre>
+&lt;receiver android:exported="<b>true</b>" 
+&nbsp;&nbsp;&nbsp;android:<b>permission="com.senseisecurity.inhousereceiver.BROADCAST_PERMISSION"</b> /&gt;
+&nbsp;&nbsp;&nbsp;&lt;intent-filter&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action android:name="com.senseisecurity.broadcast.MY_BROADCAST_INHOUSE" /&gt;
+&nbsp;&nbsp;&nbsp;&lt;intent-filter /&gt;
+&lt;/receiver &gt;
+</pre>
+ Example on how to define and use the permission:
+<pre>
+&lt;permission
+&nbsp;&nbsp;&nbsp;android:name="com.senseisecurity.broadcast.inhousereceiver.BROADCAST_PERMISSION"
+&nbsp;&nbsp;&nbsp;android:protectionLevel="signature" /&gt;
+&lt;uses-permission
+&nbsp;&nbsp;&nbspandroid:name="com.senseisecurity.broadcast.inhousereceiver.BROADCAST_PERMISSION" /&gt;
+</pre>
+    </li>
+    <li><b>Public Broadcast Receiver: Receives all broadcasts without filtering.</b><br>
+        Similar to the In-House broadcast receiver, but without <code>android:permission</code>.<br/>
+        <em><u>Security implications for public broadcast receivers</u>:  Public broadcast receivers as may give unauthorized
+        applications access to private information. Public receivers can receiver broadcasts from any applications, so they can
+        also receive broadcasts from malware. Instead developers should use In-house receivers, so that the apps require
+        permission and the user has control over what app can potentially access his data.</em>
+    </li>
+</ol>     
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

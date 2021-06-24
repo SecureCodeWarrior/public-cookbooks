@@ -1,0 +1,49 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted to avoid Logging in releases.
+<h2>Description</h2>
+Logging can be prevented by:
+<ul>
+<li>Use ProGuard to delete the <code>Log</code> class methods in release mode</li>
+<li>Make use of <code>if (BuildConfig.DEBUG)</code> before every log entry, in order to avoid log files in release mode and set <code>debuggable to false in release mode</li>
+<li>Avoid all methods of the <code>Log</code> class alltogether</li>
+ </ul>
+<!--
+If developers want to exclude the risk of logging sensitive information alltogether, they can use the code generators provided by <b>Sensei Security&reg; Generator technology: in the file progruard-rules.pro Hit {{{ generatorsshortcut }}}</b> to insert "Logging Best Practices" code block.<br/>
+Fix this issue by using the <b>Sensei Security&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to automatically fix this issue.
+In case this guidelines does no apply to your code, Hit {{{ qfshortcut }}}, go right on the Sensei Quick Fix and choose the
+appropriate suppress to suppress the highlighting on this issue.<br/>
+
+
+     3. Links targeting the developer 
+
+<h2>Additional information for the developer:</h2>
+
+<ul>
+    <li>(PDF) <a href="https://www.jssec.org/dl/android_securecoding_en.pdf"> Android Application Secure Design/Secure Coding Guidebook</a></li>
+    <li>(WWW) <a href="https://developer.android.com/reference/android/util/Log.html" > (JavaDoc) android.util.Log</a></li>
+</ul>
+
+ 4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+
+Feedback on the Sensei Security Solution for Android can be sent to productfeedback@senseisecurity.com<br>
+
+
+ -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Unintended Data Leakage - Logging Sensitive Information. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/unintended_data_leakage/logging_sensitive_information/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

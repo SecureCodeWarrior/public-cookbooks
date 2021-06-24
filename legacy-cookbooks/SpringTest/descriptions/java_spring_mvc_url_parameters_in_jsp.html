@@ -1,0 +1,27 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe to not display or evaluate URL parameters.
+<h2>Description</h2>
+Displaying unescaped URL parameters leads to XSS vulnerabilities. Evaluating URL parameters allows for SpEL injection vulnerabilities.
+<!-- source: https://www.owasp.org/index.php/Expression_Language_Injection -->
+<!-- code example of injection https://gist.github.com/brandonprry/3710662 -->
+<!-- Contextual example: https://bitquark.co.uk/blog/2014/08/31/popping_a_shell_on_the_oculus_developer_portal -->
+ Escaping URL parameters does not solve this problem as there are valid expressions in the Spring Expression Languages that only contain legal XML or HTML characters. Instead it is recommended to never evaluate URL parameters.     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Cross-Site Scripting (XSS) - Reflected Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/reflected/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/generic/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Injection Flaws - Code Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/code/java/spring?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

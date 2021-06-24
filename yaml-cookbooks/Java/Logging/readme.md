@@ -1,0 +1,1 @@
+Create recipes with library scope on the different logging frameworks (e.g. @Slf4j), see existing recipes.

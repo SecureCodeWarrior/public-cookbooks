@@ -1,0 +1,36 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that the HTTP Strict Transport Security Header (HSTS) should be used in Http responses.
+<h2>Description</h2>
+When sending a response to a client the HSTS Header has to be added to the response. This allows
+the web server to advertise that they are willing to accept TLS-only clients.
+The following method can be used to add this header.
+<h4>Class information:</h4>
+<pre>
+package java.servlet.http.<b>HttpServletResponse</b>;
+&nbsp;&nbsp;&nbsp;public static void <b>setHeader(String, String);</b>
+</pre>
+Apply this function with the correct HSTSHeader strings.
+<h4>Correct code example:</h4>
+<pre>
+response.setHeader(<b>"Strict-Transport-Security", "max-age=7776000; includeSubdomains"</b>)
+response.senRedirect("sensei.com/some_page");
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Security Misconfiguration - Disabled Security Features. <a href="https://{{microtraininghost}}/#/simple-flow/web/misconfig/securityfeatures/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Other. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/generic/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Insufficient Transport Layer Protection - Unprotected Transport of Sensitive Information. <a href="https://{{microtraininghost}}/#/simple-flow/web/itlp/sensitiveinfo/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

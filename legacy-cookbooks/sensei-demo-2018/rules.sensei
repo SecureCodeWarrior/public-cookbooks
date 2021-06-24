@@ -1,0 +1,1132 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Sensei Demo rules",
+    "description": "Secure Code Warrior Sensei Demo rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2018 Secure Code Warrior BVBA. All rights reserved.",
+    "rulepack_id": "fe055ce8-3074-4e3f-a710-e770e777ba46",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "6ce912881cf755d387bab4c7336595f2523bd4cf",
+      "model": {
+        "packageName": "javax\\.xml\\.(parsers|transform|validation|xpath)",
+        "className": "DocumentBuilderFactory|TransformerFactory|SAXParserFactory|SchemaFactory|XPathFactory",
+        "securemethodName": "setFeature",
+        "arguments": [
+          "javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING",
+          "true"
+        ],
+        "methodName": "newDocumentBuilder|newTransformer|newSAXParser|newSchema|newXPath",
+        "inCondition": false,
+        "condition": {
+          "type": 0
+        },
+        "quickFixDescription": "Set FEATURE_SECURE_PROCESSING to true",
+        "commonFixes": [],
+        "ruleName": "Injection: Avoid XML Injection: Use FEATURE_SECURE_PROCESSING",
+        "ruleID": "30e82850-1ff6-499a-a1d7-a947baf2326c",
+        "codingPolicy": "java_enable_xml_secure_processing",
+        "ruleShortDescription": "Enable secure XML processing before creating a new instance",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 0,
+        "standardTypeSettings": [
+          {
+            "convertInsecureFirst": true,
+            "insecurePackageName": "java.sql",
+            "insecureClassName": "Statement",
+            "insecureMethodName": "execute(Query|Update)?",
+            "queryStringInsecureArgumentPosition": 0,
+            "prepPackageName": "java.sql",
+            "prepClassName": "Connection",
+            "prepMethodName": "prepareStatement",
+            "queryStringPrepArgumentPosition": 0,
+            "namedParameters": false,
+            "positionalParameters": false,
+            "bindings": [
+              {
+                "type": "java.lang.String",
+                "method": "setString",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "int",
+                "method": "setInt",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Integer",
+                "method": "setInt",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Double",
+                "method": "setDouble",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "double",
+                "method": "setDouble",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "float",
+                "method": "setFloat",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Float",
+                "method": "setFloat",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Boolean",
+                "method": "setBoolean",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "boolean",
+                "method": "setBoolean",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "short",
+                "method": "setShort",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Short",
+                "method": "setShort",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.sql.Time",
+                "method": "setTime",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.sql.TimeStamp",
+                "method": "setTimeStamp",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.net.URL",
+                "method": "setURL",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              }
+            ]
+          }
+        ],
+        "queryMethods": [],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Use parameterized queries",
+        "commonFixes": [],
+        "ruleName": "Injection: Avoid SQL Injection: Use Parameterized Queries",
+        "ruleID": "7ae0b609-67b0-4d64-b51b-9ffd3cb89126",
+        "codingPolicy": "java_use_parameterized_queries",
+        "ruleShortDescription": "Violates a coding guideline on secure data retrieval",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "500",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "error-code",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "error-page",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add missing error-page 500",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cerror-page\u003e\n    \u003cerror-code\u003e500\u003c/error-code\u003e\n    \u003clocation\u003e/ErrorHandler\u003c/location\u003e\n\u003c/error-page\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Leakage: Improper Errorhandling: Set error-page 500",
+        "ruleID": "96af1220-a96f-437b-922f-d1e3b12dd16e",
+        "codingPolicy": "java_security_configuration_error_handling_in_web_app",
+        "ruleShortDescription": "Missing required error page for error-code 500",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web\\.xml"
+            }
+          },
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "503",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "error-code",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "error-page",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add missing error-page 503",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cerror-page\u003e\n    \u003cerror-code\u003e503\u003c/error-code\u003e\n    \u003clocation\u003e/ErrorHandler\u003c/location\u003e\n\u003c/error-page\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Leakage: Improper Errorhandling: Set error-page 503",
+        "ruleID": "96af1220-a96f-437b-922f-d1e3b12dd16e",
+        "codingPolicy": "java_security_configuration_error_handling_in_web_app",
+        "ruleShortDescription": "Missing required error page for error-code 503",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web\\.xml"
+            }
+          },
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "404",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "error-code",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "error-page",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add missing error-page 404",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cerror-page\u003e\n    \u003cerror-code\u003e404\u003c/error-code\u003e\n    \u003clocation\u003e/ErrorHandler\u003c/location\u003e\n\u003c/error-page\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Leakage: Improper Errorhandling: Set error-page 404",
+        "ruleID": "96af1220-a96f-437b-922f-d1e3b12dd16e",
+        "codingPolicy": "java_security_configuration_error_handling_in_web_app",
+        "ruleShortDescription": "Missing required error page for error-code 404",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web\\.xml"
+            }
+          },
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "400",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "error-code",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "error-page",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add missing error-page 400",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cerror-page\u003e\n    \u003cerror-code\u003e400\u003c/error-code\u003e\n    \u003clocation\u003e/ErrorHandler\u003c/location\u003e\n\u003c/error-page\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Leakage: Improper Errorhandling: Set error-page 400",
+        "ruleID": "96af1220-a96f-437b-922f-d1e3b12dd16e",
+        "codingPolicy": "java_security_configuration_error_handling_in_web_app",
+        "ruleShortDescription": "Missing required error page for error-code 400",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web\\.xml"
+            }
+          },
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "javax.servlet.ServletException",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "exception-type",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "error-page",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add missing error-page javax.servlet.ServletException",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cerror-page\u003e\n    \u003cexception-type\u003ejavax.servlet.ServletException\u003c/exception-type\u003e\n    \u003clocation\u003e/ErrorHandler\u003c/location\u003e\n\u003c/error-page\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Leakage: Improper Errorhandling: Set error-page javax.servlet.ServletException",
+        "ruleID": "96af1220-a96f-437b-922f-d1e3b12dd16e",
+        "codingPolicy": "java_security_configuration_error_handling_in_web_app",
+        "ruleShortDescription": "Missing required error page for error-code javax.servlet.ServletException",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web\\.xml"
+            }
+          },
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "expandNamespaces": false,
+        "errorMarkLocation": 2,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 2,
+              "children": [
+                {
+                  "id": 4,
+                  "children": [],
+                  "value": [
+                    {
+                      "id": 5,
+                      "value": {
+                        "name": "java.io.IOException",
+                        "nameType": 0,
+                        "trim": true,
+                        "negate": false
+                      }
+                    }
+                  ],
+                  "attributes": [],
+                  "tag": {
+                    "disallowed": false,
+                    "allowExtraAttributes": false,
+                    "tagName": {
+                      "name": "exception-type",
+                      "nameType": 0
+                    }
+                  }
+                }
+              ],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "error-page",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "web-app",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Add missing error-page java.io.IOException",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "\u003cerror-page\u003e\n    \u003cexception-type\u003ejava.io.IOException\u003c/exception-type\u003e\n    \u003clocation\u003e/ErrorHandler\u003c/location\u003e\n\u003c/error-page\u003e",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Leakage: Improper Errorhandling: Set error-page java.io.IOException",
+        "ruleID": "96af1220-a96f-437b-922f-d1e3b12dd16e",
+        "codingPolicy": "java_security_configuration_error_handling_in_web_app",
+        "ruleShortDescription": "Missing required error page for error-code java.io.IOException",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "web\\.xml"
+            }
+          },
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "650696f0d81698c04dd154281294966da40d2031",
+      "model": {
+        "outMapping": [
+          "print:LOGGER.info",
+          "println:LOGGER.info"
+        ],
+        "errMapping": [
+          "print:LOGGER.error",
+          "println:LOGGER.error"
+        ],
+        "quickfixDescription": "Replace with call to logger",
+        "variableName": "LOGGER",
+        "fieldStatic": true,
+        "fieldFinal": true,
+        "fieldAccessor": 0,
+        "variableType": "org.slf4j.Logger",
+        "assignedValue": "org.slf4j.LoggerFactory#getLogger",
+        "assignedValueMethodArguments": [
+          "{{{ classname }}}.class"
+        ],
+        "commonFixes": [],
+        "ruleName": "Logging: Avoid information leakage: Use proper log file instead of stdout/stderr",
+        "ruleID": "d383b9be-0de4-456e-8b91-5fcd142c06aa",
+        "codingPolicy": "java_logging_avoid_information_leakage_use_proper_logging",
+        "ruleShortDescription": "Use loggers instead of stdout/stderr",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "org.slf4j",
+        "className": "LoggerFactory",
+        "methodName": "getLogger",
+        "argumentNumber": 0,
+        "argumentType": ".*",
+        "notAllowed": "^{{{ containingClass.qualifiedName }}}\\.class$",
+        "matchType": 1,
+        "checkType": 1,
+        "fix": "{{{ containingClass.nameIdentifier.name }}}.class",
+        "quickFixDescription": "Change to class reference of this class",
+        "commonFixes": [],
+        "ruleName": "Logging: Avoid improper logger: Use correct log instance",
+        "ruleID": "939dc765-9b17-4d8f-b64d-40aea79f745b",
+        "codingPolicy": "java_logging_avoid_information_leakage_use_proper_logging",
+        "ruleShortDescription": "Do not log against other class instances",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "java\\.lang",
+        "className": "Throwable",
+        "methodName": "printStackTrace",
+        "checkArguments": true,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "",
+            "quickfixDescription": "Change to LOGGER.error",
+            "quickfixCode": "LOGGER.error(\"error\", {{{qualifier}}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Logging: Avoid Information Leakage: Use proper log file for logging Stacktraces",
+        "ruleID": "7936ba29-71ca-43d5-9f49-5265059c50b3",
+        "codingPolicy": "java_logging_avoid_information_leakage_use_proper_logging",
+        "ruleShortDescription": "Handle stacktrace printing by the logger",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "be511911b52d0f2c5ceb58e7881a11da3b7ecf25",
+      "model": {
+        "mver": 1,
+        "methodRefs": [
+          "org.slf4j.Logger#debug",
+          "org.slf4j.Logger#error",
+          "org.slf4j.Logger#info",
+          "org.slf4j.Logger#trace",
+          "org.slf4j.Logger#warn"
+        ],
+        "constantAllowed": false,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Use placeholders",
+            "existingPlaceholderPattern": "\\{\\}",
+            "fallbackFormatSpecifier": "{{{.}}}\u003d{}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Logging: Avoid Information Leakage: Use proper log formatting",
+        "ruleID": "7a055e7d-5de3-4403-b731-c5299af5e3e8",
+        "codingPolicy": "java_logging_avoid_information_leakage_use_proper_logging",
+        "ruleShortDescription": "Replace String concatenation with placeholders",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "f214a892aacb9e2093cee9cbe8148b79813af690",
+      "model": {
+        "appendedMethods": [
+          "javax.servlet.jsp.JspWriter#println"
+        ],
+        "wrapperPackage": "org.owasp.encoder",
+        "wrapperClass": "Encode",
+        "wrapperMethod": "forHtml",
+        "xssCheckerModels": [
+          {
+            "wrapperDescription": "Wrap with basic encoder",
+            "wrapperFix": "org.owasp.encoder.Encode.forHtml({{{ . }}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Output Encoding: Avoid XSS: Encode HTML output",
+        "ruleID": "395051d2-a37f-416f-bdfc-22f2cc574e4f",
+        "codingPolicy": "java_output_encoding_owasp",
+        "ruleShortDescription": "Encode HTML output",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "8196deac04fb5532109b31ad54451c1e25e01cd6",
+      "model": {
+        "mver": 2,
+        "packageName": "javax\\.servlet\\.http",
+        "className": "Cookie",
+        "securemethodName": "setHttpOnly",
+        "checkArguments": true,
+        "newArguments": [
+          {
+            "checkType": 2,
+            "check": "true"
+          }
+        ],
+        "replaceArgumentsIfMethodMatches": true,
+        "replaceArgsQuickfixDescription": "Set HttpOnly to true",
+        "replacementArguments": "true",
+        "inIfStatement": false,
+        "negateIf": false,
+        "ignoreIfCodeFlow": false,
+        "asArgumentType": "javax\\.servlet\\.http\\.HttpServletResponse",
+        "asArgumentMethodCall": "addCookie",
+        "asArgumentPosition": 0,
+        "doNotCheckReturnStatements": false,
+        "quickfixes": [
+          {
+            "splitVarDeclaration": false,
+            "negateGeneratedIfCondition": false,
+            "quickfixDescription": "Call setHttpOnly before using the cookie",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Session Management: Cookie Security: Set setHttpOnly to true",
+        "ruleID": "48af4e52-e456-4f60-ac0d-e8805f72fa8f",
+        "codingPolicy": "java_cookies_configuration",
+        "ruleShortDescription": "Set the HttpOnly flag to true (Cookies)",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "cc9a4ad253065cfa63f738f51c262f08c4cf9280",
+      "model": {
+        "staticType": "java\\.lang\\.Double",
+        "staticMethod": "parseDouble",
+        "staticArgument": 0,
+        "forbiddenPackage": "javax\\.servlet\\.http",
+        "forbiddenClass": "HttpServletRequest",
+        "forbiddenMethod": "getParameter",
+        "quickfixes": [
+          {
+            "returnType": "",
+            "quickfixDescription": "Change to validated helper function",
+            "quickfixCode": "com.senseisecurelibs.GetParameterHelper.getParameterAsDoubleSecured({{{qualifier}}}, {{{arguments.0}}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Input Validation: getParameter",
+        "ruleID": "4838e0a6-46ac-4e07-a4c0-93799bbcc01b",
+        "codingPolicy": "java_input_validation_avoid_injection_flaws_get_parameters_from_requests_securely",
+        "ruleShortDescription": "Getting an integer parameter should be done using the validated helper functions",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": false
+      }
+    },
+    {
+      "type": "a4393d2900ac79bb3a11aa5fbc23720f8b91f1e7",
+      "model": {
+        "type": "java\\.lang\\.String",
+        "variableName": "(?i).*(pwd|password|passwd).*",
+        "onlyTriggerOnConstantValue": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Fix this problem",
+            "quickfixCode": "String {{{declarations.0.qualifier}}} \u003d com.senseisecurelibs.PasswordVault.getPassword(\"{{{declarations.0.qualifier}}}.id\");"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Prevent Hardcoded Passwords",
+        "ruleID": "a299bdef-f240-4dc5-ad72-774f582ceb84",
+        "codingPolicy": "java_prevent_hardcoded_passwords",
+        "ruleShortDescription": "Do not use hardcoded passwords",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "java.util",
+        "className": "Random",
+        "quickfixes": [
+          {
+            "returnType": "java.security.SecureRandom",
+            "quickfixDescription": "Use the SecureRandom class",
+            "quickfixCode": "new java.security.SecureRandom()"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Secure Random number generation",
+        "ruleID": "1d83c6a4-9a5c-49b5-9e6e-07f0a11ce6e8",
+        "codingPolicy": "java_secure_random_number_generation",
+        "ruleShortDescription": "The Random class generates predictable random numbers",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "javax\\.crypto",
+        "className": "Cipher",
+        "methodName": "getInstance",
+        "argumentNumber": 0,
+        "argumentType": "java.lang.String",
+        "notAllowed": "AES/GCM/NoPadding|.*RSA.*|.*ECIES.*",
+        "matchType": 1,
+        "checkType": 0,
+        "fix": "\"AES/GCM/NoPadding\"",
+        "quickFixDescription": "Use AES in Galois/Counter Mode with NoPadding",
+        "commonFixes": [],
+        "ruleName": "Crypto: Cipher: Insecure Symmetric Cryptographic Algorithm",
+        "ruleID": "790082d7-9d67-4aae-b740-a9611ead0d47",
+        "codingPolicy": "java_cryptography_cipher_symmetric_algorithm",
+        "ruleShortDescription": "This cryptographic algorithm is not recommended",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "cd8be8e802733d745370f2f8283ac9036dfe5eb0",
+            "object": {
+              "projectName": "sensei-demo-2018-intellij-eclipse",
+              "projectNameType": 0
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+id: scw:java:web:return-response-public
+version: 8
+metadata:
+  name: Must not return javax.ws.rs.core.Response on a public method
+  shortDescription: Must not return javax.ws.rs.core.Response on a public method
+  level: error
+  enabled: true
+  comment: Why is this a bad practice?
+search:
+  method:
+    modifier: public
+    returnType: javax.ws.rs.core.Response
+availableFixes:
+- name: Change to private
+  actions:
+  - changeModifiers:
+      visibility: private

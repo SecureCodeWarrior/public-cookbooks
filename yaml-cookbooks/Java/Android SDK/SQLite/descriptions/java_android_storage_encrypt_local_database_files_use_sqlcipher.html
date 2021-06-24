@@ -1,0 +1,13 @@
+<html>
+<body>
+<p>Out of best practices and Android coding guidelines, recommendations were abstracted which state that <code>SQLCipher</code> should be preferred over SQLite databases.</p>
+<br>
+<p><code>SQLCipher</code> offers a fully-encrypted database. It is very easy to implement in your application as <code>SQLCipher</code> offers their own implementation of the SQLite methods. A downside of <code>SQLCipher</code> is a slight performance decrease, as well as the need to securely store the encryption key. Thus, <code>SQLCipher</code> can be used if the key can be supplied by the user of the application (e.g., a pin or password), or if the key can be securely sent over the network to the application. Never store the encryption key in the application itself!</p>
+<br>
+<b>References</b>
+<ul>
+<li><a href="https://www.zetetic.net/sqlcipher/">Zetetic on SQLCipher</a></li>
+<li><a href="https://discuss.zetetic.net/t/sqlcipher-how-to-protect-the-key/522/2">SQLCipher: How to protect the key</a></li>
+</ul>
+</body>
+</html>

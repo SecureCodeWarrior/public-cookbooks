@@ -1,0 +1,28 @@
+id: scw:java:string-format-unused
+version: 8
+metadata:
+  name: String.format return value being ignored
+  shortDescription: A call to string.format is being made without the return value
+    being used
+  level: warning
+  enabled: true
+  comment: Is this already highlighted by the IDE?
+search:
+  methodcall:
+    not:
+      anyOf:
+      - in:
+          assignment: {}
+      - in:
+          argument: {}
+      - in:
+          return: {}
+      - in:
+          methodcall: {}
+      - in:
+          expression: {}
+      - in:
+          annotation: {}
+    name: format
+    type: String
+availableFixes: []

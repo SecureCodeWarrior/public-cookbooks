@@ -1,0 +1,76 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Out of Android best practices and secure coding guidelines, recommendations were abstracted for <code>webView</code> and its configuration.
+<h2>Description</h2>
+Regardless where the URL originates from, a best practice is to double check that the URL does not target local resources.
+This can easily be achieved by checking the format.
+<h4>Code example to assure that the URL does not target local file resources:</h4>
+<pre>
+ if( !url.startsWith("file:") )
+&nbsp;&nbsp;&nbsp;webView.loadUrl(url);
+</pre>
+It is considered best practice to also check the URL to be loaded against a white list. 
+<!-- 
+See <a href="https://gist.github.com/scottyab/6f51bbd82a0ffb08ac7a" >this code example by Scott Alexander-Bown on GitHub</a>.
+-->
+Best practices for webView settings are to turn off JavaScript to prevent XSS attacks, disallowing file access to
+prevent data leakages as well as turning off
+geolocation to avoid information leakage. Finally, it is recommended to deactivate protocol handlers when they are not used.
+
+<h4>Code example on preferred webView settings to minimize the attack surface:</h4>
+<pre>
+webView.getSettings().setJavaScriptEnabled(false);
+webView.getSettings().setAllowFileAccess(false);
+webView.getSettings().setGeolocationEnabled(false);
+webView.getSettings().setAllowFileAccess(false);
+webView.getSettings().setAllowFileAccessFromFileURLs(false);
+webView.getSettings().setAllowUniversalAccessFromFileURLs(false);
+webView.getSettings().setAllowContentAccess(false);
+</pre>
+
+<!-- 3. Links targeting the developer
+
+<h2>Additional information for the developer</h2>
+
+Android documentation on the used API's:
+<ul>
+    <li>(WWW) <a href="https://developer.android.com/reference/android/webkit/WebView.html">(Android) WebView</a> </li>
+    <li>(WWW) <a href="https://developer.android.com/reference/android/webkit/WebSettings.html">(Android) WebSettings</a> </li>
+</ul>
+
+4. The security implications when doing it wrong, information for developer interested in security 
+<h2>Additional security information</h2>
+
+Rules and guidelines:
+<ul>
+	<li>(WWW) <a href="https://www.securecoding.cert.org/confluence/display/android/DRD02-J.+Do+not+allow+WebView+to+access+sensitive+local+resource+through+file+scheme" > Secure Guidelines by CERT: DRD02-J. Do not allow WebView to access sensitive local resource through file scheme</a></li>
+	<li>(WWW) <a href="https://www.securecoding.cert.org/confluence/display/android/DRD15-J.+Consider+privacy+concerns+when+using+Geolocation+API" > Secure Guidelines by CERT: DRD15-J. Consider privacy concerns when using Geolocation API</a></li>
+<li>(WWW) <a href="https://b-mueller.gitbooks.io/owasp-mobile-security-testing-guide/content/0x05h-Testing-Platform-Interaction.html#testing-webview-protocol-handlers" > OWASP Mobile Security Testing Guide</a></li>
+</ul>
+<br>
+What can go wrong when not implementing this the correct way:
+<ul>
+	<li>(WWW) <a href="https://labs.mwrinfosecurity.com/blog/adventures-with-android-webviews/">MWR Labs: Adventures with Android WebView</a></li>
+    <li>(WWW) <a href="http://www.forbes.com/sites/daniellecitron/2014/12/24/beware-the-dangers-of-location-data">BEWARE: The Dangers Of Location Data</a> </li>
+    <li>(WWW) <a href="https://threatpost.com/android-market-xss-bug-allowed-code-execution-mobile-devices-030711/74999/">Android Market XSS Bug Allowed Code Execution on Mobile Devices</a> </li>
+    <li>(WWW) <a href="https://jvn.jp/en/jp/JVN59652356/">Cybozu Application Vulnerability (Private data leak, Remote JavaScript execution)</a> </li>
+	<li>(WWW) <a href="https://jvn.jp/en/jp/JVN99813183/">Galapagos Browser Vulnerability (Private data leak)</a> </li>
+</ul> -->     
+        <h2>Violating this guideline can cause</h2>
+        
+        <h4>Mobile vulnerabilities</h4>
+            <ul>
+            
+                <li>Client Side Injection - JavaScript Injection. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/client_side_injection/javascript_injection/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Client Side Injection - Local File Inclusion. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/client_side_injection/local_file_inclusion/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Unintended Data Leakage - Analytics Data Sent To 3rd Parties. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/unintended_data_leakage/analytics_data_sent_to_3rd_parties/java/android?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

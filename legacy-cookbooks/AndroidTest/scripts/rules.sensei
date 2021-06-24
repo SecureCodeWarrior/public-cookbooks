@@ -1,0 +1,585 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Java rules",
+    "description": "Secure Code Warrior default Java rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2016 Sensei Security CVBA. All rights reserved.",
+    "rulepack_id": "123456789-987654321",
+    "senseiModelStructureVersion": "3.0.0",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "889d5786a50ea7a31427a832e97db12d958961aa",
+      "model": {
+        "forbiddenMethodCall": {
+          "qualifier": {
+            "qualifierClass": "java.io.FileOutputStream"
+          },
+          "methodName": {
+            "methodName": "FileOutputStream",
+            "methodNameType": 0
+          },
+          "checkArguments": false,
+          "arguments": []
+        },
+        "constructor": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Store data in a private location",
+            "quickfixCode": "this.getApplicationContext().openFileOutput({{{ arguments.0 }}}.getPath(), android.content.Context.MODE_PRIVATE)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Store Sensitive Data in a Private Location (FileOutput constructor) in Activity",
+        "ruleID": "cf11fa69-5e67-46c0-a1c6-824cd581ee98",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_store_sensitive_data_in_a_private_location",
+        "ruleShortDescription": "Do not store sensitive data in a public location",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "c0bd2047bc88e8d9cde171c2cd9bec5b8905df60",
+            "object": {
+              "className": "android.app.Activity"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_store_sensitive_data_in_a_private_location.html"
+      }
+    },
+    {
+      "type": "889d5786a50ea7a31427a832e97db12d958961aa",
+      "model": {
+        "forbiddenMethodCall": {
+          "qualifier": {
+            "qualifierClass": "java.io.FileOutputStream"
+          },
+          "methodName": {
+            "methodName": "FileOutputStream",
+            "methodNameType": 0
+          },
+          "checkArguments": false,
+          "arguments": []
+        },
+        "constructor": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Store data in a private location",
+            "quickfixCode": "getActivity().getApplicationContext().openFileOutput({{{ arguments.0 }}}.getPath(), android.content.Context.MODE_PRIVATE)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Store Sensitive Data in a Private Location (FileOutput constructor) in Fragment",
+        "ruleID": "87eda4b7-0182-49a3-b73d-1f31e801c0c0",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_store_sensitive_data_in_a_private_location",
+        "ruleShortDescription": "Do not store sensitive data in a public location",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "c0bd2047bc88e8d9cde171c2cd9bec5b8905df60",
+            "object": {
+              "className": "android.app.Fragment"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_store_sensitive_data_in_a_private_location.html"
+      }
+    },
+    {
+      "type": "8196deac04fb5532109b31ad54451c1e25e01cd6",
+      "model": {
+        "mver": 2,
+        "packageName": "java\\.lang",
+        "className": "String",
+        "securemethodName": "startsWith",
+        "checkArguments": true,
+        "newArguments": [
+          {
+            "checkType": 0,
+            "check": "\"file:\""
+          }
+        ],
+        "replaceArgumentsIfMethodMatches": true,
+        "replaceArgsQuickfixDescription": "Add a security check to avoid loading local resources",
+        "replacementArguments": "\"file:\"",
+        "inIfStatement": true,
+        "negateIf": true,
+        "ignoreIfCodeFlow": false,
+        "asArgumentType": "android\\.webkit.WebView",
+        "asArgumentMethodCall": "loadUrl",
+        "asArgumentPosition": 0,
+        "doNotCheckReturnStatements": true,
+        "quickFixDescription": "Add a security check to avoid loading local resources",
+        "quickfixes": [
+          {
+            "splitVarDeclaration": true,
+            "negateGeneratedIfCondition": false,
+            "quickfixDescription": "Add a security check to avoid loading local resources",
+            "quickfixCode": "{{{ iftext }}} {\n\t{{{ statement }}}\n}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Do not allow access to local resources",
+        "ruleID": "9a710e22-b2c0-4b85-b663-1910e2716268",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Avoid targeting local resources",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.database.sqlite)\\.(SQLiteQueryBuilder)\n    name:\n      matches: build(Union(Sub)?)?Query\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteQueryBuilder#buildQuery",
+        "ruleID": "72c608dd-afd6-4bbe-b958-196175a10f34",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This method is vulnerable to SQL injection. Consider writing the query instead of relying on builders.",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (java.io)\\.(File)\n    name: delete\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Overwrite with random data first",
+            "quickfixCode": "        java.io.FileOutputStream out = null;\n        try {\n            out = this.getApplicationContext().openFileOutput({{{children.0.children.0.children.0}}}.getPath(), android.content.Context.MODE_PRIVATE);\n            java.security.SecureRandom random = new java.security.SecureRandom();\n            long size = {{{children.0.children.0.children.0}}}.getTotalSpace();\n            while (size > 0){\n                int numberOfBytes = 0;\n                //check size left to overwrite\n                if (size <= Integer.MAX_VALUE){\n                    numberOfBytes = (int) size;\n                }\n                else{\n                    numberOfBytes = Integer.MAX_VALUE;\n                }\n                byte randomBytes[] = new byte[numberOfBytes];\n                random.nextBytes(randomBytes);\n                out.write(randomBytes);\n                size -= numberOfBytes;\n            }\n        } catch (java.io.IOException e) {\n            //Handle exception here\n        } finally {\n            try {\n                out.flush();\n                out.close();\n            }\n            catch(Exception e){\n                //Handle exception here\n            }\n        }\n        //safe to delete now\n        {{{ . }}}\n"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Securely delete files",
+        "ruleID": "f879becf-98cb-43da-a4f8-382505cce13b",
+        "overridingrules": [],
+        "codingPolicy": "java_android_securely_delete_files",
+        "ruleShortDescription": "This method only removes metadata, sensitive data can still be recovered",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": "senseiandroidsdk",
+              "negate": true
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_securely_delete_files.html"
+      }
+    },
+
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: >-\n        (android\\.bluetooth|android\\.net\\.wifi|java\\.net)\\.(BluetoothAdapter|WifiInfo|NetworkInterface)\n    name:\n      matches: getMacAddress|getAddress|getHardwareAddress\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Uniquely identify a specific app instance",
+            "quickfixCode": "String iid = com.google.android.gms.iid.InstanceID.getInstance(context).getId();"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Avoid using hardware identifiers",
+        "ruleID": "8de06f5f-5a68-4d76-b7cd-9699b81d6e86",
+        "overridingrules": [],
+        "codingPolicy": "java_android_best_practices_on_unique_identifiers",
+        "ruleShortDescription": "Using hardware identifiers is not recommended",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_best_practices_on_unique_identifiers.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.webkit)\\.(WebView)\n    name: loadUrl\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Check URL to White List",
+        "ruleID": "2cb80a86-13da-4f4c-ac79-e5c323b3f3d1",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Consider using a WhiteList to check URLs passed to this method",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.content)\\.(Context)\n    name: createPackageContext\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove this call",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Code Injection: Prevent use of CreatePackageContext",
+        "ruleID": "9c8bf1cb-533f-4a87-ad07-e6fe96c2a3bc",
+        "overridingrules": [],
+        "codingPolicy": "java_android_avoid_dynamically_loading_code",
+        "ruleShortDescription": "Do not use the createPackageContext to dynamically load code",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_avoid_dynamically_loading_code.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.content|android.support.v4.content)\\.(Context|ContextCompat)\n    name: createDeviceProtectedStorageContext\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Use the default (secure) storage location",
+            "quickfixCode": "String filename = \"myfile\";\n        String string = \"output\";\n        java.io.FileOutputStream outputStream;\n        \n        try {\n          outputStream = {{{ children.0.children.0.children.0 }}}.openFileOutput(filename, Context.MODE_PRIVATE);\n          outputStream.write(string.getBytes());\n        } catch (Exception e) {\n          //handle exception\n        } finally {\n          outputStream.close();\n\t}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Avoid DeviceEncryptedStorage for Sensitive Information",
+        "ruleID": "af3925d6-39b9-4e1d-ac47-0823946c5bec",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_avoid_storing_sensitive_information_in_device_encrypted_storage",
+        "ruleShortDescription": "Using DeviceEncryptedStorage for Sensitive information is insecure!",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_avoid_storing_sensitive_information_in_device_encrypted_storage.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (java.security)\\.(SecureRandom)\n    name: setSeed\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove this line of code",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Random Number Generation: Do not manually define seeds for SecureRandom class",
+        "ruleID": "4e8fcaeb-395c-4620-9f6c-ec892c7de59c",
+        "overridingrules": [],
+        "codingPolicy": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class",
+        "ruleShortDescription": "Do not use your own defined seeds",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.widget)\\.(Toast)\n    name: makeText\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "",
+            "quickfixDescription": "Use the FlagSecureHelper library to create a secure toast",
+            "quickfixCode": "com.commonsware.cwac.security.flagsecure.FlagSecureHelper.makeSecureToast({{{arguments.0}}}, {{{arguments.1}}}, {{{arguments.2}}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Data Protection - Secure Data Display: Avoid Data Exposure: Use FlagSecureHelper to create toasts",
+        "ruleID": "a3457d2a-b63f-4eae-b4fb-76585e12c186",
+        "overridingrules": [],
+        "codingPolicy": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure",
+        "ruleShortDescription": "Could lead to Data Exposure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure.html"
+      }
+    },
+
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.database.sqlite)\\.(SQLiteDatabase)\n    name:\n      matches: ^(?!openOrCreateDatabase).*$\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "net.sqlcipher.database.SQLiteDatabase",
+            "quickfixDescription": "Use SQLCipher instead of SQLite",
+            "quickfixCode": "net.sqlcipher.database.SQLiteDatabase.{{{methodName}}}({{{arguments.0}}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Use SQLCipher Database (all other methods)",
+        "ruleID": "07167177-89f8-4724-a1cd-7e2ff7ee0f41",
+        "overridingrules": [],
+        "codingPolicy": "java_android_storage_encrypt_local_database_files_use_sqlcipher",
+        "ruleShortDescription": "SQLite Databases are an insecure means of storage",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*sqlcipher.*",
+              "negate": false
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_storage_encrypt_local_database_files_use_sqlcipher.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.database.sqlite|android.app)\\.(SQLiteDatabase|Activity)\n    name: openOrCreateDatabase\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "net.sqlcipher.database.SQLiteDatabase",
+            "quickfixDescription": "Use a SQLCipher database",
+            "quickfixCode": "net.sqlcipher.database.SQLiteDatabase.openOrCreateDatabase(databaseFile, \"secretKey\", null)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Use SQLCipher Database (creation)",
+        "ruleID": "b9a29592-0a96-4ee2-9f72-3c88fbf159e9",
+        "overridingrules": [],
+        "codingPolicy": "java_android_storage_encrypt_local_database_files_use_sqlcipher",
+        "ruleShortDescription": "SQLite Databases are an insecure means of storage",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*sqlcipher.*",
+              "negate": false
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_storage_encrypt_local_database_files_use_sqlcipher.html"
+      }
+    },
+
+    {
+      "type": "889d5786a50ea7a31427a832e97db12d958961aa",
+      "model": {
+        "forbiddenMethodCall": {
+          "qualifier": {
+            "qualifierClass": "java.security.SecureRandom"
+          },
+          "methodName": {
+            "methodName": "SecureRandom",
+            "methodNameType": 0
+          },
+          "checkArguments": true,
+          "arguments": [
+            {
+              "value": ".*",
+              "valueType": 1,
+              "negateValueMatch": false,
+              "typeCanBeNull": false,
+              "type": "byte[]",
+              "typeType": 0
+            }
+          ]
+        },
+        "constructor": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Use the empty constructor",
+            "quickfixCode": "new SecureRandom()"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Secure Random: Do not use initializer with own seed",
+        "ruleID": "89b5c6e0-17d2-426c-849d-b70fd7bf529b",
+        "overridingrules": [],
+        "codingPolicy": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class",
+        "ruleShortDescription": "Do not use your own defined seeds",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class.html"
+      }
+    }
+  ]
+}

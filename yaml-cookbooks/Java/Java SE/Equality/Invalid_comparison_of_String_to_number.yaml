@@ -1,0 +1,24 @@
+id: scw:java:equality-string-number
+version: 8
+metadata:
+  name: Invalid comparison of String to number
+  shortDescription: This comparison of a String to a number will always return false
+  level: error
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type:
+          reference:
+            anyOf:
+            - matches: java.lang.Short
+            - matches: java.lang.Integer
+            - matches: java.lang.Long
+            - is: short
+            - is: int
+            - is: long
+          checkInheritance: true
+    name: equals
+    type: java.lang.String
+availableFixes: []

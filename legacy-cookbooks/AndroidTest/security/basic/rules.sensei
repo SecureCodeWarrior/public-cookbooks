@@ -1,0 +1,90 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Java rules",
+    "description": "Secure Code Warrior default Java rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2016 Sensei Security CVBA. All rights reserved.",
+    "rulepack_id": "123456789-987654321",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: setSeed\n    declaration:\n      type:\n        reference:\n          matches: (java.security)\\.(SecureRandom)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Remove this line of code\n  actions:\n  - rewrite:\n      to: \"\"\n",
+        "ruleName": "Random Number Generation: Do not manually define seeds for SecureRandom class",
+        "ruleID": "4e8fcaeb-395c-4620-9f6c-ec892c7de59c",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class",
+        "ruleDescriptionFile": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class.html",
+        "ruleShortDescription": "Do not use your own defined seeds",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: createDeviceProtectedStorageContext\n    declaration:\n      type:\n        reference:\n          matches: (android.content|android.support.v4.content)\\.(Context|ContextCompat)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Use the default (secure) storage location\n  actions:\n  - rewrite:\n      to: \"String filename \u003d \\\"myfile\\\";\\n        String string \u003d \\\"output\\\";\\n  \\\n        \\      java.io.FileOutputStream outputStream;\\n        \\n        try {\\n \\\n        \\         outputStream \u003d {{{ children.0.children.0 }}}.openFileOutput(filename,\\\n        \\ Context.MODE_PRIVATE);\\n          outputStream.write(string.getBytes());\\n\\\n        \\        } catch (Exception e) {\\n          //handle exception\\n        }\\\n        \\ finally {\\n          outputStream.close();\\n\\t}\"\n",
+        "ruleName": "Information Exposure: Avoid DeviceEncryptedStorage for Sensitive Information",
+        "ruleID": "af3925d6-39b9-4e1d-ac47-0823946c5bec",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_sensitive_information_avoid_storing_sensitive_information_in_device_encrypted_storage",
+        "ruleDescriptionFile": "java_android_sensitive_information_avoid_storing_sensitive_information_in_device_encrypted_storage.html",
+        "ruleShortDescription": "Using DeviceEncryptedStorage for Sensitive information is insecure!",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    name: createPackageContext\n    declaration:\n      type:\n        reference:\n          matches: (android.content)\\.(Context)\n        checkInheritance: false\n",
+        "mver": 8,
+        "yamlQuickFixCode": "availableFixes:\n- name: Remove this call\n  actions:\n  - rewrite:\n      to: \"\"\n",
+        "ruleName": "Data Protection: Avoid Data Exposure - Avoid Device Protected Storage",
+        "ruleID": "9c8bf1cb-533f-4a87-ad07-e6fe96c2a3bc",
+        "disableRuleIDs": [],
+        "codingPolicy": "java_android_avoid_dynamically_loading_code",
+        "ruleDescriptionFile": "java_android_avoid_dynamically_loading_code.html",
+        "ruleShortDescription": "Could lead to data exposure",
+        "ruleErrorLevel": 2,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleEnabled": true
+      }
+    }
+  ]
+}

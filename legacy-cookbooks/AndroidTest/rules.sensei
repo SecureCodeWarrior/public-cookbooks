@@ -1,0 +1,4965 @@
+{
+  "header": {
+    "name": "Secure Code Warrior Java rules",
+    "description": "Secure Code Warrior default Java rules",
+    "company": "Secure Code Warrior",
+    "appsecmail": "info@securecodewarrior.com",
+    "copyright": "Copyright 2016 Sensei Security CVBA. All rights reserved.",
+    "rulepack_id": "123456789-987654321",
+    "senseiModelStructureVersion": "3.0.0",
+    "enabled": true,
+    "language": "Java/XML",
+    "notes": "Rules are for demo purposes only. The rules need to be customized towards your technology."
+  },
+  "rules": [
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.content",
+        "className": "Context",
+        "methodName": "openFileOutput",
+        "argumentNumber": 1,
+        "argumentType": "java.lang.Byte|byte|int",
+        "checkType": 0,
+        "notAllowed": "1|2|4",
+        "matchType": 0,
+        "fix": "Context.MODE_PRIVATE",
+        "quickFixDescription": "Use a private location to store data",
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Store Sensitive Data in a Private Location (Context in openFileOutput)",
+        "ruleID": "e21f9141-b4ce-4f80-8269-affaf7f705c4",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_store_sensitive_data_in_a_private_location",
+        "ruleShortDescription": "Do not store sensitive data in a public location",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_store_sensitive_data_in_a_private_location.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.content",
+        "className": "Context",
+        "methodName": "getSharedPreferences",
+        "argumentNumber": 1,
+        "argumentType": "java.lang.Byte|byte|int",
+        "checkType": 0,
+        "notAllowed": "1|2|4",
+        "matchType": 0,
+        "fix": "Context.MODE_PRIVATE",
+        "quickFixDescription": "Use a private location to store data",
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Store Sensitive Data in a Private Location (Context in getSharedPreferences)",
+        "ruleID": "2220630a-2e08-47f8-843f-3978bbac2618",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_store_sensitive_data_in_a_private_location",
+        "ruleShortDescription": "Do not store sensitive data in a public location",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_store_sensitive_data_in_a_private_location.html"
+      }
+    },
+    {
+      "type": "889d5786a50ea7a31427a832e97db12d958961aa",
+      "model": {
+        "forbiddenMethodCall": {
+          "qualifier": {
+            "qualifierClass": "java.io.FileOutputStream"
+          },
+          "methodName": {
+            "methodName": "FileOutputStream",
+            "methodNameType": 0
+          },
+          "checkArguments": false,
+          "arguments": []
+        },
+        "constructor": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Store data in a private location",
+            "quickfixCode": "this.getApplicationContext().openFileOutput({{{ arguments.0 }}}.getPath(), android.content.Context.MODE_PRIVATE)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Store Sensitive Data in a Private Location (FileOutput constructor) in Activity",
+        "ruleID": "cf11fa69-5e67-46c0-a1c6-824cd581ee98",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_store_sensitive_data_in_a_private_location",
+        "ruleShortDescription": "Do not store sensitive data in a public location",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "c0bd2047bc88e8d9cde171c2cd9bec5b8905df60",
+            "object": {
+              "className": "android.app.Activity"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_store_sensitive_data_in_a_private_location.html"
+      }
+    },
+    {
+      "type": "889d5786a50ea7a31427a832e97db12d958961aa",
+      "model": {
+        "forbiddenMethodCall": {
+          "qualifier": {
+            "qualifierClass": "java.io.FileOutputStream"
+          },
+          "methodName": {
+            "methodName": "FileOutputStream",
+            "methodNameType": 0
+          },
+          "checkArguments": false,
+          "arguments": []
+        },
+        "constructor": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Store data in a private location",
+            "quickfixCode": "getActivity().getApplicationContext().openFileOutput({{{ arguments.0 }}}.getPath(), android.content.Context.MODE_PRIVATE)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Store Sensitive Data in a Private Location (FileOutput constructor) in Fragment",
+        "ruleID": "87eda4b7-0182-49a3-b73d-1f31e801c0c0",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_store_sensitive_data_in_a_private_location",
+        "ruleShortDescription": "Do not store sensitive data in a public location",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "c0bd2047bc88e8d9cde171c2cd9bec5b8905df60",
+            "object": {
+              "className": "android.app.Fragment"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_store_sensitive_data_in_a_private_location.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.webkit",
+        "className": "WebSettings",
+        "methodName": "setJavaScriptEnabled",
+        "argumentNumber": 0,
+        "argumentType": "boolean",
+        "checkType": 0,
+        "notAllowed": "true",
+        "matchType": 0,
+        "fix": "false",
+        "quickFixDescription": "Disable JavaScript",
+        "commonFixes": [],
+        "ruleName": "Configuration - User Interface: Avoid XSS: Disable JavaScript",
+        "ruleID": "8d49cd3b-d3cf-4214-bdd8-3ecfdd8e7d38",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Could lead to XSS",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.webkit",
+        "className": "WebSettings",
+        "methodName": "setAllowFileAccess",
+        "argumentNumber": 0,
+        "argumentType": "boolean",
+        "checkType": 0,
+        "notAllowed": "true",
+        "matchType": 0,
+        "fix": "false",
+        "quickFixDescription": "Disable file access",
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Disable File Access",
+        "ruleID": "0defdf8b-34a2-4528-86a3-76ca8e40eee8",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Disable file access to avoid misuse",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.webkit",
+        "className": "WebSettings",
+        "methodName": "setGeolocationEnabled",
+        "argumentNumber": 0,
+        "argumentType": "boolean",
+        "checkType": 0,
+        "notAllowed": "true",
+        "matchType": 0,
+        "fix": "false",
+        "quickFixDescription": "Disable geolocation",
+        "commonFixes": [],
+        "ruleName": "Configuration - User Interface: Avoid Data Exposure: Disable geolocation",
+        "ruleID": "7d8f5148-c18b-46a1-b9a7-5937e911c378",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Could lead to Data Exposure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "8196deac04fb5532109b31ad54451c1e25e01cd6",
+      "model": {
+        "mver": 2,
+        "packageName": "java\\.lang",
+        "className": "String",
+        "securemethodName": "startsWith",
+        "checkArguments": true,
+        "newArguments": [
+          {
+            "checkType": 0,
+            "check": "\"file:\""
+          }
+        ],
+        "replaceArgumentsIfMethodMatches": true,
+        "replaceArgsQuickfixDescription": "Add a security check to avoid loading local resources",
+        "replacementArguments": "\"file:\"",
+        "inIfStatement": true,
+        "negateIf": true,
+        "ignoreIfCodeFlow": false,
+        "asArgumentType": "android\\.webkit.WebView",
+        "asArgumentMethodCall": "loadUrl",
+        "asArgumentPosition": 0,
+        "doNotCheckReturnStatements": true,
+        "quickFixDescription": "Add a security check to avoid loading local resources",
+        "quickfixes": [
+          {
+            "splitVarDeclaration": true,
+            "negateGeneratedIfCondition": false,
+            "quickfixDescription": "Add a security check to avoid loading local resources",
+            "quickfixCode": "{{{ iftext }}} {\n\t{{{ statement }}}\n}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Do not allow access to local resources",
+        "ruleID": "9a710e22-b2c0-4b85-b663-1910e2716268",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Avoid targeting local resources",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "query",
+            "argumentTypes": [
+              "boolean",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 3,
+            "existingParametersArgumentPosition": 4,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{arguments.2}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.5}}}, {{{arguments.6}}}, {{{arguments.7}}}, {{{arguments.8}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "query",
+            "argumentTypes": [
+              "boolean",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "android.os.CancellationSignal"
+            ],
+            "queryStringArgumentPosition": 3,
+            "existingParametersArgumentPosition": 4,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{arguments.2}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.5}}}, {{{arguments.6}}}, {{{arguments.7}}}, {{{arguments.8}}}, {{{arguments.9}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "query",
+            "argumentTypes": [
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.4}}}, {{{arguments.5}}}, {{{arguments.6}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "query",
+            "argumentTypes": [
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.4}}}, {{{arguments.5}}}, {{{arguments.6}}}, {{{arguments.7}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#query",
+        "ruleID": "94eb9530-bccd-4d6c-8d05-fb5799102feb",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "queryWithFactory",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase.CursorFactory",
+              "boolean",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 4,
+            "existingParametersArgumentPosition": 5,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{arguments.2}}}, {{{arguments.3}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.6}}}, {{{arguments.7}}}, {{{arguments.8}}}, {{{arguments.9}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "queryWithFactory",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase.CursorFactory",
+              "boolean",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "android.os.CancellationSignal"
+            ],
+            "queryStringArgumentPosition": 4,
+            "existingParametersArgumentPosition": 5,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{arguments.2}}}, {{{arguments.3}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.6}}}, {{{arguments.7}}}, {{{arguments.8}}}, {{{arguments.9}}}, {{{arguments.10}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#queryWithFactory",
+        "ruleID": "9d9754ff-4336-4872-9ae8-f5a339b80055",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "execSQL",
+            "argumentTypes": [
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": -1,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "execSQL",
+            "argumentTypes": [
+              "java.lang.String",
+              "java.lang.Object[]"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": 1,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#execSQL",
+        "ruleID": "a7fe268d-be35-4d9c-abe2-1c8814db8abd",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "rawQueryWithFactory",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase.CursorFactory",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String[]"
+            ],
+            "queryStringArgumentPosition": 1,
+            "existingParametersArgumentPosition": 2,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.3}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "rawQueryWithFactory",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase.CursorFactory",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "android.os.CancellationSignal"
+            ],
+            "queryStringArgumentPosition": 1,
+            "existingParametersArgumentPosition": 2,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.3}}}, {{{arguments.4}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#rawQueryWithFactory",
+        "ruleID": "681a70ae-a497-42fe-b4bc-ccba5c2c772f",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "rawQuery",
+            "argumentTypes": [
+              "java.lang.String",
+              "java.lang.String[]"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": 1,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "rawQuery",
+            "argumentTypes": [
+              "java.lang.String",
+              "java.lang.String[]",
+              "android.os.CancellationSignal"
+            ],
+            "queryStringArgumentPosition": 0,
+            "existingParametersArgumentPosition": 1,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.2}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#rawQuery",
+        "ruleID": "1ab0d71a-dfa8-4b0c-8cd5-d110f7c67961",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "update",
+            "argumentTypes": [
+              "java.lang.String",
+              "android.content.ContentValues",
+              "java.lang.String",
+              "java.lang.String[]"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#update",
+        "ruleID": "0eb7c52d-796b-4d10-8b76-e43a7078a258",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteDatabase",
+            "methodName": "updateWithOnConflict",
+            "argumentTypes": [
+              "java.lang.String",
+              "android.content.ContentValues",
+              "java.lang.String",
+              "java.lang.String[]",
+              "int"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.4}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#updateWithOnConflict",
+        "ruleID": "431ddfac-cf13-4c78-aad4-41121d671900",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": true,
+        "type": 1,
+        "standardTypeSettings": [],
+        "queryMethods": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteQueryBuilder",
+            "methodName": "query",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "android.os.CancellationSignal"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.4}}}, {{{arguments.5}}}, {{{arguments.6}}}, {{{arguments.7}}}, {{{arguments.8}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteQueryBuilder",
+            "methodName": "query",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.4}}}, {{{arguments.5}}}, {{{arguments.6}}})"
+          },
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteQueryBuilder",
+            "methodName": "query",
+            "argumentTypes": [
+              "android.database.sqlite.SQLiteDatabase",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String[]",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String",
+              "java.lang.String"
+            ],
+            "queryStringArgumentPosition": 2,
+            "existingParametersArgumentPosition": 3,
+            "useVarArgs": false,
+            "fixUseVarArgs": false,
+            "bindingsUseCollection": false,
+            "existingCollectionArgumentPosition": 0,
+            "replacementCode": "{{{qualifier}}}.{{{methodName}}}({{{arguments.0}}}, {{{arguments.1}}}, {{{parameterizedQuery}}}, {{{bindings}}}, {{{arguments.4}}}, {{{arguments.5}}}, {{{arguments.6}}}, {{{arguments.7}}})"
+          }
+        ],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteQueryBuilder#query",
+        "ruleID": "da3a64ed-8284-4ed0-9fd2-a1725ebc5776",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 0,
+        "standardTypeSettings": [
+          {
+            "convertInsecureFirst": false,
+            "insecurePackageName": "",
+            "insecureClassName": "",
+            "insecureMethodName": "",
+            "queryStringInsecureArgumentPosition": 0,
+            "prepPackageName": "android.database.sqlite",
+            "prepClassName": "SQLiteDatabase",
+            "prepMethodName": "compileStatement",
+            "queryStringPrepArgumentPosition": 0,
+            "namedParameters": false,
+            "positionalParameters": false,
+            "bindings": [
+              {
+                "type": "java.lang.String",
+                "method": "bindString",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Double",
+                "method": "bindDouble",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "double",
+                "method": "bindDouble",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Float",
+                "method": "bindFloat",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "float",
+                "method": "bindFloat",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "long",
+                "method": "bindLong",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              },
+              {
+                "type": "java.lang.Long",
+                "method": "bindLong",
+                "boundIndexPosition": 0,
+                "boundVariablePosition": 1,
+                "otherArguments": []
+              }
+            ]
+          }
+        ],
+        "queryMethods": [],
+        "builderTypeSettings": [],
+        "quickfixDescription": "Attempt to parameterize the query",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteDatabase#compileStatement",
+        "ruleID": "97c55ace-4938-4d5e-bbac-4dad42b8a846",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "03e5f3b8c80a4569455b24a63e568acf11f87221",
+      "model": {
+        "onlyParameterizeStrings": false,
+        "type": 2,
+        "standardTypeSettings": [],
+        "queryMethods": [],
+        "builderTypeSettings": [
+          {
+            "packageName": "android.database.sqlite",
+            "className": "SQLiteQueryBuilder",
+            "methodName": "appendWhere",
+            "queryStringInsecureArgumentPosition": 0,
+            "escapedMethodName": "appendWhereEscapeString"
+          }
+        ],
+        "quickfixDescription": "Append escaped string",
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteQueryBuilder#appendWhere",
+        "ruleID": "724bc6c6-3d9c-4af8-8f98-521e88b46185",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This is not a secure database query",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.database.sqlite)\\.(SQLiteQueryBuilder)\n    name:\n      matches: build(Union(Sub)?)?Query\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "SQL Injection: SQLiteQueryBuilder#buildQuery",
+        "ruleID": "72c608dd-afd6-4bbe-b958-196175a10f34",
+        "overridingrules": [],
+        "codingPolicy": "java_android_secure_database_queries",
+        "ruleShortDescription": "This method is vulnerable to SQL injection. Consider writing the query instead of relying on builders.",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_secure_database_queries.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (java.io)\\.(File)\n    name: delete\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Overwrite with random data first",
+            "quickfixCode": "        java.io.FileOutputStream out = null;\n        try {\n            out = this.getApplicationContext().openFileOutput({{{children.0.children.0.children.0}}}.getPath(), android.content.Context.MODE_PRIVATE);\n            java.security.SecureRandom random = new java.security.SecureRandom();\n            long size = {{{children.0.children.0.children.0}}}.getTotalSpace();\n            while (size > 0){\n                int numberOfBytes = 0;\n                //check size left to overwrite\n                if (size <= Integer.MAX_VALUE){\n                    numberOfBytes = (int) size;\n                }\n                else{\n                    numberOfBytes = Integer.MAX_VALUE;\n                }\n                byte randomBytes[] = new byte[numberOfBytes];\n                random.nextBytes(randomBytes);\n                out.write(randomBytes);\n                size -= numberOfBytes;\n            }\n        } catch (java.io.IOException e) {\n            //Handle exception here\n        } finally {\n            try {\n                out.flush();\n                out.close();\n            }\n            catch(Exception e){\n                //Handle exception here\n            }\n        }\n        //safe to delete now\n        {{{ . }}}\n"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Securely delete files",
+        "ruleID": "f879becf-98cb-43da-a4f8-382505cce13b",
+        "overridingrules": [],
+        "codingPolicy": "java_android_securely_delete_files",
+        "ruleShortDescription": "This method only removes metadata, sensitive data can still be recovered",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": "senseiandroidsdk",
+              "negate": true
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_securely_delete_files.html"
+      }
+    },
+    {
+      "type": "274bd229731f1a39a40866b3077c7ef5",
+      "model": {
+        "deprecatedStaticField": "(android.content.)?Context.MODE_WORLD_WRITEABLE",
+        "staticFieldThatShouldBeUsed": "android.content.Context.MODE_PRIVATE",
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Deprecated File Creation Mode MODE_WORLD_WRITEABLE",
+        "ruleID": "ad88ea39-ce2e-4648-874e-306b0c41c481",
+        "overridingrules": [],
+        "codingPolicy": "java_android_deprecated_file_creation_mode_worldwriteable",
+        "ruleShortDescription": "This file creation mode is deprecated because it is insecure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_deprecated_file_creation_mode_worldwriteable.html"
+      }
+    },
+    {
+      "type": "274bd229731f1a39a40866b3077c7ef5",
+      "model": {
+        "deprecatedStaticField": "(android.content.)?Context.MODE_WORLD_READABLE",
+        "staticFieldThatShouldBeUsed": "android.content.Context.MODE_PRIVATE",
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Deprecated File Creation Mode MODE_WORLD_READABLE",
+        "ruleID": "c58c3f0a-d726-442d-a5a9-bd1e11117b20",
+        "overridingrules": [],
+        "codingPolicy": "java_android_deprecated_file_creation_mode_worldreadable",
+        "ruleShortDescription": "This file creation mode is deprecated because it is insecure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_deprecated_file_creation_mode_worldreadable.html"
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "android\\.content",
+        "className": "ContextWrapper",
+        "methodName": "getSharedPreferences",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": ".*",
+            "content": ".*",
+            "deepReplacement": false
+          },
+          {
+            "type": "int",
+            "content": "4",
+            "deepReplacement": false
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Use a Content Provider",
+            "quickfixCode": "android.content.ContentProvider cp;"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Deprecated File Creation Mode MODE_MULTI_PROCESS",
+        "ruleID": "bb97bc46-3d7b-48f4-a3d7-2943c4ad413d",
+        "overridingrules": [],
+        "codingPolicy": "java_android_deprecated_file_creation_mode_modemultiprocess",
+        "ruleShortDescription": "This file creation mode is deprecated",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_deprecated_file_creation_mode_modemultiprocess.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:taskAffinity",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValueType": 2
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "activity",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Remove taksAffinity",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Activity: task affinity should not be set",
+        "ruleID": "490ebba1-71a8-4c93-80c9-8a3a139f0853",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activity_types",
+        "ruleShortDescription": "Task affinity should not be set for private activities",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activity_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:launchMode",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValueType": 2
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "activity",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Remove launchMode",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Activity: launchmode should not be set",
+        "ruleID": "7d3b0775-d358-41ac-a199-8afe12994a96",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activity_types",
+        "ruleShortDescription": "Launchmode should not be set for private activities",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activity_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "activity",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Private Activity to Public Activity",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "<intent-filter>\n    <action android:name=\"com.examples.ACTION\" />\n    <category android:name=\"android.intent.category.XXX\"/>\n</intent-filter>",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Private Activity to Partner Activity",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Private Activity to In-House Activity",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.activity.PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Configuration - Application: Avoid improper platform usage: Private activity",
+        "ruleID": "c03ef6d8-d9ab-4fe1-9116-67c9833dc7d2",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activity_types",
+        "ruleShortDescription": "Private activity",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activity_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 3,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "intent-filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 4,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "activity",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Partner Activity to a Private Activity",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Partner Activity to an Public Activity",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "<intent-filter>\n    <action android:name=\"com.examples.ACTION\" />\n    <category android:name=\"android.intent.category.XXX\"/>\n</intent-filter>\n",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Partner Activity to an In-House Activity",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.activity.PERMISSION\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Configuration - Application: Avoid improper platform usage: Partner activity",
+        "ruleID": "1a6d4d89-9fc7-4402-8c6f-807bfd5ebb25",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activity_types",
+        "ruleShortDescription": "Partner activity",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activity_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "activity",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change In-House Activity to a Private Activity",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change In-House Activity to a Partner Activity",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change In-House Activity to a Public Activity",
+            "fixes": [
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "<intent-filter>\n    <action android:name=\"com.examples.ACTION\" />\n    <category android:name=\"android.intent.category.XXX\"/>\n</intent-filter>\n",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Configuration - Application: Avoid improper platform usage: In-House activity",
+        "ruleID": "28ecb745-35bb-4716-92d2-045e2a631164",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activity_types",
+        "ruleShortDescription": "In-house activity",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activity_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 3,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "intent-filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "activity",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Public Activity to Private Activity",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Public Activity to Partner Activity",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Public Activity to In-House Activity",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              },
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.activity.PERMISSION\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Configuration - Application: Avoid improper platform usage: Public activity",
+        "ruleID": "a8b55998-fabc-4534-b98b-cabd7b2b6a6d",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activity_types",
+        "ruleShortDescription": "Could lead to improper platform usage",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activity_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 3,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "intent-filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 4,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "receiver",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change In-House BroadcastReceiver to a Private BroadcastReceiver",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 4
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: BroadcastReceiver: is in-house",
+        "ruleID": "55e7cb4c-11b8-401e-9f1b-c3f82e2b858c",
+        "overridingrules": [],
+        "codingPolicy": "java_android_broadcastreceiver_types",
+        "ruleShortDescription": "In-house broadcast receiver",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_broadcastreceiver_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "receiver",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Private BroadcastReceiver to a In-House BroadcastReceiver",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.receiver.BROADCAST_PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "682d4d94d0a33e2e9349302abfa8938926ddd996",
+                "t": {
+                  "subtree": "            <intent-filter>\n                <action android:name=\"com.senseisecurity.broadcast.MY_BROADCAST_INHOUSE\" />\n            </intent-filter>",
+                  "insertAsFirst": false,
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: BroadcastReceiver: is private",
+        "ruleID": "3723865b-7296-477c-8c6f-b8d77805e623",
+        "overridingrules": [],
+        "codingPolicy": "java_android_broadcastreceiver_types",
+        "ruleShortDescription": "Private broadcast receiver",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_broadcastreceiver_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 4,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": false,
+                "tagName": {
+                  "name": "intent-filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "receiver",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Public BroadcastReceiver to a Private BroadcastReceiver",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 4
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Public BroadcastReceiver to an In-House BroadcastReceiver",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.receiver.BROADCAST_PERMISSION\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: BroadcastReceiver: is Public",
+        "ruleID": "1940725e-d83e-4692-92bc-f1b54700cc82",
+        "overridingrules": [],
+        "codingPolicy": "java_android_broadcastreceiver_types",
+        "ruleShortDescription": "Public broadcast receivers are not recommended",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_broadcastreceiver_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "false",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "provider",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Private Content Provider to a In-House Content Provider",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.provider.PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"true\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Private Content Provider to a Public/Partner Content Provider",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"true\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: ContentProvider: is private",
+        "ruleID": "a0ba284f-e4b2-4d53-872f-b8b37c8d3d30",
+        "overridingrules": [],
+        "codingPolicy": "java_android_contentprovider_types",
+        "ruleShortDescription": "Private content provider",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_contentprovider_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "false",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "provider",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Public/Partner Content Provider to a In-House Content Provider",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.provider.PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Public/Partner Content Provider to a Private Content Provider",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"false\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: ContentProvider: is public/partner",
+        "ruleID": "6cd51f5d-c814-4bdf-a726-a7615b78afc9",
+        "overridingrules": [],
+        "codingPolicy": "java_android_contentprovider_types",
+        "ruleShortDescription": "Public/Partner content provider",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_contentprovider_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "provider",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change In-House Content Provider to a Private Content Provider",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change In-House Content Provider to a Public/Partner Content Provider",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: ContentProvider: is in house",
+        "ruleID": "e5bb48ac-319a-437c-9273-fbf5cf9a77ed",
+        "overridingrules": [],
+        "codingPolicy": "java_android_contentprovider_types",
+        "ruleShortDescription": "In-house content provider",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_contentprovider_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "service",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Private Service to a In-House Service",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.service.inhouseservice.SERVICE_PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Private Service to a Partner Service",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:exported=\"true\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Service: is private",
+        "ruleID": "d51a9e41-ccc9-4998-89a5-63de85f53fc4",
+        "overridingrules": [],
+        "codingPolicy": "java_android_service_types",
+        "ruleShortDescription": "Private service",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_service_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 3,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": true,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "intent-filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 4,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "service",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Partner Service to a In-House Service",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.service.inhouseservice.SERVICE_PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"true\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Partner Service to a Private Service",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Service: is partner",
+        "ruleID": "2dec5707-c515-41ce-898c-6102d3e3d683",
+        "overridingrules": [],
+        "codingPolicy": "java_android_service_types",
+        "ruleShortDescription": "Partner service",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_service_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 3,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 2
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "service",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change In-House Service to a Private Service",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change In-House Service to a Partner Service",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Service: is in house",
+        "ruleID": "0968f29d-004d-47ba-9876-fdc7430ffd42",
+        "overridingrules": [],
+        "codingPolicy": "java_android_service_types",
+        "ruleShortDescription": "In house service",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_service_types.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 0,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [
+            {
+              "id": 3,
+              "children": [],
+              "value": [],
+              "attributes": [],
+              "tag": {
+                "disallowed": false,
+                "allowExtraAttributes": true,
+                "tagName": {
+                  "name": "intent-filter",
+                  "nameType": 0
+                }
+              }
+            }
+          ],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:exported",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            },
+            {
+              "id": 4,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:permission",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "service",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Change Public Service to a Private Service",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Public Service to a In-House Service",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:permission=\"com.senseisecurity.service.inhouseservice.SERVICE_PERMISSION\"",
+                  "nodeId": 1
+                }
+              },
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          },
+          {
+            "fixDescription": "Change Public Service to a Partner Service",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 3
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Service: Public services should not be used",
+        "ruleID": "923639d6-46f1-4f2a-9789-e7c0f567f804",
+        "overridingrules": [],
+        "codingPolicy": "java_android_service_types",
+        "ruleShortDescription": "Public services should not be used",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_service_types.html"
+      }
+    },
+    {
+      "type": "32e595ea1f39d3d09f415df9e578eab0c0f055e3",
+      "model": {
+        "quickfixDescription": "Set filterTouchesWhenObscured to true",
+        "parents": [],
+        "tagName": "Button",
+        "attribName": "android:filterTouchesWhenObscured",
+        "attribValue": "true",
+        "handleValueAsRegex": false,
+        "replacementValue": "true",
+        "errorMarkLocation": 0,
+        "commonFixes": [],
+        "ruleName": "Configuration - User Interface: Avoid Tapjacking: Set filterTouchesWhenObscured to true (Button)",
+        "ruleID": "e723a351-e6bd-4837-bf53-4a01e4f76918",
+        "overridingrules": [],
+        "codingPolicy": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured",
+        "ruleShortDescription": "Could lead to tapjacking",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured.html"
+      }
+    },
+    {
+      "type": "32e595ea1f39d3d09f415df9e578eab0c0f055e3",
+      "model": {
+        "quickfixDescription": "Set filterTouchesWhenObscured to true",
+        "parents": [],
+        "tagName": "WebView",
+        "attribName": "android:filterTouchesWhenObscured",
+        "attribValue": "true",
+        "handleValueAsRegex": false,
+        "replacementValue": "true",
+        "errorMarkLocation": 0,
+        "commonFixes": [],
+        "ruleName": "Configuration - User Interface: Avoid Tapjacking: Set filterTouchesWhenObscured to true (WebView)",
+        "ruleID": "5c3d46d6-d214-42e8-a80e-6e33ed076bb2",
+        "overridingrules": [],
+        "codingPolicy": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured",
+        "ruleShortDescription": "Could lead to tapjacking",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured.html"
+      }
+    },
+    {
+      "type": "32e595ea1f39d3d09f415df9e578eab0c0f055e3",
+      "model": {
+        "quickfixDescription": "Set filterTouchesWhenObscured to true",
+        "parents": [],
+        "tagName": "ImageButton",
+        "attribName": "android:filterTouchesWhenObscured",
+        "attribValue": "true",
+        "handleValueAsRegex": false,
+        "replacementValue": "true",
+        "errorMarkLocation": 0,
+        "commonFixes": [],
+        "ruleName": "Configuration - User Interface: Avoid Tapjacking: Set filterTouchesWhenObscured to true (ImageButton)",
+        "ruleID": "51a4c2a7-63a5-4d2e-b639-11d8f5150c72",
+        "overridingrules": [],
+        "codingPolicy": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured",
+        "ruleShortDescription": "Could lead to tapjacking",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured.html"
+      }
+    },
+    {
+      "type": "32e595ea1f39d3d09f415df9e578eab0c0f055e3",
+      "model": {
+        "quickfixDescription": "Set the value to true",
+        "parents": [],
+        "tagName": "ToggleButton",
+        "attribName": "android:filterTouchesWhenObscured",
+        "attribValue": "true",
+        "handleValueAsRegex": false,
+        "replacementValue": "true",
+        "errorMarkLocation": 0,
+        "commonFixes": [],
+        "ruleName": "UI Security Issues: Layout: Tap Jacking (ToggleButton)",
+        "ruleID": "4fd46f08-dccb-4260-9ea2-18853d5b8844",
+        "overridingrules": [],
+        "codingPolicy": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured",
+        "ruleShortDescription": "filterTouchesWhenObscured should be set to true to prevent tapjacking.",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_tapjacking_prevention_setfiltertoucheswhenobscured.html"
+      }
+    },
+    {
+      "type": "32e595ea1f39d3d09f415df9e578eab0c0f055e3",
+      "model": {
+        "quickfixDescription": "Set allowBackup to false",
+        "parents": [],
+        "tagName": "application",
+        "attribName": "android:allowBackup",
+        "attribValue": "false",
+        "handleValueAsRegex": false,
+        "replacementValue": "false",
+        "errorMarkLocation": 1,
+        "commonFixes": [],
+        "ruleName": "Operations - Binary Protections: Prevent malicious injections: Disable backups",
+        "ruleID": "866e96c6-f02e-46d1-9431-904028aae41c",
+        "overridingrules": [],
+        "codingPolicy": "java_android_disable_backup_functionality",
+        "ruleShortDescription": "Could lead to code injections",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_disable_backup_functionality.html"
+      }
+    },
+    {
+      "type": "73da4f120c8dfb1e4586521d4a8faaa2e28383e1",
+      "model": {
+        "clazz": {
+          "id": 1,
+          "clazz": {
+            "className": ".*",
+            "superClasses": [
+              "android.app.Activity"
+            ]
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "Information: Configuration - Application: Avoid improper platform usage: Private activity",
+        "ruleID": "8af46e21-fdeb-4b2b-8ec6-afa823fbe50c",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activities_info_private_activity",
+        "ruleShortDescription": "Information on this Private Activity",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "fa8868b263468542bc1bc3d7548f7bbf37266f1a",
+            "object": {
+              "scope": 0,
+              "type": 3,
+              "intentFilters": []
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activities_info_private_activity.html"
+      }
+    },
+    {
+      "type": "73da4f120c8dfb1e4586521d4a8faaa2e28383e1",
+      "model": {
+        "clazz": {
+          "id": 1,
+          "clazz": {
+            "className": ".*",
+            "superClasses": [
+              "android.app.Activity"
+            ]
+          }
+        },
+        "fixes": [],
+        "commonFixes": [],
+        "ruleName": "Information: Configuration - Application: Avoid improper platform usage: Public activity",
+        "ruleID": "0ca2a1fe-6c70-4979-b3fa-28f688f5e118",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activities_info_public_activity",
+        "ruleShortDescription": "Information on this Public Activity",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "fa8868b263468542bc1bc3d7548f7bbf37266f1a",
+            "object": {
+              "scope": 3,
+              "type": 3,
+              "intentFilters": []
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activities_info_public_activity.html"
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "android.content",
+        "className": "Intent",
+        "methodName": "putExtra",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": ".*",
+            "content": ".*",
+            "deepReplacement": false,
+            "variableName": ""
+          },
+          {
+            "type": ".*",
+            "content": "(?i).*([Cc]redit( )?[cC]ard|password|pass|pwd|passwd|[sS][sS][nN]|[cC][cC][nN]|[sS]ocial( )?[sS]ecurity( )?[nN]umber).*",
+            "deepReplacement": false
+          }
+        ],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Sensitive information in intents from public Activities",
+        "ruleID": "6b8a6406-765d-4e26-9a83-6657a752e460",
+        "overridingrules": [],
+        "codingPolicy": "java_android_activities_info_public_activity",
+        "ruleShortDescription": "Do not send sensitive information, this is a public Activity",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "fa8868b263468542bc1bc3d7548f7bbf37266f1a",
+            "object": {
+              "scope": 3,
+              "type": 3,
+              "intentFilters": []
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_activities_info_public_activity.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "permission",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [],
+        "commonFixes": [
+          {
+            "type": "ce2c5bbadeb4124c6b4e391974e1d2793c0dbea1",
+            "object": {
+              "property": "android.defaultConfig.minSdkVersion",
+              "value": "21",
+              "addIfNotPresent": true,
+              "forceAdd": false,
+              "quickfixDescription": "Change the minSdkVersion to 21 (Warning! This will prevent up to 23% of the Android devices from installing your app)"
+            }
+          }
+        ],
+        "ruleName": "Manifest Best Practices: Check Before Defining Custom Permissions",
+        "ruleID": "c260c5c3-257b-4a1b-8601-428c7eff09e0",
+        "overridingrules": [],
+        "codingPolicy": "java_android_check_before_defining_custom_permissions",
+        "ruleShortDescription": "Custom permissions should be checked at first run time of the application",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "e297b4c6c46effb78c94f305b8b2fa6d46c55b2e",
+            "object": {
+              "property": "android.defaultConfig.minSdkVersion",
+              "propertyType": 1,
+              "desiredValue": "21",
+              "useRegex": false,
+              "intPropertyMatchingType": 3,
+              "duplicateStrategy": 0,
+              "trueIfNotFound": true
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_check_before_defining_custom_permissions.html"
+      }
+    },
+    {
+      "type": "426d7421d65cf943c561029b4f8345a047a6a9b4",
+      "model": {
+        "enableQuickfix": false,
+        "quickfixDescription": "",
+        "insertFirst": true,
+        "parentTag": "uses-permission",
+        "parentAttribs": [
+          {
+            "attributeName": "android:name",
+            "attributeValue": "android.permission.(SYSTEM_ALERT_WINDOW|WRITE_SETTINGS)"
+          }
+        ],
+        "children": [
+          {
+            "name": "dummy-tag",
+            "selfClosing": false,
+            "value": "",
+            "children": [],
+            "attributes": []
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Manifest Best Practices: Permissions: Highly discourage to use these special permissions",
+        "ruleID": "d698b3b2-0ce9-4cc9-90d1-4c9eb30ea952",
+        "overridingrules": [],
+        "codingPolicy": "java_android_manifest_best_practices_special_permissions",
+        "ruleShortDescription": "Highly discouraged to use these special permissions",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_manifest_best_practices_special_permissions.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: >-\n        (android\\.bluetooth|android\\.net\\.wifi|java\\.net)\\.(BluetoothAdapter|WifiInfo|NetworkInterface)\n    name:\n      matches: getMacAddress|getAddress|getHardwareAddress\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Uniquely identify a specific app instance",
+            "quickfixCode": "String iid = com.google.android.gms.iid.InstanceID.getInstance(context).getId();"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Avoid using hardware identifiers",
+        "ruleID": "8de06f5f-5a68-4d76-b7cd-9699b81d6e86",
+        "overridingrules": [],
+        "codingPolicy": "java_android_best_practices_on_unique_identifiers",
+        "ruleShortDescription": "Using hardware identifiers is not recommended",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_best_practices_on_unique_identifiers.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.webkit)\\.(WebView)\n    name: loadUrl\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Check URL to White List",
+        "ruleID": "2cb80a86-13da-4f4c-ac79-e5c323b3f3d1",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "Consider using a WhiteList to check URLs passed to this method",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "android\\.content",
+        "className": "Context",
+        "methodName": "getSystemService",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": "java.lang.String",
+            "content": "clipboard",
+            "deepReplacement": false
+          }
+        ],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Do not place sensitive information on ClipBoard, Information",
+        "ruleID": "c8a106ec-b802-43f5-8589-81ba7225f00b",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_place_sensitive_information_on_the_clipboard",
+        "ruleShortDescription": "Never copy sensitive information to the ClipBoard",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 3,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_place_sensitive_information_on_the_clipboard.html"
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "android\\.content",
+        "className": "ClipData",
+        "methodName": "newPlainText",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": ".*",
+            "content": ".*",
+            "deepReplacement": false
+          },
+          {
+            "type": ".*",
+            "content": "(?i).*([Cc]redit( )?[cC]ard|password|pass|pwd|passwd|[sS][sS][nN]|[cC][cC][nN]|[sS]ocial( )?[sS]ecurity( )?[nN]umber).*",
+            "deepReplacement": false
+          }
+        ],
+        "quickfixes": [],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Do not place sensitive information on ClipBoard, Error",
+        "ruleID": "65fa82ed-a48d-4b62-a8d2-283e46414198",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_place_sensitive_information_on_the_clipboard",
+        "ruleShortDescription": "Never copy sensitive information to the ClipBoard",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_place_sensitive_information_on_the_clipboard.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.webkit",
+        "className": "WebSettings",
+        "methodName": "setAllowFileAccessFromFileURLs",
+        "argumentNumber": 0,
+        "argumentType": "boolean",
+        "checkType": 0,
+        "notAllowed": "true",
+        "matchType": 0,
+        "fix": "false",
+        "quickFixDescription": "Disable File Access From File URLs",
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Disable File Access From File URLs",
+        "ruleID": "9a38e466-32a2-4e18-8194-7ab948085859",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "WebView Best Practice: Disable File Access from File URLs when not needed",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.webkit",
+        "className": "WebSettings",
+        "methodName": "setAllowContentAccess",
+        "argumentNumber": 0,
+        "argumentType": "boolean",
+        "checkType": 0,
+        "notAllowed": "true",
+        "matchType": 0,
+        "fix": "false",
+        "quickFixDescription": "Disable Content Access",
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Disable Content Access",
+        "ruleID": "1c2ba064-1bed-47a5-b3d9-b631df8f7051",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "WebView Best Practice: Disable Content Access when not needed",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "89d0274e7dbe65c18141d2b8ba0a6edfa827ed26",
+      "model": {
+        "packageName": "android.webkit",
+        "className": "WebSettings",
+        "methodName": "setAllowUniversalAccessFromFileURLs",
+        "argumentNumber": 0,
+        "argumentType": "boolean",
+        "checkType": 0,
+        "notAllowed": "true",
+        "matchType": 0,
+        "fix": "false",
+        "quickFixDescription": "Disable Universal Access From File URLs",
+        "commonFixes": [],
+        "ruleName": "WebView Best Practices: Disable Universal Access From File URLs",
+        "ruleID": "ca887282-c3db-4c55-8418-5e375c0bc71d",
+        "overridingrules": [],
+        "codingPolicy": "java_android_webview_best_practices",
+        "ruleShortDescription": "WebView Best Practice: Disable Universal Acces From File URLs when not needed",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_webview_best_practices.html"
+      }
+    },
+    {
+      "type": "2213b6d251b5e135a2b7c3e8f60c36e7a09b9a54",
+      "model": {
+        "proguardOption": "assumenosideeffects",
+        "methods": [
+          "android.util.Log#isLoggable",
+          "android.util.Log#v",
+          "android.util.Log#w",
+          "android.util.Log#i",
+          "android.util.Log#d",
+          "android.util.Log#e",
+          "android.util.Log#wtf"
+        ],
+        "quickfixDescription": "Add proguard rule to remove logging methods in production",
+        "commonFixes": [],
+        "ruleName": "Logging: Avoid information leakage: Disable logging in production",
+        "ruleID": "2af69725-22db-4a13-9a97-ff34927d810a",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_no_logging_in_release",
+        "ruleShortDescription": "Could lead to information leakage",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_no_logging_in_release.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.content)\\.(Context)\n    name: createPackageContext\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove this call",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Code Injection: Prevent use of CreatePackageContext",
+        "ruleID": "9c8bf1cb-533f-4a87-ad07-e6fe96c2a3bc",
+        "overridingrules": [],
+        "codingPolicy": "java_android_avoid_dynamically_loading_code",
+        "ruleShortDescription": "Do not use the createPackageContext to dynamically load code",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_avoid_dynamically_loading_code.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.content|android.support.v4.content)\\.(Context|ContextCompat)\n    name: createDeviceProtectedStorageContext\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Use the default (secure) storage location",
+            "quickfixCode": "String filename = \"myfile\";\n        String string = \"output\";\n        java.io.FileOutputStream outputStream;\n        \n        try {\n          outputStream = {{{ children.0.children.0.children.0 }}}.openFileOutput(filename, Context.MODE_PRIVATE);\n          outputStream.write(string.getBytes());\n        } catch (Exception e) {\n          //handle exception\n        } finally {\n          outputStream.close();\n\t}"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Information Exposure: Avoid DeviceEncryptedStorage for Sensitive Information",
+        "ruleID": "af3925d6-39b9-4e1d-ac47-0823946c5bec",
+        "overridingrules": [],
+        "codingPolicy": "java_android_sensitive_information_avoid_storing_sensitive_information_in_device_encrypted_storage",
+        "ruleShortDescription": "Using DeviceEncryptedStorage for Sensitive information is insecure!",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_sensitive_information_avoid_storing_sensitive_information_in_device_encrypted_storage.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (java.security)\\.(SecureRandom)\n    name: setSeed\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove this line of code",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Random Number Generation: Do not manually define seeds for SecureRandom class",
+        "ruleID": "4e8fcaeb-395c-4620-9f6c-ec892c7de59c",
+        "overridingrules": [],
+        "codingPolicy": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class",
+        "ruleShortDescription": "Do not use your own defined seeds",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.widget)\\.(Toast)\n    name: makeText\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "",
+            "quickfixDescription": "Use the FlagSecureHelper library to create a secure toast",
+            "quickfixCode": "com.commonsware.cwac.security.flagsecure.FlagSecureHelper.makeSecureToast({{{arguments.0}}}, {{{arguments.1}}}, {{{arguments.2}}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Data Protection - Secure Data Display: Avoid Data Exposure: Use FlagSecureHelper to create toasts",
+        "ruleID": "a3457d2a-b63f-4eae-b4fb-76585e12c186",
+        "overridingrules": [],
+        "codingPolicy": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure",
+        "ruleShortDescription": "Could lead to Data Exposure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_handle_sensitive_information_in_ui_elements_with_care_use_flag_secure.html"
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "dalvik.system",
+        "className": "DexClassLoader",
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Use Grab'n Run's Secure Loader",
+            "quickfixCode": "\t\tjava.lang.String jarContainerPath = \"PATH_TO_JAR\";\n\t\tjava.util.Map<java.lang.String, java.net.URL> packageNamesToCertMap = new java.util.HashMap<java.lang.String, java.net.URL>();\n\t\ttry {\n\t\t\tpackageNamesToCertMap.put(\"PACKAGE_NAME\", new java.net.URL(\"CERTIFICATE_OF_PKG.pem\"));\n\t\t} catch (java.net.MalformedURLException e) {\n\t\t\te.printStackTrace();\n\t\t}\n\t\tit.necst.grabnrun.SecureLoaderFactory mSecureLoaderFactory = new it.necst.grabnrun.SecureLoaderFactory(this);\n\t\tit.necst.grabnrun.SecureDexClassLoader mSecureDexClassLoader = mSecureLoaderFactory.createDexClassLoader(\n\t\t\t\tjarContainerPath,\n\t\t\t\tnull,\n\t\t\t\tgetClass().getClassLoader(),\n\t\t\t\tpackageNamesToCertMap);\n\t\ttry {\n\t\t\tjava.lang.Class<?> loadedClass = mSecureDexClassLoader.loadClass(\"PKG_NAME.CLASSNAME\");\n\t\t} catch (ClassNotFoundException e) {\n\t\t\t//handle exception\n\t\t}\n"
+          },
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove DexClassLoader object",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Code Injection: Prevent use of DexClassLoader (grabnrun version)",
+        "ruleID": "c9ee93f8-f095-4926-8192-f6695376692c",
+        "overridingrules": [
+          "adb1ab17-bb62-4f5b-a454-a8892ca184c5"
+        ],
+        "codingPolicy": "java_android_avoid_dynamically_loading_code",
+        "ruleShortDescription": "Do not use the DexClassLoader to dynamically load code",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARMD5": ".*grabnrun.*",
+              "negate": false
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_avoid_dynamically_loading_code.html"
+      }
+    },
+    {
+      "type": "77b9995164777a0a9f4a032b764a2fb1d0aab845",
+      "model": {
+        "packageName": "dalvik.system",
+        "className": "DexClassLoader",
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove DexClassLoader object",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Code Injection: Prevent use of DexClassLoader",
+        "ruleID": "adb1ab17-bb62-4f5b-a454-a8892ca184c5",
+        "overridingrules": [],
+        "codingPolicy": "java_android_avoid_dynamically_loading_code",
+        "ruleShortDescription": "Do not use the DexClassLoader to dynamically load code",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_avoid_dynamically_loading_code.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.database.sqlite)\\.(SQLiteDatabase)\n    name:\n      matches: ^(?!openOrCreateDatabase).*$\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "net.sqlcipher.database.SQLiteDatabase",
+            "quickfixDescription": "Use SQLCipher instead of SQLite",
+            "quickfixCode": "net.sqlcipher.database.SQLiteDatabase.{{{methodName}}}({{{arguments.0}}})"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Use SQLCipher Database (all other methods)",
+        "ruleID": "07167177-89f8-4724-a1cd-7e2ff7ee0f41",
+        "overridingrules": [],
+        "codingPolicy": "java_android_storage_encrypt_local_database_files_use_sqlcipher",
+        "ruleShortDescription": "SQLite Databases are an insecure means of storage",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*sqlcipher.*",
+              "negate": false
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_storage_encrypt_local_database_files_use_sqlcipher.html"
+      }
+    },
+    {
+      "type": "947034909c9b08d0b583170e594b0eb327933231",
+      "model": {
+        "yamlCode": "search:\n  methodcall:\n    type:\n      matches: (android.database.sqlite|android.app)\\.(SQLiteDatabase|Activity)\n    name: openOrCreateDatabase\n",
+        "checkArguments": false,
+        "arguments": [],
+        "quickfixes": [
+          {
+            "returnType": "net.sqlcipher.database.SQLiteDatabase",
+            "quickfixDescription": "Use a SQLCipher database",
+            "quickfixCode": "net.sqlcipher.database.SQLiteDatabase.openOrCreateDatabase(databaseFile, \"secretKey\", null)"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Insecure Data Storage: Use SQLCipher Database (creation)",
+        "ruleID": "b9a29592-0a96-4ee2-9f72-3c88fbf159e9",
+        "overridingrules": [],
+        "codingPolicy": "java_android_storage_encrypt_local_database_files_use_sqlcipher",
+        "ruleShortDescription": "SQLite Databases are an insecure means of storage",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*sqlcipher.*",
+              "negate": false
+            }
+          },
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_storage_encrypt_local_database_files_use_sqlcipher.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 0,
+        "errorMarkNode": 1,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:name",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "android.permission.SEND_SMS|android.permission.RECEIVE_SMS",
+                "attributeValueType": 1
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": false,
+            "tagName": {
+              "name": "uses-permission",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Delete this permission",
+            "fixes": [
+              {
+                "ft": "3a9f6904f4b35a7fe111c4f1d74fc1f195f6f361",
+                "t": {
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Permissions: SMS",
+        "ruleID": "260528d3-5b25-403f-b086-99a09472fce5",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_send_sensitive_information_over_sms",
+        "ruleShortDescription": "Usage of SMS discouraged",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_send_sensitive_information_over_sms.html"
+      }
+    },
+    {
+      "type": "3b5f1f28919178938d8b5e4eeab30615b438ae56",
+      "model": {
+        "packageName": "android.net",
+        "className": "Uri",
+        "methodName": "parse",
+        "checkArguments": true,
+        "arguments": [
+          {
+            "type": ".*",
+            "content": "sms.*",
+            "deepReplacement": false,
+            "variableName": ".*"
+          }
+        ],
+        "quickfixes": [
+          {
+            "returnType": "_parent",
+            "quickfixDescription": "Remove SMS Usage",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Sensitive Information: SMS: Uri.parse",
+        "ruleID": "cfc24051-e475-4101-82cc-ea0c0d9db511",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_send_sensitive_information_over_sms",
+        "ruleShortDescription": "Usage of SMS discouraged",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_send_sensitive_information_over_sms.html"
+      }
+    },
+    {
+      "type": "99e0659c6d3a462a078d599d158bc4652760bb4f",
+      "model": {
+        "packageName": "android.content",
+        "className": "Intent",
+        "methodName": "putExtra",
+        "wrongArgs": [
+          {
+            "type": "java.lang.String",
+            "content": "sms_body",
+            "contentType": 0
+          },
+          {
+            "type": "java.lang.String",
+            "content": ".*",
+            "contentType": 0
+          }
+        ],
+        "quickfixes": [
+          {
+            "quickfixDescription": "Remove SMS usage",
+            "quickfixCode": ""
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Sensitive Information: SMS: intent.putExtra",
+        "ruleID": "5412cb26-022b-475a-9ca0-16434ad4484b",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_send_sensitive_information_over_sms",
+        "ruleShortDescription": "Usage of SMS discouraged",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 1,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_send_sensitive_information_over_sms.html"
+      }
+    },
+    {
+      "type": "889d5786a50ea7a31427a832e97db12d958961aa",
+      "model": {
+        "forbiddenMethodCall": {
+          "qualifier": {
+            "qualifierClass": "java.security.SecureRandom"
+          },
+          "methodName": {
+            "methodName": "SecureRandom",
+            "methodNameType": 0
+          },
+          "checkArguments": true,
+          "arguments": [
+            {
+              "value": ".*",
+              "valueType": 1,
+              "negateValueMatch": false,
+              "typeCanBeNull": false,
+              "type": "byte[]",
+              "typeType": 0
+            }
+          ]
+        },
+        "constructor": true,
+        "quickfixes": [
+          {
+            "quickfixDescription": "Use the empty constructor",
+            "quickfixCode": "new SecureRandom()"
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Secure Random: Do not use initializer with own seed",
+        "ruleID": "89b5c6e0-17d2-426c-849d-b70fd7bf529b",
+        "overridingrules": [],
+        "codingPolicy": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class",
+        "ruleShortDescription": "Do not use your own defined seeds",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_random_number_generation_do_not_manually_define_seeds_for_securerandom_class.html"
+      }
+    },
+    {
+      "type": "68f2e54d90422ce7a53bfbbf0d3223f406217358",
+      "model": {
+        "forbiddenImport": "android.media.ExifInterface",
+        "replacementImport": "android.support.media.ExifInterface",
+        "checkWildCard": false,
+        "quickfixDescription": "Replace with android.support.media.ExifInterface",
+        "commonFixes": [],
+        "ruleName": "Code Injection: ExifInterface can lead to DoS or RCE",
+        "ruleID": "71abe931-b2cb-49bc-953e-e23b791578b0",
+        "overridingrules": [],
+        "codingPolicy": "java_android_avoid_androidmediaexifinterface",
+        "ruleShortDescription": "android.media.ExifInterface can lead to Denial-of-service or injection attacks",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_avoid_androidmediaexifinterface.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 2,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": false,
+                "name": "android:usesCleartextTraffic",
+                "attributeNameType": 0,
+                "attributeType": 0,
+                "attributeValue": "true",
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set usesCleartextTraffic to false",
+            "fixes": [
+              {
+                "ft": "6480f2d7304d1261a223006b38d2df5dcac91bf1",
+                "t": {
+                  "removeValue": false,
+                  "newValue": "\"false\"",
+                  "nodeId": 2
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Data Protection - Secure Communication: Avoid Data Exposure: Disable cleartext traffic",
+        "ruleID": "78674ec7-cefd-4acc-ac3c-90fa5fc7799d",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_communicate_over_cleartext_protocol",
+        "ruleShortDescription": "Could lead to data exposure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_communicate_over_cleartext_protocol.html"
+      }
+    },
+    {
+      "type": "f44c1b5b95c8157536e2ccdcaab231fdb753d59d",
+      "model": {
+        "errorMarkLocation": 1,
+        "errorMarkNode": 0,
+        "root": {
+          "id": 1,
+          "children": [],
+          "value": [],
+          "attributes": [
+            {
+              "id": 2,
+              "attribute": {
+                "optionalAttribute": false,
+                "disallowed": true,
+                "name": "android:usesCleartextTraffic",
+                "attributeNameType": 0,
+                "attributeType": 1,
+                "attributeValueType": 0
+              }
+            }
+          ],
+          "tag": {
+            "disallowed": false,
+            "allowExtraAttributes": true,
+            "tagName": {
+              "name": "application",
+              "nameType": 0
+            }
+          }
+        },
+        "fixes": [
+          {
+            "fixDescription": "Set usesCleartextTraffic attribute as false",
+            "fixes": [
+              {
+                "ft": "88114b12741535974bf60f48bda3756f95fb564d",
+                "t": {
+                  "value": "android:usesCleartextTraffic=\"false\"",
+                  "nodeId": 1
+                }
+              }
+            ]
+          }
+        ],
+        "commonFixes": [],
+        "ruleName": "Data Protection - Secure Communication: Avoid Data Exposure: Set disabled cleartext traffic explicitly",
+        "ruleID": "dd381afe-879f-47d5-95a6-76f691277332",
+        "overridingrules": [],
+        "codingPolicy": "java_android_do_not_communicate_over_cleartext_protocol",
+        "ruleShortDescription": "Could lead to data exposure",
+        "microTrainingURLs": [],
+        "challengeIds": [],
+        "ruleErrorLevel": 2,
+        "ruleEnabled": true,
+        "ruleScope": [
+          {
+            "type": "d8c8a244f4ff000c8b9326e848bf62056393b4fb",
+            "object": {
+              "ruleEnabledJARName": ".*android.*",
+              "negate": false
+            }
+          }
+        ],
+        "ruleDescriptionFile": "java_android_do_not_communicate_over_cleartext_protocol.html"
+      }
+    }
+  ],
+  "generators": [
+    {
+      "generatorName": "WebView Best Practice: Recommended WebView Settings",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "//javascript could be a vector to exploit your applications\nwebView.getSettings().setJavaScriptEnabled(false);\n\n//Should an attacker somehow find themselves in a position to inject script into a WebView, then they could exploit the opportunity to access local resources. This can be somewhat prevented by disabling local file system access. It is enabled by default. The Android WebSettings class can be used to disable local file system access via the public method setAllowFileAccess.\n//This restricts the WebView to loading local resources from file:///android_asset (assets) and file:///android_res (resources).\nwebView.getSettings().setAllowFileAccess(false);\n\n//disable Geolocation API \nwebView.getSettings().setGeolocationEnabled(false);\n\n//disable protocol handlers that are not needed\nwebView.getSettings().setAllowFileAccess(false);\nwebView.getSettings().setAllowFileAccessFromFileURLs(false);\nwebView.getSettings().setAllowUniversalAccessFromFileURLs(false);\nwebView.getSettings().setAllowContentAccess(false);"
+    },
+    {
+      "generatorName": "Android: Secure Password Field",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "import android.widget.EditText;\n\nimport android.content.Context;\nimport android.util.AttributeSet;\nimport android.view.ActionMode;\nimport android.view.Menu;\nimport android.view.MenuItem;\nimport android.widget.EditText;\n\n\n/**\n *  This is a thin veneer over EditText, with copy/paste/spell-check removed.\n *  source: http://stackoverflow.com/questions/27869983/edittext-disable-paste-replace-menu-pop-up-on-text-selection-handler-click-even\n */\npublic class NoMenuEditText extends EditText\n{\n    private final Context context;\n\n    /** This is a replacement method for the base TextView class' method of the same name. This\n     * method is used in hidden class android.widget.Editor to determine whether the PASTE/REPLACE popup\n     * appears when triggered from the text insertion handle. Returning false forces this window\n     * to never appear.\n     * @return false\n     */\n    boolean canPaste()\n    {\n        return false;\n    }\n\n    /** This is a replacement method for the base TextView class' method of the same name. This method\n     * is used in hidden class android.widget.Editor to determine whether the PASTE/REPLACE popup\n     * appears when triggered from the text insertion handle. Returning false forces this window\n     * to never appear.\n     * @return false\n     */\n    @Override\n    public boolean isSuggestionsEnabled()\n    {\n        return false;\n    }\n\n    public NoMenuEditText(Context context)\n    {\n        super(context);\n        this.context = context;\n        init();\n    }\n\n    public NoMenuEditText(Context context, AttributeSet attrs)\n    {\n        super(context, attrs);\n        this.context = context;\n        init();\n    }\n\n    public NoMenuEditText(Context context, AttributeSet attrs, int defStyle)\n    {\n        super(context, attrs, defStyle);\n        this.context = context;\n        init();\n    }\n\n    private void init()\n    {\n        this.setCustomSelectionActionModeCallback(new ActionModeCallbackInterceptor());\n        this.setLongClickable(false);\n    }\n\n\n    /**\n     * Prevents the action bar (top horizontal bar with cut, copy, paste, etc.) from appearing\n     * by intercepting the callback that would cause it to be created, and returning false.\n     */\n    private class ActionModeCallbackInterceptor implements ActionMode.Callback\n    {\n        private final String TAG = NoMenuEditText.class.getSimpleName();\n\n        public boolean onCreateActionMode(ActionMode mode, Menu menu) { return false; }\n        public boolean onPrepareActionMode(ActionMode mode, Menu menu) { return false; }\n        public boolean onActionItemClicked(ActionMode mode, MenuItem item) { return false; }\n        public void onDestroyActionMode(ActionMode mode) {}\n    }\n}"
+    },
+    {
+      "generatorName": "Sensitive Field: android:inputType settings for sensitive fields including password fields.",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "android:inputType=\"textNoSuggestions|textVisiblePassword\""
+    },
+    {
+      "generatorName": "Android: App being debugged?",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "boolean isBeingDebugged = android.os.Debug.isDebuggerConnected()"
+    },
+    {
+      "generatorName": "Logging best practices: Disable logs in production",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "proguard-rules\\.pro"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "## Turn off all logging in release versions\n-assumenosideeffects class android.util.Log {\n    public static boolean isLoggable(java.lang.String, int);\n    public static int v(...);\n    public static int i(...);\n    public static int w(...);\n    public static int d(...);\n    public static int e(...);\n    public static int wtf(...);\n}"
+    },
+    {
+      "generatorName": "Whitelist applications before they can make use of an Activity handling sensitive information",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "String callee = this.getCallingActivity().getPackageName();\njava.util.List<String> whitelist_packages = new java.util.LinkedList<>();\nwhitelist_packages.add(\"com.example.myApp\");\t// Add your trusted packages to the list\nif(whitelist_packages.contains(callee)){\n\t// Only process request when the package is in the whitelist\n}"
+    },
+    {
+      "generatorName": "Activity: Skeleton for a Private Activity",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<activity\n   android:name=\".PrivateActivity\"\n   android:label=\"@string/app_name\"\n   android:exported=\"false\">\n</activity>"
+    },
+    {
+      "generatorName": "Activity: Skeleton for a Public Activity",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<activity\n   android:name=\".PublicActivity\"\n   android:label=\"@string/app_name\"\n   android:exported=\"true\">\n   <intent-filter>\n      <action android:name=\"com.examples.ACTION\" />\n      <category android:name=\"android.intent.category.XXX\"/>\n   </intent-filter>\n</activity>"
+    },
+    {
+      "generatorName": "Activity: Skeleton for a Partner Activity",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<activity\n   android:name=\".PartnerActivity\"\n   android:label=\"@string/app_name\"\n   android:exported=\"true\" >\n</activity>"
+    },
+    {
+      "generatorName": "Activity: Skeleton for an In-House Activity",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<activity\n   android:name=\".InHouseActivity\"\n   android:label=\"@string/app_name\"\n   android:exported=\"true\"\n   android:permission=\"com.senseissecurity.activity.PERMISSION\">\n</activity>"
+    },
+    {
+      "generatorName": "Permissions: Grant App Permission at Runtime (With additional explanation to user)",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "    // ATTENTION: Code needs to be in a class that extends Activity\n    // In the following example, a function executeRestrictedCode() requires the permission YOURPERMISSIONTOCHECK.\n    // Calling the function checkAndRequestPermission() will check for the permission and subsequently\n    // execute the executeRestrictedCode() when the permission is already set. In case the permission\n    // is not granted yet, the request for the permission will be executed and the executeRestrictedCode()\n    // function will be executed through a callback only when the user accepts the YOURPERMISSIONTOCHECK permission.\n\n    private static final int UNIQUE_REQUEST_CODE = 123; // Set a unique request code (8-bit!)\n    private static final String PERMISSION = android.Manifest.permission.YOURPERMISSIONTOCHECK; // Set the permission to check/request/get granted\n\n    public void checkAndRequestPermission() {\n        if (android.support.v4.content.ContextCompat.checkSelfPermission(getApplicationContext(), PERMISSION) == android.content.pm.PackageManager.PERMISSION_GRANTED) {\n            executeRestrictedCode(); // The permission was already granted, execute the function\n        }\n        else if (android.support.v4.app.ActivityCompat.shouldShowRequestPermissionRationale(this, PERMISSION)) {\n            // Explain asynchronously why your app needs this permission. Request permission after explanation.\n            // shouldShowRequestPermissionRationale returns true if the app has requested this permission previously and the user denied the request\n        }\n        else {\n            // The permission was not yet granted, request the permission\n            android.support.v4.app.ActivityCompat.requestPermissions(this, new String[]{PERMISSION}, UNIQUE_REQUEST_CODE);\n        }\n    }\n\n    @Override\n    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {\n        if (requestCode == UNIQUE_REQUEST_CODE) {\n            super.onRequestPermissionsResult(requestCode, permissions, grantResults);\n            if (permissions.length == 1 &&\n                        permissions[0].equals(PERMISSION) &&\n                        grantResults.length == 1 &&\n                        grantResults[0] == PackageManager.PERMISSION_GRANTED) {\n                executeRestrictedCode();\n            }\n        }\n    }\n\n    private void executeRestrictedCode() {\n\n    }\n"
+    },
+    {
+      "generatorName": "Permissions: Grant App Permission at Runtime (Standard Dialog only)",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "    // ATTENTION: Code needs to be in a class that extends Activity\n    // In the following example, a function executeRestrictedCode() requires the permission YOURPERMISSIONTOCHECK.\n    // Calling the function checkAndRequestPermission() will check for the permission and subsequently\n    // execute the executeRestrictedCode() when the permission is already set. In case the permission\n    // is not granted yet, the request for the permission will be executed and the executeRestrictedCode()\n    // function will be executed through a callback only when the user accepts the YOURPERMISSIONTOCHECK permission.\n\n    private static final int UNIQUE_REQUEST_CODE = 123; // Set a unique request code (8-bit!)\n    private static final String PERMISSION = android.Manifest.permission.YOURPERMISSIONTOCHECK; // Set the permission to check/request/get granted\n\n    public void checkAndRequestPermission() {\n        if (android.support.v4.content.ContextCompat.checkSelfPermission(getApplicationContext(), PERMISSION) == android.content.pm.PackageManager.PERMISSION_GRANTED) {\n            executeRestrictedCode(); // The permission was already granted, execute the function\n        }\n        else {\n            // The permission was not yet granted, request the permission\n            android.support.v4.app.ActivityCompat.requestPermissions(this, new String[]{PERMISSION}, UNIQUE_REQUEST_CODE);\n        }\n    }\n\n    @Override\n    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {\n        if (requestCode == UNIQUE_REQUEST_CODE) {\n            super.onRequestPermissionsResult(requestCode, permissions, grantResults);\n            if (permissions.length == 1 &&\n                        permissions[0].equals(PERMISSION) &&\n                        grantResults.length == 1 &&\n                        grantResults[0] == PackageManager.PERMISSION_GRANTED) {\n                executeRestrictedCode();\n            }\n        }\n    }\n\n    private void executeRestrictedCode() {\n\n    }\n"
+    },
+    {
+      "generatorName": "SSLContext using TrustManager with own CA certificates (SSL Pinning)",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "/* \nConsider downloading the maintained Sensei Android SDK to get the latest community revised solutions\nLink: https://github.com/mmadou/SenseiAndroidSDK \n*/\n\njava.security.cert.CertificateFactory cf = null;\n        java.security.cert.Certificate ca = null;\n\n        //Read from file\n        java.io.File file = new java.io.File(\"path/to/certificate.crt\"); //Replace this with the certificate of your server\n        java.io.FileInputStream fis = null;\n        java.io.BufferedInputStream bis = null;\n        // Create a KeyStore containing trusted CAs\n        String keyStoreType = java.security.KeyStore.getDefaultType();\n        java.security.KeyStore keyStore = null;\n        javax.net.ssl.TrustManagerFactory tmf = null;\n        javax.net.ssl.SSLContext sslContext = null;\n        try {\n            cf = java.security.cert.CertificateFactory.getInstance(\"X.509\");\n            fis = new java.io.FileInputStream(file);\n            bis = new java.io.BufferedInputStream(fis);\n            ca = cf.generateCertificate(bis);\n            keyStore = java.security.KeyStore.getInstance(keyStoreType);\n            keyStore.load(null, null);\n            keyStore.setCertificateEntry(\"ca\", ca);\n            String tmfAlgorithm = javax.net.ssl.TrustManagerFactory.getDefaultAlgorithm();\n            tmf = javax.net.ssl.TrustManagerFactory.getInstance(tmfAlgorithm);\n            tmf.init(keyStore);\n            sslContext = javax.net.ssl.SSLContext.getInstance(\"TLSv1.2\");\n            sslContext.init(null, tmf.getTrustManagers(), null);\n        } catch (java.security.KeyStoreException | java.security.KeyManagementException | java.security.cert.CertificateException | java.security.NoSuchAlgorithmException | java.io.IOException e) {\n            //Handle Exception here: Trustmanager not succesfully created\n        } finally {\n            try {\n                if (fis != null) fis.close();\n                if (bis != null) bis.close();\n            } catch (java.io.IOException ex) {\n                //Handle IO Exception here\n            }\n        }"
+    },
+    {
+      "generatorName": "Content Provider: Skeleton for Private Content Provider",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "        <provider\n            android:name=\".PrivateContentProvider\"\n            android:authorities=\"com.senseissecurity.provider.PrivateContentProvider\"\n            android:exported=\"false\"/>"
+    },
+    {
+      "generatorName": "Content Provider: Skeleton for Public Content Provider",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "        <provider\n            android:name=\".PublicContentProvider\"\n            android:authorities=\"com.senseissecurity.provider.PublicContentProvider\"\n            android:exported=\"true\"/>"
+    },
+    {
+      "generatorName": "Content Provider: Skeleton for Partner Content Provider",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "        <provider\n            android:name=\".PartnerContentProvider\"\n            android:authorities=\"com.senseissecurity.provider.PartnerContentProvider\"\n            android:exported=\"true\"/>\n\t<!-- Verify certificate of requesting app in code --> "
+    },
+    {
+      "generatorName": "Content Provider: Skeleton for In-House Content Provider",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "        <provider\n            android:name=\".InHouseContentProvider\"\n            android:authorities=\"com.senseissecurity.provider.InHouseContentProvider\"\n            android:permission=\"com.senseissecurity.provider.PERMISSION\"\n            android:exported=\"true\"/>\n\t<!-- Verify in-house signature permission in code -->"
+    },
+    {
+      "generatorName": "BroadcastReceiver: Skeleton for Private Receiver",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": " <receiver\n            android:name=\".PrivateBroadcastReceiver\"\n            android:exported=\"false\" />"
+    },
+    {
+      "generatorName": "BroadcastReceiver: Skeleton for In-house Receiver",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<receiver\n            android:name=\".InhouseBroadcastReceiver\"\n            android:exported=\"true\"\n            android:permission=\"com.senseisecurity.receiver.BROADCAST_PERMISSION\" >\n            <intent-filter>\n                <action android:name=\"com.senseisecurity.broadcast.MY_BROADCAST_INHOUSE\" />\n            </intent-filter>\n        </receiver>"
+    },
+    {
+      "generatorName": "Service: Skeleton for a Private Service",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<service android:name=\".PrivateStartService\"\n            android:exported=\"false\" />\n"
+    },
+    {
+      "generatorName": "Service: Skeleton for a Partner Service",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<service android:name=\".PartnerService\"\n            android:exported=\"true\" />"
+    },
+    {
+      "generatorName": "Service: Skeleton for an In-House Service",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "AndroidManifest.xml"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "<service android:name=\".InHouseService\"\n            android:exported=\"true\"\n            android:permission=\"com.senseisecurity.service.inhouseservice.SERVICE_PERMISSION\" />"
+    },
+    {
+      "generatorName": "Whitelist actions before acting on a broadcasted intent",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "String action = intent.getAction();\njava.util.List<String> whitelisted_actions = new java.util.LinkedList<>();\nwhitelisted_actions.add(\"ACTION_BATTERY_CHANGED\"); // Add trusted actions in the whitelist\nwhitelisted_actions.add(\"ACTION_BATTERY_LOW\");\nif(whitelisted_actions.contains(action)){\n\t// Only act on actions that are in the whitelist\n}\n"
+    },
+    {
+      "generatorName": "Database Query: Retrieve information from the database properly (Parameterized, no SQL injection)",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "        android.database.sqlite.SQLiteDatabase  mSampleDB;\n        String commandString = \"INSERT INTO db (id, name) VALUES (?, ?)\";\n        android.database.sqlite.SQLiteStatement sqlStmt = mSampleDB.compileStatement(commandString);\n        sqlStmt.bindString(1, id);\n        sqlStmt.bindString(2, name);\n        try {\n            sqlStmt.executeInsert();\n        } catch (android.database.SQLException e) {\n            // Handle exception properly\n        } finally {\n            sqlStmt.close();\n        }"
+    },
+    {
+      "generatorName": "Secure Delete: delete() only removes metadata",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "/* \nConsider downloading the maintained Sensei Android SDK to get the latest community revised solutions\nLink: https://github.com/mmadou/SenseiAndroidSDK \n*/\t\n\nFile file;\n        java.io.FileOutputStream out = null;\n        try {\n            out = this.getApplicationContext().openFileOutput(file.getPath(), android.content.Context.MODE_PRIVATE);\n            java.security.SecureRandom random = new java.security.SecureRandom();\n            long size = file.getTotalSpace();\n            while (size > 0){\n                int numberOfBytes = 0;\n                //check size left to overwrite\n                if (size <= Integer.MAX_VALUE){\n                    numberOfBytes = (int) size;\n                }\n                else{\n                    numberOfBytes = Integer.MAX_VALUE;\n                }\n                byte randomBytes[] = new byte[numberOfBytes];\n                random.nextBytes(randomBytes);\n                out.write(randomBytes);\n                size -= numberOfBytes;\n            }\n        } catch (java.io.IOException e) {\n            //Handle exception here\n        } finally {\n            try {\n                out.flush();\n                out.close();\n            }\n            catch(Exception e){\n                //Handle exception here\n            }\n        }\n        //noinspection SecureDeletedeleteonlyremovesmetadata\n        file.delete();\n"
+    },
+    {
+      "generatorName": "Reflection: Do not obfuscate certain classes",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "proguard-rules\\.pro"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "-keep class com.class.ClassThatCanBeCalled"
+    },
+    {
+      "generatorName": "Reflection: Do not obfuscate certain fields",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "proguard-rules\\.pro"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "-keepclassmembers class com.class.ClassContainingFields {\n\t<fields>;\n}"
+    },
+    {
+      "generatorName": "Reflection: Do not obfuscate certain methods",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "proguard-rules\\.pro"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "-keep class com.class.ClassContainingMethod {\n    void methodToNotObfuscate(java.lang.String);\n}"
+    },
+    {
+      "generatorName": "Request Scoped Directory Access in an Activity",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "fa8868b263468542bc1bc3d7548f7bbf37266f1a",
+            "object": {
+              "scope": 5,
+              "type": 3,
+              "intentFilters": []
+            }
+          },
+          "matchWeight": 100,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "android.os.storage.StorageManager sm = (android.os.storage.StorageManager)getSystemService(Context.STORAGE_SERVICE);\n        android.os.storage.StorageVolume volume = sm.getPrimaryStorageVolume();\n\t//TODO: select directory, example here for Pictures Directory\n        Intent intent = volume.createAccessIntent(android.os.Environment.DIRECTORY_PICTURES);\n        startActivityForResult(intent, request_code);"
+    },
+    {
+      "generatorName": "Crypto: Symmetric encryption",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "try {\n            // Generate random AES key\n            java.security.SecureRandom secureRandom = new java.security.SecureRandom();\n            javax.crypto.KeyGenerator keyGen = null;\n            keyGen = javax.crypto.KeyGenerator.getInstance(\"AES\");\n            keyGen.init(128, secureRandom);\n            javax.crypto.SecretKey key = keyGen.generateKey();\n\n            // Generate random nonce\n            byte[] nonce = new byte[12];\n            secureRandom.nextBytes(nonce);\n\n            javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(\"AES/GCM/NoPadding\");\n\n            javax.crypto.spec.GCMParameterSpec gcmSpec = new javax.crypto.spec.GCMParameterSpec(16 * 8, nonce);\n\n            cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, key, gcmSpec);\n            cipher.updateAAD(nonce);\n        byte[] ct = cipher.doFinal(\"test\".getBytes());\n        } catch (Exception e){\n            //TODO: handle failed encryption\n        }"
+    },
+    {
+      "generatorName": "Internet: Use HTTPS",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "        try {\n            java.net.URL url = new java.net.URL(\"https://senseisecurity.com\");\n            java.net.URLConnection urlConnection = url.openConnection();\n            java.io.InputStream in = urlConnection.getInputStream();\n        } catch (java.io.IOException e) {\n            e.printStackTrace();\n        }\n"
+    },
+    {
+      "generatorName": "Crypto: Add SpongyCastle Dependencies",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": "build.gradle"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "compile 'com.madgag.spongycastle:core:1.54.0.0'\ncompile 'com.madgag.spongycastle:prov:1.54.0.0'\ncompile 'com.madgag.spongycastle:pkix:1.54.0.0'\ncompile 'com.madgag.spongycastle:pg:1.54.0.0'"
+    },
+    {
+      "generatorName": "Crypto: SpongyCastle Provider",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "static {\n    java.security.Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);\n}"
+    },
+    {
+      "generatorName": "FlagSecureHelper: Hide Sensitive Screens",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "c0bd2047bc88e8d9cde171c2cd9bec5b8905df60",
+            "object": {
+              "className": "android.app.Activity"
+            }
+          },
+          "matchWeight": 50,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        },
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.java"
+            }
+          },
+          "matchWeight": 0,
+          "missWeight": -1,
+          "hideOnNegativeWeight": true
+        }
+      ],
+      "generatorCode": "@Override\npublic Object getSystemService(String name) {\n  Object result=super.getSystemService(name);\n  return (FlagSecureHelper.getWrappedSystemService(result, name));\n}"
+    },
+    {
+      "generatorName": "Code Injection Prevention: ExifInterface: Add android.support dependency",
+      "generatorEnabled": true,
+      "generatorScopes": [
+        {
+          "scope": {
+            "type": "1bc3af647a4b60d9276a97c61a4d5c574cc06ad0",
+            "object": {
+              "filename": ".*\\.gradle"
+            }
+          },
+          "matchWeight": 100,
+          "missWeight": 0,
+          "hideOnNegativeWeight": false
+        }
+      ],
+      "generatorCode": "    compile \"com.android.support:exifinterface:25.1.1\""
+    }
+  ]
+}

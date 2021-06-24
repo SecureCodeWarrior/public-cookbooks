@@ -1,0 +1,33 @@
+id: scw:android:toast-maketext-flag-secure
+version: 8
+metadata:
+  name: 'Data Protection - Secure Data Display: Avoid Data Exposure: set FLAG_SECURE'
+  shortDescription: Could leak sensitive information
+  level: error
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        type:
+          reference:
+            matches: android.app.(AppCompat)*Activity
+          checkInheritance: false
+      2:
+        type: java.lang.String
+      3:
+        type: int
+    in:
+      typeDeclaration:
+        super:
+          name: android.app.Activity
+    name: makeText
+    declaration:
+      type: android.widget.Toast
+availableFixes:
+- name: Set FLAG_SECURE
+  actions:
+  - rewrite:
+      to: |-
+        this.getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE);
+        {{{ . }}}

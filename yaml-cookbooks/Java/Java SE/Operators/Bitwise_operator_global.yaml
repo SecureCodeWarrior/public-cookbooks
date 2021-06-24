@@ -1,0 +1,21 @@
+id: scw:java:use_logical_operator_global
+version: 8
+metadata:
+  name: 'Operators: Bitwise: Use logical operator (Global)'
+  shortDescription: Use logical operator instead of bitwise operator
+  level: warning
+  scwCategory: blog:generic
+  cweCategory: 480
+  enabled: true
+  comment: This recipe highlights any use of the bitwise operator.
+  descriptionFile: Operators/descriptions/BitwiseOperatorInConditional.html
+search:
+  binaryExpression:
+    anyOf:
+    - operator: '&'
+    - operator: '|'
+availableFixes:
+- name: Replace bitwise operator with logical operator
+  actions:
+  - rewrite:
+      to: '{{{ leftOperand }}} {{{ operator }}}{{{ operator }}} {{{ rightOperand }}}'

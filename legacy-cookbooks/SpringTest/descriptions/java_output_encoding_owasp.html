@@ -1,0 +1,45 @@
+<html>
+<body>
+<h2>Abstract</h2>
+Secure coding practices prescribe that all data going into webpages needs to be encoded properly.
+<h2>Description</h2>
+Find the context in which the data will be used and choose an appropriate encoder. It is recommended to use well-known encoders and avoid trying to remove illegal characters yourself.
+<br/>
+For example the OWASP Encoder can be used to achieve this.
+<h4>Class information:</h4>
+<pre>
+package org.owasp.encoder.<b>Encode</b>
+&nbsp;&nbsp;&nbsp;static String forCDATA(String input)
+&nbsp;&nbsp;&nbsp;static String forCssString(String input)
+&nbsp;&nbsp;&nbsp;static String forCssUrl(String input)
+&nbsp;&nbsp;&nbsp;static String forHtml(String input)
+&nbsp;&nbsp;&nbsp;static String forHtmlAttribute(String input)
+&nbsp;&nbsp;&nbsp;static String forHtmlContent(String input)
+&nbsp;&nbsp;&nbsp;static String forHtmlUnquotedAttribute(String input)
+&nbsp;&nbsp;&nbsp;static String forJava(String input)
+&nbsp;&nbsp;&nbsp;static String forJavaScript(String input)
+&nbsp;&nbsp;&nbsp;static String forJavaScriptAttribute(String input)
+&nbsp;&nbsp;&nbsp;static String forJavaScriptBlock(String input)
+&nbsp;&nbsp;&nbsp;static String forJavaScriptSource(String input)
+&nbsp;&nbsp;&nbsp;static String forUriComponent(String input)
+&nbsp;&nbsp;&nbsp;static String forXml(String input)
+&nbsp;&nbsp;&nbsp;static String forXmlAttribute(String input)
+&nbsp;&nbsp;&nbsp;static String forXmlComment(String input)
+&nbsp;&nbsp;&nbsp;static String forXmlContent(String input)
+</pre>     
+        <h2>Violating this guideline can cause</h2>
+        
+        
+        <h4>Web vulnerabilities</h4>
+            <ul>
+            
+                <li>Cross-Site Scripting (XSS) - Reflected Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/reflected/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+                <li>Cross-Site Scripting (XSS) - Stored Cross-Site Scripting. <a href="https://{{microtraininghost}}/#/simple-flow/web/xss/stored/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
+            </ul>
+        
+    
+        <h2>Sensei quick fix</h2>
+        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
+
+</body>
+</html>

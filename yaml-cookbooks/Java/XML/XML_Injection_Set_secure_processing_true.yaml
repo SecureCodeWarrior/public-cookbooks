@@ -1,0 +1,25 @@
+id: scw:xml:secure-processing-true
+version: 8
+metadata:
+  name: 'XML Injection: Set secure processing feature to true'
+  shortDescription: Could lead to XML Injection
+  level: error
+  newCodeOnly: false
+  scwCategory: injection:xml
+  enabled: true
+  descriptionFile: descriptions/java_enable_xml_secure_processing.html
+search:
+  methodcall:
+    args:
+      1:
+        referenceTo:
+          name: javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING
+      2:
+        type: boolean
+        value: "false"
+    name: setFeature
+availableFixes:
+- name: Set Secure Processing to true
+  actions:
+  - rewrite:
+      to: '{{{ expressionElement }}}({{{ arguments.0 }}}, true)'

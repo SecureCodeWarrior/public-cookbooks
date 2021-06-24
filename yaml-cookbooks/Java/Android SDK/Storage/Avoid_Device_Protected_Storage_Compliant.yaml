@@ -1,0 +1,28 @@
+id: scw:android:createDeviceProtectedStorageContext
+version: 8
+metadata:
+  name: 'Data Protection: Avoid Data Exposure - Avoid Device Protected StorageCompliant'
+  shortDescription: Compliant
+  level: compliant
+  enabled: true
+search:
+  methodcall:
+    args:
+      1:
+        containsUntrustedInput: true
+        type: java.lang.String
+      2:
+        type: int
+    in:
+      method:
+        with:
+          not:
+            child:
+              methodcall:
+                name: createDeviceProtectedStorageContext
+                declaration:
+                  type: android.content.Context
+    name: openFileOutput
+    declaration:
+      type: android.content.Context
+availableFixes: []
