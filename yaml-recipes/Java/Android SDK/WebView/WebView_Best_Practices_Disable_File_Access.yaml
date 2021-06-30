@@ -1,12 +1,13 @@
-id: scw:android:missing-mixed-content-mode
+id: scw:android:disable-file-access
 version: 8
 metadata:
-  name: 'Android WebView best practices: Set mixed content mode'
+  name: 'Android WebView best practices: Disable File Access'
   shortDescription: WebView setting with security implications
   level: error
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html
+  tags: android-security-set
 search:
   instanceCreation:
     not:
@@ -14,14 +15,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setMixedContentMode
+              name: setAllowFileAccess
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Set mixed content mode to MIXED_CONTENT_NEVER_ALLOW
+- name: Disable file access
   actions:
   - addMethodCall:
-      name: getSettings().setMixedContentMode
+      name: getSettings().setAllowFileAccess
       arguments:
-      - android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW
+      - "false"
       position: first-available-spot

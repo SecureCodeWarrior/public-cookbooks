@@ -23,9 +23,9 @@ search:
 availableFixes:
 - name: use placeholders
   actions:
-    - parameterize:
-        placeholderFormat: '{}'
-        extractUntrustedInput:
-          array:
-            type: java.lang.String[]
-            atArgumentPosition: 2
+  - parameterize:
+      placeholderFormat: '{}'
+      extractUntrustedInput:
+        array:
+          type: java.lang.String[]
+          atArgumentPosition: 2

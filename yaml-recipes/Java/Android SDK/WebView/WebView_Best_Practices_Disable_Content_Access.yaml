@@ -1,12 +1,12 @@
-id: scw:android:disable-geolocation
+id: scw:android:disable-content-access
 version: 8
 metadata:
-  name: 'Android WebView best practices: Disable Geolocation'
-  shortDescription: WebView setting with privacy implications
+  name: 'Android WebView best practices: Disable Content Access'
+  shortDescription: WebView setting with security implications
   level: error
-  scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html
+  tags: android-security-set
 search:
   instanceCreation:
     not:
@@ -14,14 +14,14 @@ search:
         methodcall:
           followedBy:
             methodcall:
-              name: setGeolocationEnabled
+              name: setAllowContentAccess
           name: getSettings
     type: android.webkit.WebView
 availableFixes:
-- name: Disable geolocation
+- name: Disable content access
   actions:
   - addMethodCall:
-      name: getSettings().setGeolocationEnabled
+      name: getSettings().setAllowContentAccess
       arguments:
       - "false"
       position: first-available-spot

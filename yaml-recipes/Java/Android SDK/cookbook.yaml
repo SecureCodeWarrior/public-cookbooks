@@ -1,0 +1,3 @@
+id: scw:android
+name: Android Security Set
+description: 'Recipes created from security recommendations in the official Android documentation (https://developer.android.com/)'

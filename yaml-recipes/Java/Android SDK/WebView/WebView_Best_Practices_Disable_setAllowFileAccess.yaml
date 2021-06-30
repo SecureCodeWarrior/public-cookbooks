@@ -6,8 +6,9 @@ metadata:
   level: error
   scwCategory: ""
   enabled: false
-  descriptionFile: descriptions/AndroidWebViewbestpractices.html
   comment: Quickfix to be implemented
+  descriptionFile: descriptions/AndroidWebViewbestpractices.html
+  tags: android-security-set
 search:
   instanceCreation:
     not:
