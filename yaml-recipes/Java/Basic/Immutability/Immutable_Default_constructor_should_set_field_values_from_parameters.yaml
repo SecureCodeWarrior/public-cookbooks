@@ -5,6 +5,7 @@ metadata:
   shortDescription: Avoid default constructor and create a private constructor that
     sets the field values
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
 search:

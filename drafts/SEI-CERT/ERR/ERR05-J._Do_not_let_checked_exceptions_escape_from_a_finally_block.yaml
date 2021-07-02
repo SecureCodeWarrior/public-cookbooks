@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR05-J. Do not let checked exceptions escape from a finally block
+  shortDescription: <p>Failure to handle an exception in a <code>finally</code> block
+    may have unexpected results.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS03-J. Do not log unsanitized user input
+  shortDescription: <p>Allowing unvalidated user input to be logged can result in
+    forging of log entries, leaking secure information, or storing <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-sensit">sensitive
+    data</a> in a manner that violates a local law or regulation.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

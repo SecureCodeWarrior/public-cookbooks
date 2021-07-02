@@ -4,6 +4,7 @@ metadata:
   name: Missing annotation in controller class
   shortDescription: Missing @RestController annotation.
   level: error
+  language: java
   scwCategory: ""
   enabled: true
 search:

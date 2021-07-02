@@ -5,6 +5,7 @@ metadata:
   shortDescription: Spring Security's default protection against Session Fixation
     is disabled, which means an attacker could hijack a valid user session
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/ProtectagainstSessionFixationattacks.html

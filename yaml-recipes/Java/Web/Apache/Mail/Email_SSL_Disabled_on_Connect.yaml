@@ -4,6 +4,7 @@ metadata:
   name: 'Email: Disabled SSL on Connect'
   shortDescription: When sending an email, SSL has been disabled on connection
   level: error
+  language: java
   scwCategory: misconfig
   enabled: true
 search:

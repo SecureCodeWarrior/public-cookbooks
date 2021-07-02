@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin - methods'
   shortDescription: Allowing unsafe methods puts the application at risk
   level: warning
+  language: java
   enabled: true
   descriptionFile: descriptions/AvoidbroadsettingsCrossOrigin-methods.html
 search:

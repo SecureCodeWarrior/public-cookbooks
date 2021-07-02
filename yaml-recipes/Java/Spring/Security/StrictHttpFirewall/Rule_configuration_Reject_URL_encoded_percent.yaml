@@ -6,6 +6,7 @@ metadata:
   shortDescription: Rejecting the use of a URL encoded percent in the URL is more
     secure
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/RejectURLEncodedPercent.html

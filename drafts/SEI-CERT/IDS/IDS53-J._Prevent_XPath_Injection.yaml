@@ -1,0 +1,20 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS53-J. Prevent XPath Injection
+  shortDescription: <p>Extensible Markup Language (XML) can be used for data storage
+    in a manner similar to a relational database. Data is frequently retrieved from
+    such an XML document using XPaths.&nbsp;<em>XPath injection</em>&nbsp;can occur
+    when data supplied to an XPath retrieval routine to retrieve data from an XML
+    document is used without proper sanitization. This attack is similar to SQL injection
+    or XML injection (see <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/IDS00-J.+Sanitize+untrusted+data+passed+across+a+trust+boundary"
+    rel="nofollow">IDS00-J. Sanitize untrusted data passed across a trust boundary</a>).
+    An attacker can enter valid SQL or XML constructs in the data fields of the query
+    in use. In typical attacks, the conditional field of the query resolves to a tautology
+    or otherwise gives the attacker access to privileged information.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

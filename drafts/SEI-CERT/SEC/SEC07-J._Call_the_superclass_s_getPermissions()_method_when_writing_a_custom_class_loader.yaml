@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC07-J. Call the superclass's getPermissions() method when writing a custom
+    class loader
+  shortDescription: <p>Failure to consult the default system policy while defining
+    a custom class loader violates the tenets of defensive programming and can result
+    in classes defined with unintended permissions.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

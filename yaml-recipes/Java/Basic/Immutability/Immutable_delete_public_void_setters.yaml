@@ -5,6 +5,7 @@ metadata:
   shortDescription: void setters can be replaced with use of constructor or static
     factory methods
   level: warning
+  language: java; kotlin
   scwCategory: ""
   enabled: true
 search:

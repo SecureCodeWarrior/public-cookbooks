@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: VNA04-J. Ensure that calls to chained methods are atomic
+  shortDescription: <p>Using method chaining in multithreaded environments without
+    performing external locking can lead to nondeterministic behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

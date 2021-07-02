@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO02-J. Detect and handle file-related errors
+  shortDescription: <p>Failure to check the return values of methods that perform
+    file I/O can result in unexpected behavior.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

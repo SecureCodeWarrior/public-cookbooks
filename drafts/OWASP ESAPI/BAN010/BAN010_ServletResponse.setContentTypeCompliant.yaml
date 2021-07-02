@@ -1,0 +1,17 @@
+id: scw:esapi:ban010-ServletResponse.setContentType-compliant
+version: 8
+metadata:
+  name: 'Transport Layer Security: ESAPI: BAN010: ServletResponse.setContentTypeCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: setContentType
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

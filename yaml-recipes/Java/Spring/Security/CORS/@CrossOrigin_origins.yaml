@@ -5,6 +5,7 @@ metadata:
   shortDescription: Allowing all origins makes the application vulnerable to scripts
     from any domain
   level: warning
+  language: java
   enabled: true
   descriptionFile: descriptions/AvoidbroadsettingsCrossOrigin-origins.html
 search:

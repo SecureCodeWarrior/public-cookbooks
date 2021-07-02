@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC51-J. Do not place a semicolon immediately following an if, for, or while
+    condition
+  shortDescription: <p>Do not use a semicolon after an <code>if</code>, <code>for</code>,
+    or <code>while</code> condition because it typically indicates programmer error
+    and can result in unexpected behavior.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

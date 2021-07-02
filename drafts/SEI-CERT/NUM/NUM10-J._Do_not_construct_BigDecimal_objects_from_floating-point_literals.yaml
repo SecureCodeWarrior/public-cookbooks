@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM10-J. Do not construct BigDecimal objects from floating-point literals
+  shortDescription: <p>Using the <code>BigDecimal(double val)</code> constructor with
+    decimal floating-point literals can lead to loss of precision.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,17 @@
+id: scw:esapi:ban017-ServletContext.log-string-compliant
+version: 8
+metadata:
+  name: 'Sensitive Information: ESAPI: BAN017a: ServletContext.log(String)Compliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: log
+    declaration:
+      type:
+        reference:
+          matches: (org.apache.log4j)\.(Category)
+        checkInheritance: false
+availableFixes: []

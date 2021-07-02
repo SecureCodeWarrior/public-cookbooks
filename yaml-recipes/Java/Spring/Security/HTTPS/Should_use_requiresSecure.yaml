@@ -4,6 +4,7 @@ metadata:
   name: Should use requiresSecure
   shortDescription: Use of HTTP instead of HTTPS is insecure
   level: error
+  language: java
   scwCategory: insufficient_transport_layer_protection
   enabled: true
   descriptionFile: descriptions/DonotacceptanythingovernonHTTPSconnections.html

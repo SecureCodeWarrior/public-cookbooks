@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER09-J. Do not invoke overridable methods from the readObject() method
+  shortDescription: <p>Invoking overridable methods from the <code>readObject()</code>
+    method can lead to initialization errors.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO06-J. Do not create multiple buffered wrappers on a single byte or character
+    stream
+  shortDescription: <p>Creating multiple buffered wrappers around an <code>InputStream</code>
+    can cause unexpected program behavior when the <code>InputStream</code> is redirected.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -4,6 +4,7 @@ metadata:
   name: Use requestMapping on public methods
   shortDescription: RequestMapping should not be used on non-public methods
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/UserequestMappingonpublicmethods.html

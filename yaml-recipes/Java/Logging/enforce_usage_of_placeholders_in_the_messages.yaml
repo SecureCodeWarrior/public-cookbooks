@@ -5,6 +5,7 @@ metadata:
   shortDescription: Do not concatinate untrusted data in the message string, instead
     use placeholders ( '{}' )
   level: error
+  language: java
   enabled: true
 search:
   methodcall:

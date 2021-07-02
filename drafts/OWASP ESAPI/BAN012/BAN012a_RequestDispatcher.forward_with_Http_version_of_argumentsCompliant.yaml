@@ -1,0 +1,18 @@
+id: scw:esapi:ban012-RequestDispatcher.forward-compliant
+version: 8
+metadata:
+  name: 'Injection: ESAPI: BAN012a: RequestDispatcher.forward with Http version of
+    argumentsCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: sendForward
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

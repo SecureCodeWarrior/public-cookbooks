@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET01-J. Never use assertions to validate method arguments
+  shortDescription: <p>Using assertions to validate method arguments can result in
+    inconsistent computations, runtime exceptions, and control flow <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-vulner">vulnerabilities</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

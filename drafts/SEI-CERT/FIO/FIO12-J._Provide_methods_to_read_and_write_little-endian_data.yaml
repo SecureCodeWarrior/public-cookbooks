@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO12-J. Provide methods to read and write little-endian data
+  shortDescription: <p>Reading and writing data without considering endianness can
+    lead to misinterpretations of both the magnitude and sign of the data.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

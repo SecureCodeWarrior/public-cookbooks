@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC02-J. Generate strong random numbers
+  shortDescription: <p>Predictable random number sequences can weaken the security
+    of critical applications such as cryptography.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

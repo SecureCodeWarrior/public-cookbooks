@@ -4,6 +4,7 @@ metadata:
   name: 'Data Protection - Secure Data Display: Avoid Data Exposure: set FLAG_SECURE'
   shortDescription: Could leak sensitive information
   level: error
+  language: java
   enabled: true
 search:
   methodcall:

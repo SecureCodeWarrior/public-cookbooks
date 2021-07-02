@@ -5,6 +5,7 @@ metadata:
     key pair generation algorithm: not recommended'
   shortDescription: Could lead to cryptographic weakness
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

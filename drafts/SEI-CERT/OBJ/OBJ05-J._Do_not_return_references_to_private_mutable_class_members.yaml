@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ05-J. Do not return references to private mutable class members
+  shortDescription: <p>Returning references to internal object state (mutable or immutable)
+    can render an application susceptible to information leaks and corruption of its
+    objects' states, which consequently violates class <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-invariant">invariants</a>.
+    Control flow can also be affected in some cases.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

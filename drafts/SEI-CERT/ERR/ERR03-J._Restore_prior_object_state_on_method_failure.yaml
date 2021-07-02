@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR03-J. Restore prior object state on method failure
+  shortDescription: <p>Failure to restore prior object state on method failure can
+    leave the object in an inconsistent state and can violate required state <a href="/confluence/display/java/Rule+BB.+Glossary">invariants</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

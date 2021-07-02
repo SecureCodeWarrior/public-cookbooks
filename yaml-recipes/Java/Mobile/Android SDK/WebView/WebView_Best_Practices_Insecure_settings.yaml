@@ -4,6 +4,7 @@ metadata:
   name: 'Android WebView best practices: Insecure settings'
   shortDescription: Enabling this WebView setting has security implications
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html

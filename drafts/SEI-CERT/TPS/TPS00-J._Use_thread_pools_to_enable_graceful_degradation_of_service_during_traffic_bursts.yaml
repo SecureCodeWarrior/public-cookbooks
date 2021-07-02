@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TPS00-J. Use thread pools to enable graceful degradation of service during
+    traffic bursts
+  shortDescription: <p>Using simplistic concurrency primitives to process an unbounded
+    number of requests could result in severe performance degradation, <a href="/confluence/display/java/Rule+BB.+Glossary">deadlock</a>,
+    or system resource exhaustion and <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-serv">DOS</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

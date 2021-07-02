@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER02-J. Sign then seal objects before sending them outside a trust boundary
+  shortDescription: <p>Failure to sign and then seal objects during transit can lead
+    to loss of object integrity or confidentiality.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

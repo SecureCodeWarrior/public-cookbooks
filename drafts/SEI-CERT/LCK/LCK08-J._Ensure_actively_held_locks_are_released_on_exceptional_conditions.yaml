@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK08-J. Ensure actively held locks are released on exceptional conditions
+  shortDescription: <p>Failure to release locks on exceptional conditions could lead
+    to thread <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-star">starvation</a>
+    and <a href="/confluence/display/java/Rule+BB.+Glossary">deadlock</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

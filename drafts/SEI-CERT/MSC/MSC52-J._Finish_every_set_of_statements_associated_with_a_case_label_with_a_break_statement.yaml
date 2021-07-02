@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC52-J. Finish every set of statements associated with a case label with
+    a break statement
+  shortDescription: <p>A <code>switch</code> block comprises several <code>case</code>
+    labels and an optional but highly recommended <code>default</code> label. Statements
+    that follow each <code>case</code> label must end with a <code>break</code> statement,
+    which is responsible for transferring the control to the end of the <code>switch</code>
+    block. When omitted, the statements in the subsequent <code>case</code> label
+    are executed. Because the <code>break</code> statement is optional, omitting it
+    produces no compiler warnings. When this behavior is unintentional, it can cause
+    unexpected control flow.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

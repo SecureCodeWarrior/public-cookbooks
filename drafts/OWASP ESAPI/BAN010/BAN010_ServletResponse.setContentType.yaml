@@ -1,0 +1,14 @@
+id: scw:esapi:ban010-ServletResponse.setContentType
+version: 8
+metadata:
+  name: 'Transport Layer Security: ESAPI: BAN010: ServletResponse.setContentType'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: setContentType
+    declaration:
+      type: javax.servlet.ServletResponse
+availableFixes: []

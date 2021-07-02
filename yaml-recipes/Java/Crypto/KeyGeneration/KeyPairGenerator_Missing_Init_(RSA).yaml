@@ -5,6 +5,7 @@ metadata:
     long key sizes: keyPairGenerator'
   shortDescription: Could lead to brute forcing or other cryptographic weakness
   level: error
+  language: java
   newCodeOnly: false
   enabled: true
   descriptionFile: descriptions/Key_sizes.html

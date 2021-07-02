@@ -1,0 +1,17 @@
+id: scw:esapi:ban019-URLDecoder.decode-compliant
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN019b: URLDecoder.decodeCompliant'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: decodeFromURL
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encoder)
+        checkInheritance: false
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: STR00-J. Don't form strings containing partial characters from variable-width
+    encodings
+  shortDescription: <p>Forming strings from character data containing partial characters
+    can result in data corruption.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

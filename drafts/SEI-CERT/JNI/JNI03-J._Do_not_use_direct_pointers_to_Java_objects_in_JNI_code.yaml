@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: JNI03-J. Do not use direct pointers to Java objects in JNI code
+  shortDescription: <p>If a direct pointer to a Java object is used then erroneous
+    results may be obtained that could lead to the code crashing. This, in turn, could
+    be used to mount a denial of service attack.&nbsp; In some circumstances, the
+    direct pointer could become a "dangling pointer" which could result in sensitive
+    information being leaked or malicious execution of arbitrary code.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

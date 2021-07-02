@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: THI05-J. Do not use Thread.stop() to terminate threads
+  shortDescription: <p>Forcing a thread to stop can result in inconsistent object
+    state. Critical resources could also leak if cleanup operations are not carried
+    out as required.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

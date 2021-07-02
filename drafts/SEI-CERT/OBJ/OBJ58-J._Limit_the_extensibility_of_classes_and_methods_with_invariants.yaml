@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ58-J. Limit the extensibility of classes and methods with invariants
+  shortDescription: <p>Java classes and methods may have <em><a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-invariant">invariants</a></em>.
+    An invariant is a property that is assumed to be true at certain points during
+    program execution but is not formally specified as true. Invariants may be used
+    in <code>assert</code> statements or may be informally specified in comments.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

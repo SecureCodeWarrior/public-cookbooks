@@ -5,6 +5,7 @@ metadata:
   shortDescription: Protection against XSS is better done by blocking the content
     instead of filtering it
   level: warning
+  language: java
   scwCategory: xss
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationDisabledXSSprotectioninSpringSecurity-block.html

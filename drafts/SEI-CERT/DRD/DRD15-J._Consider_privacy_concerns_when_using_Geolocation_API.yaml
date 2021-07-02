@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD15-J. Consider privacy concerns when using Geolocation API
+  shortDescription: <p>Sending a user's geolocation information without asking the&nbsp;user's
+    permission violates the security and privacy considerations of the Geolocation
+    API and leaks the user's sensitive information.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

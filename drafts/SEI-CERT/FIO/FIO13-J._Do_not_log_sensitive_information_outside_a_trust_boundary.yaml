@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO13-J. Do not log sensitive information outside a trust boundary
+  shortDescription: <p>Logging sensitive information can violate system <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-se">security
+    policies</a> and can violate user privacy when the logging level is incorrect
+    or when the log files are insecure.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

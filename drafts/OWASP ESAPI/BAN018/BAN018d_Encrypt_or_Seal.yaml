@@ -1,0 +1,45 @@
+id: scw:esapi:ban018-encrypt-seal
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018d: Encrypt or Seal'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getInstance
+    declaration:
+      type:
+        reference:
+          matches: (java\.security|javax\.crypto)\.(Cipher)
+        checkInheritance: false
+availableFixes:
+- name: <html>Use Encryptor.<b>decrypt(ciphertext)</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.crypto.PlainText pt = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().decrypt(ciphertext);
+- name: <html>Use Encryptor.<b>decrypt(secretkey,ciphertext)</b></html>
+  actions:
+  - rewrite:
+      to: ' org.owasp.esapi.crypto.PlainText pt = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().decrypt(secretkey,ciphertext);'
+- name: <html>Use Encryptor.<b>encrypt(plaintext)</b></html>
+  actions:
+  - rewrite:
+      to: ' org.owasp.esapi.crypto.CipherText ct = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().encrypt(plaintext);'
+- name: <html>Use Encryptor.<b>encrypt(secretkey,plaintext)</b></html>
+  actions:
+  - rewrite:
+      to: ' org.owasp.esapi.crypto.CipherText ct = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().encrypt(secretkey,plaintext);'
+- name: <html>Use Encryptor.<b>seal(string,expirationdate)</b></html>
+  actions:
+  - rewrite:
+      to: String seal = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().seal(string,expirationdate);
+- name: <html>Use Encryptor.<b>unseal(seal)</b></html>
+  actions:
+  - rewrite:
+      to: String result = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().unseal(seal);
+- name: <html>Use Encryptor.<b>verifySeal(s)</b></html>
+  actions:
+  - rewrite:
+      to: boolean verified = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().verifySeal(s);

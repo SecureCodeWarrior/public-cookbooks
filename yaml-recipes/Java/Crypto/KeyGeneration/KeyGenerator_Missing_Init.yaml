@@ -5,6 +5,7 @@ metadata:
     key sizes: keyGenerator'
   shortDescription: Could lead to brute forcing or other cryptographic weakness
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

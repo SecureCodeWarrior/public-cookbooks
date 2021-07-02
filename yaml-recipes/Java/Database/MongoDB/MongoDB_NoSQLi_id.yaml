@@ -4,6 +4,7 @@ metadata:
   name: 'MongoDB: _id NoSQL Injection'
   shortDescription: Do not use string concatenation in where filters
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: MongoDB_idNoSQLInjection.html

@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR51-J. Prefer user-defined exceptions over more general exception types
+  shortDescription: <p>Because an exception is caught by its type, it is better to
+    define exceptions for specific purposes than to use the general exception types
+    for multiple purposes. Throwing general exception types makes code hard to understand
+    and maintain and defeats much of the advantage of the Java exception-handling
+    mechanism.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

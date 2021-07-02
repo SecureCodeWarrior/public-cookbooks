@@ -4,6 +4,7 @@ metadata:
   name: 'Unreleased Resource: Streams: Always close stream at end of scope'
   shortDescription: Resource has not been closed
   level: error
+  language: java
   enabled: true
 search:
   instanceCreation:

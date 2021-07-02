@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC11-J. Do not let session information leak within a servlet
+  shortDescription: <p>Use of nonstatic member fields in a servlet can result in information
+    leakage.&nbsp;</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR02-J. Prevent exceptions while logging data
+  shortDescription: <p>Exceptions thrown during data logging can cause loss of data
+    and can conceal security problems.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

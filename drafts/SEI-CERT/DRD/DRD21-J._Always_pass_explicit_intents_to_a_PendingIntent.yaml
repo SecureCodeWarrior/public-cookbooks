@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD21-J. Always pass explicit intents to a PendingIntent
+  shortDescription: <p>Failing to pass an explicit intent to a pending intent could
+    allow the intent to be misdirected, thereby leaking sensitive information and/or
+    altering the data flow within an app.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

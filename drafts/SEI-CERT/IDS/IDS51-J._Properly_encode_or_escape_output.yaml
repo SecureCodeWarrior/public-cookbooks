@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS51-J. Properly encode or escape output
+  shortDescription: <p>Proper input sanitization can prevent insertion of malicious
+    data into a subsystem such as a database. However, different subsystems require
+    different types of sanitization. Fortunately, it is usually obvious which subsystems
+    will eventually receive which inputs, and consequently what type of sanitization
+    is required.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

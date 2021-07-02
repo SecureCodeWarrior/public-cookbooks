@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: STR51-J. Use the charset encoder and decoder classes when more control over
+    the encoding process is required
+  shortDescription: <p>Malformed input or unmappable character errors can result in
+    a loss of data integrity.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

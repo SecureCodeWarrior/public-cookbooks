@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC04-J. Protect sensitive operations with security manager checks
+  shortDescription: <p>Failure to enforce security checks in code that performs sensitive
+    operations can lead to malicious tampering of sensitive data.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

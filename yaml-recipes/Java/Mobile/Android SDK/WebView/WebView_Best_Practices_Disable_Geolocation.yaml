@@ -4,6 +4,7 @@ metadata:
   name: 'Android WebView best practices: Disable Geolocation'
   shortDescription: WebView setting with privacy implications
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html

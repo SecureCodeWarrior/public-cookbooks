@@ -5,6 +5,7 @@ metadata:
   shortDescription: The enclosing method is a request handler, but there's no annotation
     indicating how this argument should be treated
   level: error
+  language: java
   scwCategory: ""
   enabled: true
 search:

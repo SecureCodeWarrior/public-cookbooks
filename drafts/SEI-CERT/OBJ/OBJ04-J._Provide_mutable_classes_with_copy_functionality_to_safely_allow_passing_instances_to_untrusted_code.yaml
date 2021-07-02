@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ04-J. Provide mutable classes with copy functionality to safely allow passing
+    instances to untrusted code
+  shortDescription: <p>Creating a mutable class without providing copy functionality
+    can result in the data of its instance becoming corrupted when the instance is
+    passed to <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-untrustedcode">untrusted
+    code</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR08-J. Do not catch NullPointerException or any of its ancestors
+  shortDescription: <p>Catching <code>NullPointerException</code> may mask an underlying
+    null dereference, degrade application performance, and result in code that is
+    hard to understand and maintain. Likewise, catching <code>RuntimeException</code>,
+    <code>Exception</code>, or <code>Throwable</code> may unintentionally trap other
+    exception types and prevent them from being handled properly.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

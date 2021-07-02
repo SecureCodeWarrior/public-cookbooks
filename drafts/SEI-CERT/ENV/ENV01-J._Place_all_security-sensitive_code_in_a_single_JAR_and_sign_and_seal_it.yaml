@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV01-J. Place all security-sensitive code in a single JAR and sign and seal
+    it
+  shortDescription: <p>Failure to place all privileged code together in one package
+    and seal the package can lead to mix-and-match attacks.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ13-J. Ensure that references to mutable objects are not exposed
+  shortDescription: <p>Having a public static final array is a potential security
+    risk because the array elements may be modified by a client.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

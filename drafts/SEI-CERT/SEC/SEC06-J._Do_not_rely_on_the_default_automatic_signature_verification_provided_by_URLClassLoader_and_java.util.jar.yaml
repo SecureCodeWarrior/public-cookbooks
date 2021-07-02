@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC06-J. Do not rely on the default automatic signature verification provided
+    by URLClassLoader and java.util.jar
+  shortDescription: <p>Failure to verify a digital signature, whether manually or
+    programmatically, can result in the execution of malicious code.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

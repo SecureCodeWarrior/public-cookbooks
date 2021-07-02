@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET11-J. Ensure that keys used in comparison operations are immutable
+  shortDescription: <p>Failure to ensure that the keys used in a comparison operation
+    are immutable can lead to nondeterministic behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

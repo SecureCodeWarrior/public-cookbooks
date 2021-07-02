@@ -5,6 +5,7 @@ metadata:
     symmetric cryptographic algorithm'
   shortDescription: Could lead to cryptographic weakness
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO07-J. Do not let external processes block on IO buffers
+  shortDescription: <p>Failure to properly manage the I/O streams of external processes
+    can result in runtime exceptions and in <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-">DoS</a>
+    vulnerabilities.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

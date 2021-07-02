@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR53-J. Try to gracefully recover from system errors
+  shortDescription: <p>According to the Java Language Specification, <a class="external-link"
+    href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-11.html#jls-11.1.1"
+    rel="nofollow">§11.1.1, "The Kinds of Exceptions"</a> [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-JLS13">JLS
+    2013</a>],</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

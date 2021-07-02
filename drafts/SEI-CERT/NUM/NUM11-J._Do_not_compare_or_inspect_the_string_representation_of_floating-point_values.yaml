@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM11-J. Do not compare or inspect the string representation of floating-point
+    values
+  shortDescription: <p>Comparing or inspecting the string representation of floating-point
+    values may have unexpected results.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

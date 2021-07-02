@@ -4,6 +4,7 @@ metadata:
   name: 'Test framework: Enforce @Rule annotation for a JUnitSoftAssertions field'
   shortDescription: A JUnitSoftAssertionsField always need to have the @Rule annotation
   level: error
+  language: java
   enabled: true
 search:
   field:

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR06-J. Do not throw undeclared checked exceptions
+  shortDescription: <p>Failure to document undeclared checked exceptions can result
+    in checked exceptions that the caller is unprepared to handle, consequently violating
+    the safety property.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

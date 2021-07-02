@@ -4,6 +4,7 @@ metadata:
   name: 'Static Classes: create private constructor'
   shortDescription: Create a private constructor for static classes
   level: error
+  language: java
   scwCategory: ""
   enabled: true
 search:

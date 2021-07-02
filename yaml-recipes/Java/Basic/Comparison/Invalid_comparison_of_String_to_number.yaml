@@ -4,6 +4,7 @@ metadata:
   name: Invalid comparison of String to number
   shortDescription: This comparison of a String to a number will always return false
   level: error
+  language: java
   enabled: true
 search:
   methodcall:

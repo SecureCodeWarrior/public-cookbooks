@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV05-J. Do not deploy an application that can be remotely monitored
+  shortDescription: <p>Deploying a Java application with the JVMTI, JPDA, or remote
+    monitoring enabled can allow an attacker to monitor or modify its behavior.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

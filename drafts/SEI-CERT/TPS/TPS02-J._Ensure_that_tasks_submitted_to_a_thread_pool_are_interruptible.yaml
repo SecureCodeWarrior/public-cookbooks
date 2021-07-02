@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TPS02-J. Ensure that tasks submitted to a thread pool are interruptible
+  shortDescription: <p>Submitting tasks that are uninterruptible may prevent a thread
+    pool from shutting down and consequently may cause <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-o">DoS</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

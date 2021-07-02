@@ -1,0 +1,21 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL58-J. Enable compile-time type checking of variable arity parameter types
+  shortDescription: <p>A variable arity (aka <em>varargs</em>) method is a method
+    that can take a variable number of arguments. The method must contain at least
+    one fixed argument. When processing a variable arity method call, the Java compiler
+    checks the types of all arguments, and all of the variable actual arguments must
+    match the variable formal argument type.&nbsp;However, compile-time type checking
+    is ineffective when <code>Object</code> or generic parameter types are used [<a
+    href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-Bloch08">Bloch
+    2008</a>]. The presence of initial parameters of specific types is irrelevant;
+    the compiler will remain unable to check <code>Object</code> or generic variable
+    parameter types. Enable strong compile-time type checking of variable arity methods
+    by using the most specific type possible for the method parameter.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

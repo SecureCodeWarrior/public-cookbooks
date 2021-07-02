@@ -4,6 +4,7 @@ metadata:
   name: 'Secure Transport: use RequiresSecure to enforce HTTPS'
   shortDescription: Serve requests over HTTPS instead of unencrypted HTTP
   level: error
+  language: java
   scwCategory: insufficient_transport_layer_protection
   enabled: true
   descriptionFile: descriptions/SecureTransportuseRequiresSecuretoenforceHTTPS.html

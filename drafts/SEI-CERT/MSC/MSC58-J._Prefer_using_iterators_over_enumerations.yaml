@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC58-J. Prefer using iterators over enumerations
+  shortDescription: <p>According to the Java API <a class="external-link" href="http://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html"
+    rel="nofollow">Interface Enumeration&lt;E&gt;</a> documentation [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-API13">API
+    2013</a>],</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

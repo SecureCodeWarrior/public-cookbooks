@@ -1,0 +1,18 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC55-J. Ensure that security-sensitive methods are called with validated
+    arguments
+  shortDescription: <p>Application code that calls security-sensitive methods must
+    validate the arguments being passed to the methods. In particular,&nbsp;<code>null</code>
+    values may be interpreted as benign by certain security-sensitive methods but
+    may override default settings. Although security-sensitive methods should be coded
+    defensively, the client code must validate arguments that the method might otherwise
+    accept as valid. Failure to do so can result in privilege escalation and execution
+    of arbitrary code.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC59-J. Limit the lifetime of sensitive data
+  shortDescription: <p>Sensitive data in memory can be vulnerable to compromise. An
+    adversary who can execute code on the same system as an application may be able
+    to access such data if the application</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

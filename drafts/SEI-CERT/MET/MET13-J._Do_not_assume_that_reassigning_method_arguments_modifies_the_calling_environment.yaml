@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET13-J. Do not assume that reassigning method arguments modifies the calling
+    environment
+  shortDescription: <p>Leaking sensitive information outside a trust boundary is not
+    a good idea.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

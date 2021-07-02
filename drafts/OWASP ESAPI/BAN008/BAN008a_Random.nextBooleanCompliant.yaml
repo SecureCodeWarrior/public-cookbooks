@@ -1,0 +1,17 @@
+id: 32121a89-7c61-4492-b33c-3fb95103e910
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextBooleanCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getRandomBoolean
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

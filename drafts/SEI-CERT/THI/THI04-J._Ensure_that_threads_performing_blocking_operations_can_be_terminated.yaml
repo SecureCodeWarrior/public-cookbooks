@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: THI04-J. Ensure that threads performing blocking operations can be terminated
+  shortDescription: <p>Failure to provide facilities for thread termination can cause
+    nonresponsiveness and <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-">DoS</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP52-J. Use braces for the body of an if, for, or while statement
+  shortDescription: <p>Use opening and closing braces for <code>if</code>, <code>for</code>,
+    and <code>while</code> statements even when the body contains only a single statement.
+    Braces improve the uniformity and readability of code.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

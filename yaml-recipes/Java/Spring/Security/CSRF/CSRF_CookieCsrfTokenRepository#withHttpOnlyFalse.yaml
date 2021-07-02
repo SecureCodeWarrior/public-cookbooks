@@ -5,6 +5,7 @@ metadata:
   shortDescription: Make sure to set HttpOnly to true to protect against CSRF or remove
     it
   level: error
+  language: java
   scwCategory: csrf
   enabled: true
   descriptionFile: descriptions/CookieCsrfTokenRepositorywithHttpOnlyFalse.html

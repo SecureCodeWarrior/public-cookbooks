@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TPS01-J. Do not execute interdependent tasks in a bounded thread pool
+  shortDescription: <p>Executing interdependent tasks in a thread pool can lead to
+    <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-">denial
+    of service</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

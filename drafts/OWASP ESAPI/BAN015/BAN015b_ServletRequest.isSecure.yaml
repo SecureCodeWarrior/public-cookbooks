@@ -1,0 +1,18 @@
+id: scw:esapi:ban015-ServletRequest.isSecure
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN015b: ServletRequest.isSecure'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: isSecure
+    declaration:
+      type: javax.servlet.ServletRequest
+availableFixes:
+- name: Comment out
+  actions:
+  - rewrite:
+      to: /* {{{ . }}} */

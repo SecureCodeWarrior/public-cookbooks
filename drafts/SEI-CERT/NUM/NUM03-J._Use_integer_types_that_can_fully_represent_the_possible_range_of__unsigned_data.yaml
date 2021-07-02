@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM03-J. Use integer types that can fully represent the possible range of  unsigned
+    data
+  shortDescription: <p>Treating unsigned data as though it were signed produces incorrect
+    values and can lead to lost or misinterpreted data.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

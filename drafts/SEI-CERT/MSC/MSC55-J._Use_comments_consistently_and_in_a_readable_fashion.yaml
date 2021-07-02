@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC55-J. Use comments consistently and in a readable fashion
+  shortDescription: <p>Mixing the use of traditional or block comments (starting with
+    <code>/*</code> and ending with <code>*/</code>) and end-of-line comments (from
+    <code>//</code> to the end of the line) can lead to misleading and confusing code,
+    which may result in errors.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

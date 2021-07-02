@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET09-J. Classes that define an equals() method must also define a hashCode()
+    method
+  shortDescription: <p>Overriding the <code>equals()</code> method without overriding
+    the <code>hashCode()</code> method can lead to unexpected results.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

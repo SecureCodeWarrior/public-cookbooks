@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD06. Do not act on malicious intents
+  shortDescription: <p>Acting on receipt of an intent without validating the caller's
+    identity may lead to sensitive data being revealed or to denial of service.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

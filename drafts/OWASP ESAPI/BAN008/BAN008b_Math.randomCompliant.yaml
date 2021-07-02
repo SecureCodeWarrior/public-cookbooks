@@ -1,0 +1,17 @@
+id: scw:esapi:ban008-math.random-compliant
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008b: Math.randomCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getRandomReal
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

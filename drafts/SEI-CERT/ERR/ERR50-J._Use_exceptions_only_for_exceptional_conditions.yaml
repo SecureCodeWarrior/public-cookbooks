@@ -1,0 +1,20 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR50-J. Use exceptions only for exceptional conditions
+  shortDescription: <p>Exceptions should be used only to denote exceptional conditions;
+    they should not be used for ordinary control flow purposes. Catching a generic
+    object such as <code>Throwable</code> is likely to catch unexpected errors; see
+    &nbsp;<a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/ERR08-J.+Do+not+catch+NullPointerException+or+any+of+its+ancestors"
+    rel="nofollow">ERR08-J. Do not catch NullPointerException or any of its ancestors</a>&nbsp;for
+    examples. When a program catches a specific type of exception, it does not always
+    know from where that exception was thrown. Using a <code>catch</code> clause to
+    handle an exception that occurs in a distant known location is a poor solution;
+    it is preferable to handle the error as soon as it occurs—or to prevent it if
+    possible.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

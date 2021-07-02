@@ -1,0 +1,18 @@
+id: scw:esapi:ban007-session-setvalid
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN007: Session.setValid'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: setValid
+    declaration:
+      type: org.apache.catalina.Session
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.FileBasedAuthenticator.getInstance().logout()

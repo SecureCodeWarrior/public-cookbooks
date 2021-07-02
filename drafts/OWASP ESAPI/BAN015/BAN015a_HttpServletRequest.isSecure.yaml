@@ -1,0 +1,24 @@
+id: scw:esapi:ban015-HttpServletRequest.isSecure
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN015a: HttpServletRequest.isSecure'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: isSecure
+    declaration:
+      type: javax.servlet.ServletRequest
+availableFixes:
+- name: <html>Replace with safe alternative, assertSecure<b>Channel</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultHTTPUtilities.getInstance().assertSecureChannel({{{
+        children.0.children.7.children.0.children.0}}});
+- name: <html>Replace with safe alternative, assertSecure<b>Request</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultHTTPUtilities.getInstance().assertSecureRequest({{{
+        children.0.children.7.children.0.children.0}}});

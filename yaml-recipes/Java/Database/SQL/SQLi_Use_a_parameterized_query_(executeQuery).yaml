@@ -4,6 +4,7 @@ metadata:
   name: sql injection - use a parameterized query
   shortDescription: execute query with untrusted inputs is vulnerable to SQL Injection
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   comment: Copy of other recipe?

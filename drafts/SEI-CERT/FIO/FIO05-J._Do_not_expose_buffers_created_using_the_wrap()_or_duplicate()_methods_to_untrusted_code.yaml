@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO05-J. Do not expose buffers created using the wrap() or duplicate() methods
+    to untrusted code
+  shortDescription: <p>Exposing buffers created using the <code>wrap()</code> or <code>duplicate()</code>
+    methods may allow an untrusted caller to alter the contents of the original data.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

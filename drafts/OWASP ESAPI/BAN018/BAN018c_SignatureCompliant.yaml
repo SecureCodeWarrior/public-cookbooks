@@ -1,0 +1,18 @@
+id: scw:esapi:ban018-signature-compliant
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018c: SignatureCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: sign|verifySignature
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encryptor)
+        checkInheritance: false
+availableFixes: []

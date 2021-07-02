@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP02-J. Do not use the Object.equals() method to compare two arrays
+  shortDescription: <p>Using the <code>equals()</code> method or relational operators
+    with the intention of comparing array contents produces incorrect results, which
+    can lead to <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-vulnerab">vulnerabilities</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

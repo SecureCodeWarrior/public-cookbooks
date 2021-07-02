@@ -5,6 +5,7 @@ metadata:
   shortDescription: A call to string.format is being made without the return value
     being used
   level: warning
+  language: java
   enabled: true
   comment: Is this already highlighted by the IDE?
 search:

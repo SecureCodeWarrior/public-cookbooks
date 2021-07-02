@@ -4,6 +4,7 @@ metadata:
   name: 'Input Validation: Avoid XXE: Use automatically protected source types'
   shortDescription: Could lead to XXE
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection:xml
   cweCategory: 611

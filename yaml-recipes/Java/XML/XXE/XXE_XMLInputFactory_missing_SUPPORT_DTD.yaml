@@ -4,6 +4,7 @@ metadata:
   name: 'XXE: XMLInputFactory: Add SUPPORT_DTD feature'
   shortDescription: Could lead to XXE
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection:xml
   cweCategory: 611

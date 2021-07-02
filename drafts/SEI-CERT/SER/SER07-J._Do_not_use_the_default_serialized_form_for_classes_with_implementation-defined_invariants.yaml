@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER07-J. Do not use the default serialized form for classes with implementation-defined
+    invariants
+  shortDescription: <p>Using the default serialized form for any class with implementation-defined&nbsp;<a
+    href="/confluence/display/java/Rule+BB.+Glossary">invariants</a> may result in
+    the malicious tampering of class invariants.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

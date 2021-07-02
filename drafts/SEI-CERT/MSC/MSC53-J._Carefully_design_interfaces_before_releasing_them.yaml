@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC53-J. Carefully design interfaces before releasing them
+  shortDescription: <p>Interfaces are used to group all the methods that a class promises
+    to publicly expose. The implementing classes are obliged to provide concrete implementations
+    for all of these methods. Interfaces are a necessary ingredient of most public
+    APIs; once released, flaws can be hard to fix without breaking any code that implements
+    the older version. The repercussions include the following:</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

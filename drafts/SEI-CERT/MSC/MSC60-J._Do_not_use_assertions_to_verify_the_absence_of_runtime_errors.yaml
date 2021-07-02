@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC60-J. Do not use assertions to verify the absence of runtime errors
+  shortDescription: <p>Diagnostic tests can be incorporated into programs by using
+    the <code>assert</code> statement.&nbsp;Assertions are primarily intended for
+    use during debugging and are often turned off before code is deployed by using
+    the <code>-disableassertions</code> (or <code>-da</code>) Java&nbsp;runtime switch.
+    Consequently, assertions should be used to protect against incorrect programmer
+    assumptions and not for runtime error checking.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET04-J. Do not increase the accessibility of overridden or hidden methods
+  shortDescription: <p>Subclassing allows weakening of access restrictions, which
+    can compromise the security of a Java application.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

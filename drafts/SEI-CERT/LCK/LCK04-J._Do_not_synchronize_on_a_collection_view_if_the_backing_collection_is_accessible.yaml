@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK04-J. Do not synchronize on a collection view if the backing collection
+    is accessible
+  shortDescription: <p>Synchronizing on a collection view instead of the collection
+    object can cause nondeterministic behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

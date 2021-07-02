@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP04-J. Do not pass arguments to certain Java Collections Framework methods
+    that are a different type than the collection parameter type
+  shortDescription: <p>Passing&nbsp;arguments to certain Java Collection Framework
+    methods that are of a different type from that of the class instance can cause
+    silent failures, resulting in unintended object retention, memory leaks, or incorrect
+    program operation&nbsp;[<a href="/confluence/display/java/Rule+AA.+References#RuleAA.References-Techtalk07">Techtalk
+    2007</a>].</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

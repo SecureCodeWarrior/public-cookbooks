@@ -4,6 +4,7 @@ metadata:
   name: Use the Region enum
   shortDescription: 'AWS recommends to use one of the constants in the Regions enum '
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: UsetheRegionenum.html

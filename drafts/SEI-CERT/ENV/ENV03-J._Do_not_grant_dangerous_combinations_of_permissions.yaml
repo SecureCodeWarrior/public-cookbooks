@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV03-J. Do not grant dangerous combinations of permissions
+  shortDescription: <p>Granting <code>AllPermission</code> to&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-untr">untrusted
+    code</a> allows it to perform privileged operations.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

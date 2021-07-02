@@ -5,6 +5,7 @@ metadata:
   shortDescription: You can enforce validation against the arguments passed to this
     function
   level: info
+  language: java
   scwCategory: ""
   enabled: true
 search:

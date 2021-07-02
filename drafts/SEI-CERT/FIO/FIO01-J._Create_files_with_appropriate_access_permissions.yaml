@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO01-J. Create files with appropriate access permissions
+  shortDescription: <p>If files are created without appropriate permissions, an attacker
+    may read or write to the files, possibly resulting in compromised system integrity
+    and information disclosure.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

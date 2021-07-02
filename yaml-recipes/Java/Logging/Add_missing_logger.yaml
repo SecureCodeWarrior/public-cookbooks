@@ -4,6 +4,7 @@ metadata:
   name: 'Logger: add missing logger'
   shortDescription: Add logger to class
   level: info
+  language: java
   scwCategory: insufficient_logging:generic
   enabled: true
   descriptionFile: Logging/descriptions/AddLogger.html

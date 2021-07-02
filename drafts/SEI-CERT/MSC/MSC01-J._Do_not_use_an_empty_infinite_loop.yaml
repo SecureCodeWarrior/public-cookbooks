@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC01-J. Do not use an empty infinite loop
+  shortDescription: <p>An infinite loop with an empty body consumes CPU cycles but
+    does nothing. Optimizing compilers and just-in-time systems (JITs) are permitted
+    to (perhaps unexpectedly) remove such a loop. Consequently, programs must not
+    include infinite loops with empty bodies.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

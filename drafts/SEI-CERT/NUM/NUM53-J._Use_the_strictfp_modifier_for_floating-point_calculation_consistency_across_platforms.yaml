@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM53-J. Use the strictfp modifier for floating-point calculation consistency
+    across platforms
+  shortDescription: <p>Failure to use the <code>strictfp</code> modifier can result
+    in nonportable, implementation-defined behavior with respect to the behavior of
+    floating-point operations.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

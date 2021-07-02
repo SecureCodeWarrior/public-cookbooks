@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD17-J. Do not use the Android cryptographic security provider encryption
+    default for AES
+  shortDescription: <p>If an insecure encryption method is used, then the encryption
+    does not assure&nbsp;privacy, integrity, and authentication of the data.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

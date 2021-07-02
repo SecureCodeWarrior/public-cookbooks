@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: CON52-J. Document thread-safety and use annotations where applicable
+  shortDescription: <p>The Java language annotation facility is useful for documenting
+    design intent. Source code annotation is a mechanism for associating metadata
+    with a program element and making it available to the compiler, analyzers, debuggers,
+    or Java Virtual Machine (JVM) for examination. Several annotations are available
+    for documenting thread-safety or the lack thereof.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

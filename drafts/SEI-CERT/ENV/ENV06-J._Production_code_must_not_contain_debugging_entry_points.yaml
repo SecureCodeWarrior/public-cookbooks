@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV06-J. Production code must not contain debugging entry points
+  shortDescription: <p>Leaving extra entry points into production code could allow
+    an attacker to gain special access to the program.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

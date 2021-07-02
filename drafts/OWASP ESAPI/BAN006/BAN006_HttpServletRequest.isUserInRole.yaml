@@ -1,0 +1,35 @@
+id: scw:esapi:ban006-HttpServletRequest.isUserInRole
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN006: HttpServletRequest.isUserInRole'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: isUserInRole
+    declaration:
+      type: javax.servlet.http.HttpServletRequest
+availableFixes:
+- name: <html>Replace with safe alternative, isAuthorizedFor<b>Data</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultAccessController.getInstance().isAuthorizedForData(string,
+        object)
+- name: <html>Replace with safe alternative, isAuthorizedFor<b>File</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultAccessController.getInstance().isAuthorizedForFile(string)
+- name: <html>Replace with safe alternative, isAuthorizedFor<b>Function</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultAccessController.getInstance().isAuthorizedForFunction(string)
+- name: <html>Replace with safe alternative, isAuthorizedFor<b>Service</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultAccessController.getInstance().isAuthorizedForService(string)
+- name: <html>Replace with safe alternative, isAuthorizedFor<b>URL</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultAccessController.getInstance().isAuthorizedForURL(string)

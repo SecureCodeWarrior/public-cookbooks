@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM54-J. Do not use denormalized numbers
+  shortDescription: <p>Floating-point numbers are an approximation; denormalized floating-point
+    numbers are a less precise approximation. Use of denormalized numbers can cause
+    unexpected loss of precision, possibly leading to incorrect or unexpected results.
+    Although the severity for violations of this rule is low, applications that require
+    accurate results should make every attempt to comply.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

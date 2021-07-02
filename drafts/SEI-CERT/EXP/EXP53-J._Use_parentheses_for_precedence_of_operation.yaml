@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP53-J. Use parentheses for precedence of operation
+  shortDescription: <p>Programmers frequently make errors regarding the precedence
+    of operators because of the unintuitively low precedence levels of <code>&amp;</code>,
+    <code>|</code>, <code>^</code>, <code>&lt;&lt;</code>, and <code>&gt;&gt;</code>.
+    Avoid mistakes regarding precedence through the suitable use of parentheses, which
+    also improves code readability. The precedence of operations by the order of the
+    subclauses is defined in the Java Tutorials [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-Tutorials13">Tutorials
+    2013</a>].</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

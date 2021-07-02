@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL56-J. Do not attach significance to the ordinal associated with an enum
+  shortDescription: <p>Java language enumeration types have an <code>ordinal()</code>
+    method that returns the numerical position of each enumeration constant in its
+    class declaration.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

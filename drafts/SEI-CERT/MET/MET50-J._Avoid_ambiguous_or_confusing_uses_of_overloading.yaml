@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET50-J. Avoid ambiguous or confusing uses of overloading
+  shortDescription: <p>Method and constructor overloading allows declaration of methods
+    or constructors with the same name but with different parameter lists. The compiler
+    inspects each call to an overloaded method or constructor and uses the declared
+    types of the method parameters to decide which method to invoke. In some cases,
+    however, confusion may arise because of the presence of relatively new language
+    features such as autoboxing and generics.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

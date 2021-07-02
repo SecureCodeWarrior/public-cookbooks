@@ -4,6 +4,7 @@ metadata:
   name: Ensure non-private access modifier for binding annotations
   shortDescription: Ensure non-private access modifier for binding annotations
   level: warning
+  language: java; kotlin
   enabled: true
 search:
   method:

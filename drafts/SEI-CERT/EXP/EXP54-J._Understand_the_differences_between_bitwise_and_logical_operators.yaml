@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP54-J. Understand the differences between bitwise and logical operators
+  shortDescription: <p>The conditional AND and OR operators (<code>&amp;&amp;</code>
+    and <code>||</code> respectively) exhibit short-circuit behavior. That is, the
+    second operand is evaluated only when the result of the conditional operator cannot
+    be deduced solely by evaluating the first operand. Consequently, when the result
+    of the conditional operator <em>can</em> be deduced solely from the result of
+    the first operand, the second operand will remain unevaluated; its side effects,
+    if any, will never occur.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

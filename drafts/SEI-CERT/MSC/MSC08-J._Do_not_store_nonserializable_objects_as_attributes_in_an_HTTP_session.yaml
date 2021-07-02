@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC08-J. Do not store nonserializable objects as attributes in an HTTP session
+  shortDescription: <p>If nonserializable objects are stored as attributes in an HTTP
+    session then ...</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

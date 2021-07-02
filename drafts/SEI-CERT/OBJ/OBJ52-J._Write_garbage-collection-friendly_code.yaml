@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ52-J. Write garbage-collection-friendly code
+  shortDescription: "<p>Java'\x80\x99s garbage-collection feature provides significant\
+    \ benefits over non-garbage-collected languages. The garbage collector (GC) is\
+    \ designed to automatically reclaim unreachable memory and to avoid memory leaks.\
+    \ Although the GC is quite adept at performing this task, a malicious attacker\
+    \ can nevertheless launch a denial-of-service (DoS) attack against the GC, such\
+    \ as by inducing abnormal heap memory allocation or abnormally prolonged object\
+    \ retention. For example, some versions of the GC could need to halt all executing\
+    \ threads to keep up with incoming allocation requests that trigger increased\
+    \ heap management activity. System throughput rapidly diminishes in this scenario.</p>"
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

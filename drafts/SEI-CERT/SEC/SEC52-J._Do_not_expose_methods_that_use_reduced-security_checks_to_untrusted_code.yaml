@@ -1,0 +1,18 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC52-J. Do not expose methods that use reduced-security checks to untrusted
+    code
+  shortDescription: <p>Most methods lack security manager checks because they do not
+    provide access to sensitive parts of the system, such as the file system. Most
+    methods that do provide security manager checks verify that every class and method
+    in the call stack is authorized before they proceed. This security model allows
+    restricted programs, such as Java applets, to have full access to the core Java
+    library. It also prevents a sensitive method from acting on behalf of a malicious
+    method that hides behind trusted methods in the call stack.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

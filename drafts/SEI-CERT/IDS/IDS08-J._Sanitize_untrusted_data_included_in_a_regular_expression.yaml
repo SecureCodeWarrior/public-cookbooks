@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS08-J. Sanitize untrusted data included in a regular expression
+  shortDescription: <p>Failing to <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-sanitize">sanitize</a>
+    <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-untrust">untrusted
+    data</a> included as part of a regular expression can result in the disclosure
+    of sensitive information.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC00-J. Do not allow privileged blocks to leak sensitive information across
+    a trust boundary
+  shortDescription: <p>Returning references to sensitive resources from within a <code>doPrivileged()</code>
+    block can break encapsulation and confinement and can leak capabilities. Any caller
+    who can invoke the privileged code directly and obtain a reference to a sensitive
+    resource or field can maliciously modify its elements.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

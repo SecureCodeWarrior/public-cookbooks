@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK10-J. Use a correct form of the double-checked locking idiom
+  shortDescription: <p>Using incorrect forms of the double-checked locking idiom can
+    lead to&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-synchro">synchronization</a>
+    problems and can expose partially initialized objects.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

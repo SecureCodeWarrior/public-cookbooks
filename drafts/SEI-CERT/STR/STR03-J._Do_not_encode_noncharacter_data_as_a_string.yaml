@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: STR03-J. Do not encode noncharacter data as a string
+  shortDescription: <p>Encoding noncharacter data as a string is likely to result
+    in a loss of data integrity.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

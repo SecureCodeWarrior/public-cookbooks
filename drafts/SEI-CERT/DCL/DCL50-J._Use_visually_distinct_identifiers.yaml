@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL50-J. Use visually distinct identifiers
+  shortDescription: <p>Use visually distinct identifiers that are unlikely to be misread
+    during development and review of code. Depending on the fonts used, certain characters
+    are visually similar or even identical and can be misinterpreted. Consider the
+    examples in the following table.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

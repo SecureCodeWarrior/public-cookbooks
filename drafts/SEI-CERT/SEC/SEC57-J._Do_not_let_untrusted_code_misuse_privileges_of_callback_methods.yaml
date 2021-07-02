@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC57-J. Do not let untrusted code misuse privileges of callback methods
+  shortDescription: <p>Callbacks provide a&nbsp;means to register a method to be&nbsp;invoked
+    (or&nbsp;<em>called</em> back)<em> </em>when an interesting event occurs. Java
+    uses callbacks for applet and servlet life-cycle events, AWT and Swing event notifications
+    such as button clicks, asynchronous reads and writes to storage, and even in&nbsp;<code>Runnable.run()</code>
+    wherein a new thread automatically executes the specified&nbsp;<code>run()</code>
+    method.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,19 @@
+id: scw:esapi:ban022-HttpServletResponse.encode-encodeRedirectURL
+version: 8
+metadata:
+  name: 'ESAPI: BAN021-BAN022: HttpServletResponse.encodeURL/encodeRedirectURL'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: encodeURL|encodeRedirectURL
+    declaration:
+      type: javax.servlet.http.HttpServletResponse
+availableFixes:
+- name: Comment out
+  actions:
+  - rewrite:
+      to: /* {{{ . }}} */

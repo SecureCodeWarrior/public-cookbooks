@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: VNA03-J. Do not assume that a group of calls to independently atomic methods
+    is atomic
+  shortDescription: <p>Failure to ensure the atomicity of two or more operations that
+    must be performed as a single atomic operation can result in&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary">race
+    conditions</a> in multithreaded applications.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

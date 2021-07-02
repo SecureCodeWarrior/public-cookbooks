@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: VNA01-J. Ensure visibility of shared references to immutable objects
+  shortDescription: <p>The incorrect assumption that classes that contain only references
+    to immutable objects are themselves immutable can cause serious <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-thread">thread-safety</a>
+    issues.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

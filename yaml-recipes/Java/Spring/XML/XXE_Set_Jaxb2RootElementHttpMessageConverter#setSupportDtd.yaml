@@ -5,6 +5,7 @@ metadata:
     true'
   shortDescription: Prevent XXE by disabling DTDs
   level: error
+  language: java
   scwCategory: injection:xml
   cweCategory: 611
   enabled: true

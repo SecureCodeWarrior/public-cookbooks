@@ -1,0 +1,31 @@
+id: scw:esapi:input-validation
+version: 8
+metadata:
+  name: 'Input Validation: ESAPI: ESAPI Validator'
+  shortDescription: Insufficient input validation
+  level: error
+  language: java
+  enabled: true
+  comment: 'TODO: rule scope'
+search:
+  methodcall:
+    name: contains
+    declaration:
+      type: java.lang.String
+availableFixes:
+- name: This is not input validation
+  actions:
+  - rewrite:
+      to: |-
+        //noinspection d30_injection_generic_3
+        {{{ . }}}
+- name: Use ESAPI validator for e-mail
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.ESAPI.validator().isValidInput("Email", {{{ children.0.children.0
+        }}}, "Email", 70, false)
+- name: Use ESAPI validator for alphanumeric string
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.ESAPI.validator().isValidInput("contextString", {{{ children.0.children.0
+        }}}, "AlphaNumericChar", maxLength, false)

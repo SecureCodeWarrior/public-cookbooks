@@ -5,6 +5,7 @@ metadata:
   shortDescription: First argument is a regular expression, matching with dot might
     have unintended behaviour.
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/StringsRegexUseEscapeRegexSpecialCharacterforAnyCharMatching.html

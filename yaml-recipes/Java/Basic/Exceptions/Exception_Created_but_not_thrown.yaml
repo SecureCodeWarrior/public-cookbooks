@@ -4,6 +4,7 @@ metadata:
   name: 'Exception: Created but not thrown'
   shortDescription: Exceptions should be thrown, not just created
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   comment: This recipe only addresses the case of an instance creation that is not

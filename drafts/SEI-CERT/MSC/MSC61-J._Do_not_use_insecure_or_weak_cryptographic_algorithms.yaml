@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC61-J. Do not use insecure or weak cryptographic algorithms
+  shortDescription: <p>Security-intensive applications <em>must</em> avoid use of
+    insecure or weak cryptographic primitives to protect sensitive information. The
+    computational capacity of modern computers permits circumvention of such cryptography
+    via brute-force attacks. For example, the Data Encryption Standard (DES) encryption
+    algorithm is considered highly insecure; messages encrypted using DES have been
+    decrypted by brute force within a single day by machines such as the Electronic
+    Frontier Foundation's (EFF) Deep Crack.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

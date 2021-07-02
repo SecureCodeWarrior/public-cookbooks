@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO04-J. Release resources when they are no longer needed
+  shortDescription: <p>Failure to explicitly release nonmemory system resources when
+    they are no longer needed can result in resource exhaustion.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -4,6 +4,7 @@ metadata:
   name: 'Secure Transport: use RequiresSecure to enforce HTTPS on all paths'
   shortDescription: Enforce HTTPS on all requests, not just on a selected number
   level: warning
+  language: java
   scwCategory: insufficient_transport_layer_protection
   enabled: true
   descriptionFile: descriptions/SecureTransportuseRequiresSecureonallpaths.html

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TSM01-J. Do not let the this reference escape during object construction
+  shortDescription: <p>Allowing the <code>this</code> reference to escape can result
+    in improper initialization and runtime exceptions.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

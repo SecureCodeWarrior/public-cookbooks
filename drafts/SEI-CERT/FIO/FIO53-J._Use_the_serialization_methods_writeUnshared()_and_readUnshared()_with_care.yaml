@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO53-J. Use the serialization methods writeUnshared() and readUnshared()
+    with care
+  shortDescription: <p>When objects are serialized using the <code>writeObject()</code>
+    method, each object is written to the output stream only once. Invoking the <code>writeObject()</code>&nbsp;method
+    on the same object a second time places a back-reference to the previously serialized
+    instance in the stream. Correspondingly, the <code>readObject()</code> method
+    produces at most one instance for each object present in the input stream that
+    was previously written by <code>writeObject().</code></p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

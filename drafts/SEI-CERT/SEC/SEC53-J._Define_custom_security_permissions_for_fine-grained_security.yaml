@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC53-J. Define custom security permissions for fine-grained security
+  shortDescription: <p>The default <code>SecurityManager</code> checks whether the
+    caller of a particular method has sufficient permissions to proceed with an action.
+    An action is defined in Java's security architecture as a level of access and
+    requires certain permissions before it can be performed. For Example, the actions
+    for <code>java.io.FilePermission</code> are <em>read, write, execute</em>, and
+    <em>delete</em> [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-API13">API
+    2013</a>]. The "Permission Descriptions and Risks" guide [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-Oracle11d">Oracle
+    2011d</a>] enumerates the default permissions and the risks associated with granting
+    these permissions to Java code.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

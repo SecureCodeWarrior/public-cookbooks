@@ -4,6 +4,7 @@ metadata:
   name: Annotate with @Repository
   shortDescription: This class looks like the implementation of a Spring Repository
   level: info
+  language: java
   scwCategory: ""
   enabled: true
 search:

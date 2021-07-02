@@ -5,6 +5,7 @@ metadata:
   shortDescription: Disabling Spring Security default headers makes the application
     vulnerable to clickjackin
   level: warning
+  language: java
   scwCategory: misconfig
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationDisabledclickjackingprotectioninSpringSecurity-frameOptions.html

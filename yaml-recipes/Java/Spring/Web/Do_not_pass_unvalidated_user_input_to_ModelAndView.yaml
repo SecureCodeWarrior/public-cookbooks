@@ -5,6 +5,7 @@ metadata:
     to ModelAndView'
   shortDescription: Could lead to File Disclosure
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: infoexposure
   enabled: true

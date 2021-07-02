@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER10-J. Avoid memory and resource leaks during serialization
+  shortDescription: <p>Memory and resource leaks during serialization can result in
+    a resource exhaustion attack or can crash the Java Virtual Machine.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

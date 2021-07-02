@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ53-J. Do not use direct buffers for short-lived, infrequently used objects
+  shortDescription: <p>The new I/O (NIO) classes in <code>java.nio</code> allow the
+    creation and use of direct buffers. These buffers tremendously increase throughput
+    for repeated I/O activities. However, their creation and reclamation is more expensive
+    than the creation and reclamation of heap-based nondirect buffers because direct
+    buffers are managed using OS-specific native code. This added management cost
+    makes direct buffers a poor choice for single-use or infrequently used cases.
+    Direct buffers are also outside the scope of Java's garbage collector; consequently,
+    injudicious use of direct buffers can cause memory leaks. Finally, frequent allocation
+    of large direct buffers can cause an <code>OutOfMemoryError</code>.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

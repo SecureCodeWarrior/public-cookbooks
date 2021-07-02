@@ -4,6 +4,7 @@ metadata:
   name: 'XXE: XMLInputFactory: Add IS_SUPPORTING_EXTERNAL_ENTITIES feature'
   shortDescription: Could lead to XXE
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection:xml
   cweCategory: 611

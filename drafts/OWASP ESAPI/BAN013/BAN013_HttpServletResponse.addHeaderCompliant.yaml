@@ -1,0 +1,17 @@
+id: scw:esapi:ban013-HttpServletResponse.addHeader-compliant
+version: 8
+metadata:
+  name: 'Injection: ESAPI: BAN013: HttpServletResponse.addHeaderCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: addHeader
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

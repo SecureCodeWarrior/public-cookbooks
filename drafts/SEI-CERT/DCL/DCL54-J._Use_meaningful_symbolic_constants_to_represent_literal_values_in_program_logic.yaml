@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL54-J. Use meaningful symbolic constants to represent literal values in
+    program logic
+  shortDescription: <p>Java supports the use of various types of literals, such as
+    integers (5, 2), floating-point numbers (2.5, 6.022e+23), characters (<code>'a'</code>,
+    <code>'\n'</code>), Booleans (<code>true</code>, <code>false</code>), and strings
+    (<code>"Hello\n"</code>). Extensive use of literals in a program can lead to two
+    problems. First, the meaning of the literal is often obscured or unclear from
+    the context. Second, changing a frequently used literal requires searching the
+    entire program source for that literal and distinguishing the uses that must be
+    modified from those that should remain unmodified.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

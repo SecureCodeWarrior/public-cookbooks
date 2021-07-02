@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER01-J. Do not deviate from the proper signatures of serialization methods
+  shortDescription: <p>Deviating from the proper signatures of serialization methods
+    can lead to unexpected behavior. Failure to limit the accessibility of the <code>readObject()</code>
+    and <code>writeObject()</code> methods can leave code vulnerable to untrusted
+    invocations. Declaring <code>readResolve()</code> and <code>writeReplace()</code>
+    methods to be static or private can force subclasses to silently ignore them,
+    while declaring them public allows them to be invoked by <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-unt">untrusted
+    code</a>.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,17 @@
+id: scw:esapi:ban008-random.nextdouble-nextBytes-compliant
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextBytesCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getRandomBytes
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Randomizer)
+        checkInheritance: false
+availableFixes: []

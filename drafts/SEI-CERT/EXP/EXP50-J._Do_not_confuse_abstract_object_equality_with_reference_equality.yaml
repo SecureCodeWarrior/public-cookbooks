@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP50-J. Do not confuse abstract object equality with reference equality
+  shortDescription: <p>Java defines the equality operators <code>==</code> and <code>!=</code>
+    for testing reference equality but uses the <code>equals()</code> method defined
+    in <code>Object</code> and its subclasses for testing abstract object equality.
+    Naïve programmers often confuse the intent of the <code>==</code> operation with
+    that of the <code>Object.equals()</code> method. This confusion is frequently
+    evident in the context of processing <code>String</code>&nbsp;objects.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -5,6 +5,7 @@ metadata:
     validation'
   shortDescription: Not allowing just any HTTP method is more secure
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/HTTPmethodvalidation.html

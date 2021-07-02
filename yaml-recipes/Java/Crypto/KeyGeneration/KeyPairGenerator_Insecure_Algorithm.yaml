@@ -4,6 +4,7 @@ metadata:
   name: 'Crypto: KeyPair Generation: Insecure Cryptographic Algorithm'
   shortDescription: This cryptographic algorithm is insecure
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

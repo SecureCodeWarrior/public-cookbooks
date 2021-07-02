@@ -4,6 +4,7 @@ metadata:
   name: Incorrect equality check of wrapper values
   shortDescription: Avoid using quality operators when comparing wrapper values.
   level: error
+  language: java
   enabled: true
 search:
   comparison:

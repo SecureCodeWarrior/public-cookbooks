@@ -1,0 +1,17 @@
+id: scw:esapi:ban018-hashing-compliant
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018a: HashingCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: hash
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encryptor)
+        checkInheritance: false
+availableFixes: []

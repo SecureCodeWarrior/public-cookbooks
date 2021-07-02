@@ -1,0 +1,18 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS56-J. Prevent arbitrary file upload
+  shortDescription: <p>Java applications, including web applications, that accept
+    file uploads must ensure that an attacker cannot upload or transfer malicious
+    files. If a restricted file containing code is executed by the target system,
+    it can compromise application-layer defenses. For example, an application that
+    permits HTML files to be uploaded could allow malicious code to be executed—an
+    attacker can submit a valid HTML file with a cross-site scripting (XSS) payload
+    that will execute in the absence of an output-escaping routine. For this reason,
+    many applications restrict the type of files that can be uploaded.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

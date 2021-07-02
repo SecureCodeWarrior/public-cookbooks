@@ -6,6 +6,7 @@ metadata:
   shortDescription: Rejecting the use of a URL encoded double slash in the URL is
     more secure
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/RejectURLEncodedDoubleSlash.html

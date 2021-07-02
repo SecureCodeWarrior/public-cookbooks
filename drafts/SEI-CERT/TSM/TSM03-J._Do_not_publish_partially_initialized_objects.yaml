@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TSM03-J. Do not publish partially initialized objects
+  shortDescription: <p>Failure to synchronize access to shared mutable data can cause
+    different threads to observe different states of the object or to observe a partially
+    initialized object.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

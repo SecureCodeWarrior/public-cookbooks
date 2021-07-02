@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC01-J. Do not allow tainted variables in privileged blocks
+  shortDescription: <p>Allowing tainted inputs in privileged operations can result
+    in privilege escalation attacks.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

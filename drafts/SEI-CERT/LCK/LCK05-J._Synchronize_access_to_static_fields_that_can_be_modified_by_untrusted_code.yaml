@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK05-J. Synchronize access to static fields that can be modified by untrusted
+    code
+  shortDescription: <p>Failure to internally&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-synchroniz">synchronize</a>
+    access to static fields that can be modified by&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-untruste">untrusted
+    code</a> risks incorrect synchronization because the author of the untrusted code
+    can inadvertently or maliciously ignore the synchronization policy.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

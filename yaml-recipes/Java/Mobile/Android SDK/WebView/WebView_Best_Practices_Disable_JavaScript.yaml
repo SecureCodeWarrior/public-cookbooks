@@ -4,6 +4,7 @@ metadata:
   name: 'Android WebView best practices: Disable JavaScript'
   shortDescription: WebView setting with security implications
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html

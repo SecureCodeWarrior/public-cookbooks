@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD19. Properly verify server certificate on SSL/TLS
+  shortDescription: <p>Not properly verifying the server certificate on SSL/TLS may
+    allow apps to connect to an imposter site, while fooling the user into thinking
+    that the user is connected to an intended site. One example of associated risks
+    is that this&nbsp;could expose a user's sensitive data.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

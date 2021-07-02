@@ -5,6 +5,7 @@ metadata:
     Constructor'
   shortDescription: Could lead to Remote Code Execution
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: false

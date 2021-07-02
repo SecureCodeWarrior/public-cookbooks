@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL02-J. Do not modify the collection's elements during an enhanced for statement
+  shortDescription: <p>Assignments to the loop variable of an enhanced <code>for</code>
+    loop (<code>for-each</code> idiom) fail to affect the overall iteration order,
+    lead to programmer confusion, and can leave data in a fragile or inconsistent
+    state.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

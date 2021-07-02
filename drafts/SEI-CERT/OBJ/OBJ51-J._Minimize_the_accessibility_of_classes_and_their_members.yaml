@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ51-J. Minimize the accessibility of classes and their members
+  shortDescription: <p>Classes and class members (classes, interfaces, fields, and
+    methods) are access-controlled in Java. The access is indicated by an access modifier
+    (<code>public</code>, <code>protected</code>, or <code>private</code>) or by the
+    absence of an access modifier (the default access, also called <em>package-private
+    access</em>).</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC02-J. Do not base security checks on untrusted sources
+  shortDescription: <p>Basing security checks on untrusted sources can result in the
+    check being bypassed.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

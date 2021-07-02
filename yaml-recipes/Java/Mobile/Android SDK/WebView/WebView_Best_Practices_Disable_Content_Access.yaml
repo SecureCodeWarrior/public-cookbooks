@@ -4,6 +4,7 @@ metadata:
   name: 'Android WebView best practices: Disable Content Access'
   shortDescription: WebView setting with security implications
   level: error
+  language: java
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html
   tags: android-security-set

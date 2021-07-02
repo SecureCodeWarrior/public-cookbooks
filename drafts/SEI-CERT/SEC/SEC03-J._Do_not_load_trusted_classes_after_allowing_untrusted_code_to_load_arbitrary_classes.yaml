@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC03-J. Do not load trusted classes after allowing untrusted code to load
+    arbitrary classes
+  shortDescription: <p>Allowing untrusted code to load classes enables untrusted code
+    to replace benign classes with Trojan classes.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

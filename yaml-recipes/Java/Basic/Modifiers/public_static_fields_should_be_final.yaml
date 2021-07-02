@@ -4,6 +4,7 @@ metadata:
   name: 'Code quality: public static fields should be final'
   shortDescription: public static fields should be final
   level: warning
+  language: java; kotlin
   enabled: true
   comment: Does the IDE suggest this?
 search:

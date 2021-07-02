@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP03-J. Do not use the equality operators when comparing values of boxed
+    primitives
+  shortDescription: <p>Using the equivalence operators to compare values of boxed
+    primitives can lead to erroneous comparisons.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

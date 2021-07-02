@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV00-J. Do not sign code that performs only unprivileged operations
+  shortDescription: <p>Signing unprivileged code violates the principle of least privilege
+    because it can circumvent security restrictions defined by the security policies
+    of applets and JNLP applications, for example.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

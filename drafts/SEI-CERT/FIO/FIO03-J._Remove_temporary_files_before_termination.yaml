@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO03-J. Remove temporary files before termination
+  shortDescription: <p>Failure to remove temporary files before termination can result
+    in information leakage and resource exhaustion.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

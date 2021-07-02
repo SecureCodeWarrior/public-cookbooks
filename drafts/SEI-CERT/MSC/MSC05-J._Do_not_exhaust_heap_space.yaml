@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC05-J. Do not exhaust heap space
+  shortDescription: <p>Assuming infinite heap space can result in <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-">denial
+    of service</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

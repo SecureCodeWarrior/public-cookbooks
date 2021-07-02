@@ -1,0 +1,13 @@
+id: scw:esapi:input-validation
+version: 8
+metadata:
+  name: 'MSC63-J: Ensure that SecureRandom is properly seeded'
+  shortDescription: Random number generation depends on a source of entropy such as
+    signals, devices, or hardware inputs. Secure random number generation is also
+    addressed by SC02-J. Generate strong random numbers.
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

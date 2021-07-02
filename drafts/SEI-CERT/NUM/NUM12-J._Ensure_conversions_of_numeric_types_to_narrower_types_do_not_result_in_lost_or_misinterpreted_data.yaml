@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM12-J. Ensure conversions of numeric types to narrower types do not result
+    in lost or misinterpreted data
+  shortDescription: <p>Casting a numeric value to a narrower type can result in information
+    loss related to the sign and magnitude of the numeric value. As a result, data
+    can be misrepresented or interpreted incorrectly.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -4,6 +4,7 @@ metadata:
   name: Avoid mapping to multiple HTTP request methods
   shortDescription: Map to one HTTP request method for best practices
   level: info
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: AvoidmappingtomultipleHTTPrequestmethods.html

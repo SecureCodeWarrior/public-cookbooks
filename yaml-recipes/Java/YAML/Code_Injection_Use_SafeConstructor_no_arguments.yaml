@@ -4,6 +4,7 @@ metadata:
   name: 'Injection: Avoid Code Injection: Use SafeConstructor: no arguments'
   shortDescription: Could lead to Remote Code Execution
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: false

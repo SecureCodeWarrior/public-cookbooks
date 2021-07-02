@@ -4,6 +4,7 @@ metadata:
   name: Annotate with @RestController
   shortDescription: This class looks like a Spring MVC Rest Controller
   level: info
+  language: java
   scwCategory: ""
   enabled: true
 search:

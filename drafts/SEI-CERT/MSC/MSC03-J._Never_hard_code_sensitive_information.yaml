@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC03-J. Never hard code sensitive information
+  shortDescription: <p>Hard coding sensitive information exposes that information
+    to attackers. The severity of this rule can vary depending on the kind of information
+    that is disclosed. Frequently, the information disclosed is password or key information,
+    which can lead to remote exploitation. Consequently, a high severity rating is
+    given but may be adjusted downwards according to the nature of the <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-sensit">sensitive
+    data</a>.&nbsp;</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

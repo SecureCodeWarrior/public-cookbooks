@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK09-J. Do not perform operations that can block while holding a lock
+  shortDescription: <p>Blocking or lengthy operations performed within synchronized
+    regions could result in a <a href="/confluence/display/java/Rule+BB.+Glossary">deadlocked</a>
+    or unresponsive system.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

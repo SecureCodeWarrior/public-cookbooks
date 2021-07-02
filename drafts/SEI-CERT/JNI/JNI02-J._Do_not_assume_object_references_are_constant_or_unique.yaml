@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: JNI02-J. Do not assume object references are constant or unique
+  shortDescription: <p>If it is assumed that an object reference is constant or unique
+    then erroneous results may be obtained that could lead to the app crashing. This,
+    in turn, could be used to mount a denial-of-service attack.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

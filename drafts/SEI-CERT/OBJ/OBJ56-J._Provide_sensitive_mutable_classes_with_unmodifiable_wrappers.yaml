@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ56-J. Provide sensitive mutable classes with unmodifiable wrappers
+  shortDescription: <p>Immutability of fields prevents inadvertent modification as
+    well as malicious tampering so that defensive copying while accepting input or
+    returning values is unnecessary. However, some sensitive classes cannot be immutable.
+    Fortunately, read-only access to mutable classes can be granted to untrusted code
+    using unmodifiable wrappers. For example, the <code>Collection</code> classes
+    include a set of wrappers that allow clients to observe an unmodifiable view of
+    a <code>Collection</code> object.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

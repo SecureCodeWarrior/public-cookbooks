@@ -1,0 +1,22 @@
+id: scw:esapi:ban004-session-getid
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN004: Session.getId()'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getId
+    declaration:
+      type: org.apache.catalina.Session
+availableFixes:
+- name: Comment out
+  actions:
+  - rewrite:
+      to: /* {{{ . }}} */
+- name: Remove
+  actions:
+  - rewrite:
+      to: ""

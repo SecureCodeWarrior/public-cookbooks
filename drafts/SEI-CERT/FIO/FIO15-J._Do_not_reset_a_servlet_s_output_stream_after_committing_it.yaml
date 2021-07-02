@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO15-J. Do not reset a servlet's output stream after committing it
+  shortDescription: <p>If a servlet's output stream is reset after it has been committed,
+    an&nbsp;<code>IllegalStateException</code> usually results, which can cause the
+    servlet's response to be truncated.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

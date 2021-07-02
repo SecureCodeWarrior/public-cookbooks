@@ -5,6 +5,7 @@ metadata:
   shortDescription: Avoid SQLi by using parameterized queries, instead of string concatenation
     with untrusted input
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: Injection-SQLInjectioninJdbcOperationsqueryForListqueryForRowSetqueryForMapqueryForLongqueryForIntupdate.html

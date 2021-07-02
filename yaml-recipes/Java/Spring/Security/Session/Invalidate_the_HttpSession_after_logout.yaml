@@ -4,6 +4,7 @@ metadata:
   name: 'Session Configuration: Invalidate the HttpSession after logout'
   shortDescription: Delete all sessions after logout
   level: warning
+  language: java
   scwCategory: session
   enabled: true
   comment: ""

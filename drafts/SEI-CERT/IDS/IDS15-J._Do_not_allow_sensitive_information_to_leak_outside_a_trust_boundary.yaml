@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS15-J. Do not allow sensitive information to leak outside a trust boundary
+  shortDescription: <p>Leaking sensitive information outside a trust boundary is not
+    a good idea.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

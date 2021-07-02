@@ -1,0 +1,20 @@
+id: fb55ea51-94e0-4457-a187-3564cb5fa05f
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextBoolean'
+  shortDescription: This is an OWASP ESAPI Banned method.
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: nextBoolean
+    declaration:
+      type: java.util.Random
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: |-
+        org.owasp.esapi.Randomizer randomizer = org.owasp.esapi.reference.DefaultRandomizer.getInstance();
+        boolean random = randomizer.getRandomBoolean();

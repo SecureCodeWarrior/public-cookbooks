@@ -5,6 +5,7 @@ metadata:
   shortDescription: When sending an email, the setSSLCheckServerIdentity has been
     set to false
   level: error
+  language: java
   scwCategory: misconfig
   enabled: true
 search:

@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO50-J. Do not make assumptions about file creation
+  shortDescription: <p>Although creating a file is usually accomplished with a single
+    method call, this single action raises multiple security-related questions. What
+    should be done if the file cannot be created? What should be done if the file
+    already exists? What should be the file's initial attributes, such as permissions?</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

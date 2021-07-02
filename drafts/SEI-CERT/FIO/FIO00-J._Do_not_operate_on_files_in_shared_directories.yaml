@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO00-J. Do not operate on files in shared directories
+  shortDescription: <p>Performing operations on files in shared directories can result
+    in&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-service">DoS
+    attacks</a>. If the program has elevated privileges, privilege escalation&nbsp;<a
+    href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-exploit">exploits</a>
+    are possible.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

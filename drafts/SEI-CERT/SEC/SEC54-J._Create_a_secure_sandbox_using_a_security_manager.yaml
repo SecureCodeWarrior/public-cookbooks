@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC54-J. Create a secure sandbox using a security manager
+  shortDescription: <p>According to the Java API&nbsp;<a class="external-link" href="http://docs.oracle.com/javase/7/docs/api/java/lang/SecurityManager.html"
+    rel="nofollow">Class <code>SecurityManager</code></a> documentation [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-API11">API
+    2014</a>],</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

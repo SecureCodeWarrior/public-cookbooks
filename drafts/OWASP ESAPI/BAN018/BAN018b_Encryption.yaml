@@ -1,0 +1,63 @@
+id: scw:esapi:ban018-encryption
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018b: Encryption'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+  comment: |-
+    KeyGenerator
+    a0a7d427-74ec-4903-863a-1b084f07c91b
+    264704d6-9984-493b-b0ea-1af699c810a9
+    9dcab7eb-6b10-4791-a180-086a547d3f90
+    702d8f46-20f4-4418-80a1-9cfed4c12534
+    939d590b-2903-4fe3-b244-a9ca3f572053
+
+    KeyPairGenerator
+    37901435-2795-4f99-947c-9fb4ec0236fb
+    adfbfcb8-7a57-434c-a921-a2b330cf5fdc
+    d6010fb9-4e02-42ae-8f05-6c3f39d0ca57
+    602da8e6-276e-4c17-bc7c-3b244dbecb86
+    ba135983-ac20-4aae-b872-b29abb19e3bc
+
+    KeyAgreement
+    4cb98123-1e36-4e71-a4cb-70c98b8f83b4
+    0283ff5c-bc49-4ddb-89d6-c6a8805f888d
+
+    KeyFactory
+    2a582915-20a0-4661-97bf-0ecb6aea1dd1
+    84af2f2a-1d8c-4934-8c97-66b181d45415
+    ddeb9752-987a-4444-bed5-88b6c32d73ff
+    46dfa3cd-dad7-4c2e-9804-6d2f5dd4c7c9
+    8723d25b-4468-4b09-bc47-735da1980877
+
+    SecretKeyFactory
+    ddeb9752-987a-4444-bed5-88b6c32d73ff
+    46dfa3cd-dad7-4c2e-9804-6d2f5dd4c7c9
+    8723d25b-4468-4b09-bc47-735da1980877
+search:
+  methodcall:
+    name: getInstance
+    declaration:
+      type:
+        reference:
+          matches: (java\.security|javax\.crypto)\.(KeyGenerator|KeyPairGenerator|KeyAgreement|KeyFactory|SecretKeyFactory)
+        checkInheritance: false
+availableFixes:
+- name: <html>Use Encryptor.<b>decrypt(ciphertext)</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.crypto.PlainText pt = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().decrypt(ciphertext);
+- name: <html>Use Encryptor.<b>decrypt(secretkey,ciphertext)</b></html>
+  actions:
+  - rewrite:
+      to: ' org.owasp.esapi.crypto.PlainText pt = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().decrypt(secretkey,ciphertext);'
+- name: <html>Use Encryptor.<b>encrypt(plaintext)</b></html>
+  actions:
+  - rewrite:
+      to: ' org.owasp.esapi.crypto.CipherText ct = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().encrypt(plaintext);'
+- name: <html>Use Encryptor.<b>encrypt(secretkey,plaintext)</b></html>
+  actions:
+  - rewrite:
+      to: ' org.owasp.esapi.crypto.CipherText ct = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().encrypt(secretkey,plaintext);'

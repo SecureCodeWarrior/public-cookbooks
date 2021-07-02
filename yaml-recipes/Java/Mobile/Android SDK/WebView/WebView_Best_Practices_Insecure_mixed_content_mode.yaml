@@ -4,6 +4,7 @@ metadata:
   name: 'Android WebView best practices: Insecure mixed content mode'
   shortDescription: Insecure content may be allowed to be loaded by a secure origin
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AndroidWebViewbestpractices.html

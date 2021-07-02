@@ -5,6 +5,7 @@ metadata:
   shortDescription: This comparison is sensitive to the system's locale. Ignore the
     case or add a locale.
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: ""
   enabled: true

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR00-J. Do not suppress or ignore checked exceptions
+  shortDescription: <p>Ignoring or suppressing exceptions can result in inconsistent
+    program state.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

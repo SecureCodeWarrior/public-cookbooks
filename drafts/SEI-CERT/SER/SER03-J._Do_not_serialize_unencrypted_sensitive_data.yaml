@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER03-J. Do not serialize unencrypted sensitive data
+  shortDescription: <p>If sensitive data can be serialized, it may be transmitted
+    over an insecure connection, stored in an insecure location, or disclosed inappropriately.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

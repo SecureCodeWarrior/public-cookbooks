@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET12-J. Do not use finalizers
+  shortDescription: <p>Improper use of finalizers can result in resurrection of garbage-collection-ready
+    objects and result in <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-service">denial-of-service</a>
+    vulnerabilities.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

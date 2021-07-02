@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD11. Ensure that sensitive data is kept secure
+  shortDescription: <p>Creating a file, shared preference, or database without setting
+    <code>MODE_PRIVATE</code> can leak sensitive information.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

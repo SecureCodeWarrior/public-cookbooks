@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER12-J. Prevent deserialization of untrusted data
+  shortDescription: <p>Whether a violation of this rule is exploitable depends on
+    what classes are on the JVM's classpath.&nbsp; (Note that this is a property of
+    the execution environment, not of the code being audited.) In the worst case,
+    it could lead to remote execution of arbitrary code.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

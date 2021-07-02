@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL53-J. Minimize the scope of variables
+  shortDescription: <p>Scope minimization helps developers avoid common programming
+    errors, improves code readability by connecting the declaration and actual use
+    of a variable, and improves maintainability because unused variables are more
+    easily detected and removed. It may also allow objects to be recovered by the
+    garbage collector more quickly, and it prevents violations of <a href="/confluence/display/java/DCL51-J.+Do+not+shadow+or+obscure+identifiers+in+subscopes">DCL51-J.
+    Do not shadow or obscure identifiers in subscopes</a>.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

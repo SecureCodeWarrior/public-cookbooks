@@ -1,0 +1,11 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: THI00-J. Do not invoke Thread.run()
+  shortDescription: <p>Failure to start threads correctly can cause unexpected behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

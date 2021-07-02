@@ -1,0 +1,20 @@
+id: scw:esapi:ban009-File.createTempFile
+version: 8
+metadata:
+  name: 'Sensitive Information: ESAPI: BAN009: File.createTempFile'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: createTempFile
+    declaration:
+      type: java.io.File
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: "org.owasp.esapi.Randomizer randomizer = org.owasp.esapi.reference.DefaultRandomizer.getInstance();\n\
+        \t\tString filename = randomizer.getRandomFilename({{{ children.0.children.7.arguments.1\
+        \ }}});\n\t\tjava.io.File f = new File(filename);"

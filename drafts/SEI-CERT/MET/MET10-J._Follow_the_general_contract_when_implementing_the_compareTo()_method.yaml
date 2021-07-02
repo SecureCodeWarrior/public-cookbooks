@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET10-J. Follow the general contract when implementing the compareTo() method
+  shortDescription: <p>Violating the general contract when implementing the <code>compareTo()</code>
+    method can cause unexpected results, possibly leading to invalid comparisons and
+    information disclosure.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

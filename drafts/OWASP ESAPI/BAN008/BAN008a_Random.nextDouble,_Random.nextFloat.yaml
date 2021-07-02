@@ -1,0 +1,21 @@
+id: scw:esapi:ban008-random.nextdouble-nextfloat
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextDouble, Random.nextFloat'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: nextDouble|nextFloat
+    declaration:
+      type: java.util.Random
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: |-
+        org.owasp.esapi.Randomizer randomizer = org.owasp.esapi.reference.DefaultRandomizer.getInstance();
+        float random = randomizer.getRandomReal(0,1);

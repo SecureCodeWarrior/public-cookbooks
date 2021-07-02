@@ -1,0 +1,22 @@
+id: scw:esapi:ban003-runtime-exec
+version: 8
+metadata:
+  name: 'Injection: ESAPI: BAN003: Runtime.exec'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: exec
+    declaration:
+      type: java.lang.Runtime
+availableFixes:
+- name: Comment out
+  actions:
+  - rewrite:
+      to: /* {{{ . }}} */
+- name: Remove
+  actions:
+  - rewrite:
+      to: ""

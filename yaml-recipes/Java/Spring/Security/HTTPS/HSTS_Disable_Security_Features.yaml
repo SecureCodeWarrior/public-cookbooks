@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: Disable Security Features - HSTS'
   shortDescription: Enforce HSTS protection against vulnerabilities over HTTP
   level: error
+  language: java
   scwCategory: misconfig
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationDisableSecurityFeatures-HSTS.html

@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: Prevent session from being included in the URL'
   shortDescription: Do not use URL Parameters for session tracking
   level: warning
+  language: java
   scwCategory: misconfig
   enabled: true
   comment: ""

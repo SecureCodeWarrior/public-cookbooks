@@ -4,6 +4,7 @@ metadata:
   name: Not releasing AmazonDynamoDbClient
   shortDescription: Call the shutdown() method to release the AmazonDynamoDbClient
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: ReleaseAmazonDynamoDbClientShutdown.html

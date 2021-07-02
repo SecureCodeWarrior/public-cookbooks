@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK01-J. Do not synchronize on objects that may be reused
+  shortDescription: <p>A significant number of concurrency vulnerabilities arise from
+    locking on the wrong kind of object. It is important to consider the properties
+    of the lock object rather than simply scavenging for objects on which to synchronize.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

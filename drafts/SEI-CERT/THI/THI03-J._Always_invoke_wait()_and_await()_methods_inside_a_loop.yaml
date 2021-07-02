@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: THI03-J. Always invoke wait() and await() methods inside a loop
+  shortDescription: <p>Failure to encase the <code>wait()</code> or <code>await()</code>
+    methods inside a <code>while</code> loop can lead to indefinite blocking and <a
+    href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-s">denial
+    of service</a> (DoS).</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

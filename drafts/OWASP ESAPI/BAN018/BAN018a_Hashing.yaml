@@ -1,0 +1,25 @@
+id: scw:esapi:ban018-hashing
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018a: Hashing'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getInstance
+    declaration:
+      type:
+        reference:
+          matches: (java\.security|javax\.crypto)\.(MessageDigest)
+        checkInheritance: false
+availableFixes:
+- name: <html>Use Encryptor.<b>hash(string,salt)</b></html>
+  actions:
+  - rewrite:
+      to: String hash = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().hash(s,salt);
+- name: <html>Use Encryptor.<b>hash(string,salt,iterations)</b></html>
+  actions:
+  - rewrite:
+      to: String hash = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().hash(s,salt,iterations);

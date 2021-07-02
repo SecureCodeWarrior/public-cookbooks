@@ -4,6 +4,7 @@ metadata:
   name: 'XXE: DocumentBuilderFactory: Add missing feature setExpandEntityReferences'
   shortDescription: Could lead to XXE
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection:xml
   cweCategory: 611

@@ -4,6 +4,7 @@ metadata:
   name: Use composed requestmapping annotations
   shortDescription: Improve readability by using Spring's composed annotations
   level: info
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/Usecomposedrequestmappingannotations.html

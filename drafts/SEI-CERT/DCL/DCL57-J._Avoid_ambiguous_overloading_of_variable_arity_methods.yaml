@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL57-J. Avoid ambiguous overloading of variable arity methods
+  shortDescription: <p>The <em>variable arity (varargs)</em> feature was introduced
+    in JDK v1.5.0 to support methods that accept a variable numbers of arguments.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

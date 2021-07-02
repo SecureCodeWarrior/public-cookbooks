@@ -1,0 +1,18 @@
+id: scw:esapi:ban019-URLEncoder.encode
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN019a: URLEncoder.encode'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: encode
+    declaration:
+      type: java.net.URLEncoder
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultEncoder.getInstance().encodeForURL({{{arguments.0}}})

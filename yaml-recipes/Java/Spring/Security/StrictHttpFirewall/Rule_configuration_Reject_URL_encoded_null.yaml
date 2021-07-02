@@ -5,6 +5,7 @@ metadata:
     (URL encoded) null'
   shortDescription: Rejecting the use of a (URL encoded) null is more secure
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/RejectURLEncodedNull.html

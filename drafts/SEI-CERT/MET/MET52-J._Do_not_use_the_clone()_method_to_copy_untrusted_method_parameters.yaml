@@ -1,0 +1,21 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET52-J. Do not use the clone() method to copy untrusted method parameters
+  shortDescription: <p>Making defensive copies of mutable method parameters mitigates
+    against a variety of security vulnerabilities; see <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/OBJ06-J.+Defensively+copy+mutable+inputs+and+mutable+internal+components"
+    rel="nofollow">OBJ06-J. Defensively copy mutable inputs and mutable internal components</a>
+    for additional information. However, inappropriate use of the <code>clone()</code>
+    method can allow an attacker to exploit vulnerabilities by providing arguments
+    that appear normal but subsequently return unexpected values. Such objects may
+    consequently bypass validation and security checks. When such a class might be
+    passed as an argument to a method, treat the argument as untrusted, and do not
+    use the&nbsp;<code>clone()</code> method provided by the class. Also, do not&nbsp;use
+    the&nbsp;<code>clone()</code>&nbsp;method of nonfinal classes to make defensive
+    copies.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

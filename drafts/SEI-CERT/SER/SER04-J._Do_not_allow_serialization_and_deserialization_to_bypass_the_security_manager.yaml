@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER04-J. Do not allow serialization and deserialization to bypass the security
+    manager
+  shortDescription: <p>Allowing serialization or deserialization to bypass the security
+    manager may result in classes being constructed without required security checks.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET53-J. Ensure that the clone() method calls super.clone()
+  shortDescription: <p>Cloning a subclass a nonfinal class that defines a <code>clone()</code>
+    method that fails to call <code>super.clone()</code> will produce an object of
+    the wrong class.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

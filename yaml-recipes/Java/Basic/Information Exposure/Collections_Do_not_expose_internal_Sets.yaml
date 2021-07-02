@@ -5,6 +5,7 @@ metadata:
   shortDescription: Do not expose an internal Set as it is mutable. Return a copy
     or immutable view.
   level: marked_information
+  language: java
   scwCategory: ""
   cweCategory: 200
   enabled: true

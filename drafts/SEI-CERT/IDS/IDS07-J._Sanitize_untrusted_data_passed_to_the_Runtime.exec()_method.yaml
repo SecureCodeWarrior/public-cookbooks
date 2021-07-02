@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS07-J. Sanitize untrusted data passed to the Runtime.exec() method
+  shortDescription: <p>Passing <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-untrusted">untrusted</a>,
+    unsanitized data to the <code>Runtime.exec()</code> method can result in command
+    and argument injection attacks.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -4,6 +4,7 @@ metadata:
   name: Inefficient use of String.indexOf
   shortDescription: Inefficient use of String.indexOf
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/InefficientuseofString.indexOf.html

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK07-J. Avoid deadlock by requesting and releasing locks in the same order
+  shortDescription: <p>Acquiring and releasing locks in the wrong order can result
+    in <a href="/confluence/display/java/Rule+BB.+Glossary">deadlock</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

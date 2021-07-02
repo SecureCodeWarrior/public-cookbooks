@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: CORS: disable'
   shortDescription: Enabling CORS makes the application much more vulnerable
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/DisableCORS.html

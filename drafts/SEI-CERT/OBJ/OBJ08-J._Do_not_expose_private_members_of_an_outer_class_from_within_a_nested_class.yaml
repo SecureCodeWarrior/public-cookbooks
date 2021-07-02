@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ08-J. Do not expose private members of an outer class from within a nested
+    class
+  shortDescription: <p>The Java language system weakens the accessibility of private
+    members of an outer class when a nested inner class is present, which can result
+    in an information leak.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

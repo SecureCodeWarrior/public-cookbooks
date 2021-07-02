@@ -1,0 +1,21 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC50-J. Minimize the scope of the @SuppressWarnings annotation
+  shortDescription: <p>When the compiler detects potential type-safety issues arising
+    from mixing raw types with generic code, it issues <em>unchecked warnings</em>,
+    including <em>unchecked cast warnings, unchecked method invocation warnings, unchecked
+    generic array creation warnings</em>, and <em>unchecked conversion warnings</em>
+    [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-Bloch08">Bloch
+    2008</a>]. It is permissible to use the <code>@SuppressWarnings("unchecked")</code>
+    annotation to suppress unchecked warnings when, and only when, the warning-emitting
+    code is guaranteed to be type safe. A common use case is mixing legacy code with
+    new client code. The perils of ignoring unchecked warnings are discussed extensively
+    in <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/OBJ03-J.+Do+not+mix+generic+with+nongeneric+raw+types+in+new+code"
+    rel="nofollow">OBJ03-J. Do not mix generic with nongeneric raw types in new code</a>.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

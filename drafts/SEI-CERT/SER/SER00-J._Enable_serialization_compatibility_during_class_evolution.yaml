@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER00-J. Enable serialization compatibility during class evolution
+  shortDescription: <p>Failure to provide a consistent serialization mechanism across
+    releases can limit the extensibility of classes. If classes are extended, compatibility
+    issues may result.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

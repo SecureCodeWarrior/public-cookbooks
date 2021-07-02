@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC00-J. Use SSLSocket rather than Socket for secure data exchange
+  shortDescription: <p>Use of plain sockets fails to provide any guarantee of the
+    confidentiality and integrity of data transmitted over those sockets.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

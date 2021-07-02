@@ -4,6 +4,7 @@ metadata:
   name: Do not expose internal array
   shortDescription: Do not expose an internal array as it is mutable
   level: warning
+  language: java
   scwCategory: ""
   cweCategory: 200
   enabled: true

@@ -4,6 +4,7 @@ metadata:
   name: 'Operators: Bitwise: Use logical operator (Conditional)'
   shortDescription: Use logical operator instead of bitwise operator
   level: warning
+  language: java
   scwCategory: blog:generic
   cweCategory: 480
   enabled: true

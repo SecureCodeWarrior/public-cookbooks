@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ57-J. Do not rely on methods that can be overridden by untrusted code
+  shortDescription: <p>Untrusted code can misuse APIs provided by trusted code to
+    override methods such as&nbsp;<code>Object.equals()</code>,&nbsp;<code>Object.hashCode()</code>,
+    and&nbsp;<code>Thread.run()</code>. These methods are valuable targets because
+    they are commonly used behind the scenes and may interact with components in a
+    way that is not easily discernible.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

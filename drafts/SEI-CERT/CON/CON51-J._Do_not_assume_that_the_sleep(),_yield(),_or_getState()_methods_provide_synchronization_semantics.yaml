@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: CON51-J. Do not assume that the sleep(), yield(), or getState() methods provide
+    synchronization semantics
+  shortDescription: <p>According to the <em>Java Language Specification</em>, <a class="external-link"
+    href="http://docs.oracle.com/javase/specs/jls/se7/html/jls-17.html#jls-17.3" rel="nofollow">§17.3,
+    "Sleep and Yield"</a> [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-JLS13">JLS
+    2013</a>],</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

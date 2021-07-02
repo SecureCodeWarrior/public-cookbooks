@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD16-X. Explicitly define the exported attribute for private components
+  shortDescription: <p>By not limiting access to a component intended to be private,&nbsp;sensitive
+    information or capabilities could be leaked.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

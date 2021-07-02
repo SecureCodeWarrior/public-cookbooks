@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO52-J. Do not store unencrypted sensitive information on the client side
+  shortDescription: <p>When building an application that uses a client-server model,
+    storing sensitive information, such as user credentials, on the client side may
+    result in its unauthorized disclosure if the client is vulnerable to attack.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

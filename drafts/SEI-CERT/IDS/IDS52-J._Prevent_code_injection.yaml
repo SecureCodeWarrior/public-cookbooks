@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS52-J. Prevent code injection
+  shortDescription: <p>Code injection can occur when untrusted input is injected into
+    dynamically constructed code. One&nbsp;obvious source of potential vulnerabilities
+    is the use of JavaScript from Java code.&nbsp;The <code>javax.script</code> package
+    consists of interfaces and classes that define Java scripting engines and a framework
+    for the use of those interfaces and classes in Java code. Misuse of the <code>javax.script</code>
+    API permits an attacker to execute arbitrary code on the target system.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

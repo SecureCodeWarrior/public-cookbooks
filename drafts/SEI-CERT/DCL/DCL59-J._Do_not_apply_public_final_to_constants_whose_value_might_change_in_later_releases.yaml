@@ -1,0 +1,21 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL59-J. Do not apply public final to constants whose value might change in
+    later releases
+  shortDescription: <p>The <code>final</code> keyword can be used to specify constant
+    values (that is, values that cannot change during program execution). However,
+    constants that can change over the lifetime of a program should not be declared
+    public final. <em>The Java Language Specification</em> (JLS) [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-JLS13">JLS
+    2013</a>] allows implementations to insert the value of any public final field
+    inline in any compilation unit that reads the field. Consequently, if the declaring
+    class is edited so that the new version gives a different value for the field,
+    compilation units that read the public final field could still see the old value
+    until they are recompiled. This problem may occur, for example, when a third-party
+    library is updated to the latest version but the referencing code is not recompiled.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

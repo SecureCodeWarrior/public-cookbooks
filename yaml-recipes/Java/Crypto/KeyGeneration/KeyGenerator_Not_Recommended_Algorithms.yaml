@@ -5,6 +5,7 @@ metadata:
     secret key generation algorithm: Other algorithms'
   shortDescription: Could lead to brute forcing or other cryptographic weakness
   level: marked_information
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

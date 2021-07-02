@@ -6,6 +6,7 @@ metadata:
   shortDescription: Printing a stack trace gives valuable information about software
     internals, including library/framework names and versions, to an attacker
   level: warning
+  language: java
   scwCategory: infoexposure:debuginfo
   cweCategory: 200
   enabled: true

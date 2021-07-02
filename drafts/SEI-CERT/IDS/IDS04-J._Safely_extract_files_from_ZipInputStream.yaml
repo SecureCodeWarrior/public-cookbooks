@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS04-J. Safely extract files from ZipInputStream
+  shortDescription: <p>Java provides the <code>java.util.zip</code> package for zip-compatible
+    data compression. It provides classes that enable you to read, create, and modify
+    ZIP and GZIP file formats.&nbsp;</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

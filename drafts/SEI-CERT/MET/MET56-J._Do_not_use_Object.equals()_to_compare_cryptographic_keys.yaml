@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET56-J. Do not use Object.equals() to compare cryptographic keys
+  shortDescription: <p>The method <code>java.lang.Object.equals()</code>, by default,
+    is unable to compare composite objects such as cryptographic keys. Most <code>Key</code>
+    classes fail to provide an <code>equals()</code> implementation that overrides
+    <code>Object.equals()</code>. In such cases, the components of the composite object
+    must be compared individually to ensure correctness.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

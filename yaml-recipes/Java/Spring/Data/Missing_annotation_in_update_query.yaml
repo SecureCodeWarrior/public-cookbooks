@@ -5,6 +5,7 @@ metadata:
   shortDescription: This query is performing a write operation in the database, therefore
     you should annotate it with @Modifying annation.
   level: error
+  language: java
   scwCategory: ""
   enabled: true
 search:

@@ -4,6 +4,7 @@ metadata:
   name: 'Crypto: KeyAgreement: Guide on Approved Cryptographic Algorithm'
   shortDescription: This cryptographic algorithm is not recommended
   level: marked_information
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

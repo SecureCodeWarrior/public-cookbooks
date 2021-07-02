@@ -1,0 +1,19 @@
+id: scw:esapi:ban014-HttpServletResponse.addCookie
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN014: HttpServletResponse.addCookie'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: addCookie
+    declaration:
+      type: javax.servlet.http.HttpServletResponse
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultHTTPUtilities.getInstance().addCookie({{{
+        children.0.arguments.0}}});

@@ -5,6 +5,7 @@ metadata:
   shortDescription: Disabling Spring Security's default headers makes the application
     vulnerable
   level: warning
+  language: java
   scwCategory: misconfig
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationDisabledHeaders.html

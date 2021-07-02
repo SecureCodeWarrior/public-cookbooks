@@ -5,6 +5,7 @@ metadata:
     semicolon'
   shortDescription: Rejecting semicolons is more secure
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/RejectSemicolons.html

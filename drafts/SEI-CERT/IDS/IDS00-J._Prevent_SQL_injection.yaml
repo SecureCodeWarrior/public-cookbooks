@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS00-J. Prevent SQL injection
+  shortDescription: <p>Failure to sanitize user input before processing or storing
+    it can result in injection attacks.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

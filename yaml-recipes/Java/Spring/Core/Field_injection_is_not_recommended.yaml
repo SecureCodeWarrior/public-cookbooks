@@ -8,6 +8,7 @@ metadata:
     A constructor therefore enforces the dependency requirement whether or not you're
     using Spring, making it container-agnostic.
   level: error
+  language: java; kotlin
   scwCategory: ""
   enabled: true
   comment: ""

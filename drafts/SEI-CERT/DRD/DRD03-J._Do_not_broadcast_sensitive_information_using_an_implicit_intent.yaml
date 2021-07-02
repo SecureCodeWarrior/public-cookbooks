@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD03-J. Do not broadcast sensitive information using an implicit intent
+  shortDescription: <p>Using an implicit intent can leak sensitive information to
+    malicious apps or result in denial of service.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

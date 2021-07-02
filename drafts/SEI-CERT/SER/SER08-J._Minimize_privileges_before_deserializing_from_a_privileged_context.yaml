@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER08-J. Minimize privileges before deserializing from a privileged context
+  shortDescription: <p>Deserializing objects from an unrestricted privileged context
+    can result in arbitrary code execution.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

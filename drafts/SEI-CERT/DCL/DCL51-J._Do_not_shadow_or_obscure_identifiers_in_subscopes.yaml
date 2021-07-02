@@ -1,0 +1,18 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL51-J. Do not shadow or obscure identifiers in subscopes
+  shortDescription: <p>Reuse of identifier names in subscopes leads to obscuration
+    or shadowing. Reused identifiers in the current scope can render those defined
+    elsewhere inaccessible. Although the <em>Java Language Specification</em> (JLS)
+    [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-JLS11">JLS
+    2013</a>] clearly resolves any syntactic ambiguity arising from obscuring or shadowing,
+    such ambiguity burdens code maintainers and auditors, especially when code requires
+    access to both the original named entity and the inaccessible one. The problem
+    is exacerbated when the reused name is defined in a different package.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

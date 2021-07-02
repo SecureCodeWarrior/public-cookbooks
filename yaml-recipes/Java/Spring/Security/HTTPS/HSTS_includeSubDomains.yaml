@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: HSTS - includeSubDomains'
   shortDescription: Include subdomains in the HSTS domain
   level: error
+  language: java
   scwCategory: misconfig
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationHSTS-includeSubDomains.html

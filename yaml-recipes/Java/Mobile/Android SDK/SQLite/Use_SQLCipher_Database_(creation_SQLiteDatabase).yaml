@@ -4,6 +4,7 @@ metadata:
   name: 'Insecure Data Storage: Use SQLCipher Database (creation - SQLiteDatabase)'
   shortDescription: SQLite Databases are an insecure means of storage
   level: error
+  language: java
   enabled: true
   descriptionFile: descriptions/java_android_storage_encrypt_local_database_files_use_sqlcipher.html
 search:

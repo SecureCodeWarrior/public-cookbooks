@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET51-J. Do not use overloaded methods to differentiate between runtime types
+  shortDescription: <p>Java supports overloading methods and can distinguish between
+    methods with different signatures. Consequently, with some qualifications, methods
+    within a class can have the same name if they have different parameter lists.
+    In method overloading, the method to be invoked at runtime is determined at compile
+    time. Consequently, the overloaded method associated with the static type of the
+    object is invoked even when the runtime type differs for each invocation.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

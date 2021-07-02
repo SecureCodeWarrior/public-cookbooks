@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM02-J. Ensure that division and remainder operations do not result in divide-by-zero
+    errors
+  shortDescription: <p>A division or remainder by zero can result in abnormal program
+    termination and <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-serviceattack">denial-of-service</a>
+    (DoS).</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

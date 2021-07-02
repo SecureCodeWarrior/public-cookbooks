@@ -1,0 +1,21 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC56-J. Do not serialize direct handles to system resources
+  shortDescription: <p>Serialized objects can be altered outside of any Java program
+    unless they are protected using mechanisms such as sealing and signing. (See <a
+    class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/ENV01-J.+Place+all+security-sensitive+code+in+a+single+JAR+and+sign+and+seal+it"
+    rel="nofollow">ENV01-J. Place all security-sensitive code in a single JAR and
+    sign and seal it</a>.) If an object referring to a system resource becomes serialized,
+    and an attacker can alter the serialized form of the object, it becomes possible
+    to modify the system resource that the serialized handle refers to. For example,
+    an attacker may modify a serialized file handle to refer to an arbitrary file
+    on the system. In the absence of a security manager, any operations that use the
+    file handle will be carried out using the attacker-supplied file path and file
+    name.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

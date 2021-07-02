@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: VNA05-J. Ensure atomicity when reading and writing 64-bit values
+  shortDescription: <p>Failure to ensure the atomicity of operations involving 64-bit
+    values in multithreaded applications can result in reading and writing indeterminate
+    values. However, many Java Virtual Machines read and write 64-bit values atomically
+    even though the specification does not require them to.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

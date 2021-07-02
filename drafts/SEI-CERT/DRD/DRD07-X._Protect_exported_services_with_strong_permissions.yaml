@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD07-X. Protect exported services with strong permissions
+  shortDescription: <p>Failing to protect an exported service with strong permissions
+    may lead to sensitive data being revealed or to denial of service.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

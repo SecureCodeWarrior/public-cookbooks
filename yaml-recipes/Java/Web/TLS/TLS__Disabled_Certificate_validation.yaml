@@ -4,6 +4,7 @@ metadata:
   name: 'TLS: Disabled Certificate validation'
   shortDescription: The verify method has been overridden, and always returns true
   level: warning
+  language: java
   scwCategory: insufficient_transport_layer_protection
   enabled: true
 search:

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV04-J. Do not disable bytecode verification
+  shortDescription: <p>Bytecode verification ensures that the bytecode contains many
+    of the security checks mandated by the <em>Java Language Specification</em>. Omitting
+    the verification step could permit execution of insecure Java code.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

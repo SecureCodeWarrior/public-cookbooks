@@ -1,0 +1,14 @@
+id: scw:esapi:input-validation-compliant
+version: 8
+metadata:
+  name: 'Input Validation: ESAPI: ESAPI ValidatorCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: isValidInput
+    declaration:
+      type: org.owasp.esapi.Validator
+availableFixes: []

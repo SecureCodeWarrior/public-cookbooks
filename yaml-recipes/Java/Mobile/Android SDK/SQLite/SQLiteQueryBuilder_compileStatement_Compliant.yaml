@@ -4,6 +4,7 @@ metadata:
   name: 'SQL Injection: SQLiteQueryBuilder compileStatement Compliant'
   shortDescription: 'SQL Injection: SQLiteQueryBuilder compileStatement - Compliant'
   level: compliant
+  language: java
   enabled: true
   comment: ""
   descriptionFile: descriptions/java_android_secure_database_queries.html

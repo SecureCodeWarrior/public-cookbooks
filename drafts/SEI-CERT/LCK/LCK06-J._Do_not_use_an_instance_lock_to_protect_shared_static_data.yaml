@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK06-J. Do not use an instance lock to protect shared static data
+  shortDescription: <p>Using an instance lock to protect static shared data can result
+    in nondeterministic behavior.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

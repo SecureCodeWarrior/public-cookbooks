@@ -5,6 +5,7 @@ metadata:
   shortDescription: To encourage use of interfaces rather than direct field access,
     add a getter.
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
 search:

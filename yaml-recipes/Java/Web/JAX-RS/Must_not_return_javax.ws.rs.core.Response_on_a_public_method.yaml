@@ -4,6 +4,7 @@ metadata:
   name: Must not return javax.ws.rs.core.Response on a public method
   shortDescription: Must not return javax.ws.rs.core.Response on a public method
   level: error
+  language: java; kotlin
   enabled: true
   comment: Why is this a bad practice?
 search:

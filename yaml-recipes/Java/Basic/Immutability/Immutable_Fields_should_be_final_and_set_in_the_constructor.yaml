@@ -4,6 +4,7 @@ metadata:
   name: 'Immutable: Fields should be final and set in the constructor'
   shortDescription: Making fields final can highlight mutability issues
   level: warning
+  language: java; kotlin
   scwCategory: ""
   enabled: true
 search:

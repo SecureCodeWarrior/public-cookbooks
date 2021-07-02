@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM52-J. Be aware of numeric promotion behavior
+  shortDescription: <p>Numeric promotions are used to convert the operands of a numeric
+    operator to a common type so that an operation can be performed. When using arithmetic
+    operators with mixed operand sizes, narrower operands are promoted to the type
+    of the wider operand.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

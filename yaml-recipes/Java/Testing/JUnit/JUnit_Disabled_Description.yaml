@@ -4,6 +4,7 @@ metadata:
   name: JUnit @Disabled Description
   shortDescription: Add a description to indicate why the test has been disabled
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
 search:

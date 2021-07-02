@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ10-J. Do not use public static nonfinal fields
+  shortDescription: <p>Unauthorized modifications of public static variables can result
+    in unexpected behavior and violation of class <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-invariant">invariants</a>.
+    Furthermore, because static variables can be visible to code loaded by different
+    class loaders when those class loaders are in the same delegation chain, such
+    variables can be used as a covert communication channel between different application
+    domains.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

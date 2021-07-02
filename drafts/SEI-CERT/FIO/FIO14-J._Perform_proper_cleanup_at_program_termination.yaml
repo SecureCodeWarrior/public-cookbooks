@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO14-J. Perform proper cleanup at program termination
+  shortDescription: <p>Failure to perform necessary cleanup at program termination
+    may leave the system in an inconsistent state.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

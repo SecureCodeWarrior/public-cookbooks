@@ -1,0 +1,18 @@
+id: scw:esapi:ban018-timestamp-compliant
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN018e: TimestampCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: getTimeStamp|getRelativeTimeStamp
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encryptor)
+        checkInheritance: false
+availableFixes: []

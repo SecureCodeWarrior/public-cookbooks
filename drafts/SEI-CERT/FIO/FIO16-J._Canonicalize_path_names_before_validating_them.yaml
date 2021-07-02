@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO16-J. Canonicalize path names before validating them
+  shortDescription: <p>Using path names from untrusted sources without first <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-canon">canonicalizing</a>
+    them and then validating them can result in directory traversal and path equivalence
+    <span class="confluence-link"><a href="/confluence/display/java/Rule+BB.+Glossary">vulnerabilities</a></span>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -4,6 +4,7 @@ metadata:
   name: 'CSRF: Disabled in WebSecurityConfigurator'
   shortDescription: CSRF protection is disabled
   level: info
+  language: java
   scwCategory: csrf
   enabled: true
 search:

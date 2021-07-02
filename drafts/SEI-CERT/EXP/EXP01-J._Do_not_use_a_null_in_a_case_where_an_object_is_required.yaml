@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP01-J. Do not use a null in a case where an object is required
+  shortDescription: <p>Dereferencing a null pointer can lead to a <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-">denial
+    of service</a>. In multithreaded programs, null pointer dereferences can violate
+    cache coherency policies and can cause resource leaks.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

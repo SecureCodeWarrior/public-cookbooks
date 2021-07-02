@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS54-J. Prevent LDAP injection
+  shortDescription: <p>The Lightweight Directory Access Protocol (LDAP) allows an
+    application to remotely perform operations such as searching and modifying records
+    in directories. LDAP injection results from inadequate input sanitization and
+    validation and allows malicious users to glean restricted information using the
+    directory service.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

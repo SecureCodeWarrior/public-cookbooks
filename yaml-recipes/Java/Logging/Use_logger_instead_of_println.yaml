@@ -5,6 +5,7 @@ metadata:
   shortDescription: Printing messages directly to the standard output is considered
     a bad practice. Use a logger instead.
   level: error
+  language: java
   scwCategory: insufficient_logging:generic
   enabled: true
   descriptionFile: Logging/descriptions/ReplacePrintWithLogger.html

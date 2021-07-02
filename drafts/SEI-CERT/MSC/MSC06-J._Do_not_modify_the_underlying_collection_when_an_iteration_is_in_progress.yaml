@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC06-J. Do not modify the underlying collection when an iteration is in progress
+  shortDescription: <p>Modifying a <code>Collection</code> while iterating over it
+    results in undefined behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

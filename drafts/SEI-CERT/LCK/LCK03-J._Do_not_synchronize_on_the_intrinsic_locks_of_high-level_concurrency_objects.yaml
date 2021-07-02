@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK03-J. Do not synchronize on the intrinsic locks of high-level concurrency
+    objects
+  shortDescription: <p>Synchronizing on the intrinsic lock of high-level concurrency
+    utilities can cause nondeterministic behavior resulting from inconsistent locking
+    policies.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

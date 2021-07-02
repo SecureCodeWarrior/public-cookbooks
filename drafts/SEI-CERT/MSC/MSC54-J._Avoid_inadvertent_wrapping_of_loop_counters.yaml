@@ -1,0 +1,21 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC54-J. Avoid inadvertent wrapping of loop counters
+  shortDescription: <p>Unless coded properly, a <code>while</code> or <code>for</code>
+    loop may execute forever or until the counter wraps around and reaches its final
+    value. (See <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/NUM00-J.+Detect+or+prevent+integer+overflow"
+    rel="nofollow">NUM00-J. Detect or prevent integer overflow</a>.) This problem
+    may result from incrementing or decrementing a loop counter by more than one and
+    then testing for equality to a specified value to terminate the loop. In this
+    case, it is possible that the loop counter will leapfrog the specified value and
+    execute either forever or until the counter wraps around and reaches its final
+    value. This problem may also be caused by naïve testing against limits—for example,
+    looping while a counter is less than or equal to <code>Integer.MAX_VALUE</code>
+    or greater than or equal to <code>Integer.MIN_VALUE</code>.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

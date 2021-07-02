@@ -4,6 +4,7 @@ metadata:
   name: 'Immutable: avoid setters that return values'
   shortDescription: Avoid setters methods that return values
   level: warning
+  language: java; kotlin
   scwCategory: ""
   enabled: true
 search:

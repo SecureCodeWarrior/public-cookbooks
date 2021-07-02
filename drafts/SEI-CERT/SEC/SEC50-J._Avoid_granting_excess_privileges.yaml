@@ -1,0 +1,23 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC50-J. Avoid granting excess privileges
+  shortDescription: '<p>A Java security policy grants permissions to code to allow
+    access to specific system resources. A <em>code source</em> (an object of type&nbsp;<code>CodeSource</code>),
+    to which a permission is granted, consists of the code location (URL) and a reference
+    to the certificate(s) containing the public key(s) corresponding to the private
+    key(s) used to digitally sign the code. Reference to the certificate(s) is pertinent
+    only if the code was digitally signed. A <em>protection domain</em> encompasses
+    a <code><span>CodeSource</span></code><span style="font-family: Courier New;">&nbsp;</span>
+    and the permissions granted to code from that <code><span>CodeSource</span></code>,
+    as determined by the security policy currently in effect. Consequently, classes
+    signed by the same key and originating from the same URL are placed in the same
+    protection domain. A class belongs to one and only one protection domain. Classes
+    that have the same permissions but are from different code sources belong to different
+    domains.</p>'
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

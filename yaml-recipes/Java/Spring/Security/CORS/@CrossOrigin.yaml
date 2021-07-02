@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin'
   shortDescription: Avoid enabling CORS, or configure it as strictly as possible
   level: warning
+  language: java
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationCORSAvoidbroadsettingsCrossOrigin.html
 search:

@@ -7,6 +7,7 @@ metadata:
     this method should not be exposed as a Rest endpoint, please consider extracting
     it into an external Component class and call it from inside this controller.
   level: error
+  language: java
   scwCategory: ""
   enabled: true
 search:

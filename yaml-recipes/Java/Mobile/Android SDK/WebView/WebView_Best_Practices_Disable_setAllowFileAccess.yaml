@@ -4,9 +4,10 @@ metadata:
   name: 'Android WebView best practices: Disable setAllowFileAccess'
   shortDescription: Enabling this WebView setting has security implications
   level: error
+  language: java
   scwCategory: ""
   enabled: false
-  comment: Quickfix to be implemented
+  comment: Quickfix to be implemented!
   descriptionFile: descriptions/AndroidWebViewbestpractices.html
   tags: android-security-set
 search:

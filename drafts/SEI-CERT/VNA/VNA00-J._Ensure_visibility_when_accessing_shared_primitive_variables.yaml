@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: VNA00-J. Ensure visibility when accessing shared primitive variables
+  shortDescription: <p>Failing to ensure the visibility of a shared primitive variable
+    may result in a thread observing a stale value of the variable.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

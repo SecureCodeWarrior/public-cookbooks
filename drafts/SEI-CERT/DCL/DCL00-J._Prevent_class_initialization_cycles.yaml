@@ -1,0 +1,11 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL00-J. Prevent class initialization cycles
+  shortDescription: <p>Initialization cycles may lead to unexpected results.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

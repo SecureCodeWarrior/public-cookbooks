@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: JNI00-J. Define wrappers around native methods
+  shortDescription: <p>Failure to define wrappers around native methods can allow
+    unprivileged callers to invoke them and <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-ex">exploit</a>
+    inherent <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-vuln">vulnerabilities</a>
+    such as buffer overflows in native libraries.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

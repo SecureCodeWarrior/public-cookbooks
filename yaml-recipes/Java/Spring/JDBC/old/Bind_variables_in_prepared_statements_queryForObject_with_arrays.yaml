@@ -5,6 +5,7 @@ metadata:
     queryForObject with arrays'
   shortDescription: Could lead to JDBC Injection
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: true

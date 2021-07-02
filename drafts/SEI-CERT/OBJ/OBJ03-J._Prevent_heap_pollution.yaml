@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ03-J. Prevent heap pollution
+  shortDescription: <p>Mixing generic and nongeneric code can produce unexpected results
+    and exceptional conditions.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

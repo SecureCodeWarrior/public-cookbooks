@@ -5,6 +5,7 @@ metadata:
   shortDescription: void methods have side-effects, return a new oject or primitve
     instead
   level: warning
+  language: xml; java; js; php; py; swift; jsp; kotlin
   scwCategory: ""
   enabled: true
   excludeTestDirs: true

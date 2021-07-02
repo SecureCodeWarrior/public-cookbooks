@@ -1,0 +1,19 @@
+id: scw:esapi:ban013-HttpServletResponse.addHeader
+version: 8
+metadata:
+  name: 'Injection: ESAPI: BAN013: HttpServletResponse.addHeader'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: addHeader
+    declaration:
+      type: javax.servlet.http.HttpServletResponse
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultHTTPUtilities.getInstance().addHeader({{{
+        children.0.arguments.0}}}, {{{ children.0.arguments.1 }}});

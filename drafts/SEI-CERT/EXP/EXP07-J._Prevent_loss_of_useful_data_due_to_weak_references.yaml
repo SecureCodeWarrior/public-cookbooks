@@ -1,0 +1,11 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP07-J. Prevent loss of useful data due to weak references
+  shortDescription: <p>If weak references are misused then ...</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

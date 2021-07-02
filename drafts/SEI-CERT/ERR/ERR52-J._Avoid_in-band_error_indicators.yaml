@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR52-J. Avoid in-band error indicators
+  shortDescription: <p>An in-band error indicator is a value returned by a method
+    that indicates either&nbsp;a legitimate return value or an illegitimate value
+    that indicates an error. Some common examples of in-band error indicators include</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

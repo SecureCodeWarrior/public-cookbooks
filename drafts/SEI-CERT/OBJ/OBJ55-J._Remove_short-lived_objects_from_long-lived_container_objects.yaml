@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ55-J. Remove short-lived objects from long-lived container objects
+  shortDescription: <p>Always remove short-lived objects from long-lived container
+    objects when the task is over. For example, objects attached to a <code>java.nio.channels.SelectionKey</code>
+    object must be removed when they are no longer needed. Doing so reduces the likelihood
+    of memory leaks. Similarly, use of array-based data structures such as <code>ArrayList</code>
+    can introduce a requirement to indicate the absence of an entry by explicitly
+    setting <code>ArrayList</code>'s individual array elements to <code>null</code>.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

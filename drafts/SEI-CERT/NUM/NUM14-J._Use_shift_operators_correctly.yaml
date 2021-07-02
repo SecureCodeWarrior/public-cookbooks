@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM14-J. Use shift operators correctly
+  shortDescription: <p>Incorrect use of shift operators can lead to unanticipated
+    results, causing erratic control flow or unanticipated program behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

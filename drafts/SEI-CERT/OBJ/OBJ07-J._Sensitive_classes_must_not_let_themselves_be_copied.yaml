@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ07-J. Sensitive classes must not let themselves be copied
+  shortDescription: <p>Failure to make sensitive classes noncopyable can permit violations
+    of class invariants and provide malicious subclasses with the opportunity to&nbsp;<span
+    class="confluence-link"><a href="/confluence/display/java/Rule+BB.+Glossary">exploit</a></span>
+    the code to create new instances of objects, even in the presence of the default
+    security manager (in the absence of custom security checks).</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

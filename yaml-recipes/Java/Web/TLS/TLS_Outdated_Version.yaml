@@ -4,6 +4,7 @@ metadata:
   name: 'TLS: Weak Encryption: Outdated Version'
   shortDescription: Could lead to Data Exposure
   level: warning
+  language: java
   newCodeOnly: false
   scwCategory: itlp
   enabled: true

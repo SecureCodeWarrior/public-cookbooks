@@ -1,0 +1,17 @@
+id: scw:esapi:ban014-HttpServletResponse.addCookie-compliant
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN014: HttpServletResponse.addCookieCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: addCookie
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

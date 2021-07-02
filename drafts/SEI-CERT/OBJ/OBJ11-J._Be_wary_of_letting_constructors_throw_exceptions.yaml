@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ11-J. Be wary of letting constructors throw exceptions
+  shortDescription: <p>Allowing access to a partially initialized object can provide
+    an attacker with an opportunity to resurrect the object before or during its finalization;
+    as a result, the attacker can bypass security checks.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

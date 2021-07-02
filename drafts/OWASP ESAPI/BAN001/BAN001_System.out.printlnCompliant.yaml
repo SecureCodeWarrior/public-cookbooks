@@ -1,0 +1,17 @@
+id: scw:esapi:ban001-print-compliant
+version: 8
+metadata:
+  name: 'Sensitive Information: ESAPI: BAN001: System.out.printlnCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: log
+    declaration:
+      type:
+        reference:
+          matches: (org.apache.log4j)\.(Category)
+        checkInheritance: false
+availableFixes: []

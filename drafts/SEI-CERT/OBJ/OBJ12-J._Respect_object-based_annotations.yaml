@@ -1,0 +1,11 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ12-J. Respect object-based annotations
+  shortDescription: <p>If object-based annotations are not respected then ...</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

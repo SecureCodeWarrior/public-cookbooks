@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM50-J. Convert integers to floating point for floating-point operations
+  shortDescription: <p>Incautious use of integer arithmetic to calculate a value for
+    assignment to a floating-point variable can lead to loss of information. For example,
+    integer arithmetic always produces integral results, discarding information about
+    any possible fractional remainder. Furthermore, there can be loss of precision
+    when converting integers to floating-point values. See <a class="external-link"
+    href="https://www.securecoding.cert.org/confluence/display/java/NUM13-J.+Avoid+loss+of+precision+when+converting+primitive+integers+to+floating-point"
+    rel="nofollow">NUM13-J. Avoid loss of precision when converting primitive integers
+    to floating-point</a> for additional information. Correct programming of expressions
+    that combine integer and floating-point values requires careful consideration.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

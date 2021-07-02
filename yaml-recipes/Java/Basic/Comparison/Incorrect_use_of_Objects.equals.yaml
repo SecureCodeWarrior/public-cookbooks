@@ -4,6 +4,7 @@ metadata:
   name: Incorrect use of Objects.equals
   shortDescription: Comparing an object and a primitive will always return false
   level: error
+  language: java
   enabled: true
 search:
   methodcall:

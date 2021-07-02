@@ -5,6 +5,7 @@ metadata:
   shortDescription: Add a CSP header for additional protection agains XSS and data
     injection
   level: info
+  language: java
   scwCategory: xss
   enabled: true
   descriptionFile: descriptions/SpringSecurityHeadersaddCSPheader.html

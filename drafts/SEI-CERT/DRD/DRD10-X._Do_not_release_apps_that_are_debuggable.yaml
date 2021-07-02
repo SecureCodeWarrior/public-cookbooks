@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD10-X. Do not release apps that are debuggable
+  shortDescription: <p>Releasing an app with its <code>android:debuggable</code> attribute
+    set to <code>true</code> can leak sensitive information. In addition, the app
+    is vulnerable to decompilation, resulting in alteration to source code.Attackers
+    can leverage the additional information they gain from debugging output to mount
+    attacks targeted on the framework, database, or other resources used by the application.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

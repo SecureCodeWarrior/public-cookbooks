@@ -1,0 +1,20 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET55-J. Return an empty array or collection instead of a null value for methods
+    that return an array or collection
+  shortDescription: <p>Some APIs intentionally return a&nbsp;null reference to indicate
+    that instances are unavailable. This practice can lead to denial-of-service vulnerabilities
+    when the client code fails to explicitly handle the null return value case. A
+    null value is an example of an in-band error indicator, which is discouraged by
+    <a href="/confluence/display/java/ERR52-J.+Avoid+in-band+error+indicators">ERR52-J.
+    Avoid in-band error indicators</a>. For methods that return a set of values using
+    an array or collection, returning an empty array or collection is an excellent
+    alternative to returning a null value, as most callers are better equipped to
+    handle and empty set than a null value.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TSM00-J. Do not override thread-safe methods with methods that are not thread-safe
+  shortDescription: <p>Overriding&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-th">thread-safe</a>
+    methods with methods that are unsafe for concurrent access can result in unexpected
+    behavior.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

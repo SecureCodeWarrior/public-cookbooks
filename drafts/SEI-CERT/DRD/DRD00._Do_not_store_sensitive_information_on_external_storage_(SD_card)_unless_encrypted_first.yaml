@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD00. Do not store sensitive information on external storage (SD card) unless
+    encrypted first
+  shortDescription: <p>Storing sensitive information on external storage can leak
+    sensitive information to malicious apps.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

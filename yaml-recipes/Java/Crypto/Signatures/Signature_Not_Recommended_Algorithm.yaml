@@ -4,6 +4,7 @@ metadata:
   name: 'Crypto: Signature: Approved Hashing Algorithm'
   shortDescription: This hashing algorithm is not recommended for cryptographic use
   level: marked_information
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

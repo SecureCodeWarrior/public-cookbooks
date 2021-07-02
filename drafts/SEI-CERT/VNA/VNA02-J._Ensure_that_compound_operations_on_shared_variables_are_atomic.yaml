@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: VNA02-J. Ensure that compound operations on shared variables are atomic
+  shortDescription: <p>When operations on shared variables are not atomic, unexpected
+    results can be produced. For example, information can be disclosed inadvertently
+    because one user can receive information about other users.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

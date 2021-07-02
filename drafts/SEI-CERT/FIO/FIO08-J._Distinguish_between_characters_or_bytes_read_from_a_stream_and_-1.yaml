@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO08-J. Distinguish between characters or bytes read from a stream and -1
+  shortDescription: <p>Historically, using a narrow type to capture the return value
+    of a byte input method has resulted in significant <a href="/confluence/display/java/Rule+BB.+Glossary">vulnerabilities</a>,
+    including command injection attacks; see <a class="external-link" href="http://www.cert.org/advisories/CA-1996-22.html"
+    rel="nofollow">CA-1996-22 advisory</a>. Consequently, the severity of this error
+    is high.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

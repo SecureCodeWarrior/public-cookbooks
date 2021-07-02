@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK02-J. Do not synchronize on the class object returned by getClass()
+  shortDescription: <p>Synchronizing on the class object returned by <code>getClass()</code>
+    can result in nondeterministic behavior.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

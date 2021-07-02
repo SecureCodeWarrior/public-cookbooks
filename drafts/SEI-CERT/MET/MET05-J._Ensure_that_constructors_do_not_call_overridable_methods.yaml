@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET05-J. Ensure that constructors do not call overridable methods
+  shortDescription: <p>Allowing a constructor to call overridable methods can provide
+    an attacker with access to the <code>this</code> reference before an object is
+    fully initialized, which could lead to a <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-vulner">vulnerability</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

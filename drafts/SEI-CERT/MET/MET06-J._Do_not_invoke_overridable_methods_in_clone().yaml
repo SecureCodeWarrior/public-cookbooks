@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET06-J. Do not invoke overridable methods in clone()
+  shortDescription: <p>Calling overridable methods on the clone under construction
+    can expose class internals to malicious code or violate class <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-invariant">invariants</a>
+    by exposing the clone to <a href="/confluence/display/java/Rule+BB.+Glossary">trusted
+    code</a> in a partially initialized state, affording the opportunity to corrupt
+    the state of the clone, the object being cloned, or both.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

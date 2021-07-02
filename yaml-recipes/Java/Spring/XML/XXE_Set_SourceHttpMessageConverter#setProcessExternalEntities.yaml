@@ -5,6 +5,7 @@ metadata:
     to true'
   shortDescription: Prevent XXE by disabling the processing of External Entities
   level: error
+  language: java
   scwCategory: injection:xml
   cweCategory: 611
   enabled: true

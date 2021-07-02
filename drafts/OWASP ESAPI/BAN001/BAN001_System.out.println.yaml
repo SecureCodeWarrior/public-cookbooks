@@ -1,0 +1,22 @@
+id: scw:esapi:ban001-print
+version: 8
+metadata:
+  name: 'Sensitive Information: ESAPI: BAN001: System.out.println'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: print(ln)?
+    declaration:
+      type:
+        reference:
+          matches: (java.io)\.(PrintStream)
+        checkInheritance: false
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.Log4JLogger.getInstance(getClass()).log(org.apache.log4j.Level.ALL,{{{children.0.children.1.children.1}}});

@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK11-J. Avoid client-side locking when using classes that do not commit to
+    their locking strategy
+  shortDescription: <p>Using client-side locking when the&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-threa">thread-safe</a>
+    class fails to commit to its locking strategy can cause data inconsistencies and
+    <a href="/confluence/display/java/Rule+BB.+Glossary">deadlock</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

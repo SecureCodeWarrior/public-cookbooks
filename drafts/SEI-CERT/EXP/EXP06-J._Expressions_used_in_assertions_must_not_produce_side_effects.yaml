@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP06-J. Expressions used in assertions must not produce side effects
+  shortDescription: <p>Side effects in assertions result in program behavior that
+    depends on whether assertions are enabled or disabled.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

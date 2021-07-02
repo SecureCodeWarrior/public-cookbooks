@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TPS04-J. Ensure ThreadLocal variables are reinitialized when using thread
+    pools
+  shortDescription: <p>Objects using <code>ThreadLocal</code> data and executed by
+    different tasks in a thread pool without reinitialization might be in an unexpected
+    state when reused.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

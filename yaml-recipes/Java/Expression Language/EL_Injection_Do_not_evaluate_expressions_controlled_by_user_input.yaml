@@ -5,6 +5,7 @@ metadata:
     controlled by user input (javax)'
   shortDescription: Could lead to Expression Language Injection
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: true

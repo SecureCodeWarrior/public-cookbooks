@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET54-J. Always provide feedback about the resulting value of a method
+  shortDescription: <p>Methods should be designed to return a value that allows the
+    developer to learn about the current state of the object and/or the result of
+    an operation. This advice is consistent with <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/EXP00-J.+Do+not+ignore+values+returned+by+methods"
+    rel="nofollow">EXP00-J. Do not ignore values returned by methods</a>. The returned
+    value should be representative of the last known state and should be chosen keeping
+    in mind the perceptions and mental model of the developer.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

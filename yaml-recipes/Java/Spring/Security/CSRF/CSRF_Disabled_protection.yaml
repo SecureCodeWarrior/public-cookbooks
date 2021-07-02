@@ -5,6 +5,7 @@ metadata:
   shortDescription: Disabling Spring Security's CSRF protection makes the application
     vulnerable
   level: error
+  language: java
   scwCategory: csrf
   enabled: true
   descriptionFile: descriptions/CSRFprotectiondonotdisabledefaultprotection.html

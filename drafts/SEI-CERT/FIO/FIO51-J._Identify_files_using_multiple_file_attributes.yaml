@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO51-J. Identify files using multiple file attributes
+  shortDescription: <p>Many file-related security vulnerabilities result from a program
+    accessing an unintended file object. This often happens because file names are
+    only loosely bound to underlying file objects. File names provide no information
+    regarding the nature of the file object itself. Furthermore, the binding of a
+    file name to a file object is reevaluated each time the file name is used in an
+    operation. This reevaluation can introduce a time-of-check, time-of-use (TOCTOU)
+    race condition into an application. Objects of type&nbsp;<code>java.io.File</code>&nbsp;and
+    of type&nbsp;<code>java.nio.file.Path</code>&nbsp;are bound to underlying file
+    objects by the operating system only when the file is accessed.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

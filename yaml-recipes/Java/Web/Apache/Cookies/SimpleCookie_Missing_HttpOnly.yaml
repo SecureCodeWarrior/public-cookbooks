@@ -5,6 +5,7 @@ metadata:
   shortDescription: Prevent client-side scripts from accessing the cookie by setting
     the HttpOnly flag to true
   level: error
+  language: java
   scwCategory: improper_session_handling:improper_flags_in_cookie_headers
   enabled: true
   descriptionFile: descriptions/CookieFlags_SimpleCookie.html

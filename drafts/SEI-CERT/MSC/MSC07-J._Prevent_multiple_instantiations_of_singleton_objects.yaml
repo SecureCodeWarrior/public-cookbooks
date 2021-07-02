@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC07-J. Prevent multiple instantiations of singleton objects
+  shortDescription: <p>Using improper forms of the Singleton design pattern may lead
+    to creation of multiple instances of the singleton and violate the expected contract
+    of the class.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

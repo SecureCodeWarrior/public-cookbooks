@@ -1,0 +1,16 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ02-J. Preserve dependencies in subclasses when changing superclasses
+  shortDescription: <p>Modifying a superclass without considering the effect on subclasses
+    can introduce <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-vulnerabi">vulnerabilities</a>.
+    Subclasses that are developed with an incorrect understanding of the superclass
+    implementation can be subject to erratic behavior, resulting in inconsistent data
+    state and mismanaged control flow. Also, if the superclass implementation changes
+    then the subclass may need to be redesigned to take into account these changes.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

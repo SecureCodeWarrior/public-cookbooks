@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC04-J. Do not leak memory
+  shortDescription: <p>Memory leaks in Java applications may be exploited in a <a
+    href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-ser">DoS</a>&nbsp;attack.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

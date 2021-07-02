@@ -1,0 +1,23 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: JNI01-J. Safely invoke standard APIs that perform tasks using the immediate
+    caller's class loader instance (loadLibrary)
+  shortDescription: <p>Many static methods in standard Java APIs vary their behavior
+    according to the immediate caller's class. Such methods are considered to be caller-sensitive.
+    For example, the <code>java.lang.System.loadLibrary(library)</code> method uses
+    the immediate caller's class loader to find and dynamically load the specified
+    library containing native method definitions. Because native code bypasses all
+    of the security checks enforced by the Java Runtime Environment and other built-in
+    protections provided by the Java virtual machine, only trusted code should be
+    allowed to load native libraries. None of the loadLibrary methods in the standard
+    APIs should be invoked on behalf of untrusted code since untrusted code may not
+    have the necessary permissions to load the same libraries using its own class
+    loader instance [<a href="/confluence/display/java/Rule+AA.+References#RuleAA.References-Oracle14">Oracle
+    2014</a>].</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

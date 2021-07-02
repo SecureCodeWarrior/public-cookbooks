@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SEC58-J. Deserialization methods should not perform potentially dangerous
+    operations
+  shortDescription: <p>The severity of violations of this rule depend on the nature
+    of the potentially dangerous operations performed.&nbsp; If only mildly dangerous
+    operations are performed, the risk might be limited to denial-of-service (DoS)
+    attacks.&nbsp; At the other extreme, remote code execution is possible if attacker-supplied
+    input is supplied to methods such as <code>Runtime.exec</code> (either directly
+    or via reflection).</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

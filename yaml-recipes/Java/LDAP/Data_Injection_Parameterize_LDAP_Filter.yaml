@@ -4,6 +4,7 @@ metadata:
   name: 'Data: Injection: Parameterize LDAP Filters: DirContext#search'
   shortDescription: Could lead to LDAP Injection
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: true

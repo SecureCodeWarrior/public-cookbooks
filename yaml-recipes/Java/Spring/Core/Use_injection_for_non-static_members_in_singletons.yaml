@@ -5,6 +5,7 @@ metadata:
     Use injection for non-static members in singletons'
   shortDescription: Could lead to Sensitive Data Exposure
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: infoexposure
   enabled: true

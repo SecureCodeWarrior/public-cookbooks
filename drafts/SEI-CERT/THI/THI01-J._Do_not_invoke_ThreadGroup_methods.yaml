@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: THI01-J. Do not invoke ThreadGroup methods
+  shortDescription: <p>Use of the <code>ThreadGroup</code> APIs may result in <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-racecondition">race
+    conditions</a>, memory leaks, and inconsistent object state.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

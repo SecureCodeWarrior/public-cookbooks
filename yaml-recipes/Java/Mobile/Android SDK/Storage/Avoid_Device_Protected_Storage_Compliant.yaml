@@ -4,6 +4,7 @@ metadata:
   name: 'Data Protection: Avoid Data Exposure - Avoid Device Protected StorageCompliant'
   shortDescription: Compliant
   level: compliant
+  language: java
   enabled: true
 search:
   methodcall:

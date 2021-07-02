@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR09-J. Do not allow untrusted code to terminate the JVM
+  shortDescription: <p>Allowing unauthorized calls to <code>System.exit()</code> may
+    lead to <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-denial-of-serv">denial
+    of service</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

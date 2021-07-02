@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: STR04-J. Use compatible character encodings when communicating string data
+    between JVMs
+  shortDescription: <p>Using incompatible encodings when communicating string data
+    between JVMs can result in corrupted data.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET03-J. Methods that perform a security check must be declared private or
+    final
+  shortDescription: <p>Failure to declare a class's method private or final affords
+    the opportunity for a malicious subclass to bypass the security checks performed
+    in the method.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MET00-J. Validate method arguments
+  shortDescription: <p>Failure to validate method arguments can result in inconsistent
+    computations, runtime exceptions, and control flow <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/java/BB.+Definitions#BB.Definitions-vulnerability"
+    rel="nofollow">vulnerabilities</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

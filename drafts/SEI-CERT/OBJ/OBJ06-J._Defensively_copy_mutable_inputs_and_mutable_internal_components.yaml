@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ06-J. Defensively copy mutable inputs and mutable internal components
+  shortDescription: <p>Failing to create a copy of a mutable input may result in a
+    TOCTOU&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-vuln">vulnerability</a>
+    or expose internal mutable components to <a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-untrustedcode">untrusted
+    code</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

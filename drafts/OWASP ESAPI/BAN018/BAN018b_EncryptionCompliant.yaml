@@ -1,0 +1,18 @@
+id: scw:esapi:ban018-encryption-compliant
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018b: EncryptionCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: (de|en)crypt
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(Encryptor)
+        checkInheritance: false
+availableFixes: []

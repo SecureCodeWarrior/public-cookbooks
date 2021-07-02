@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: CORS: Avoid broad settings: @CrossOrigin - allowedHeaders'
   shortDescription: Allowing all headers makes the application vulnerable
   level: warning
+  language: java
   enabled: true
   descriptionFile: descriptions/AvoidbroadsettingsCORSCrossOrigin-allowedHeaders.html
 search:

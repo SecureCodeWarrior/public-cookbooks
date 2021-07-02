@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC56-J. Detect and remove superfluous code and values
+  shortDescription: <p>Superfluous code and values may occur in the form of dead code,
+    code that has no effect, and unused values in program logic.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

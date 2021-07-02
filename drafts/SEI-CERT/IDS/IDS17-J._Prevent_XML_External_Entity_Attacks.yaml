@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS17-J. Prevent XML External Entity Attacks
+  shortDescription: <p>Failure to sanitize user input before processing or storing
+    it can result in injection attacks.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

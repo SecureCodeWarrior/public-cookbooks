@@ -5,6 +5,7 @@ metadata:
     (instance creation)'
   shortDescription: Using DefaultHttpFirewall may lead to security flaws
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/AvoidDefaultHttpFirewallInstanceCreation.html

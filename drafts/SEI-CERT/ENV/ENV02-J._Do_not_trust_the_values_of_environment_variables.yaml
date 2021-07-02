@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ENV02-J. Do not trust the values of environment variables
+  shortDescription: <p>Untrusted environment variables can provide data for injection
+    and other attacks if not properly <a href="/confluence/display/java/Rule+BB.+Glossary">sanitized</a>.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

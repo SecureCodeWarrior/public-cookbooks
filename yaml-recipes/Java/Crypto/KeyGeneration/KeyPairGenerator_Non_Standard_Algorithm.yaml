@@ -4,6 +4,7 @@ metadata:
   name: 'Crypto: KeyPair Generation: Non Standard Cryptographic Algorithm'
   shortDescription: This cryptographic algorithm is not recommended
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

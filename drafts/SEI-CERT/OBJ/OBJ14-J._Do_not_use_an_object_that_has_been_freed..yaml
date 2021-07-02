@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ14-J. Do not use an object that has been freed.
+  shortDescription: <p>Leaking sensitive information outside a trust boundary is not
+    a good idea.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

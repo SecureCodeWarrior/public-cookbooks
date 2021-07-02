@@ -1,0 +1,18 @@
+id: scw:esapi:ban015-HttpServletRequest.isSecure-compliant
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN015a: HttpServletRequest.isSecureCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: assertSecureRequest|assertSecureChannel
+    declaration:
+      type:
+        reference:
+          matches: (org.owasp.esapi)\.(HTTPUtilities)
+        checkInheritance: false
+availableFixes: []

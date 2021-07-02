@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ01-J. Limit accessibility of fields
+  shortDescription: <p>Failing to limit field accessibility can defeat encapsulation,
+    allow attackers to manipulate fields to violate class <a href="/confluence/display/java/Rule+BB.+Glossary">invariants</a>,&nbsp;or
+    allow these fields to be corrupted as the result of concurrent accesses&nbsp;from
+    multiple threads.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: SER05-J. Do not serialize instances of inner classes
+  shortDescription: <p>Serialization of inner classes can introduce platform dependencies
+    and can cause serialization of instances of the outer class.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

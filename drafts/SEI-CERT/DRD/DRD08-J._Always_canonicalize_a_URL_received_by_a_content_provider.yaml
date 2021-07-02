@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD08-J. Always canonicalize a URL received by a content provider
+  shortDescription: <p>Failing to canonicalize a path received by a content provider
+    may lead to a directory traversal vulnerability which could result in the release
+    of sensitive data or in the malicious corruption of data.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

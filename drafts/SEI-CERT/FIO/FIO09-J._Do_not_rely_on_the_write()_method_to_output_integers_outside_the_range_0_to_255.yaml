@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: FIO09-J. Do not rely on the write() method to output integers outside the
+    range 0 to 255
+  shortDescription: <p>Using the <code>write()</code> method to output integers outside
+    the range 0 to 255 will result in truncation.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

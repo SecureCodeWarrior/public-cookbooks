@@ -5,6 +5,7 @@ metadata:
   shortDescription: A TrustManager has overridden the getAcceptedIssuers method, and
     only returns null.
   level: warning
+  language: java
   scwCategory: insufficient_transport_layer_protection
   enabled: true
 search:

@@ -5,6 +5,7 @@ metadata:
   shortDescription: Prevent a cookie being sent over unencrypted HTTP by setting the
     Secure flag to true
   level: error
+  language: java
   scwCategory: improper_session_handling:improper_flags_in_cookie_headers
   enabled: true
   descriptionFile: descriptions/CookieFlags.html

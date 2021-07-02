@@ -4,6 +4,7 @@ metadata:
   name: 'Security Misconfiguration: Content sniffing protection'
   shortDescription: Prevent MIME sniffing by disabling contentTypeOptions
   level: error
+  language: java
   scwCategory: misconfig
   enabled: true
   descriptionFile: descriptions/SecurityMisconfigurationContentsniffingprotection.html

@@ -5,6 +5,7 @@ metadata:
   shortDescription: A value over 30 minutes is considered prolonged and likely to
     reduce security
   level: warning
+  language: java
   enabled: true
   descriptionFile: descriptions/Avoidprolongedcaching.html
 search:

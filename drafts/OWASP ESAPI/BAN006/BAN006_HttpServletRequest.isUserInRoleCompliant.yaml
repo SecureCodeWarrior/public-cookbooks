@@ -1,0 +1,15 @@
+id: scw:esapi:ban006-HttpServletRequest.isUserInRole-compliant
+version: 8
+metadata:
+  name: 'Session Management: ESAPI: BAN006: HttpServletRequest.isUserInRoleCompliant'
+  shortDescription: Compliant
+  level: compliant
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name:
+      matches: isAuthorizedFor.*
+    declaration:
+      type: org.owasp.esapi.AccessController
+availableFixes: []

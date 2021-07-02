@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS06-J. Exclude unsanitized user input from format strings
+  shortDescription: <p>Incorporating&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-unt">untrusted
+    data</a> in a format string may result in information leaks or allow a <a href="/confluence/display/java/Rule+BB.+Glossary">denial-of-service
+    attack</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

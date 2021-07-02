@@ -1,0 +1,17 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: ERR54-J. Use a try-with-resources statement to safely handle closeable resources
+  shortDescription: <p>The Java Development Kit 1.7 (JDK 1.7) introduced the&nbsp;try-with-resources
+    statement (see the JLS, §14.20.3, "<code>try</code>-with-resources"&nbsp;[<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-JLS201">JLS
+    2013</a>]),&nbsp; which simplifies correct use of resources that implement the
+    <code><a class="external-link" href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html"
+    rel="nofollow">java.lang.AutoCloseable</a></code> interface, including those that
+    implement the <code><a class="external-link" href="http://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html"
+    rel="nofollow">java.io.Closeable</a></code> interface.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

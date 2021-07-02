@@ -1,0 +1,14 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: NUM08-J. Check floating-point inputs for exceptional values
+  shortDescription: <p>Incorrect or missing validation of floating-point input can
+    result in miscalculations and unexpected results, possibly leading to inconsistent
+    program behavior and <a class="external-link" href="http://Rule%20BB.%20Glossary#denial-of-service%20attack"
+    rel="nofollow">denial of service</a>.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

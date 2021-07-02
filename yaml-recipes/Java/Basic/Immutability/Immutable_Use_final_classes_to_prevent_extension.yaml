@@ -4,6 +4,7 @@ metadata:
   name: 'Immutable: use final classes to prevent extension'
   shortDescription: Make the classes final to prevent people extending as mutable
   level: warning
+  language: java
   scwCategory: ""
   enabled: true
 search:

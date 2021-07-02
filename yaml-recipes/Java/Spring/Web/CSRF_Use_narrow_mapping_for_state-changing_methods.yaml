@@ -4,6 +4,7 @@ metadata:
   name: 'Session management: Avoid CSRF: Use narrow mapping for state-changing methods'
   shortDescription: Could lead to CSRF
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: session
   enabled: true

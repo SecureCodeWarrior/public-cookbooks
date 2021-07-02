@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: LCK00-J. Use private final lock objects to synchronize classes that may interact
+    with untrusted code
+  shortDescription: <p>Exposing the lock object to untrusted code can result in DoS.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

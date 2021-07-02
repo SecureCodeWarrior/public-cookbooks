@@ -4,6 +4,7 @@ metadata:
   name: 'Crypto: Signature: Non Standard Hashing Algorithm'
   shortDescription: This hashing algorithm is not recommended for cryptographic use
   level: warning
+  language: java
   newCodeOnly: false
   scwCategory: broken_cryptography
   enabled: true

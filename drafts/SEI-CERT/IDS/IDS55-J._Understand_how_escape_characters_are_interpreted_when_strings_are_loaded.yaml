@@ -1,0 +1,19 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: IDS55-J. Understand how escape characters are interpreted when strings are
+    loaded
+  shortDescription: <p>Many classes allow inclusion of escape sequences in character
+    and string literals; examples include <code>java.util.regex.Pattern</code>&nbsp;as
+    well as classes that support XML- and SQL-based actions by passing string arguments
+    to methods. According to the <em>Java Language Specification</em> (JLS), <a class="external-link"
+    href="https://www.securecoding.cert.org/confluence/display/jg/AA.+References#AAReferences-SPL11"
+    rel="nofollow">§3.10.6, "Escape Sequences for Character and String Literals"</a>
+    [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-JLS13">JLS
+    2013</a>],</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

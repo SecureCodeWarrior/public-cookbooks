@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: EXP51-J. Do not perform assignments in conditional expressions
+  shortDescription: <p>Using the assignment operator in conditional expressions frequently
+    indicates programmer error and can result in unexpected behavior. The assignment
+    operator should not be used in the following contexts:</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

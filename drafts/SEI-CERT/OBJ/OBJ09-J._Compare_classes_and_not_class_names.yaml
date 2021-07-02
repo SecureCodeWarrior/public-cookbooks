@@ -1,0 +1,12 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ09-J. Compare classes and not class names
+  shortDescription: <p>Comparing classes solely using their names can allow a malicious
+    class to bypass security checks and gain access to protected resources.</p>
+  level: warning
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

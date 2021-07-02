@@ -1,0 +1,28 @@
+id: scw:esapi:ban002-printStacktrace
+version: 8
+metadata:
+  name: 'Sensitive Information: ESAPI: BAN002: Throwable.printStacktrace'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: printStackTrace
+    declaration:
+      type:
+        reference:
+          matches: (java.lang)\.(Throwable)
+        checkInheritance: false
+availableFixes:
+- name: <html>Replace with safe alternative, log <b>custom string</b></html>
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.Log4JLogger.getInstance(getClass()).log(org.apache.log4j.Level.ALL,"Your
+        message here");
+- name: <html>Replace with safe alternative, log <b>stacktrace</b></html>
+  actions:
+  - rewrite:
+      to: "java.io.StringWriter sw = new StringWriter();\n\t\tjava.io.PrintWriter\
+        \ pw = new java.io.PrintWriter(sw);\n\t\t{{{children.0.children.0}}}(pw);\n\
+        \t\tString trace = sw.toString();\n\t\torg.owasp.esapi.reference.Log4JLogger.getInstance(getClass()).log(org.apache.log4j.Level.ALL,trace);"

@@ -4,6 +4,7 @@ metadata:
   name: Incorrect logger argument
   shortDescription: The logger is using the wrong class name
   level: error
+  language: java
   enabled: true
 search:
   methodcall:

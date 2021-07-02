@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: TPS03-J. Ensure that tasks executing in a thread pool do not fail silently
+  shortDescription: <p>Failure to provide a mechanism for reporting that tasks in
+    a thread pool failed as a result of an exceptional condition can make it difficult
+    or impossible to diagnose the problem.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -5,6 +5,7 @@ metadata:
   shortDescription: When using this value other applications will have access to your
     application's data
   level: error
+  language: java
   scwCategory: ""
   enabled: true
   descriptionFile: descriptions/Androidstoragebestpracticesinsecureoperatingmode.html

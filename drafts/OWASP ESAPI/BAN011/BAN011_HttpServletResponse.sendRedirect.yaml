@@ -1,0 +1,19 @@
+id: scw:esapi:ban011-HttpServletResponse.sendRedirect
+version: 8
+metadata:
+  name: 'Injection: ESAPI: BAN011: HttpServletResponse.sendRedirect'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: sendRedirect
+    declaration:
+      type: javax.servlet.http.HttpServletResponse
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: org.owasp.esapi.reference.DefaultHTTPUtilities.getInstance().sendRedirect({{{
+        children.0.qualifier}}}, {{{ children.0.arguments.0}}});

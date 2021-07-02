@@ -4,6 +4,7 @@ metadata:
   name: 'Injection: Avoid SQL Injection: Use Parameterized Queries (PreparedStatement)'
   shortDescription: Could lead to SQL Injection
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: true

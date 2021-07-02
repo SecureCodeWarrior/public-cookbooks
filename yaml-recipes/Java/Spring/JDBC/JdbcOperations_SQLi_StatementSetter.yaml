@@ -4,6 +4,7 @@ metadata:
   name: 'Input Validation: Avoid JDBC Injection: Bind variables in prepared statements'
   shortDescription: Could lead to SQL Injection
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection
   enabled: true

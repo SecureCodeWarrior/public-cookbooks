@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DRD13. Do not provide addJavascriptInterface method access in a WebView which
+    could contain untrusted content. (API level JELLY_BEAN or below)
+  shortDescription: <p>Allowing an app to&nbsp;provide access to&nbsp;the&nbsp;<code>addJavascriptInterface</code>
+    method in a <code>WebView</code> which could contain untrusted content may leave
+    it open to scripting attacks that could corrupt the host, for API level JELLY_BEAN
+    and below.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

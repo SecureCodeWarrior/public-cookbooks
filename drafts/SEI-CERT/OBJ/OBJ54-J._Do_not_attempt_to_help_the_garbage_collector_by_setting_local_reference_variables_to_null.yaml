@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: OBJ54-J. Do not attempt to help the garbage collector by setting local reference
+    variables to null
+  shortDescription: "<p>Setting local reference variables to <code>null</code> to\
+    \ \"help the garbage collector\"\x80\x9d is unnecessary. It adds clutter to the\
+    \ code and can make maintenance difficult. Java just-in-time compilers (JITs)\
+    \ can perform an equivalent liveness analysis, and most implementations do so.</p>"
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

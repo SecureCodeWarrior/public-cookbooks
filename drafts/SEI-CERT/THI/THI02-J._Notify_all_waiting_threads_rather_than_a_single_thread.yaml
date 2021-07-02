@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: THI02-J. Notify all waiting threads rather than a single thread
+  shortDescription: <p>Notifying a single thread rather than all waiting threads can
+    violate the&nbsp;<a href="/confluence/display/java/Rule+BB.+Glossary#RuleBB.Glossary-liveness">liveness</a>
+    property of the system.</p>
+  level: error
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

@@ -1,0 +1,25 @@
+id: scw:esapi:ban018-signature
+version: 8
+metadata:
+  name: 'Cryptography: ESAPI: BAN018c: Signature'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: getInstance
+    declaration:
+      type:
+        reference:
+          matches: (java\.security|javax\.crypto)\.(Signature)
+        checkInheritance: false
+availableFixes:
+- name: <html>Use Encryptor.<b>sign(string)</b></html>
+  actions:
+  - rewrite:
+      to: String signature = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().sign(s);
+- name: <html>Use Encryptor.<b>verifySignature(signature,data)</b></html>
+  actions:
+  - rewrite:
+      to: boolean verified = org.owasp.esapi.reference.crypto.JavaEncryptor.getInstance().verifySignature(signature,data);

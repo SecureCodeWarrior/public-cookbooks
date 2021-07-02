@@ -1,0 +1,20 @@
+id: scw:esapi:ban008-random.nextint
+version: 8
+metadata:
+  name: 'Secure Random: ESAPI: BAN008a: Random.nextInt'
+  shortDescription: This is an OWASP ESAPI Banned method
+  level: error
+  language: java
+  enabled: true
+search:
+  methodcall:
+    name: nextInt
+    declaration:
+      type: java.util.Random
+availableFixes:
+- name: Replace with safe alternative
+  actions:
+  - rewrite:
+      to: |-
+        org.owasp.esapi.Randomizer randomizer = org.owasp.esapi.reference.DefaultRandomizer.getInstance();
+        int random = randomizer.getRandomInteger(0,1);

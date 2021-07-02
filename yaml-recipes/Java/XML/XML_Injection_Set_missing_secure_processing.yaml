@@ -4,6 +4,7 @@ metadata:
   name: 'XML Injection: Set missing secure processing feature'
   shortDescription: Could lead to XML Injection
   level: error
+  language: java
   newCodeOnly: false
   scwCategory: injection:xml
   enabled: true

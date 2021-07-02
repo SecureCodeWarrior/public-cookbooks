@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL52-J. Do not declare more than one variable per declaration
+  shortDescription: <p>Declaring multiple variables in a single declaration could
+    cause confusion about the types of variables and their initial values. In particular,
+    do not declare any of the following in a single declaration:</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

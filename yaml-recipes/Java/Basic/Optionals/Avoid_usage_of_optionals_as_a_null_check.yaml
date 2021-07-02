@@ -4,6 +4,7 @@ metadata:
   name: 'Code Quality: Avoid usage of optionals as a null check'
   shortDescription: Avoid usage of optionals as a null check
   level: warning
+  language: java
   enabled: true
   comment: Opinionated
 search:

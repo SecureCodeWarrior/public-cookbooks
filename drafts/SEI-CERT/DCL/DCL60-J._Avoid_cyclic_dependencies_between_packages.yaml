@@ -1,0 +1,15 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: DCL60-J. Avoid cyclic dependencies between packages
+  shortDescription: <p align="LEFT">Both <em>The Elements of Java Style</em> [<a href="/confluence/display/java/Rec.+AA.+References#Rec.AA.References-Verm">Vermeulen
+    2000</a>] and the JPL Java Coding Standard [<a class="external-link" href="http://AA.%20References#Havelund%2010"
+    rel="nofollow">Havelund 2010</a>] require that the dependency structure of a package
+    must never contain cycles; that is, it must be representable as a directed acyclic
+    graph (DAG).</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []

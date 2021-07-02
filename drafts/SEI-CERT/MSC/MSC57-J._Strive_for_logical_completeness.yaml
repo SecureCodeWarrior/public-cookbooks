@@ -1,0 +1,13 @@
+id: 8015c3f0-283d-469c-99e9-038eedaaaea9
+version: 8
+metadata:
+  name: MSC57-J. Strive for logical completeness
+  shortDescription: <p>Software <a class="external-link" href="https://www.securecoding.cert.org/confluence/display/jg/BB.+Definitions#BBDefinitions-vulnerability"
+    rel="nofollow">vulnerabilities</a><span class="confluence-link">&nbsp;</span>can
+    result when a programmer fails to consider all possible data states.</p>
+  level: info
+  language: java; kotlin
+  enabled: true
+search:
+  methodcall: {}
+availableFixes: []
