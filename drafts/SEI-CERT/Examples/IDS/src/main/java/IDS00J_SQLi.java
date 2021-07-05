@@ -3,7 +3,7 @@ import java.sql.*;
 public class IDS00J_SQLi {
     public Connection getConnection() throws SQLException {
         DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
-        String dbConnection = PropertyManager.getProperty("db.connection");
+        String dbConnection = System.getProperty("db.connection");
         // Can hold some value like
         // "jdbc:microsoft:sqlserver://<HOST>:1433,<UID>,<PWD>"
         return DriverManager.getConnection(dbConnection);
@@ -25,8 +25,7 @@ public class IDS00J_SQLi {
 
             // Untrusted data used in query
             String sqlString = "SELECT * FROM db_user WHERE username = '"
-                    + username +
-                    "' AND password = '" + pwd + "'";
+                    + username + "' AND password = '" + pwd + "'";
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(sqlString);
 

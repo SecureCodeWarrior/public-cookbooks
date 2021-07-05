@@ -1,8 +1,6 @@
-https://wiki.sei.cmu.edu/confluence/display/java/2+Rules
-
 # IDS00-J
-- Mark use of PreparedStatement that does not use set*() before execute*()
-- Mark strings containing untrusted data that are used as argument to  java.sql.Connection.prepareStatement or java.sql.Statement.executeQuery
++ Mark use of PreparedStatement that does not use set*() before execute*()
++ Mark strings containing untrusted data that are used as argument to  java.sql.Connection.prepareStatement or java.sql.Statement.executeQuery
 
 # IDS01-J
 - Mark untrusted input strings that are not argument of Normalizer.normalize before being used

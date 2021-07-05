@@ -1,4 +1,4 @@
-id: scw:sqli:connection
+id: scw:sqli:connection-preparestatement
 version: 8
 metadata:
   name: 'Injection: Avoid SQL Injection: Use Parameterized Queries (PreparedStatement)'
@@ -6,9 +6,12 @@ metadata:
   level: error
   language: java
   newCodeOnly: false
-  scwCategory: injection
+  scwCategory: injection:sql
+  cweCategory: 89
   enabled: true
   comment: ""
+  descriptionFile: descriptions/java_use_parameterized_queries.html
+  tags: OWASP-Top10-A1:2017;SEI-CERT-IDS00-J
 search:
   methodcall:
     args:
@@ -16,9 +19,7 @@ search:
         containsUntrustedInput: true
         type: java.lang.String
     name: prepareStatement
-    type:
-      reference: java.sql.Connection
-      checkInheritance: false
+    type: java.sql.Connection
 availableFixes:
 - name: Use parameterized queries
   actions:

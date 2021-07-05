@@ -1,5 +1,6 @@
 import java.text.Normalizer; // https://docs.oracle.com/javase/8/docs/api/java/text/Normalizer.html
 import java.text.Normalizer.Form; // https://docs.oracle.com/javase/8/docs/api/java/text/Normalizer.Form.html
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,9 +21,6 @@ public class IDS01J_NormalizeStrings
         } else {
             // ...
         }
-
-        // Normalize
-        s = Normalizer.normalize(s, Form.NFKC);
     }
 
     public void compliant() {
@@ -40,5 +38,34 @@ public class IDS01J_NormalizeStrings
         } else {
             // ...
         }
+    }
+
+    public void test() {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        // Validate
+        Pattern pattern = Pattern.compile("[<>]"); // Check for angle brackets
+        Matcher matcher = pattern.matcher(s);
+        if (matcher.find()) {
+            // Found deny-listed tag
+            throw new IllegalStateException();
+        } else {
+            // ...
+        }
+
+        // Normalize
+        //s = Normalizer.normalize(s, Form.NFKC);
+
+        pattern = Pattern.compile("[<>]"); // Check for angle brackets
+        matcher = pattern.matcher(s);
+        if (matcher.find()) {
+            // Found deny-listed tag
+            throw new IllegalStateException();
+        } else {
+            // ...
+        }
+
     }
 }

@@ -1,49 +1,30 @@
 <html>
 <body>
-<h2>Abstract</h2>
-Secure coding practices prescribe that queries need to be parameterized. Concatenation of parameters is not recommended.
-<h2>Description</h2>
-A parameterized query needs to be build first. Next, the parameter variables should be added. The following functions can be used to achieve this securely. These functions can be used to execute queries against the database.
-<h4>Class information:</h4>
-<pre>
-package java.sql.<b>Connection</b>
-    PreparedStatement prepareStatement(String sql);
+<p>Concatenation of untrusted input directly into SQL queries can lead to injection attacks.</p>
+<br>
+<p>Untrusted data needs to be handled with caution. In the case of SQL queries, this can be done by using prepared statements. Instead of concatenating the parameters into the query itself, a prepared statement puts placeholders (often '?' is used as placeholder) in the query where the parameters need to go. After defining the structure of the query in this way, we then tell the statement exactly what the type of the parameters is, using e.g. <code>setString</code>. This prevents attacks in multiple ways. Firstly, as the prepared statement knows what part of the query is meant to be a parameter, it will not attempt to interpret the parameter values as part of the SQL query. It will only consider them to be values. Secondly, by providing the type of the parameter we ensure it can also be checked before using the value in the SQL query.</p>
+<br>
+<b>Before</b>
+<pre>String sqlString = "SELECT * FROM db_user WHERE username = '"
+        + username + "' AND password = '" + pwd + "'";
+Statement stmt = connection.createStatement();
+ResultSet rs = stmt.executeQuery(sqlString);
 </pre>
-<pre>
-package java.sql.<b>PreparedStatement</b>
-    void setString(int parameterIndex, String x);
-    void setBigDecimal(int parameterIndex, BigDecimal x);
+<br>
+<b>After</b>
+<pre>String sqlString = "SELECT * FROM db_user WHERE username = <b>?</b> AND password = <b>?</b>";
+<b>PreparedStatement stmt = connection.prepareStatement(sqlString);
+stmt.setString(1, username);
+stmt.setString(2, hashPassword(password));</b>
+ResultSet rs = stmt.executeQuery();
 </pre>
-<h4>Correct code example:</h4>
-<pre>
-import java.sql.*;
-...
-<b>PreparedStatement prepStatement</b>;
-Connection connection;
-...
-String query="SELECT * from db <b>where name= ?</b>";
-prepStatement=connection.prepareStatement(query);
-prepStatement.<b>setString( 1, name)</b>;
-resultSet=prepStatement.executeQuery();
-</pre>     
-        <h2>Violating this guideline can cause</h2>
-        
-        <h4>Mobile vulnerabilities</h4>
-            <ul>
-            
-                <li>Client Side Injection - SQL Injection. <a href="https://{{microtraininghost}}/#/simple-flow/mobile/client_side_injection/sql_injection/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
-            </ul>
-        
-        
-        <h4>Web vulnerabilities</h4>
-            <ul>
-            
-                <li>Injection Flaws - SQL Injection. <a href="https://{{microtraininghost}}/#/simple-flow/web/injection/sql/java?utm_source=sensei&utm_content=problemdescription">Learn more</a></li>
-            </ul>
-        
-    
-        <h2>Sensei quick fix</h2>
-        <p>Use the <b>Sensei&reg; Quick Fix technology: Hit {{{ qfshortcut }}}</b> to fix this guideline violation automatically.</p>
-
+<br>
+<b>References</b>
+<ul>
+  <li><a href="https://cwe.mitre.org/data/definitions/89.html">Mitre CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></li>
+  <li><a href="https://wiki.sei.cmu.edu/confluence/display/java/IDS00-J.+Prevent+SQL+injection">SEI CERT IDS00-J Prevent SQL Injection</a></li>
+  <li><a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/sql/PreparedStatement.html">Oracle Java Platform Documentation: PreparedStatement</a></li>
+  <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet Series: SQL Injection Prevention Cheat Sheet</a></li>
+</ul>
 </body>
 </html>

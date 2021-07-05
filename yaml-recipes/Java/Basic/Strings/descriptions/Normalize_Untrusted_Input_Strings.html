@@ -1,0 +1,19 @@
+<html>
+<body>
+<p>Normalize untrusted data before use.</p>
+<br>
+<p>Strings can contain different character sets. If unchecked, validation routines could be bypassed by using alternative representations of the same character (e.g. "\uFE64" for "<"). By applying the <code>Normalizer.normalize</code> method, we ensure that Unicode characters are converted to their normalized counterparts.</p>
+<br>
+<b>Before</b>
+<pre>Matcher matcher = pattern.matcher(str);</pre>
+<br>
+<b>After</b>
+<pre>Matcher matcher = pattern.matcher(<b>Normalizer.normalize(</b>str<b>, Form.NFKC)</b>);</pre>
+<br>
+<b>References</b>
+<ul>
+<li><a href=" https://cwe.mitre.org/data/definitions/20.html">CWE-20: Improper Input Validation</a></li>
+<li><a href="https://wiki.sei.cmu.edu/confluence/display/java/IDS01-J.+Normalize+strings+before+validating+them">SEI CERT IDS01-J Normalize strings before validating them</a></li>
+</ul>
+</body>
+</html>

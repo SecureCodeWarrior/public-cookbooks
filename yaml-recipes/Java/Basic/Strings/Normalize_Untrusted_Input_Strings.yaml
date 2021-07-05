@@ -1,0 +1,29 @@
+id: scw:java:strings:normalize-untrusted
+version: 8
+metadata:
+  name: Normalize Untrusted Input Strings
+  shortDescription: Normalize untrusted inputs before using them
+  level: error
+  language: java
+  cweCategory: 20
+  enabled: true
+  descriptionFile: Strings/descriptions/Normalize_Untrusted_Input_Strings.html
+  tags: SEI-CERT-IDS01-J
+search:
+  argument:
+    containsUntrustedInput: true
+    not:
+      in:
+        methodcall:
+          name: normalize
+          type: Normalizer
+    trustedSources:
+    - methodcall:
+        name: normalize
+        type: Normalizer
+    type: java.lang.String
+availableFixes:
+- name: Insert normalize call
+  actions:
+  - rewrite:
+      to: java.text.Normalizer.normalize({{markedElement}}, java.text.Normalizer.Form.NFKC)
