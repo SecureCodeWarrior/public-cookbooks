@@ -1,0 +1,6 @@
+
+
+Avoid attackers from guessing usernames by throwing a <code>BadCredentialsException()</code> which returns a more general error message, instead of a <code>UsernameNotFoundException()</code>, which divulges the (non-)existence of a username.
+
+<table><tr><td><font color="gray">Before:</font></td><td><font color="#AA0000">throw new UsernameNotFoundException(e.Message());</font></td></tr><tr><td><font color="gray">After:</font></td><td>throw new BadCredentialsException(e.Message());</td></tr></table>
+<h3>Resources</h3><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#authentication-and-error-messages"></a></li></ul>

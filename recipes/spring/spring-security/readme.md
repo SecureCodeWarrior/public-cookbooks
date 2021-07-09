@@ -42,4 +42,6 @@ It covers the following protections:
 <li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject URL encoded slash</li>
 <li>Security Misconfiguration: StrictHttpFirewall: Rule configuration: Reject semicolon</li>
 <li>Security Misconfiguration: CORS: disable</li>
+<li>Authentication: Username Enumeration: avoid UsernameNotFoundException</li>
+<li>Authentication: Username Enumeration: setHideUserNotFoundExceptions should be set to true</li>
 </ul>
